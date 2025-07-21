@@ -24,19 +24,19 @@ async function getData() {
       id: 1,
       title: "Havana City",
       description: "Explore the culture and history of Havana.",
-      image: "/images/havana.jfif",
+      image: "/images/havana.jpg",
     },
     {
       id: 2,
       title: "Varadero Beach",
       description: "Enjoy one of Cuba's most famous beaches.",
-      image: "/images/varadero.jfif",
+      image: "/images/havana.jpg",
     },
     {
       id: 3,
       title: "Viñales Valley",
       description: "Discover the natural beauty of Viñales.",
-      image: "/images/viñales.jfif",
+      image: "/images/havana.jpg",
     },
   ];
 
@@ -44,19 +44,19 @@ async function getData() {
     {
       id: 1,
       title: "Havana Tour",
-      image: "/images/havana.jfif",
+      image: "/images/havana.jpg",
       places: ["Old Havana", "Malecon", "Revolution Square"],
     },
     {
       id: 2,
       title: "Viñales Excursion",
-      image: "/images/viñales.jfif",
+      image: "/images/havana.jpg",
       places: ["Tobacco Farms", "Caves", "Mural de la Prehistoria"],
     },
     {
       id: 3,
       title: "Trinidad Tour",
-      image: "/images/trinidad.jfif",
+      image: "/images/havana.jpg",
       places: ["Historic Center", "Museums", "Ancon Beach"],
     },
   ];
