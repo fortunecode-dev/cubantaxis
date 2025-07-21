@@ -27,9 +27,33 @@ async function getData() {
   ];
 
   const excursions: Excursion[] = [
-    { id: 1, title: "Havana Tour", image: "/images/havana.jpg", places: ["Old Havana", "Malecon", "Revolution Square"] },
-    { id: 2, title: "Viñales Excursion", image: "/images/havana.jpg", places: ["Tobacco Farms", "Caves", "Mural de la Prehistoria"] },
-    { id: 3, title: "Trinidad Tour", image: "/images/havana.jpg", places: ["Historic Center", "Museums", "Ancon Beach"] },
+    {
+      id: 1, title: "Havana Tour", image: "/images/havana.jpg", places:
+
+        ["El Morro",
+          "Plaza de la Catedral",
+          "Plaza de la Revolución",
+          "Bar Floridita y Bodeguita del medio",
+          "El Capitolio",
+          "Otros sitios...",
+        ]
+    },
+    {
+      id: 2, title: "La Habana - Viñales", image: "/images/viñales.jpg", places:
+        ["Miramar",
+          "Valle de Viñales",
+          "Mirador de Los Jazmines",
+          "Cueva del Indio",
+          "Plantación de tabaco",
+          "Subida a la loma del Mural de Prehistoria",]
+    },
+    {
+      id: 3, title: "La Habana - Playas del Este", image: "/images/playa_del_este.jpg",
+      places: [
+        "Túnel de La Habana", "Castillo del Morro", "Estadio Panamericano", "Alamar", "Parada opcional para realizar", "Playas: Santa María, Mégano, Mi Cayito"
+      ]
+    },
+
   ];
 
   return { destinations, excursions };
@@ -41,47 +65,47 @@ export default async function Home() {
   return (
     <div className="font-sans">
       {/* Hero Section */}
-     <section
-  className="relative h-screen bg-cover bg-center"
-  style={{ backgroundImage: "url('/images/background.jpg')" }}
->
-  <div className="absolute top-4 right-4 flex gap-4 text-white text-2xl">
-    <a href="#" aria-label="Facebook"><FaFacebookF /></a>
-    <a href="#" aria-label="Instagram"><FaInstagram /></a>
-    <a href="#" aria-label="WhatsApp"><FaWhatsapp /></a>
-  </div>
+      <section
+        className="relative h-screen bg-cover bg-center"
+        style={{ backgroundImage: "url('/images/background.jpg')" }}
+      >
+        <div className="absolute top-4 right-4 flex gap-4 text-white text-2xl">
+          <a href="#" aria-label="Facebook"><FaFacebookF /></a>
+          <a href="#" aria-label="Instagram"><FaInstagram /></a>
+          <a href="#" aria-label="WhatsApp"><FaWhatsapp /></a>
+        </div>
 
-  <div className="flex flex-col items-center justify-center h-full text-center text-white bg-black bg-opacity-50 px-4">
-    <h1 className="text-5xl font-bold mb-4">CUBANTAXIS</h1>
-    <p className="text-lg max-w-2xl mb-6">
-      Safe and reliable transfers, city tours, and excursions across Cuba. Quick booking and personalized service.
-    </p>
+        <div className="flex flex-col items-center justify-center h-full text-center text-white bg-black bg-opacity-50 px-4">
+          <h1 className="text-5xl font-bold mb-4">CUBANTAXIS</h1>
+          <p className="text-lg max-w-2xl mb-6">
+            Safe and reliable transfers, city tours, and excursions across Cuba. Quick booking and personalized service.
+          </p>
 
-    <div className="flex flex-wrap justify-center gap-4">
-      {/* Excursions - text button */}
-      <button className="text-white font-semibold hover:underline">
-        Excursions
-      </button>
+          <div className="flex flex-wrap justify-center gap-4">
+            {/* Excursions - text button */}
+            <button className="text-white font-semibold hover:underline">
+              Excursions
+            </button>
 
-      {/* Destinations - outlined button */}
-      <button className="border border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-white px-6 py-3 rounded-xl font-semibold transition">
-        Destinations
-      </button>
+            {/* Destinations - outlined button */}
+            <button className="border border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-white px-6 py-3 rounded-xl font-semibold transition">
+              Destinations
+            </button>
 
-      {/* Fast Booking - contained button */}
-      <button className="bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-3 rounded-xl font-semibold transition">
-        Fast Booking
-      </button>
-    </div>
-  </div>
-</section>
+            {/* Fast Booking - contained button */}
+            <button className="bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-3 rounded-xl font-semibold transition">
+              Fast Booking
+            </button>
+          </div>
+        </div>
+      </section>
 
 
       <QuickBookingForm />
       <DestinationsCard destinations={destinations} />
       <ExcursionsCard excursions={excursions} />
       <ExtendedBookingForm />
-      <Footer/>
+      <Footer />
     </div>
   );
 }
