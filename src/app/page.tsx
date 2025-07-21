@@ -2,6 +2,7 @@ import ExtendedBookingForm from "@/modules/booking/ExtendedBookingForm";
 import QuickBookingForm from "@/modules/booking/QuickBookingForm";
 import DestinationsCard from "@/modules/catalog/DestinationsCard";
 import ExcursionsCard from "@/modules/catalog/ExcursionCard";
+import Footer from "@/modules/layout/Footer";
 import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 interface Destination {
@@ -80,6 +81,7 @@ export default async function Home() {
       <DestinationsCard destinations={destinations} />
       <ExcursionsCard excursions={excursions} />
       <ExtendedBookingForm />
+      <Footer/>
     </div>
   );
 }
