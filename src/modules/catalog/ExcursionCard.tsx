@@ -1,3 +1,4 @@
+import { AppTexts } from "@/app/[lang]/locales/types";
 import Image from "next/image";
 
 interface Excursion {
@@ -9,12 +10,14 @@ interface Excursion {
 
 interface ExcursionsCardProps {
   excursions: Excursion[];
+  idioma: AppTexts
+
 }
 
-export default function ExcursionsCard({ excursions }: ExcursionsCardProps) {
+export default function ExcursionsCard({ excursions, idioma }: ExcursionsCardProps) {
   return (
     <section className="py-20 bg-gray-50">
-      <h2 className="text-3xl font-bold text-center mb-8">Excursions</h2>
+      <h2 className="text-3xl font-bold text-center mb-8">{idioma.excursionsCard.title}</h2>
       <div className=" py-20 flex overflow-x-auto gap-6 px-4 scrollbar-hide snap-x snap-mandatory">
         {excursions.map((exc) => (
           <article
@@ -51,7 +54,8 @@ export default function ExcursionsCard({ excursions }: ExcursionsCardProps) {
                   href="#"
                   className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-yellow-500 rounded-lg transition hover:bg-yellow-600 hover:shadow-[0_0_10px_rgba(255,200,0,0.7)] focus:ring-4 focus:outline-none focus:ring-yellow-300"
                 >
-                  View Details
+                  {idioma.seeMore}
+
                   <svg
                     className="rtl:rotate-180 w-3.5 h-3.5 ms-2"
                     aria-hidden="true"

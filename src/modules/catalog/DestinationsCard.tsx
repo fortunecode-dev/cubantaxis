@@ -1,3 +1,4 @@
+import { AppTexts } from "@/app/[lang]/locales/types";
 import Image from "next/image";
 
 interface Destination {
@@ -9,12 +10,14 @@ interface Destination {
 
 interface DestinationsCardProps {
   destinations: Destination[];
+  idioma: AppTexts
 }
 
-export default function DestinationsCard({ destinations }: DestinationsCardProps) {
+export default function DestinationsCard({ destinations, idioma }: DestinationsCardProps) {
+
   return (
     <section className="py-20 bg-white">
-      <h2 className="text-3xl font-bold text-center mb-8">Top Destinations</h2>
+      <h2 className="text-3xl font-bold text-center mb-8">{idioma.destinationsCard.title}</h2>
       <div className=" py-20 flex overflow-x-auto gap-6 px-4 scrollbar-hide snap-x snap-mandatory">
         {destinations.map((dest) => (
           <article
@@ -39,7 +42,7 @@ export default function DestinationsCard({ destinations }: DestinationsCardProps
               </div>
               <div className="mt-4">
                 <button className="text-yellow-600 font-medium hover:underline">
-                  Ver más
+                  {idioma.seeMore}
                 </button>
               </div>
             </div>

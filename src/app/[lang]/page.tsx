@@ -4,6 +4,8 @@ import DestinationsCard from "@/modules/catalog/DestinationsCard";
 import ExcursionsCard from "@/modules/catalog/ExcursionCard";
 import Footer from "@/modules/layout/Footer";
 import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { getTranslation } from "./locales";
+import { content } from "@/content";
 
 interface Destination {
   id: number;
@@ -59,8 +61,9 @@ async function getData() {
   return { destinations, excursions };
 }
 
-export default async function Home() {
+export default async function Home({ params }: { params: Promise<{ lang: "en" | "es" | "fr" | "de" | "ru" | "pt" }> }) {
   const { destinations, excursions } = await getData();
+  const idioma = getTranslation((await params).lang)
 
   return (
     <div className="font-sans">
@@ -76,25 +79,27 @@ export default async function Home() {
         </div>
 
         <div className="flex flex-col items-center justify-center h-full text-center text-white bg-black bg-opacity-50 px-4">
-          <h1 className="text-5xl font-bold mb-4">CUBANTAXIS</h1>
+          <h1 className="text-5xl font-bold mb-4">{idioma.hero.title}</h1>
           <p className="text-lg max-w-2xl mb-6">
-            Safe and reliable transfers, city tours, and excursions across Cuba. Quick booking and personalized service.
+            {idioma.hero.subtitle}
           </p>
 
           <div className="flex flex-wrap justify-center gap-4">
             {/* Excursions - text button */}
             <button className="text-white font-semibold hover:underline">
-              Excursions
+              {idioma.hero.buttons.excursions}
             </button>
 
             {/* Destinations - outlined button */}
             <button className="border border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-white px-6 py-3 rounded-xl font-semibold transition">
-              Destinations
+              {idioma.hero.buttons.destinations}
+
             </button>
 
             {/* Fast Booking - contained button */}
             <button className="bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-3 rounded-xl font-semibold transition">
-              Fast Booking
+              {idioma.hero.buttons.fastBooking}
+
             </button>
           </div>
         </div>
@@ -102,8 +107,8 @@ export default async function Home() {
 
 
       <QuickBookingForm />
-      <DestinationsCard destinations={destinations} />
-      <ExcursionsCard excursions={excursions} />
+      <DestinationsCard destinations={content[(await params).lang]?.destinations} idioma={idioma} />
+      <ExcursionsCard excursions={content[(await params).lang]?.excursions} idioma={idioma} />
       <ExtendedBookingForm />
       <Footer />
     </div>
