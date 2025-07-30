@@ -5,7 +5,7 @@ interface Destination {
   id: number;
   title: string;
   description: string;
-  image: string;
+  main_image: string;
 }
 
 interface DestinationsCardProps {
@@ -19,14 +19,14 @@ export default function DestinationsCard({ destinations, idioma }: DestinationsC
     <section className="py-20 bg-white">
       <h2 className="text-3xl font-bold text-center mb-8">{idioma.destinationsCard.title}</h2>
       <div className=" py-20 flex overflow-x-auto gap-6 px-4 scrollbar-hide snap-x snap-mandatory">
-        {destinations.map((dest) => (
+        {destinations?.map((dest) => (
           <article
             key={dest.id}
             className="group min-w-[300px] snap-start rounded-xl overflow-hidden flex flex-col justify-between transition-transform transform hover:-translate-y-2 hover:shadow-2xl"
           >
             <Image
               alt={dest.title}
-              src={dest.image}
+              src={dest.main_image}
               width={400}
               height={250}
               className="h-56 w-full rounded-xl object-cover shadow-xl transition group-hover:grayscale-[50%]"

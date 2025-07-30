@@ -5,7 +5,7 @@ import ExcursionsCard from "@/modules/catalog/ExcursionCard";
 import Footer from "@/modules/layout/Footer";
 import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { getTranslation } from "./locales";
-import { content } from "@/content";
+import { content, destinos, excursiones } from "@/content";
 
 interface Destination {
   id: number;
@@ -107,8 +107,8 @@ export default async function Home({ params }: { params: Promise<{ lang: "en" | 
 
 
       <QuickBookingForm />
-      <DestinationsCard destinations={content[(await params).lang]?.destinations} idioma={idioma} />
-      <ExcursionsCard excursions={content[(await params).lang]?.excursions} idioma={idioma} />
+      <DestinationsCard destinations={destinos[(await params).lang]?.destinations} idioma={idioma} />
+      <ExcursionsCard excursions={excursiones[(await params).lang]?.excursions} idioma={idioma} />
       <ExtendedBookingForm />
       <Footer />
     </div>

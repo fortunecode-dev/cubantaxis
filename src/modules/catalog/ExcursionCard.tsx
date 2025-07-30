@@ -4,8 +4,8 @@ import Image from "next/image";
 interface Excursion {
   id: number;
   title: string;
-  image: string;
-  places: string[];
+  main_image: string;
+  images: any[];
 }
 
 interface ExcursionsCardProps {
@@ -19,7 +19,7 @@ export default function ExcursionsCard({ excursions, idioma }: ExcursionsCardPro
     <section className="py-20 bg-gray-50">
       <h2 className="text-3xl font-bold text-center mb-8">{idioma.excursionsCard.title}</h2>
       <div className=" py-20 flex overflow-x-auto gap-6 px-4 scrollbar-hide snap-x snap-mandatory">
-        {excursions.map((exc) => (
+        {excursions?.map((exc) => (
           <article
             key={exc.id}
             className="group min-w-[300px] snap-start bg-white rounded-xl shadow-lg overflow-hidden flex flex-col justify-between transition-transform transform hover:-translate-y-2 hover:shadow-2xl"
@@ -28,7 +28,7 @@ export default function ExcursionsCard({ excursions, idioma }: ExcursionsCardPro
             <div className="overflow-hidden rounded-xl">
               <Image
                 alt={exc.title}
-                src={exc.image}
+                src={exc.main_image}
                 width={400}
                 height={250}
                 className="h-56 w-full object-cover transition-transform duration-300 group-hover:grayscale-[30%] group-hover:brightness-90"
@@ -42,8 +42,8 @@ export default function ExcursionsCard({ excursions, idioma }: ExcursionsCardPro
                   <h3 className="text-xl font-bold text-gray-900 mb-2">{exc.title}</h3>
                 </a>
                 <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm marker:text-yellow-500">
-                  {exc.places.map((place, index) => (
-                    <li key={index} className="pl-1">{place}</li>
+                  {exc.images.map((place, index) => (
+                    <li key={index} className="pl-1">{place.alt}</li>
                   ))}
                 </ul>
               </div>
