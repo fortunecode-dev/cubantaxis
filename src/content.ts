@@ -1365,7 +1365,7 @@ export const destinos ={
         "id": 2,
         "title": "Aeropuerto Varadero",
         "alternative_name": "Destino Aeropuerto Varadero",
-        "main_image": "/images/havana-capitol.jpg",
+        "main_image": "/images/varadero-airport.png",
         "images": [
           {
             "url": "/images/destinos/aeropuerto_varadero_1.jpg",
@@ -1403,7 +1403,7 @@ export const destinos ={
         "id": 3,
         "title": "Cayo Coco",
         "alternative_name": "Destino Cayo Coco",
-        "main_image": "/images/havana-capitol.jpg",
+        "main_image": "/images/cayo-coco.jpg",
         "images": [
           {
             "url": "/images/destinos/cayo_coco_1.jpg",
@@ -1441,7 +1441,7 @@ export const destinos ={
         "id": 4,
         "title": "Cayo Guillermo",
         "alternative_name": "Destino Cayo Guillermo",
-        "main_image": "/images/havana-capitol.jpg",
+        "main_image": "/images/cayo-guillermo.png",
         "images": [
           {
             "url": "/images/destinos/cayo_guillermo_1.jpg",
@@ -1479,7 +1479,7 @@ export const destinos ={
         "id": 5,
         "title": "Cayo Santa María",
         "alternative_name": "Destino Cayo Santa María",
-        "main_image": "/images/havana-capitol.jpg",
+        "main_image": "/images/cayo-santa-maria.webp",
         "images": [
           {
             "url": "/images/destinos/cayo_santa_maría_1.jpg",
@@ -1517,7 +1517,7 @@ export const destinos ={
         "id": 6,
         "title": "Cienfuegos",
         "alternative_name": "Destino Cienfuegos",
-        "main_image": "/images/havana-capitol.jpg",
+        "main_image": "/images/cienfuegos.jfif",
         "images": [
           {
             "url": "/images/destinos/cienfuegos_1.jpg",
@@ -1620,7 +1620,7 @@ export const destinos ={
         "id": 8,
         "title": "Santa Clara",
         "alternative_name": "Destino Santa Clara",
-        "main_image": "/images/havana-capitol.jpg",
+        "main_image": "/images/santa-clara.jpeg",
         "images": [
           {
             "url": "/images/destinos/santa_clara_1.jpg",
@@ -1676,7 +1676,7 @@ export const destinos ={
         "id": 9,
         "title": "Trinidad",
         "alternative_name": "Destino Trinidad",
-        "main_image": "/images/havana-capitol.jpg",
+        "main_image": "/images/trinidad.jpg",
         "images": [
           {
             "url": "/images/destinos/trinidad_1.jpg",
@@ -1732,7 +1732,7 @@ export const destinos ={
         "id": 10,
         "title": "Varadero",
         "alternative_name": "Destino Varadero",
-        "main_image": "/images/havana-capitol.jpg",
+        "main_image": "/images/varadero-view.jpg",
         "images": [
           {
             "url": "/images/destinos/varadero_1.jpg",
@@ -1779,7 +1779,7 @@ export const destinos ={
         "id": 11,
         "title": "Viñales",
         "alternative_name": "Destino Viñales",
-        "main_image": "/images/havana-capitol.jpg",
+        "main_image": "/images/viñales.jpg",
         "images": [
           {
             "url": "/images/destinos/viñales_1.jpg",

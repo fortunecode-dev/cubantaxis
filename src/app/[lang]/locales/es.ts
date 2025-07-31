@@ -47,6 +47,13 @@ export const es: AppTexts = {
   footer: {
     rights: "© 2025 Cubantaxis. Todos los derechos reservados.",
   },
-  seeMore:"See more"
+  seeMore: "See more",
+  header: {
+    social: {
+      facebook: "Síguenos en Facebook",
+      instagram: "Síguenos en Instagram",
+      whatsapp: "Contáctanos por WhatsApp"
+    }
+  }
 
 };

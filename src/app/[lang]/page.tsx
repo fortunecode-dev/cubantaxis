@@ -72,11 +72,36 @@ export default async function Home({ params }: { params: Promise<{ lang: "en" | 
         className="relative h-screen bg-cover bg-center"
         style={{ backgroundImage: "url('/images/background.jpg')" }}
       >
-        <div className="absolute top-4 right-4 flex gap-4 text-white text-2xl">
-          <a href="#" aria-label="Facebook"><FaFacebookF /></a>
-          <a href="#" aria-label="Instagram"><FaInstagram /></a>
-          <a href="#" aria-label="WhatsApp"><FaWhatsapp /></a>
-        </div>
+       <div className="absolute top-4 right-4 flex gap-4 text-white text-2xl">
+  <a
+    href="https://www.facebook.com/CubanTaxis/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Síguenos en Facebook"
+    title="Síguenos en Facebook"
+  >
+    <FaFacebookF />
+  </a>
+  <a
+    href="https://www.instagram.com/cubantaxis/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Síguenos en Instagram"
+    title="Síguenos en Instagram"
+  >
+    <FaInstagram />
+  </a>
+  <a
+    href="https://wa.me/5354447931"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contáctanos por WhatsApp"
+    title="Contáctanos por WhatsApp"
+  >
+    <FaWhatsapp />
+  </a>
+</div>
+
 
         <div className="flex flex-col items-center justify-center h-full text-center text-white bg-black bg-opacity-50 px-4">
           <h1 className="text-5xl font-bold mb-4">{idioma.hero.title}</h1>

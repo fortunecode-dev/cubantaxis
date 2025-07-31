@@ -46,5 +46,12 @@ export interface AppTexts {
   footer: {
     rights: string;
   };
-  seeMore:string
+  seeMore: string, header: {
+    social: {
+      facebook: string,
+      instagram: string,
+      whatsapp: string
+    }
+  }
+
 }
