@@ -5,7 +5,10 @@ interface Excursion {
   id: number;
   title: string;
   main_image: string;
-  images: any[];
+  images: {
+            url:string,
+            alt: string
+          }[];
 }
 
 interface ExcursionsCardProps {
