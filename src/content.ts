@@ -1517,7 +1517,7 @@ export const destinos ={
         "id": 6,
         "title": "Cienfuegos",
         "alternative_name": "Destino Cienfuegos",
-        "main_image": "/images/cienfuegos.jfif",
+        "main_image": "/images/cienfuegos.jpg",
         "images": [
           {
             "url": "/images/destinos/cienfuegos_1.jpg",
