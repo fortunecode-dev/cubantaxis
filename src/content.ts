@@ -545,7 +545,7 @@ export const excursiones={
         "id": 1,
         "title": "Havana City Tour",
         "alternative_name": "City Tour Habana",
-        "main_image": "/images/habana_city_tour.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/habana_1.jpg",
@@ -699,7 +699,7 @@ export const excursiones={
         "id": 1,
         "title": "Visite de La Havane",
         "alternative_name": "City Tour Habana",
-        "main_image": "/images/habana_city_tour.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/habana_1.jpg",
@@ -853,7 +853,7 @@ export const excursiones={
         "id": 1,
         "title": "Havanna-Stadttour",
         "alternative_name": "City Tour Habana",
-        "main_image": "/images/habana_city_tour.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/habana_1.jpg",
@@ -1007,7 +1007,7 @@ export const excursiones={
         "id": 1,
         "title": "Экскурсия по Гаване",
         "alternative_name": "City Tour Habana",
-        "main_image": "/images/habana_city_tour.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/habana_1.jpg",
@@ -1161,7 +1161,7 @@ export const excursiones={
         "id": 1,
         "title": "Tour pela Cidade de Havana",
         "alternative_name": "City Tour Habana",
-        "main_image": "/images/habana_city_tour.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/habana_1.jpg",
@@ -1318,7 +1318,7 @@ export const destinos ={
         "id": 1,
         "title": "Aeropuerto Habana",
         "alternative_name": "Destino Aeropuerto Habana",
-        "main_image": "/images/destinos/aeropuerto_habana.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/destinos/aeropuerto_habana_1.jpg",
@@ -1365,7 +1365,7 @@ export const destinos ={
         "id": 2,
         "title": "Aeropuerto Varadero",
         "alternative_name": "Destino Aeropuerto Varadero",
-        "main_image": "/images/destinos/aeropuerto_varadero.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/destinos/aeropuerto_varadero_1.jpg",
@@ -1403,7 +1403,7 @@ export const destinos ={
         "id": 3,
         "title": "Cayo Coco",
         "alternative_name": "Destino Cayo Coco",
-        "main_image": "/images/destinos/cayo_coco.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/destinos/cayo_coco_1.jpg",
@@ -1441,7 +1441,7 @@ export const destinos ={
         "id": 4,
         "title": "Cayo Guillermo",
         "alternative_name": "Destino Cayo Guillermo",
-        "main_image": "/images/destinos/cayo_guillermo.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/destinos/cayo_guillermo_1.jpg",
@@ -1479,7 +1479,7 @@ export const destinos ={
         "id": 5,
         "title": "Cayo Santa María",
         "alternative_name": "Destino Cayo Santa María",
-        "main_image": "/images/destinos/cayo_santa_maría.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/destinos/cayo_santa_maría_1.jpg",
@@ -1517,7 +1517,7 @@ export const destinos ={
         "id": 6,
         "title": "Cienfuegos",
         "alternative_name": "Destino Cienfuegos",
-        "main_image": "/images/destinos/cienfuegos.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/destinos/cienfuegos_1.jpg",
@@ -1573,7 +1573,7 @@ export const destinos ={
         "id": 7,
         "title": "La Habana",
         "alternative_name": "Destino La Habana",
-        "main_image": "/images/destinos/la_habana.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/destinos/la_habana_1.jpg",
@@ -1620,7 +1620,7 @@ export const destinos ={
         "id": 8,
         "title": "Santa Clara",
         "alternative_name": "Destino Santa Clara",
-        "main_image": "/images/destinos/santa_clara.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/destinos/santa_clara_1.jpg",
@@ -1676,7 +1676,7 @@ export const destinos ={
         "id": 9,
         "title": "Trinidad",
         "alternative_name": "Destino Trinidad",
-        "main_image": "/images/destinos/trinidad.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/destinos/trinidad_1.jpg",
@@ -1732,7 +1732,7 @@ export const destinos ={
         "id": 10,
         "title": "Varadero",
         "alternative_name": "Destino Varadero",
-        "main_image": "/images/destinos/varadero.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/destinos/varadero_1.jpg",
@@ -1779,7 +1779,7 @@ export const destinos ={
         "id": 11,
         "title": "Viñales",
         "alternative_name": "Destino Viñales",
-        "main_image": "/images/destinos/viñales.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/destinos/viñales_1.jpg",
@@ -1830,7 +1830,7 @@ export const destinos ={
         "id": 1,
         "title": "Havana Airport",
         "alternative_name": "Havana Airport Destination",
-        "main_image": "/images/destinos/aeropuerto_habana.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/destinos/aeropuerto_habana_1.jpg",
@@ -1877,7 +1877,7 @@ export const destinos ={
         "id": 2,
         "title": "Varadero Airport",
         "alternative_name": "Varadero Airport Destination",
-        "main_image": "/images/destinos/aeropuerto_varadero.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/destinos/aeropuerto_varadero_1.jpg",
@@ -1915,7 +1915,7 @@ export const destinos ={
         "id": 3,
         "title": "Cayo Coco",
         "alternative_name": "Cayo Coco Destination",
-        "main_image": "/images/destinos/cayo_coco.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/destinos/cayo_coco_1.jpg",
@@ -1953,7 +1953,7 @@ export const destinos ={
         "id": 4,
         "title": "Cayo Guillermo",
         "alternative_name": "Cayo Guillermo Destination",
-        "main_image": "/images/destinos/cayo_guillermo.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/destinos/cayo_guillermo_1.jpg",
@@ -1991,7 +1991,7 @@ export const destinos ={
         "id": 5,
         "title": "Cayo Santa María",
         "alternative_name": "Cayo Santa María Destination",
-        "main_image": "/images/destinos/cayo_santa_maría.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/destinos/cayo_santa_maría_1.jpg",
@@ -2029,7 +2029,7 @@ export const destinos ={
         "id": 6,
         "title": "Cienfuegos",
         "alternative_name": "Cienfuegos Destination",
-        "main_image": "/images/destinos/cienfuegos.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/destinos/cienfuegos_1.jpg",
@@ -2085,7 +2085,7 @@ export const destinos ={
         "id": 7,
         "title": "Havana",
         "alternative_name": "Havana Destination",
-        "main_image": "/images/destinos/la_habana.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/destinos/la_habana_1.jpg",
@@ -2132,7 +2132,7 @@ export const destinos ={
         "id": 8,
         "title": "Santa Clara",
         "alternative_name": "Santa Clara Destination",
-        "main_image": "/images/destinos/santa_clara.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/destinos/santa_clara_1.jpg",
@@ -2188,7 +2188,7 @@ export const destinos ={
         "id": 9,
         "title": "Trinidad",
         "alternative_name": "Trinidad Destination",
-        "main_image": "/images/destinos/trinidad.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/destinos/trinidad_1.jpg",
@@ -2244,7 +2244,7 @@ export const destinos ={
         "id": 10,
         "title": "Varadero",
         "alternative_name": "Varadero Destination",
-        "main_image": "/images/destinos/varadero.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/destinos/varadero_1.jpg",
@@ -2291,7 +2291,7 @@ export const destinos ={
         "id": 11,
         "title": "Viñales",
         "alternative_name": "Viñales Destination",
-        "main_image": "/images/destinos/viñales.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/destinos/viñales_1.jpg",
@@ -2342,7 +2342,7 @@ export const destinos ={
         "id": 1,
         "title": "Aéroport de La Havane",
         "alternative_name": "Destination Aéroport de La Havane",
-        "main_image": "/images/destinos/aeropuerto_habana.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/destinos/aeropuerto_habana_1.jpg",
@@ -2389,7 +2389,7 @@ export const destinos ={
         "id": 2,
         "title": "Aéroport de Varadero",
         "alternative_name": "Destination Aéroport de Varadero",
-        "main_image": "/images/destinos/aeropuerto_varadero.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/destinos/aeropuerto_varadero_1.jpg",
@@ -2427,7 +2427,7 @@ export const destinos ={
         "id": 3,
         "title": "Cayo Coco",
         "alternative_name": "Destination Cayo Coco",
-        "main_image": "/images/destinos/cayo_coco.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/destinos/cayo_coco_1.jpg",
@@ -2465,7 +2465,7 @@ export const destinos ={
         "id": 4,
         "title": "Cayo Guillermo",
         "alternative_name": "Destination Cayo Guillermo",
-        "main_image": "/images/destinos/cayo_guillermo.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/destinos/cayo_guillermo_1.jpg",
@@ -2503,7 +2503,7 @@ export const destinos ={
         "id": 5,
         "title": "Cayo Santa María",
         "alternative_name": "Destination Cayo Santa María",
-        "main_image": "/images/destinos/cayo_santa_maría.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/destinos/cayo_santa_maría_1.jpg",
@@ -2541,7 +2541,7 @@ export const destinos ={
         "id": 6,
         "title": "Cienfuegos",
         "alternative_name": "Destination Cienfuegos",
-        "main_image": "/images/destinos/cienfuegos.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/destinos/cienfuegos_1.jpg",
@@ -2597,7 +2597,7 @@ export const destinos ={
         "id": 7,
         "title": "La Havane",
         "alternative_name": "Destination La Havane",
-        "main_image": "/images/destinos/la_habana.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/destinos/la_habana_1.jpg",
@@ -2644,7 +2644,7 @@ export const destinos ={
         "id": 8,
         "title": "Santa Clara",
         "alternative_name": "Destination Santa Clara",
-        "main_image": "/images/destinos/santa_clara.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/destinos/santa_clara_1.jpg",
@@ -2700,7 +2700,7 @@ export const destinos ={
         "id": 9,
         "title": "Trinidad",
         "alternative_name": "Destination Trinidad",
-        "main_image": "/images/destinos/trinidad.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/destinos/trinidad_1.jpg",
@@ -2756,7 +2756,7 @@ export const destinos ={
         "id": 10,
         "title": "Varadero",
         "alternative_name": "Destination Varadero",
-        "main_image": "/images/destinos/varadero.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/destinos/varadero_1.jpg",
@@ -2803,7 +2803,7 @@ export const destinos ={
         "id": 11,
         "title": "Viñales",
         "alternative_name": "Destination Viñales",
-        "main_image": "/images/destinos/viñales.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/destinos/viñales_1.jpg",
@@ -2854,7 +2854,7 @@ export const destinos ={
         "id": 1,
         "title": "Flughafen Havanna",
         "alternative_name": "Ziel Flughafen Havanna",
-        "main_image": "/images/destinos/aeropuerto_habana.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/destinos/aeropuerto_habana_1.jpg",
@@ -2901,7 +2901,7 @@ export const destinos ={
         "id": 2,
         "title": "Flughafen Varadero",
         "alternative_name": "Ziel Flughafen Varadero",
-        "main_image": "/images/destinos/aeropuerto_varadero.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/destinos/aeropuerto_varadero_1.jpg",
@@ -2939,7 +2939,7 @@ export const destinos ={
         "id": 3,
         "title": "Cayo Coco",
         "alternative_name": "Ziel Cayo Coco",
-        "main_image": "/images/destinos/cayo_coco.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/destinos/cayo_coco_1.jpg",
@@ -2977,7 +2977,7 @@ export const destinos ={
         "id": 4,
         "title": "Cayo Guillermo",
         "alternative_name": "Ziel Cayo Guillermo",
-        "main_image": "/images/destinos/cayo_guillermo.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/destinos/cayo_guillermo_1.jpg",
@@ -3015,7 +3015,7 @@ export const destinos ={
         "id": 5,
         "title": "Cayo Santa María",
         "alternative_name": "Ziel Cayo Santa María",
-        "main_image": "/images/destinos/cayo_santa_maría.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/destinos/cayo_santa_maría_1.jpg",
@@ -3053,7 +3053,7 @@ export const destinos ={
         "id": 6,
         "title": "Cienfuegos",
         "alternative_name": "Ziel Cienfuegos",
-        "main_image": "/images/destinos/cienfuegos.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/destinos/cienfuegos_1.jpg",
@@ -3109,7 +3109,7 @@ export const destinos ={
         "id": 7,
         "title": "Havanna",
         "alternative_name": "Ziel Havanna",
-        "main_image": "/images/destinos/la_habana.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/destinos/la_habana_1.jpg",
@@ -3156,7 +3156,7 @@ export const destinos ={
         "id": 8,
         "title": "Santa Clara",
         "alternative_name": "Ziel Santa Clara",
-        "main_image": "/images/destinos/santa_clara.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/destinos/santa_clara_1.jpg",
@@ -3212,7 +3212,7 @@ export const destinos ={
         "id": 9,
         "title": "Trinidad",
         "alternative_name": "Ziel Trinidad",
-        "main_image": "/images/destinos/trinidad.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/destinos/trinidad_1.jpg",
@@ -3268,7 +3268,7 @@ export const destinos ={
         "id": 10,
         "title": "Varadero",
         "alternative_name": "Ziel Varadero",
-        "main_image": "/images/destinos/varadero.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/destinos/varadero_1.jpg",
@@ -3315,7 +3315,7 @@ export const destinos ={
         "id": 11,
         "title": "Viñales",
         "alternative_name": "Ziel Viñales",
-        "main_image": "/images/destinos/viñales.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/destinos/viñales_1.jpg",
@@ -3366,7 +3366,7 @@ export const destinos ={
         "id": 1,
         "title": "Аэропорт Гаваны",
         "alternative_name": "Направление Аэропорт Гаваны",
-        "main_image": "/images/destinos/aeropuerto_habana.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/destinos/aeropuerto_habana_1.jpg",
@@ -3413,7 +3413,7 @@ export const destinos ={
         "id": 2,
         "title": "Аэропорт Варадеро",
         "alternative_name": "Направление Аэропорт Варадеро",
-        "main_image": "/images/destinos/aeropuerto_varadero.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/destinos/aeropuerto_varadero_1.jpg",
@@ -3451,7 +3451,7 @@ export const destinos ={
         "id": 3,
         "title": "Кайо-Коко",
         "alternative_name": "Направление Кайо-Коко",
-        "main_image": "/images/destinos/cayo_coco.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/destinos/cayo_coco_1.jpg",
@@ -3489,7 +3489,7 @@ export const destinos ={
         "id": 4,
         "title": "Кайо-Гильермо",
         "alternative_name": "Направление Кайо-Гильермо",
-        "main_image": "/images/destinos/cayo_guillermo.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/destinos/cayo_guillermo_1.jpg",
@@ -3527,7 +3527,7 @@ export const destinos ={
         "id": 5,
         "title": "Кайо-Санта-Мария",
         "alternative_name": "Направление Кайо-Санта-Мария",
-        "main_image": "/images/destinos/cayo_santa_maría.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/destinos/cayo_santa_maría_1.jpg",
@@ -3565,7 +3565,7 @@ export const destinos ={
         "id": 6,
         "title": "Сьенфуэгос",
         "alternative_name": "Направление Сьенфуэгос",
-        "main_image": "/images/destinos/cienfuegos.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/destinos/cienfuegos_1.jpg",
@@ -3621,7 +3621,7 @@ export const destinos ={
         "id": 7,
         "title": "Гавана",
         "alternative_name": "Направление Гавана",
-        "main_image": "/images/destinos/la_habana.jpg",
+        "main_image": "/images/havana-capitol.jpg",
         "images": [
           {
             "url": "/images/destinos/la_habana_1.jpg",
