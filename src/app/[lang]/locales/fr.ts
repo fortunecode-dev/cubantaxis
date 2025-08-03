@@ -37,6 +37,8 @@ export const fr: AppTexts = {
     reserveNow: "Réserver Maintenant",
   },
   destinationsCard: {
+    subTitle:"Lugares a visitar en cuba",
+
     title: "Destinations",
     description: "Découvrez nos destinations les plus populaires.",
   },

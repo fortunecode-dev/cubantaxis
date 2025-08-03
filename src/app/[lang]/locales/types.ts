@@ -37,6 +37,7 @@ export interface AppTexts {
   };
   destinationsCard: {
     title: string;
+    subTitle:string;
     description: string;
   };
   excursionsCard: {

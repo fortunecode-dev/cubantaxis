@@ -10,19 +10,29 @@ interface Destination {
 
 interface DestinationsCardProps {
   destinations: Destination[];
-  idioma: AppTexts
+  idioma: AppTexts;
 }
 
 export default function DestinationsCard({ destinations, idioma }: DestinationsCardProps) {
-
   return (
-    <section className="py-20 bg-white">
-      <h2 className="text-3xl font-bold text-center mb-8">{idioma.destinationsCard.title}</h2>
-      <div className=" py-20 flex overflow-x-auto gap-6 px-4 scrollbar-hide snap-x snap-mandatory">
-        {destinations?.map((dest) => (
+    <section className="py-4 px-0 sm:px-6 lg:px-8 bg-white">
+      <div className="max-w-7xl mx-auto text-center mb-4">
+        <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900">
+          {idioma.destinationsCard.title}
+        </h2>
+        <p className="mt-2 text-lg text-gray-600">
+          {idioma.destinationsCard.subTitle}
+        </p>
+      </div>
+
+      {/* Abanico en móvil / centrado en desktop */}
+      <div className="flex sm:flex-wrap sm:justify-center gap-6 overflow-x-auto sm:overflow-visible px-1 pb-16 scrollbar-hide snap-x snap-mandatory">
+        {destinations?.map((dest, index) => (
           <article
             key={dest.id}
-            className="group min-w-[300px] snap-start rounded-xl overflow-hidden flex flex-col justify-between transition-transform transform hover:-translate-y-2 hover:shadow-2xl"
+            className={`snap-start shrink-0 w-72 sm:w-90 group rounded-xl overflow-hidden flex flex-col justify-between transition-transform transform hover:shadow-2xl ${
+              index === 0 ? "pl-4 sm:pl-0" : ""
+            }`}
           >
             <Image
               alt={dest.title}

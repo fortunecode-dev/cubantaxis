@@ -37,6 +37,8 @@ export const ru: AppTexts = {
     reserveNow: "Забронировать",
   },
   destinationsCard: {
+    subTitle:"Lugares a visitar en cuba",
+
     title: "Направления",
     description: "Откройте для себя наши самые популярные направления.",
   },
