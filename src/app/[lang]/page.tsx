@@ -15,14 +15,9 @@ export default async function Home({ params }: { params: Promise<{ lang: "en" | 
 
   return (
     <div className="font-sans">
-      <Header />
-      <Hero idioma={idioma} />
+      <Hero idioma={idioma} lang={(await params).lang}/>
       <DestinationsCard name={"destinations"} destinations={destinos[(await params).lang]?.destinations} idioma={idioma} />
       <DestinationsCard name={"excursions"} destinations={excursiones[(await params).lang]?.excursions} idioma={idioma} />
-      <QuickBookingForm />
-      <ExtendedBookingForm />
-      <FloatingContacts/>
-      <Footer />
     </div>
   );
 }

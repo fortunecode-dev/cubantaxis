@@ -45,20 +45,42 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 w-full z-50 backdrop-blur-md bg-amber-400 border-b border-white/30 px-4 py-2 flex justify-end items-center rounded-b-lg">
-      <div className="flex gap-4 text-neutral-800 text-2xl">
-        <a href="https://www.facebook.com/CubanTaxis/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-          <FaFacebookF />
-        </a>
-        <a href="https://www.instagram.com/cubantaxis/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-          <FaInstagram />
-        </a>
-        <button onClick={() => sendEmptyReservation("whatsapp")} aria-label="WhatsApp" className="hover:text-green-600">
-          <FaWhatsapp />
-        </button>
-        <button onClick={() => sendEmptyReservation("telegram")} aria-label="Telegram" className="hover:text-blue-500">
-          <FaTelegram />
-        </button>
-      </div>
+               {/* Redes sociales */}
+        <div className="flex items-center gap-4 text-xl mx-5">
+          <a
+            href="https://www.facebook.com/CubanTaxis/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+            className="hover:text-blue-700 transition-colors"
+          >
+            <FaFacebookF />
+          </a>
+          <a
+            href="https://www.instagram.com/cubantaxis/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            className="hover:text-pink-600 transition-colors"
+          >
+            <FaInstagram />
+          </a>
+          <button
+            onClick={() => sendEmptyReservation('whatsapp')}
+            aria-label="WhatsApp"
+            className="hover:text-green-600 transition-colors"
+          >
+            <FaWhatsapp />
+          </button>
+          <button
+            onClick={() => sendEmptyReservation('telegram')}
+            aria-label="Telegram"
+            className="hover:text-blue-500 transition-colors"
+          >
+            <FaTelegram />
+          </button>
+        </div>
+      
     </header>
   );
 }

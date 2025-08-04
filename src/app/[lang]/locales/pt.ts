@@ -56,6 +56,22 @@ export const pt: AppTexts = {
       whatsapp: "Fale conosco pelo WhatsApp"
     }
   }
+,quickForm: {
+  phone: "Telefone",
+  from: "De",
+  to: "Para",
+  date: "Data",
+  time: "Hora",
+  vehicle: "Veículo",
+  passengers: "Passageiros",
+  luggage: "Bagagem / Observações",
+  luggagePlaceholder: "2 malas e 1 mochila",
+  bookViaWhatsapp: "Reservar via WhatsApp",
+  bookViaTelegram: "Reservar via Telegram",
+  requestTitle: "🚕 Pedido de reserva rápida",
+  locations: ["Havana", "Varadero", "Viñales", "Trinidad"],
+  vehicles: ["Sedan", "Van", "SUV"]
+}
 
 
 };

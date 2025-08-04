@@ -53,6 +53,21 @@ export interface AppTexts {
       instagram: string,
       whatsapp: string
     }
-  }
+  },quickForm: {
+  phone: string;
+  from: string;
+  to: string;
+  date: string;
+  time: string;
+  vehicle: string;
+  passengers: string;
+  luggage: string;
+  luggagePlaceholder: string;
+  bookViaWhatsapp: string;
+  bookViaTelegram: string;
+  requestTitle: string;
+  locations: string[];
+  vehicles: string[];
+}
 
 }

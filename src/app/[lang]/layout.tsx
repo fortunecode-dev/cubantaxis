@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Header from "@/modules/layout/Header";
+import Footer from "@/modules/layout/Footer";
+import FloatingContacts from "@/modules/layout/FloatingContacts";
+import Head from "next/head";
 export async function generateStaticParams() {
   return [{ lang: "en" }, { lang: "es" }, { lang: "fr" }, { lang: "de" }, { lang: "ru" }, { lang: "pt" }]
 }
@@ -19,10 +23,20 @@ export default async function RootLayout({
 }>) {
   return (
     <html lang={(await params).lang}>
+      <Head>
+        <title>Traslados en Cuba | Taxi desde Aeropuerto, Varadero, Viñales y más</title>
+        <meta name="description" content="Reserva traslados privados desde el Aeropuerto de La Habana, Varadero, Viñales y más destinos turísticos en Cuba. Viaja cómodo y seguro con nosotros." />
+        <meta name="keywords" content="traslados cuba, taxi aeropuerto la habana, viajes varadero, excursiones viñales, traslados privados cuba" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://tusitio.com/" />
+      </Head>
       <body
         className={`antialiased`}
       >
+        <Header />
         {children}
+        <FloatingContacts />
+        <Footer />
       </body>
     </html>
   );

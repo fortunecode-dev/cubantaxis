@@ -1,8 +1,10 @@
 "use client"
 
 import { AppTexts } from "@/app/[lang]/locales/types"
+import { Router } from "next/router"
 import React from "react"
-
+import Link from 'next/link'
+ 
 const servicios = [
     "Traslados privados",
     "City Tours",
@@ -12,7 +14,7 @@ const servicios = [
     "Servicio de guía"
 ]
 
-export default function Hero({ idioma }: { idioma: AppTexts }) {
+export default function Hero({ idioma,lang }: { idioma: AppTexts,lang:string }) {
     return (
         <header className="relative bg-black overflow-hidden mt-[25px] pt-5 rounded-b-lg">
             {/* Fondo Masonry */}
@@ -52,9 +54,9 @@ export default function Hero({ idioma }: { idioma: AppTexts }) {
                                 {idioma.hero.buttons.excursions}
                             </a>
 
-                            <button className="w-full md:w-auto bg-amber-400 hover:bg-yellow-300 text-black px-6 py-3 rounded-xl font-semibold transition">
+                            <Link href={`/${lang}/book-a-travel`} className="w-full md:w-auto bg-amber-400 hover:bg-yellow-300 text-black px-6 py-3 rounded-xl font-semibold transition" >
                                 {idioma.hero.buttons.fastBooking}
-                            </button>
+                            </Link>
                         </div>
                     </div>
 

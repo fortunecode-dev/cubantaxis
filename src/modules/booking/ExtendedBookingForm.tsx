@@ -76,7 +76,7 @@ export default function ExtendedBookingForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="mx-auto my-20 max-w-4xl bg-white p-6 md:p-10 rounded-2xl shadow-lg grid grid-cols-1 md:grid-cols-2 gap-6 border border-yellow-100"
+      className="mx-auto my-3 max-w-4xl bg-white p-6 md:p-10 rounded-2xl shadow-lg grid grid-cols-1 md:grid-cols-2 gap-6 border border-yellow-100"
     >
       {[
         { id: "name", label: "📛 Full Name", type: "text", placeholder: "John Doe" },

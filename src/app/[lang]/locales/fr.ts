@@ -55,7 +55,23 @@ export const fr: AppTexts = {
       instagram: "Suivez-nous sur Instagram",
       whatsapp: "Contactez-nous via WhatsApp"
     }
-  }
+  },quickForm: {
+  phone: "Téléphone",
+  from: "De",
+  to: "À",
+  date: "Date",
+  time: "Heure",
+  vehicle: "Véhicule",
+  passengers: "Passagers",
+  luggage: "Bagages / Notes",
+  luggagePlaceholder: "2 valises et 1 sac à dos",
+  bookViaWhatsapp: "Réserver via WhatsApp",
+  bookViaTelegram: "Réserver via Telegram",
+  requestTitle: "🚕 Demande de réservation rapide",
+  locations: ["La Havane", "Varadero", "Viñales", "Trinidad"],
+  vehicles: ["Berline", "Van", "SUV"]
+}
+
 
 
 };
