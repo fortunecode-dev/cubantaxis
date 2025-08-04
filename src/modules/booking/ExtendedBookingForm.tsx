@@ -1,5 +1,7 @@
 "use client";
+
 import { useState } from "react";
+import { FaWhatsapp } from "react-icons/fa";
 
 interface BookingData {
   name: string;
@@ -50,234 +52,110 @@ export default function ExtendedBookingForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      // Subida a Supabase o API si es necesario
-      const uploadedImageLinks = formData.images.map((file) => file.name); // Placeholder
+      const form = new FormData();
+      Object.entries(formData).forEach(([key, value]) => {
+        if (key === "images") {
+          (value as File[]).forEach((file) => form.append("images", file));
+        } else {
+          form.append(key, value);
+        }
+      });
 
-      // Mensaje de WhatsApp
-      const message = `Hello! I want to book a transfer.
-Name: ${formData.name}
-Email: ${formData.email}
-Phone: ${formData.phone}
-From: ${formData.from}
-To: ${formData.to}
-Date: ${formData.date}
-Time: ${formData.time}
-Vehicle: ${formData.vehicle}
-Passengers: ${formData.passengers}
-Luggage: ${formData.luggage}
-Details: ${formData.details}
-Images: ${uploadedImageLinks.join(", ")}`;
+      await fetch("/api/telegram-booking", {
+        method: "POST",
+        body: form,
+      });
 
-      const whatsappNumber = "+5355432748";
-      window.location.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-        message
-      )}`;
+      alert("Reserva enviada correctamente por Telegram");
     } catch (error) {
-      console.error("Error:", error);
+      console.error("Error al enviar la reserva:", error);
+      alert("Hubo un error al enviar la reserva. Inténtalo de nuevo.");
     }
   };
 
   return (
     <form
       onSubmit={handleSubmit}
-      className="my-20 max-w-4xl mx-auto bg-white p-4 md:p-6 rounded-lg shadow-md grid grid-cols-1 md:grid-cols-2 gap-3"
+      className="mx-auto my-20 max-w-4xl bg-white p-6 md:p-10 rounded-2xl shadow-lg grid grid-cols-1 md:grid-cols-2 gap-6 border border-yellow-100"
     >
-      {/* Name */}
-      <div className="flex flex-col">
-        <label htmlFor="name" className="mb-1 text-sm font-medium text-gray-900">
-          Full Name
-        </label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 w-full p-2"
-          placeholder="John Doe"
-          required
-        />
-      </div>
+      {[
+        { id: "name", label: "📛 Full Name", type: "text", placeholder: "John Doe" },
+        { id: "email", label: "✉️ Email", type: "email", placeholder: "john@example.com" },
+        { id: "phone", label: "📞 Phone", type: "tel", placeholder: "+53 555 432 748" },
+        { id: "date", label: "📅 Date", type: "date", min: new Date().toISOString().split("T")[0] },
+        { id: "time", label: "🕒 Time", type: "time" },
+        { id: "passengers", label: "👥 Passengers", type: "number", min: 1, max: 10 },
+        { id: "luggage", label: "🎒 Luggage", type: "text", placeholder: "2 suitcases + 1 backpack" },
+      ].map((field) => (
+        <div key={field.id} className="flex flex-col">
+          <label htmlFor={field.id} className="text-sm font-semibold text-gray-800 mb-1">
+            {field.label}
+          </label>
+          <input
+            {...field}
+            name={field.id}
+            value={(formData as any)[field.id]}
+            onChange={handleChange}
+            className="rounded-lg border border-gray-300 px-3 py-2 text-sm focus:ring-2 focus:ring-yellow-400 focus:outline-none"
+            required={field.type !== "text"}
+          />
+        </div>
+      ))}
 
-      {/* Email */}
       <div className="flex flex-col">
-        <label htmlFor="email" className="mb-1 text-sm font-medium text-gray-900">
-          Email
-        </label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 w-full p-2"
-          placeholder="john@example.com"
-          required
-        />
-      </div>
-
-      {/* Phone */}
-      <div className="flex flex-col">
-        <label htmlFor="phone" className="mb-1 text-sm font-medium text-gray-900">
-          Phone Number
-        </label>
-        <input
-          type="tel"
-          id="phone"
-          name="phone"
-          value={formData.phone}
-          onChange={handleChange}
-          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 w-full p-2"
-          placeholder="+53 555 432 748"
-          required
-        />
-      </div>
-
-      {/* Vehicle */}
-      <div className="flex flex-col">
-        <label htmlFor="vehicle" className="mb-1 text-sm font-medium text-gray-900">
-          Vehicle Type
+        <label htmlFor="vehicle" className="text-sm font-semibold text-gray-800 mb-1">
+          🚗 Vehicle Type
         </label>
         <select
-          id="vehicle"
           name="vehicle"
           value={formData.vehicle}
           onChange={handleChange}
-          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 w-full p-2"
+          className="rounded-lg border border-gray-300 px-3 py-2 text-sm focus:ring-2 focus:ring-yellow-400 focus:outline-none"
         >
-          {vehicles.map((veh) => (
-            <option key={veh} value={veh}>
-              {veh}
-            </option>
+          {vehicles.map((v) => (
+            <option key={v} value={v}>{v}</option>
           ))}
         </select>
       </div>
 
-      {/* From */}
-      <div className="flex flex-col">
-        <label htmlFor="from" className="mb-1 text-sm font-medium text-gray-900">
-          From
-        </label>
-        <select
-          id="from"
-          name="from"
-          value={formData.from}
-          onChange={handleChange}
-          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 w-full p-2"
-        >
-          {locations.filter((loc) => loc !== formData.to).map((loc) => (
-            <option key={loc} value={loc}>
-              {loc}
-            </option>
-          ))}
-        </select>
-      </div>
+      {[
+        { id: "from", label: "📍 From", options: locations.filter((l) => l !== formData.to) },
+        { id: "to", label: "🏁 To", options: locations.filter((l) => l !== formData.from) },
+      ].map((field) => (
+        <div key={field.id} className="flex flex-col">
+          <label htmlFor={field.id} className="text-sm font-semibold text-gray-800 mb-1">
+            {field.label}
+          </label>
+          <select
+            name={field.id}
+            value={(formData as any)[field.id]}
+            onChange={handleChange}
+            className="rounded-lg border border-gray-300 px-3 py-2 text-sm focus:ring-2 focus:ring-yellow-400 focus:outline-none"
+          >
+            {field.options.map((loc: string) => (
+              <option key={loc} value={loc}>{loc}</option>
+            ))}
+          </select>
+        </div>
+      ))}
 
-      {/* To */}
-      <div className="flex flex-col">
-        <label htmlFor="to" className="mb-1 text-sm font-medium text-gray-900">
-          To
-        </label>
-        <select
-          id="to"
-          name="to"
-          value={formData.to}
-          onChange={handleChange}
-          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 w-full p-2"
-        >
-          {locations.filter((loc) => loc !== formData.from).map((loc) => (
-            <option key={loc} value={loc}>
-              {loc}
-            </option>
-          ))}
-        </select>
-      </div>
-
-      {/* Date */}
-      <div className="flex flex-col">
-        <label htmlFor="date" className="mb-1 text-sm font-medium text-gray-900">
-          Date
-        </label>
-        <input
-          type="date"
-          id="date"
-          name="date"
-          value={formData.date}
-          onChange={handleChange}
-          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 w-full p-2"
-          min={new Date().toISOString().split("T")[0]}
-          required
-        />
-      </div>
-
-      {/* Time */}
-      <div className="flex flex-col">
-        <label htmlFor="time" className="mb-1 text-sm font-medium text-gray-900">
-          Time
-        </label>
-        <input
-          type="time"
-          id="time"
-          name="time"
-          value={formData.time}
-          onChange={handleChange}
-          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 w-full p-2"
-          required
-        />
-      </div>
-
-      {/* Passengers */}
-      <div className="flex flex-col">
-        <label htmlFor="passengers" className="mb-1 text-sm font-medium text-gray-900">
-          Passengers
-        </label>
-        <input
-          type="number"
-          id="passengers"
-          name="passengers"
-          value={formData.passengers}
-          onChange={handleChange}
-          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 w-full p-2"
-          min="1"
-          max="10"
-          required
-        />
-      </div>
-
-      {/* Luggage */}
-      <div className="flex flex-col">
-        <label htmlFor="luggage" className="mb-1 text-sm font-medium text-gray-900">
-          Luggage Description
-        </label>
-        <input
-          id="luggage"
-          name="luggage"
-          value={formData.luggage}
-          onChange={handleChange}
-          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 w-full p-2"
-          placeholder="2 suitcases and 1 backpack"
-        />
-      </div>
-
-      {/* Details */}
       <div className="flex flex-col md:col-span-2">
-        <label htmlFor="details" className="mb-1 text-sm font-medium text-gray-900">
-          Additional Details
+        <label htmlFor="details" className="text-sm font-semibold text-gray-800 mb-1">
+          📝 Additional Details
         </label>
         <textarea
           id="details"
           name="details"
           value={formData.details}
           onChange={handleChange}
-          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 w-full p-2"
-          placeholder="Special instructions or details about your trip..."
+          className="rounded-lg border border-gray-300 px-3 py-2 text-sm focus:ring-2 focus:ring-yellow-400 focus:outline-none"
+          placeholder="Any special requests or info..."
         />
       </div>
 
-      {/* Images */}
       <div className="flex flex-col md:col-span-2">
-        <label htmlFor="images" className="mb-1 text-sm font-medium text-gray-900">
-          Attach Images
+        <label htmlFor="images" className="text-sm font-semibold text-gray-800 mb-1">
+          📎 Attach Images
         </label>
         <input
           type="file"
@@ -286,15 +164,15 @@ Images: ${uploadedImageLinks.join(", ")}`;
           accept="image/*"
           multiple
           onChange={handleImageUpload}
-          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-yellow-500 focus:border-yellow-500 w-full p-2"
+          className="rounded-lg border border-gray-300 px-3 py-2 text-sm focus:ring-2 focus:ring-yellow-400 focus:outline-none"
         />
       </div>
 
       <button
         type="submit"
-        className="md:col-span-2 text-white bg-yellow-500 hover:bg-yellow-600 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+        className="md:col-span-2 bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-3 rounded-lg transition-colors shadow-md text-center"
       >
-        Reserve Now
+        <FaWhatsapp className="inline-block mr-2" /> Reservar vía Telegram
       </button>
     </form>
   );
