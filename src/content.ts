@@ -5,26 +5,26 @@ export const content = {
         id: 1,
         title: "Havana City",
         description: "Explore the culture and history of Havana.",
-        image: "/images/havana.jpg",
+        image: "havana.jpg",
       },
       {
         id: 2,
         title: "Varadero Beach",
         description: "Enjoy one of Cuba's most famous beaches.",
-        image: "/images/havana.jpg",
+        image: "havana.jpg",
       },
       {
         id: 3,
-        title: "Viñales Valley",
+        title: "/viñales Valley",
         description: "Discover the natural beauty of Viñales.",
-        image: "/images/havana.jpg",
+        image: "havana.jpg",
       },
     ],
     excursions: [
       {
         id: 1,
         title: "Havana Tour",
-        image: "/images/havana.jpg",
+        image: "havana.jpg",
         places: [
           "El Morro",
           "Cathedral Square",
@@ -37,10 +37,10 @@ export const content = {
       {
         id: 2,
         title: "Havana - Viñales",
-        image: "/images/viñales.jpg",
+        image: "/viñales.jpg",
         places: [
           "Miramar",
-          "Viñales Valley",
+          "/viñales Valley",
           "Los Jazmines Viewpoint",
           "Indian Cave",
           "Tobacco Plantation",
@@ -50,7 +50,7 @@ export const content = {
       {
         id: 3,
         title: "Havana - Eastern Beaches",
-        image: "/images/playa_del_este.jpg",
+        image: "playa_del_este.jpg",
         places: [
           "Havana Tunnel",
           "Morro Castle",
@@ -69,26 +69,26 @@ export const content = {
         id: 1,
         title: "Ciudad de La Habana",
         description: "Explora la cultura e historia de La Habana.",
-        image: "/images/havana.jpg",
+        image: "havana.jpg",
       },
       {
         id: 2,
         title: "Playa Varadero",
         description: "Disfruta de una de las playas más famosas de Cuba.",
-        image: "/images/havana.jpg",
+        image: "havana.jpg",
       },
       {
         id: 3,
         title: "Valle de Viñales",
         description: "Descubre la belleza natural de Viñales.",
-        image: "/images/havana.jpg",
+        image: "havana.jpg",
       },
     ],
     excursions: [
       {
         id: 1,
         title: "Tour por La Habana",
-        image: "/images/havana.jpg",
+        image: "havana.jpg",
         places: [
           "El Morro",
           "Plaza de la Catedral",
@@ -101,7 +101,7 @@ export const content = {
       {
         id: 2,
         title: "La Habana - Viñales",
-        image: "/images/viñales.jpg",
+        image: "/viñales.jpg",
         places: [
           "Miramar",
           "Valle de Viñales",
@@ -114,7 +114,7 @@ export const content = {
       {
         id: 3,
         title: "La Habana - Playas del Este",
-        image: "/images/playa_del_este.jpg",
+        image: "playa_del_este.jpg",
         places: [
           "Túnel de La Habana",
           "Castillo del Morro",
@@ -133,26 +133,26 @@ export const content = {
         id: 1,
         title: "Ville de La Havane",
         description: "Explorez la culture et l'histoire de La Havane.",
-        image: "/images/havana.jpg",
+        image: "havana.jpg",
       },
       {
         id: 2,
         title: "Plage de Varadero",
         description: "Profitez de l'une des plages les plus célèbres de Cuba.",
-        image: "/images/havana.jpg",
+        image: "havana.jpg",
       },
       {
         id: 3,
         title: "Vallée de Viñales",
         description: "Découvrez la beauté naturelle de Viñales.",
-        image: "/images/havana.jpg",
+        image: "havana.jpg",
       },
     ],
     excursions: [
       {
         id: 1,
         title: "Tour de La Havane",
-        image: "/images/havana.jpg",
+        image: "havana.jpg",
         places: [
           "El Morro",
           "Place de la Cathédrale",
@@ -165,7 +165,7 @@ export const content = {
       {
         id: 2,
         title: "La Havane - Viñales",
-        image: "/images/viñales.jpg",
+        image: "/viñales.jpg",
         places: [
           "Miramar",
           "Vallée de Viñales",
@@ -178,7 +178,7 @@ export const content = {
       {
         id: 3,
         title: "La Havane - Plages de l'Est",
-        image: "/images/playa_del_este.jpg",
+        image: "playa_del_este.jpg",
         places: [
           "Tunnel de La Havane",
           "Château du Morro",
@@ -197,26 +197,26 @@ export const content = {
         id: 1,
         title: "Havanna Stadt",
         description: "Erkunden Sie die Kultur und Geschichte von Havanna.",
-        image: "/images/havana.jpg",
+        image: "havana.jpg",
       },
       {
         id: 2,
         title: "Varadero Strand",
         description: "Genießen Sie einen der berühmtesten Strände Kubas.",
-        image: "/images/havana.jpg",
+        image: "havana.jpg",
       },
       {
         id: 3,
-        title: "Viñales Tal",
+        title: "/viñales Tal",
         description: "Entdecken Sie die natürliche Schönheit von Viñales.",
-        image: "/images/havana.jpg",
+        image: "havana.jpg",
       },
     ],
     excursions: [
       {
         id: 1,
         title: "Havanna Tour",
-        image: "/images/havana.jpg",
+        image: "havana.jpg",
         places: [
           "El Morro",
           "Kathedralenplatz",
@@ -229,10 +229,10 @@ export const content = {
       {
         id: 2,
         title: "Havanna - Viñales",
-        image: "/images/viñales.jpg",
+        image: "/viñales.jpg",
         places: [
           "Miramar",
-          "Viñales Tal",
+          "/viñales Tal",
           "Los Jazmines Aussichtspunkt",
           "Indio Höhle",
           "Tabakplantage",
@@ -242,7 +242,7 @@ export const content = {
       {
         id: 3,
         title: "Havanna - Strände des Ostens",
-        image: "/images/playa_del_este.jpg",
+        image: "playa_del_este.jpg",
         places: [
           "Havanna Tunnel",
           "Morro Schloss",
@@ -261,26 +261,26 @@ export const content = {
         id: 1,
         title: "Город Гавана",
         description: "Исследуйте культуру и историю Гаваны.",
-        image: "/images/havana.jpg",
+        image: "havana.jpg",
       },
       {
         id: 2,
         title: "Пляж Варадеро",
         description: "Наслаждайтесь одним из самых известных пляжей Кубы.",
-        image: "/images/havana.jpg",
+        image: "havana.jpg",
       },
       {
         id: 3,
         title: "Долина Виньялес",
         description: "Откройте для себя природную красоту Виньялеса.",
-        image: "/images/havana.jpg",
+        image: "havana.jpg",
       },
     ],
     excursions: [
       {
         id: 1,
         title: "Тур по Гаване",
-        image: "/images/havana.jpg",
+        image: "havana.jpg",
         places: [
           "Эль Морро",
           "Площадь Собора",
@@ -293,7 +293,7 @@ export const content = {
       {
         id: 2,
         title: "Гавана - Виньялес",
-        image: "/images/viñales.jpg",
+        image: "/viñales.jpg",
         places: [
           "Мирамар",
           "Долина Виньялес",
@@ -306,7 +306,7 @@ export const content = {
       {
         id: 3,
         title: "Гавана - Восточные Пляжи",
-        image: "/images/playa_del_este.jpg",
+        image: "playa_del_este.jpg",
         places: [
           "Тоннель Гаваны",
           "Крепость Морро",
@@ -325,26 +325,26 @@ export const content = {
         id: 1,
         title: "Cidade de Havana",
         description: "Explore a cultura e a história de Havana.",
-        image: "/images/havana.jpg",
+        image: "havana.jpg",
       },
       {
         id: 2,
         title: "Praia de Varadero",
         description: "Aproveite uma das praias mais famosas de Cuba.",
-        image: "/images/havana.jpg",
+        image: "havana.jpg",
       },
       {
         id: 3,
         title: "Vale de Viñales",
         description: "Descubra a beleza natural de Viñales.",
-        image: "/images/havana.jpg",
+        image: "havana.jpg",
       },
     ],
     excursions: [
       {
         id: 1,
         title: "Tour por Havana",
-        image: "/images/havana.jpg",
+        image: "havana.jpg",
         places: [
           "El Morro",
           "Praça da Catedral",
@@ -357,7 +357,7 @@ export const content = {
       {
         id: 2,
         title: "Havana - Viñales",
-        image: "/images/viñales.jpg",
+        image: "/viñales.jpg",
         places: [
           "Miramar",
           "Vale de Viñales",
@@ -370,7 +370,7 @@ export const content = {
       {
         id: 3,
         title: "Havana - Praias do Leste",
-        image: "/images/playa_del_este.jpg",
+        image: "playa_del_este.jpg",
         places: [
           "Túnel de Havana",
           "Castelo do Morro",
@@ -391,14 +391,14 @@ export const excursiones={
         "id": 1,
         "title": "Habana City Tour",
         "alternative_name": "City Tour Habana",
-        "main_image": "/images/havana-capitol.jpg",
+        "main_image": "/havana-capitol.jpg",
         "images": [
           {
-            "url": "/images/havana.jpg",
+            "url": "havana.jpg",
             "alt": "Vista del Malecón"
           },
           {
-            "url": "/images/habana_2.jpg",
+            "url": "habana_2.jpg",
             "alt": "Capitolio de La Habana"
           }
         ],
@@ -408,12 +408,12 @@ export const excursiones={
           {
             "title": "El Capitolio",
             "description": "Edificio emblemático de La Habana.",
-            "image": "/images/lugares/capitolio.jpg"
+            "image": "lugares/capitolio.jpg"
           },
           {
             "title": "Malecón de La Habana",
             "description": "Paseo marítimo icónico de la ciudad.",
-            "image": "/images/lugares/malecon.jpg"
+            "image": "lugares/malecon.jpg"
           }
         ]
       },
@@ -421,14 +421,14 @@ export const excursiones={
         "id": 2,
         "title": "Habana Tour Estándar",
         "alternative_name": "Tour Estándar Habana",
-        "main_image": "/images/havana-tour.jpg",
+        "main_image": "/havana-tour.jpg",
         "images": [
           {
-            "url": "/images/habana_estandar_1.jpg",
+            "url": "habana_estandar_1.jpg",
             "alt": "Vista Plaza de la Catedral"
           },
           {
-            "url": "/images/habana_estandar_2.jpg",
+            "url": "habana_estandar_2.jpg",
             "alt": "Plaza Vieja"
           }
         ],
@@ -438,12 +438,12 @@ export const excursiones={
           {
             "title": "Plaza de la Catedral",
             "description": "Una de las plazas más icónicas de La Habana Vieja.",
-            "image": "/images/lugares/plaza_catedral.jpg"
+            "image": "lugares/plaza_catedral.jpg"
           },
           {
             "title": "Floridita",
             "description": "Bar favorito de Ernest Hemingway.",
-            "image": "/images/lugares/floridita.jpg"
+            "image": "lugares/floridita.jpg"
           }
         ]
       },
@@ -451,14 +451,14 @@ export const excursiones={
         "id": 3,
         "title": "Tour La Habana – Viñales – La Habana",
         "alternative_name": "Tour Habana-Viñales",
-        "main_image": "/images/viñales.jpg",
+        "main_image": "/viñales.jpg",
         "images": [
           {
-            "url": "/images/vinales_1.jpg",
+            "url": "vinales_1.jpg",
             "alt": "Valle de Viñales"
           },
           {
-            "url": "/images/vinales_2.jpg",
+            "url": "vinales_2.jpg",
             "alt": "Mural de la Prehistoria"
           }
         ],
@@ -468,12 +468,12 @@ export const excursiones={
           {
             "title": "Valle de Viñales",
             "description": "Paisaje natural único con plantaciones de tabaco.",
-            "image": "/images/lugares/valle_vinales.jpg"
+            "image": "lugares/valle_vinales.jpg"
           },
           {
             "title": "Cueva del Indio",
             "description": "Cueva navegable de origen milenario.",
-            "image": "/images/lugares/cueva_indio.jpg"
+            "image": "lugares/cueva_indio.jpg"
           }
         ]
       },
@@ -481,14 +481,14 @@ export const excursiones={
         "id": 4,
         "title": "Tour La Habana – Playas del Este – La Habana",
         "alternative_name": "Tour Playas del Este",
-        "main_image": "/images/playa-del-este.jpg",
+        "main_image": "/playa-del-este.jpg",
         "images": [
           {
-            "url": "/images/playas_este_1.jpg",
+            "url": "playas_este_1.jpg",
             "alt": "Playa Santa María"
           },
           {
-            "url": "/images/playas_este_2.jpg",
+            "url": "playas_este_2.jpg",
             "alt": "Costa de La Habana"
           }
         ],
@@ -498,12 +498,12 @@ export const excursiones={
           {
             "title": "Playa Santa María",
             "description": "Playa con aguas cristalinas y arenas blancas.",
-            "image": "/images/lugares/playa_santa_maria.jpg"
+            "image": "lugares/playa_santa_maria.jpg"
           },
           {
             "title": "Mi Cayito",
             "description": "Pequeña playa popular cercana a La Habana.",
-            "image": "/images/lugares/mi_cayito.jpg"
+            "image": "lugares/mi_cayito.jpg"
           }
         ]
       },
@@ -511,14 +511,14 @@ export const excursiones={
         "id": 5,
         "title": "Excursión Varadero – Cienfuegos – Santa Clara – Trinidad",
         "alternative_name": "Tour 3 Ciudades",
-        "main_image": "/images/trinidad.jpg",
+        "main_image": "/trinidad.jpg",
         "images": [
           {
-            "url": "/images/cienfuegos_1.jpg",
+            "url": "cienfuegos_1.jpg",
             "alt": "Vista Parque José Martí en Cienfuegos"
           },
           {
-            "url": "/images/trinidad_1.jpg",
+            "url": "trinidad_1.jpg",
             "alt": "Plaza Mayor de Trinidad"
           }
         ],
@@ -528,12 +528,12 @@ export const excursiones={
           {
             "title": "Mausoleo del Che",
             "description": "Complejo escultórico dedicado al Che Guevara en Santa Clara.",
-            "image": "/images/lugares/mausoleo_che.jpg"
+            "image": "lugares/mausoleo_che.jpg"
           },
           {
             "title": "Plaza Mayor de Trinidad",
             "description": "Corazón colonial de Trinidad.",
-            "image": "/images/lugares/plaza_mayor_trinidad.jpg"
+            "image": "lugares/plaza_mayor_trinidad.jpg"
           }
         ]
       }
@@ -545,14 +545,14 @@ export const excursiones={
         "id": 1,
         "title": "Havana City Tour",
         "alternative_name": "City Tour Habana",
-        "main_image": "/images/havana-capitol.jpg",
+        "main_image": "/havana-capitol.jpg",
         "images": [
           {
-            "url": "/images/habana_1.jpg",
+            "url": "habana_1.jpg",
             "alt": "View of Malecón"
           },
           {
-            "url": "/images/habana_2.jpg",
+            "url": "habana_2.jpg",
             "alt": "Havana Capitol"
           }
         ],
@@ -562,12 +562,12 @@ export const excursiones={
           {
             "title": "The Capitol",
             "description": "Iconic building of Havana.",
-            "image": "/images/lugares/capitolio.jpg"
+            "image": "lugares/capitolio.jpg"
           },
           {
             "title": "Havana Malecón",
             "description": "Iconic seaside promenade of the city.",
-            "image": "/images/lugares/malecon.jpg"
+            "image": "lugares/malecon.jpg"
           }
         ]
       },
@@ -575,14 +575,14 @@ export const excursiones={
         "id": 2,
         "title": "Havana Standard Tour",
         "alternative_name": "Standard Tour Habana",
-        "main_image": "/images/habana_tour_estandar.jpg",
+        "main_image": "habana_tour_estandar.jpg",
         "images": [
           {
-            "url": "/images/habana_estandar_1.jpg",
+            "url": "habana_estandar_1.jpg",
             "alt": "View of Cathedral Square"
           },
           {
-            "url": "/images/habana_estandar_2.jpg",
+            "url": "habana_estandar_2.jpg",
             "alt": "Old Square"
           }
         ],
@@ -592,12 +592,12 @@ export const excursiones={
           {
             "title": "Cathedral Square",
             "description": "One of the most iconic squares in Old Havana.",
-            "image": "/images/lugares/plaza_catedral.jpg"
+            "image": "lugares/plaza_catedral.jpg"
           },
           {
             "title": "Floridita",
             "description": "Ernest Hemingway's favorite bar.",
-            "image": "/images/lugares/floridita.jpg"
+            "image": "lugares/floridita.jpg"
           }
         ]
       },
@@ -605,14 +605,14 @@ export const excursiones={
         "id": 3,
         "title": "Havana – Viñales – Havana Tour",
         "alternative_name": "Habana-Viñales Tour",
-        "main_image": "/images/habana_vinales.jpg",
+        "main_image": "habana_vinales.jpg",
         "images": [
           {
-            "url": "/images/vinales_1.jpg",
-            "alt": "Viñales Valley"
+            "url": "vinales_1.jpg",
+            "alt": "/viñales Valley"
           },
           {
-            "url": "/images/vinales_2.jpg",
+            "url": "vinales_2.jpg",
             "alt": "Prehistory Mural"
           }
         ],
@@ -620,14 +620,14 @@ export const excursiones={
         "detailed_description": "Includes visit to tobacco plantations, Los Jazmines viewpoint, Cueva del Indio and Prehistory Mural (optional activities not included).",
         "related_places": [
           {
-            "title": "Viñales Valley",
+            "title": "/viñales Valley",
             "description": "Unique natural landscape with tobacco plantations.",
-            "image": "/images/lugares/valle_vinales.jpg"
+            "image": "lugares/valle_vinales.jpg"
           },
           {
             "title": "Cueva del Indio",
             "description": "Navigable cave of ancient origin.",
-            "image": "/images/lugares/cueva_indio.jpg"
+            "image": "lugares/cueva_indio.jpg"
           }
         ]
       },
@@ -635,14 +635,14 @@ export const excursiones={
         "id": 4,
         "title": "Havana – Playas del Este – Havana Tour",
         "alternative_name": "Eastern Beaches Tour",
-        "main_image": "/images/playas_del_este.jpg",
+        "main_image": "playas_del_este.jpg",
         "images": [
           {
-            "url": "/images/playas_este_1.jpg",
+            "url": "playas_este_1.jpg",
             "alt": "Santa María Beach"
           },
           {
-            "url": "/images/playas_este_2.jpg",
+            "url": "playas_este_2.jpg",
             "alt": "Havana Coast"
           }
         ],
@@ -652,12 +652,12 @@ export const excursiones={
           {
             "title": "Santa María Beach",
             "description": "Beach with crystal clear waters and white sands.",
-            "image": "/images/lugares/playa_santa_maria.jpg"
+            "image": "lugares/playa_santa_maria.jpg"
           },
           {
             "title": "Mi Cayito",
             "description": "Small popular beach near Havana.",
-            "image": "/images/lugares/mi_cayito.jpg"
+            "image": "lugares/mi_cayito.jpg"
           }
         ]
       },
@@ -665,14 +665,14 @@ export const excursiones={
         "id": 5,
         "title": "Varadero – Cienfuegos – Santa Clara – Trinidad Tour",
         "alternative_name": "3 Cities Tour",
-        "main_image": "/images/varadero_3_ciudades.jpg",
+        "main_image": "varadero_3_ciudades.jpg",
         "images": [
           {
-            "url": "/images/cienfuegos_1.jpg",
+            "url": "cienfuegos_1.jpg",
             "alt": "View of José Martí Park in Cienfuegos"
           },
           {
-            "url": "/images/trinidad_1.jpg",
+            "url": "trinidad_1.jpg",
             "alt": "Trinidad Main Square"
           }
         ],
@@ -682,12 +682,12 @@ export const excursiones={
           {
             "title": "Che's Mausoleum",
             "description": "Sculptural complex dedicated to Che Guevara in Santa Clara.",
-            "image": "/images/lugares/mausoleo_che.jpg"
+            "image": "lugares/mausoleo_che.jpg"
           },
           {
             "title": "Trinidad Main Square",
             "description": "Colonial heart of Trinidad.",
-            "image": "/images/lugares/plaza_mayor_trinidad.jpg"
+            "image": "lugares/plaza_mayor_trinidad.jpg"
           }
         ]
       }
@@ -699,14 +699,14 @@ export const excursiones={
         "id": 1,
         "title": "Visite de La Havane",
         "alternative_name": "City Tour Habana",
-        "main_image": "/images/havana-capitol.jpg",
+        "main_image": "/havana-capitol.jpg",
         "images": [
           {
-            "url": "/images/habana_1.jpg",
+            "url": "habana_1.jpg",
             "alt": "Vue du Malecón"
           },
           {
-            "url": "/images/habana_2.jpg",
+            "url": "habana_2.jpg",
             "alt": "Capitole de La Havane"
           }
         ],
@@ -716,12 +716,12 @@ export const excursiones={
           {
             "title": "Le Capitole",
             "description": "Bâtiment emblématique de La Havane.",
-            "image": "/images/lugares/capitolio.jpg"
+            "image": "lugares/capitolio.jpg"
           },
           {
             "title": "Malecón de La Havane",
             "description": "Promenade maritime emblématique de la ville.",
-            "image": "/images/lugares/malecon.jpg"
+            "image": "lugares/malecon.jpg"
           }
         ]
       },
@@ -729,14 +729,14 @@ export const excursiones={
         "id": 2,
         "title": "Tour Standard de La Havane",
         "alternative_name": "Tour Standard Habana",
-        "main_image": "/images/habana_tour_estandar.jpg",
+        "main_image": "habana_tour_estandar.jpg",
         "images": [
           {
-            "url": "/images/habana_estandar_1.jpg",
+            "url": "habana_estandar_1.jpg",
             "alt": "Vue de la Place de la Cathédrale"
           },
           {
-            "url": "/images/habana_estandar_2.jpg",
+            "url": "habana_estandar_2.jpg",
             "alt": "Vieille Place"
           }
         ],
@@ -746,12 +746,12 @@ export const excursiones={
           {
             "title": "Place de la Cathédrale",
             "description": "Une des places les plus emblématiques de la Vieille Havane.",
-            "image": "/images/lugares/plaza_catedral.jpg"
+            "image": "lugares/plaza_catedral.jpg"
           },
           {
             "title": "Floridita",
             "description": "Bar préféré d'Ernest Hemingway.",
-            "image": "/images/lugares/floridita.jpg"
+            "image": "lugares/floridita.jpg"
           }
         ]
       },
@@ -759,14 +759,14 @@ export const excursiones={
         "id": 3,
         "title": "Tour La Havane – Viñales – La Havane",
         "alternative_name": "Tour Habana-Viñales",
-        "main_image": "/images/habana_vinales.jpg",
+        "main_image": "habana_vinales.jpg",
         "images": [
           {
-            "url": "/images/vinales_1.jpg",
+            "url": "vinales_1.jpg",
             "alt": "Vallée de Viñales"
           },
           {
-            "url": "/images/vinales_2.jpg",
+            "url": "vinales_2.jpg",
             "alt": "Mur de la Préhistoire"
           }
         ],
@@ -776,12 +776,12 @@ export const excursiones={
           {
             "title": "Vallée de Viñales",
             "description": "Paysage naturel unique avec des plantations de tabac.",
-            "image": "/images/lugares/valle_vinales.jpg"
+            "image": "lugares/valle_vinales.jpg"
           },
           {
             "title": "Cueva del Indio",
             "description": "Grotte navigable d'origine ancienne.",
-            "image": "/images/lugares/cueva_indio.jpg"
+            "image": "lugares/cueva_indio.jpg"
           }
         ]
       },
@@ -789,14 +789,14 @@ export const excursiones={
         "id": 4,
         "title": "Tour La Havane – Plages de l'Est – La Havane",
         "alternative_name": "Tour des Plages de l'Est",
-        "main_image": "/images/playas_del_este.jpg",
+        "main_image": "playas_del_este.jpg",
         "images": [
           {
-            "url": "/images/playas_este_1.jpg",
+            "url": "playas_este_1.jpg",
             "alt": "Plage Santa María"
           },
           {
-            "url": "/images/playas_este_2.jpg",
+            "url": "playas_este_2.jpg",
             "alt": "Côte de La Havane"
           }
         ],
@@ -806,12 +806,12 @@ export const excursiones={
           {
             "title": "Plage Santa María",
             "description": "Plage aux eaux cristallines et sables blancs.",
-            "image": "/images/lugares/playa_santa_maria.jpg"
+            "image": "lugares/playa_santa_maria.jpg"
           },
           {
             "title": "Mi Cayito",
             "description": "Petite plage populaire près de La Havane.",
-            "image": "/images/lugares/mi_cayito.jpg"
+            "image": "lugares/mi_cayito.jpg"
           }
         ]
       },
@@ -819,14 +819,14 @@ export const excursiones={
         "id": 5,
         "title": "Excursion Varadero – Cienfuegos – Santa Clara – Trinidad",
         "alternative_name": "Tour 3 Villes",
-        "main_image": "/images/varadero_3_ciudades.jpg",
+        "main_image": "varadero_3_ciudades.jpg",
         "images": [
           {
-            "url": "/images/cienfuegos_1.jpg",
+            "url": "cienfuegos_1.jpg",
             "alt": "Vue du Parc José Martí à Cienfuegos"
           },
           {
-            "url": "/images/trinidad_1.jpg",
+            "url": "trinidad_1.jpg",
             "alt": "Place Principale de Trinidad"
           }
         ],
@@ -836,12 +836,12 @@ export const excursiones={
           {
             "title": "Mausolée du Che",
             "description": "Complexe sculptural dédié à Che Guevara à Santa Clara.",
-            "image": "/images/lugares/mausoleo_che.jpg"
+            "image": "lugares/mausoleo_che.jpg"
           },
           {
             "title": "Place Principale de Trinidad",
             "description": "Cœur colonial de Trinidad.",
-            "image": "/images/lugares/plaza_mayor_trinidad.jpg"
+            "image": "lugares/plaza_mayor_trinidad.jpg"
           }
         ]
       }
@@ -853,14 +853,14 @@ export const excursiones={
         "id": 1,
         "title": "Havanna-Stadttour",
         "alternative_name": "City Tour Habana",
-        "main_image": "/images/havana-capitol.jpg",
+        "main_image": "/havana-capitol.jpg",
         "images": [
           {
-            "url": "/images/habana_1.jpg",
+            "url": "habana_1.jpg",
             "alt": "Blick auf den Malecón"
           },
           {
-            "url": "/images/habana_2.jpg",
+            "url": "habana_2.jpg",
             "alt": "Kapitol von Havanna"
           }
         ],
@@ -870,12 +870,12 @@ export const excursiones={
           {
             "title": "Das Kapitol",
             "description": "Wahrzeichen von Havanna.",
-            "image": "/images/lugares/capitolio.jpg"
+            "image": "lugares/capitolio.jpg"
           },
           {
             "title": "Havannas Malecón",
             "description": "Berühmte Uferpromenade der Stadt.",
-            "image": "/images/lugares/malecon.jpg"
+            "image": "lugares/malecon.jpg"
           }
         ]
       },
@@ -883,14 +883,14 @@ export const excursiones={
         "id": 2,
         "title": "Havanna Standardtour",
         "alternative_name": "Standard Tour Habana",
-        "main_image": "/images/habana_tour_estandar.jpg",
+        "main_image": "habana_tour_estandar.jpg",
         "images": [
           {
-            "url": "/images/habana_estandar_1.jpg",
+            "url": "habana_estandar_1.jpg",
             "alt": "Blick auf den Kathedralenplatz"
           },
           {
-            "url": "/images/habana_estandar_2.jpg",
+            "url": "habana_estandar_2.jpg",
             "alt": "Alter Platz"
           }
         ],
@@ -900,12 +900,12 @@ export const excursiones={
           {
             "title": "Kathedralenplatz",
             "description": "Einer der bekanntesten Plätze der Altstadt Havannas.",
-            "image": "/images/lugares/plaza_catedral.jpg"
+            "image": "lugares/plaza_catedral.jpg"
           },
           {
             "title": "Floridita",
             "description": "Lieblingsbar von Ernest Hemingway.",
-            "image": "/images/lugares/floridita.jpg"
+            "image": "lugares/floridita.jpg"
           }
         ]
       },
@@ -913,14 +913,14 @@ export const excursiones={
         "id": 3,
         "title": "Tour Havanna – Viñales – Havanna",
         "alternative_name": "Habana-Viñales Tour",
-        "main_image": "/images/habana_vinales.jpg",
+        "main_image": "habana_vinales.jpg",
         "images": [
           {
-            "url": "/images/vinales_1.jpg",
-            "alt": "Viñales Tal"
+            "url": "vinales_1.jpg",
+            "alt": "/viñales Tal"
           },
           {
-            "url": "/images/vinales_2.jpg",
+            "url": "vinales_2.jpg",
             "alt": "Prähistorische Wandmalerei"
           }
         ],
@@ -928,14 +928,14 @@ export const excursiones={
         "detailed_description": "Beinhaltet Besuch von Tabakplantagen, Los Jazmines Aussichtspunkt, Indio-Höhle und der prähistorischen Wandmalerei (optionale Aktivitäten nicht inbegriffen).",
         "related_places": [
           {
-            "title": "Viñales Tal",
+            "title": "/viñales Tal",
             "description": "Einzigartige Naturlandschaft mit Tabakplantagen.",
-            "image": "/images/lugares/valle_vinales.jpg"
+            "image": "lugares/valle_vinales.jpg"
           },
           {
             "title": "Indio-Höhle",
             "description": "Befahrbare Höhle uralten Ursprungs.",
-            "image": "/images/lugares/cueva_indio.jpg"
+            "image": "lugares/cueva_indio.jpg"
           }
         ]
       },
@@ -943,14 +943,14 @@ export const excursiones={
         "id": 4,
         "title": "Tour Havanna – Playas del Este – Havanna",
         "alternative_name": "Playas del Este Tour",
-        "main_image": "/images/playas_del_este.jpg",
+        "main_image": "playas_del_este.jpg",
         "images": [
           {
-            "url": "/images/playas_este_1.jpg",
+            "url": "playas_este_1.jpg",
             "alt": "Santa María Strand"
           },
           {
-            "url": "/images/playas_este_2.jpg",
+            "url": "playas_este_2.jpg",
             "alt": "Havanna Küste"
           }
         ],
@@ -960,12 +960,12 @@ export const excursiones={
           {
             "title": "Santa María Strand",
             "description": "Strand mit kristallklarem Wasser und weißem Sand.",
-            "image": "/images/lugares/playa_santa_maria.jpg"
+            "image": "lugares/playa_santa_maria.jpg"
           },
           {
             "title": "Mi Cayito",
             "description": "Kleiner beliebter Strand in der Nähe von Havanna.",
-            "image": "/images/lugares/mi_cayito.jpg"
+            "image": "lugares/mi_cayito.jpg"
           }
         ]
       },
@@ -973,14 +973,14 @@ export const excursiones={
         "id": 5,
         "title": "Tour Varadero – Cienfuegos – Santa Clara – Trinidad",
         "alternative_name": "3 Städte Tour",
-        "main_image": "/images/varadero_3_ciudades.jpg",
+        "main_image": "varadero_3_ciudades.jpg",
         "images": [
           {
-            "url": "/images/cienfuegos_1.jpg",
+            "url": "cienfuegos_1.jpg",
             "alt": "Blick auf den José Martí Park in Cienfuegos"
           },
           {
-            "url": "/images/trinidad_1.jpg",
+            "url": "trinidad_1.jpg",
             "alt": "Hauptplatz von Trinidad"
           }
         ],
@@ -990,12 +990,12 @@ export const excursiones={
           {
             "title": "Che-Mausoleum",
             "description": "Skulpturenkomplex zu Ehren von Che Guevara in Santa Clara.",
-            "image": "/images/lugares/mausoleo_che.jpg"
+            "image": "lugares/mausoleo_che.jpg"
           },
           {
             "title": "Hauptplatz von Trinidad",
             "description": "Koloniales Herz von Trinidad.",
-            "image": "/images/lugares/plaza_mayor_trinidad.jpg"
+            "image": "lugares/plaza_mayor_trinidad.jpg"
           }
         ]
       }
@@ -1007,14 +1007,14 @@ export const excursiones={
         "id": 1,
         "title": "Экскурсия по Гаване",
         "alternative_name": "City Tour Habana",
-        "main_image": "/images/havana-capitol.jpg",
+        "main_image": "/havana-capitol.jpg",
         "images": [
           {
-            "url": "/images/habana_1.jpg",
+            "url": "habana_1.jpg",
             "alt": "Вид на Малекон"
           },
           {
-            "url": "/images/habana_2.jpg",
+            "url": "habana_2.jpg",
             "alt": "Капитолий Гаваны"
           }
         ],
@@ -1024,12 +1024,12 @@ export const excursiones={
           {
             "title": "Капитолий",
             "description": "Знаковое здание Гаваны.",
-            "image": "/images/lugares/capitolio.jpg"
+            "image": "lugares/capitolio.jpg"
           },
           {
             "title": "Малекон Гаваны",
             "description": "Знаменитая набережная города.",
-            "image": "/images/lugares/malecon.jpg"
+            "image": "lugares/malecon.jpg"
           }
         ]
       },
@@ -1037,14 +1037,14 @@ export const excursiones={
         "id": 2,
         "title": "Стандартный тур по Гаване",
         "alternative_name": "Standard Tour Habana",
-        "main_image": "/images/habana_tour_estandar.jpg",
+        "main_image": "habana_tour_estandar.jpg",
         "images": [
           {
-            "url": "/images/habana_estandar_1.jpg",
+            "url": "habana_estandar_1.jpg",
             "alt": "Вид на Площадь Собора"
           },
           {
-            "url": "/images/habana_estandar_2.jpg",
+            "url": "habana_estandar_2.jpg",
             "alt": "Старая Площадь"
           }
         ],
@@ -1054,12 +1054,12 @@ export const excursiones={
           {
             "title": "Площадь Собора",
             "description": "Одна из самых знаковых площадей Старой Гаваны.",
-            "image": "/images/lugares/plaza_catedral.jpg"
+            "image": "lugares/plaza_catedral.jpg"
           },
           {
             "title": "Флоридита",
             "description": "Любимый бар Эрнеста Хемингуэя.",
-            "image": "/images/lugares/floridita.jpg"
+            "image": "lugares/floridita.jpg"
           }
         ]
       },
@@ -1067,14 +1067,14 @@ export const excursiones={
         "id": 3,
         "title": "Тур Гавана – Виньялес – Гавана",
         "alternative_name": "Habana-Viñales Tour",
-        "main_image": "/images/habana_vinales.jpg",
+        "main_image": "habana_vinales.jpg",
         "images": [
           {
-            "url": "/images/vinales_1.jpg",
+            "url": "vinales_1.jpg",
             "alt": "Долина Виньялес"
           },
           {
-            "url": "/images/vinales_2.jpg",
+            "url": "vinales_2.jpg",
             "alt": "Настенная живопись"
           }
         ],
@@ -1084,12 +1084,12 @@ export const excursiones={
           {
             "title": "Долина Виньялес",
             "description": "Уникальный природный ландшафт с табачными плантациями.",
-            "image": "/images/lugares/valle_vinales.jpg"
+            "image": "lugares/valle_vinales.jpg"
           },
           {
             "title": "Пещера Индио",
             "description": "Судоходная пещера древнего происхождения.",
-            "image": "/images/lugares/cueva_indio.jpg"
+            "image": "lugares/cueva_indio.jpg"
           }
         ]
       },
@@ -1097,14 +1097,14 @@ export const excursiones={
         "id": 4,
         "title": "Тур Гавана – Плайяс дель Эсте – Гавана",
         "alternative_name": "Tour Playas del Este",
-        "main_image": "/images/playas_del_este.jpg",
+        "main_image": "playas_del_este.jpg",
         "images": [
           {
-            "url": "/images/playas_este_1.jpg",
+            "url": "playas_este_1.jpg",
             "alt": "Пляж Санта Мария"
           },
           {
-            "url": "/images/playas_este_2.jpg",
+            "url": "playas_este_2.jpg",
             "alt": "Побережье Гаваны"
           }
         ],
@@ -1114,12 +1114,12 @@ export const excursiones={
           {
             "title": "Пляж Санта Мария",
             "description": "Пляж с кристально чистой водой и белым песком.",
-            "image": "/images/lugares/playa_santa_maria.jpg"
+            "image": "lugares/playa_santa_maria.jpg"
           },
           {
             "title": "Ми Кайито",
             "description": "Маленький популярный пляж недалеко от Гаваны.",
-            "image": "/images/lugares/mi_cayito.jpg"
+            "image": "lugares/mi_cayito.jpg"
           }
         ]
       },
@@ -1127,14 +1127,14 @@ export const excursiones={
         "id": 5,
         "title": "Экскурсия Варадеро – Сьенфуэгос – Санта-Клара – Тринидад",
         "alternative_name": "Tour 3 Ciudades",
-        "main_image": "/images/varadero_3_ciudades.jpg",
+        "main_image": "varadero_3_ciudades.jpg",
         "images": [
           {
-            "url": "/images/cienfuegos_1.jpg",
+            "url": "cienfuegos_1.jpg",
             "alt": "Вид на парк Хосе Марти в Сьенфуэгос"
           },
           {
-            "url": "/images/trinidad_1.jpg",
+            "url": "trinidad_1.jpg",
             "alt": "Главная площадь Тринидада"
           }
         ],
@@ -1144,12 +1144,12 @@ export const excursiones={
           {
             "title": "Мавзолей Че",
             "description": "Скульптурный комплекс, посвященный Че Геваре в Санта-Кларе.",
-            "image": "/images/lugares/mausoleo_che.jpg"
+            "image": "lugares/mausoleo_che.jpg"
           },
           {
             "title": "Главная площадь Тринидада",
             "description": "Колониальное сердце Тринидада.",
-            "image": "/images/lugares/plaza_mayor_trinidad.jpg"
+            "image": "lugares/plaza_mayor_trinidad.jpg"
           }
         ]
       }
@@ -1161,14 +1161,14 @@ export const excursiones={
         "id": 1,
         "title": "Tour pela Cidade de Havana",
         "alternative_name": "City Tour Habana",
-        "main_image": "/images/havana-capitol.jpg",
+        "main_image": "/havana-capitol.jpg",
         "images": [
           {
-            "url": "/images/habana_1.jpg",
+            "url": "habana_1.jpg",
             "alt": "Vista do Malecón"
           },
           {
-            "url": "/images/habana_2.jpg",
+            "url": "habana_2.jpg",
             "alt": "Capitólio de Havana"
           }
         ],
@@ -1178,12 +1178,12 @@ export const excursiones={
           {
             "title": "O Capitólio",
             "description": "Edifício icônico de Havana.",
-            "image": "/images/lugares/capitolio.jpg"
+            "image": "lugares/capitolio.jpg"
           },
           {
             "title": "Malecón de Havana",
             "description": "Calçadão à beira-mar icônico da cidade.",
-            "image": "/images/lugares/malecon.jpg"
+            "image": "lugares/malecon.jpg"
           }
         ]
       },
@@ -1191,14 +1191,14 @@ export const excursiones={
         "id": 2,
         "title": "Tour Padrão em Havana",
         "alternative_name": "Standard Tour Habana",
-        "main_image": "/images/habana_tour_estandar.jpg",
+        "main_image": "habana_tour_estandar.jpg",
         "images": [
           {
-            "url": "/images/habana_estandar_1.jpg",
+            "url": "habana_estandar_1.jpg",
             "alt": "Vista da Praça da Catedral"
           },
           {
-            "url": "/images/habana_estandar_2.jpg",
+            "url": "habana_estandar_2.jpg",
             "alt": "Praça Velha"
           }
         ],
@@ -1208,12 +1208,12 @@ export const excursiones={
           {
             "title": "Praça da Catedral",
             "description": "Uma das praças mais icônicas da Havana Velha.",
-            "image": "/images/lugares/plaza_catedral.jpg"
+            "image": "lugares/plaza_catedral.jpg"
           },
           {
             "title": "Floridita",
             "description": "Bar favorito de Ernest Hemingway.",
-            "image": "/images/lugares/floridita.jpg"
+            "image": "lugares/floridita.jpg"
           }
         ]
       },
@@ -1221,14 +1221,14 @@ export const excursiones={
         "id": 3,
         "title": "Tour Havana – Viñales – Havana",
         "alternative_name": "Tour Habana-Viñales",
-        "main_image": "/images/habana_vinales.jpg",
+        "main_image": "habana_vinales.jpg",
         "images": [
           {
-            "url": "/images/vinales_1.jpg",
+            "url": "vinales_1.jpg",
             "alt": "Vale de Viñales"
           },
           {
-            "url": "/images/vinales_2.jpg",
+            "url": "vinales_2.jpg",
             "alt": "Mural da Pré-história"
           }
         ],
@@ -1238,12 +1238,12 @@ export const excursiones={
           {
             "title": "Vale de Viñales",
             "description": "Paisagem natural única com plantações de tabaco.",
-            "image": "/images/lugares/valle_vinales.jpg"
+            "image": "lugares/valle_vinales.jpg"
           },
           {
             "title": "Caverna do Índio",
             "description": "Caverna navegável de origem milenar.",
-            "image": "/images/lugares/cueva_indio.jpg"
+            "image": "lugares/cueva_indio.jpg"
           }
         ]
       },
@@ -1251,14 +1251,14 @@ export const excursiones={
         "id": 4,
         "title": "Tour Havana – Playas del Este – Havana",
         "alternative_name": "Tour Playas del Este",
-        "main_image": "/images/playas_del_este.jpg",
+        "main_image": "playas_del_este.jpg",
         "images": [
           {
-            "url": "/images/playas_este_1.jpg",
+            "url": "playas_este_1.jpg",
             "alt": "Praia Santa María"
           },
           {
-            "url": "/images/playas_este_2.jpg",
+            "url": "playas_este_2.jpg",
             "alt": "Costa de Havana"
           }
         ],
@@ -1268,12 +1268,12 @@ export const excursiones={
           {
             "title": "Praia Santa María",
             "description": "Praia com águas cristalinas e areias brancas.",
-            "image": "/images/lugares/playa_santa_maria.jpg"
+            "image": "lugares/playa_santa_maria.jpg"
           },
           {
             "title": "Mi Cayito",
             "description": "Pequena praia popular perto de Havana.",
-            "image": "/images/lugares/mi_cayito.jpg"
+            "image": "lugares/mi_cayito.jpg"
           }
         ]
       },
@@ -1281,14 +1281,14 @@ export const excursiones={
         "id": 5,
         "title": "Excursão Varadero – Cienfuegos – Santa Clara – Trinidad",
         "alternative_name": "Tour 3 Cidades",
-        "main_image": "/images/varadero_3_ciudades.jpg",
+        "main_image": "varadero_3_ciudades.jpg",
         "images": [
           {
-            "url": "/images/cienfuegos_1.jpg",
+            "url": "cienfuegos_1.jpg",
             "alt": "Vista do Parque José Martí em Cienfuegos"
           },
           {
-            "url": "/images/trinidad_1.jpg",
+            "url": "trinidad_1.jpg",
             "alt": "Praça Maior de Trinidad"
           }
         ],
@@ -1298,12 +1298,12 @@ export const excursiones={
           {
             "title": "Mausoléu do Che",
             "description": "Complexo escultórico dedicado ao Che Guevara em Santa Clara.",
-            "image": "/images/lugares/mausoleo_che.jpg"
+            "image": "lugares/mausoleo_che.jpg"
           },
           {
             "title": "Praça Maior de Trinidad",
             "description": "Coração colonial de Trinidad.",
-            "image": "/images/lugares/plaza_mayor_trinidad.jpg"
+            "image": "lugares/plaza_mayor_trinidad.jpg"
           }
         ]
       }
@@ -1318,14 +1318,14 @@ export const destinos ={
         "id": 1,
         "title": "Aeropuerto Habana",
         "alternative_name": "Destino Aeropuerto Habana",
-        "main_image": "/images/havana-capitol.jpg",
+        "main_image": "/havana-capitol.jpg",
         "images": [
           {
-            "url": "/images/destinos/aeropuerto_habana_1.jpg",
+            "url": "destinos/aeropuerto_habana_1.jpg",
             "alt": "Vista 1 de Aeropuerto Habana"
           },
           {
-            "url": "/images/destinos/aeropuerto_habana_2.jpg",
+            "url": "destinos/aeropuerto_habana_2.jpg",
             "alt": "Vista 2 de Aeropuerto Habana"
           }
         ],
@@ -1365,14 +1365,14 @@ export const destinos ={
         "id": 2,
         "title": "Aeropuerto Varadero",
         "alternative_name": "Destino Aeropuerto Varadero",
-        "main_image": "/images/varadero-airport.png",
+        "main_image": "/varadero-airport.png",
         "images": [
           {
-            "url": "/images/destinos/aeropuerto_varadero_1.jpg",
+            "url": "destinos/aeropuerto_varadero_1.jpg",
             "alt": "Vista 1 de Aeropuerto Varadero"
           },
           {
-            "url": "/images/destinos/aeropuerto_varadero_2.jpg",
+            "url": "destinos/aeropuerto_varadero_2.jpg",
             "alt": "Vista 2 de Aeropuerto Varadero"
           }
         ],
@@ -1403,14 +1403,14 @@ export const destinos ={
         "id": 3,
         "title": "Cayo Coco",
         "alternative_name": "Destino Cayo Coco",
-        "main_image": "/images/cayo-coco.jpg",
+        "main_image": "/cayo-coco.jpg",
         "images": [
           {
-            "url": "/images/destinos/cayo_coco_1.jpg",
+            "url": "destinos/cayo_coco_1.jpg",
             "alt": "Vista 1 de Cayo Coco"
           },
           {
-            "url": "/images/destinos/cayo_coco_2.jpg",
+            "url": "destinos/cayo_coco_2.jpg",
             "alt": "Vista 2 de Cayo Coco"
           }
         ],
@@ -1441,14 +1441,14 @@ export const destinos ={
         "id": 4,
         "title": "Cayo Guillermo",
         "alternative_name": "Destino Cayo Guillermo",
-        "main_image": "/images/cayo-guillermo.png",
+        "main_image": "/cayo-guillermo.png",
         "images": [
           {
-            "url": "/images/destinos/cayo_guillermo_1.jpg",
+            "url": "destinos/cayo_guillermo_1.jpg",
             "alt": "Vista 1 de Cayo Guillermo"
           },
           {
-            "url": "/images/destinos/cayo_guillermo_2.jpg",
+            "url": "destinos/cayo_guillermo_2.jpg",
             "alt": "Vista 2 de Cayo Guillermo"
           }
         ],
@@ -1475,353 +1475,353 @@ export const destinos ={
           }
         ]
       },
-      {
-        "id": 5,
-        "title": "Cayo Santa María",
-        "alternative_name": "Destino Cayo Santa María",
-        "main_image": "/images/cayo-santa-maria.webp",
-        "images": [
-          {
-            "url": "/images/destinos/cayo_santa_maría_1.jpg",
-            "alt": "Vista 1 de Cayo Santa María"
-          },
-          {
-            "url": "/images/destinos/cayo_santa_maría_2.jpg",
-            "alt": "Vista 2 de Cayo Santa María"
-          }
-        ],
-        "description": "Información sobre Cayo Santa María.",
-        "detailed_description": "Cayo Santa María es uno de los destinos más destacados, con cultura, paisajes y atractivos turísticos.",
-        "transfers": [
-          {
-            "from": "Aeropuerto La Habana",
-            "to": "Cayo Santa María",
-            "distance_km": 405,
-            "time": "5:00",
-            "convertible_car_usd": null,
-            "classic_car_usd": 370,
-            "minivan_usd": 235
-          },
-          {
-            "from": "La Habana",
-            "to": "Cayo Santa María",
-            "distance_km": 400,
-            "time": "5:00",
-            "convertible_car_usd": null,
-            "classic_car_usd": 350,
-            "minivan_usd": 240
-          }
-        ]
-      },
-      {
-        "id": 6,
-        "title": "Cienfuegos",
-        "alternative_name": "Destino Cienfuegos",
-        "main_image": "/images/cienfuegos.jpg",
-        "images": [
-          {
-            "url": "/images/destinos/cienfuegos_1.jpg",
-            "alt": "Vista 1 de Cienfuegos"
-          },
-          {
-            "url": "/images/destinos/cienfuegos_2.jpg",
-            "alt": "Vista 2 de Cienfuegos"
-          }
-        ],
-        "description": "Información sobre Cienfuegos.",
-        "detailed_description": "Cienfuegos es uno de los destinos más destacados, con cultura, paisajes y atractivos turísticos.",
-        "transfers": [
-          {
-            "from": "Aeropuerto La Habana",
-            "to": "Cienfuegos",
-            "distance_km": 245,
-            "time": "3:00",
-            "convertible_car_usd": null,
-            "classic_car_usd": 220,
-            "minivan_usd": 155
-          },
-          {
-            "from": "Aeropuerto Varadero",
-            "to": "Cienfuegos",
-            "distance_km": 205,
-            "time": "2:45",
-            "convertible_car_usd": null,
-            "classic_car_usd": 200,
-            "minivan_usd": 160
-          },
-          {
-            "from": "La Habana",
-            "to": "Cienfuegos",
-            "distance_km": 240,
-            "time": "3:00",
-            "convertible_car_usd": null,
-            "classic_car_usd": 240,
-            "minivan_usd": 155
-          },
-          {
-            "from": "Varadero",
-            "to": "Cienfuegos",
-            "distance_km": 190,
-            "time": "3:00",
-            "convertible_car_usd": null,
-            "classic_car_usd": 205,
-            "minivan_usd": 120
-          }
-        ]
-      },
-      {
-        "id": 7,
-        "title": "La Habana",
-        "alternative_name": "Destino La Habana",
-        "main_image": "/images/havana-capitol.jpg",
-        "images": [
-          {
-            "url": "/images/destinos/la_habana_1.jpg",
-            "alt": "Vista 1 de La Habana"
-          },
-          {
-            "url": "/images/destinos/la_habana_2.jpg",
-            "alt": "Vista 2 de La Habana"
-          }
-        ],
-        "description": "Información sobre La Habana.",
-        "detailed_description": "La Habana es uno de los destinos más destacados, con cultura, paisajes y atractivos turísticos.",
-        "transfers": [
-          {
-            "from": "Aeropuerto La Habana",
-            "to": "La Habana",
-            "distance_km": 23,
-            "time": "0:30",
-            "convertible_car_usd": 50.0,
-            "classic_car_usd": 55,
-            "minivan_usd": 30
-          },
-          {
-            "from": "Aeropuerto Varadero",
-            "to": "La Habana",
-            "distance_km": 125,
-            "time": "2:00",
-            "convertible_car_usd": null,
-            "classic_car_usd": 175,
-            "minivan_usd": 100
-          },
-          {
-            "from": "Varadero",
-            "to": "La Habana",
-            "distance_km": 145,
-            "time": "2:15",
-            "convertible_car_usd": null,
-            "classic_car_usd": 145,
-            "minivan_usd": 120
-          }
-        ]
-      },
-      {
-        "id": 8,
-        "title": "Santa Clara",
-        "alternative_name": "Destino Santa Clara",
-        "main_image": "/images/santa-clara.jpeg",
-        "images": [
-          {
-            "url": "/images/destinos/santa_clara_1.jpg",
-            "alt": "Vista 1 de Santa Clara"
-          },
-          {
-            "url": "/images/destinos/santa_clara_2.jpg",
-            "alt": "Vista 2 de Santa Clara"
-          }
-        ],
-        "description": "Información sobre Santa Clara.",
-        "detailed_description": "Santa Clara es uno de los destinos más destacados, con cultura, paisajes y atractivos turísticos.",
-        "transfers": [
-          {
-            "from": "Aeropuerto La Habana",
-            "to": "Santa Clara",
-            "distance_km": 300,
-            "time": "3:30",
-            "convertible_car_usd": null,
-            "classic_car_usd": 285,
-            "minivan_usd": 180
-          },
-          {
-            "from": "Aeropuerto Varadero",
-            "to": "Santa Clara",
-            "distance_km": 255,
-            "time": "3:10",
-            "convertible_car_usd": null,
-            "classic_car_usd": 255,
-            "minivan_usd": 150
-          },
-          {
-            "from": "La Habana",
-            "to": "Santa Clara",
-            "distance_km": 300,
-            "time": "3:30",
-            "convertible_car_usd": null,
-            "classic_car_usd": 305,
-            "minivan_usd": 200
-          },
-          {
-            "from": "Varadero",
-            "to": "Santa Clara",
-            "distance_km": 240,
-            "time": "3:30",
-            "convertible_car_usd": null,
-            "classic_car_usd": 255,
-            "minivan_usd": 180
-          }
-        ]
-      },
-      {
-        "id": 9,
-        "title": "Trinidad",
-        "alternative_name": "Destino Trinidad",
-        "main_image": "/images/trinidad.jpg",
-        "images": [
-          {
-            "url": "/images/destinos/trinidad_1.jpg",
-            "alt": "Vista 1 de Trinidad"
-          },
-          {
-            "url": "/images/destinos/trinidad_2.jpg",
-            "alt": "Vista 2 de Trinidad"
-          }
-        ],
-        "description": "Información sobre Trinidad.",
-        "detailed_description": "Trinidad es uno de los destinos más destacados, con cultura, paisajes y atractivos turísticos.",
-        "transfers": [
-          {
-            "from": "Aeropuerto La Habana",
-            "to": "Trinidad",
-            "distance_km": 330,
-            "time": "4:30",
-            "convertible_car_usd": null,
-            "classic_car_usd": 325,
-            "minivan_usd": 250
-          },
-          {
-            "from": "Aeropuerto Varadero",
-            "to": "Trinidad",
-            "distance_km": 290,
-            "time": "4:00",
-            "convertible_car_usd": null,
-            "classic_car_usd": 325,
-            "minivan_usd": 220
-          },
-          {
-            "from": "La Habana",
-            "to": "Trinidad",
-            "distance_km": 320,
-            "time": "4:15",
-            "convertible_car_usd": null,
-            "classic_car_usd": 320,
-            "minivan_usd": 250
-          },
-          {
-            "from": "Varadero",
-            "to": "Trinidad",
-            "distance_km": 270,
-            "time": "4:20",
-            "convertible_car_usd": null,
-            "classic_car_usd": 270,
-            "minivan_usd": 250
-          }
-        ]
-      },
-      {
-        "id": 10,
-        "title": "Varadero",
-        "alternative_name": "Destino Varadero",
-        "main_image": "/images/varadero-view.jpg",
-        "images": [
-          {
-            "url": "/images/destinos/varadero_1.jpg",
-            "alt": "Vista 1 de Varadero"
-          },
-          {
-            "url": "/images/destinos/varadero_2.jpg",
-            "alt": "Vista 2 de Varadero"
-          }
-        ],
-        "description": "Información sobre Varadero.",
-        "detailed_description": "Varadero es uno de los destinos más destacados, con cultura, paisajes y atractivos turísticos.",
-        "transfers": [
-          {
-            "from": "Aeropuerto La Habana",
-            "to": "Varadero",
-            "distance_km": 170,
-            "time": "2:30",
-            "convertible_car_usd": 160.0,
-            "classic_car_usd": 180,
-            "minivan_usd": 100
-          },
-          {
-            "from": "Aeropuerto Varadero",
-            "to": "Varadero",
-            "distance_km": 33,
-            "time": "0:30",
-            "convertible_car_usd": null,
-            "classic_car_usd": 75,
-            "minivan_usd": 40
-          },
-          {
-            "from": "La Habana",
-            "to": "Varadero",
-            "distance_km": 145,
-            "time": "2:15",
-            "convertible_car_usd": 160.0,
-            "classic_car_usd": 180,
-            "minivan_usd": 100
-          }
-        ]
-      },
-      {
-        "id": 11,
-        "title": "Viñales",
-        "alternative_name": "Destino Viñales",
-        "main_image": "/images/viñales.jpg",
-        "images": [
-          {
-            "url": "/images/destinos/viñales_1.jpg",
-            "alt": "Vista 1 de Viñales"
-          },
-          {
-            "url": "/images/destinos/viñales_2.jpg",
-            "alt": "Vista 2 de Viñales"
-          }
-        ],
-        "description": "Información sobre Viñales.",
-        "detailed_description": "Viñales es uno de los destinos más destacados, con cultura, paisajes y atractivos turísticos.",
-        "transfers": [
-          {
-            "from": "Aeropuerto La Habana",
-            "to": "Viñales",
-            "distance_km": 180,
-            "time": "2:30",
-            "convertible_car_usd": null,
-            "classic_car_usd": 190,
-            "minivan_usd": 120
-          },
-          {
-            "from": "La Habana",
-            "to": "Viñales",
-            "distance_km": 180,
-            "time": "2:30",
-            "convertible_car_usd": 180.0,
-            "classic_car_usd": 200,
-            "minivan_usd": 130
-          },
-          {
-            "from": "Varadero",
-            "to": "Viñales",
-            "distance_km": 330,
-            "time": "4:45",
-            "convertible_car_usd": null,
-            "classic_car_usd": 315,
-            "minivan_usd": 220
-          }
-        ]
-      }
+      // {
+      //   "id": 5,
+      //   "title": "Cayo Santa María",
+      //   "alternative_name": "Destino Cayo Santa María",
+      //   "main_image": "cayo-santa-maria.webp",
+      //   "images": [
+      //     {
+      //       "url": "destinos/cayo_santa_maría_1.jpg",
+      //       "alt": "Vista 1 de Cayo Santa María"
+      //     },
+      //     {
+      //       "url": "destinos/cayo_santa_maría_2.jpg",
+      //       "alt": "Vista 2 de Cayo Santa María"
+      //     }
+      //   ],
+      //   "description": "Información sobre Cayo Santa María.",
+      //   "detailed_description": "Cayo Santa María es uno de los destinos más destacados, con cultura, paisajes y atractivos turísticos.",
+      //   "transfers": [
+      //     {
+      //       "from": "Aeropuerto La Habana",
+      //       "to": "Cayo Santa María",
+      //       "distance_km": 405,
+      //       "time": "5:00",
+      //       "convertible_car_usd": null,
+      //       "classic_car_usd": 370,
+      //       "minivan_usd": 235
+      //     },
+      //     {
+      //       "from": "La Habana",
+      //       "to": "Cayo Santa María",
+      //       "distance_km": 400,
+      //       "time": "5:00",
+      //       "convertible_car_usd": null,
+      //       "classic_car_usd": 350,
+      //       "minivan_usd": 240
+      //     }
+      //   ]
+      // },
+      // {
+      //   "id": 6,
+      //   "title": "Cienfuegos",
+      //   "alternative_name": "Destino Cienfuegos",
+      //   "main_image": "cienfuegos.jpg",
+      //   "images": [
+      //     {
+      //       "url": "destinos/cienfuegos_1.jpg",
+      //       "alt": "Vista 1 de Cienfuegos"
+      //     },
+      //     {
+      //       "url": "destinos/cienfuegos_2.jpg",
+      //       "alt": "Vista 2 de Cienfuegos"
+      //     }
+      //   ],
+      //   "description": "Información sobre Cienfuegos.",
+      //   "detailed_description": "Cienfuegos es uno de los destinos más destacados, con cultura, paisajes y atractivos turísticos.",
+      //   "transfers": [
+      //     {
+      //       "from": "Aeropuerto La Habana",
+      //       "to": "Cienfuegos",
+      //       "distance_km": 245,
+      //       "time": "3:00",
+      //       "convertible_car_usd": null,
+      //       "classic_car_usd": 220,
+      //       "minivan_usd": 155
+      //     },
+      //     {
+      //       "from": "Aeropuerto Varadero",
+      //       "to": "Cienfuegos",
+      //       "distance_km": 205,
+      //       "time": "2:45",
+      //       "convertible_car_usd": null,
+      //       "classic_car_usd": 200,
+      //       "minivan_usd": 160
+      //     },
+      //     {
+      //       "from": "La Habana",
+      //       "to": "Cienfuegos",
+      //       "distance_km": 240,
+      //       "time": "3:00",
+      //       "convertible_car_usd": null,
+      //       "classic_car_usd": 240,
+      //       "minivan_usd": 155
+      //     },
+      //     {
+      //       "from": "Varadero",
+      //       "to": "Cienfuegos",
+      //       "distance_km": 190,
+      //       "time": "3:00",
+      //       "convertible_car_usd": null,
+      //       "classic_car_usd": 205,
+      //       "minivan_usd": 120
+      //     }
+      //   ]
+      // },
+      // {
+      //   "id": 7,
+      //   "title": "La Habana",
+      //   "alternative_name": "Destino La Habana",
+      //   "main_image": "/havana-capitol.jpg",
+      //   "images": [
+      //     {
+      //       "url": "destinos/la_habana_1.jpg",
+      //       "alt": "Vista 1 de La Habana"
+      //     },
+      //     {
+      //       "url": "destinos/la_habana_2.jpg",
+      //       "alt": "Vista 2 de La Habana"
+      //     }
+      //   ],
+      //   "description": "Información sobre La Habana.",
+      //   "detailed_description": "La Habana es uno de los destinos más destacados, con cultura, paisajes y atractivos turísticos.",
+      //   "transfers": [
+      //     {
+      //       "from": "Aeropuerto La Habana",
+      //       "to": "La Habana",
+      //       "distance_km": 23,
+      //       "time": "0:30",
+      //       "convertible_car_usd": 50.0,
+      //       "classic_car_usd": 55,
+      //       "minivan_usd": 30
+      //     },
+      //     {
+      //       "from": "Aeropuerto Varadero",
+      //       "to": "La Habana",
+      //       "distance_km": 125,
+      //       "time": "2:00",
+      //       "convertible_car_usd": null,
+      //       "classic_car_usd": 175,
+      //       "minivan_usd": 100
+      //     },
+      //     {
+      //       "from": "Varadero",
+      //       "to": "La Habana",
+      //       "distance_km": 145,
+      //       "time": "2:15",
+      //       "convertible_car_usd": null,
+      //       "classic_car_usd": 145,
+      //       "minivan_usd": 120
+      //     }
+      //   ]
+      // },
+      // {
+      //   "id": 8,
+      //   "title": "Santa Clara",
+      //   "alternative_name": "Destino Santa Clara",
+      //   "main_image": "santa-clara.jpeg",
+      //   "images": [
+      //     {
+      //       "url": "destinos/santa_clara_1.jpg",
+      //       "alt": "Vista 1 de Santa Clara"
+      //     },
+      //     {
+      //       "url": "destinos/santa_clara_2.jpg",
+      //       "alt": "Vista 2 de Santa Clara"
+      //     }
+      //   ],
+      //   "description": "Información sobre Santa Clara.",
+      //   "detailed_description": "Santa Clara es uno de los destinos más destacados, con cultura, paisajes y atractivos turísticos.",
+      //   "transfers": [
+      //     {
+      //       "from": "Aeropuerto La Habana",
+      //       "to": "Santa Clara",
+      //       "distance_km": 300,
+      //       "time": "3:30",
+      //       "convertible_car_usd": null,
+      //       "classic_car_usd": 285,
+      //       "minivan_usd": 180
+      //     },
+      //     {
+      //       "from": "Aeropuerto Varadero",
+      //       "to": "Santa Clara",
+      //       "distance_km": 255,
+      //       "time": "3:10",
+      //       "convertible_car_usd": null,
+      //       "classic_car_usd": 255,
+      //       "minivan_usd": 150
+      //     },
+      //     {
+      //       "from": "La Habana",
+      //       "to": "Santa Clara",
+      //       "distance_km": 300,
+      //       "time": "3:30",
+      //       "convertible_car_usd": null,
+      //       "classic_car_usd": 305,
+      //       "minivan_usd": 200
+      //     },
+      //     {
+      //       "from": "Varadero",
+      //       "to": "Santa Clara",
+      //       "distance_km": 240,
+      //       "time": "3:30",
+      //       "convertible_car_usd": null,
+      //       "classic_car_usd": 255,
+      //       "minivan_usd": 180
+      //     }
+      //   ]
+      // },
+      // {
+      //   "id": 9,
+      //   "title": "Trinidad",
+      //   "alternative_name": "Destino Trinidad",
+      //   "main_image": "/trinidad.jpg",
+      //   "images": [
+      //     {
+      //       "url": "destinos/trinidad_1.jpg",
+      //       "alt": "Vista 1 de Trinidad"
+      //     },
+      //     {
+      //       "url": "destinos/trinidad_2.jpg",
+      //       "alt": "Vista 2 de Trinidad"
+      //     }
+      //   ],
+      //   "description": "Información sobre Trinidad.",
+      //   "detailed_description": "Trinidad es uno de los destinos más destacados, con cultura, paisajes y atractivos turísticos.",
+      //   "transfers": [
+      //     {
+      //       "from": "Aeropuerto La Habana",
+      //       "to": "Trinidad",
+      //       "distance_km": 330,
+      //       "time": "4:30",
+      //       "convertible_car_usd": null,
+      //       "classic_car_usd": 325,
+      //       "minivan_usd": 250
+      //     },
+      //     {
+      //       "from": "Aeropuerto Varadero",
+      //       "to": "Trinidad",
+      //       "distance_km": 290,
+      //       "time": "4:00",
+      //       "convertible_car_usd": null,
+      //       "classic_car_usd": 325,
+      //       "minivan_usd": 220
+      //     },
+      //     {
+      //       "from": "La Habana",
+      //       "to": "Trinidad",
+      //       "distance_km": 320,
+      //       "time": "4:15",
+      //       "convertible_car_usd": null,
+      //       "classic_car_usd": 320,
+      //       "minivan_usd": 250
+      //     },
+      //     {
+      //       "from": "Varadero",
+      //       "to": "Trinidad",
+      //       "distance_km": 270,
+      //       "time": "4:20",
+      //       "convertible_car_usd": null,
+      //       "classic_car_usd": 270,
+      //       "minivan_usd": 250
+      //     }
+      //   ]
+      // },
+      // {
+      //   "id": 10,
+      //   "title": "Varadero",
+      //   "alternative_name": "Destino Varadero",
+      //   "main_image": "varadero-view.jpg",
+      //   "images": [
+      //     {
+      //       "url": "destinos/varadero_1.jpg",
+      //       "alt": "Vista 1 de Varadero"
+      //     },
+      //     {
+      //       "url": "destinos/varadero_2.jpg",
+      //       "alt": "Vista 2 de Varadero"
+      //     }
+      //   ],
+      //   "description": "Información sobre Varadero.",
+      //   "detailed_description": "Varadero es uno de los destinos más destacados, con cultura, paisajes y atractivos turísticos.",
+      //   "transfers": [
+      //     {
+      //       "from": "Aeropuerto La Habana",
+      //       "to": "Varadero",
+      //       "distance_km": 170,
+      //       "time": "2:30",
+      //       "convertible_car_usd": 160.0,
+      //       "classic_car_usd": 180,
+      //       "minivan_usd": 100
+      //     },
+      //     {
+      //       "from": "Aeropuerto Varadero",
+      //       "to": "Varadero",
+      //       "distance_km": 33,
+      //       "time": "0:30",
+      //       "convertible_car_usd": null,
+      //       "classic_car_usd": 75,
+      //       "minivan_usd": 40
+      //     },
+      //     {
+      //       "from": "La Habana",
+      //       "to": "Varadero",
+      //       "distance_km": 145,
+      //       "time": "2:15",
+      //       "convertible_car_usd": 160.0,
+      //       "classic_car_usd": 180,
+      //       "minivan_usd": 100
+      //     }
+      //   ]
+      // },
+      // {
+      //   "id": 11,
+      //   "title": "/viñales",
+      //   "alternative_name": "Destino Viñales",
+      //   "main_image": "/viñales.jpg",
+      //   "images": [
+      //     {
+      //       "url": "destinos/viñales_1.jpg",
+      //       "alt": "Vista 1 de Viñales"
+      //     },
+      //     {
+      //       "url": "destinos/viñales_2.jpg",
+      //       "alt": "Vista 2 de Viñales"
+      //     }
+      //   ],
+      //   "description": "Información sobre Viñales.",
+      //   "detailed_description": "/viñales es uno de los destinos más destacados, con cultura, paisajes y atractivos turísticos.",
+      //   "transfers": [
+      //     {
+      //       "from": "Aeropuerto La Habana",
+      //       "to": "/viñales",
+      //       "distance_km": 180,
+      //       "time": "2:30",
+      //       "convertible_car_usd": null,
+      //       "classic_car_usd": 190,
+      //       "minivan_usd": 120
+      //     },
+      //     {
+      //       "from": "La Habana",
+      //       "to": "/viñales",
+      //       "distance_km": 180,
+      //       "time": "2:30",
+      //       "convertible_car_usd": 180.0,
+      //       "classic_car_usd": 200,
+      //       "minivan_usd": 130
+      //     },
+      //     {
+      //       "from": "Varadero",
+      //       "to": "/viñales",
+      //       "distance_km": 330,
+      //       "time": "4:45",
+      //       "convertible_car_usd": null,
+      //       "classic_car_usd": 315,
+      //       "minivan_usd": 220
+      //     }
+      //   ]
+      // }
     ]
   },
   "en": {
@@ -1830,14 +1830,14 @@ export const destinos ={
         "id": 1,
         "title": "Havana Airport",
         "alternative_name": "Havana Airport Destination",
-        "main_image": "/images/havana-capitol.jpg",
+        "main_image": "/havana-capitol.jpg",
         "images": [
           {
-            "url": "/images/destinos/aeropuerto_habana_1.jpg",
+            "url": "destinos/aeropuerto_habana_1.jpg",
             "alt": "View 1 of Havana Airport"
           },
           {
-            "url": "/images/destinos/aeropuerto_habana_2.jpg",
+            "url": "destinos/aeropuerto_habana_2.jpg",
             "alt": "View 2 of Havana Airport"
           }
         ],
@@ -1877,14 +1877,14 @@ export const destinos ={
         "id": 2,
         "title": "Varadero Airport",
         "alternative_name": "Varadero Airport Destination",
-        "main_image": "/images/havana-capitol.jpg",
+        "main_image": "/havana-capitol.jpg",
         "images": [
           {
-            "url": "/images/destinos/aeropuerto_varadero_1.jpg",
+            "url": "destinos/aeropuerto_varadero_1.jpg",
             "alt": "View 1 of Varadero Airport"
           },
           {
-            "url": "/images/destinos/aeropuerto_varadero_2.jpg",
+            "url": "destinos/aeropuerto_varadero_2.jpg",
             "alt": "View 2 of Varadero Airport"
           }
         ],
@@ -1915,14 +1915,14 @@ export const destinos ={
         "id": 3,
         "title": "Cayo Coco",
         "alternative_name": "Cayo Coco Destination",
-        "main_image": "/images/havana-capitol.jpg",
+        "main_image": "/havana-capitol.jpg",
         "images": [
           {
-            "url": "/images/destinos/cayo_coco_1.jpg",
+            "url": "destinos/cayo_coco_1.jpg",
             "alt": "View 1 of Cayo Coco"
           },
           {
-            "url": "/images/destinos/cayo_coco_2.jpg",
+            "url": "destinos/cayo_coco_2.jpg",
             "alt": "View 2 of Cayo Coco"
           }
         ],
@@ -1953,14 +1953,14 @@ export const destinos ={
         "id": 4,
         "title": "Cayo Guillermo",
         "alternative_name": "Cayo Guillermo Destination",
-        "main_image": "/images/havana-capitol.jpg",
+        "main_image": "/havana-capitol.jpg",
         "images": [
           {
-            "url": "/images/destinos/cayo_guillermo_1.jpg",
+            "url": "destinos/cayo_guillermo_1.jpg",
             "alt": "View 1 of Cayo Guillermo"
           },
           {
-            "url": "/images/destinos/cayo_guillermo_2.jpg",
+            "url": "destinos/cayo_guillermo_2.jpg",
             "alt": "View 2 of Cayo Guillermo"
           }
         ],
@@ -1991,14 +1991,14 @@ export const destinos ={
         "id": 5,
         "title": "Cayo Santa María",
         "alternative_name": "Cayo Santa María Destination",
-        "main_image": "/images/havana-capitol.jpg",
+        "main_image": "/havana-capitol.jpg",
         "images": [
           {
-            "url": "/images/destinos/cayo_santa_maría_1.jpg",
+            "url": "destinos/cayo_santa_maría_1.jpg",
             "alt": "View 1 of Cayo Santa María"
           },
           {
-            "url": "/images/destinos/cayo_santa_maría_2.jpg",
+            "url": "destinos/cayo_santa_maría_2.jpg",
             "alt": "View 2 of Cayo Santa María"
           }
         ],
@@ -2029,14 +2029,14 @@ export const destinos ={
         "id": 6,
         "title": "Cienfuegos",
         "alternative_name": "Cienfuegos Destination",
-        "main_image": "/images/havana-capitol.jpg",
+        "main_image": "/havana-capitol.jpg",
         "images": [
           {
-            "url": "/images/destinos/cienfuegos_1.jpg",
+            "url": "destinos/cienfuegos_1.jpg",
             "alt": "View 1 of Cienfuegos"
           },
           {
-            "url": "/images/destinos/cienfuegos_2.jpg",
+            "url": "destinos/cienfuegos_2.jpg",
             "alt": "View 2 of Cienfuegos"
           }
         ],
@@ -2085,14 +2085,14 @@ export const destinos ={
         "id": 7,
         "title": "Havana",
         "alternative_name": "Havana Destination",
-        "main_image": "/images/havana-capitol.jpg",
+        "main_image": "/havana-capitol.jpg",
         "images": [
           {
-            "url": "/images/destinos/la_habana_1.jpg",
+            "url": "destinos/la_habana_1.jpg",
             "alt": "View 1 of Havana"
           },
           {
-            "url": "/images/destinos/la_habana_2.jpg",
+            "url": "destinos/la_habana_2.jpg",
             "alt": "View 2 of Havana"
           }
         ],
@@ -2132,14 +2132,14 @@ export const destinos ={
         "id": 8,
         "title": "Santa Clara",
         "alternative_name": "Santa Clara Destination",
-        "main_image": "/images/havana-capitol.jpg",
+        "main_image": "/havana-capitol.jpg",
         "images": [
           {
-            "url": "/images/destinos/santa_clara_1.jpg",
+            "url": "destinos/santa_clara_1.jpg",
             "alt": "View 1 of Santa Clara"
           },
           {
-            "url": "/images/destinos/santa_clara_2.jpg",
+            "url": "destinos/santa_clara_2.jpg",
             "alt": "View 2 of Santa Clara"
           }
         ],
@@ -2188,14 +2188,14 @@ export const destinos ={
         "id": 9,
         "title": "Trinidad",
         "alternative_name": "Trinidad Destination",
-        "main_image": "/images/havana-capitol.jpg",
+        "main_image": "/havana-capitol.jpg",
         "images": [
           {
-            "url": "/images/destinos/trinidad_1.jpg",
+            "url": "destinos/trinidad_1.jpg",
             "alt": "View 1 of Trinidad"
           },
           {
-            "url": "/images/destinos/trinidad_2.jpg",
+            "url": "destinos/trinidad_2.jpg",
             "alt": "View 2 of Trinidad"
           }
         ],
@@ -2244,14 +2244,14 @@ export const destinos ={
         "id": 10,
         "title": "Varadero",
         "alternative_name": "Varadero Destination",
-        "main_image": "/images/havana-capitol.jpg",
+        "main_image": "/havana-capitol.jpg",
         "images": [
           {
-            "url": "/images/destinos/varadero_1.jpg",
+            "url": "destinos/varadero_1.jpg",
             "alt": "View 1 of Varadero"
           },
           {
-            "url": "/images/destinos/varadero_2.jpg",
+            "url": "destinos/varadero_2.jpg",
             "alt": "View 2 of Varadero"
           }
         ],
@@ -2289,25 +2289,25 @@ export const destinos ={
       },
       {
         "id": 11,
-        "title": "Viñales",
-        "alternative_name": "Viñales Destination",
-        "main_image": "/images/havana-capitol.jpg",
+        "title": "/viñales",
+        "alternative_name": "/viñales Destination",
+        "main_image": "/havana-capitol.jpg",
         "images": [
           {
-            "url": "/images/destinos/viñales_1.jpg",
+            "url": "destinos/viñales_1.jpg",
             "alt": "View 1 of Viñales"
           },
           {
-            "url": "/images/destinos/viñales_2.jpg",
+            "url": "destinos/viñales_2.jpg",
             "alt": "View 2 of Viñales"
           }
         ],
         "description": "Information about Viñales.",
-        "detailed_description": "Viñales is one of the most outstanding destinations, with culture, landscapes and tourist attractions.",
+        "detailed_description": "/viñales is one of the most outstanding destinations, with culture, landscapes and tourist attractions.",
         "transfers": [
           {
             "from": "Havana Airport",
-            "to": "Viñales",
+            "to": "/viñales",
             "distance_km": 180,
             "time": "2:30",
             "convertible_car_usd": null,
@@ -2316,7 +2316,7 @@ export const destinos ={
           },
           {
             "from": "Havana",
-            "to": "Viñales",
+            "to": "/viñales",
             "distance_km": 180,
             "time": "2:30",
             "convertible_car_usd": 180.0,
@@ -2325,7 +2325,7 @@ export const destinos ={
           },
           {
             "from": "Varadero",
-            "to": "Viñales",
+            "to": "/viñales",
             "distance_km": 330,
             "time": "4:45",
             "convertible_car_usd": null,
@@ -2342,14 +2342,14 @@ export const destinos ={
         "id": 1,
         "title": "Aéroport de La Havane",
         "alternative_name": "Destination Aéroport de La Havane",
-        "main_image": "/images/havana-capitol.jpg",
+        "main_image": "/havana-capitol.jpg",
         "images": [
           {
-            "url": "/images/destinos/aeropuerto_habana_1.jpg",
+            "url": "destinos/aeropuerto_habana_1.jpg",
             "alt": "Vue 1 de l'aéroport de La Havane"
           },
           {
-            "url": "/images/destinos/aeropuerto_habana_2.jpg",
+            "url": "destinos/aeropuerto_habana_2.jpg",
             "alt": "Vue 2 de l'aéroport de La Havane"
           }
         ],
@@ -2389,14 +2389,14 @@ export const destinos ={
         "id": 2,
         "title": "Aéroport de Varadero",
         "alternative_name": "Destination Aéroport de Varadero",
-        "main_image": "/images/havana-capitol.jpg",
+        "main_image": "/havana-capitol.jpg",
         "images": [
           {
-            "url": "/images/destinos/aeropuerto_varadero_1.jpg",
+            "url": "destinos/aeropuerto_varadero_1.jpg",
             "alt": "Vue 1 de l'aéroport de Varadero"
           },
           {
-            "url": "/images/destinos/aeropuerto_varadero_2.jpg",
+            "url": "destinos/aeropuerto_varadero_2.jpg",
             "alt": "Vue 2 de l'aéroport de Varadero"
           }
         ],
@@ -2427,14 +2427,14 @@ export const destinos ={
         "id": 3,
         "title": "Cayo Coco",
         "alternative_name": "Destination Cayo Coco",
-        "main_image": "/images/havana-capitol.jpg",
+        "main_image": "/havana-capitol.jpg",
         "images": [
           {
-            "url": "/images/destinos/cayo_coco_1.jpg",
+            "url": "destinos/cayo_coco_1.jpg",
             "alt": "Vue 1 de Cayo Coco"
           },
           {
-            "url": "/images/destinos/cayo_coco_2.jpg",
+            "url": "destinos/cayo_coco_2.jpg",
             "alt": "Vue 2 de Cayo Coco"
           }
         ],
@@ -2465,14 +2465,14 @@ export const destinos ={
         "id": 4,
         "title": "Cayo Guillermo",
         "alternative_name": "Destination Cayo Guillermo",
-        "main_image": "/images/havana-capitol.jpg",
+        "main_image": "/havana-capitol.jpg",
         "images": [
           {
-            "url": "/images/destinos/cayo_guillermo_1.jpg",
+            "url": "destinos/cayo_guillermo_1.jpg",
             "alt": "Vue 1 de Cayo Guillermo"
           },
           {
-            "url": "/images/destinos/cayo_guillermo_2.jpg",
+            "url": "destinos/cayo_guillermo_2.jpg",
             "alt": "Vue 2 de Cayo Guillermo"
           }
         ],
@@ -2503,14 +2503,14 @@ export const destinos ={
         "id": 5,
         "title": "Cayo Santa María",
         "alternative_name": "Destination Cayo Santa María",
-        "main_image": "/images/havana-capitol.jpg",
+        "main_image": "/havana-capitol.jpg",
         "images": [
           {
-            "url": "/images/destinos/cayo_santa_maría_1.jpg",
+            "url": "destinos/cayo_santa_maría_1.jpg",
             "alt": "Vue 1 de Cayo Santa María"
           },
           {
-            "url": "/images/destinos/cayo_santa_maría_2.jpg",
+            "url": "destinos/cayo_santa_maría_2.jpg",
             "alt": "Vue 2 de Cayo Santa María"
           }
         ],
@@ -2541,14 +2541,14 @@ export const destinos ={
         "id": 6,
         "title": "Cienfuegos",
         "alternative_name": "Destination Cienfuegos",
-        "main_image": "/images/havana-capitol.jpg",
+        "main_image": "/havana-capitol.jpg",
         "images": [
           {
-            "url": "/images/destinos/cienfuegos_1.jpg",
+            "url": "destinos/cienfuegos_1.jpg",
             "alt": "Vue 1 de Cienfuegos"
           },
           {
-            "url": "/images/destinos/cienfuegos_2.jpg",
+            "url": "destinos/cienfuegos_2.jpg",
             "alt": "Vue 2 de Cienfuegos"
           }
         ],
@@ -2597,14 +2597,14 @@ export const destinos ={
         "id": 7,
         "title": "La Havane",
         "alternative_name": "Destination La Havane",
-        "main_image": "/images/havana-capitol.jpg",
+        "main_image": "/havana-capitol.jpg",
         "images": [
           {
-            "url": "/images/destinos/la_habana_1.jpg",
+            "url": "destinos/la_habana_1.jpg",
             "alt": "Vue 1 de La Havane"
           },
           {
-            "url": "/images/destinos/la_habana_2.jpg",
+            "url": "destinos/la_habana_2.jpg",
             "alt": "Vue 2 de La Havane"
           }
         ],
@@ -2644,14 +2644,14 @@ export const destinos ={
         "id": 8,
         "title": "Santa Clara",
         "alternative_name": "Destination Santa Clara",
-        "main_image": "/images/havana-capitol.jpg",
+        "main_image": "/havana-capitol.jpg",
         "images": [
           {
-            "url": "/images/destinos/santa_clara_1.jpg",
+            "url": "destinos/santa_clara_1.jpg",
             "alt": "Vue 1 de Santa Clara"
           },
           {
-            "url": "/images/destinos/santa_clara_2.jpg",
+            "url": "destinos/santa_clara_2.jpg",
             "alt": "Vue 2 de Santa Clara"
           }
         ],
@@ -2700,14 +2700,14 @@ export const destinos ={
         "id": 9,
         "title": "Trinidad",
         "alternative_name": "Destination Trinidad",
-        "main_image": "/images/havana-capitol.jpg",
+        "main_image": "/havana-capitol.jpg",
         "images": [
           {
-            "url": "/images/destinos/trinidad_1.jpg",
+            "url": "destinos/trinidad_1.jpg",
             "alt": "Vue 1 de Trinidad"
           },
           {
-            "url": "/images/destinos/trinidad_2.jpg",
+            "url": "destinos/trinidad_2.jpg",
             "alt": "Vue 2 de Trinidad"
           }
         ],
@@ -2756,14 +2756,14 @@ export const destinos ={
         "id": 10,
         "title": "Varadero",
         "alternative_name": "Destination Varadero",
-        "main_image": "/images/havana-capitol.jpg",
+        "main_image": "/havana-capitol.jpg",
         "images": [
           {
-            "url": "/images/destinos/varadero_1.jpg",
+            "url": "destinos/varadero_1.jpg",
             "alt": "Vue 1 de Varadero"
           },
           {
-            "url": "/images/destinos/varadero_2.jpg",
+            "url": "destinos/varadero_2.jpg",
             "alt": "Vue 2 de Varadero"
           }
         ],
@@ -2801,25 +2801,25 @@ export const destinos ={
       },
       {
         "id": 11,
-        "title": "Viñales",
+        "title": "/viñales",
         "alternative_name": "Destination Viñales",
-        "main_image": "/images/havana-capitol.jpg",
+        "main_image": "/havana-capitol.jpg",
         "images": [
           {
-            "url": "/images/destinos/viñales_1.jpg",
+            "url": "destinos/viñales_1.jpg",
             "alt": "Vue 1 de Viñales"
           },
           {
-            "url": "/images/destinos/viñales_2.jpg",
+            "url": "destinos/viñales_2.jpg",
             "alt": "Vue 2 de Viñales"
           }
         ],
         "description": "Informations sur Viñales.",
-        "detailed_description": "Viñales est l'une des destinations les plus remarquables, avec sa culture, ses paysages et ses attractions touristiques.",
+        "detailed_description": "/viñales est l'une des destinations les plus remarquables, avec sa culture, ses paysages et ses attractions touristiques.",
         "transfers": [
           {
             "from": "Aéroport de La Havane",
-            "to": "Viñales",
+            "to": "/viñales",
             "distance_km": 180,
             "time": "2:30",
             "convertible_car_usd": null,
@@ -2828,7 +2828,7 @@ export const destinos ={
           },
           {
             "from": "La Havane",
-            "to": "Viñales",
+            "to": "/viñales",
             "distance_km": 180,
             "time": "2:30",
             "convertible_car_usd": 180.0,
@@ -2837,7 +2837,7 @@ export const destinos ={
           },
           {
             "from": "Varadero",
-            "to": "Viñales",
+            "to": "/viñales",
             "distance_km": 330,
             "time": "4:45",
             "convertible_car_usd": null,
@@ -2854,14 +2854,14 @@ export const destinos ={
         "id": 1,
         "title": "Flughafen Havanna",
         "alternative_name": "Ziel Flughafen Havanna",
-        "main_image": "/images/havana-capitol.jpg",
+        "main_image": "/havana-capitol.jpg",
         "images": [
           {
-            "url": "/images/destinos/aeropuerto_habana_1.jpg",
+            "url": "destinos/aeropuerto_habana_1.jpg",
             "alt": "Ansicht 1 des Flughafens Havanna"
           },
           {
-            "url": "/images/destinos/aeropuerto_habana_2.jpg",
+            "url": "destinos/aeropuerto_habana_2.jpg",
             "alt": "Ansicht 2 des Flughafens Havanna"
           }
         ],
@@ -2901,14 +2901,14 @@ export const destinos ={
         "id": 2,
         "title": "Flughafen Varadero",
         "alternative_name": "Ziel Flughafen Varadero",
-        "main_image": "/images/havana-capitol.jpg",
+        "main_image": "/havana-capitol.jpg",
         "images": [
           {
-            "url": "/images/destinos/aeropuerto_varadero_1.jpg",
+            "url": "destinos/aeropuerto_varadero_1.jpg",
             "alt": "Ansicht 1 des Flughafens Varadero"
           },
           {
-            "url": "/images/destinos/aeropuerto_varadero_2.jpg",
+            "url": "destinos/aeropuerto_varadero_2.jpg",
             "alt": "Ansicht 2 des Flughafens Varadero"
           }
         ],
@@ -2939,14 +2939,14 @@ export const destinos ={
         "id": 3,
         "title": "Cayo Coco",
         "alternative_name": "Ziel Cayo Coco",
-        "main_image": "/images/havana-capitol.jpg",
+        "main_image": "/havana-capitol.jpg",
         "images": [
           {
-            "url": "/images/destinos/cayo_coco_1.jpg",
+            "url": "destinos/cayo_coco_1.jpg",
             "alt": "Ansicht 1 von Cayo Coco"
           },
           {
-            "url": "/images/destinos/cayo_coco_2.jpg",
+            "url": "destinos/cayo_coco_2.jpg",
             "alt": "Ansicht 2 von Cayo Coco"
           }
         ],
@@ -2977,14 +2977,14 @@ export const destinos ={
         "id": 4,
         "title": "Cayo Guillermo",
         "alternative_name": "Ziel Cayo Guillermo",
-        "main_image": "/images/havana-capitol.jpg",
+        "main_image": "/havana-capitol.jpg",
         "images": [
           {
-            "url": "/images/destinos/cayo_guillermo_1.jpg",
+            "url": "destinos/cayo_guillermo_1.jpg",
             "alt": "Ansicht 1 von Cayo Guillermo"
           },
           {
-            "url": "/images/destinos/cayo_guillermo_2.jpg",
+            "url": "destinos/cayo_guillermo_2.jpg",
             "alt": "Ansicht 2 von Cayo Guillermo"
           }
         ],
@@ -3015,14 +3015,14 @@ export const destinos ={
         "id": 5,
         "title": "Cayo Santa María",
         "alternative_name": "Ziel Cayo Santa María",
-        "main_image": "/images/havana-capitol.jpg",
+        "main_image": "/havana-capitol.jpg",
         "images": [
           {
-            "url": "/images/destinos/cayo_santa_maría_1.jpg",
+            "url": "destinos/cayo_santa_maría_1.jpg",
             "alt": "Ansicht 1 von Cayo Santa María"
           },
           {
-            "url": "/images/destinos/cayo_santa_maría_2.jpg",
+            "url": "destinos/cayo_santa_maría_2.jpg",
             "alt": "Ansicht 2 von Cayo Santa María"
           }
         ],
@@ -3053,14 +3053,14 @@ export const destinos ={
         "id": 6,
         "title": "Cienfuegos",
         "alternative_name": "Ziel Cienfuegos",
-        "main_image": "/images/havana-capitol.jpg",
+        "main_image": "/havana-capitol.jpg",
         "images": [
           {
-            "url": "/images/destinos/cienfuegos_1.jpg",
+            "url": "destinos/cienfuegos_1.jpg",
             "alt": "Ansicht 1 von Cienfuegos"
           },
           {
-            "url": "/images/destinos/cienfuegos_2.jpg",
+            "url": "destinos/cienfuegos_2.jpg",
             "alt": "Ansicht 2 von Cienfuegos"
           }
         ],
@@ -3109,14 +3109,14 @@ export const destinos ={
         "id": 7,
         "title": "Havanna",
         "alternative_name": "Ziel Havanna",
-        "main_image": "/images/havana-capitol.jpg",
+        "main_image": "/havana-capitol.jpg",
         "images": [
           {
-            "url": "/images/destinos/la_habana_1.jpg",
+            "url": "destinos/la_habana_1.jpg",
             "alt": "Ansicht 1 von Havanna"
           },
           {
-            "url": "/images/destinos/la_habana_2.jpg",
+            "url": "destinos/la_habana_2.jpg",
             "alt": "Ansicht 2 von Havanna"
           }
         ],
@@ -3156,14 +3156,14 @@ export const destinos ={
         "id": 8,
         "title": "Santa Clara",
         "alternative_name": "Ziel Santa Clara",
-        "main_image": "/images/havana-capitol.jpg",
+        "main_image": "/havana-capitol.jpg",
         "images": [
           {
-            "url": "/images/destinos/santa_clara_1.jpg",
+            "url": "destinos/santa_clara_1.jpg",
             "alt": "Ansicht 1 von Santa Clara"
           },
           {
-            "url": "/images/destinos/santa_clara_2.jpg",
+            "url": "destinos/santa_clara_2.jpg",
             "alt": "Ansicht 2 von Santa Clara"
           }
         ],
@@ -3212,14 +3212,14 @@ export const destinos ={
         "id": 9,
         "title": "Trinidad",
         "alternative_name": "Ziel Trinidad",
-        "main_image": "/images/havana-capitol.jpg",
+        "main_image": "/havana-capitol.jpg",
         "images": [
           {
-            "url": "/images/destinos/trinidad_1.jpg",
+            "url": "destinos/trinidad_1.jpg",
             "alt": "Ansicht 1 von Trinidad"
           },
           {
-            "url": "/images/destinos/trinidad_2.jpg",
+            "url": "destinos/trinidad_2.jpg",
             "alt": "Ansicht 2 von Trinidad"
           }
         ],
@@ -3268,14 +3268,14 @@ export const destinos ={
         "id": 10,
         "title": "Varadero",
         "alternative_name": "Ziel Varadero",
-        "main_image": "/images/havana-capitol.jpg",
+        "main_image": "/havana-capitol.jpg",
         "images": [
           {
-            "url": "/images/destinos/varadero_1.jpg",
+            "url": "destinos/varadero_1.jpg",
             "alt": "Ansicht 1 von Varadero"
           },
           {
-            "url": "/images/destinos/varadero_2.jpg",
+            "url": "destinos/varadero_2.jpg",
             "alt": "Ansicht 2 von Varadero"
           }
         ],
@@ -3313,25 +3313,25 @@ export const destinos ={
       },
       {
         "id": 11,
-        "title": "Viñales",
+        "title": "/viñales",
         "alternative_name": "Ziel Viñales",
-        "main_image": "/images/havana-capitol.jpg",
+        "main_image": "/havana-capitol.jpg",
         "images": [
           {
-            "url": "/images/destinos/viñales_1.jpg",
+            "url": "destinos/viñales_1.jpg",
             "alt": "Ansicht 1 von Viñales"
           },
           {
-            "url": "/images/destinos/viñales_2.jpg",
+            "url": "destinos/viñales_2.jpg",
             "alt": "Ansicht 2 von Viñales"
           }
         ],
         "description": "Informationen über Viñales.",
-        "detailed_description": "Viñales ist eines der bemerkenswertesten Reiseziele mit Kultur, Landschaften und touristischen Attraktionen.",
+        "detailed_description": "/viñales ist eines der bemerkenswertesten Reiseziele mit Kultur, Landschaften und touristischen Attraktionen.",
         "transfers": [
           {
             "from": "Flughafen Havanna",
-            "to": "Viñales",
+            "to": "/viñales",
             "distance_km": 180,
             "time": "2:30",
             "convertible_car_usd": null,
@@ -3340,7 +3340,7 @@ export const destinos ={
           },
           {
             "from": "Havanna",
-            "to": "Viñales",
+            "to": "/viñales",
             "distance_km": 180,
             "time": "2:30",
             "convertible_car_usd": 180.0,
@@ -3349,7 +3349,7 @@ export const destinos ={
           },
           {
             "from": "Varadero",
-            "to": "Viñales",
+            "to": "/viñales",
             "distance_km": 330,
             "time": "4:45",
             "convertible_car_usd": null,
@@ -3366,14 +3366,14 @@ export const destinos ={
         "id": 1,
         "title": "Аэропорт Гаваны",
         "alternative_name": "Направление Аэропорт Гаваны",
-        "main_image": "/images/havana-capitol.jpg",
+        "main_image": "/havana-capitol.jpg",
         "images": [
           {
-            "url": "/images/destinos/aeropuerto_habana_1.jpg",
+            "url": "destinos/aeropuerto_habana_1.jpg",
             "alt": "Вид 1 аэропорта Гаваны"
           },
           {
-            "url": "/images/destinos/aeropuerto_habana_2.jpg",
+            "url": "destinos/aeropuerto_habana_2.jpg",
             "alt": "Вид 2 аэропорта Гаваны"
           }
         ],
@@ -3413,14 +3413,14 @@ export const destinos ={
         "id": 2,
         "title": "Аэропорт Варадеро",
         "alternative_name": "Направление Аэропорт Варадеро",
-        "main_image": "/images/havana-capitol.jpg",
+        "main_image": "/havana-capitol.jpg",
         "images": [
           {
-            "url": "/images/destinos/aeropuerto_varadero_1.jpg",
+            "url": "destinos/aeropuerto_varadero_1.jpg",
             "alt": "Вид 1 аэропорта Варадеро"
           },
           {
-            "url": "/images/destinos/aeropuerto_varadero_2.jpg",
+            "url": "destinos/aeropuerto_varadero_2.jpg",
             "alt": "Вид 2 аэропорта Варадеро"
           }
         ],
@@ -3451,14 +3451,14 @@ export const destinos ={
         "id": 3,
         "title": "Кайо-Коко",
         "alternative_name": "Направление Кайо-Коко",
-        "main_image": "/images/havana-capitol.jpg",
+        "main_image": "/havana-capitol.jpg",
         "images": [
           {
-            "url": "/images/destinos/cayo_coco_1.jpg",
+            "url": "destinos/cayo_coco_1.jpg",
             "alt": "Вид 1 Кайо-Коко"
           },
           {
-            "url": "/images/destinos/cayo_coco_2.jpg",
+            "url": "destinos/cayo_coco_2.jpg",
             "alt": "Вид 2 Кайо-Коко"
           }
         ],
@@ -3489,14 +3489,14 @@ export const destinos ={
         "id": 4,
         "title": "Кайо-Гильермо",
         "alternative_name": "Направление Кайо-Гильермо",
-        "main_image": "/images/havana-capitol.jpg",
+        "main_image": "/havana-capitol.jpg",
         "images": [
           {
-            "url": "/images/destinos/cayo_guillermo_1.jpg",
+            "url": "destinos/cayo_guillermo_1.jpg",
             "alt": "Вид 1 Кайо-Гильермо"
           },
           {
-            "url": "/images/destinos/cayo_guillermo_2.jpg",
+            "url": "destinos/cayo_guillermo_2.jpg",
             "alt": "Вид 2 Кайо-Гильермо"
           }
         ],
@@ -3527,14 +3527,14 @@ export const destinos ={
         "id": 5,
         "title": "Кайо-Санта-Мария",
         "alternative_name": "Направление Кайо-Санта-Мария",
-        "main_image": "/images/havana-capitol.jpg",
+        "main_image": "/havana-capitol.jpg",
         "images": [
           {
-            "url": "/images/destinos/cayo_santa_maría_1.jpg",
+            "url": "destinos/cayo_santa_maría_1.jpg",
             "alt": "Вид 1 Кайо-Санта-Мария"
           },
           {
-            "url": "/images/destinos/cayo_santa_maría_2.jpg",
+            "url": "destinos/cayo_santa_maría_2.jpg",
             "alt": "Вид 2 Кайо-Санта-Мария"
           }
         ],
@@ -3565,14 +3565,14 @@ export const destinos ={
         "id": 6,
         "title": "Сьенфуэгос",
         "alternative_name": "Направление Сьенфуэгос",
-        "main_image": "/images/havana-capitol.jpg",
+        "main_image": "/havana-capitol.jpg",
         "images": [
           {
-            "url": "/images/destinos/cienfuegos_1.jpg",
+            "url": "destinos/cienfuegos_1.jpg",
             "alt": "Вид 1 Сьенфуэгоса"
           },
           {
-            "url": "/images/destinos/cienfuegos_2.jpg",
+            "url": "destinos/cienfuegos_2.jpg",
             "alt": "Вид 2 Сьенфуэгоса"
           }
         ],
@@ -3621,14 +3621,14 @@ export const destinos ={
         "id": 7,
         "title": "Гавана",
         "alternative_name": "Направление Гавана",
-        "main_image": "/images/havana-capitol.jpg",
+        "main_image": "/havana-capitol.jpg",
         "images": [
           {
-            "url": "/images/destinos/la_habana_1.jpg",
+            "url": "destinos/la_habana_1.jpg",
             "alt": "Вид 1 Гаваны"
           },
           {
-            "url": "/images/destinos/la_habana_2.jpg",
+            "url": "destinos/la_habana_2.jpg",
             "alt": "Вид 2 Гаваны"
           }
         ],
@@ -3668,14 +3668,14 @@ export const destinos ={
         "id": 8,
         "title": "Санта-Клара",
         "alternative_name": "Направление Санта-Клара",
-        "main_image": "/images/destinos/santa_clara.jpg",
+        "main_image": "destinos/santa_clara.jpg",
         "images": [
           {
-            "url": "/images/destinos/santa_clara_1.jpg",
+            "url": "destinos/santa_clara_1.jpg",
             "alt": "Вид 1 Санта-Клары"
           },
           {
-            "url": "/images/destinos/santa_clara_2.jpg",
+            "url": "destinos/santa_clara_2.jpg",
             "alt": "Вид 2 Санта-Клары"
           }
         ],
@@ -3724,14 +3724,14 @@ export const destinos ={
         "id": 9,
         "title": "Тринидад",
         "alternative_name": "Направление Тринидад",
-        "main_image": "/images/destinos/trinidad.jpg",
+        "main_image": "destinos/trinidad.jpg",
         "images": [
           {
-            "url": "/images/destinos/trinidad_1.jpg",
+            "url": "destinos/trinidad_1.jpg",
             "alt": "Вид 1 Тринидада"
           },
           {
-            "url": "/images/destinos/trinidad_2.jpg",
+            "url": "destinos/trinidad_2.jpg",
             "alt": "Вид 2 Тринидада"
           }
         ],
@@ -3780,14 +3780,14 @@ export const destinos ={
         "id": 10,
         "title": "Варадеро",
         "alternative_name": "Направление Варадеро",
-        "main_image": "/images/destinos/varadero.jpg",
+        "main_image": "destinos/varadero.jpg",
         "images": [
           {
-            "url": "/images/destinos/varadero_1.jpg",
+            "url": "destinos/varadero_1.jpg",
             "alt": "Вид 1 Варадеро"
           },
           {
-            "url": "/images/destinos/varadero_2.jpg",
+            "url": "destinos/varadero_2.jpg",
             "alt": "Вид 2 Варадеро"
           }
         ],
@@ -3827,14 +3827,14 @@ export const destinos ={
         "id": 11,
         "title": "Виньялес",
         "alternative_name": "Направление Виньялес",
-        "main_image": "/images/destinos/viñales.jpg",
+        "main_image": "destinos/viñales.jpg",
         "images": [
           {
-            "url": "/images/destinos/viñales_1.jpg",
+            "url": "destinos/viñales_1.jpg",
             "alt": "Вид 1 Виньялеса"
           },
           {
-            "url": "/images/destinos/viñales_2.jpg",
+            "url": "destinos/viñales_2.jpg",
             "alt": "Вид 2 Виньялеса"
           }
         ],
@@ -3878,14 +3878,14 @@ export const destinos ={
         "id": 1,
         "title": "Aeroporto de Havana",
         "alternative_name": "Destino Aeroporto de Havana",
-        "main_image": "/images/destinos/aeropuerto_habana.jpg",
+        "main_image": "destinos/aeropuerto_habana.jpg",
         "images": [
           {
-            "url": "/images/destinos/aeropuerto_habana_1.jpg",
+            "url": "destinos/aeropuerto_habana_1.jpg",
             "alt": "Vista 1 do Aeroporto de Havana"
           },
           {
-            "url": "/images/destinos/aeropuerto_habana_2.jpg",
+            "url": "destinos/aeropuerto_habana_2.jpg",
             "alt": "Vista 2 do Aeroporto de Havana"
           }
         ],
@@ -3925,14 +3925,14 @@ export const destinos ={
         "id": 2,
         "title": "Aeroporto de Varadero",
         "alternative_name": "Destino Aeroporto de Varadero",
-        "main_image": "/images/destinos/aeropuerto_varadero.jpg",
+        "main_image": "destinos/aeropuerto_varadero.jpg",
         "images": [
           {
-            "url": "/images/destinos/aeropuerto_varadero_1.jpg",
+            "url": "destinos/aeropuerto_varadero_1.jpg",
             "alt": "Vista 1 do Aeroporto de Varadero"
           },
           {
-            "url": "/images/destinos/aeropuerto_varadero_2.jpg",
+            "url": "destinos/aeropuerto_varadero_2.jpg",
             "alt": "Vista 2 do Aeroporto de Varadero"
           }
         ],
@@ -3963,14 +3963,14 @@ export const destinos ={
         "id": 3,
         "title": "Cayo Coco",
         "alternative_name": "Destino Cayo Coco",
-        "main_image": "/images/destinos/cayo_coco.jpg",
+        "main_image": "destinos/cayo_coco.jpg",
         "images": [
           {
-            "url": "/images/destinos/cayo_coco_1.jpg",
+            "url": "destinos/cayo_coco_1.jpg",
             "alt": "Vista 1 de Cayo Coco"
           },
           {
-            "url": "/images/destinos/cayo_coco_2.jpg",
+            "url": "destinos/cayo_coco_2.jpg",
             "alt": "Vista 2 de Cayo Coco"
           }
         ],
@@ -4001,14 +4001,14 @@ export const destinos ={
         "id": 4,
         "title": "Cayo Guillermo",
         "alternative_name": "Destino Cayo Guillermo",
-        "main_image": "/images/destinos/cayo_guillermo.jpg",
+        "main_image": "destinos/cayo_guillermo.jpg",
         "images": [
           {
-            "url": "/images/destinos/cayo_guillermo_1.jpg",
+            "url": "destinos/cayo_guillermo_1.jpg",
             "alt": "Vista 1 de Cayo Guillermo"
           },
           {
-            "url": "/images/destinos/cayo_guillermo_2.jpg",
+            "url": "destinos/cayo_guillermo_2.jpg",
             "alt": "Vista 2 de Cayo Guillermo"
           }
         ],
@@ -4039,14 +4039,14 @@ export const destinos ={
         "id": 5,
         "title": "Cayo Santa María",
         "alternative_name": "Destino Cayo Santa María",
-        "main_image": "/images/destinos/cayo_santa_maría.jpg",
+        "main_image": "destinos/cayo_santa_maría.jpg",
         "images": [
           {
-            "url": "/images/destinos/cayo_santa_maría_1.jpg",
+            "url": "destinos/cayo_santa_maría_1.jpg",
             "alt": "Vista 1 de Cayo Santa María"
           },
           {
-            "url": "/images/destinos/cayo_santa_maría_2.jpg",
+            "url": "destinos/cayo_santa_maría_2.jpg",
             "alt": "Vista 2 de Cayo Santa María"
           }
         ],
@@ -4077,14 +4077,14 @@ export const destinos ={
         "id": 6,
         "title": "Cienfuegos",
         "alternative_name": "Destino Cienfuegos",
-        "main_image": "/images/destinos/cienfuegos.jpg",
+        "main_image": "destinos/cienfuegos.jpg",
         "images": [
           {
-            "url": "/images/destinos/cienfuegos_1.jpg",
+            "url": "destinos/cienfuegos_1.jpg",
             "alt": "Vista 1 de Cienfuegos"
           },
           {
-            "url": "/images/destinos/cienfuegos_2.jpg",
+            "url": "destinos/cienfuegos_2.jpg",
             "alt": "Vista 2 de Cienfuegos"
           }
         ],
@@ -4133,14 +4133,14 @@ export const destinos ={
         "id": 7,
         "title": "Havana",
         "alternative_name": "Destino Havana",
-        "main_image": "/images/destinos/la_habana.jpg",
+        "main_image": "destinos/la_habana.jpg",
         "images": [
           {
-            "url": "/images/destinos/la_habana_1.jpg",
+            "url": "destinos/la_habana_1.jpg",
             "alt": "Vista 1 de Havana"
           },
           {
-            "url": "/images/destinos/la_habana_2.jpg",
+            "url": "destinos/la_habana_2.jpg",
             "alt": "Vista 2 de Havana"
           }
         ],
@@ -4180,14 +4180,14 @@ export const destinos ={
         "id": 8,
         "title": "Santa Clara",
         "alternative_name": "Destino Santa Clara",
-        "main_image": "/images/destinos/santa_clara.jpg",
+        "main_image": "destinos/santa_clara.jpg",
         "images": [
           {
-            "url": "/images/destinos/santa_clara_1.jpg",
+            "url": "destinos/santa_clara_1.jpg",
             "alt": "Vista 1 de Santa Clara"
           },
           {
-            "url": "/images/destinos/santa_clara_2.jpg",
+            "url": "destinos/santa_clara_2.jpg",
             "alt": "Vista 2 de Santa Clara"
           }
         ],
@@ -4236,14 +4236,14 @@ export const destinos ={
         "id": 9,
         "title": "Trinidad",
         "alternative_name": "Destino Trinidad",
-        "main_image": "/images/destinos/trinidad.jpg",
+        "main_image": "destinos/trinidad.jpg",
         "images": [
           {
-            "url": "/images/destinos/trinidad_1.jpg",
+            "url": "destinos/trinidad_1.jpg",
             "alt": "Vista 1 de Trinidad"
           },
           {
-            "url": "/images/destinos/trinidad_2.jpg",
+            "url": "destinos/trinidad_2.jpg",
             "alt": "Vista 2 de Trinidad"
           }
         ],
@@ -4292,14 +4292,14 @@ export const destinos ={
         "id": 10,
         "title": "Varadero",
         "alternative_name": "Destino Varadero",
-        "main_image": "/images/destinos/varadero.jpg",
+        "main_image": "destinos/varadero.jpg",
         "images": [
           {
-            "url": "/images/destinos/varadero_1.jpg",
+            "url": "destinos/varadero_1.jpg",
             "alt": "Vista 1 de Varadero"
           },
           {
-            "url": "/images/destinos/varadero_2.jpg",
+            "url": "destinos/varadero_2.jpg",
             "alt": "Vista 2 de Varadero"
           }
         ],
@@ -4337,25 +4337,25 @@ export const destinos ={
       },
       {
         "id": 11,
-        "title": "Viñales",
+        "title": "/viñales",
         "alternative_name": "Destino Viñales",
-        "main_image": "/images/destinos/viñales.jpg",
+        "main_image": "destinos/viñales.jpg",
         "images": [
           {
-            "url": "/images/destinos/viñales_1.jpg",
+            "url": "destinos/viñales_1.jpg",
             "alt": "Vista 1 de Viñales"
           },
           {
-            "url": "/images/destinos/viñales_2.jpg",
+            "url": "destinos/viñales_2.jpg",
             "alt": "Vista 2 de Viñales"
           }
         ],
         "description": "Informações sobre Viñales.",
-        "detailed_description": "Viñales é um dos destinos mais destacados, com cultura, paisagens e atrações turísticas.",
+        "detailed_description": "/viñales é um dos destinos mais destacados, com cultura, paisagens e atrações turísticas.",
         "transfers": [
           {
             "from": "Aeroporto de Havana",
-            "to": "Viñales",
+            "to": "/viñales",
             "distance_km": 180,
             "time": "2:30",
             "convertible_car_usd": null,
@@ -4364,7 +4364,7 @@ export const destinos ={
           },
           {
             "from": "Havana",
-            "to": "Viñales",
+            "to": "/viñales",
             "distance_km": 180,
             "time": "2:30",
             "convertible_car_usd": 180.0,
@@ -4373,7 +4373,7 @@ export const destinos ={
           },
           {
             "from": "Varadero",
-            "to": "Viñales",
+            "to": "/viñales",
             "distance_km": 330,
             "time": "4:45",
             "convertible_car_usd": null,

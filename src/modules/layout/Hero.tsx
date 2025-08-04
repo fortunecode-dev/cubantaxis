@@ -22,13 +22,13 @@ export default function Hero({ idioma,lang }: { idioma: AppTexts,lang:string }) 
             <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
                 <div className="hero-background grid grid-cols-3 md:grid-cols-6 gap-2 p-1 pt-5">
                     {[
-                        "/images/cienfuegos.jpg", "/images/cayo-coco.jpg", "/images/havana-capitol.jpg",
-                        "/images/trinidad.jpg", "/images/varadero-view.jpg", "/images/cayo-santa-maria.webp",
-                        "/images/viñales.jpg", "/images/santa-clara.jpeg", "/images/havana-tour.jpg",
-                        "/images/playa-del-este.jpg", "/images/cayo-guillermo.png", "/images/varadero.jpg"
+                        "/cienfuegos.jpg", "/cayo-coco.jpg", "/havana-capitol.jpg",
+                        "/trinidad.jpg", "/varadero-view.jpg", "/cayo-santa-maria.webp",
+                        "/viñales.jpg", "/santa-clara.jpeg", "/havana-tour.jpg",
+                        "/playa-del-este.jpg", "/cayo-guillermo.png", "/varadero.jpg"
                     ].map((src, i) => (
                         <div key={i}>
-                            <Image className="h-auto w-full rounded-lg object-cover" src={src} alt={`Imagen de ${src.split("/").pop()?.split(".")[0]}`} title={`${src.split("/").pop()?.split(".")[0]}`} width={500} height={500} />
+                            <Image  className="h-auto w-full rounded-lg object-cover" dir={src} src={src} alt={`Imagen de ${src.split("/").pop()?.split(".")[0]}`} title={`${src.split("/").pop()?.split(".")[0]}`} width={400} height={300} />
                         </div>
                     ))}
                 </div>
@@ -42,9 +42,9 @@ export default function Hero({ idioma,lang }: { idioma: AppTexts,lang:string }) 
                         <h1 className="text-4xl font-extrabold tracking-tight leading-tight text-white mb-4 md:text-5xl xl:text-6xl">
                             {idioma.hero.title}
                         </h1>
-                        <p className="text-lg font-light text-gray-300 mb-6 max-w-2xl md:text-xl">
+                        <h2 className="text-lg font-light text-gray-300 mb-6 max-w-2xl md:text-xl">
                             {idioma.hero.subtitle}
-                        </p>
+                        </h2>
 
                         {/* Botones en columna en mobile y fila en md+ */}
                         <div className="flex flex-col md:flex-row w-full gap-4">

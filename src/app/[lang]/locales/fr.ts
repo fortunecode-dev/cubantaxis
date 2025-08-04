@@ -68,7 +68,7 @@ export const fr: AppTexts = {
   bookViaWhatsapp: "Réserver via WhatsApp",
   bookViaTelegram: "Réserver via Telegram",
   requestTitle: "🚕 Demande de réservation rapide",
-  locations: ["La Havane", "Varadero", "Viñales", "Trinidad"],
+  locations: ["La Havane", "Varadero", "/viñales", "Trinidad"],
   vehicles: ["Berline", "Van", "SUV"]
 }
 

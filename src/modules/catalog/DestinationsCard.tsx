@@ -41,6 +41,7 @@ export default function DestinationsCard({ destinations, idioma,name }: Destinat
               <Image
                 alt={dest.title}
                 src={dest.main_image}
+                dir={dest.main_image}
                 title={dest.title}
                 width={400}
                 height={250}

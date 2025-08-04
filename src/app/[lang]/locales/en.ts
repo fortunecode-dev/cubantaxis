@@ -69,7 +69,7 @@ quickForm: {
   bookViaWhatsapp: "Book via WhatsApp",
   bookViaTelegram: "Book via Telegram",
   requestTitle: "🚕 Quick Booking Request",
-  locations: ["Havana", "Varadero", "Viñales", "Trinidad"],
+  locations: ["Havana", "Varadero", "/viñales", "Trinidad"],
   vehicles: ["Sedan", "Van", "SUV"]
 }
 
