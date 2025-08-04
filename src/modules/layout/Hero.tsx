@@ -4,6 +4,7 @@ import { AppTexts } from "@/app/[lang]/locales/types"
 import { Router } from "next/router"
 import React from "react"
 import Link from 'next/link'
+import Image from "next/image"
  
 const servicios = [
     "Traslados privados",
@@ -27,7 +28,7 @@ export default function Hero({ idioma,lang }: { idioma: AppTexts,lang:string }) 
                         "/images/playa-del-este.jpg", "/images/cayo-guillermo.png", "/images/varadero.jpg"
                     ].map((src, i) => (
                         <div key={i}>
-                            <img className="h-auto w-full rounded-lg object-cover" src={src} alt={`Imagen de ${src.split("/").pop()?.split(".")[0]}`} />
+                            <Image className="h-auto w-full rounded-lg object-cover" src={src} alt={`Imagen de ${src.split("/").pop()?.split(".")[0]}`} title={`${src.split("/").pop()?.split(".")[0]}`} width={500} height={500} />
                         </div>
                     ))}
                 </div>
@@ -49,12 +50,13 @@ export default function Hero({ idioma,lang }: { idioma: AppTexts,lang:string }) 
                         <div className="flex flex-col md:flex-row w-full gap-4">
                             <a
                                 href="#excursions"
+                                title="Excursions"
                                 className="w-full md:w-auto border border-amber-400 text-yellow-500 hover:bg-amber-400 hover:text-black px-6 py-3 rounded-xl font-semibold transition text-center"
                             >
                                 {idioma.hero.buttons.excursions}
                             </a>
 
-                            <Link href={`/${lang}/book-a-travel`} className="w-full md:w-auto bg-amber-400 hover:bg-yellow-300 text-black px-6 py-3 rounded-xl font-semibold transition" >
+                            <Link href={`/${lang}/book-a-travel`} title="Book a travel fast" className="w-full md:w-auto bg-amber-400 hover:bg-yellow-300 text-black px-6 py-3 rounded-xl font-semibold transition" >
                                 {idioma.hero.buttons.fastBooking}
                             </Link>
                         </div>
