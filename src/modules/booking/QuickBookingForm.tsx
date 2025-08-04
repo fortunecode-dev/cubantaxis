@@ -25,8 +25,8 @@
             luggage: "",
         });
 
-        const locations = ["Havana", "Varadero", "Viñales", "Trinidad"];
-        const vehicles = ["Sedan", "Van", "SUV"];
+        const locations: string []= ["Havana", "Varadero", "Viñales", "Trinidad"];
+        const vehicles:string[] = ["Sedan", "Van", "SUV"];
 
         const handleChange = (
             e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
