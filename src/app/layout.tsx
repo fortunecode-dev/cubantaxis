@@ -1,10 +1,11 @@
 
-import "./globals.css";
+import "./[lang]/globals.css";
 import type { Metadata } from "next";
 import Header from "@/modules/layout/Header";
 import Footer from "@/modules/layout/Footer";
 import FloatingContacts from "@/modules/layout/FloatingContacts";
 import Script from "next/script";
+import LanguageSuggestor from "@/components/LanguageSuggestor";
 export async function generateStaticParams() {
   return [{ lang: "en" }, { lang: "es" }, { lang: "fr" }, { lang: "de" }, { lang: "ru" }, { lang: "pt" }]
 }
@@ -64,6 +65,14 @@ export default async function RootLayout({
   return (
     <html lang={lang}>
       <head>
+        {["en", "es", "fr", "de", "ru", "pt"].map((code) => (
+  <link
+    key={code}
+    rel="alternate"
+    hrefLang={code}
+    href={`https://cubantaxis.com/${code}`}
+  />
+))}
         
  {/* Google Analytics Script */}
       <Script
@@ -80,7 +89,7 @@ export default async function RootLayout({
           });
         `}
       </Script>
-        <link rel="canonical" href={`https://tusitio.com/${lang}`} />
+        <link rel="canonical" href={`https://cubantaxis.com/${lang}`} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -106,6 +115,7 @@ export default async function RootLayout({
         {children}
         <FloatingContacts />
         <Footer />
+        <LanguageSuggestor/>
       </body>
     </html>
   );

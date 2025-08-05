@@ -189,7 +189,7 @@ export const excursiones={
         "id": 2,
         "title": "Havana Standard Tour",
         "alternative_name": "Standard Tour Habana",
-        "main_image": "/habana_tour_estandar.webp",
+        "main_image": "/havana.webp",
         "images": [
           {
             "url": "habana_estandar_1.webp",
@@ -219,7 +219,7 @@ export const excursiones={
         "id": 3,
         "title": "Havana – Viñales – Havana Tour",
         "alternative_name": "Habana-Viñales Tour",
-        "main_image": "/habana_vinales.webp",
+        "main_image": "/viñales.webp",
         "images": [
           {
             "url": "vinales_1.webp",
@@ -249,7 +249,7 @@ export const excursiones={
         "id": 4,
         "title": "Havana – Playas del Este – Havana Tour",
         "alternative_name": "Eastern Beaches Tour",
-        "main_image": "/playas_del_este.webp",
+        "main_image": "/playas-del-este.webp",
         "images": [
           {
             "url": "playas_este_1.webp",
@@ -343,7 +343,7 @@ export const excursiones={
         "id": 2,
         "title": "Tour Standard de La Havane",
         "alternative_name": "Tour Standard Habana",
-        "main_image": "/habana_tour_estandar.webp",
+        "main_image": "/havana.webp",
         "images": [
           {
             "url": "habana_estandar_1.webp",
@@ -403,7 +403,7 @@ export const excursiones={
         "id": 4,
         "title": "Tour La Havane – Plages de l'Est – La Havane",
         "alternative_name": "Tour des Plages de l'Est",
-        "main_image": "playas_del_este.webp",
+        "main_image": "playas-del-este.webp",
         "images": [
           {
             "url": "playas_este_1.webp",
@@ -497,7 +497,7 @@ export const excursiones={
         "id": 2,
         "title": "Havanna Standardtour",
         "alternative_name": "Standard Tour Habana",
-        "main_image": "habana_tour_estandar.webp",
+        "main_image": "havana.webp",
         "images": [
           {
             "url": "habana_estandar_1.webp",
@@ -557,7 +557,7 @@ export const excursiones={
         "id": 4,
         "title": "Tour Havanna – Playas del Este – Havanna",
         "alternative_name": "Playas del Este Tour",
-        "main_image": "playas_del_este.webp",
+        "main_image": "playas-del-este.webp",
         "images": [
           {
             "url": "playas_este_1.webp",
@@ -651,7 +651,7 @@ export const excursiones={
         "id": 2,
         "title": "Стандартный тур по Гаване",
         "alternative_name": "Standard Tour Habana",
-        "main_image": "habana_tour_estandar.webp",
+        "main_image": "havana.webp",
         "images": [
           {
             "url": "habana_estandar_1.webp",
@@ -711,7 +711,7 @@ export const excursiones={
         "id": 4,
         "title": "Тур Гавана – Плайяс дель Эсте – Гавана",
         "alternative_name": "Tour Playas del Este",
-        "main_image": "playas_del_este.webp",
+        "main_image": "playas-del-este.webp",
         "images": [
           {
             "url": "playas_este_1.webp",
@@ -805,7 +805,7 @@ export const excursiones={
         "id": 2,
         "title": "Tour Padrão em Havana",
         "alternative_name": "Standard Tour Habana",
-        "main_image": "habana_tour_estandar.webp",
+        "main_image": "havana.webp",
         "images": [
           {
             "url": "habana_estandar_1.webp",
@@ -865,7 +865,7 @@ export const excursiones={
         "id": 4,
         "title": "Tour Havana – Playas del Este – Havana",
         "alternative_name": "Tour Playas del Este",
-        "main_image": "/playas_del_este.webp",
+        "main_image": "/playas-del-este.webp",
         "images": [
           {
             "url": "playas_este_1.webp",
