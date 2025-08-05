@@ -2,8 +2,9 @@ import QuickBookingForm from "@/modules/booking/QuickBookingForm";
 import Link from "next/link";
 import Head from "next/head";
 import { getTranslation } from "../locales";
+import { LocaleParams } from "@/types/common";
 
-export default async function FastBookingPage({ params }: { params: Promise<{ lang: "en" | "es" | "fr" | "de" | "ru" | "pt" }> }) {
+export default async function FastBookingPage({ params }: { params: LocaleParams }) {
   const lang = await params;
   const idioma = getTranslation((await params).lang)
 

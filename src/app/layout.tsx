@@ -6,8 +6,15 @@ import Footer from "@/modules/layout/Footer";
 import FloatingContacts from "@/modules/layout/FloatingContacts";
 import Script from "next/script";
 import LanguageSuggestor from "@/components/LanguageSuggestor";
+import { LocaleParams } from "@/types/common";
 export async function generateStaticParams() {
-  return [{ lang: "en" }, { lang: "es" }, { lang: "fr" }, { lang: "de" }, { lang: "ru" }, { lang: "pt" }]
+  return [
+    { lang: "en" },
+     { lang: "es" },
+      { lang: "fr" },
+       { lang: "de" }, 
+       { lang: "ru" }, 
+       { lang: "pt" }]
 }
 
 export const metadata: Metadata = {
@@ -59,7 +66,7 @@ export default async function RootLayout({
   params
 }: Readonly<{
   children: React.ReactNode;
-  params: Promise<{ lang: "en" | "es" | "fr" | "de" | "ru" | "pt" }>
+  params:LocaleParams
 }>) {
   const { lang } = await params;
   return (

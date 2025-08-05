@@ -37,7 +37,7 @@ export const en: AppTexts = {
     reserveNow: "Reserve Now",
   },
   destinationsCard: {
-    subTitle:"Lugares a visitar en cuba",
+    subTitle: "Lugares a visitar en cuba",
 
     title: "Destinations",
     description: "Explore our most popular destinations.",
@@ -56,22 +56,22 @@ export const en: AppTexts = {
       whatsapp: "Contact us via WhatsApp"
     }
   },
-quickForm: {
-  phone: "Phone",
-  from: "From",
-  to: "To",
-  date: "Date",
-  time: "Time",
-  vehicle: "Vehicle",
-  passengers: "Passengers",
-  luggage: "Luggage / Notes",
-  luggagePlaceholder: "2 suitcases and 1 backpack",
-  bookViaWhatsapp: "Book via WhatsApp",
-  bookViaTelegram: "Book via Telegram",
-  requestTitle: "🚕 Quick Booking Request",
-  locations: ["Havana", "Varadero", "/viñales", "Trinidad"],
-  vehicles: ["Sedan", "Van", "SUV"]
-}
+  quickForm: {
+    phone: "Phone",
+    from: "From",
+    to: "To",
+    date: "Date",
+    time: "Time",
+    vehicle: "Vehicle",
+    passengers: "Passengers",
+    luggage: "Luggage / Notes",
+    luggagePlaceholder: "2 suitcases and 1 backpack",
+    bookViaWhatsapp: "Book via WhatsApp",
+    bookViaTelegram: "Book via Telegram",
+    requestTitle: "🚕 Quick Booking Request",
+    locations: ["Havana", "Varadero", "/viñales", "Trinidad"],
+    vehicles: ["Sedan", "Van", "SUV"]
+  }
 
 
 };

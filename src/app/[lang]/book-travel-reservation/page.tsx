@@ -1,11 +1,12 @@
 import ExtendedBookingForm from "@/modules/booking/ExtendedBookingForm";
 import Link from "next/link";
 import Head from "next/head";
+import { LocaleParams } from "@/types/common";
 
 export default async function BookAReservationPage({
   params,
 }: {
-  params: Promise<{ lang: "en" | "es" | "fr" | "de" | "ru" | "pt" }>;
+  params: LocaleParams;
 }) {
   const lang = await params;
 
