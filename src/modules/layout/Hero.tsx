@@ -1,7 +1,6 @@
 "use client"
 
 import { AppTexts } from "@/app/[lang]/locales/types"
-import { Router } from "next/router"
 import React from "react"
 import Link from 'next/link'
 import Image from "next/image"

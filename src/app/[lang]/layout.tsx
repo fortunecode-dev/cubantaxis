@@ -10,8 +10,8 @@ export async function generateStaticParams() {
 }
 
 export const metadata: Metadata = {
-  title: "Taxi Cuba | Traslados Aeropuerto, Excursiones y Tours",
-  description: "Taxi en Cuba. Reservas, Traslados aeropuerto, excursiones privadas, autos clásicos con chofer. Servicio servicio 24/7 en La Habana, Varadero, Cayo Coco, Trinidad y más.",
+  title: "Taxi Cuba | Traslados desde Aeropuertos, Excursiones y Tours",
+  description: "Taxi en Cuba. Reservas, Traslados aeropuerto, excursiones privadas, autos clásicos con chofer, 24/7 en La Habana, Varadero, Cayo Coco, Trinidad.",
   keywords: [
     "taxi Cuba",
     "servicio de taxi Cuba",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     title: "Taxi Cuba | Traslados, Excursiones y Traslados de Aeropuertos",
     description: "Reserva tu taxi en Cuba con chofer privado. La Habana, Varadero, Viñales y más.",
     images: ["icon.ico"]
-  } ,metadataBase:new URL("https://cubantaxis.com/")
+  } ,metadataBase:new URL("https://cubantaxis.com/"),
 };
 
 export default async function RootLayout({

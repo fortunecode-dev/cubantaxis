@@ -1,7 +1,8 @@
 import DestinationsCard from "@/modules/catalog/DestinationsCard";
 import { getTranslation } from "./locales";
-import { destinos, excursiones } from "@/content";
 import Hero from "@/modules/layout/Hero";
+import { destinos } from "@/content/destinations";
+import { excursiones } from "@/content/excursions";
 
 export default async function Home({ params }: { params: Promise<{ lang: "en" | "es" | "fr" | "de" | "ru" | "pt" }> }) {
   const {lang}=await params
