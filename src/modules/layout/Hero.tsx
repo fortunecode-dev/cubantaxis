@@ -21,10 +21,10 @@ export default function Hero({ idioma,lang }: { idioma: AppTexts,lang:string }) 
             <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
                 <div className="hero-background grid grid-cols-3 md:grid-cols-6 gap-2 p-1 pt-5">
                     {[
-                        "/cienfuegos.jpg", "/cayo-coco.jpg", "/havana-capitol.jpg",
-                        "/trinidad.jpg", "/varadero-view.jpg", "/cayo-santa-maria.webp",
-                        "/viñales.jpg", "/santa-clara.jpeg", "/havana-tour.jpg",
-                        "/playa-del-este.jpg", "/cayo-guillermo.png", "/varadero.jpg"
+                        "/cienfuegos.webp", "/cayo-coco.webp", "/havana-capitol.webp",
+                        "/trinidad.webp", "/varadero-view.webp", "/cayo-santa-maria.webp",
+                        "/viñales.webp", "/santa-clara.webp", "/havana-tour.webp",
+                        "/playa-del-este.webp", "/cayo-guillermo.webp", "/varadero.webp"
                     ].map((src, i) => (
                         <div key={i}>
                             <Image  className="h-auto w-full rounded-lg object-cover" dir={src} src={src} alt={`Imagen de ${src.split("/").pop()?.split(".")[0]}`} title={`${src.split("/").pop()?.split(".")[0]}`} width={400} height={300} />

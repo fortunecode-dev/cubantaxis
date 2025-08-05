@@ -5,14 +5,14 @@ export const excursiones={
         "id": 1,
         "title": "Habana City Tour",
         "alternative_name": "City Tour Habana",
-        "main_image": "/havana-capitol.jpg",
+        "main_image": "/havana-capitol.webp",
         "images": [
           {
-            "url": "havana.jpg",
+            "url": "havana.webp",
             "alt": "Vista del Malecón"
           },
           {
-            "url": "habana_2.jpg",
+            "url": "habana_2.webp",
             "alt": "Capitolio de La Habana"
           }
         ],
@@ -22,12 +22,12 @@ export const excursiones={
           {
             "title": "El Capitolio",
             "description": "Edificio emblemático de La Habana.",
-            "image": "lugares/capitolio.jpg"
+            "image": "lugares/capitolio.webp"
           },
           {
             "title": "Malecón de La Habana",
             "description": "Paseo marítimo icónico de la ciudad.",
-            "image": "lugares/malecon.jpg"
+            "image": "lugares/malecon.webp"
           }
         ]
       },
@@ -35,14 +35,14 @@ export const excursiones={
         "id": 2,
         "title": "Habana Tour Estándar",
         "alternative_name": "Tour Estándar Habana",
-        "main_image": "/havana-tour.jpg",
+        "main_image": "/havana-tour.webp",
         "images": [
           {
-            "url": "habana_estandar_1.jpg",
+            "url": "habana_estandar_1.webp",
             "alt": "Vista Plaza de la Catedral"
           },
           {
-            "url": "habana_estandar_2.jpg",
+            "url": "habana_estandar_2.webp",
             "alt": "Plaza Vieja"
           }
         ],
@@ -52,12 +52,12 @@ export const excursiones={
           {
             "title": "Plaza de la Catedral",
             "description": "Una de las plazas más icónicas de La Habana Vieja.",
-            "image": "lugares/plaza_catedral.jpg"
+            "image": "lugares/plaza_catedral.webp"
           },
           {
             "title": "Floridita",
             "description": "Bar favorito de Ernest Hemingway.",
-            "image": "lugares/floridita.jpg"
+            "image": "lugares/floridita.webp"
           }
         ]
       },
@@ -65,14 +65,14 @@ export const excursiones={
         "id": 3,
         "title": "Tour La Habana – Viñales – La Habana",
         "alternative_name": "Tour Habana-Viñales",
-        "main_image": "/viñales.jpg",
+        "main_image": "/viñales.webp",
         "images": [
           {
-            "url": "vinales_1.jpg",
+            "url": "vinales_1.webp",
             "alt": "Valle de Viñales"
           },
           {
-            "url": "vinales_2.jpg",
+            "url": "vinales_2.webp",
             "alt": "Mural de la Prehistoria"
           }
         ],
@@ -82,12 +82,12 @@ export const excursiones={
           {
             "title": "Valle de Viñales",
             "description": "Paisaje natural único con plantaciones de tabaco.",
-            "image": "lugares/valle_vinales.jpg"
+            "image": "lugares/valle_vinales.webp"
           },
           {
             "title": "Cueva del Indio",
             "description": "Cueva navegable de origen milenario.",
-            "image": "lugares/cueva_indio.jpg"
+            "image": "lugares/cueva_indio.webp"
           }
         ]
       },
@@ -95,14 +95,14 @@ export const excursiones={
         "id": 4,
         "title": "Tour La Habana – Playas del Este – La Habana",
         "alternative_name": "Tour Playas del Este",
-        "main_image": "/playa-del-este.jpg",
+        "main_image": "/playa-del-este.webp",
         "images": [
           {
-            "url": "playas_este_1.jpg",
+            "url": "playas_este_1.webp",
             "alt": "Playa Santa María"
           },
           {
-            "url": "playas_este_2.jpg",
+            "url": "playas_este_2.webp",
             "alt": "Costa de La Habana"
           }
         ],
@@ -112,12 +112,12 @@ export const excursiones={
           {
             "title": "Playa Santa María",
             "description": "Playa con aguas cristalinas y arenas blancas.",
-            "image": "lugares/playa_santa_maria.jpg"
+            "image": "lugares/playa_santa_maria.webp"
           },
           {
             "title": "Mi Cayito",
             "description": "Pequeña playa popular cercana a La Habana.",
-            "image": "lugares/mi_cayito.jpg"
+            "image": "lugares/mi_cayito.webp"
           }
         ]
       },
@@ -125,14 +125,14 @@ export const excursiones={
         "id": 5,
         "title": "Excursión Varadero – Cienfuegos – Santa Clara – Trinidad",
         "alternative_name": "Tour 3 Ciudades",
-        "main_image": "/trinidad.jpg",
+        "main_image": "/trinidad.webp",
         "images": [
           {
-            "url": "cienfuegos_1.jpg",
+            "url": "cienfuegos_1.webp",
             "alt": "Vista Parque José Martí en Cienfuegos"
           },
           {
-            "url": "trinidad_1.jpg",
+            "url": "trinidad_1.webp",
             "alt": "Plaza Mayor de Trinidad"
           }
         ],
@@ -142,12 +142,12 @@ export const excursiones={
           {
             "title": "Mausoleo del Che",
             "description": "Complejo escultórico dedicado al Che Guevara en Santa Clara.",
-            "image": "lugares/mausoleo_che.jpg"
+            "image": "lugares/mausoleo_che.webp"
           },
           {
             "title": "Plaza Mayor de Trinidad",
             "description": "Corazón colonial de Trinidad.",
-            "image": "lugares/plaza_mayor_trinidad.jpg"
+            "image": "lugares/plaza_mayor_trinidad.webp"
           }
         ]
       }
@@ -159,14 +159,14 @@ export const excursiones={
         "id": 1,
         "title": "Havana City Tour",
         "alternative_name": "City Tour Habana",
-        "main_image": "/havana-capitol.jpg",
+        "main_image": "/havana-capitol.webp",
         "images": [
           {
-            "url": "habana_1.jpg",
+            "url": "habana_1.webp",
             "alt": "View of Malecón"
           },
           {
-            "url": "habana_2.jpg",
+            "url": "habana_2.webp",
             "alt": "Havana Capitol"
           }
         ],
@@ -176,12 +176,12 @@ export const excursiones={
           {
             "title": "The Capitol",
             "description": "Iconic building of Havana.",
-            "image": "lugares/capitolio.jpg"
+            "image": "lugares/capitolio.webp"
           },
           {
             "title": "Havana Malecón",
             "description": "Iconic seaside promenade of the city.",
-            "image": "lugares/malecon.jpg"
+            "image": "lugares/malecon.webp"
           }
         ]
       },
@@ -189,14 +189,14 @@ export const excursiones={
         "id": 2,
         "title": "Havana Standard Tour",
         "alternative_name": "Standard Tour Habana",
-        "main_image": "/habana_tour_estandar.jpg",
+        "main_image": "/habana_tour_estandar.webp",
         "images": [
           {
-            "url": "habana_estandar_1.jpg",
+            "url": "habana_estandar_1.webp",
             "alt": "View of Cathedral Square"
           },
           {
-            "url": "habana_estandar_2.jpg",
+            "url": "habana_estandar_2.webp",
             "alt": "Old Square"
           }
         ],
@@ -206,12 +206,12 @@ export const excursiones={
           {
             "title": "Cathedral Square",
             "description": "One of the most iconic squares in Old Havana.",
-            "image": "lugares/plaza_catedral.jpg"
+            "image": "lugares/plaza_catedral.webp"
           },
           {
             "title": "Floridita",
             "description": "Ernest Hemingway's favorite bar.",
-            "image": "lugares/floridita.jpg"
+            "image": "lugares/floridita.webp"
           }
         ]
       },
@@ -219,14 +219,14 @@ export const excursiones={
         "id": 3,
         "title": "Havana – Viñales – Havana Tour",
         "alternative_name": "Habana-Viñales Tour",
-        "main_image": "/habana_vinales.jpg",
+        "main_image": "/habana_vinales.webp",
         "images": [
           {
-            "url": "vinales_1.jpg",
+            "url": "vinales_1.webp",
             "alt": "/viñales Valley"
           },
           {
-            "url": "vinales_2.jpg",
+            "url": "vinales_2.webp",
             "alt": "Prehistory Mural"
           }
         ],
@@ -236,12 +236,12 @@ export const excursiones={
           {
             "title": "/viñales Valley",
             "description": "Unique natural landscape with tobacco plantations.",
-            "image": "lugares/valle_vinales.jpg"
+            "image": "lugares/valle_vinales.webp"
           },
           {
             "title": "Cueva del Indio",
             "description": "Navigable cave of ancient origin.",
-            "image": "lugares/cueva_indio.jpg"
+            "image": "lugares/cueva_indio.webp"
           }
         ]
       },
@@ -249,14 +249,14 @@ export const excursiones={
         "id": 4,
         "title": "Havana – Playas del Este – Havana Tour",
         "alternative_name": "Eastern Beaches Tour",
-        "main_image": "/playas_del_este.jpg",
+        "main_image": "/playas_del_este.webp",
         "images": [
           {
-            "url": "playas_este_1.jpg",
+            "url": "playas_este_1.webp",
             "alt": "Santa María Beach"
           },
           {
-            "url": "playas_este_2.jpg",
+            "url": "playas_este_2.webp",
             "alt": "Havana Coast"
           }
         ],
@@ -266,12 +266,12 @@ export const excursiones={
           {
             "title": "Santa María Beach",
             "description": "Beach with crystal clear waters and white sands.",
-            "image": "lugares/playa_santa_maria.jpg"
+            "image": "lugares/playa_santa_maria.webp"
           },
           {
             "title": "Mi Cayito",
             "description": "Small popular beach near Havana.",
-            "image": "lugares/mi_cayito.jpg"
+            "image": "lugares/mi_cayito.webp"
           }
         ]
       },
@@ -279,14 +279,14 @@ export const excursiones={
         "id": 5,
         "title": "Varadero – Cienfuegos – Santa Clara – Trinidad Tour",
         "alternative_name": "3 Cities Tour",
-        "main_image": "/varadero_3_ciudades.jpg",
+        "main_image": "/varadero_3_ciudades.webp",
         "images": [
           {
-            "url": "cienfuegos_1.jpg",
+            "url": "cienfuegos_1.webp",
             "alt": "View of José Martí Park in Cienfuegos"
           },
           {
-            "url": "trinidad_1.jpg",
+            "url": "trinidad_1.webp",
             "alt": "Trinidad Main Square"
           }
         ],
@@ -296,12 +296,12 @@ export const excursiones={
           {
             "title": "Che's Mausoleum",
             "description": "Sculptural complex dedicated to Che Guevara in Santa Clara.",
-            "image": "lugares/mausoleo_che.jpg"
+            "image": "lugares/mausoleo_che.webp"
           },
           {
             "title": "Trinidad Main Square",
             "description": "Colonial heart of Trinidad.",
-            "image": "lugares/plaza_mayor_trinidad.jpg"
+            "image": "lugares/plaza_mayor_trinidad.webp"
           }
         ]
       }
@@ -313,14 +313,14 @@ export const excursiones={
         "id": 1,
         "title": "Visite de La Havane",
         "alternative_name": "City Tour Habana",
-        "main_image": "/havana-capitol.jpg",
+        "main_image": "/havana-capitol.webp",
         "images": [
           {
-            "url": "habana_1.jpg",
+            "url": "habana_1.webp",
             "alt": "Vue du Malecón"
           },
           {
-            "url": "habana_2.jpg",
+            "url": "habana_2.webp",
             "alt": "Capitole de La Havane"
           }
         ],
@@ -330,12 +330,12 @@ export const excursiones={
           {
             "title": "Le Capitole",
             "description": "Bâtiment emblématique de La Havane.",
-            "image": "lugares/capitolio.jpg"
+            "image": "lugares/capitolio.webp"
           },
           {
             "title": "Malecón de La Havane",
             "description": "Promenade maritime emblématique de la ville.",
-            "image": "lugares/malecon.jpg"
+            "image": "lugares/malecon.webp"
           }
         ]
       },
@@ -343,14 +343,14 @@ export const excursiones={
         "id": 2,
         "title": "Tour Standard de La Havane",
         "alternative_name": "Tour Standard Habana",
-        "main_image": "/habana_tour_estandar.jpg",
+        "main_image": "/habana_tour_estandar.webp",
         "images": [
           {
-            "url": "habana_estandar_1.jpg",
+            "url": "habana_estandar_1.webp",
             "alt": "Vue de la Place de la Cathédrale"
           },
           {
-            "url": "habana_estandar_2.jpg",
+            "url": "habana_estandar_2.webp",
             "alt": "Vieille Place"
           }
         ],
@@ -360,12 +360,12 @@ export const excursiones={
           {
             "title": "Place de la Cathédrale",
             "description": "Une des places les plus emblématiques de la Vieille Havane.",
-            "image": "lugares/plaza_catedral.jpg"
+            "image": "lugares/plaza_catedral.webp"
           },
           {
             "title": "Floridita",
             "description": "Bar préféré d'Ernest Hemingway.",
-            "image": "lugares/floridita.jpg"
+            "image": "lugares/floridita.webp"
           }
         ]
       },
@@ -373,14 +373,14 @@ export const excursiones={
         "id": 3,
         "title": "Tour La Havane – Viñales – La Havane",
         "alternative_name": "Tour Habana-Viñales",
-        "main_image": "habana_vinales.jpg",
+        "main_image": "habana_vinales.webp",
         "images": [
           {
-            "url": "vinales_1.jpg",
+            "url": "vinales_1.webp",
             "alt": "Vallée de Viñales"
           },
           {
-            "url": "vinales_2.jpg",
+            "url": "vinales_2.webp",
             "alt": "Mur de la Préhistoire"
           }
         ],
@@ -390,12 +390,12 @@ export const excursiones={
           {
             "title": "Vallée de Viñales",
             "description": "Paysage naturel unique avec des plantations de tabac.",
-            "image": "lugares/valle_vinales.jpg"
+            "image": "lugares/valle_vinales.webp"
           },
           {
             "title": "Cueva del Indio",
             "description": "Grotte navigable d'origine ancienne.",
-            "image": "lugares/cueva_indio.jpg"
+            "image": "lugares/cueva_indio.webp"
           }
         ]
       },
@@ -403,14 +403,14 @@ export const excursiones={
         "id": 4,
         "title": "Tour La Havane – Plages de l'Est – La Havane",
         "alternative_name": "Tour des Plages de l'Est",
-        "main_image": "playas_del_este.jpg",
+        "main_image": "playas_del_este.webp",
         "images": [
           {
-            "url": "playas_este_1.jpg",
+            "url": "playas_este_1.webp",
             "alt": "Plage Santa María"
           },
           {
-            "url": "playas_este_2.jpg",
+            "url": "playas_este_2.webp",
             "alt": "Côte de La Havane"
           }
         ],
@@ -420,12 +420,12 @@ export const excursiones={
           {
             "title": "Plage Santa María",
             "description": "Plage aux eaux cristallines et sables blancs.",
-            "image": "lugares/playa_santa_maria.jpg"
+            "image": "lugares/playa_santa_maria.webp"
           },
           {
             "title": "Mi Cayito",
             "description": "Petite plage populaire près de La Havane.",
-            "image": "lugares/mi_cayito.jpg"
+            "image": "lugares/mi_cayito.webp"
           }
         ]
       },
@@ -433,14 +433,14 @@ export const excursiones={
         "id": 5,
         "title": "Excursion Varadero – Cienfuegos – Santa Clara – Trinidad",
         "alternative_name": "Tour 3 Villes",
-        "main_image": "varadero_3_ciudades.jpg",
+        "main_image": "varadero_3_ciudades.webp",
         "images": [
           {
-            "url": "cienfuegos_1.jpg",
+            "url": "cienfuegos_1.webp",
             "alt": "Vue du Parc José Martí à Cienfuegos"
           },
           {
-            "url": "trinidad_1.jpg",
+            "url": "trinidad_1.webp",
             "alt": "Place Principale de Trinidad"
           }
         ],
@@ -450,12 +450,12 @@ export const excursiones={
           {
             "title": "Mausolée du Che",
             "description": "Complexe sculptural dédié à Che Guevara à Santa Clara.",
-            "image": "lugares/mausoleo_che.jpg"
+            "image": "lugares/mausoleo_che.webp"
           },
           {
             "title": "Place Principale de Trinidad",
             "description": "Cœur colonial de Trinidad.",
-            "image": "lugares/plaza_mayor_trinidad.jpg"
+            "image": "lugares/plaza_mayor_trinidad.webp"
           }
         ]
       }
@@ -467,14 +467,14 @@ export const excursiones={
         "id": 1,
         "title": "Havanna-Stadttour",
         "alternative_name": "City Tour Habana",
-        "main_image": "/havana-capitol.jpg",
+        "main_image": "/havana-capitol.webp",
         "images": [
           {
-            "url": "habana_1.jpg",
+            "url": "habana_1.webp",
             "alt": "Blick auf den Malecón"
           },
           {
-            "url": "habana_2.jpg",
+            "url": "habana_2.webp",
             "alt": "Kapitol von Havanna"
           }
         ],
@@ -484,12 +484,12 @@ export const excursiones={
           {
             "title": "Das Kapitol",
             "description": "Wahrzeichen von Havanna.",
-            "image": "lugares/capitolio.jpg"
+            "image": "lugares/capitolio.webp"
           },
           {
             "title": "Havannas Malecón",
             "description": "Berühmte Uferpromenade der Stadt.",
-            "image": "lugares/malecon.jpg"
+            "image": "lugares/malecon.webp"
           }
         ]
       },
@@ -497,14 +497,14 @@ export const excursiones={
         "id": 2,
         "title": "Havanna Standardtour",
         "alternative_name": "Standard Tour Habana",
-        "main_image": "habana_tour_estandar.jpg",
+        "main_image": "habana_tour_estandar.webp",
         "images": [
           {
-            "url": "habana_estandar_1.jpg",
+            "url": "habana_estandar_1.webp",
             "alt": "Blick auf den Kathedralenplatz"
           },
           {
-            "url": "habana_estandar_2.jpg",
+            "url": "habana_estandar_2.webp",
             "alt": "Alter Platz"
           }
         ],
@@ -514,12 +514,12 @@ export const excursiones={
           {
             "title": "Kathedralenplatz",
             "description": "Einer der bekanntesten Plätze der Altstadt Havannas.",
-            "image": "lugares/plaza_catedral.jpg"
+            "image": "lugares/plaza_catedral.webp"
           },
           {
             "title": "Floridita",
             "description": "Lieblingsbar von Ernest Hemingway.",
-            "image": "lugares/floridita.jpg"
+            "image": "lugares/floridita.webp"
           }
         ]
       },
@@ -527,14 +527,14 @@ export const excursiones={
         "id": 3,
         "title": "Tour Havanna – Viñales – Havanna",
         "alternative_name": "Habana-Viñales Tour",
-        "main_image": "habana_vinales.jpg",
+        "main_image": "habana_vinales.webp",
         "images": [
           {
-            "url": "vinales_1.jpg",
+            "url": "vinales_1.webp",
             "alt": "/viñales Tal"
           },
           {
-            "url": "vinales_2.jpg",
+            "url": "vinales_2.webp",
             "alt": "Prähistorische Wandmalerei"
           }
         ],
@@ -544,12 +544,12 @@ export const excursiones={
           {
             "title": "/viñales Tal",
             "description": "Einzigartige Naturlandschaft mit Tabakplantagen.",
-            "image": "lugares/valle_vinales.jpg"
+            "image": "lugares/valle_vinales.webp"
           },
           {
             "title": "Indio-Höhle",
             "description": "Befahrbare Höhle uralten Ursprungs.",
-            "image": "lugares/cueva_indio.jpg"
+            "image": "lugares/cueva_indio.webp"
           }
         ]
       },
@@ -557,14 +557,14 @@ export const excursiones={
         "id": 4,
         "title": "Tour Havanna – Playas del Este – Havanna",
         "alternative_name": "Playas del Este Tour",
-        "main_image": "playas_del_este.jpg",
+        "main_image": "playas_del_este.webp",
         "images": [
           {
-            "url": "playas_este_1.jpg",
+            "url": "playas_este_1.webp",
             "alt": "Santa María Strand"
           },
           {
-            "url": "playas_este_2.jpg",
+            "url": "playas_este_2.webp",
             "alt": "Havanna Küste"
           }
         ],
@@ -574,12 +574,12 @@ export const excursiones={
           {
             "title": "Santa María Strand",
             "description": "Strand mit kristallklarem Wasser und weißem Sand.",
-            "image": "lugares/playa_santa_maria.jpg"
+            "image": "lugares/playa_santa_maria.webp"
           },
           {
             "title": "Mi Cayito",
             "description": "Kleiner beliebter Strand in der Nähe von Havanna.",
-            "image": "lugares/mi_cayito.jpg"
+            "image": "lugares/mi_cayito.webp"
           }
         ]
       },
@@ -587,14 +587,14 @@ export const excursiones={
         "id": 5,
         "title": "Tour Varadero – Cienfuegos – Santa Clara – Trinidad",
         "alternative_name": "3 Städte Tour",
-        "main_image": "varadero_3_ciudades.jpg",
+        "main_image": "varadero_3_ciudades.webp",
         "images": [
           {
-            "url": "cienfuegos_1.jpg",
+            "url": "cienfuegos_1.webp",
             "alt": "Blick auf den José Martí Park in Cienfuegos"
           },
           {
-            "url": "trinidad_1.jpg",
+            "url": "trinidad_1.webp",
             "alt": "Hauptplatz von Trinidad"
           }
         ],
@@ -604,12 +604,12 @@ export const excursiones={
           {
             "title": "Che-Mausoleum",
             "description": "Skulpturenkomplex zu Ehren von Che Guevara in Santa Clara.",
-            "image": "lugares/mausoleo_che.jpg"
+            "image": "lugares/mausoleo_che.webp"
           },
           {
             "title": "Hauptplatz von Trinidad",
             "description": "Koloniales Herz von Trinidad.",
-            "image": "lugares/plaza_mayor_trinidad.jpg"
+            "image": "lugares/plaza_mayor_trinidad.webp"
           }
         ]
       }
@@ -621,14 +621,14 @@ export const excursiones={
         "id": 1,
         "title": "Экскурсия по Гаване",
         "alternative_name": "City Tour Habana",
-        "main_image": "/havana-capitol.jpg",
+        "main_image": "/havana-capitol.webp",
         "images": [
           {
-            "url": "habana_1.jpg",
+            "url": "habana_1.webp",
             "alt": "Вид на Малекон"
           },
           {
-            "url": "habana_2.jpg",
+            "url": "habana_2.webp",
             "alt": "Капитолий Гаваны"
           }
         ],
@@ -638,12 +638,12 @@ export const excursiones={
           {
             "title": "Капитолий",
             "description": "Знаковое здание Гаваны.",
-            "image": "lugares/capitolio.jpg"
+            "image": "lugares/capitolio.webp"
           },
           {
             "title": "Малекон Гаваны",
             "description": "Знаменитая набережная города.",
-            "image": "lugares/malecon.jpg"
+            "image": "lugares/malecon.webp"
           }
         ]
       },
@@ -651,14 +651,14 @@ export const excursiones={
         "id": 2,
         "title": "Стандартный тур по Гаване",
         "alternative_name": "Standard Tour Habana",
-        "main_image": "habana_tour_estandar.jpg",
+        "main_image": "habana_tour_estandar.webp",
         "images": [
           {
-            "url": "habana_estandar_1.jpg",
+            "url": "habana_estandar_1.webp",
             "alt": "Вид на Площадь Собора"
           },
           {
-            "url": "habana_estandar_2.jpg",
+            "url": "habana_estandar_2.webp",
             "alt": "Старая Площадь"
           }
         ],
@@ -668,12 +668,12 @@ export const excursiones={
           {
             "title": "Площадь Собора",
             "description": "Одна из самых знаковых площадей Старой Гаваны.",
-            "image": "lugares/plaza_catedral.jpg"
+            "image": "lugares/plaza_catedral.webp"
           },
           {
             "title": "Флоридита",
             "description": "Любимый бар Эрнеста Хемингуэя.",
-            "image": "lugares/floridita.jpg"
+            "image": "lugares/floridita.webp"
           }
         ]
       },
@@ -681,14 +681,14 @@ export const excursiones={
         "id": 3,
         "title": "Тур Гавана – Виньялес – Гавана",
         "alternative_name": "Habana-Viñales Tour",
-        "main_image": "habana_vinales.jpg",
+        "main_image": "habana_vinales.webp",
         "images": [
           {
-            "url": "vinales_1.jpg",
+            "url": "vinales_1.webp",
             "alt": "Долина Виньялес"
           },
           {
-            "url": "vinales_2.jpg",
+            "url": "vinales_2.webp",
             "alt": "Настенная живопись"
           }
         ],
@@ -698,12 +698,12 @@ export const excursiones={
           {
             "title": "Долина Виньялес",
             "description": "Уникальный природный ландшафт с табачными плантациями.",
-            "image": "lugares/valle_vinales.jpg"
+            "image": "lugares/valle_vinales.webp"
           },
           {
             "title": "Пещера Индио",
             "description": "Судоходная пещера древнего происхождения.",
-            "image": "lugares/cueva_indio.jpg"
+            "image": "lugares/cueva_indio.webp"
           }
         ]
       },
@@ -711,14 +711,14 @@ export const excursiones={
         "id": 4,
         "title": "Тур Гавана – Плайяс дель Эсте – Гавана",
         "alternative_name": "Tour Playas del Este",
-        "main_image": "playas_del_este.jpg",
+        "main_image": "playas_del_este.webp",
         "images": [
           {
-            "url": "playas_este_1.jpg",
+            "url": "playas_este_1.webp",
             "alt": "Пляж Санта Мария"
           },
           {
-            "url": "playas_este_2.jpg",
+            "url": "playas_este_2.webp",
             "alt": "Побережье Гаваны"
           }
         ],
@@ -728,12 +728,12 @@ export const excursiones={
           {
             "title": "Пляж Санта Мария",
             "description": "Пляж с кристально чистой водой и белым песком.",
-            "image": "lugares/playa_santa_maria.jpg"
+            "image": "lugares/playa_santa_maria.webp"
           },
           {
             "title": "Ми Кайито",
             "description": "Маленький популярный пляж недалеко от Гаваны.",
-            "image": "lugares/mi_cayito.jpg"
+            "image": "lugares/mi_cayito.webp"
           }
         ]
       },
@@ -741,14 +741,14 @@ export const excursiones={
         "id": 5,
         "title": "Экскурсия Варадеро – Сьенфуэгос – Санта-Клара – Тринидад",
         "alternative_name": "Tour 3 Ciudades",
-        "main_image": "varadero_3_ciudades.jpg",
+        "main_image": "varadero_3_ciudades.webp",
         "images": [
           {
-            "url": "cienfuegos_1.jpg",
+            "url": "cienfuegos_1.webp",
             "alt": "Вид на парк Хосе Марти в Сьенфуэгос"
           },
           {
-            "url": "trinidad_1.jpg",
+            "url": "trinidad_1.webp",
             "alt": "Главная площадь Тринидада"
           }
         ],
@@ -758,12 +758,12 @@ export const excursiones={
           {
             "title": "Мавзолей Че",
             "description": "Скульптурный комплекс, посвященный Че Геваре в Санта-Кларе.",
-            "image": "lugares/mausoleo_che.jpg"
+            "image": "lugares/mausoleo_che.webp"
           },
           {
             "title": "Главная площадь Тринидада",
             "description": "Колониальное сердце Тринидада.",
-            "image": "lugares/plaza_mayor_trinidad.jpg"
+            "image": "lugares/plaza_mayor_trinidad.webp"
           }
         ]
       }
@@ -775,14 +775,14 @@ export const excursiones={
         "id": 1,
         "title": "Tour pela Cidade de Havana",
         "alternative_name": "City Tour Habana",
-        "main_image": "/havana-capitol.jpg",
+        "main_image": "/havana-capitol.webp",
         "images": [
           {
-            "url": "habana_1.jpg",
+            "url": "habana_1.webp",
             "alt": "Vista do Malecón"
           },
           {
-            "url": "habana_2.jpg",
+            "url": "habana_2.webp",
             "alt": "Capitólio de Havana"
           }
         ],
@@ -792,12 +792,12 @@ export const excursiones={
           {
             "title": "O Capitólio",
             "description": "Edifício icônico de Havana.",
-            "image": "lugares/capitolio.jpg"
+            "image": "lugares/capitolio.webp"
           },
           {
             "title": "Malecón de Havana",
             "description": "Calçadão à beira-mar icônico da cidade.",
-            "image": "lugares/malecon.jpg"
+            "image": "lugares/malecon.webp"
           }
         ]
       },
@@ -805,14 +805,14 @@ export const excursiones={
         "id": 2,
         "title": "Tour Padrão em Havana",
         "alternative_name": "Standard Tour Habana",
-        "main_image": "habana_tour_estandar.jpg",
+        "main_image": "habana_tour_estandar.webp",
         "images": [
           {
-            "url": "habana_estandar_1.jpg",
+            "url": "habana_estandar_1.webp",
             "alt": "Vista da Praça da Catedral"
           },
           {
-            "url": "habana_estandar_2.jpg",
+            "url": "habana_estandar_2.webp",
             "alt": "Praça Velha"
           }
         ],
@@ -822,12 +822,12 @@ export const excursiones={
           {
             "title": "Praça da Catedral",
             "description": "Uma das praças mais icônicas da Havana Velha.",
-            "image": "lugares/plaza_catedral.jpg"
+            "image": "lugares/plaza_catedral.webp"
           },
           {
             "title": "Floridita",
             "description": "Bar favorito de Ernest Hemingway.",
-            "image": "lugares/floridita.jpg"
+            "image": "lugares/floridita.webp"
           }
         ]
       },
@@ -835,14 +835,14 @@ export const excursiones={
         "id": 3,
         "title": "Tour Havana – Viñales – Havana",
         "alternative_name": "Tour Habana-Viñales",
-        "main_image": "habana_vinales.jpg",
+        "main_image": "habana_vinales.webp",
         "images": [
           {
-            "url": "vinales_1.jpg",
+            "url": "vinales_1.webp",
             "alt": "Vale de Viñales"
           },
           {
-            "url": "vinales_2.jpg",
+            "url": "vinales_2.webp",
             "alt": "Mural da Pré-história"
           }
         ],
@@ -852,12 +852,12 @@ export const excursiones={
           {
             "title": "Vale de Viñales",
             "description": "Paisagem natural única com plantações de tabaco.",
-            "image": "lugares/valle_vinales.jpg"
+            "image": "lugares/valle_vinales.webp"
           },
           {
             "title": "Caverna do Índio",
             "description": "Caverna navegável de origem milenar.",
-            "image": "lugares/cueva_indio.jpg"
+            "image": "lugares/cueva_indio.webp"
           }
         ]
       },
@@ -865,14 +865,14 @@ export const excursiones={
         "id": 4,
         "title": "Tour Havana – Playas del Este – Havana",
         "alternative_name": "Tour Playas del Este",
-        "main_image": "/playas_del_este.jpg",
+        "main_image": "/playas_del_este.webp",
         "images": [
           {
-            "url": "playas_este_1.jpg",
+            "url": "playas_este_1.webp",
             "alt": "Praia Santa María"
           },
           {
-            "url": "playas_este_2.jpg",
+            "url": "playas_este_2.webp",
             "alt": "Costa de Havana"
           }
         ],
@@ -882,12 +882,12 @@ export const excursiones={
           {
             "title": "Praia Santa María",
             "description": "Praia com águas cristalinas e areias brancas.",
-            "image": "lugares/playa_santa_maria.jpg"
+            "image": "lugares/playa_santa_maria.webp"
           },
           {
             "title": "Mi Cayito",
             "description": "Pequena praia popular perto de Havana.",
-            "image": "lugares/mi_cayito.jpg"
+            "image": "lugares/mi_cayito.webp"
           }
         ]
       },
@@ -895,14 +895,14 @@ export const excursiones={
         "id": 5,
         "title": "Excursão Varadero – Cienfuegos – Santa Clara – Trinidad",
         "alternative_name": "Tour 3 Cidades",
-        "main_image": "varadero_3_ciudades.jpg",
+        "main_image": "varadero_3_ciudades.webp",
         "images": [
           {
-            "url": "cienfuegos_1.jpg",
+            "url": "cienfuegos_1.webp",
             "alt": "Vista do Parque José Martí em Cienfuegos"
           },
           {
-            "url": "trinidad_1.jpg",
+            "url": "trinidad_1.webp",
             "alt": "Praça Maior de Trinidad"
           }
         ],
@@ -912,12 +912,12 @@ export const excursiones={
           {
             "title": "Mausoléu do Che",
             "description": "Complexo escultórico dedicado ao Che Guevara em Santa Clara.",
-            "image": "lugares/mausoleo_che.jpg"
+            "image": "lugares/mausoleo_che.webp"
           },
           {
             "title": "Praça Maior de Trinidad",
             "description": "Coração colonial de Trinidad.",
-            "image": "lugares/plaza_mayor_trinidad.jpg"
+            "image": "lugares/plaza_mayor_trinidad.webp"
           }
         ]
       }

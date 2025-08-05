@@ -5,14 +5,14 @@ export const destinos ={
         "id": 1,
         "title": "Aeropuerto Habana",
         "alternative_name": "Destino Aeropuerto Habana",
-        "main_image": "/havana-capitol.jpg",
+        "main_image": "/havana-capitol.webp",
         "images": [
           {
-            "url": "destinos/aeropuerto_habana_1.jpg",
+            "url": "destinos/aeropuerto_habana_1.webp",
             "alt": "Vista 1 de Aeropuerto Habana"
           },
           {
-            "url": "destinos/aeropuerto_habana_2.jpg",
+            "url": "destinos/aeropuerto_habana_2.webp",
             "alt": "Vista 2 de Aeropuerto Habana"
           }
         ],
@@ -52,14 +52,14 @@ export const destinos ={
         "id": 2,
         "title": "Aeropuerto Varadero",
         "alternative_name": "Destino Aeropuerto Varadero",
-        "main_image": "/varadero-airport.png",
+        "main_image": "/varadero-airport.webp",
         "images": [
           {
-            "url": "destinos/aeropuerto_varadero_1.jpg",
+            "url": "destinos/aeropuerto_varadero_1.webp",
             "alt": "Vista 1 de Aeropuerto Varadero"
           },
           {
-            "url": "destinos/aeropuerto_varadero_2.jpg",
+            "url": "destinos/aeropuerto_varadero_2.webp",
             "alt": "Vista 2 de Aeropuerto Varadero"
           }
         ],
@@ -90,14 +90,14 @@ export const destinos ={
         "id": 3,
         "title": "Cayo Coco",
         "alternative_name": "Destino Cayo Coco",
-        "main_image": "/cayo-coco.jpg",
+        "main_image": "/cayo-coco.webp",
         "images": [
           {
-            "url": "destinos/cayo_coco_1.jpg",
+            "url": "destinos/cayo_coco_1.webp",
             "alt": "Vista 1 de Cayo Coco"
           },
           {
-            "url": "destinos/cayo_coco_2.jpg",
+            "url": "destinos/cayo_coco_2.webp",
             "alt": "Vista 2 de Cayo Coco"
           }
         ],
@@ -128,14 +128,14 @@ export const destinos ={
         "id": 4,
         "title": "Cayo Guillermo",
         "alternative_name": "Destino Cayo Guillermo",
-        "main_image": "/cayo-guillermo.png",
+        "main_image": "/cayo-guillermo.webp",
         "images": [
           {
-            "url": "destinos/cayo_guillermo_1.jpg",
+            "url": "destinos/cayo_guillermo_1.webp",
             "alt": "Vista 1 de Cayo Guillermo"
           },
           {
-            "url": "destinos/cayo_guillermo_2.jpg",
+            "url": "destinos/cayo_guillermo_2.webp",
             "alt": "Vista 2 de Cayo Guillermo"
           }
         ],
@@ -169,11 +169,11 @@ export const destinos ={
         "main_image": "/cayo-santa-maria.webp",
         "images": [
           {
-            "url": "destinos/cayo_santa_maría_1.jpg",
+            "url": "destinos/cayo_santa_maría_1.webp",
             "alt": "Vista 1 de Cayo Santa María"
           },
           {
-            "url": "destinos/cayo_santa_maría_2.jpg",
+            "url": "destinos/cayo_santa_maría_2.webp",
             "alt": "Vista 2 de Cayo Santa María"
           }
         ],
@@ -204,14 +204,14 @@ export const destinos ={
         "id": 6,
         "title": "Cienfuegos",
         "alternative_name": "Destino Cienfuegos",
-        "main_image": "/cienfuegos.jpg",
+        "main_image": "/cienfuegos.webp",
         "images": [
           {
-            "url": "destinos/cienfuegos_1.jpg",
+            "url": "destinos/cienfuegos_1.webp",
             "alt": "Vista 1 de Cienfuegos"
           },
           {
-            "url": "destinos/cienfuegos_2.jpg",
+            "url": "destinos/cienfuegos_2.webp",
             "alt": "Vista 2 de Cienfuegos"
           }
         ],
@@ -260,14 +260,14 @@ export const destinos ={
         "id": 7,
         "title": "La Habana",
         "alternative_name": "Destino La Habana",
-        "main_image": "/havana-capitol.jpg",
+        "main_image": "/havana-capitol.webp",
         "images": [
           {
-            "url": "destinos/la_habana_1.jpg",
+            "url": "destinos/la_habana_1.webp",
             "alt": "Vista 1 de La Habana"
           },
           {
-            "url": "destinos/la_habana_2.jpg",
+            "url": "destinos/la_habana_2.webp",
             "alt": "Vista 2 de La Habana"
           }
         ],
@@ -307,14 +307,14 @@ export const destinos ={
         "id": 8,
         "title": "Santa Clara",
         "alternative_name": "Destino Santa Clara",
-        "main_image": "/santa-clara.jpeg",
+        "main_image": "/santa-clara.webp",
         "images": [
           {
-            "url": "destinos/santa_clara_1.jpg",
+            "url": "destinos/santa_clara_1.webp",
             "alt": "Vista 1 de Santa Clara"
           },
           {
-            "url": "destinos/santa_clara_2.jpg",
+            "url": "destinos/santa_clara_2.webp",
             "alt": "Vista 2 de Santa Clara"
           }
         ],
@@ -363,14 +363,14 @@ export const destinos ={
         "id": 9,
         "title": "Trinidad",
         "alternative_name": "Destino Trinidad",
-        "main_image": "/trinidad.jpg",
+        "main_image": "/trinidad.webp",
         "images": [
           {
-            "url": "destinos/trinidad_1.jpg",
+            "url": "destinos/trinidad_1.webp",
             "alt": "Vista 1 de Trinidad"
           },
           {
-            "url": "destinos/trinidad_2.jpg",
+            "url": "destinos/trinidad_2.webp",
             "alt": "Vista 2 de Trinidad"
           }
         ],
@@ -419,14 +419,14 @@ export const destinos ={
         "id": 10,
         "title": "Varadero",
         "alternative_name": "Destino Varadero",
-        "main_image": "/varadero-view.jpg",
+        "main_image": "/varadero-view.webp",
         "images": [
           {
-            "url": "destinos/varadero_1.jpg",
+            "url": "destinos/varadero_1.webp",
             "alt": "Vista 1 de Varadero"
           },
           {
-            "url": "destinos/varadero_2.jpg",
+            "url": "destinos/varadero_2.webp",
             "alt": "Vista 2 de Varadero"
           }
         ],
@@ -464,16 +464,16 @@ export const destinos ={
       },
       {
         "id": 11,
-        "title": "/viñales",
+        "title": "Viñales",
         "alternative_name": "Destino Viñales",
-        "main_image": "/viñales.jpg",
+        "main_image": "/viñales.webp",
         "images": [
           {
-            "url": "destinos/viñales_1.jpg",
+            "url": "destinos/viñales_1.webp",
             "alt": "Vista 1 de Viñales"
           },
           {
-            "url": "destinos/viñales_2.jpg",
+            "url": "destinos/viñales_2.webp",
             "alt": "Vista 2 de Viñales"
           }
         ],
@@ -482,7 +482,7 @@ export const destinos ={
         "transfers": [
           {
             "from": "Aeropuerto La Habana",
-            "to": "/viñales",
+            "to": "Viñales",
             "distance_km": 180,
             "time": "2:30",
             "convertible_car_usd": null,
@@ -491,7 +491,7 @@ export const destinos ={
           },
           {
             "from": "La Habana",
-            "to": "/viñales",
+            "to": "Viñales",
             "distance_km": 180,
             "time": "2:30",
             "convertible_car_usd": 180.0,
@@ -500,7 +500,7 @@ export const destinos ={
           },
           {
             "from": "Varadero",
-            "to": "/viñales",
+            "to": "Viñales",
             "distance_km": 330,
             "time": "4:45",
             "convertible_car_usd": null,
@@ -517,14 +517,14 @@ export const destinos ={
         "id": 1,
         "title": "Havana Airport",
         "alternative_name": "Havana Airport Destination",
-        "main_image": "/havana-capitol.jpg",
+        "main_image": "/havana-capitol.webp",
         "images": [
           {
-            "url": "destinos/aeropuerto_habana_1.jpg",
+            "url": "destinos/aeropuerto_habana_1.webp",
             "alt": "View 1 of Havana Airport"
           },
           {
-            "url": "destinos/aeropuerto_habana_2.jpg",
+            "url": "destinos/aeropuerto_habana_2.webp",
             "alt": "View 2 of Havana Airport"
           }
         ],
@@ -564,14 +564,14 @@ export const destinos ={
         "id": 2,
         "title": "Varadero Airport",
         "alternative_name": "Varadero Airport Destination",
-        "main_image": "/havana-capitol.jpg",
+        "main_image": "/havana-capitol.webp",
         "images": [
           {
-            "url": "destinos/aeropuerto_varadero_1.jpg",
+            "url": "destinos/aeropuerto_varadero_1.webp",
             "alt": "View 1 of Varadero Airport"
           },
           {
-            "url": "destinos/aeropuerto_varadero_2.jpg",
+            "url": "destinos/aeropuerto_varadero_2.webp",
             "alt": "View 2 of Varadero Airport"
           }
         ],
@@ -602,14 +602,14 @@ export const destinos ={
         "id": 3,
         "title": "Cayo Coco",
         "alternative_name": "Cayo Coco Destination",
-        "main_image": "/havana-capitol.jpg",
+        "main_image": "/havana-capitol.webp",
         "images": [
           {
-            "url": "destinos/cayo_coco_1.jpg",
+            "url": "destinos/cayo_coco_1.webp",
             "alt": "View 1 of Cayo Coco"
           },
           {
-            "url": "destinos/cayo_coco_2.jpg",
+            "url": "destinos/cayo_coco_2.webp",
             "alt": "View 2 of Cayo Coco"
           }
         ],
@@ -640,14 +640,14 @@ export const destinos ={
         "id": 4,
         "title": "Cayo Guillermo",
         "alternative_name": "Cayo Guillermo Destination",
-        "main_image": "/havana-capitol.jpg",
+        "main_image": "/havana-capitol.webp",
         "images": [
           {
-            "url": "destinos/cayo_guillermo_1.jpg",
+            "url": "destinos/cayo_guillermo_1.webp",
             "alt": "View 1 of Cayo Guillermo"
           },
           {
-            "url": "destinos/cayo_guillermo_2.jpg",
+            "url": "destinos/cayo_guillermo_2.webp",
             "alt": "View 2 of Cayo Guillermo"
           }
         ],
@@ -678,14 +678,14 @@ export const destinos ={
         "id": 5,
         "title": "Cayo Santa María",
         "alternative_name": "Cayo Santa María Destination",
-        "main_image": "/havana-capitol.jpg",
+        "main_image": "/havana-capitol.webp",
         "images": [
           {
-            "url": "destinos/cayo_santa_maría_1.jpg",
+            "url": "destinos/cayo_santa_maría_1.webp",
             "alt": "View 1 of Cayo Santa María"
           },
           {
-            "url": "destinos/cayo_santa_maría_2.jpg",
+            "url": "destinos/cayo_santa_maría_2.webp",
             "alt": "View 2 of Cayo Santa María"
           }
         ],
@@ -716,14 +716,14 @@ export const destinos ={
         "id": 6,
         "title": "Cienfuegos",
         "alternative_name": "Cienfuegos Destination",
-        "main_image": "/havana-capitol.jpg",
+        "main_image": "/havana-capitol.webp",
         "images": [
           {
-            "url": "destinos/cienfuegos_1.jpg",
+            "url": "destinos/cienfuegos_1.webp",
             "alt": "View 1 of Cienfuegos"
           },
           {
-            "url": "destinos/cienfuegos_2.jpg",
+            "url": "destinos/cienfuegos_2.webp",
             "alt": "View 2 of Cienfuegos"
           }
         ],
@@ -772,14 +772,14 @@ export const destinos ={
         "id": 7,
         "title": "Havana",
         "alternative_name": "Havana Destination",
-        "main_image": "/havana-capitol.jpg",
+        "main_image": "/havana-capitol.webp",
         "images": [
           {
-            "url": "destinos/la_habana_1.jpg",
+            "url": "destinos/la_habana_1.webp",
             "alt": "View 1 of Havana"
           },
           {
-            "url": "destinos/la_habana_2.jpg",
+            "url": "destinos/la_habana_2.webp",
             "alt": "View 2 of Havana"
           }
         ],
@@ -819,14 +819,14 @@ export const destinos ={
         "id": 8,
         "title": "Santa Clara",
         "alternative_name": "Santa Clara Destination",
-        "main_image": "/havana-capitol.jpg",
+        "main_image": "/havana-capitol.webp",
         "images": [
           {
-            "url": "destinos/santa_clara_1.jpg",
+            "url": "destinos/santa_clara_1.webp",
             "alt": "View 1 of Santa Clara"
           },
           {
-            "url": "destinos/santa_clara_2.jpg",
+            "url": "destinos/santa_clara_2.webp",
             "alt": "View 2 of Santa Clara"
           }
         ],
@@ -875,14 +875,14 @@ export const destinos ={
         "id": 9,
         "title": "Trinidad",
         "alternative_name": "Trinidad Destination",
-        "main_image": "/havana-capitol.jpg",
+        "main_image": "/havana-capitol.webp",
         "images": [
           {
-            "url": "destinos/trinidad_1.jpg",
+            "url": "destinos/trinidad_1.webp",
             "alt": "View 1 of Trinidad"
           },
           {
-            "url": "destinos/trinidad_2.jpg",
+            "url": "destinos/trinidad_2.webp",
             "alt": "View 2 of Trinidad"
           }
         ],
@@ -931,14 +931,14 @@ export const destinos ={
         "id": 10,
         "title": "Varadero",
         "alternative_name": "Varadero Destination",
-        "main_image": "/havana-capitol.jpg",
+        "main_image": "/havana-capitol.webp",
         "images": [
           {
-            "url": "destinos/varadero_1.jpg",
+            "url": "destinos/varadero_1.webp",
             "alt": "View 1 of Varadero"
           },
           {
-            "url": "destinos/varadero_2.jpg",
+            "url": "destinos/varadero_2.webp",
             "alt": "View 2 of Varadero"
           }
         ],
@@ -978,14 +978,14 @@ export const destinos ={
         "id": 11,
         "title": "/viñales",
         "alternative_name": "/viñales Destination",
-        "main_image": "/havana-capitol.jpg",
+        "main_image": "/havana-capitol.webp",
         "images": [
           {
-            "url": "destinos/viñales_1.jpg",
+            "url": "destinos/viñales_1.webp",
             "alt": "View 1 of Viñales"
           },
           {
-            "url": "destinos/viñales_2.jpg",
+            "url": "destinos/viñales_2.webp",
             "alt": "View 2 of Viñales"
           }
         ],
@@ -994,7 +994,7 @@ export const destinos ={
         "transfers": [
           {
             "from": "Havana Airport",
-            "to": "/viñales",
+            "to": "Viñales",
             "distance_km": 180,
             "time": "2:30",
             "convertible_car_usd": null,
@@ -1003,7 +1003,7 @@ export const destinos ={
           },
           {
             "from": "Havana",
-            "to": "/viñales",
+            "to": "Viñales",
             "distance_km": 180,
             "time": "2:30",
             "convertible_car_usd": 180.0,
@@ -1012,7 +1012,7 @@ export const destinos ={
           },
           {
             "from": "Varadero",
-            "to": "/viñales",
+            "to": "Viñales",
             "distance_km": 330,
             "time": "4:45",
             "convertible_car_usd": null,
@@ -1029,14 +1029,14 @@ export const destinos ={
         "id": 1,
         "title": "Aéroport de La Havane",
         "alternative_name": "Destination Aéroport de La Havane",
-        "main_image": "/havana-capitol.jpg",
+        "main_image": "/havana-capitol.webp",
         "images": [
           {
-            "url": "destinos/aeropuerto_habana_1.jpg",
+            "url": "destinos/aeropuerto_habana_1.webp",
             "alt": "Vue 1 de l'aéroport de La Havane"
           },
           {
-            "url": "destinos/aeropuerto_habana_2.jpg",
+            "url": "destinos/aeropuerto_habana_2.webp",
             "alt": "Vue 2 de l'aéroport de La Havane"
           }
         ],
@@ -1076,14 +1076,14 @@ export const destinos ={
         "id": 2,
         "title": "Aéroport de Varadero",
         "alternative_name": "Destination Aéroport de Varadero",
-        "main_image": "/havana-capitol.jpg",
+        "main_image": "/havana-capitol.webp",
         "images": [
           {
-            "url": "destinos/aeropuerto_varadero_1.jpg",
+            "url": "destinos/aeropuerto_varadero_1.webp",
             "alt": "Vue 1 de l'aéroport de Varadero"
           },
           {
-            "url": "destinos/aeropuerto_varadero_2.jpg",
+            "url": "destinos/aeropuerto_varadero_2.webp",
             "alt": "Vue 2 de l'aéroport de Varadero"
           }
         ],
@@ -1114,14 +1114,14 @@ export const destinos ={
         "id": 3,
         "title": "Cayo Coco",
         "alternative_name": "Destination Cayo Coco",
-        "main_image": "/havana-capitol.jpg",
+        "main_image": "/havana-capitol.webp",
         "images": [
           {
-            "url": "destinos/cayo_coco_1.jpg",
+            "url": "destinos/cayo_coco_1.webp",
             "alt": "Vue 1 de Cayo Coco"
           },
           {
-            "url": "destinos/cayo_coco_2.jpg",
+            "url": "destinos/cayo_coco_2.webp",
             "alt": "Vue 2 de Cayo Coco"
           }
         ],
@@ -1152,14 +1152,14 @@ export const destinos ={
         "id": 4,
         "title": "Cayo Guillermo",
         "alternative_name": "Destination Cayo Guillermo",
-        "main_image": "/havana-capitol.jpg",
+        "main_image": "/havana-capitol.webp",
         "images": [
           {
-            "url": "destinos/cayo_guillermo_1.jpg",
+            "url": "destinos/cayo_guillermo_1.webp",
             "alt": "Vue 1 de Cayo Guillermo"
           },
           {
-            "url": "destinos/cayo_guillermo_2.jpg",
+            "url": "destinos/cayo_guillermo_2.webp",
             "alt": "Vue 2 de Cayo Guillermo"
           }
         ],
@@ -1190,14 +1190,14 @@ export const destinos ={
         "id": 5,
         "title": "Cayo Santa María",
         "alternative_name": "Destination Cayo Santa María",
-        "main_image": "/havana-capitol.jpg",
+        "main_image": "/havana-capitol.webp",
         "images": [
           {
-            "url": "destinos/cayo_santa_maría_1.jpg",
+            "url": "destinos/cayo_santa_maría_1.webp",
             "alt": "Vue 1 de Cayo Santa María"
           },
           {
-            "url": "destinos/cayo_santa_maría_2.jpg",
+            "url": "destinos/cayo_santa_maría_2.webp",
             "alt": "Vue 2 de Cayo Santa María"
           }
         ],
@@ -1228,14 +1228,14 @@ export const destinos ={
         "id": 6,
         "title": "Cienfuegos",
         "alternative_name": "Destination Cienfuegos",
-        "main_image": "/havana-capitol.jpg",
+        "main_image": "/havana-capitol.webp",
         "images": [
           {
-            "url": "destinos/cienfuegos_1.jpg",
+            "url": "destinos/cienfuegos_1.webp",
             "alt": "Vue 1 de Cienfuegos"
           },
           {
-            "url": "destinos/cienfuegos_2.jpg",
+            "url": "destinos/cienfuegos_2.webp",
             "alt": "Vue 2 de Cienfuegos"
           }
         ],
@@ -1284,14 +1284,14 @@ export const destinos ={
         "id": 7,
         "title": "La Havane",
         "alternative_name": "Destination La Havane",
-        "main_image": "/havana-capitol.jpg",
+        "main_image": "/havana-capitol.webp",
         "images": [
           {
-            "url": "destinos/la_habana_1.jpg",
+            "url": "destinos/la_habana_1.webp",
             "alt": "Vue 1 de La Havane"
           },
           {
-            "url": "destinos/la_habana_2.jpg",
+            "url": "destinos/la_habana_2.webp",
             "alt": "Vue 2 de La Havane"
           }
         ],
@@ -1331,14 +1331,14 @@ export const destinos ={
         "id": 8,
         "title": "Santa Clara",
         "alternative_name": "Destination Santa Clara",
-        "main_image": "/havana-capitol.jpg",
+        "main_image": "/havana-capitol.webp",
         "images": [
           {
-            "url": "destinos/santa_clara_1.jpg",
+            "url": "destinos/santa_clara_1.webp",
             "alt": "Vue 1 de Santa Clara"
           },
           {
-            "url": "destinos/santa_clara_2.jpg",
+            "url": "destinos/santa_clara_2.webp",
             "alt": "Vue 2 de Santa Clara"
           }
         ],
@@ -1387,14 +1387,14 @@ export const destinos ={
         "id": 9,
         "title": "Trinidad",
         "alternative_name": "Destination Trinidad",
-        "main_image": "/havana-capitol.jpg",
+        "main_image": "/havana-capitol.webp",
         "images": [
           {
-            "url": "destinos/trinidad_1.jpg",
+            "url": "destinos/trinidad_1.webp",
             "alt": "Vue 1 de Trinidad"
           },
           {
-            "url": "destinos/trinidad_2.jpg",
+            "url": "destinos/trinidad_2.webp",
             "alt": "Vue 2 de Trinidad"
           }
         ],
@@ -1443,14 +1443,14 @@ export const destinos ={
         "id": 10,
         "title": "Varadero",
         "alternative_name": "Destination Varadero",
-        "main_image": "/havana-capitol.jpg",
+        "main_image": "/havana-capitol.webp",
         "images": [
           {
-            "url": "destinos/varadero_1.jpg",
+            "url": "destinos/varadero_1.webp",
             "alt": "Vue 1 de Varadero"
           },
           {
-            "url": "destinos/varadero_2.jpg",
+            "url": "destinos/varadero_2.webp",
             "alt": "Vue 2 de Varadero"
           }
         ],
@@ -1490,14 +1490,14 @@ export const destinos ={
         "id": 11,
         "title": "/viñales",
         "alternative_name": "Destination Viñales",
-        "main_image": "/havana-capitol.jpg",
+        "main_image": "/havana-capitol.webp",
         "images": [
           {
-            "url": "destinos/viñales_1.jpg",
+            "url": "destinos/viñales_1.webp",
             "alt": "Vue 1 de Viñales"
           },
           {
-            "url": "destinos/viñales_2.jpg",
+            "url": "destinos/viñales_2.webp",
             "alt": "Vue 2 de Viñales"
           }
         ],
@@ -1506,7 +1506,7 @@ export const destinos ={
         "transfers": [
           {
             "from": "Aéroport de La Havane",
-            "to": "/viñales",
+            "to": "Viñales",
             "distance_km": 180,
             "time": "2:30",
             "convertible_car_usd": null,
@@ -1515,7 +1515,7 @@ export const destinos ={
           },
           {
             "from": "La Havane",
-            "to": "/viñales",
+            "to": "Viñales",
             "distance_km": 180,
             "time": "2:30",
             "convertible_car_usd": 180.0,
@@ -1524,7 +1524,7 @@ export const destinos ={
           },
           {
             "from": "Varadero",
-            "to": "/viñales",
+            "to": "Viñales",
             "distance_km": 330,
             "time": "4:45",
             "convertible_car_usd": null,
@@ -1541,14 +1541,14 @@ export const destinos ={
         "id": 1,
         "title": "Flughafen Havanna",
         "alternative_name": "Ziel Flughafen Havanna",
-        "main_image": "/havana-capitol.jpg",
+        "main_image": "/havana-capitol.webp",
         "images": [
           {
-            "url": "destinos/aeropuerto_habana_1.jpg",
+            "url": "destinos/aeropuerto_habana_1.webp",
             "alt": "Ansicht 1 des Flughafens Havanna"
           },
           {
-            "url": "destinos/aeropuerto_habana_2.jpg",
+            "url": "destinos/aeropuerto_habana_2.webp",
             "alt": "Ansicht 2 des Flughafens Havanna"
           }
         ],
@@ -1588,14 +1588,14 @@ export const destinos ={
         "id": 2,
         "title": "Flughafen Varadero",
         "alternative_name": "Ziel Flughafen Varadero",
-        "main_image": "/havana-capitol.jpg",
+        "main_image": "/havana-capitol.webp",
         "images": [
           {
-            "url": "destinos/aeropuerto_varadero_1.jpg",
+            "url": "destinos/aeropuerto_varadero_1.webp",
             "alt": "Ansicht 1 des Flughafens Varadero"
           },
           {
-            "url": "destinos/aeropuerto_varadero_2.jpg",
+            "url": "destinos/aeropuerto_varadero_2.webp",
             "alt": "Ansicht 2 des Flughafens Varadero"
           }
         ],
@@ -1626,14 +1626,14 @@ export const destinos ={
         "id": 3,
         "title": "Cayo Coco",
         "alternative_name": "Ziel Cayo Coco",
-        "main_image": "/havana-capitol.jpg",
+        "main_image": "/havana-capitol.webp",
         "images": [
           {
-            "url": "destinos/cayo_coco_1.jpg",
+            "url": "destinos/cayo_coco_1.webp",
             "alt": "Ansicht 1 von Cayo Coco"
           },
           {
-            "url": "destinos/cayo_coco_2.jpg",
+            "url": "destinos/cayo_coco_2.webp",
             "alt": "Ansicht 2 von Cayo Coco"
           }
         ],
@@ -1664,14 +1664,14 @@ export const destinos ={
         "id": 4,
         "title": "Cayo Guillermo",
         "alternative_name": "Ziel Cayo Guillermo",
-        "main_image": "/havana-capitol.jpg",
+        "main_image": "/havana-capitol.webp",
         "images": [
           {
-            "url": "destinos/cayo_guillermo_1.jpg",
+            "url": "destinos/cayo_guillermo_1.webp",
             "alt": "Ansicht 1 von Cayo Guillermo"
           },
           {
-            "url": "destinos/cayo_guillermo_2.jpg",
+            "url": "destinos/cayo_guillermo_2.webp",
             "alt": "Ansicht 2 von Cayo Guillermo"
           }
         ],
@@ -1702,14 +1702,14 @@ export const destinos ={
         "id": 5,
         "title": "Cayo Santa María",
         "alternative_name": "Ziel Cayo Santa María",
-        "main_image": "/havana-capitol.jpg",
+        "main_image": "/havana-capitol.webp",
         "images": [
           {
-            "url": "destinos/cayo_santa_maría_1.jpg",
+            "url": "destinos/cayo_santa_maría_1.webp",
             "alt": "Ansicht 1 von Cayo Santa María"
           },
           {
-            "url": "destinos/cayo_santa_maría_2.jpg",
+            "url": "destinos/cayo_santa_maría_2.webp",
             "alt": "Ansicht 2 von Cayo Santa María"
           }
         ],
@@ -1740,14 +1740,14 @@ export const destinos ={
         "id": 6,
         "title": "Cienfuegos",
         "alternative_name": "Ziel Cienfuegos",
-        "main_image": "/havana-capitol.jpg",
+        "main_image": "/havana-capitol.webp",
         "images": [
           {
-            "url": "destinos/cienfuegos_1.jpg",
+            "url": "destinos/cienfuegos_1.webp",
             "alt": "Ansicht 1 von Cienfuegos"
           },
           {
-            "url": "destinos/cienfuegos_2.jpg",
+            "url": "destinos/cienfuegos_2.webp",
             "alt": "Ansicht 2 von Cienfuegos"
           }
         ],
@@ -1796,14 +1796,14 @@ export const destinos ={
         "id": 7,
         "title": "Havanna",
         "alternative_name": "Ziel Havanna",
-        "main_image": "/havana-capitol.jpg",
+        "main_image": "/havana-capitol.webp",
         "images": [
           {
-            "url": "destinos/la_habana_1.jpg",
+            "url": "destinos/la_habana_1.webp",
             "alt": "Ansicht 1 von Havanna"
           },
           {
-            "url": "destinos/la_habana_2.jpg",
+            "url": "destinos/la_habana_2.webp",
             "alt": "Ansicht 2 von Havanna"
           }
         ],
@@ -1843,14 +1843,14 @@ export const destinos ={
         "id": 8,
         "title": "Santa Clara",
         "alternative_name": "Ziel Santa Clara",
-        "main_image": "/havana-capitol.jpg",
+        "main_image": "/havana-capitol.webp",
         "images": [
           {
-            "url": "destinos/santa_clara_1.jpg",
+            "url": "destinos/santa_clara_1.webp",
             "alt": "Ansicht 1 von Santa Clara"
           },
           {
-            "url": "destinos/santa_clara_2.jpg",
+            "url": "destinos/santa_clara_2.webp",
             "alt": "Ansicht 2 von Santa Clara"
           }
         ],
@@ -1899,14 +1899,14 @@ export const destinos ={
         "id": 9,
         "title": "Trinidad",
         "alternative_name": "Ziel Trinidad",
-        "main_image": "/havana-capitol.jpg",
+        "main_image": "/havana-capitol.webp",
         "images": [
           {
-            "url": "destinos/trinidad_1.jpg",
+            "url": "destinos/trinidad_1.webp",
             "alt": "Ansicht 1 von Trinidad"
           },
           {
-            "url": "destinos/trinidad_2.jpg",
+            "url": "destinos/trinidad_2.webp",
             "alt": "Ansicht 2 von Trinidad"
           }
         ],
@@ -1955,14 +1955,14 @@ export const destinos ={
         "id": 10,
         "title": "Varadero",
         "alternative_name": "Ziel Varadero",
-        "main_image": "/havana-capitol.jpg",
+        "main_image": "/havana-capitol.webp",
         "images": [
           {
-            "url": "destinos/varadero_1.jpg",
+            "url": "destinos/varadero_1.webp",
             "alt": "Ansicht 1 von Varadero"
           },
           {
-            "url": "destinos/varadero_2.jpg",
+            "url": "destinos/varadero_2.webp",
             "alt": "Ansicht 2 von Varadero"
           }
         ],
@@ -2002,14 +2002,14 @@ export const destinos ={
         "id": 11,
         "title": "/viñales",
         "alternative_name": "Ziel Viñales",
-        "main_image": "/havana-capitol.jpg",
+        "main_image": "/havana-capitol.webp",
         "images": [
           {
-            "url": "destinos/viñales_1.jpg",
+            "url": "destinos/viñales_1.webp",
             "alt": "Ansicht 1 von Viñales"
           },
           {
-            "url": "destinos/viñales_2.jpg",
+            "url": "destinos/viñales_2.webp",
             "alt": "Ansicht 2 von Viñales"
           }
         ],
@@ -2018,7 +2018,7 @@ export const destinos ={
         "transfers": [
           {
             "from": "Flughafen Havanna",
-            "to": "/viñales",
+            "to": "Viñales",
             "distance_km": 180,
             "time": "2:30",
             "convertible_car_usd": null,
@@ -2027,7 +2027,7 @@ export const destinos ={
           },
           {
             "from": "Havanna",
-            "to": "/viñales",
+            "to": "Viñales",
             "distance_km": 180,
             "time": "2:30",
             "convertible_car_usd": 180.0,
@@ -2036,7 +2036,7 @@ export const destinos ={
           },
           {
             "from": "Varadero",
-            "to": "/viñales",
+            "to": "Viñales",
             "distance_km": 330,
             "time": "4:45",
             "convertible_car_usd": null,
@@ -2053,14 +2053,14 @@ export const destinos ={
         "id": 1,
         "title": "Аэропорт Гаваны",
         "alternative_name": "Направление Аэропорт Гаваны",
-        "main_image": "/havana-capitol.jpg",
+        "main_image": "/havana-capitol.webp",
         "images": [
           {
-            "url": "destinos/aeropuerto_habana_1.jpg",
+            "url": "destinos/aeropuerto_habana_1.webp",
             "alt": "Вид 1 аэропорта Гаваны"
           },
           {
-            "url": "destinos/aeropuerto_habana_2.jpg",
+            "url": "destinos/aeropuerto_habana_2.webp",
             "alt": "Вид 2 аэропорта Гаваны"
           }
         ],
@@ -2100,14 +2100,14 @@ export const destinos ={
         "id": 2,
         "title": "Аэропорт Варадеро",
         "alternative_name": "Направление Аэропорт Варадеро",
-        "main_image": "/havana-capitol.jpg",
+        "main_image": "/havana-capitol.webp",
         "images": [
           {
-            "url": "destinos/aeropuerto_varadero_1.jpg",
+            "url": "destinos/aeropuerto_varadero_1.webp",
             "alt": "Вид 1 аэропорта Варадеро"
           },
           {
-            "url": "destinos/aeropuerto_varadero_2.jpg",
+            "url": "destinos/aeropuerto_varadero_2.webp",
             "alt": "Вид 2 аэропорта Варадеро"
           }
         ],
@@ -2138,14 +2138,14 @@ export const destinos ={
         "id": 3,
         "title": "Кайо-Коко",
         "alternative_name": "Направление Кайо-Коко",
-        "main_image": "/havana-capitol.jpg",
+        "main_image": "/havana-capitol.webp",
         "images": [
           {
-            "url": "destinos/cayo_coco_1.jpg",
+            "url": "destinos/cayo_coco_1.webp",
             "alt": "Вид 1 Кайо-Коко"
           },
           {
-            "url": "destinos/cayo_coco_2.jpg",
+            "url": "destinos/cayo_coco_2.webp",
             "alt": "Вид 2 Кайо-Коко"
           }
         ],
@@ -2176,14 +2176,14 @@ export const destinos ={
         "id": 4,
         "title": "Кайо-Гильермо",
         "alternative_name": "Направление Кайо-Гильермо",
-        "main_image": "/havana-capitol.jpg",
+        "main_image": "/havana-capitol.webp",
         "images": [
           {
-            "url": "destinos/cayo_guillermo_1.jpg",
+            "url": "destinos/cayo_guillermo_1.webp",
             "alt": "Вид 1 Кайо-Гильермо"
           },
           {
-            "url": "destinos/cayo_guillermo_2.jpg",
+            "url": "destinos/cayo_guillermo_2.webp",
             "alt": "Вид 2 Кайо-Гильермо"
           }
         ],
@@ -2214,14 +2214,14 @@ export const destinos ={
         "id": 5,
         "title": "Кайо-Санта-Мария",
         "alternative_name": "Направление Кайо-Санта-Мария",
-        "main_image": "/havana-capitol.jpg",
+        "main_image": "/havana-capitol.webp",
         "images": [
           {
-            "url": "destinos/cayo_santa_maría_1.jpg",
+            "url": "destinos/cayo_santa_maría_1.webp",
             "alt": "Вид 1 Кайо-Санта-Мария"
           },
           {
-            "url": "destinos/cayo_santa_maría_2.jpg",
+            "url": "destinos/cayo_santa_maría_2.webp",
             "alt": "Вид 2 Кайо-Санта-Мария"
           }
         ],
@@ -2252,14 +2252,14 @@ export const destinos ={
         "id": 6,
         "title": "Сьенфуэгос",
         "alternative_name": "Направление Сьенфуэгос",
-        "main_image": "/havana-capitol.jpg",
+        "main_image": "/havana-capitol.webp",
         "images": [
           {
-            "url": "destinos/cienfuegos_1.jpg",
+            "url": "destinos/cienfuegos_1.webp",
             "alt": "Вид 1 Сьенфуэгоса"
           },
           {
-            "url": "destinos/cienfuegos_2.jpg",
+            "url": "destinos/cienfuegos_2.webp",
             "alt": "Вид 2 Сьенфуэгоса"
           }
         ],
@@ -2308,14 +2308,14 @@ export const destinos ={
         "id": 7,
         "title": "Гавана",
         "alternative_name": "Направление Гавана",
-        "main_image": "/havana-capitol.jpg",
+        "main_image": "/havana-capitol.webp",
         "images": [
           {
-            "url": "destinos/la_habana_1.jpg",
+            "url": "destinos/la_habana_1.webp",
             "alt": "Вид 1 Гаваны"
           },
           {
-            "url": "destinos/la_habana_2.jpg",
+            "url": "destinos/la_habana_2.webp",
             "alt": "Вид 2 Гаваны"
           }
         ],
@@ -2355,14 +2355,14 @@ export const destinos ={
         "id": 8,
         "title": "Санта-Клара",
         "alternative_name": "Направление Санта-Клара",
-        "main_image": "/santa_clara.jpg",
+        "main_image": "/santa_clara.webp",
         "images": [
           {
-            "url": "/santa_clara_1.jpg",
+            "url": "/santa_clara_1.webp",
             "alt": "Вид 1 Санта-Клары"
           },
           {
-            "url": "/santa_clara_2.jpg",
+            "url": "/santa_clara_2.webp",
             "alt": "Вид 2 Санта-Клары"
           }
         ],
@@ -2411,14 +2411,14 @@ export const destinos ={
         "id": 9,
         "title": "Тринидад",
         "alternative_name": "Направление Тринидад",
-        "main_image": "/trinidad.jpg",
+        "main_image": "/trinidad.webp",
         "images": [
           {
-            "url": "/trinidad_1.jpg",
+            "url": "/trinidad_1.webp",
             "alt": "Вид 1 Тринидада"
           },
           {
-            "url": "/trinidad_2.jpg",
+            "url": "/trinidad_2.webp",
             "alt": "Вид 2 Тринидада"
           }
         ],
@@ -2467,14 +2467,14 @@ export const destinos ={
         "id": 10,
         "title": "Варадеро",
         "alternative_name": "Направление Варадеро",
-        "main_image": "/varadero.jpg",
+        "main_image": "/varadero.webp",
         "images": [
           {
-            "url": "/varadero_1.jpg",
+            "url": "/varadero_1.webp",
             "alt": "Вид 1 Варадеро"
           },
           {
-            "url": "/varadero_2.jpg",
+            "url": "/varadero_2.webp",
             "alt": "Вид 2 Варадеро"
           }
         ],
@@ -2514,14 +2514,14 @@ export const destinos ={
         "id": 11,
         "title": "Виньялес",
         "alternative_name": "Направление Виньялес",
-        "main_image": "/viñales.jpg",
+        "main_image": "/viñales.webp",
         "images": [
           {
-            "url": "/viñales_1.jpg",
+            "url": "/viñales_1.webp",
             "alt": "Вид 1 Виньялеса"
           },
           {
-            "url": "/viñales_2.jpg",
+            "url": "/viñales_2.webp",
             "alt": "Вид 2 Виньялеса"
           }
         ],
@@ -2565,14 +2565,14 @@ export const destinos ={
         "id": 1,
         "title": "Aeroporto de Havana",
         "alternative_name": "Destino Aeroporto de Havana",
-        "main_image": "/aeropuerto_habana.jpg",
+        "main_image": "/aeropuerto_habana.webp",
         "images": [
           {
-            "url": "/aeropuerto_habana_1.jpg",
+            "url": "/aeropuerto_habana_1.webp",
             "alt": "Vista 1 do Aeroporto de Havana"
           },
           {
-            "url": "/aeropuerto_habana_2.jpg",
+            "url": "/aeropuerto_habana_2.webp",
             "alt": "Vista 2 do Aeroporto de Havana"
           }
         ],
@@ -2612,14 +2612,14 @@ export const destinos ={
         "id": 2,
         "title": "Aeroporto de Varadero",
         "alternative_name": "Destino Aeroporto de Varadero",
-        "main_image": "/aeropuerto_varadero.jpg",
+        "main_image": "/aeropuerto_varadero.webp",
         "images": [
           {
-            "url": "/aeropuerto_varadero_1.jpg",
+            "url": "/aeropuerto_varadero_1.webp",
             "alt": "Vista 1 do Aeroporto de Varadero"
           },
           {
-            "url": "/aeropuerto_varadero_2.jpg",
+            "url": "/aeropuerto_varadero_2.webp",
             "alt": "Vista 2 do Aeroporto de Varadero"
           }
         ],
@@ -2650,14 +2650,14 @@ export const destinos ={
         "id": 3,
         "title": "Cayo Coco",
         "alternative_name": "Destino Cayo Coco",
-        "main_image": "/cayo_coco.jpg",
+        "main_image": "/cayo_coco.webp",
         "images": [
           {
-            "url": "/cayo_coco_1.jpg",
+            "url": "/cayo_coco_1.webp",
             "alt": "Vista 1 de Cayo Coco"
           },
           {
-            "url": "/cayo_coco_2.jpg",
+            "url": "/cayo_coco_2.webp",
             "alt": "Vista 2 de Cayo Coco"
           }
         ],
@@ -2688,14 +2688,14 @@ export const destinos ={
         "id": 4,
         "title": "Cayo Guillermo",
         "alternative_name": "Destino Cayo Guillermo",
-        "main_image": "/cayo_guillermo.jpg",
+        "main_image": "/cayo_guillermo.webp",
         "images": [
           {
-            "url": "/cayo_guillermo_1.jpg",
+            "url": "/cayo_guillermo_1.webp",
             "alt": "Vista 1 de Cayo Guillermo"
           },
           {
-            "url": "/cayo_guillermo_2.jpg",
+            "url": "/cayo_guillermo_2.webp",
             "alt": "Vista 2 de Cayo Guillermo"
           }
         ],
@@ -2726,14 +2726,14 @@ export const destinos ={
         "id": 5,
         "title": "Cayo Santa María",
         "alternative_name": "Destino Cayo Santa María",
-        "main_image": "/cayo_santa_maría.jpg",
+        "main_image": "/cayo_santa_maría.webp",
         "images": [
           {
-            "url": "/cayo_santa_maría_1.jpg",
+            "url": "/cayo_santa_maría_1.webp",
             "alt": "Vista 1 de Cayo Santa María"
           },
           {
-            "url": "/cayo_santa_maría_2.jpg",
+            "url": "/cayo_santa_maría_2.webp",
             "alt": "Vista 2 de Cayo Santa María"
           }
         ],
@@ -2764,14 +2764,14 @@ export const destinos ={
         "id": 6,
         "title": "Cienfuegos",
         "alternative_name": "Destino Cienfuegos",
-        "main_image": "/cienfuegos.jpg",
+        "main_image": "/cienfuegos.webp",
         "images": [
           {
-            "url": "/cienfuegos_1.jpg",
+            "url": "/cienfuegos_1.webp",
             "alt": "Vista 1 de Cienfuegos"
           },
           {
-            "url": "/cienfuegos_2.jpg",
+            "url": "/cienfuegos_2.webp",
             "alt": "Vista 2 de Cienfuegos"
           }
         ],
@@ -2820,14 +2820,14 @@ export const destinos ={
         "id": 7,
         "title": "Havana",
         "alternative_name": "Destino Havana",
-        "main_image": "/la_habana.jpg",
+        "main_image": "/la_habana.webp",
         "images": [
           {
-            "url": "/la_habana_1.jpg",
+            "url": "/la_habana_1.webp",
             "alt": "Vista 1 de Havana"
           },
           {
-            "url": "/la_habana_2.jpg",
+            "url": "/la_habana_2.webp",
             "alt": "Vista 2 de Havana"
           }
         ],
@@ -2867,14 +2867,14 @@ export const destinos ={
         "id": 8,
         "title": "Santa Clara",
         "alternative_name": "Destino Santa Clara",
-        "main_image": "/santa_clara.jpg",
+        "main_image": "/santa_clara.webp",
         "images": [
           {
-            "url": "/santa_clara_1.jpg",
+            "url": "/santa_clara_1.webp",
             "alt": "Vista 1 de Santa Clara"
           },
           {
-            "url": "/santa_clara_2.jpg",
+            "url": "/santa_clara_2.webp",
             "alt": "Vista 2 de Santa Clara"
           }
         ],
@@ -2923,14 +2923,14 @@ export const destinos ={
         "id": 9,
         "title": "Trinidad",
         "alternative_name": "Destino Trinidad",
-        "main_image": "/trinidad.jpg",
+        "main_image": "/trinidad.webp",
         "images": [
           {
-            "url": "/trinidad_1.jpg",
+            "url": "/trinidad_1.webp",
             "alt": "Vista 1 de Trinidad"
           },
           {
-            "url": "/trinidad_2.jpg",
+            "url": "/trinidad_2.webp",
             "alt": "Vista 2 de Trinidad"
           }
         ],
@@ -2979,14 +2979,14 @@ export const destinos ={
         "id": 10,
         "title": "Varadero",
         "alternative_name": "Destino Varadero",
-        "main_image": "/varadero.jpg",
+        "main_image": "/varadero.webp",
         "images": [
           {
-            "url": "/varadero_1.jpg",
+            "url": "/varadero_1.webp",
             "alt": "Vista 1 de Varadero"
           },
           {
-            "url": "/varadero_2.jpg",
+            "url": "/varadero_2.webp",
             "alt": "Vista 2 de Varadero"
           }
         ],
@@ -3026,14 +3026,14 @@ export const destinos ={
         "id": 11,
         "title": "/viñales",
         "alternative_name": "Destino Viñales",
-        "main_image": "/viñales.jpg",
+        "main_image": "/viñales.webp",
         "images": [
           {
-            "url": "/viñales_1.jpg",
+            "url": "/viñales_1.webp",
             "alt": "Vista 1 de Viñales"
           },
           {
-            "url": "/viñales_2.jpg",
+            "url": "/viñales_2.webp",
             "alt": "Vista 2 de Viñales"
           }
         ],
@@ -3042,7 +3042,7 @@ export const destinos ={
         "transfers": [
           {
             "from": "Aeroporto de Havana",
-            "to": "/viñales",
+            "to": "Viñales",
             "distance_km": 180,
             "time": "2:30",
             "convertible_car_usd": null,
@@ -3051,7 +3051,7 @@ export const destinos ={
           },
           {
             "from": "Havana",
-            "to": "/viñales",
+            "to": "Viñales",
             "distance_km": 180,
             "time": "2:30",
             "convertible_car_usd": 180.0,
@@ -3060,7 +3060,7 @@ export const destinos ={
           },
           {
             "from": "Varadero",
-            "to": "/viñales",
+            "to": "Viñales",
             "distance_km": 330,
             "time": "4:45",
             "convertible_car_usd": null,
