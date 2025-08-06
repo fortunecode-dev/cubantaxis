@@ -18,7 +18,7 @@ export async function generateStaticParams() {
 }
 
 export const metadata: Metadata = {
-  title: "Taxi Cuba | Traslados desde Aeropuertos, Excursiones y Tours",
+  title: "CUBANTAXIS | Traslados desde Aeropuertos, Excursiones y Tours",
   description: "Taxi en Cuba. Reservas, Traslados aeropuerto, excursiones privadas, autos clásicos con chofer, 24/7 en La Habana, Varadero, Cayo Coco, Trinidad.",
   keywords: [
     "taxi Cuba",

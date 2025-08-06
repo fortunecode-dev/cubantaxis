@@ -13,18 +13,20 @@ interface Destination {
 interface DestinationsCardProps {
   destinations: Destination[]
   idioma: AppTexts
-  name:string
+  name:string,
+  title:string,
+  subTitle:string
 }
 
-export default function DestinationsCard({ destinations, idioma,name }: DestinationsCardProps) {
+export default function DestinationsCard({ destinations, idioma,name,title,subTitle }: DestinationsCardProps) {
   return (
     <section className="py-9 px-0 sm:px-6 lg:px-8 bg-white" id={name}>
       <div className="max-w-7xl mx-auto text-center mb-4">
         <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900">
-          {idioma.destinationsCard.title}
+          {title}
         </h2>
         <p className="mt-2 text-lg text-gray-600">
-          {idioma.destinationsCard.subTitle}
+          {subTitle}
         </p>
       </div>
 

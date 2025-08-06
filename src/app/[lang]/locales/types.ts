@@ -1,43 +1,11 @@
 // locales/types.ts
 export interface AppTexts {
-  hero: {
-    title: string;
-    subtitle: string;
-    buttons: {
-      excursions: string;
-      destinations: string;
-      fastBooking: string;
-    };
-  };
-  bookingForm: {
-    fullName: string;
-    email: string;
-    phone: string;
-    vehicleType: string;
-    from: string;
-    to: string;
-    date: string;
-    time: string;
-    passengers: string;
-    luggage: string;
-    details: string;
-    attachImages: string;
-    reserveNow: string;
-  };
-  quickBookingForm: {
-    phone: string;
-    vehicleType: string;
-    from: string;
-    to: string;
-    date: string;
-    time: string;
-    passengers: string;
-    luggage: string;
-    reserveNow: string;
-  };
+  hero: HeroLocale;
+  bookingForm: BookingForm;
+  quickBookingForm: QuickBookingForm
   destinationsCard: {
     title: string;
-    subTitle:string;
+    subTitle: string;
     description: string;
   };
   excursionsCard: {
@@ -53,21 +21,52 @@ export interface AppTexts {
       instagram: string,
       whatsapp: string
     }
-  },quickForm: {
+  },
+  FAQs: FAQs
+
+}
+type HeroLocale = {
+  h1: string;
+  h2: string;
+  p: string
+  buttons: {
+    booking: string;
+    fastBooking: string;
+  };
+  contents: {
+    excursions: string;
+    destinations: string;
+    howTo: string;
+  },
+  services: string[]
+}
+type BookingForm = {
+  page: Page,
+  fullName: string;
+  email: string;
   phone: string;
+  vehicleType: string;
   from: string;
   to: string;
   date: string;
   time: string;
-  vehicle: string;
   passengers: string;
   luggage: string;
-  luggagePlaceholder: string;
-  bookViaWhatsapp: string;
-  bookViaTelegram: string;
-  requestTitle: string;
-  locations: string[];
-  vehicles: string[];
+  details: string;
+  attachImages: string;
+  reserveNow: string;
 }
-
-}
+type QuickBookingForm = {
+  page: Page,
+  phone: string;
+  vehicleType: string;
+  from: string;
+  to: string;
+  date: string;
+  time: string;
+  passengers: string;
+  luggage: string;
+  reserveNow: string;
+};
+type Page = { title: string, description: string, backToHome: string }
+type FAQs = { title: string, items: { question: string, answer: string }[] }

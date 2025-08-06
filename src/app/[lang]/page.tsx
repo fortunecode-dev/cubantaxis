@@ -4,6 +4,7 @@ import Hero from "@/modules/layout/Hero";
 import { destinos } from "@/content/destinations";
 import { excursiones } from "@/content/excursions";
 import { LocaleParams } from "@/types/common";
+import FaqSection from "@/components/Faqs";
 
 export default async function Home({ params }: { params:LocaleParams}) {
   const {lang}=await params
@@ -12,8 +13,9 @@ export default async function Home({ params }: { params:LocaleParams}) {
   return (
     <div className="font-sans">
       <Hero idioma={idioma} lang={lang}/>
-      <DestinationsCard name={"destinations"} destinations={destinos[lang]?.destinations} idioma={idioma} />
-      <DestinationsCard name={"excursions"} destinations={excursiones[lang]?.excursions} idioma={idioma} />
+      <DestinationsCard name={"destinations"} destinations={destinos[lang]?.destinations} idioma={idioma} title={idioma.destinationsCard.title} subTitle={idioma.destinationsCard.subTitle} />
+      <DestinationsCard name={"excursions"} destinations={excursiones[lang]?.excursions} idioma={idioma}  title={idioma.excursionsCard.title} subTitle={idioma.excursionsCard.places} />
+      <FaqSection title={idioma.FAQs.title} faqs={idioma.FAQs.items}/>
     </div>
   );
 }

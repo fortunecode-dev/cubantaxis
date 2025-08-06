@@ -1,5 +1,6 @@
 "use client";
 
+import { AppTexts } from "@/app/[lang]/locales/types";
 import { useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 
@@ -18,7 +19,10 @@ interface BookingData {
   images: File[];
 }
 
-export default function ExtendedBookingForm() {
+interface Props {
+  idioma: AppTexts;
+}
+export default function ExtendedBookingForm({ idioma }: Props) {
   const [formData, setFormData] = useState<BookingData>({
     name: "",
     email: "",

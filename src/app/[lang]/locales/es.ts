@@ -1,16 +1,48 @@
 import { AppTexts } from "./types";
 
 export const es: AppTexts = {
-  hero: {
-    title: "CUBANTAXIS",
-    subtitle: "Traslados seguros y confiables, city tours y excursiones por toda Cuba. Reserva rápida y servicio personalizado.",
-    buttons: {
-      excursions: "Excursiones",
-      destinations: "Destinos",
-      fastBooking: "Reserva Rápida",
-    },
+  header: {
+    social: {
+      facebook: "Síguenos en Facebook",
+      instagram: "Síguenos en Instagram",
+      whatsapp: "Contáctanos por WhatsApp"
+    }
   },
+  hero: {
+    h1: "Reserva taxis en Cuba de forma rápida, segura y confiable",
+    h2: "Traslados privados o compartidos en los principales aeropuertos, casas particulares y hoteles en La Habana, Varadero, Trinidad, Viñales y más."
+    , p: "Reserva tu taxi en Cuba sin complicaciones. Déjanos tus datos y en minutos lo tendrás confirmado. Así de fácil.",
+    buttons: {
+      booking: "Reservar taxi privado en Cuba",
+      fastBooking: "Reserva rápida"
+    }
+    ,
+
+    contents: { destinations: "Destinos", excursions: "Excursiones", howTo: "Como funciona" }, services: [
+      "Traslados privados en Cuba",
+      "Taxi al aeropuerto de La Habana",
+      "Reserva de taxi exprés",
+      "City tours por La Habana",
+      "Excursiones desde Varadero",
+      "Taxis compartidos en Cuba",
+      "Viajes a las playas del Este",
+      "Guías turísticos en Cuba"
+    ]
+
+  },
+  destinationsCard: {
+    title: "Destinos",
+    subTitle: "Lugares a visitar en cuba",
+    description: "Explora nuestras opciones de destino más populares.",
+  },
+  excursionsCard: {
+    title: "Excursiones",
+    places: "Lugares incluidos",
+  },
+
+  seeMore: "Ver más",
   bookingForm: {
+    page: { backToHome: "Volver al inicio", description: "Reserve su viaje detalladamente aquí y nos aseguraremos de todo", title: "Traslado personalizado" },
     fullName: "Nombre Completo",
     email: "Correo Electrónico",
     phone: "Teléfono",
@@ -26,6 +58,7 @@ export const es: AppTexts = {
     reserveNow: "Reservar Ahora",
   },
   quickBookingForm: {
+    page: { title: "Reservar taxi en Cuba al instante", backToHome: "Volver a inicio", description: "Reserve su taxi en segundos" },
     phone: "Teléfono",
     vehicleType: "Tipo de Vehículo",
     from: "Desde",
@@ -36,41 +69,51 @@ export const es: AppTexts = {
     luggage: "Descripción del equipaje",
     reserveNow: "Reservar Ahora",
   },
-  destinationsCard: {
-    subTitle:"Lugares a visitar en cuba",
-    title: "Destinos",
-    description: "Explora nuestras opciones de destino más populares.",
-  },
-  excursionsCard: {
-    title: "Excursiones",
-    places: "Lugares incluidos",
-  },
   footer: {
     rights: "© 2025 Cubantaxis. Todos los derechos reservados.",
-  },
-  seeMore: "See more",
-  header: {
-    social: {
-      facebook: "Síguenos en Facebook",
-      instagram: "Síguenos en Instagram",
-      whatsapp: "Contáctanos por WhatsApp"
+  }, FAQs: {
+      title: "Preguntas frecuentes",
+      items: [
+        {
+          question: "¿Cómo reservo un taxi en Cuba con antelación?",
+          answer: "Puedes dejarnos tus datos en el formulario y recibirás confirmación inmediata. También puedes ver todas las rutas disponibles en la [página de traslados](/traslados)."
+        },
+        {
+          question: "¿Ofrecen traslados privados desde el aeropuerto de La Habana?",
+          answer: "Sí, realizamos traslados privados desde el Aeropuerto Internacional José Martí hacia cualquier destino en Cuba, incluyendo Varadero, Viñales, Cayo Santa María y más."
+        },
+        {
+          question: "¿Qué precio tiene un taxi del aeropuerto de Varadero a La Habana?",
+          answer: "El precio del traslado privado desde el aeropuerto de Varadero a La Habana comienza desde 100 USD por vehículo. Consulta la lista completa en nuestra [sección de precios](/traslados)."
+        },
+        {
+          question: "¿Los precios son por persona o por coche?",
+          answer: "Todos los precios mostrados en el sitio son por vehículo privado, sin importar si viajan 1 o más personas (hasta la capacidad máxima permitida)."
+        },
+        {
+          question: "¿Puedo pagar el taxi en dólares, euros o moneda local (CUP)?",
+          answer: "Sí, aceptamos pagos en USD, EUR y CUP. Elige la opción más conveniente al confirmar tu traslado."
+        },
+        {
+          question: "¿Qué pasa si mi vuelo se retrasa?",
+          answer: "Monitoreamos la llegada de tu vuelo. Si hay retrasos, tu conductor te esperará sin costo adicional, siempre que hayas indicado tu número de vuelo correctamente."
+        },
+        {
+          question: "¿Ofrecen excursiones privadas además de traslados?",
+          answer: "Sí, puedes reservar excursiones privadas como el tour a Viñales, Cienfuegos y Trinidad. Mira todas las opciones en la [página de excursiones](/excursiones)."
+        },
+        {
+          question: "¿Qué tipo de vehículos ofrecen para los traslados?",
+          answer: "Puedes elegir entre coches clásicos, convertibles, modernos o minivanes, según tus preferencias y número de pasajeros."
+        },
+        {
+          question: "¿Puedo solicitar un traslado nocturno?",
+          answer: "Sí, ofrecemos servicio de taxi 24/7. Ten en cuenta que los traslados nocturnos pueden tener un pequeño recargo adicional."
+        },
+        {
+          question: "¿Cómo saber si mi traslado está confirmado?",
+          answer: "Recibirás un mensaje de confirmación directa por WhatsApp o correo electrónico con los detalles del viaje y el nombre del conductor asignado."
+        }
+      ]
     }
-  },quickForm: {
-  phone: "Teléfono",
-  from: "Desde",
-  to: "Hasta",
-  date: "Fecha",
-  time: "Hora",
-  vehicle: "Vehículo",
-  passengers: "Pasajeros",
-  luggage: "Equipaje / Notas",
-  luggagePlaceholder: "2 maletas y 1 mochila",
-  bookViaWhatsapp: "Reservar vía WhatsApp",
-  bookViaTelegram: "Reservar vía Telegram",
-  requestTitle: "🚕 Solicitud de reserva rápida",
-  locations: ["La Habana", "Varadero", "/viñales", "Trinidad"],
-  vehicles: ["Sedán", "Van", "SUV"]
-}
-
-
 };

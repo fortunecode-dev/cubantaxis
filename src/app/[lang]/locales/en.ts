@@ -1,16 +1,53 @@
 import { AppTexts } from "./types";
 
 export const en: AppTexts = {
-  hero: {
-    title: "CUBANTAXIS",
-    subtitle: "Safe and reliable transfers, city tours, and excursions across Cuba. Quick booking and personalized service.",
-    buttons: {
-      excursions: "Excursions",
-      destinations: "Destinations",
-      fastBooking: "Fast Booking",
-    },
+  header: {
+    social: {
+      facebook: "Follow us on Facebook",
+      instagram: "Follow us on Instagram",
+      whatsapp: "Contact us via WhatsApp"
+    }
   },
+  hero: {
+    h1: "Book taxis in Cuba quickly, safely and reliably",
+    h2: "Private or shared transfers from major airports, private homes and hotels in Havana, Varadero, Trinidad, Viñales and more.",
+    p: "Book your taxi in Cuba without complications. Leave us your details and your taxi will be confirmed within minutes. That simple.",
+    buttons: {
+      booking: "Book private taxi in Cuba",
+      fastBooking: "Quick booking"
+    },
+    contents: {
+      destinations: "Destinations",
+      excursions: "Excursions",
+      howTo: "How it works"
+    },
+    services: [
+      "Private transfers in Cuba",
+      "Taxi to Havana airport",
+      "Express taxi booking",
+      "City tours in Havana",
+      "Excursions from Varadero",
+      "Shared taxis in Cuba",
+      "Trips to Eastern Beaches",
+      "Tourist guides in Cuba"
+    ]
+  },
+  destinationsCard: {
+    title: "Destinations",
+    subTitle: "Places to visit in Cuba",
+    description: "Explore our most popular destination options.",
+  },
+  excursionsCard: {
+    title: "Excursions",
+    places: "Included places",
+  },
+  seeMore: "See more",
   bookingForm: {
+    page: {
+      backToHome: "Back to home",
+      description: "Book your trip in detail here and we’ll take care of everything",
+      title: "Custom transfer"
+    },
     fullName: "Full Name",
     email: "Email",
     phone: "Phone",
@@ -23,9 +60,14 @@ export const en: AppTexts = {
     luggage: "Luggage",
     details: "Additional Details",
     attachImages: "Attach Images",
-    reserveNow: "Reserve Now",
+    reserveNow: "Book Now",
   },
   quickBookingForm: {
+    page: {
+      title: "Book a taxi in Cuba instantly",
+      backToHome: "Back to home",
+      description: "Book your taxi in seconds"
+    },
     phone: "Phone",
     vehicleType: "Vehicle Type",
     from: "From",
@@ -33,45 +75,55 @@ export const en: AppTexts = {
     date: "Date",
     time: "Time",
     passengers: "Passengers",
-    luggage: "Luggage Description",
-    reserveNow: "Reserve Now",
-  },
-  destinationsCard: {
-    subTitle: "Lugares a visitar en cuba",
-
-    title: "Destinations",
-    description: "Explore our most popular destinations.",
-  },
-  excursionsCard: {
-    title: "Excursions",
-    places: "Included places",
+    luggage: "Luggage description",
+    reserveNow: "Book Now",
   },
   footer: {
     rights: "© 2025 Cubantaxis. All rights reserved.",
   },
-  seeMore: "See more", header: {
-    social: {
-      facebook: "Follow us on Facebook",
-      instagram: "Follow us on Instagram",
-      whatsapp: "Contact us via WhatsApp"
-    }
-  },
-  quickForm: {
-    phone: "Phone",
-    from: "From",
-    to: "To",
-    date: "Date",
-    time: "Time",
-    vehicle: "Vehicle",
-    passengers: "Passengers",
-    luggage: "Luggage / Notes",
-    luggagePlaceholder: "2 suitcases and 1 backpack",
-    bookViaWhatsapp: "Book via WhatsApp",
-    bookViaTelegram: "Book via Telegram",
-    requestTitle: "🚕 Quick Booking Request",
-    locations: ["Havana", "Varadero", "/viñales", "Trinidad"],
-    vehicles: ["Sedan", "Van", "SUV"]
+  FAQs: {
+    title: "Frequently Asked Questions",
+    items: [
+      {
+        question: "How can I book a taxi in Cuba in advance?",
+        answer: "You can leave us your details in the form and you will receive immediate confirmation. You can also see all available routes on the [transfer page](/traslados)."
+      },
+      {
+        question: "Do you offer private transfers from Havana airport?",
+        answer: "Yes, we offer private transfers from José Martí International Airport to any destination in Cuba, including Varadero, Viñales, Cayo Santa María and more."
+      },
+      {
+        question: "How much is a taxi from Varadero airport to Havana?",
+        answer: "The price for a private transfer from Varadero airport to Havana starts at 100 USD per vehicle. Check the full list on our [pricing section](/traslados)."
+      },
+      {
+        question: "Are the prices per person or per vehicle?",
+        answer: "All prices shown on the site are per private vehicle, regardless of whether 1 or more passengers are traveling (up to the allowed maximum capacity)."
+      },
+      {
+        question: "Can I pay for the taxi in dollars, euros or local currency (CUP)?",
+        answer: "Yes, we accept payments in USD, EUR and CUP. Choose the most convenient option when confirming your transfer."
+      },
+      {
+        question: "What if my flight is delayed?",
+        answer: "We monitor your flight arrival. If there are delays, your driver will wait for you at no extra cost, as long as you provided your flight number correctly."
+      },
+      {
+        question: "Do you offer private excursions in addition to transfers?",
+        answer: "Yes, you can book private excursions such as the tour to Viñales, Cienfuegos and Trinidad. Check all the options on the [excursions page](/excursiones)."
+      },
+      {
+        question: "What types of vehicles do you offer for transfers?",
+        answer: "You can choose from classic cars, convertibles, modern cars or minivans, depending on your preferences and number of passengers."
+      },
+      {
+        question: "Can I request a night transfer?",
+        answer: "Yes, we offer 24/7 taxi service. Note that night transfers may have a small additional charge."
+      },
+      {
+        question: "How do I know if my transfer is confirmed?",
+        answer: "You will receive a confirmation message via WhatsApp or email with your trip details and the assigned driver’s name."
+      }
+    ]
   }
-
-
 };

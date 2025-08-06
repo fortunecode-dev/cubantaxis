@@ -2,38 +2,21 @@ import ExtendedBookingForm from "@/modules/booking/ExtendedBookingForm";
 import Link from "next/link";
 import Head from "next/head";
 import { LocaleParams } from "@/types/common";
+import { getTranslation } from "../locales";
 
 export default async function BookAReservationPage({
   params,
 }: {
   params: LocaleParams;
 }) {
-  const lang = await params;
-
-  const seo = {
-    title: {
-      es: "Reserva completa | Cuban Taxis",
-      en: "Full Reservation | Cuban Taxis",
-      fr: "Réservation complète | Cuban Taxis",
-      de: "Komplette Reservierung | Cuban Taxis",
-      ru: "Полное бронирование | Cuban Taxis",
-      pt: "Reserva completa | Cuban Taxis",
-    },
-    description: {
-      es: "Completa todos los datos de tu viaje para una reserva detallada. Servicio privado y personalizado en Cuba.",
-      en: "Complete your travel details for a personalized reservation. Private taxi service in Cuba.",
-      fr: "Complétez vos informations pour une réservation personnalisée. Service de taxi privé à Cuba.",
-      de: "Füllen Sie Ihre Reisedaten für eine persönliche Reservierung aus. Privater Taxiservice in Kuba.",
-      ru: "Заполните данные для персонализированного бронирования. Частный трансфер по Кубе.",
-      pt: "Preencha os dados para uma reserva detalhada. Serviço de táxi privado em Cuba.",
-    },
-  };
+  const { lang } = await params;
+  const idioma = getTranslation(lang)
 
   return (
     <>
       <Head>
-        <title>{seo.title[lang.lang]}</title>
-        <meta name="description" content={seo.description[lang.lang]} />
+        <title>{idioma.bookingForm.page.title}</title>
+        <meta name="description" content={idioma.bookingForm.page.description} />
         <meta name="robots" content="noindex, follow" />
       </Head>
 
@@ -46,16 +29,16 @@ export default async function BookAReservationPage({
       >
         <div className="max-w-3xl mx-auto bg-white/80 backdrop-blur-md p-6 md:p-10 rounded-3xl shadow-2xl">
           <h1 className="text-3xl md:text-4xl xl:text-5xl font-extrabold text-center text-amber-600 mb-6">
-            {seo.title[lang.lang]}
+            {idioma.bookingForm.page.title}
           </h1>
-          <ExtendedBookingForm />
+          <ExtendedBookingForm idioma={idioma} />
 
           <div className="mt-10 text-center">
             <Link
               href="/"
               className="inline-block mt-6 px-6 py-3 bg-amber-500 text-white rounded-xl shadow hover:bg-amber-600 transition"
             >
-              {lang.lang === "es" ? "Volver al inicio" : "Back to Home"}
+              {idioma.bookingForm.page.backToHome}
             </Link>
           </div>
         </div>
