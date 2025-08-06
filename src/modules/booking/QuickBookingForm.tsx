@@ -30,22 +30,26 @@ export default function QuickBookingForm({ idioma }: Props) {
     luggage: "",
   });
 
-  const locations = idioma.quickForm.locations;
-  const vehicles = idioma.quickForm.vehicles;
+  const locations =["Varadero", "Havana"] //idioma.quickBookingForm.locations;
+  const vehicles = ["Convertible", "Minivan"]//idioma.quickBookingForm.vehicles;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const message = `${idioma.quickForm.requestTitle}
-📞 ${idioma.quickForm.phone}: ${formData.phone}
-📍 ${idioma.quickForm.from}: ${formData.from}
-🏁 ${idioma.quickForm.to}: ${formData.to}
-📅 ${idioma.quickForm.date}: ${formData.date}
-🕒 ${idioma.quickForm.time}: ${formData.time}
-🚗 ${idioma.quickForm.vehicle}: ${formData.vehicle}
-👥 ${idioma.quickForm.passengers}: ${formData.passengers}
-🎒 ${idioma.quickForm.luggage}: ${formData.luggage}`;
+  const message = `
+  ${
+  // idioma.quickBookingForm.reserveNow
+  "Reserva"
+  }
+📞 ${idioma.quickBookingForm.phone}: ${formData.phone}
+📍 ${idioma.quickBookingForm.from}: ${formData.from}
+🏁 ${idioma.quickBookingForm.to}: ${formData.to}
+📅 ${idioma.quickBookingForm.date}: ${formData.date}
+🕒 ${idioma.quickBookingForm.time}: ${formData.time}
+🚗 ${idioma.quickBookingForm.vehicleType}: ${formData.vehicle}
+👥 ${idioma.quickBookingForm.passengers}: ${formData.passengers}
+🎒 ${idioma.quickBookingForm.luggage}: ${formData.luggage}`;
 
   const sendReservation = async (platform: "whatsapp" | "telegram") => {
     try {
@@ -72,11 +76,14 @@ export default function QuickBookingForm({ idioma }: Props) {
       className="mx-auto max-w-3xl bg-white p-6 md:p-10 rounded-2xl border-amber-100 border-1 grid grid-cols-1 md:grid-cols-2 gap-6"
     >
       {[
-        { id: "phone", label: idioma.quickForm.phone, type: "tel", placeholder: "+53 555 432 748" },
-        { id: "date", label: idioma.quickForm.date, type: "date", min: new Date().toISOString().split("T")[0] },
-        { id: "time", label: idioma.quickForm.time, type: "time" },
-        { id: "passengers", label: idioma.quickForm.passengers, type: "number", min: 1, max: 10 },
-        { id: "luggage", label: idioma.quickForm.luggage, type: "text", placeholder: idioma.quickForm.luggagePlaceholder },
+        { id: "phone", label: idioma.quickBookingForm.phone, type: "tel", placeholder: "+53 555 432 748" },
+        { id: "date", label: idioma.quickBookingForm.date, type: "date", min: new Date().toISOString().split("T")[0] },
+        { id: "time", label: idioma.quickBookingForm.time, type: "time" },
+        { id: "passengers", label: idioma.quickBookingForm.passengers, type: "number", min: 1, max: 10 },
+        { id: "luggage", label: idioma.quickBookingForm.luggage, type: "text",
+          placeholder:"Equipaje"
+          //  placeholder: idioma.quickBookingForm.luggagePlaceholder
+           },
       ].map((field) => (
         <div key={field.id} className="flex flex-col">
           <label htmlFor={field.id} className="text-sm font-semibold text-gray-800 mb-1">{field.label}</label>
@@ -93,17 +100,17 @@ export default function QuickBookingForm({ idioma }: Props) {
 
       <div className="flex flex-col">
         <label htmlFor="vehicle" className="text-sm font-semibold text-gray-800 mb-1">
-          🚗 {idioma.quickForm.vehicle}
+          🚗 {idioma.quickBookingForm.vehicleType}
         </label>
         <select name="vehicle" value={formData.vehicle} onChange={handleChange} className="rounded-lg border border-gray-300 px-3 py-2 text-sm focus:ring-2 focus:ring-yellow-400 focus:outline-none">
-          {vehicles.map((v) => <option key={v} value={v}>{v}</option>)}
+          {vehicles.map((v:any) => <option key={v} value={v}>{v}</option>)}
         </select>
       </div>
 
       {["from", "to"].map((key) => (
         <div key={key} className="flex flex-col">
           <label htmlFor={key} className="text-sm font-semibold text-gray-800 mb-1">
-            {key === "from" ? "📍 " + idioma.quickForm.from : "🏁 " + idioma.quickForm.to}
+            {key === "from" ? "📍 " + idioma.quickBookingForm.from : "🏁 " + idioma.quickBookingForm.to}
           </label>
           <select
             name={key}
@@ -111,7 +118,7 @@ export default function QuickBookingForm({ idioma }: Props) {
             onChange={handleChange}
             className="rounded-lg border border-gray-300 px-3 py-2 text-sm focus:ring-2 focus:ring-yellow-400 focus:outline-none"
           >
-            {locations.filter((l) => l !== (key === "from" ? formData.to : formData.from)).map((loc) => (
+            {locations.filter((l:any) => l !== (key === "from" ? formData.to : formData.from)).map((loc:any) => (
               <option key={loc} value={loc}>{loc}</option>
             ))}
           </select>
@@ -125,7 +132,7 @@ export default function QuickBookingForm({ idioma }: Props) {
           className="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-lg transition-colors shadow-md flex items-center justify-center gap-2"
         >
           <FaWhatsapp className="text-xl" />
-          {idioma.quickForm.bookViaWhatsapp}
+          {/* {idioma.quickBookingForm.bookViaWhatsapp} */}Send
         </button>
         <button
           type="button"
@@ -133,7 +140,7 @@ export default function QuickBookingForm({ idioma }: Props) {
           className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 rounded-lg transition-colors shadow-md flex items-center justify-center gap-2"
         >
           <FaTelegramPlane className="text-xl" />
-          {idioma.quickForm.bookViaTelegram}
+          {/* {idioma.quickBookingForm.bookViaTelegram} */}Send
         </button>
       </div>
     </form>

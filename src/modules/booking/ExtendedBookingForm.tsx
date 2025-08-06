@@ -38,7 +38,7 @@ export default function ExtendedBookingForm({ idioma }: Props) {
     images: [],
   });
 
-  const locations = ["Havana", "Varadero", "/viñales", "Trinidad"];
+  const locations = ["Havana", "Varadero", "Viñales", "Trinidad"];
   const vehicles = ["Sedan", "Van", "SUV"];
 
   const handleChange = (
