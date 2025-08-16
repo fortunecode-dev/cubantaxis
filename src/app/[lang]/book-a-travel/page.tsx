@@ -3,6 +3,7 @@ import Link from "next/link";
 import Head from "next/head";
 import { getTranslation } from "../locales";
 import { LocaleParams } from "@/types/common";
+import { LocaleLink } from "@/libs/i18n-nav";
 
 export default async function FastBookingPage({ params }: { params: LocaleParams }) {
   const { lang } = await params;
@@ -23,9 +24,9 @@ export default async function FastBookingPage({ params }: { params: LocaleParams
           <QuickBookingForm idioma={idioma} />
 
           <div className="mt-10 text-center">
-            <Link href="/" className="inline-block px-6 py-3 bg-amber-500 text-white rounded-xl shadow hover:bg-amber-600 transition">
+            <LocaleLink href="/" className="inline-block px-6 py-3 bg-amber-500 text-white rounded-xl shadow hover:bg-amber-600 transition">
               {idioma.bookingForm.page.backToHome}
-            </Link>
+            </LocaleLink>
           </div>
         </div>
       </section>

@@ -4,6 +4,7 @@ import { AppTexts } from "@/app/[lang]/locales/types"
 import React from "react"
 import Link from 'next/link'
 import Image from "next/image"
+import { LocaleLink } from "@/libs/i18n-nav"
 
 export default function Hero({ idioma, lang }: { idioma: AppTexts, lang: string }) {
     return (
@@ -45,15 +46,15 @@ export default function Hero({ idioma, lang }: { idioma: AppTexts, lang: string 
                         </h2>
 
                         <div className="flex flex-col sm:flex-row gap-4 mb-6">
-                            <Link href={`/${lang}/book-travel-reservation`}
+                            <LocaleLink href={`book-travel-reservation`}
                                 className="w-full sm:w-auto border border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-black px-6 py-3 rounded-xl font-semibold text-center transition">
                                 {idioma.hero.buttons.booking}
-                            </Link>
+                            </LocaleLink>
 
-                            <Link href={`/${lang}/book-a-travel`}
+                            <LocaleLink href={`book-a-travel`}
                                 className="w-full sm:w-auto bg-amber-400 hover:bg-yellow-300 text-black px-6 py-3 rounded-xl font-semibold text-center transition">
                                 {idioma.hero.buttons.fastBooking}
-                            </Link>
+                            </LocaleLink>
                         </div>
 
                         {/* Texto final SEO friendly */}

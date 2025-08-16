@@ -9,17 +9,36 @@ const locales = [
   // "ru",
   // "pt"
 ];
+const defaultLocale = "es";
+
+// Si quieres detectar por cookie/Accept-Language, usa esta función en lugar de defaultLocale.
+function resolveLocale(req: NextRequest) {
+  const cookie = req.cookies.get("NEXT_LOCALE")?.value;
+  if (cookie && locales.includes(cookie as any)) return cookie;
+
+  const accept = req.headers.get("accept-language") ?? "";
+  const found = accept.split(",").map(s => s.trim().slice(0,2)).find(c => locales.includes(c as any));
+  return found ?? defaultLocale;
+}
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Si la ruta ya tiene un locale válido, continúa normal
-  if (locales.some((locale) => pathname.startsWith(`/${locale}`))) {
+  // 1) Deja pasar assets y archivos
+  if (pathname.startsWith("/_next") || /\.\w+$/.test(pathname)) {
     return NextResponse.next();
   }
 
-  // Permite que "/" se maneje como ruta sin redirección
-  return NextResponse.next();
+  // 2) Si ya viene con locale (/es, /en), sigue normal
+  if (locales.some(l => pathname === `/${l}` || pathname.startsWith(`/${l}/`))) {
+    return NextResponse.next();
+  }
+
+  // 3) Reescribe TODO lo demás a locale por defecto (o detectado)
+  const url = request.nextUrl.clone();
+  const loc = resolveLocale(request); // o usa directamente defaultLocale
+  url.pathname = `/${loc}${pathname}`;
+  return NextResponse.rewrite(url);
 }
 
 export const config = {

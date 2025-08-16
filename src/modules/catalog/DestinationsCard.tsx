@@ -58,11 +58,11 @@ export default function DestinationsCard({ destinations, idioma,name,title,subTi
                     {dest.description}
                   </p>
                 </div>
-                <div className="mt-4">
+                {/* <div className="mt-4">
                   <button className="text-yellow-600 font-medium hover:underline">
                     {idioma.seeMore}
                   </button>
-                </div>
+                </div> */}
               </div>
             </article>
           ))}
@@ -87,13 +87,13 @@ export default function DestinationsCard({ destinations, idioma,name,title,subTi
                   <a href="#">
                     <h3 className="text-xl font-semibold text-gray-900">{dest.title}</h3>
                   </a>
-                  <p className="mt-2 text-sm text-gray-500">{dest.description}</p>
+                  {/* <p className="mt-2 text-sm text-gray-500">{dest.description}</p> */}
                 </div>
-                <div className="mt-4">
+                {/* <div className="mt-4">
                   <button className="text-yellow-600 font-medium hover:underline">
                     {idioma.seeMore}
                   </button>
-                </div>
+                </div> */}
               </div>
             </article>
           ))}

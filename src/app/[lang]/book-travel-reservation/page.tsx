@@ -3,6 +3,7 @@ import Link from "next/link";
 import Head from "next/head";
 import { LocaleParams } from "@/types/common";
 import { getTranslation } from "../locales";
+import { LocaleLink } from "@/libs/i18n-nav";
 
 export default async function BookAReservationPage({
   params,
@@ -34,12 +35,12 @@ export default async function BookAReservationPage({
           <ExtendedBookingForm idioma={idioma} />
 
           <div className="mt-10 text-center">
-            <Link
+            <LocaleLink
               href="/"
               className="inline-block mt-6 px-6 py-3 bg-amber-500 text-white rounded-xl shadow hover:bg-amber-600 transition"
             >
               {idioma.bookingForm.page.backToHome}
-            </Link>
+            </LocaleLink>
           </div>
         </div>
       </section>
