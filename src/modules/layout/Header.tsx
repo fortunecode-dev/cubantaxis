@@ -2,6 +2,8 @@
 
 import { FaFacebookF, FaInstagram, FaWhatsapp, FaTelegram } from "react-icons/fa";
 import { useCallback } from "react";
+import Link from "next/link";
+import { LocaleLink } from "@/libs/i18n-nav";
 
 export default function Header() {
   const sendEmptyReservation = useCallback(async (platform: "whatsapp" | "telegram") => {
@@ -36,7 +38,7 @@ export default function Header() {
       if (platform === "whatsapp") {
         window.open(`https://wa.me/5355432748?text=${encodeURIComponent(message)}`, "_blank");
       } else if (platform === "telegram") {
-        window.open(`https://t.me/TaxiCubaBot?start=${encodeURIComponent(message)}`, "_blank");
+        window.open(`https://t.me/lralfonsoc?start=${encodeURIComponent(message)}`, "_blank");
       }
     } catch (error) {
       console.error("Error al enviar plantilla vacía:", error);
@@ -44,7 +46,12 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="fixed top-0 w-full z-50 backdrop-blur-md bg-amber-400 border-b border-white/30 px-4 py-2 flex justify-end items-center rounded-b-lg">
+    <header className="fixed top-0 w-full z-50 backdrop-blur-md bg-amber-400 border-b border-white/30 px-4 py-2 flex justify-between items-center rounded-b-lg">
+      {/* Logo / título */}
+      <LocaleLink href="/" className="text-xl font-bold text-neutral-800 hover:text-neutral-600 transition-colors">
+        CubanTaxis
+      </LocaleLink>
+
       {/* Redes sociales */}
       <div className="flex items-center gap-4 text-xl mx-5">
         <a
@@ -68,21 +75,20 @@ export default function Header() {
           <FaInstagram />
         </a>
         <button
-          onClick={() => sendEmptyReservation('whatsapp')}
+          onClick={() => sendEmptyReservation("whatsapp")}
           aria-label="WhatsApp"
           className="hover:text-green-600 transition-colors"
         >
           <FaWhatsapp />
         </button>
         <button
-          onClick={() => sendEmptyReservation('telegram')}
+          onClick={() => sendEmptyReservation("telegram")}
           aria-label="Telegram"
           className="hover:text-blue-500 transition-colors"
         >
           <FaTelegram />
         </button>
       </div>
-
     </header>
   );
 }

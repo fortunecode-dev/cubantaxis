@@ -2,7 +2,7 @@
 
 import { AppTexts } from "@/app/[lang]/locales/types";
 import { useState } from "react";
-import { FaWhatsapp } from "react-icons/fa";
+import { FaTelegramPlane, FaWhatsapp } from "react-icons/fa";
 
 interface BookingData {
   name: string;
@@ -22,6 +22,7 @@ interface BookingData {
 interface Props {
   idioma: AppTexts;
 }
+
 export default function ExtendedBookingForm({ idioma }: Props) {
   const [formData, setFormData] = useState<BookingData>({
     name: "",
@@ -37,9 +38,6 @@ export default function ExtendedBookingForm({ idioma }: Props) {
     details: "",
     images: [],
   });
-
-  const locations = ["Havana", "Varadero", "Viñales", "Trinidad"];
-  const vehicles = ["Sedan", "Van", "SUV"];
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
@@ -61,7 +59,7 @@ export default function ExtendedBookingForm({ idioma }: Props) {
         if (key === "images") {
           (value as File[]).forEach((file) => form.append("images", file));
         } else {
-          form.append(key, value);
+          form.append(key, String(value));
         }
       });
 
@@ -77,107 +75,300 @@ export default function ExtendedBookingForm({ idioma }: Props) {
     }
   };
 
+  // estilos base para inputs
+  const inputBase =
+    "rounded-xl border border-gray-200 bg-gray-50 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 transition";
+
   return (
     <form
       onSubmit={handleSubmit}
-      className="mx-auto my-3 max-w-4xl bg-white p-6 md:p-10 rounded-2xl shadow-lg grid grid-cols-1 md:grid-cols-2 gap-6 border border-yellow-100"
+      className="mx-auto max-w-4xl rounded-3xl  bg-white/90 p-4 pb-0 pt-0 "
     >
-      {[
-        { id: "name", label: "📛 Full Name", type: "text", placeholder: "John Doe" },
-        { id: "email", label: "✉️ Email", type: "email", placeholder: "john@example.com" },
-        { id: "phone", label: "📞 Phone", type: "tel", placeholder: "+53 555 432 748" },
-        { id: "date", label: "📅 Date", type: "date", min: new Date().toISOString().split("T")[0] },
-        { id: "time", label: "🕒 Time", type: "time" },
-        { id: "passengers", label: "👥 Passengers", type: "number", min: 1, max: 10 },
-        { id: "luggage", label: "🎒 Luggage", type: "text", placeholder: "2 suitcases + 1 backpack" },
-      ].map((field) => (
-        <div key={field.id} className="flex flex-col">
-          <label htmlFor={field.id} className="text-sm font-semibold text-gray-800 mb-1">
-            {field.label}
-          </label>
-          <input
-            {...field}
-            name={field.id}
-            value={(formData as any)[field.id]}
-            onChange={handleChange}
-            className="rounded-lg border border-gray-300 px-3 py-2 text-sm focus:ring-2 focus:ring-yellow-400 focus:outline-none"
-            required={field.type !== "text"}
-          />
-        </div>
-      ))}
-
-      <div className="flex flex-col">
-        <label htmlFor="vehicle" className="text-sm font-semibold text-gray-800 mb-1">
-          🚗 Vehicle Type
-        </label>
-        <select
-          name="vehicle"
-          value={formData.vehicle}
-          onChange={handleChange}
-          className="rounded-lg border border-gray-300 px-3 py-2 text-sm focus:ring-2 focus:ring-yellow-400 focus:outline-none"
-        >
-          {vehicles.map((v) => (
-            <option key={v} value={v}>{v}</option>
-          ))}
-        </select>
+      {/* Header */}
+      <div className="mb-4 md:mb-6">
+        {/* <h3 className="text-xl md:text-2xl font-semibold text-neutral-800">
+          {idioma?.bookingForm?.title}
+        </h3> */}
+        <p className="text-sm text-neutral-500 text-center">
+          {idioma?.bookingForm?.subtitle}
+        </p>
       </div>
 
-      {[
-        { id: "from", label: "📍 From", options: locations.filter((l) => l !== formData.to) },
-        { id: "to", label: "🏁 To", options: locations.filter((l) => l !== formData.from) },
-      ].map((field) => (
-        <div key={field.id} className="flex flex-col">
-          <label htmlFor={field.id} className="text-sm font-semibold text-gray-800 mb-1">
-            {field.label}
+      {/* GRID principal */}
+      <div className="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-4">
+        {/* Nombre */}
+        <div className="flex flex-col">
+          <label htmlFor="name" className="mb-1 text-sm font-semibold text-gray-800">
+            📛 {idioma.bookingForm.fullName}
+          </label>
+          <input
+            id="name"
+            name="name"
+            type="text"
+            placeholder="John Doe"
+            className={inputBase}
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        {/* Email */}
+        <div className="flex flex-col">
+          <label htmlFor="email" className="mb-1 text-sm font-semibold text-gray-800">
+            ✉️ {idioma.bookingForm.email}
+          </label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="john@example.com"
+            className={inputBase}
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        {/* Teléfono + Pasajeros (fila) */}
+        <div className="md:col-span-2">
+          <div className="flex gap-2">
+            <div className="flex min-w-0 flex-1 flex-col">
+              <label htmlFor="phone" className="mb-1 text-sm font-semibold text-gray-800">
+                📞 {idioma.bookingForm.phone}
+              </label>
+              <input
+                id="phone"
+                name="phone"
+                type="tel"
+                inputMode="tel"
+                autoComplete="tel"
+                pattern="^[+0-9\s()-]{6,}$"
+                placeholder="+53 555 432 748"
+                className={inputBase}
+                value={formData.phone}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="flex min-w-0 flex-1 flex-col">
+              <label htmlFor="passengers" className="mb-1 text-sm font-semibold text-gray-800">
+                👥 {idioma.bookingForm.passengers}
+              </label>
+              <input
+                id="passengers"
+                name="passengers"
+                type="number"
+                min={1}
+                max={10}
+                step={1}
+                inputMode="numeric"
+                className={inputBase}
+                value={formData.passengers}
+                onChange={handleChange}
+                required
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Fecha + Hora (fila) */}
+        <div className="md:col-span-2">
+          <div className="flex gap-2">
+            <div className="flex min-w-0 flex-1 flex-col">
+              <label htmlFor="date" className="mb-1 text-sm font-semibold text-gray-800">
+                📅 {idioma.bookingForm.date}
+              </label>
+              <input
+                id="date"
+                name="date"
+                type="date"
+                min={new Date().toISOString().split("T")[0]}
+                className={inputBase}
+                value={formData.date}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="flex min-w-0 flex-1 flex-col">
+              <label htmlFor="time" className="mb-1 text-sm font-semibold text-gray-800">
+                🕒 {idioma.bookingForm.time}
+              </label>
+              <input
+                id="time"
+                name="time"
+                type="time"
+                className={inputBase}
+                value={formData.time}
+                onChange={handleChange}
+                required
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Vehicle */}
+        <div className="flex flex-col">
+          <label htmlFor="vehicle" className="mb-1 text-sm font-semibold text-gray-800">
+            🚗 {idioma.bookingForm.vehicleType}
           </label>
           <select
-            name={field.id}
-            value={(formData as any)[field.id]}
+            id="vehicle"
+            name="vehicle"
+            className={inputBase}
+            value={formData.vehicle}
             onChange={handleChange}
-            className="rounded-lg border border-gray-300 px-3 py-2 text-sm focus:ring-2 focus:ring-yellow-400 focus:outline-none"
           >
-            {field.options.map((loc: string) => (
-              <option key={loc} value={loc}>{loc}</option>
+            {idioma.vehicles.map((v) => (
+              <option key={v} value={v}>
+                {v}
+              </option>
             ))}
           </select>
         </div>
-      ))}
 
-      <div className="flex flex-col md:col-span-2">
-        <label htmlFor="details" className="text-sm font-semibold text-gray-800 mb-1">
-          📝 Additional Details
-        </label>
-        <textarea
-          id="details"
-          name="details"
-          value={formData.details}
-          onChange={handleChange}
-          className="rounded-lg border border-gray-300 px-3 py-2 text-sm focus:ring-2 focus:ring-yellow-400 focus:outline-none"
-          placeholder="Any special requests or info..."
-        />
+        {/* From */}
+        <div className="flex flex-col">
+          <label htmlFor="from" className="mb-1 text-sm font-semibold text-gray-800">
+            📍 {idioma.bookingForm.from}
+          </label>
+          <select
+            id="from"
+            name="from"
+            className={inputBase}
+            value={formData.from}
+            onChange={handleChange}
+          >
+            {idioma.locations
+              .filter((l) => l !== formData.to)
+              .map((loc) => (
+                <option key={loc} value={loc}>
+                  {loc}
+                </option>
+              ))}
+          </select>
+        </div>
+
+        {/* To */}
+        <div className="flex flex-col">
+          <label htmlFor="to" className="mb-1 text-sm font-semibold text-gray-800">
+            🏁 {idioma.bookingForm.to}
+          </label>
+          <select
+            id="to"
+            name="to"
+            className={inputBase}
+            value={formData.to}
+            onChange={handleChange}
+          >
+            {idioma.locations
+              .filter((l) => l !== formData.from)
+              .map((loc) => (
+                <option key={loc} value={loc}>
+                  {loc}
+                </option>
+              ))}
+          </select>
+        </div>
+
+        {/* Luggage */}
+        <div className="flex flex-col">
+          <label htmlFor="luggage" className="mb-1 text-sm font-semibold text-gray-800">
+            🎒 {idioma.bookingForm.luggage}
+          </label>
+          <input
+            id="luggage"
+            name="luggage"
+            type="text"
+            placeholder={idioma.bookingForm.luggaageExample}
+            className={inputBase}
+            value={formData.luggage}
+            onChange={handleChange}
+          />
+        </div>
+
+        {/* Details (full width) */}
+        <div className="md:col-span-2 flex flex-col">
+          <label htmlFor="details" className="mb-1 text-sm font-semibold text-gray-800">
+            📝 {idioma.bookingForm.details}
+          </label>
+          <textarea
+            id="details"
+            name="details"
+            placeholder={idioma.bookingForm.detailsExample}
+            className={`${inputBase} min-h-[100px]`}
+            value={formData.details}
+            onChange={handleChange}
+          />
+          <span className="mt-1 text-xs text-neutral-400">
+            {idioma.bookingForm.example}
+          </span>
+        </div>
+
+        {/* Images (dropzone simple) */}
+        <div className="md:col-span-2">
+          <label htmlFor="images" className="mb-1 block text-sm font-semibold text-gray-800">
+            📎 {idioma.bookingForm.attachImages}
+          </label>
+          <label
+            htmlFor="images"
+            className="block cursor-pointer rounded-2xl border-2 border-dashed border-amber-200 bg-amber-50/40 p-4 text-center text-sm text-neutral-600 hover:bg-amber-50 transition"
+          >
+            {idioma.bookingForm.upload}
+            <input
+              id="images"
+              name="images"
+              type="file"
+              accept="image/*"
+              multiple
+              onChange={handleImageUpload}
+              className="sr-only"
+            />
+          </label>
+          {formData.images.length > 0 && (
+            <div className="mt-2 text-xs text-neutral-500">
+              {formData.images.length} file(s) selected
+            </div>
+          )}
+        </div>
       </div>
 
-      <div className="flex flex-col md:col-span-2">
-        <label htmlFor="images" className="text-sm font-semibold text-gray-800 mb-1">
-          📎 Attach Images
-        </label>
-        <input
-          type="file"
-          id="images"
-          name="images"
-          accept="image/*"
-          multiple
-          onChange={handleImageUpload}
-          className="rounded-lg border border-gray-300 px-3 py-2 text-sm focus:ring-2 focus:ring-yellow-400 focus:outline-none"
-        />
-      </div>
+      {/* CTA */}
+      <div className="mt-6 flex flex-col gap-2 md:flex-row md:items-center">
+        <button
+          type="submit"
+          className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-blue-500 px-4 py-3 font-semibold text-white shadow-md transition hover:bg-blue-600"
+        >
+          <FaTelegramPlane className="text-lg" />
+         {idioma.quickBookingForm.telegram}
+        </button>
 
-      <button
-        type="submit"
-        className="md:col-span-2 bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-3 rounded-lg transition-colors shadow-md text-center"
-      >
-        <FaWhatsapp className="inline-block mr-2" /> Reservar vía Telegram
-      </button>
+        {/* Botón alternativo WhatsApp (opcional). Si no lo quieres, elimínalo. */}
+        <button
+          type="button"
+          onClick={() => {
+            const msg = `Booking request:
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+From: ${formData.from}
+To: ${formData.to}
+Date: ${formData.date}
+Time: ${formData.time}
+Vehicle: ${formData.vehicle}
+Passengers: ${formData.passengers}
+Luggage: ${formData.luggage}
+Details: ${formData.details}`;
+            const whatsappNumber = "+5355432748";
+            window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(msg)}`, "_blank");
+          }}
+          className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-green-500 px-4 py-3 font-semibold text-white shadow-md transition hover:bg-green-600"
+        >
+          <FaWhatsapp className="text-lg" />
+         {idioma.quickBookingForm.whatsapp}
+        </button>
+
+      </div>
     </form>
   );
 }

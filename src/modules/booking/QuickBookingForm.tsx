@@ -5,11 +5,11 @@ import { AppTexts } from "@/app/[lang]/locales/types";
 
 interface BookingData {
   phone: string;
-  from: string;
-  to: string;
+  from?: string;
+  to?: string;
   date: string;
   time: string;
-  vehicle: string;
+  vehicle?: string;
   passengers: string;
   luggage: string;
 }
@@ -21,27 +21,21 @@ interface Props {
 export default function QuickBookingForm({ idioma }: Props) {
   const [formData, setFormData] = useState<BookingData>({
     phone: "",
-    from: "Havana",
-    to: "Varadero",
+    from: idioma.locations?.[0],
+    to: idioma.locations?.[1],
     date: "",
     time: "",
-    vehicle: "Sedan",
+    vehicle: idioma.vehicles[0],
     passengers: "1",
     luggage: "",
   });
-
-  const locations =["Varadero", "Havana"] //idioma.quickBookingForm.locations;
-  const vehicles = ["Convertible", "Minivan"]//idioma.quickBookingForm.vehicles;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const message = `
-  ${
-  // idioma.quickBookingForm.reserveNow
-  "Reserva"
-  }
+${idioma.quickBookingForm.messageTitle}
 📞 ${idioma.quickBookingForm.phone}: ${formData.phone}
 📍 ${idioma.quickBookingForm.from}: ${formData.from}
 🏁 ${idioma.quickBookingForm.to}: ${formData.to}
@@ -49,7 +43,7 @@ export default function QuickBookingForm({ idioma }: Props) {
 🕒 ${idioma.quickBookingForm.time}: ${formData.time}
 🚗 ${idioma.quickBookingForm.vehicleType}: ${formData.vehicle}
 👥 ${idioma.quickBookingForm.passengers}: ${formData.passengers}
-🎒 ${idioma.quickBookingForm.luggage}: ${formData.luggage}`;
+🎒 ${idioma.quickBookingForm.luggage}: ${formData.luggage}`.trim();
 
   const sendReservation = async (platform: "whatsapp" | "telegram") => {
     try {
@@ -61,10 +55,16 @@ export default function QuickBookingForm({ idioma }: Props) {
 
       if (platform === "whatsapp") {
         const whatsappNumber = "+5355432748";
-        window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank");
+        const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+        window.open(url, "_blank");
       } else {
-        const telegramUsername = "TaxiCubaBot";
-        window.open(`https://t.me/${telegramUsername}?start=${encodeURIComponent(message)}`, "_blank");
+        // Opción A (compartir texto): funciona siempre
+        const url = `https://t.me/share/url?text=${encodeURIComponent(message)}`;
+        window.open(url, "_blank");
+
+        // Opción B (si tienes username de Telegram, descomenta y usa):
+        // const telegramUsername = "TuUsuarioTelegram"; // sin @
+        // window.open(`https://t.me/${telegramUsername}`, "_blank");
       }
     } catch (error) {
       console.error("Error:", error);
@@ -73,58 +73,149 @@ export default function QuickBookingForm({ idioma }: Props) {
 
   return (
     <form
-      className="mx-auto max-w-3xl bg-white p-6 md:p-10 rounded-2xl border-amber-100 border-1 grid grid-cols-1 md:grid-cols-2 gap-6"
+      className="mx-auto max-w-3xl bg-white p-5 rounded-2xl grid grid-cols-1 md:grid-cols-2 gap-2 pb-0"
+      onSubmit={(e) => e.preventDefault()}
     >
-      {[
-        { id: "phone", label: idioma.quickBookingForm.phone, type: "tel", placeholder: "+53 555 432 748" },
-        { id: "date", label: idioma.quickBookingForm.date, type: "date", min: new Date().toISOString().split("T")[0] },
-        { id: "time", label: idioma.quickBookingForm.time, type: "time" },
-        { id: "passengers", label: idioma.quickBookingForm.passengers, type: "number", min: 1, max: 10 },
-        { id: "luggage", label: idioma.quickBookingForm.luggage, type: "text",
-          placeholder:"Equipaje"
-          //  placeholder: idioma.quickBookingForm.luggagePlaceholder
-           },
-      ].map((field) => (
-        <div key={field.id} className="flex flex-col">
-          <label htmlFor={field.id} className="text-sm font-semibold text-gray-800 mb-1">{field.label}</label>
+      {/* Teléfono y pasajeros juntos */}
+      <div className="flex gap-2 col-span-1 md:col-span-2">
+        <div className="flex flex-col flex-1 min-w-0">
+          <label htmlFor="phone" className="text-sm font-semibold text-gray-800 mb-1">
+            {idioma.quickBookingForm.phone}
+          </label>
           <input
-            {...field}
-            name={field.id}
-            value={(formData as any)[field.id]}
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="+53 555 432 748"
+            value={formData.phone}
             onChange={handleChange}
+            inputMode="tel"
+            autoComplete="tel"
+            pattern="^[+0-9\s()-]{6,}$"
+            aria-label={idioma.quickBookingForm.phone}
             className="rounded-lg border border-gray-300 px-3 py-2 text-sm focus:ring-2 focus:ring-yellow-400 focus:outline-none"
-            required={field.type !== "text"}
+            required
           />
         </div>
-      ))}
+        <div className="flex flex-col flex-1 min-w-0">
+          <label htmlFor="passengers" className="text-sm font-semibold text-gray-800 mb-1">
+            {idioma.quickBookingForm.passengers}
+          </label>
+          <input
+            type="number"
+            id="passengers"
+            name="passengers"
+            min={1}
+            max={10}
+            step={1}
+            inputMode="numeric"
+            value={formData.passengers}
+            onChange={handleChange}
+            aria-label={idioma.quickBookingForm.passengers}
+            className="rounded-lg border border-gray-300 px-3 py-2 text-sm focus:ring-2 focus:ring-yellow-400 focus:outline-none"
+            required
+          />
+        </div>
+      </div>
 
+      {/* Fecha y hora en la misma fila */}
+      <div className="flex gap-2 col-span-1 md:col-span-2">
+        <div className="flex flex-col flex-1 min-w-0">
+          <label htmlFor="date" className="text-sm font-semibold text-gray-800 mb-1">
+            {idioma.quickBookingForm.date}
+          </label>
+          <input
+            type="date"
+            id="date"
+            name="date"
+            min={new Date().toISOString().split("T")[0]}
+            value={formData.date}
+            onChange={handleChange}
+            aria-label={idioma.quickBookingForm.date}
+            className="rounded-lg border border-gray-300 px-3 py-2 text-sm focus:ring-2 focus:ring-yellow-400 focus:outline-none"
+            required
+          />
+        </div>
+        <div className="flex flex-col flex-1 min-w-0">
+          <label htmlFor="time" className="text-sm font-semibold text-gray-800 mb-1">
+            {idioma.quickBookingForm.time}
+          </label>
+          <input
+            type="time"
+            id="time"
+            name="time"
+            value={formData.time}
+            onChange={handleChange}
+            aria-label={idioma.quickBookingForm.time}
+            className="rounded-lg border border-gray-300 px-3 py-2 text-sm focus:ring-2 focus:ring-yellow-400 focus:outline-none"
+            required
+          />
+        </div>
+      </div>
+
+      {/* Equipaje */}
+      <div className="flex flex-col">
+        <label htmlFor="luggage" className="text-sm font-semibold text-gray-800 mb-1">
+          {idioma.quickBookingForm.luggage}
+        </label>
+        <input
+          type="text"
+          id="luggage"
+          name="luggage"
+          placeholder={idioma.quickBookingForm.luggage}
+          value={formData.luggage}
+          onChange={handleChange}
+          aria-label={idioma.quickBookingForm.luggage}
+          className="rounded-lg border border-gray-300 px-3 py-2 text-sm focus:ring-2 focus:ring-yellow-400 focus:outline-none"
+        />
+      </div>
+
+      {/* Vehículo */}
       <div className="flex flex-col">
         <label htmlFor="vehicle" className="text-sm font-semibold text-gray-800 mb-1">
           🚗 {idioma.quickBookingForm.vehicleType}
         </label>
-        <select name="vehicle" value={formData.vehicle} onChange={handleChange} className="rounded-lg border border-gray-300 px-3 py-2 text-sm focus:ring-2 focus:ring-yellow-400 focus:outline-none">
-          {vehicles.map((v:any) => <option key={v} value={v}>{v}</option>)}
+        <select
+          name="vehicle"
+          value={formData.vehicle}
+          onChange={handleChange}
+          aria-label={idioma.quickBookingForm.vehicleType}
+          className="rounded-lg border border-gray-300 px-3 py-2 text-sm focus:ring-2 focus:ring-yellow-400 focus:outline-none"
+        >
+          {idioma.vehicles.map((v: any) => (
+            <option key={v} value={v}>
+              {v}
+            </option>
+          ))}
         </select>
       </div>
 
-      {["from", "to"].map((key) => (
+      {/* From / To */}
+      {(["from", "to"] as const).map((key) => (
         <div key={key} className="flex flex-col">
           <label htmlFor={key} className="text-sm font-semibold text-gray-800 mb-1">
             {key === "from" ? "📍 " + idioma.quickBookingForm.from : "🏁 " + idioma.quickBookingForm.to}
           </label>
           <select
+            id={key}
             name={key}
-            value={(formData as any)[key]}
+            value={formData[key]}
             onChange={handleChange}
+            aria-label={key === "from" ? idioma.quickBookingForm.from : idioma.quickBookingForm.to}
             className="rounded-lg border border-gray-300 px-3 py-2 text-sm focus:ring-2 focus:ring-yellow-400 focus:outline-none"
           >
-            {locations.filter((l:any) => l !== (key === "from" ? formData.to : formData.from)).map((loc:any) => (
-              <option key={loc} value={loc}>{loc}</option>
-            ))}
+            {idioma.locations
+              .filter((l: any) => l !== (key === "from" ? formData.to : formData.from))
+              .map((loc: any) => (
+                <option key={loc} value={loc}>
+                  {loc}
+                </option>
+              ))}
           </select>
         </div>
       ))}
 
+      {/* Botones */}
       <div className="md:col-span-2 flex flex-col gap-3 mt-4">
         <button
           type="button"
@@ -132,7 +223,7 @@ export default function QuickBookingForm({ idioma }: Props) {
           className="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-lg transition-colors shadow-md flex items-center justify-center gap-2"
         >
           <FaWhatsapp className="text-xl" />
-          {/* {idioma.quickBookingForm.bookViaWhatsapp} */}Send
+          {idioma.quickBookingForm.whatsapp}
         </button>
         <button
           type="button"
@@ -140,7 +231,7 @@ export default function QuickBookingForm({ idioma }: Props) {
           className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 rounded-lg transition-colors shadow-md flex items-center justify-center gap-2"
         >
           <FaTelegramPlane className="text-xl" />
-          {/* {idioma.quickBookingForm.bookViaTelegram} */}Send
+          {idioma.quickBookingForm.telegram}
         </button>
       </div>
     </form>

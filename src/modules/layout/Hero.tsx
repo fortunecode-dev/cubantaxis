@@ -11,9 +11,9 @@ export default function Hero({ idioma, lang }: { idioma: AppTexts, lang: string 
         <header className="relative bg-black overflow-hidden mt-6 pt-8 rounded-b-3xl">
             {/* Fondo Masonry difuminado */}
             <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
-                <div className="hero-background grid grid-cols-3 md:grid-cols-6 gap-2 p-2 pt-5">
+                <div className="hero-background grid grid-cols-2 lg:grid-cols-3 gap-2 p-2 pt-5">
                     {[
-                        "/cienfuegos.webp", "/cayo-coco.webp", "/havana-capitol.webp",
+                        "/cienfuegos.webp", "/havana-capitol.webp",
                         "/trinidad.webp", "/varadero-view.webp", "/cayo-santa-maria.webp",
                         "/viñales.webp", "/santa-clara.webp", "/havana-tour.webp",
                         "/playa-del-este.webp", "/cayo-guillermo.webp", "/varadero.webp"
@@ -25,7 +25,7 @@ export default function Hero({ idioma, lang }: { idioma: AppTexts, lang: string 
                                 alt={`Taxi Cuba ${src.split("/").pop()?.split(".")[0]}`}
                                 title={`Traslado ${src.split("/").pop()?.split(".")[0]}`}
                                 width={400}
-                                height={300}
+                                height={400}
                             />
                         </div>
                     ))}

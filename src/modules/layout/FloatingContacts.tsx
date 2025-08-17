@@ -36,7 +36,7 @@ export default function FloatingContacts() {
       if (platform === "whatsapp") {
         window.open(`https://wa.me/5355432748?text=${encodeURIComponent(message)}`, "_blank");
       } else if (platform === "telegram") {
-        window.open(`https://t.me/TaxiCubaBot?start=${encodeURIComponent(message)}`, "_blank");
+        window.open(`https://t.me/lralfonsoc?start=${encodeURIComponent(message)}`, "_blank");
       }
     } catch (error) {
       console.error("Error:", error);

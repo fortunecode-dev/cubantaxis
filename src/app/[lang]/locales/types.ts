@@ -23,7 +23,8 @@ export interface AppTexts {
     }
   },
   FAQs: FAQs
-
+  locations: string[]
+  vehicles: string[]
 }
 type HeroLocale = {
   h1: string;
@@ -41,6 +42,7 @@ type HeroLocale = {
   services: string[]
 }
 type BookingForm = {
+  title:string
   page: Page,
   fullName: string;
   email: string;
@@ -52,9 +54,14 @@ type BookingForm = {
   time: string;
   passengers: string;
   luggage: string;
+  luggaageExample:string,
   details: string;
+  detailsExample: string;
   attachImages: string;
   reserveNow: string;
+  subtitle:string
+  example:string
+  upload:string
 }
 type QuickBookingForm = {
   page: Page,
@@ -67,6 +74,9 @@ type QuickBookingForm = {
   passengers: string;
   luggage: string;
   reserveNow: string;
+  telegram:string
+  whatsapp:string
+  messageTitle:string
 };
 type Page = { title: string, description: string, backToHome: string }
 type FAQs = { title: string, items: { question: string, answer: string }[] }

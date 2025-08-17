@@ -5,15 +5,15 @@ export const en: AppTexts = {
     social: {
       facebook: "Follow us on Facebook",
       instagram: "Follow us on Instagram",
-      whatsapp: "Contact us via WhatsApp"
+      whatsapp: "Contact us on WhatsApp"
     }
   },
   hero: {
-    h1: "Book taxis in Cuba quickly, safely and reliably",
-    h2: "Private or shared transfers from major airports, private homes and hotels in Havana, Varadero, Trinidad, Viñales and more.",
-    p: "Book your taxi in Cuba without complications. Leave us your details and your taxi will be confirmed within minutes. That simple.",
+    h1: "Book taxis in Cuba quickly, safely, and reliably",
+    h2: "Private or shared transfers at the main airports, private houses, and hotels in Havana, Varadero, Trinidad, Viñales, and more.",
+    p: "Book your taxi in Cuba hassle-free. Leave us your details and your ride will be confirmed within minutes. It's that easy.",
     buttons: {
-      booking: "Book private taxi in Cuba",
+      booking: "Book a private taxi in Cuba",
       fastBooking: "Quick booking"
     },
     contents: {
@@ -25,11 +25,11 @@ export const en: AppTexts = {
       "Private transfers in Cuba",
       "Taxi to Havana airport",
       "Express taxi booking",
-      "City tours in Havana",
+      "Havana city tours",
       "Excursions from Varadero",
       "Shared taxis in Cuba",
-      "Trips to Eastern Beaches",
-      "Tourist guides in Cuba"
+      "Trips to the Eastern Beaches",
+      "Tour guides in Cuba"
     ]
   },
   destinationsCard: {
@@ -41,6 +41,7 @@ export const en: AppTexts = {
     title: "Excursions",
     places: "Included places",
   },
+
   seeMore: "See more",
   bookingForm: {
     page: {
@@ -59,12 +60,18 @@ export const en: AppTexts = {
     passengers: "Passengers",
     luggage: "Luggage",
     details: "Additional Details",
+    detailsExample: "Any specific information about the trip or passengers",
     attachImages: "Attach Images",
     reserveNow: "Book Now",
+    subtitle: "Tell us the details to arrange your trip",
+    example: "Example: flight number, child seat, extra stop, etc.",
+    upload: "Upload images",
+    luggaageExample: "2 suitcases + 1 backpack",
+    title: "Reservation details"
   },
   quickBookingForm: {
     page: {
-      title: "Book a taxi in Cuba instantly",
+      title: "Instantly book a taxi in Cuba",
       backToHome: "Back to home",
       description: "Book your taxi in seconds"
     },
@@ -77,6 +84,9 @@ export const en: AppTexts = {
     passengers: "Passengers",
     luggage: "Luggage description",
     reserveNow: "Book Now",
+    telegram: "Book via Telegram",
+    whatsapp: "Book via WhatsApp",
+    messageTitle: "Booking details"
   },
   footer: {
     rights: "© 2025 Cubantaxis. All rights reserved.",
@@ -86,44 +96,58 @@ export const en: AppTexts = {
     items: [
       {
         question: "How can I book a taxi in Cuba in advance?",
-        answer: "You can leave us your details in the form and you will receive immediate confirmation. You can also see all available routes on the [transfer page](/traslados)."
+        answer: "You can leave us your details in the form and you’ll receive instant confirmation. You can also view all available routes on the [transfers page](/traslados)."
       },
       {
         question: "Do you offer private transfers from Havana airport?",
-        answer: "Yes, we offer private transfers from José Martí International Airport to any destination in Cuba, including Varadero, Viñales, Cayo Santa María and more."
+        answer: "Yes, we provide private transfers from José Martí International Airport to any destination in Cuba, including Varadero, Viñales, Cayo Santa María, and more."
       },
       {
         question: "How much is a taxi from Varadero airport to Havana?",
-        answer: "The price for a private transfer from Varadero airport to Havana starts at 100 USD per vehicle. Check the full list on our [pricing section](/traslados)."
+        answer: "The price for a private transfer from Varadero airport to Havana starts at 100 USD per vehicle. Check the full list in our [prices section](/traslados)."
       },
       {
-        question: "Are the prices per person or per vehicle?",
-        answer: "All prices shown on the site are per private vehicle, regardless of whether 1 or more passengers are traveling (up to the allowed maximum capacity)."
+        question: "Are prices per person or per car?",
+        answer: "All prices displayed on the site are per private vehicle, regardless of whether 1 or more passengers are traveling (up to the maximum allowed capacity)."
       },
       {
-        question: "Can I pay for the taxi in dollars, euros or local currency (CUP)?",
-        answer: "Yes, we accept payments in USD, EUR and CUP. Choose the most convenient option when confirming your transfer."
+        question: "Can I pay for the taxi in dollars, euros, or local currency (CUP)?",
+        answer: "Yes, we accept payments in USD, EUR, and CUP. Choose the most convenient option when confirming your transfer."
       },
       {
-        question: "What if my flight is delayed?",
+        question: "What happens if my flight is delayed?",
         answer: "We monitor your flight arrival. If there are delays, your driver will wait for you at no extra cost, as long as you provided your flight number correctly."
       },
       {
         question: "Do you offer private excursions in addition to transfers?",
-        answer: "Yes, you can book private excursions such as the tour to Viñales, Cienfuegos and Trinidad. Check all the options on the [excursions page](/excursiones)."
+        answer: "Yes, you can book private excursions such as tours to Viñales, Cienfuegos, and Trinidad. See all options on the [excursions page](/excursiones)."
       },
       {
         question: "What types of vehicles do you offer for transfers?",
-        answer: "You can choose from classic cars, convertibles, modern cars or minivans, depending on your preferences and number of passengers."
+        answer: "You can choose between classic cars, convertibles, modern vehicles, or minivans depending on your preferences and the number of passengers."
       },
       {
         question: "Can I request a night transfer?",
-        answer: "Yes, we offer 24/7 taxi service. Note that night transfers may have a small additional charge."
+        answer: "Yes, we offer 24/7 taxi service. Please note that night transfers may have a small additional surcharge."
       },
       {
         question: "How do I know if my transfer is confirmed?",
-        answer: "You will receive a confirmation message via WhatsApp or email with your trip details and the assigned driver’s name."
+        answer: "You will receive a direct confirmation message via WhatsApp or email with the trip details and the assigned driver’s name."
       }
     ]
-  }
+  },
+  locations: [
+    "Havana Airport",
+    "Varadero Airport",
+    "Varadero",
+    "Havana",
+    "Cayo Coco",
+    "Cienfuegos",
+    "Santa Clara",
+    "Trinidad",
+    "Viñales",
+    "Cayo Santa María",
+    "Cayo Guillermo"
+  ],
+  vehicles: ["Classic car", "Tour", "Van"]
 };

@@ -20,7 +20,7 @@ interface DestinationsCardProps {
 
 export default function DestinationsCard({ destinations, idioma,name,title,subTitle }: DestinationsCardProps) {
   return (
-    <section className="py-9 px-0 sm:px-6 lg:px-8 bg-white" id={name}>
+    <section className="pt-5 px-0 sm:px-6 lg:px-8 bg-white" id={name}>
       <div className="max-w-7xl mx-auto text-center mb-4">
         <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900">
           {title}
@@ -54,9 +54,9 @@ export default function DestinationsCard({ destinations, idioma,name,title,subTi
                   <a href="#">
                     <h3 className="text-lg font-medium text-gray-900">{dest.title}</h3>
                   </a>
-                  <p className="mt-2 line-clamp-3 text-sm text-gray-500">
+                  {name!="destinations"&&<p className="mt-2 line-clamp-3 text-sm text-gray-500">
                     {dest.description}
-                  </p>
+                  </p>}
                 </div>
                 {/* <div className="mt-4">
                   <button className="text-yellow-600 font-medium hover:underline">
