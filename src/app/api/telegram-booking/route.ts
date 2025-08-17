@@ -82,7 +82,7 @@ console.log({TELEGRAM_CHAT_ID,TELEGRAM_TOKEN})
     // Enviar texto
     await axios.post(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
       chat_id: TELEGRAM_CHAT_ID,
-      text: message,
+      text: fields.source?`Mensaje directo atravéz de: ${fields.source}`:message,
     });
 
     // Enviar imágenes

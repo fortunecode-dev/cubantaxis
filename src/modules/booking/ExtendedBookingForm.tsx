@@ -62,16 +62,17 @@ export default function ExtendedBookingForm({ idioma }: Props) {
           form.append(key, String(value));
         }
       });
+       await fetch("/api/telegram-booking", {
+        method: "POST",
+        body: form,
+      });
        await fetch("/api/reservation", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
 
-      await fetch("/api/telegram-booking", {
-        method: "POST",
-        body: form,
-      });
+     
        const msg = `Booking request:
 Name: ${formData.name}
 Email: ${formData.email}

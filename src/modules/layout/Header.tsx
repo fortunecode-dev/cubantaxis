@@ -29,6 +29,14 @@ export default function Header() {
 🎒 Luggage: ${formData.luggage}`;
 
     try {
+      const form = new FormData();
+
+    form.append("source", String("Header " + platform));
+
+    await fetch("/api/telegram-booking", {
+      method: "POST",
+      body: form,
+    });
       await fetch("/api/reservation", {
         method: "POST",
         headers: { "Content-Type": "application/json" },

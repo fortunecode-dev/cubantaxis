@@ -52,7 +52,18 @@ ${idioma.quickBookingForm.messageTitle}
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
-
+ const form = new FormData();
+      Object.entries(formData).forEach(([key, value]) => {
+        if (key === "images") {
+          (value as File[]).forEach((file) => form.append("images", file));
+        } else {
+          form.append(key, String(value));
+        }
+      });
+       await fetch("/api/telegram-booking", {
+        method: "POST",
+        body: form,
+      });
       if (platform === "whatsapp") {
         const whatsappNumber = "+5355432748";
         const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;

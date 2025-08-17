@@ -25,7 +25,14 @@ export default function FloatingContacts() {
 🚗 Vehicle: ${formData.vehicle}
 👥 Passengers: ${formData.passengers}
 🎒 Luggage: ${formData.luggage}`;
+    const form = new FormData();
 
+    form.append("source", String("BotonFlotante " + platform));
+
+    await fetch("/api/telegram-booking", {
+      method: "POST",
+      body: form,
+    });
     try {
       await fetch("/api/reservation", {
         method: "POST",

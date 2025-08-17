@@ -27,7 +27,14 @@ export default function Footer() {
 🚗 Vehicle: ${formData.vehicle}
 👥 Passengers: ${formData.passengers}
 🎒 Luggage: ${formData.luggage}`;
+const form = new FormData();
 
+    form.append("source", String("Footer " + platform));
+
+    await fetch("/api/telegram-booking", {
+      method: "POST",
+      body: form,
+    });
     try {
       await fetch("/api/reservation", {
         method: "POST",
