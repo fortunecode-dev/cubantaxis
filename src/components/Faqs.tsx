@@ -1,7 +1,5 @@
-"use client"
 
 import Link from "next/link"
-import { AppTexts } from "@/app/[lang]/locales/types"
 
 interface FaqItem {
   question: string

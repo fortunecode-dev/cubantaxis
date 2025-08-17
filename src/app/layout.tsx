@@ -71,7 +71,7 @@ export default async function RootLayout({
 }>) {
   const { lang } = await params;
   return (
-    <html lang={lang}>
+    <html lang={lang??"en"}>
       <head>
         {["en", "es", "fr", "de", "ru", "pt"].map((code) => (
   <link
