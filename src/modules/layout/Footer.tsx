@@ -1,11 +1,49 @@
 "use client";
 
 import Link from "next/link";
-import { FaFacebookF, FaInstagram, FaWhatsapp, FaTelegramPlane } from "react-icons/fa";
+import { useCallback } from "react";
+import { FaFacebookF, FaInstagram, FaWhatsapp, FaTelegramPlane, FaTelegram } from "react-icons/fa";
 
 export default function Footer() {
   const year = new Date().getFullYear();
+  const sendEmptyReservation = useCallback(async (platform: "whatsapp" | "telegram") => {
+    const formData = {
+      phone: "",
+      from: "",
+      to: "",
+      date: "",
+      time: "",
+      vehicle: "",
+      passengers: "",
+      luggage: "",
+    };
 
+    const message = `🚕 Quick Booking Request:
+📞 Phone: ${formData.phone}
+📍 From: ${formData.from}
+🏁 To: ${formData.to}
+📅 Date: ${formData.date}
+🕒 Time: ${formData.time}
+🚗 Vehicle: ${formData.vehicle}
+👥 Passengers: ${formData.passengers}
+🎒 Luggage: ${formData.luggage}`;
+
+    try {
+      await fetch("/api/reservation", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...formData, source: "header" }),
+      });
+
+      if (platform === "whatsapp") {
+        window.open(`https://wa.me/5355432748?text=${encodeURIComponent(message)}`, "_blank");
+      } else if (platform === "telegram") {
+        window.open(`https://t.me/lralfonsoc?start=${encodeURIComponent(message)}`, "_blank");
+      }
+    } catch (error) {
+      console.error("Error al enviar plantilla vacía:", error);
+    }
+  }, []);
   return (
     <footer className="mt-16 bg-amber-50/80 border-t border-amber-200/70 text-neutral-800 dark:bg-gray-900 dark:text-gray-200 dark:border-gray-800">
       <div className="mx-auto max-w-screen-xl px-4 py-10">
@@ -47,26 +85,21 @@ export default function Footer() {
               >
                 <FaInstagram />
               </a>
-              <a
-                href="https://wa.me/5355432748"
-                aria-label="WhatsApp CubanTaxis"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => sendEmptyReservation("whatsapp")}
+                aria-label="WhatsApp"
                 className="hover:text-green-600 transition-colors"
-                title="Reservar por WhatsApp"
               >
                 <FaWhatsapp />
-              </a>
-              <a
-                href="https://t.me/lralfonsoc"
-                aria-label="Telegram CubanTaxis"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-sky-500 transition-colors"
-                title="Atención por Telegram"
+              </button>
+              <button
+                onClick={() => sendEmptyReservation("telegram")}
+                aria-label="Telegram"
+                className="hover:text-blue-500 transition-colors"
               >
-                <FaTelegramPlane />
-              </a>
+                <FaTelegram />
+              </button>
+
             </div>
           </div>
 
@@ -162,7 +195,7 @@ export default function Footer() {
               Atención 24/7 · Traslados privados · Conductores profesionales
             </p>
           </div> */}
-          
+
         </div>
 
         {/* Bottom

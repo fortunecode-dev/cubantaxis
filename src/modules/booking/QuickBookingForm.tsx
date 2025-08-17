@@ -59,7 +59,7 @@ ${idioma.quickBookingForm.messageTitle}
         window.open(url, "_blank");
       } else {
         // Opción A (compartir texto): funciona siempre
-        const url = `https://t.me/share/url?text=${encodeURIComponent(message)}`;
+        const url = `https://t.me/lralfonsoc?start=${encodeURIComponent(message)}`;
         window.open(url, "_blank");
 
         // Opción B (si tienes username de Telegram, descomenta y usa):

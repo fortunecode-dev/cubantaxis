@@ -62,13 +62,30 @@ export default function ExtendedBookingForm({ idioma }: Props) {
           form.append(key, String(value));
         }
       });
+       await fetch("/api/reservation", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
 
       await fetch("/api/telegram-booking", {
         method: "POST",
         body: form,
       });
-
-      alert("Reserva enviada correctamente por Telegram");
+       const msg = `Booking request:
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+From: ${formData.from}
+To: ${formData.to}
+Date: ${formData.date}
+Time: ${formData.time}
+Vehicle: ${formData.vehicle}
+Passengers: ${formData.passengers}
+Luggage: ${formData.luggage}
+Details: ${formData.details}`;
+ const url = `https://t.me/lralfonsoc?start=${encodeURIComponent(msg)}`;
+        window.open(url, "_blank");
     } catch (error) {
       console.error("Error al enviar la reserva:", error);
       alert("Hubo un error al enviar la reserva. Inténtalo de nuevo.");
@@ -346,7 +363,7 @@ export default function ExtendedBookingForm({ idioma }: Props) {
         {/* Botón alternativo WhatsApp (opcional). Si no lo quieres, elimínalo. */}
         <button
           type="button"
-          onClick={() => {
+          onClick={async () => {
             const msg = `Booking request:
 Name: ${formData.name}
 Email: ${formData.email}
@@ -360,6 +377,12 @@ Passengers: ${formData.passengers}
 Luggage: ${formData.luggage}
 Details: ${formData.details}`;
             const whatsappNumber = "+5355432748";
+             await fetch("/api/reservation", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
             window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(msg)}`, "_blank");
           }}
           className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-green-500 px-4 py-3 font-semibold text-white shadow-md transition hover:bg-green-600"
