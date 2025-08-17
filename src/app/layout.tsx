@@ -59,7 +59,16 @@ export const metadata: Metadata = {
     title: "Taxi Cuba | Traslados, Excursiones y Traslados de Aeropuertos",
     description: "Reserva tu taxi en Cuba con chofer privado. La Habana, Varadero, Viñales y más.",
     images: ["icon.ico"]
-  } ,metadataBase:new URL("https://cubantaxis.com/"),
+  } ,metadataBase:new URL("https://cubantaxis.com/"), alternates: {
+    canonical: "/",
+    languages: {
+      "es-ES": "/es",
+      "en-US": "/en",
+      "fr-FR": "/fr",
+      "de-DE": "/de",
+      "ru-RU": "/ru",
+      "pt-PT": "/pt",
+    },}
 };
 
 export default async function RootLayout({

@@ -46,12 +46,16 @@ export default function Hero({ idioma, lang }: { idioma: AppTexts, lang: string 
 
                         <div className="flex flex-col sm:flex-row gap-4 mb-6">
                             <LocaleLink href={`book-travel-reservation`}
-                                className="w-full sm:w-auto border border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-black px-6 py-3 rounded-xl font-semibold text-center transition">
+                                className="w-full sm:w-auto border border-amber-400 text-amber-400 hover:bg-yellow-400 hover:text-black px-6 py-3 rounded-xl font-semibold text-center transition">
                                 {idioma.hero.buttons.booking}
                             </LocaleLink>
 
                             <LocaleLink href={`book-a-travel`}
-                                className="w-full sm:w-auto bg-amber-400 hover:bg-yellow-300 text-black px-6 py-3 rounded-xl font-semibold text-center transition">
+                                className=" inline-flex items-center justify-center rounded-xl px-5 py-3
+    bg-yellow-400 text-black font-semibold shadow-sm
+    hover:bg-yellow-300 active:bg-yellow-500
+    focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2
+    focus-visible:ring-yellow-500 ring-offset-black">
                                 {idioma.hero.buttons.fastBooking}
                             </LocaleLink>
                         </div>
