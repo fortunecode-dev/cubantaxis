@@ -24,7 +24,11 @@ export interface AppTexts {
   },
   FAQs: FAQs
   locations: string[]
-  vehicles: string[]
+  vehicles: string[],
+  clipboardTemplate: {
+  copied: string,
+  error: string
+}
 }
 type HeroLocale = {
   h1: string;

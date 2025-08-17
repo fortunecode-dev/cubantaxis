@@ -48,10 +48,12 @@ async function parseFormData(request: Request): Promise<{ fields: any; files: an
 export async function POST(request: Request) {
   try {
     const { fields, files } = await parseFormData(request);
+    const { searchParams } = new URL(request.url);
 
+    const formSource = searchParams.get("formSource");
     const TELEGRAM_TOKEN = process.env.TELEGRAM_TOKEN!;
     const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID!;
-console.log({TELEGRAM_CHAT_ID,TELEGRAM_TOKEN})
+    console.log({ TELEGRAM_CHAT_ID, TELEGRAM_TOKEN })
     const {
       name = "",
       email = "",
@@ -65,10 +67,16 @@ console.log({TELEGRAM_CHAT_ID,TELEGRAM_TOKEN})
       luggage = "",
       details = "",
     } = fields;
+    // Enviar imágenes
+    const imageList = Array.isArray(files.images)
+      ? files.images
+      : files.images
+        ? [files.images]
+        : [];
 
-    const message = `🚖 Nueva reserva:
-📛 Nombre: ${name}
-✉️ Email: ${email}
+    const message = `🚖 ${formSource}:
+${formSource != "Reserva rápida" && `📛 Nombre: ${name}
+✉️ Email: ${email}`}
 📞 Teléfono: ${phone}
 📍 Desde: ${from}
 🏁 Hasta: ${to}
@@ -77,20 +85,15 @@ console.log({TELEGRAM_CHAT_ID,TELEGRAM_TOKEN})
 🚗 Vehículo: ${vehicle}
 👥 Pasajeros: ${passengers}
 🎒 Equipaje: ${luggage}
-📝 Detalles: ${details}`;
+${formSource != "Reserva rápida" && `📝 Detalles: ${details}`}
+${!!imageList.length && "Imágenes a continuación..."}`;
 
     // Enviar texto
     await axios.post(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
       chat_id: TELEGRAM_CHAT_ID,
-      text: fields.source?`Mensaje directo atravéz de: ${fields.source}`:message,
+      text: fields.source ? `Mensaje directo a través de: ${fields.source}` : message,
     });
 
-    // Enviar imágenes
-    const imageList = Array.isArray(files.images)
-      ? files.images
-      : files.images
-      ? [files.images]
-      : [];
 
     for (const file of imageList) {
       const formData = new FormDataNode();

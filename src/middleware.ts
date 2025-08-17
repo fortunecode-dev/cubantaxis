@@ -9,7 +9,7 @@ const locales = [
   // "ru",
   // "pt"
 ];
-const defaultLocale = "es";
+const defaultLocale = "en";
 
 // Si quieres detectar por cookie/Accept-Language, usa esta función en lugar de defaultLocale.
 function resolveLocale(req: NextRequest) {
@@ -33,10 +33,14 @@ export function middleware(request: NextRequest) {
   if (locales.some(l => pathname === `/${l}` || pathname.startsWith(`/${l}/`))) {
     return NextResponse.next();
   }
+   // 3) Si es una llamada al api
+  if (pathname.startsWith(`/api/`)) {
+    return NextResponse.next();
+  }
 
   // 3) Reescribe TODO lo demás a locale por defecto (o detectado)
   const url = request.nextUrl.clone();
-  const loc = resolveLocale(request); // o usa directamente defaultLocale
+  const loc = defaultLocale; // o usa directamente defaultLocale
   url.pathname = `/${loc}${pathname}`;
   return NextResponse.rewrite(url);
 }

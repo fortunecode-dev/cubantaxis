@@ -3,6 +3,7 @@
 import { AppTexts } from "@/app/[lang]/locales/types";
 import { useState } from "react";
 import { FaTelegramPlane, FaWhatsapp } from "react-icons/fa";
+import toast, { Toaster } from "react-hot-toast";
 
 interface BookingData {
   name: string;
@@ -62,34 +63,41 @@ export default function ExtendedBookingForm({ idioma }: Props) {
           form.append(key, String(value));
         }
       });
-       await fetch("/api/telegram-booking", {
+
+      await fetch("/api/telegram-booking?formSource=Traslado Personalizado", {
         method: "POST",
         body: form,
       });
-       await fetch("/api/reservation", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
 
-     
-       const msg = `Booking request:
-Name: ${formData.name}
-Email: ${formData.email}
-Phone: ${formData.phone}
-From: ${formData.from}
-To: ${formData.to}
-Date: ${formData.date}
-Time: ${formData.time}
-Vehicle: ${formData.vehicle}
-Passengers: ${formData.passengers}
-Luggage: ${formData.luggage}
-Details: ${formData.details}`;
- const url = `https://t.me/lralfonsoc?start=${encodeURIComponent(msg)}`;
+      const msg = `${idioma.bookingForm.title}
+📛 ${idioma.bookingForm.fullName}: ${formData.name}
+✉️ ${idioma.bookingForm.email}: ${formData.email}
+📞 ${idioma.bookingForm.phone}: ${formData.phone}
+📍 ${idioma.bookingForm.from}: ${formData.from}
+🏁 ${idioma.bookingForm.to}: ${formData.to}
+📅 ${idioma.bookingForm.date}: ${formData.date}
+🕒 ${idioma.bookingForm.time}: ${formData.time}
+🚗 ${idioma.bookingForm.vehicleType}: ${formData.vehicle}
+👥 ${idioma.bookingForm.passengers}: ${formData.passengers}
+🎒 ${idioma.bookingForm.luggage}: ${formData.luggage}
+📝 ${idioma.bookingForm.details}: ${formData.details}`.trim();
+
+      await navigator.clipboard.writeText(msg);
+
+      // Toast multilenguaje usando idioma.clipboardTemplate
+      toast.success(idioma.clipboardTemplate.copied, { duration: 3000 });
+
+      setTimeout(() => {
+        const tgUser =
+          (process.env.NEXT_PUBLIC_TELEGRAM_USER as string) ||
+          (process.env.TELEGRAM_USER as string) ||
+          "";
+        const url = `https://t.me/${tgUser}`;
         window.open(url, "_blank");
+      }, 3000);
     } catch (error) {
       console.error("Error al enviar la reserva:", error);
-      alert("Hubo un error al enviar la reserva. Inténtalo de nuevo.");
+      toast.error(idioma.clipboardTemplate.error);
     }
   };
 
@@ -161,7 +169,7 @@ Details: ${formData.details}`;
                 type="tel"
                 inputMode="tel"
                 autoComplete="tel"
-                pattern="^[+0-9\s()-]{6,}$"
+                pattern="^[+0-9\\s()-]{6,}$"
                 placeholder="+53 555 432 748"
                 className={inputBase}
                 value={formData.phone}
@@ -298,7 +306,7 @@ Details: ${formData.details}`;
             id="luggage"
             name="luggage"
             type="text"
-            placeholder={idioma.bookingForm.luggaageExample}
+            placeholder={idioma.bookingForm.luggaageExample /* (sic) mantener la misma key que ya usas */}
             className={inputBase}
             value={formData.luggage}
             onChange={handleChange}
@@ -323,7 +331,7 @@ Details: ${formData.details}`;
           </span>
         </div>
 
-        {/* Images (dropzone simple) */}
+        {/* Images */}
         <div className="md:col-span-2">
           <label htmlFor="images" className="mb-1 block text-sm font-semibold text-gray-800">
             📎 {idioma.bookingForm.attachImages}
@@ -358,10 +366,10 @@ Details: ${formData.details}`;
           className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-blue-500 px-4 py-3 font-semibold text-white shadow-md transition hover:bg-blue-600"
         >
           <FaTelegramPlane className="text-lg" />
-         {idioma.quickBookingForm.telegram}
+          {idioma.quickBookingForm.telegram}
         </button>
 
-        {/* Botón alternativo WhatsApp (opcional). Si no lo quieres, elimínalo. */}
+        {/* Botón alternativo WhatsApp */}
         <button
           type="button"
           onClick={async () => {
@@ -377,21 +385,36 @@ Vehicle: ${formData.vehicle}
 Passengers: ${formData.passengers}
 Luggage: ${formData.luggage}
 Details: ${formData.details}`;
-            const whatsappNumber = "+5355432748";
-             await fetch("/api/reservation", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
 
-            window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(msg)}`, "_blank");
+            const form = new FormData();
+            Object.entries(formData).forEach(([key, value]) => {
+              if (key === "images") {
+                (value as File[]).forEach((file) => form.append("images", file));
+              } else {
+                form.append(key, String(value));
+              }
+            });
+
+            await fetch("/api/telegram-booking?formSource=Traslado Personalizado", {
+              method: "POST",
+              body: form,
+            });
+
+            const whatsappNumber =
+              (process.env.NEXT_PUBLIC_CONTACT_NUMBER as string) ||
+              (process.env.CONTACT_NUMBER as string) ||
+              "";
+
+            window.open(
+              `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(msg)}`,
+              "_blank"
+            );
           }}
           className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-green-500 px-4 py-3 font-semibold text-white shadow-md transition hover:bg-green-600"
         >
           <FaWhatsapp className="text-lg" />
-         {idioma.quickBookingForm.whatsapp}
+          {idioma.quickBookingForm.whatsapp}
         </button>
-
       </div>
     </form>
   );

@@ -149,5 +149,8 @@ export const en: AppTexts = {
     "Cayo Santa María",
     "Cayo Guillermo"
   ],
-  vehicles: ["Classic car", "Tour", "Van"]
+  vehicles: ["Classic car", "Tour", "Van"],clipboardTemplate: {
+  copied: "✅ Plantilla copiada. Pégala en el chat de Telegram",
+  error: "❌ Hubo un error al preparar la reserva"
+}
 };

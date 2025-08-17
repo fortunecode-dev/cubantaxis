@@ -7,6 +7,7 @@ import FloatingContacts from "@/modules/layout/FloatingContacts";
 import Script from "next/script";
 import LanguageSuggestor from "@/components/LanguageSuggestor";
 import { LocaleParams } from "@/types/common";
+import { Toaster } from "react-hot-toast";
 export async function generateStaticParams() {
   return [
     { lang: "en" },
@@ -118,9 +119,31 @@ export default async function RootLayout({
         />
       </head>
       <body className="antialiased">
-        <Header />
+        <Toaster
+        position="top-center"
+        reverseOrder={false}
+        toastOptions={{
+          // base para todos
+          className:
+            "rounded-xl shadow-lg ring-1 ring-amber-300/70 bg-white/95 text-neutral-800 px-4 py-3 backdrop-blur-sm",
+          style: { fontSize: 14, lineHeight: "20px" },
+          duration: 2600,
+          // variantes
+          success: {
+            iconTheme: { primary: "#16a34a", secondary: "#fff" }, // verde
+            className:
+              "rounded-xl shadow-lg ring-1 ring-green-300/70 bg-white/95 text-neutral-800",
+          },
+          error: {
+            iconTheme: { primary: "#dc2626", secondary: "#fff" }, // rojo
+            className:
+              "rounded-xl shadow-lg ring-1 ring-red-300/70 bg-white/95 text-neutral-800",
+          },
+        }}
+      />
+        <Header lang={lang} />
         {children}
-        <FloatingContacts />
+        <FloatingContacts lang={lang} />
         <Footer />
         <LanguageSuggestor/>
       </body>
