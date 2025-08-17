@@ -81,13 +81,13 @@ export default async function RootLayout({
     href={`https://cubantaxis.com/${code}`}
   />
 ))}
-        
+  <link rel="alternate" hrefLang="x-default" href="https://cubantaxis.com/" />      
  {/* Google Analytics Script */}
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=G-HB26WDN91W`}
-        strategy="afterInteractive"
+        strategy="lazyOnload"
       />
-      <Script id="google-analytics" strategy="afterInteractive">
+      <Script id="google-analytics" strategy="lazyOnload">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
@@ -97,7 +97,7 @@ export default async function RootLayout({
           });
         `}
       </Script>
-        <link rel="canonical" href={`https://cubantaxis.com/${lang}`} />
+        <link rel="canonical" href={`https://cubantaxis.com`} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

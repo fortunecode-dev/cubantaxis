@@ -1,8 +1,5 @@
-"use client"
-
 import { AppTexts } from "@/app/[lang]/locales/types"
 import React from "react"
-import Link from 'next/link'
 import Image from "next/image"
 import { LocaleLink } from "@/libs/i18n-nav"
 
@@ -26,6 +23,8 @@ export default function Hero({ idioma, lang }: { idioma: AppTexts, lang: string 
                                 title={`Traslado ${src.split("/").pop()?.split(".")[0]}`}
                                 width={400}
                                 height={400}
+                                priority
+                                fetchPriority="high"
                             />
                         </div>
                     ))}

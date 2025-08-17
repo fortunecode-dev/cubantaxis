@@ -1,5 +1,3 @@
-"use client"
-
 import { AppTexts } from "@/app/[lang]/locales/types"
 import Image from "next/image"
 
@@ -13,12 +11,12 @@ interface Destination {
 interface DestinationsCardProps {
   destinations: Destination[]
   idioma: AppTexts
-  name:string,
-  title:string,
-  subTitle:string
+  name: string,
+  title: string,
+  subTitle: string
 }
 
-export default function DestinationsCard({ destinations, idioma,name,title,subTitle }: DestinationsCardProps) {
+export default function DestinationsCard({ destinations, idioma, name, title, subTitle }: DestinationsCardProps) {
   return (
     <section className="pt-5 px-0 sm:px-6 lg:px-8 bg-white" id={name}>
       <div className="max-w-7xl mx-auto text-center mb-4">
@@ -36,17 +34,17 @@ export default function DestinationsCard({ destinations, idioma,name,title,subTi
           {destinations?.map((dest, index) => (
             <article
               key={dest.id}
-              className={`snap-start shrink-0 w-72 group rounded-xl overflow-hidden flex flex-col justify-between transition-transform transform hover:shadow-2xl ${
-                index === 0 ? "pl-4 sm:pl-0" : ""
-              }`}
+              className={`snap-start shrink-0 w-72 group rounded-xl overflow-hidden flex flex-col justify-between transition-transform transform hover:shadow-2xl ${index === 0 ? "pl-4 sm:pl-0" : ""
+                }`}
             >
               <Image
                 alt={dest.title}
                 src={dest.main_image}
-                dir={dest.main_image}
-                title={dest.title}
-                width={400}
-                height={250}
+                width={288}            // w-72 = 18rem = 288px
+                height={224}           // h-56 = 14rem ≈ 224px
+                sizes="(max-width: 640px) 288px, (max-width: 1024px) 336px, 288px"
+                quality={70}
+                decoding="async"
                 className="h-56 w-full rounded-xl object-cover shadow-xl transition group-hover:grayscale-[50%]"
               />
               <div className="p-4 flex flex-col justify-between flex-grow">
@@ -54,7 +52,7 @@ export default function DestinationsCard({ destinations, idioma,name,title,subTi
                   <a href="#">
                     <h3 className="text-lg font-medium text-gray-900">{dest.title}</h3>
                   </a>
-                  {name!="destinations"&&<p className="mt-2 line-clamp-3 text-sm text-gray-500">
+                  {name != "destinations" && <p className="mt-2 line-clamp-3 text-sm text-gray-500">
                     {dest.description}
                   </p>}
                 </div>
@@ -80,6 +78,10 @@ export default function DestinationsCard({ destinations, idioma,name,title,subTi
                 src={dest.main_image}
                 width={600}
                 height={350}
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                quality={70}
+                decoding="async"
+                loading="lazy"
                 className="h-64 w-full rounded-xl object-cover shadow-xl transition group-hover:grayscale-[50%]"
               />
               <div className="p-4 flex flex-col justify-between flex-grow">
