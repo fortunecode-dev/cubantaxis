@@ -5,7 +5,7 @@ import { LocaleLink } from "@/libs/i18n-nav"
 
 export default function Hero({ idioma, lang }: { idioma: AppTexts, lang: string }) {
     return (
-        <header className="relative bg-black overflow-hidden mt-6 pt-8 rounded-b-3xl">
+        <div className="relative bg-black overflow-hidden mt-6 pt-8 rounded-b-3xl">
             {/* Fondo Masonry difuminado */}
             <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
                 <div className="hero-background grid grid-cols-2 lg:grid-cols-3 gap-2 p-2 pt-5">
@@ -72,6 +72,6 @@ export default function Hero({ idioma, lang }: { idioma: AppTexts, lang: string 
                     </ul>
                 </div>
             </div>
-        </header>
+        </div>
     )
 }

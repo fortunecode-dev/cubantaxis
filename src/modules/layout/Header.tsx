@@ -1,6 +1,6 @@
 "use client";
 
-import { FaFacebookF, FaInstagram, FaWhatsapp, FaTelegram } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaWhatsapp, FaTelegram, FaTelegramPlane } from "react-icons/fa";
 import { useCallback } from "react";
 import { LocaleLink } from "@/libs/i18n-nav";
 import toast, { Toaster } from "react-hot-toast";
@@ -81,9 +81,10 @@ export default function Header({ lang }: { lang: any }) {
           rel="noopener noreferrer"
           aria-label="Facebook"
           title="Facebook Page"
+          color="black"
           className="hover:text-blue-700 transition-colors"
         >
-          <FaFacebookF />
+          <FaFacebookF color="black"/>
         </a>
         <a
           href="https://www.instagram.com/cubantaxis/"
@@ -91,23 +92,27 @@ export default function Header({ lang }: { lang: any }) {
           rel="noopener noreferrer"
           aria-label="Instagram"
           title="Instagram Profile"
+          color="black"
+
           className="hover:text-pink-600 transition-colors"
         >
-          <FaInstagram />
+          <FaInstagram color="black"/>
         </a>
         <button
           onClick={() => sendEmptyReservation("whatsapp")}
           aria-label="WhatsApp"
+
           className="hover:text-green-600 transition-colors"
         >
-          <FaWhatsapp />
+          <FaWhatsapp color="black"/>
         </button>
         <button
           onClick={() => sendEmptyReservation("telegram")}
           aria-label="Telegram"
+      
           className="hover:text-blue-500 transition-colors"
         >
-          <FaTelegram />
+          <FaTelegramPlane color="black" />
         </button>
       </div>
     </header>
