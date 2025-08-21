@@ -19,7 +19,7 @@ export async function generateStaticParams() {
 }
 
 export const metadata: Metadata = {
-  title: "CUBANTAXIS | Traslados desde Aeropuertos, Excursiones y Tours",
+  title: "CubanTaxis: Book Your taxi, Tours And Transfers",
   description: "Taxi en Cuba. Reservas, Traslados aeropuerto, excursiones privadas, autos clásicos con chofer, 24/7 en La Habana, Varadero, Cayo Coco, Trinidad.",
   keywords: [
     "taxi Cuba",
@@ -153,7 +153,7 @@ export default async function RootLayout({
         <Header lang={lang} />
         {children}
         <FloatingContacts lang={lang} />
-        <Footer />
+        <Footer lang={lang} />
         <LanguageSuggestor/>
       </body>
     </html>

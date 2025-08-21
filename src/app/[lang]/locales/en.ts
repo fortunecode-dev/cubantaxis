@@ -1,3 +1,4 @@
+import { title } from "process";
 import { AppTexts } from "./types";
 
 export const en: AppTexts = {
@@ -9,9 +10,14 @@ export const en: AppTexts = {
     }
   },
   hero: {
-    h1: "Book taxis in Cuba quickly, safely, and reliably",
-    h2: "Private or shared transfers at the main airports, private houses, and hotels in Havana, Varadero, Trinidad, Viñales, and more.",
-    p: "Book your taxi in Cuba hassle-free. Leave us your details and your ride will be confirmed within minutes. It's that easy.",
+    h1: "Book a Taxi in Cuba fast, safely and reliably",
+    h2a: "The fastest way to get a cab for ",
+    h2b: ": Havana, Varadero, Trinidad, Viñales, and more.",
+    transfer: "airport transfers",
+    shared: "shared rides",
+    and: " and ",
+    interCity: "intercity taxis",
+    p: "Book your cab in Cuba hassle-free. Leave us your details and your trip will be confirmed within minutes. It's that easy.",
     buttons: {
       booking: "Book a private taxi in Cuba",
       fastBooking: "Quick booking"
@@ -92,7 +98,7 @@ export const en: AppTexts = {
     rights: "© 2025 Cubantaxis. All rights reserved.",
   },
   FAQs: {
-    title: "Frequently Asked Questions",
+    title: "How much is a taxi in Cuba, how to get one, and other questions...",
     items: [
       {
         question: "How can I book a taxi in Cuba in advance?",
@@ -149,8 +155,8 @@ export const en: AppTexts = {
     "Cayo Santa María",
     "Cayo Guillermo"
   ],
-  vehicles: ["Classic car", "Tour", "Van"],clipboardTemplate: {
-  copied: "✅ Plantilla copiada. Pégala en el chat de Telegram",
-  error: "❌ Hubo un error al preparar la reserva"
-}
+  vehicles: ["Classic car", "Tour", "Van"], clipboardTemplate: {
+    copied: "✅ Plantilla copiada. Pégala en el chat de Telegram",
+    error: "❌ Hubo un error al preparar la reserva"
+  },howMuchIsATaxi:"How much does a taxi cost in Cuba in 2025? 🚖"
 };

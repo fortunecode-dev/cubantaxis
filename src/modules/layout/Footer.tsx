@@ -1,11 +1,12 @@
 
 import Link from "next/link";
 import Socials from "./Socials";
+import { getTranslation } from "@/app/[lang]/locales";
 
-export default function Footer() {
+export default async function Footer({ lang }: {  lang: string }) {
   // TODO: Poner multilingüe
   const year = new Date().getFullYear();
- 
+   const idioma = getTranslation(lang)
   return (
     <footer className="mt-16 bg-amber-50/80 border-t border-amber-200/70 text-neutral-800 dark:bg-gray-900 dark:text-gray-200 dark:border-gray-800">
       <div className="mx-auto max-w-screen-xl px-4 py-10">
@@ -28,16 +29,15 @@ export default function Footer() {
             <Socials/>
           </div>
 
-          {/* Enlaces rápidos (SEO)
           <nav aria-label="Enlaces de navegación" className="text-sm">
-            <h3 className="mb-3 text-base font-semibold">Servicios</h3>
+            <h3 className="mb-3 text-base font-semibold">Blog</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/transfers" className="hover:underline">
-                  Traslados Aeropuerto José Martí &rarr; La Habana / Varadero
+                <Link href="/how-much-is-a-taxi" className="hover:underline">
+                {idioma.howMuchIsATaxi}
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href="/city-tours" className="hover:underline">
                   City Tours en La Habana (clásicos y descapotables)
                 </Link>
@@ -56,10 +56,10 @@ export default function Footer() {
                 <Link href="/book" className="hover:underline">
                   Reservas rápidas por WhatsApp/Telegram
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </nav>
-
+{/* 
           Zonas populares (keywords)
           <nav aria-label="Zonas populares" className="text-sm">
             <h3 className="mb-3 text-base font-semibold">Zonas populares</h3>
@@ -119,7 +119,7 @@ export default function Footer() {
             <p className="mt-4 text-xs text-neutral-600/90 dark:text-gray-400">
               Atención 24/7 · Traslados privados · Conductores profesionales
             </p>
-          </div> */}
+          </div>  */}
 
         </div>
 

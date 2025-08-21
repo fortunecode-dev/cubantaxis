@@ -27,12 +27,18 @@ export interface AppTexts {
   vehicles: string[],
   clipboardTemplate: {
   copied: string,
-  error: string
+  error: string,
 }
+howMuchIsATaxi:string
 }
 type HeroLocale = {
   h1: string;
-  h2: string;
+  h2a:string
+  h2b: string;
+  transfer: string;
+  shared: string;
+  and: string;
+  interCity: string;
   p: string
   buttons: {
     booking: string;

@@ -41,7 +41,7 @@ export default function Hero({ idioma, lang }: { idioma: AppTexts, lang: string 
                         </h1>
 
                         <h2 className="text-xl text-amber-300 font-medium mb-6">
-                            {idioma.hero.h2}
+                            {idioma.hero.h2a}{idioma.hero.transfer}, {idioma.hero.shared} {idioma.hero.and}{idioma.hero.interCity}{idioma.hero.h2b} 
                         </h2>
 
                         <div className="flex flex-col sm:flex-row gap-4 mb-6">

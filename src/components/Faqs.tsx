@@ -28,9 +28,9 @@ export default function FaqSection({ title, faqs }: { title: string, faqs: FaqIt
   return (
     <section className="bg-white dark:bg-gray-900">
       <div className="py-6 px-4 mx-auto max-w-screen-xl sm:py-10 lg:px-6">
-        <h2 className="mb-6 text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+        <h1 className="mb-6 text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">
           {title}
-        </h2>
+        </h1>
         <div className="pt-6 text-left border-t border-gray-200 dark:border-gray-700">
           <div className="flex flex-wrap gap-6">
             {faqs.map((item, index) => (

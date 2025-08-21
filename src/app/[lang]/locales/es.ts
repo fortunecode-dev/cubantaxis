@@ -1,3 +1,4 @@
+import { title } from "process";
 import { AppTexts } from "./types";
 
 export const es: AppTexts = {
@@ -5,15 +6,20 @@ export const es: AppTexts = {
     social: {
       facebook: "Síguenos en Facebook",
       instagram: "Síguenos en Instagram",
-      whatsapp: "Contáctanos por WhatsApp"
+      whatsapp: "Contáctanos en WhatsApp"
     }
   },
   hero: {
-    h1: "Reserva taxis en Cuba de forma rápida, segura y confiable",
-    h2: "Traslados privados o compartidos en los principales aeropuertos, casas particulares y hoteles en La Habana, Varadero, Trinidad, Viñales y más.",
-    p: "Reserva tu taxi en Cuba sin complicaciones. Déjanos tus datos y en minutos lo tendrás confirmado. Así de fácil.",
+    h1: "Reserva un Taxi en Cuba rápido, seguro y confiable",
+    h2a: "La forma más rápida de conseguir un taxi para ",
+    h2b: ": La Habana, Varadero, Trinidad, Viñales y más.",
+    transfer: "airport transfers",
+    shared: "taxis compartidos",
+    and: " y ",
+    interCity: "taxis interprovinciales",
+    p: "Reserva tu taxi en Cuba sin complicaciones. Déjanos tus datos y tu viaje quedará confirmado en minutos. Así de fácil.",
     buttons: {
-      booking: "Reservar taxi privado en Cuba",
+      booking: "Reservar un taxi privado en Cuba",
       fastBooking: "Reserva rápida"
     },
     contents: {
@@ -23,9 +29,9 @@ export const es: AppTexts = {
     },
     services: [
       "Traslados privados en Cuba",
-      "Taxi al Aeropuerto de La Habana",
+      "Taxi al aeropuerto de La Habana",
       "Reserva de taxi exprés",
-      "City tours por La Habana",
+      "City tours en La Habana",
       "Excursiones desde Varadero",
       "Taxis compartidos en Cuba",
       "Viajes a las Playas del Este",
@@ -46,7 +52,7 @@ export const es: AppTexts = {
   bookingForm: {
     page: {
       backToHome: "Volver al inicio",
-      description: "Reserva tu viaje detalladamente aquí y nosotros nos encargaremos de todo",
+      description: "Reserva aquí tu viaje en detalle y nosotros nos encargamos de todo",
       title: "Traslado personalizado"
     },
     fullName: "Nombre completo",
@@ -54,20 +60,20 @@ export const es: AppTexts = {
     phone: "Teléfono",
     vehicleType: "Tipo de vehículo",
     from: "Desde",
-    to: "Hacia",
+    to: "Hasta",
     date: "Fecha",
     time: "Hora",
     passengers: "Pasajeros",
     luggage: "Equipaje",
     details: "Detalles adicionales",
-    detailsExample: "Alguna información específica del viaje o los pasajeros",
+    detailsExample: "Cualquier información específica sobre el viaje o los pasajeros",
     attachImages: "Adjuntar imágenes",
     reserveNow: "Reservar ahora",
     subtitle: "Cuéntanos los detalles para organizar tu viaje",
     example: "Ejemplo: número de vuelo, asiento para niño, parada extra, etc.",
     upload: "Subir imágenes",
     luggaageExample: "2 maletas + 1 mochila",
-    title: "Detalles de la reservación"
+    title: "Detalles de la reserva"
   },
   quickBookingForm: {
     page: {
@@ -78,7 +84,7 @@ export const es: AppTexts = {
     phone: "Teléfono",
     vehicleType: "Tipo de vehículo",
     from: "Desde",
-    to: "Hacia",
+    to: "Hasta",
     date: "Fecha",
     time: "Hora",
     passengers: "Pasajeros",
@@ -92,23 +98,23 @@ export const es: AppTexts = {
     rights: "© 2025 Cubantaxis. Todos los derechos reservados.",
   },
   FAQs: {
-    title: "Preguntas frecuentes",
+    title: "¿Cuánto cuesta un taxi en Cuba, cómo conseguir uno y otras preguntas…?",
     items: [
       {
-        question: "¿Cómo reservo un taxi en Cuba con antelación?",
+        question: "¿Cómo puedo reservar un taxi en Cuba con antelación?",
         answer: "Puedes dejarnos tus datos en el formulario y recibirás confirmación inmediata. También puedes ver todas las rutas disponibles en la [página de traslados](/traslados)."
       },
       {
-        question: "¿Ofrecen traslados privados desde el Aeropuerto de La Habana?",
-        answer: "Sí, realizamos traslados privados desde el Aeropuerto Internacional José Martí hacia cualquier destino en Cuba, incluyendo Varadero, Viñales, Cayo Santa María y más."
+        question: "¿Ofrecen traslados privados desde el aeropuerto de La Habana?",
+        answer: "Sí, ofrecemos traslados privados desde el Aeropuerto Internacional José Martí a cualquier destino en Cuba, incluyendo Varadero, Viñales, Cayo Santa María y más."
       },
       {
-        question: "¿Qué precio tiene un taxi del Aeropuerto de Varadero a La Habana?",
-        answer: "El precio del traslado privado desde el Aeropuerto de Varadero a La Habana comienza en 100 USD por vehículo. Consulta la lista completa en nuestra [sección de precios](/traslados)."
+        question: "¿Cuánto cuesta un taxi desde el aeropuerto de Varadero a La Habana?",
+        answer: "El precio de un traslado privado desde el aeropuerto de Varadero a La Habana comienza en 100 USD por vehículo. Consulta la lista completa en nuestra [sección de precios](/traslados)."
       },
       {
         question: "¿Los precios son por persona o por coche?",
-        answer: "Todos los precios mostrados en el sitio son por vehículo privado, sin importar si viajan 1 o más personas (hasta la capacidad máxima permitida)."
+        answer: "Todos los precios mostrados en el sitio son por vehículo privado, independientemente de si viaja 1 o más pasajeros (hasta la capacidad máxima permitida)."
       },
       {
         question: "¿Puedo pagar el taxi en dólares, euros o moneda local (CUP)?",
@@ -116,15 +122,15 @@ export const es: AppTexts = {
       },
       {
         question: "¿Qué pasa si mi vuelo se retrasa?",
-        answer: "Monitoreamos la llegada de tu vuelo. Si hay retrasos, tu conductor te esperará sin costo adicional, siempre que hayas indicado tu número de vuelo correctamente."
+        answer: "Monitoreamos la llegada de tu vuelo. Si hay retrasos, tu chofer te esperará sin costo adicional, siempre que nos hayas proporcionado correctamente el número de vuelo."
       },
       {
         question: "¿Ofrecen excursiones privadas además de traslados?",
-        answer: "Sí, puedes reservar excursiones privadas como el tour a Viñales, Cienfuegos y Trinidad. Mira todas las opciones en la [página de excursiones](/excursiones)."
+        answer: "Sí, puedes reservar excursiones privadas como tours a Viñales, Cienfuegos y Trinidad. Mira todas las opciones en la [página de excursiones](/excursiones)."
       },
       {
-        question: "¿Qué tipo de vehículos ofrecen para los traslados?",
-        answer: "Puedes elegir entre coches clásicos, convertibles, modernos o minivanes, según tus preferencias y el número de pasajeros."
+        question: "¿Qué tipos de vehículos ofrecen para los traslados?",
+        answer: "Puedes elegir entre autos clásicos, convertibles, vehículos modernos o minivans según tus preferencias y el número de pasajeros."
       },
       {
         question: "¿Puedo solicitar un traslado nocturno?",
@@ -132,7 +138,7 @@ export const es: AppTexts = {
       },
       {
         question: "¿Cómo sé si mi traslado está confirmado?",
-        answer: "Recibirás un mensaje de confirmación directa por WhatsApp o correo electrónico con los detalles del viaje y el nombre del conductor asignado."
+        answer: "Recibirás un mensaje de confirmación directa vía WhatsApp o correo electrónico con los detalles del viaje y el nombre del chofer asignado."
       }
     ]
   },
@@ -151,7 +157,8 @@ export const es: AppTexts = {
   ],
   vehicles: ["Auto clásico", "Tour", "Van"],
   clipboardTemplate: {
-  copied: "✅ Plantilla copiada. Pégala en el chat de Telegram",
-  error: "❌ Hubo un error al preparar la reserva"
-}
+    copied: "✅ Plantilla copiada. Pégala en el chat de Telegram",
+    error: "❌ Hubo un error al preparar la reserva"
+  },
+  howMuchIsATaxi:"¿Cuanto cuesta un taxi en cuba?"
 };

@@ -74,9 +74,9 @@ export async function POST(request: Request) {
         ? [files.images]
         : [];
 
-    const message = `🚖 ${formSource}:
-${formSource != "Reserva rápida" && `📛 Nombre: ${name}
-✉️ Email: ${email}`}
+    const message = `${formSource}
+🚖 ${formSource != "Reserva rápida" ? `📛 Nombre: ${name}` : ""}
+✉️ Email: ${email}
 📞 Teléfono: ${phone}
 📍 Desde: ${from}
 🏁 Hasta: ${to}
@@ -85,8 +85,8 @@ ${formSource != "Reserva rápida" && `📛 Nombre: ${name}
 🚗 Vehículo: ${vehicle}
 👥 Pasajeros: ${passengers}
 🎒 Equipaje: ${luggage}
-${formSource != "Reserva rápida" && `📝 Detalles: ${details}`}
-${!!imageList.length && "Imágenes a continuación..."}`;
+${formSource != "Reserva rápida" ? `📝 Detalles: ${details}` : ""}
+${!!imageList.length ? "Imágenes a continuación..." : ""}`;
 
     // Enviar texto
     await axios.post(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
