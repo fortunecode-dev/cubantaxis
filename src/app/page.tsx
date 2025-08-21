@@ -9,7 +9,7 @@ export default function RootHome() {
       <Home params={Promise.resolve({ lang: "en" })} />
       <Script id="ld-taxi" type="application/ld+json" strategy="afterInteractive">
 {JSON.stringify({
-  "@context": "https://www.cubantaxis.com",
+  "@context": "https://schema.org",
   "@type": "TaxiService",
   "name": "CubanTaxis",
   "url": "https://www.cubantaxis.com",

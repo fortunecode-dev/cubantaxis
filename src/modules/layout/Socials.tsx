@@ -1,7 +1,7 @@
 
 "use client"
 import { useCallback } from "react";
-import { FaFacebookF, FaInstagram, FaWhatsapp, FaTelegramPlane, FaTelegram } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaWhatsapp, FaTelegram } from "react-icons/fa";
 
 export default function Socials() {
   // TODO: Poner multilingüe

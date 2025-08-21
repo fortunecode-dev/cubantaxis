@@ -29,20 +29,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
       alternates: { languages: Object.fromEntries(locales.map(l => [l, `${base}/${l}`])) },
     },
     {
-      url: `${base}/book-travel-reservation`,
+      url: `${base}/transfer-booking`,
       lastModified: today,
       changeFrequency: "weekly",
       priority: 0.9,
       alternates: {
-        languages: Object.fromEntries(locales.map(l => [l, `${base}/${l}/book-travel-reservation`])),
+        languages: Object.fromEntries(locales.map(l => [l, `${base}/${l}/transfer-booking`])),
       },
     }, {
-      url: `${base}/book-a-travel`,
+      url: `${base}/taxi`,
       lastModified: today,
       changeFrequency: "weekly",
       priority: 0.9,
       alternates: {
-        languages: Object.fromEntries(locales.map(l => [l, `${base}/${l}/book-a-travel`])),
+        languages: Object.fromEntries(locales.map(l => [l, `${base}/${l}/taxi`])),
       },
     },
   ];

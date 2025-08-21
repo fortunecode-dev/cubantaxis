@@ -20,27 +20,13 @@ export async function generateStaticParams() {
 
 export const metadata: Metadata = {
   title: "CubanTaxis: Book Your taxi, Tours And Transfers",
-  description: "Taxi en Cuba. Reservas, Traslados aeropuerto, excursiones privadas, autos clásicos con chofer, 24/7 en La Habana, Varadero, Cayo Coco, Trinidad.",
-  keywords: [
-    "taxi Cuba",
-    "servicio de taxi Cuba",
-    "traslados en Cuba",
-    "reserva de taxi en Cuba",
-    "transporte en Cuba",
-    "taxi aeropuerto La Habana",
-    "taxi aeropuerto Varadero",
-    "taxi privado en Cuba",
-    "alquiler de autos Cuba",
-    "minivan Cuba",
-    "auto clásico Cuba",
-    "traslado desde aeropuerto Cuba",
-    "taxis en La Habana",
-    "traslados turísticos Cuba"
+  description: "Book reliable Cuba taxi and transfer services from Havana International Airport (MUHA – José Martí), Varadero Airport (VRA), and major destinations. Fixed prices for Havana–Varadero, Viñales, Cienfuegos, Trinidad, and more. Discover Cuban taxis, Cuba cab options, and excursions from Havana.",
+  keywords: ["taxis cuba", "cuban taxis","taxi cuba","cuba cab","urban taxi in cuba", "meila", "havana international airport", "jose marti international airport", "muha airport", "hav airport", "vra airport", "varadero airport", "cuba excursions from havana", "cuba map", "taxis en cuba"
   ],
   icons: { icon: "/icon.ico" },
   openGraph: {
-    title: "Taxi Cuba | Reserva traslados en La Habana y Varadero",
-    description: "Traslados privados desde aeropuertos y destinos turísticos. Vehículos clásicos y modernos. Servicio 24/7.",
+    title: "CubanTaxis: Book Your taxi, Tours And Transfers",
+    description: "Reliable Cuban taxi services from Havana & Varadero airports. Private transfers to Viñales, Trinidad, Cienfuegos & more. Fixed prices, modern & classic cars.",
     url: "https://cubantaxis.com",
     siteName: "Cuban Taxis",
     images: [
@@ -107,25 +93,21 @@ export default async function RootLayout({
         `}
       </Script>
         <link rel="canonical" href={`https://cubantaxis.com`} />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "TaxiService",
-              "name": "Cuban Taxis",
-              "image": "https://cubantaxis.com/icon.ico",
-              "url": "https://cubantaxis.com",
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "La Habana",
-                "addressCountry": "CU"
-              },
-              "areaServed": ["La Habana", "Varadero", "Cayo Coco", "Trinidad"],
-              "availableLanguage": ["Spanish", "English", "Russian", "French", "Portuguesse"],
-            })
-          }}
-        />
+<Script id="ld-taxi" type="application/ld+json" strategy="afterInteractive">
+  {JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "TaxiService",
+    "name": "CubanTaxis",
+    "url": "https://www.cubantaxis.com",
+    "areaServed": "Cuba",
+    "telephone": "+53 5444 7931",
+    "sameAs": [
+      "https://www.facebook.com/CubanTaxis/",
+      "https://www.instagram.com/cubantaxis/"
+    ]
+  })}
+</Script>
+
       </head>
       <body className="antialiased">
         <Toaster
@@ -154,7 +136,7 @@ export default async function RootLayout({
         {children}
         <FloatingContacts lang={lang} />
         <Footer lang={lang} />
-        <LanguageSuggestor/>
+        {/* <LanguageSuggestor/> */}
       </body>
     </html>
   );

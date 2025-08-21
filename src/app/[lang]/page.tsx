@@ -5,6 +5,7 @@ import { destinos } from "@/content/destinations";
 import { excursiones } from "@/content/excursions";
 import { LocaleParams } from "@/types/common";
 import FaqSection from "@/components/Faqs";
+import UnderHeroLinks from "@/components/UnderHeroLinks";
 
 export default async function Home({ params }: { params:LocaleParams}) {
   const {lang}=await params
@@ -13,8 +14,7 @@ export default async function Home({ params }: { params:LocaleParams}) {
   return (
     <main id="main" className="font-sans">
       <Hero idioma={idioma} lang={lang}/>
-      <DestinationsCard name={"destinations"} destinations={destinos[lang]?.destinations} idioma={idioma} title={idioma.destinationsCard.title} subTitle={idioma.destinationsCard.subTitle} />
-      <DestinationsCard name={"excursions"} destinations={excursiones[lang]?.excursions} idioma={idioma}  title={idioma.excursionsCard.title} subTitle={idioma.excursionsCard.places} />
+      <UnderHeroLinks/>
     </main>
   );
 }

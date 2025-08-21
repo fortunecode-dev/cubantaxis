@@ -102,7 +102,7 @@ export const en: AppTexts = {
     items: [
       {
         question: "How can I book a taxi in Cuba in advance?",
-        answer: "You can leave us your details in the form and you’ll receive instant confirmation. You can also view all available routes on the [transfers page](/traslados)."
+        answer: "You can leave us your details in the form and you’ll receive instant confirmation."
       },
       {
         question: "Do you offer private transfers from Havana airport?",
@@ -110,7 +110,7 @@ export const en: AppTexts = {
       },
       {
         question: "How much is a taxi from Varadero airport to Havana?",
-        answer: "The price for a private transfer from Varadero airport to Havana starts at 100 USD per vehicle. Check the full list in our [prices section](/traslados)."
+        answer: "The price for a private transfer from Varadero airport to Havana starts at 100 USD per vehicle. Check the full list in our [blog](/blog/how-much-is-a-taxi)."
       },
       {
         question: "Are prices per person or per car?",
@@ -126,7 +126,7 @@ export const en: AppTexts = {
       },
       {
         question: "Do you offer private excursions in addition to transfers?",
-        answer: "Yes, you can book private excursions such as tours to Viñales, Cienfuegos, and Trinidad. See all options on the [excursions page](/excursiones)."
+        answer: "Yes, you can book private excursions such as tours to Viñales, Cienfuegos, and Trinidad."
       },
       {
         question: "What types of vehicles do you offer for transfers?",
@@ -158,5 +158,5 @@ export const en: AppTexts = {
   vehicles: ["Classic car", "Tour", "Van"], clipboardTemplate: {
     copied: "✅ Plantilla copiada. Pégala en el chat de Telegram",
     error: "❌ Hubo un error al preparar la reserva"
-  },howMuchIsATaxi:"How much does a taxi cost in Cuba in 2025? 🚖"
+  },howMuchIsATaxi:"How much does a taxi cost in Cuba in 2025?"
 };

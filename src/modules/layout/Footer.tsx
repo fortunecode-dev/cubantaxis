@@ -30,11 +30,21 @@ export default async function Footer({ lang }: {  lang: string }) {
           </div>
 
           <nav aria-label="Enlaces de navegación" className="text-sm">
-            <h3 className="mb-3 text-base font-semibold">Blog</h3>
+            <h3 className="mb-3 text-base font-semibold">Contents</h3>
             <ul className="space-y-2">
               <li>
                 <Link href="/blog/how-much-is-a-taxi" className="hover:underline">
                 {idioma.howMuchIsATaxi}
+                </Link>
+              </li>
+               <li>
+                <Link href="/taxi-in-cuba" className="hover:underline">
+                All About Taxis In Cuba
+                </Link>
+              </li>
+              <li>
+                <Link href="/taxi-in-cuba#frequently-asked-questions" className="hover:underline">
+                Frequently Asked Questions
                 </Link>
               </li>
               {/* <li>
