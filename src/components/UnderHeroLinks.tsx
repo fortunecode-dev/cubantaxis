@@ -16,6 +16,12 @@ export default async function SeoLinks() {
         "Explore detailed information about the main destinations in Cuba such as Havana, Varadero, Viñales, and Trinidad.",
     },
     {
+      href: "/lugares-interes",
+      title: "Attractions & Places of Interest in Cuba",
+      description:
+        "Discover top attractions in Cuba: Varadero resorts, Havana landmarks, hotels, and family activities with full details.",
+    },
+    {
       href: "/taxi",
       title: "Quick Taxi Reservation",
       description:
