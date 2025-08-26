@@ -20,7 +20,7 @@ function formatUpdatedDate(d = new Date(), lang: "en" | "es" = "en") {
 // --- METADATA ---
 // Nota: usamos canonical autoconsistente y un único esquema de hreflang (genérico por idioma)
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
-  const base = "https://www.cubantaxis.com";
+  const base = "https://cubantaxis.com";
   const { lang } = await params;
   const path = `/${lang}/taxi-in-cuba`;
   const url = `${base}${path}`;

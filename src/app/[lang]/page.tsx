@@ -10,7 +10,7 @@ import { LocaleParams } from "@/types/common";
 export async function generateMetadata(
   { params }: { params: Promise<{ lang: string }> }
 ): Promise<Metadata> {
-  const base = "https://www.cubantaxis.com";
+  const base = "https://cubantaxis.com";
   const { lang } = await params; // ya no rompe
 
   const pathByLang: Record<string, string> = { en: "/en/" };
