@@ -31,8 +31,8 @@ export async function generateMetadata({ params }: { params: { lang: string } })
     openGraph: { url: canonical, locale: "en" },
   };
 }
-export default async function Home({ params }: { params: LocaleParams }) {
-  const { lang } = await params
+export default async function Home({ params }: { params: {lang:"en"|"es"} }) {
+  const { lang } =  params
   const idioma = getTranslation(lang)
 
   return (
