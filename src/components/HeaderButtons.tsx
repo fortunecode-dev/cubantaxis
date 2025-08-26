@@ -1,13 +1,21 @@
 "use client"
 import { FaFacebookF, FaInstagram, FaWhatsapp, FaTelegram, FaTelegramPlane } from "react-icons/fa";
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { getTranslation } from "@/app/[lang]/locales";
 
 export default function HeaderButtons({ lang }: { lang: any }) {
     // TODO: Poner multilingüe
     const idioma = getTranslation(lang)
-
+    const [whatsappLink, setWhatsappLink] = useState(`https://wa.me/${process.env.NEXT_PUBLIC_CONTACT_NUMBER}?text=🚕 Quick Booking Request:
+📞 Phone: 
+📍 From: 
+🏁 To: 
+📅 Date: 
+🕒 Time: 
+🚗 Vehicle: 
+👥 Passengers: 
+🎒 Luggage: `)
     const sendEmptyReservation = useCallback(async (platform: "whatsapp" | "telegram") => {
         const formData = {
             phone: "",
@@ -40,17 +48,13 @@ export default function HeaderButtons({ lang }: { lang: any }) {
             });
 
             if (platform === "whatsapp") {
-                window.open(
+                setWhatsappLink(
                     `https://wa.me/${process.env.NEXT_PUBLIC_CONTACT_NUMBER}?text=${encodeURIComponent(
                         message
-                    )}`,
-                    "_blank"
+                    )}`
                 );
             } else if (platform === "telegram") {
                 toast.success(idioma.clipboardTemplate.copied, { duration: 3000 });
-                setTimeout(() => {
-                    window.open(`https://t.me/${process.env.NEXT_PUBLIC_TELEGRAM_USER}`, "_blank");
-                }, 3000);
             }
         } catch (error) {
             console.error("Error al enviar plantilla vacía:", error);
@@ -62,22 +66,24 @@ export default function HeaderButtons({ lang }: { lang: any }) {
 
     return (
         <>
-            <button
+            <a
                 onClick={() => sendEmptyReservation("whatsapp")}
                 aria-label="WhatsApp"
-
+                href={whatsappLink}
+                target="_blank"
                 className="hover:text-green-600 transition-colors"
             >
                 <FaWhatsapp color="black" />
-            </button>
-            <button
+            </a>
+            <a
                 onClick={() => sendEmptyReservation("telegram")}
                 aria-label="Telegram"
-
+                href={`https://t.me/${process.env.NEXT_PUBLIC_TELEGRAM_USER}`}
+                target="_blank"
                 className="hover:text-blue-500 transition-colors"
             >
                 <FaTelegramPlane color="black" />
-            </button>
+            </a>
         </>
 
 

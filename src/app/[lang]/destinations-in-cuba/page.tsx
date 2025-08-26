@@ -1,4 +1,4 @@
-// app/destinations/page.tsx
+// app/destinations-in-cuba/page.tsx
 import { DestinationsGrid } from "@/components/DestinationGrid";
 import Link from "next/link";
 import Script from "next/script";
@@ -28,13 +28,13 @@ export const metadata = {
     "taxis en Cuba"
   ],
   alternates: {
-    canonical: "https://cubantaxis.com/destinations",
+    canonical: "https://cubantaxis.com/destinations-in-cuba",
   },
   openGraph: {
     title: "Top Cuba Taxi Destinations | Photos, Details & Fast Booking",
     description:
       "See the best routes across Cuba with images and details. Private transfers from HAV & VRA to Varadero, Viñales, Trinidad, Cienfuegos, Santa Clara, and the keys.",
-    url: "https://cubantaxis.com/destinations",
+    url: "https://cubantaxis.com/destinations-in-cuba",
     siteName: "Cuban Taxis",
     images: [{ url: "/cuba-cabs.jpg", width: 1200, height: 630, alt: "Classic taxi in Havana, Cuba" }],
     locale: "en_US",
@@ -188,7 +188,7 @@ export default function DestinationsPage() {
   const itemListElements = DESTINATIONS.map((d, i) => ({
     "@type": "ListItem",
     position: i + 1,
-    url: `https://cubantaxis.com/destinations#${d.slug}`,
+    url: `https://cubantaxis.com/destinations-in-cuba#${d.slug}`,
     name: d.title,
   }));
 
@@ -216,7 +216,7 @@ export default function DestinationsPage() {
           <ol className="flex items-center gap-1 text-xs text-gray-500 dark:text-gray-400">
             <li><Link href="/" className="hover:underline">Home</Link></li>
             <li aria-hidden="true">›</li>
-            <li><Link href="/destinations" className="hover:underline">Destinations</Link></li>
+            <li><Link href="/destinations-in-cuba" className="hover:underline">Destinations</Link></li>
             <li aria-hidden="true">›</li>
             <li className="text-gray-800 dark:text-gray-200">Cuba 2025</li>
           </ol>
@@ -244,7 +244,7 @@ export default function DestinationsPage() {
             <strong>Havana (HAV)</strong> and <strong>Varadero (VRA)</strong> to{" "}
             <strong>Viñales, Trinidad, Cienfuegos, Santa Clara</strong> and the northern cays.
             Photos, highlights, and a quick way to{" "}
-            <Link href="/taxi" className="font-medium underline hover:no-underline">
+            <Link href="/cuba-taxi-booking" className="font-medium underline hover:no-underline">
               book your transfer
             </Link>.
           </p>
@@ -264,7 +264,7 @@ export default function DestinationsPage() {
           {/* CTAs */}
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
-              href="/taxi"
+              href="/cuba-taxi-booking"
               className="inline-flex items-center justify-center rounded-lg bg-amber-500 px-5 py-3 text-sm font-semibold text-white shadow-sm ring-1 ring-amber-500/60 transition hover:bg-amber-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
             >
               Book a private transfer

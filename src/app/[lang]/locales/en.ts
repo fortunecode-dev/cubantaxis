@@ -110,7 +110,7 @@ export const en: AppTexts = {
       },
       {
         question: "How much is a taxi from Varadero airport to Havana?",
-        answer: "The price for a private transfer from Varadero airport to Havana starts at 100 USD per vehicle. Check the full list in our [blog](/blog/how-much-is-a-taxi)."
+        answer: "The price for a private transfer from Varadero airport to Havana starts at 100 USD per vehicle. Check the full list in our [blog](/blog/how-much-is-a-taxi-in-cuba)."
       },
       {
         question: "Are prices per person or per car?",

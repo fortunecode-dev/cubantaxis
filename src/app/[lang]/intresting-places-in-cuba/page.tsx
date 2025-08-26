@@ -137,7 +137,7 @@ export default function PlacesPage() {
         {PLACES.map((p) => (
           <Link
             key={p.slug}
-            href={`/en/lugares-interes/${p.slug}`}
+            href={`/en/intresting-places-in-cuba/${p.slug}`}
             className={[
               // reference style: yellow/black, link-like cards
               "group relative overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm",

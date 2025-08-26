@@ -8,6 +8,7 @@ export default async function Footer({ lang }: {  lang: string }) {
   const year = new Date().getFullYear();
    const idioma = getTranslation(lang)
   return (
+
     <footer className="mt-16 bg-amber-50/80 border-t border-amber-200/70 text-neutral-800 dark:bg-gray-900 dark:text-gray-200 dark:border-gray-800">
       <div className="mx-auto max-w-screen-xl px-4 py-10">
         {/* Top */}
@@ -20,10 +21,9 @@ export default async function Footer({ lang }: {  lang: string }) {
               </span>
             </Link>
             <p className="mt-3 text-sm leading-relaxed text-neutral-700/90 dark:text-gray-300">
-              Traslados privados en Cuba: Aeropuerto, <span className="font-medium">Habana</span>,{" "}
-              <span className="font-medium">Varadero</span>, <span className="font-medium">Viñales</span>,{" "}
-              <span className="font-medium">Trinidad</span> y más. Servicio fiable, precios cerrados y
-              atención 24/7.
+              Taxi private transfers in Cuba: <span className="font-medium">Havana (HAV / José Martí)</span>,{" "}
+              <span className="font-medium">Varadero (VRA)</span>, <span className="font-medium">Vinales</span>,{" "}
+              <span className="font-medium">Trinidad</span> and more. Reliable service, fixed prices and 24/7 client support.
             </p>
 
             <Socials/>
@@ -33,7 +33,7 @@ export default async function Footer({ lang }: {  lang: string }) {
             <h3 className="mb-3 text-base font-semibold">Contents</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/blog/how-much-is-a-taxi" className="hover:underline">
+                <Link href="/blog/how-much-is-a-taxi-in-cuba-in-cuba" className="hover:underline">
                 {idioma.howMuchIsATaxi}
                 </Link>
               </li>
@@ -47,26 +47,7 @@ export default async function Footer({ lang }: {  lang: string }) {
                 Frequently Asked Questions
                 </Link>
               </li>
-              {/* <li>
-                <Link href="/city-tours" className="hover:underline">
-                  City Tours en La Habana (clásicos y descapotables)
-                </Link>
-              </li>
-              <li>
-                <Link href="/excursions" className="hover:underline">
-                  Excursiones a Viñales, Trinidad, Cienfuegos
-                </Link>
-              </li>
-              <li>
-                <Link href="/prices" className="hover:underline">
-                  Precios por coche (no por persona)
-                </Link>
-              </li>
-              <li>
-                <Link href="/book" className="hover:underline">
-                  Reservas rápidas por WhatsApp/Telegram
-                </Link>
-              </li> */}
+             
             </ul>
           </nav>
 {/* 

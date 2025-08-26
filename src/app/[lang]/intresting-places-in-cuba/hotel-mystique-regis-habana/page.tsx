@@ -20,29 +20,24 @@ export default function Example() {
                 },
             }}
             place={{
-                name: "Meliá Internacional Varadero",
-                alternateName: "Resort 5 estrellas Varadero",
-                image: "/melia-internacional-varadero.webp", // falta
-                description: "Resort de lujo frente al mar con habitaciones modernas, gastronomía variada, YHI Spa y acceso a una de las playas más famosas del Caribe. Ideal para familias o adultos.",
+                name: "Mystique Regis Habana",
+                alternateName: "Hotel boutique en Habana Vieja",
+                image: "/hotel-mystique-regis-habana.webp", // falta
+                description: "Inspirado en el glamour de 1900, este hotel boutique combina elegancia histórica con comodidades modernas. Ubicado en Habana Vieja, cerca de sitios UNESCO.",
                 address: {
-                    streetAddress: "Avenida Las Américas, Km 1",
-                    addressLocality: "Varadero",
-                    addressRegion: "Matanzas",
+                    addressLocality: "La Habana",
+                    addressRegion: "La Habana Vieja",
                     addressCountry: "CU",
                 },
-                phone: "+53 45 623100",
-                email: "melia.internacional@meliacuba.com",
-                website: "https://www.melia.com/en/hotels/cuba/varadero/melia-internacional-varadero",
+                website: "https://www.royaltonresorts.com",
             }}
             services={[
-                { class: "general", icon: "star", name: "Todo incluido" },
+                { class: "amenities", icon: "star", name: "Boutique exclusivo" },
                 { class: "amenities", icon: "wifi", name: "Internet" },
-                { class: "wellness", icon: "spa", name: "YHI Spa" },
-                { class: "family", icon: "car", name: "Actividades familiares" },
-                { class: "sports", icon: "beach", name: "Deportes acuáticos" },
+                { class: "location", icon: "map", name: "Ubicación céntrica" },
             ]}
             links={[
-                { label: "See all destinations", href: "/destinations" },
+                { label: "See all destinations", href: "/destinations-in-cuba" },
                 { label: "Contact on WhatsApp", href: "https://wa.me/5354447931", rel: "noopener", target: "_blank" },
             ]}
             breadcrumbs={[

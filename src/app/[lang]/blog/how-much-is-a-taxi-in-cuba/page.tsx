@@ -95,7 +95,7 @@ export default async function BlogTaxiCuba({ params }: { params: LocaleParams })
 
         <div className="mt-6">
           <LocaleLink
-            href="/taxi"
+            href="/cuba-taxi-booking"
             className="inline-flex items-center justify-center rounded-lg bg-amber-500 px-5 py-3 text-sm font-semibold text-white shadow-sm ring-1 ring-amber-500/60 transition hover:bg-amber-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
           >
             Book a private transfer
@@ -216,7 +216,7 @@ export default async function BlogTaxiCuba({ params }: { params: LocaleParams })
           <span>Need a different route or a classic convertible for a city tour?</span>
           <div className="flex gap-3">
             <LocaleLink
-              href="/taxi"
+              href="/cuba-taxi-booking"
               className="inline-flex items-center justify-center rounded-lg bg-gray-900 px-4 py-2 text-xs font-semibold text-white shadow-sm transition hover:bg-black dark:bg-white dark:text-black dark:hover:bg-white/90"
             >
               Get a quote
@@ -245,7 +245,7 @@ export default async function BlogTaxiCuba({ params }: { params: LocaleParams })
         <p className="mt-2 text-sm text-gray-700 dark:text-gray-300">
           Book in advance to lock a fixed fare and share your flight number for airport pick‑ups.
           Private transfers are the most convenient and safe option. You can{" "}
-          <LocaleLink href="/transfer-booking" className="font-medium underline hover:no-underline">
+          <LocaleLink href="/private-transfer-booking" className="font-medium underline hover:no-underline">
             book your taxi online
           </LocaleLink>{" "}
           and pay on arrival.

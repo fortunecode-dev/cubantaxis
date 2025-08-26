@@ -34,21 +34,23 @@ export default function Hero({ idioma, lang }: { idioma: AppTexts, lang: string 
                         </h2>
 
                         <p className="mt-6 text-base sm:text-lg text-gray-200 leading-relaxed">
-                            {idioma.hero.p}
-                        </p>
+                            {idioma.hero.p} <a href={`/taxi-in-cuba`} className="underline">
+                                    Complete Cuba taxi guide
+                                </a>
+                        </p> 
 
                         {/* Botones */}
                         <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
 
                             <LocaleLink
-                                href={`transfer-booking`}
+                                href={`private-transfer-booking`}
                                 className="w-full sm:w-auto border border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-black px-6 py-3 rounded-xl font-semibold text-center transition"
                             >
                                 {idioma.hero.buttons.booking}
                             </LocaleLink>
 
                             <LocaleLink
-                                href={`taxi`}
+                                href={`cuba-taxi-booking`}
                                 className="w-full sm:w-auto inline-flex items-center justify-center rounded-xl px-6 py-3
                 bg-amber-400 text-black font-semibold shadow-md
                 hover:bg-amber-300 active:bg-amber-500
@@ -66,7 +68,7 @@ export default function Hero({ idioma, lang }: { idioma: AppTexts, lang: string 
                             ))}
                         </ul>
                         <LocaleLink
-                            href="/destinations"
+                            href="/destinations-in-cuba"
                             lang={lang}
                             className="text-yellow-400 font-medium underline underline-offset-4 m-5 hover:text-yellow-300 transition-colors"
                         >

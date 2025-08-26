@@ -20,24 +20,28 @@ export default function Example() {
                 },
             }}
             place={{
-                name: "Mystique Regis Habana",
-                alternateName: "Hotel boutique en Habana Vieja",
-                image: "/hotel-mystique-regis-habana.webp", // falta
-                description: "Inspirado en el glamour de 1900, este hotel boutique combina elegancia histórica con comodidades modernas. Ubicado en Habana Vieja, cerca de sitios UNESCO.",
+                name: "Meliá Las Américas",
+                alternateName: "Resort solo adultos frente al golf",
+                image: "/melia-las-americas.jpg", // falta
+                description: "Hotel 5 estrellas solo adultos (18+) en Varadero. Acceso directo al Varadero Golf Club, habitaciones frente al mar y servicio exclusivo The Level.",
                 address: {
-                    addressLocality: "La Habana",
-                    addressRegion: "La Habana Vieja",
+                    streetAddress: "Playa de Las Américas",
+                    addressLocality: "Varadero",
+                    addressRegion: "Matanzas",
                     addressCountry: "CU",
                 },
-                website: "https://www.royaltonresorts.com",
+                phone: "+53 45 667600",
+                email: "jefe.ventas.mla@meliacuba.com",
+                website: "https://www.melia.com/en/hotels/cuba/varadero/melia-las-americas",
             }}
             services={[
-                { class: "amenities", icon: "star", name: "Boutique exclusivo" },
+                { class: "golf", icon: "map", name: "Acceso directo al golf" },
+                { class: "amenities", icon: "star", name: "Adults Only 18+" },
                 { class: "amenities", icon: "wifi", name: "Internet" },
-                { class: "location", icon: "map", name: "Ubicación céntrica" },
+                { class: "sports", icon: "beach", name: "Deportes acuáticos" },
             ]}
             links={[
-                { label: "See all destinations", href: "/destinations" },
+                { label: "See all destinations", href: "/destinations-in-cuba" },
                 { label: "Contact on WhatsApp", href: "https://wa.me/5354447931", rel: "noopener", target: "_blank" },
             ]}
             breadcrumbs={[

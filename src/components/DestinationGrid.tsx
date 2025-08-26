@@ -88,7 +88,7 @@ export function DestinationsGrid({ items }: { items: Destination[] }) {
 
                 {/* Quick booking (visible everywhere) */}
                 <LocaleLink
-                  href="/taxi"
+                  href="/cuba-taxi-booking"
                   aria-label={`Quick booking to ${d.title}`}
                   className="inline-flex items-center justify-center rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-semibold text-gray-900 shadow-sm transition hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-300 dark:border-white/10 dark:bg-zinc-900 dark:text-gray-100 dark:hover:bg-zinc-800 dark:focus-visible:ring-sky-400"
                 >
@@ -107,7 +107,7 @@ export function DestinationsGrid({ items }: { items: Destination[] }) {
             <p className="leading-relaxed text-gray-700 dark:text-gray-300">{open.long}</p>
             <div className="flex flex-wrap gap-3">
               <Link
-                href="/taxi"
+                href="/cuba-taxi-booking"
                 className="inline-flex items-center justify-center rounded-lg bg-amber-500 px-5 py-2.5 text-sm font-semibold text-white shadow-sm ring-1 ring-amber-500/60 transition hover:bg-amber-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
               >
                 Quick booking

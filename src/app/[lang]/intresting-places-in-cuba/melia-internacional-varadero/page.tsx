@@ -20,26 +20,29 @@ export default function Example() {
                 },
             }}
             place={{
-                name: "Ocio Club",
-                alternateName: "Centro recreativo familiar en Varadero",
-                image: "/ocio-club.webp", // falta imagen real
-                description: "Centro recreativo en Varadero con juegos electrónicos y mecánicos de última generación, realidad virtual y atracciones para todas las edades. Ideal para familias.",
+                name: "Meliá Internacional Varadero",
+                alternateName: "Resort 5 estrellas Varadero",
+                image: "/melia-internacional-varadero.webp", // falta
+                description: "Resort de lujo frente al mar con habitaciones modernas, gastronomía variada, YHI Spa y acceso a una de las playas más famosas del Caribe. Ideal para familias o adultos.",
                 address: {
-                    streetAddress: "Avenida 1ra entre calle 44 y 46",
+                    streetAddress: "Avenida Las Américas, Km 1",
                     addressLocality: "Varadero",
                     addressRegion: "Matanzas",
                     addressCountry: "CU",
                 },
-                phone: "+53 45 667147",
-                website: "https://cubantaxis.com/lugares-interes/ocio-club",
+                phone: "+53 45 623100",
+                email: "melia.internacional@meliacuba.com",
+                website: "https://www.melia.com/en/hotels/cuba/varadero/melia-internacional-varadero",
             }}
             services={[
-                { class: "amenities", icon: "map", name: "Juegos electrónicos" },
-                { class: "amenities", icon: "star", name: "Atracciones mecánicas" },
-                { class: "experiences", icon: "guide", name: "Realidad virtual" },
+                { class: "general", icon: "star", name: "Todo incluido" },
+                { class: "amenities", icon: "wifi", name: "Internet" },
+                { class: "wellness", icon: "spa", name: "YHI Spa" },
+                { class: "family", icon: "car", name: "Actividades familiares" },
+                { class: "sports", icon: "beach", name: "Deportes acuáticos" },
             ]}
             links={[
-                { label: "See all destinations", href: "/destinations" },
+                { label: "See all destinations", href: "/destinations-in-cuba" },
                 { label: "Contact on WhatsApp", href: "https://wa.me/5354447931", rel: "noopener", target: "_blank" },
             ]}
             breadcrumbs={[

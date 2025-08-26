@@ -40,7 +40,7 @@ export default function Example() {
         { class: "food", icon: "map", name: "Restaurantes gourmet" },
       ]}
       links={[
-        { label: "See all destinations", href: "/destinations" },
+        { label: "See all destinations", href: "/destinations-in-cuba" },
         { label: "Contact on WhatsApp", href: "https://wa.me/5354447931", rel: "noopener", target: "_blank" },
       ]}
       breadcrumbs={[

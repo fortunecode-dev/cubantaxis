@@ -4,31 +4,31 @@ import Link from "next/link";
 export default async function SeoLinks() {
   const pages = [
     {
-      href: "/blog/how-much-is-a-taxi",
+      href: "/blog/how-much-is-a-taxi-in-cuba",
       title: "How Much is a Taxi in Cuba?",
       description:
         "Learn about real taxi prices in Cuba, from Havana to Varadero, including airport transfers and long-distance routes.",
     },
     {
-      href: "/destinations",
+      href: "/destinations-in-cuba",
       title: "Popular Destinations in Cuba",
       description:
         "Explore detailed information about the main destinations in Cuba such as Havana, Varadero, Viñales, and Trinidad.",
     },
     {
-      href: "/lugares-interes",
+      href: "/intresting-places-in-cuba",
       title: "Attractions & Places of Interest in Cuba",
       description:
         "Discover top attractions in Cuba: Varadero resorts, Havana landmarks, hotels, and family activities with full details.",
     },
     {
-      href: "/taxi",
+      href: "/cuba-taxi-booking",
       title: "Quick Taxi Reservation",
       description:
         "Book a quick taxi ride across Cuba with just a few clicks. Fast and reliable service.",
     },
     {
-      href: "/transfer-booking",
+      href: "/private-transfer-booking",
       title: "Detailed Transfer Booking",
       description:
         "Plan your transfer with detailed options for vehicles, routes, and schedules.",
