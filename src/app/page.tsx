@@ -1,12 +1,16 @@
 import LanguageSuggestor from "@/components/LanguageSuggestor";
 import Home from "./[lang]/page";
 import Script from "next/script";
+import { LocaleParams } from "@/types/common";
 
-export default function RootHome() {
+export default async function RootHome(
+  { params }: { params: Promise<LocaleParams> }
+) {
+  const { lang } = await params;
   return (
     <>
       <LanguageSuggestor />
-      <Home params={Promise.resolve({ lang: "en" })} />
+      <Home params={params} />
       <Script id="ld-taxi" type="application/ld+json" strategy="afterInteractive">
 {JSON.stringify({
   "@context": "https://schema.org",

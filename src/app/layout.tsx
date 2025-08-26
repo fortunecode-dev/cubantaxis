@@ -41,7 +41,7 @@ export default async function RootLayout({
   return (
     <html lang={lang ?? "en"}>
       <head>
-        {["en", "es", "fr", "de", "ru", "pt"].map((code) => (
+        {["en"].map((code) => (
           <link
             key={code}
             rel="alternate"

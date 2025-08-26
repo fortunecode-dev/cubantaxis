@@ -5,7 +5,7 @@ import Link from "next/link";
 import PriceTable from "@/components/PriceTable";
 import TrustBlock from "@/components/TrustBlock";
 
-type Params = { params: { lang: "en" | "es" } };
+type Params = { params: Promise<{ lang: "en" | "es" }> };
 
 // Helpers
 function t(lang: "en" | "es", en: string, es: string) {
@@ -21,7 +21,7 @@ function formatUpdatedDate(d = new Date(), lang: "en" | "es" = "en") {
 // Nota: usamos canonical autoconsistente y un único esquema de hreflang (genérico por idioma)
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const base = "https://www.cubantaxis.com";
-  const { lang } = params;
+  const { lang } = await params;
   const path = `/${lang}/taxi-in-cuba`;
   const url = `${base}${path}`;
 
@@ -68,7 +68,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
 
 // --- PAGE ---
 export default async function CubaTaxiPage({ params }: Params) {
-  const { lang } = params;
+  const { lang } = await params;
   const updatedHuman = formatUpdatedDate(new Date(), lang);
 
   return (
