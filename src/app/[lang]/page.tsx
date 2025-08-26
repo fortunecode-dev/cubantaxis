@@ -14,20 +14,19 @@ export async function generateMetadata(
   const { lang } = await params; // ya no rompe
 
   const pathByLang: Record<string, string> = { en: "/en/" };
-  const canonical = `${base}${pathByLang[lang] ?? "/en/"}`;
 
   return {
-    title: "Taxis in Cuba – Quick Booking",
+    title: "Cuba Taxi Booking Online  | Airport Transfers & Tours ",
     description:
-      "Book Cuba taxis: private/shared rides and airport transfers from HAV/VRA. English-speaking drivers.",
+      "Book a Cuba taxi for airport transfer or tour online with the fast booking form. Fixed prices, rides, English-speaking drivers in Havana and Varadero.",
     alternates: {
-      canonical,
+      canonical:base,
       languages: {
         "x-default": `${base}/en/`,
         en: `${base}/en/`,
       },
     },
-    openGraph: { url: canonical, locale: "en" },
+    openGraph: { url: base, locale: "en" },
   };
 }
 

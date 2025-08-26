@@ -1,11 +1,9 @@
 
 import "./[lang]/globals.css";
-import type { Metadata } from "next";
 import Header from "@/modules/layout/Header";
 import Footer from "@/modules/layout/Footer";
 import FloatingContacts from "@/modules/layout/FloatingContacts";
 import Script from "next/script";
-import LanguageSuggestor from "@/components/LanguageSuggestor";
 import { LocaleParams } from "@/types/common";
 import { Toaster } from "react-hot-toast";
 export async function generateStaticParams() {
@@ -13,22 +11,6 @@ export async function generateStaticParams() {
     { lang: "en" },
   ]
 }
-
-export const metadata: Metadata = {
-  metadataBase: new URL("https://www.cubantaxis.com"),
-  title: {
-    default: "CubanTaxis",
-    template: "%s | CubanTaxis",
-  },
-  description:
-    "Book a taxi in Cuba: private rides, airport transfers (HAV/VRA), and excursions.",
-  openGraph: {
-    siteName: "CubanTaxis",
-  },
-  twitter: {
-    card: "summary_large_image",
-  },
-};
 
 export default async function RootLayout({
   children,
@@ -89,8 +71,7 @@ export default async function RootLayout({
           toastOptions={{
             // base para todos
             className:
-              "rounded-xl shadow-lg ring-1 ring-amber-300/70 bg-white/95 text-neutral-800 px-4 py-3 backdrop-blur-sm",
-            style: { fontSize: 14, lineHeight: "20px" },
+              "rounded-xl shadow-lg text-xl  ring-1 ring-amber-300/70 bg-white/95 text-neutral-800 px-4 py-3 backdrop-blur-sm",
             duration: 2600,
             // variantes
             success: {

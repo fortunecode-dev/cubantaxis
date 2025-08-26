@@ -118,7 +118,7 @@ export default async function BlogTaxiCuba({ params }: { params: LocaleParams })
           <Image
             src="/cuba-cabs.jpg"
             alt="Classic taxi in Havana, Cuba"
-            width={1200}
+            width={900}
             height={630}
             className="h-auto w-full object-cover"
             priority

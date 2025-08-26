@@ -1,22 +1,21 @@
 // components/FaqSection.tsx
 import Link from "next/link";
 import Script from "next/script";
-import { useMemo } from "react";
 
 interface FaqItem {
   question: string;
-  answer: string; // supports inline markdown-style links: [label](/path)
+  answer: string; // admite [label](/ruta) o [label](https://externo)
 }
-
 interface Props {
   title: string;
   faqs: FaqItem[];
-  /**
-   * If true, injects FAQPage JSON-LD (recommended once per page).
-   * If you already add FAQ JSON-LD elsewhere, set this to false to avoid duplicates.
-   */
-  structuredData?: boolean;
+  structuredData?: boolean; // default: true
+  prefetchInternalLinks?: boolean; // default: false (evita descargar páginas innecesarias)
 }
+
+// --- Utils (precompiladas para no recrearlas por render) ---
+const LINK_TOKEN_RE = /(\[.*?\]\(.*?\))/g;
+const LINK_FULL_RE = /^\[(.*?)\]\((.*?)\)$/;
 
 function slugify(input: string) {
   return input
@@ -27,73 +26,71 @@ function slugify(input: string) {
     .slice(0, 80);
 }
 
-function renderAnswer(text: string) {
-  // Split on [label](href) preserving the match group
-  const parts = text.split(/(\[.*?\]\(.*?\))/g);
-
+function renderAnswer(text: string, prefetchInternalLinks: boolean) {
+  const parts = text.split(LINK_TOKEN_RE);
   return parts.map((part, i) => {
-    const match = part.match(/^\[(.*?)\]\((.*?)\)$/);
-    if (match) {
-      const [, label, href] = match;
-      const isInternal = href.startsWith("/");
-      return isInternal ? (
-        <Link
-          key={i}
-          href={href}
-          className="font-medium underline text-primary-600 dark:text-primary-500 hover:no-underline"
-        >
-          {label}
-        </Link>
-      ) : (
-        <a
-          key={i}
-          href={href}
-          className="font-medium underline text-primary-600 dark:text-primary-500 hover:no-underline"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {label}
-        </a>
-      );
-    }
-    return <span key={i}>{part}</span>;
+    const match = part.match(LINK_FULL_RE);
+    if (!match) return <span key={i}>{part}</span>;
+
+    const [, label, href] = match;
+    const isInternal = href.startsWith("/");
+
+    return isInternal ? (
+      <Link
+        key={i}
+        href={href}
+        prefetch={prefetchInternalLinks}
+        className="font-medium underline text-primary-600 hover:no-underline dark:text-primary-500"
+      >
+        {label}
+      </Link>
+    ) : (
+      <a
+        key={i}
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="font-medium underline text-primary-600 hover:no-underline dark:text-primary-500"
+      >
+        {label}
+      </a>
+    );
   });
 }
 
-export default function FaqSection({ title, faqs, structuredData = true }: Props) {
-  // Build stable anchors and JSON-LD only once
-  const { withIds, jsonLd } = useMemo(() => {
-    const withIds = faqs.map((f) => ({ ...f, id: slugify(f.question) }));
-    const jsonLd = {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      mainEntity: withIds.map((f) => ({
-        "@type": "Question",
-        name: f.question,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: f.answer, // can include basic HTML; Google will render safely
-        },
-      })),
-    };
-    return { withIds, jsonLd };
-  }, [faqs]);
+export default function FaqSection({
+  title,
+  faqs,
+  structuredData = true,
+  prefetchInternalLinks = false,
+}: Props) {
+  // Server Component: todo se calcula una vez por render, sin hooks.
+  const withIds = faqs.map((f) => ({ ...f, id: slugify(f.question) }));
+
+  // Genera JSON-LD solo si se va a inyectar
+  const jsonLd = structuredData
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: withIds.map((f) => ({
+          "@type": "Question",
+          name: f.question,
+          acceptedAnswer: { "@type": "Answer", text: f.answer },
+        })),
+      }
+    : null;
 
   return (
-    <section
-      className="bg-white dark:bg-gray-900"
-      aria-labelledby="faq-title"
-    >
-      <div className="py-6 px-4 mx-auto max-w-screen-xl sm:py-10 lg:px-6">
-        {/* Use H2 for on-page hierarchy; avoid multiple H1s */}
+    <section className="bg-white dark:bg-gray-900" aria-labelledby="faq-title">
+      <div className="mx-auto max-w-screen-xl px-4 py-6 sm:py-10 lg:px-6">
         <h2
           id="faq-title"
-          className="mb-6 text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white"
+          className="mb-6 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white"
         >
           {title}
         </h2>
 
-        {/* Optional jump list for better UX/SEO (internal anchors) */}
+        {/* Índice interno si hay suficientes preguntas */}
         {withIds.length > 3 && (
           <nav aria-label="FAQ quick links" className="mb-6">
             <ul className="flex flex-wrap gap-3 text-sm">
@@ -101,7 +98,7 @@ export default function FaqSection({ title, faqs, structuredData = true }: Props
                 <li key={item.id}>
                   <a
                     href={`#${item.id}`}
-                    className="text-primary-600 dark:text-primary-400 underline hover:no-underline"
+                    className="underline text-primary-600 hover:no-underline dark:text-primary-400"
                   >
                     {item.question}
                   </a>
@@ -111,25 +108,24 @@ export default function FaqSection({ title, faqs, structuredData = true }: Props
           </nav>
         )}
 
-        <div className="pt-6 text-left border-t border-gray-200 dark:border-gray-700">
+        <div className="border-t border-gray-200 pt-6 dark:border-gray-700">
           <div className="flex flex-wrap gap-6">
             {withIds.map((item) => (
               <article
                 key={item.id}
                 id={item.id}
-                className="flex-1 min-w-[280px] max-w-[580px] mb-8 scroll-mt-24"
+                className="mb-8 min-w-[280px] max-w-[580px] flex-1 scroll-mt-24"
                 itemScope
                 itemType="https://schema.org/Question"
               >
                 <h3
-                  className="flex items-center mb-3 text-base font-medium text-gray-900 dark:text-white"
+                  className="mb-3 flex items-center text-base font-medium text-gray-900 dark:text-white"
                   itemProp="name"
                 >
                   <svg
-                    className="flex-shrink-0 mr-2 w-5 h-5 text-gray-500 dark:text-gray-400"
+                    className="mr-2 h-5 w-5 flex-shrink-0 text-gray-500 dark:text-gray-400"
                     fill="currentColor"
                     viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
                     aria-hidden="true"
                   >
                     <path
@@ -147,7 +143,9 @@ export default function FaqSection({ title, faqs, structuredData = true }: Props
                   itemProp="acceptedAnswer"
                   itemType="https://schema.org/Answer"
                 >
-                  <div itemProp="text">{renderAnswer(item.answer)}</div>
+                  <div itemProp="text">
+                    {renderAnswer(item.answer, prefetchInternalLinks)}
+                  </div>
                 </div>
               </article>
             ))}
@@ -155,11 +153,11 @@ export default function FaqSection({ title, faqs, structuredData = true }: Props
         </div>
       </div>
 
-      {/* JSON-LD for rich results (emit only once per page) */}
-      {structuredData && (
+      {structuredData && jsonLd && (
         <Script
           id="ld-faq"
           type="application/ld+json"
+          // JSON.stringify en servidor: nada de hooks, nada al bundle del cliente
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       )}
