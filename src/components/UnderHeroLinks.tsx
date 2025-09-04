@@ -19,7 +19,7 @@ const PAGES: ReadonlyArray<Page> = [
   },
   {
     // ✅ corrige el typo: intresting → interesting
-    href: "/interesting-places-in-cuba",
+    href: "/intresting-places-in-cuba",
     title: "Attractions & Places of Interest in Cuba",
     description:
       "Discover top attractions in Cuba: Varadero resorts, Havana landmarks, hotels, and family activities with full details.",
@@ -69,13 +69,13 @@ export default function SeoLinks({ prefetch = false }: { prefetch?: boolean }) {
         >
           <h3
             itemProp="name"
-            className="text-lg font-semibold text-neutral-900 group-hover:text-black group-hover:underline dark:text-neutral-100"
+            className="text-lg font-semibold text-neutral-900 group-hover:text-amber-400 group-hover:underline dark:text-neutral-100"
           >
             {title}
           </h3>
           <p
             itemProp="description"
-            className="mt-2 text-sm text-neutral-600 group-hover:text-neutral-800 dark:text-neutral-400"
+            className="mt-2 text-sm text-neutral-600 group-hover:text-neutral-100 dark:text-neutral-400"
           >
             {description}
           </p>

@@ -81,7 +81,7 @@ export default function FaqSection({
     : null;
 
   return (
-    <section className="bg-white dark:bg-gray-900" aria-labelledby="faq-title">
+    <section className="bg-white dark:bg-black" aria-labelledby="faq-title">
       <div className="mx-auto max-w-screen-xl px-4 py-6 sm:py-10 lg:px-6">
         <h2
           id="faq-title"

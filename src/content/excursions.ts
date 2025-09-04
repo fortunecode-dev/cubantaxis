@@ -65,7 +65,7 @@ export const excursiones={
         "id": 3,
         "title": "Tour La Habana – Viñales – La Habana",
         "alternative_name": "Tour Habana-Viñales",
-        "main_image": "/viñales.webp",
+        "main_image": "/vinales.webp",
         "images": [
           {
             "url": "vinales_1.webp",
@@ -219,7 +219,7 @@ export const excursiones={
         "id": 3,
         "title": "Havana – Viñales – Havana Tour",
         "alternative_name": "Habana-Viñales Tour",
-        "main_image": "/viñales.webp",
+        "main_image": "/vinales.webp",
         "images": [
           {
             "url": "vinales_1.webp",

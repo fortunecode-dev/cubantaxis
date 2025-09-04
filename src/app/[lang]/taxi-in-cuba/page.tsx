@@ -40,6 +40,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   return {
     title,
     description,
+    icons:"icon.ico",
     alternates: {
       canonical: url,
       languages: {
@@ -123,7 +124,7 @@ export default async function CubaTaxiPage({ params }: Params) {
           {/* CTAs */}
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a
-              href="#frequently-asked-questions"
+              href="/#frequently-asked-questions"
               className="inline-flex items-center justify-center rounded-lg bg-white px-5 py-3 text-sm font-light underline text-gray-800 transition hover:bg-gray-50 dark:border-white/10 dark:bg-zinc-900 dark:text-gray-100 dark:hover:bg-zinc-800"
             >
               {t(lang, "Frequently Asked Questions", "Preguntas frecuentes")}
@@ -265,8 +266,7 @@ export default async function CubaTaxiPage({ params }: Params) {
         </div>
       </section>
 
-      {/* AIRPORTS SHORTCUTS */}
-      <section className="px-4">
+      {/* <section className="px-4">
         <div className="mx-auto mt-12 max-w-5xl grid gap-6 md:grid-cols-2">
           <div className="group rounded-2xl border border-black/10 p-5 hover:border-black/30 hover:shadow-[0_6px_0_0_#000] transition-all">
             <h3 className="font-semibold text-lg">
@@ -296,7 +296,7 @@ export default async function CubaTaxiPage({ params }: Params) {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* TRUST / REVIEWS */}
       <section className="mt-12 px-4">
@@ -305,12 +305,12 @@ export default async function CubaTaxiPage({ params }: Params) {
         </div>
       </section>
 
-      {/* INTERNAL LINKS */}
+      {/* INTERNAL LINKS
       <nav className="mt-10 px-4 text-sm">
         <ul className="mx-auto max-w-5xl list-disc space-y-1 pl-6">
           <li>
             <Link
-              href={`/${lang}/`}
+              href={`/how-much-is-a-taxi-in-cuba`}
               className="underline decoration-yellow-400/60 underline-offset-2 hover:decoration-yellow-400 transition-colors"
             >
               {t(lang, "Planning your trip? See our Cuba taxi guide.", "¿Planeas tu viaje? Mira nuestra guía de taxi en Cuba.")}
@@ -325,7 +325,7 @@ export default async function CubaTaxiPage({ params }: Params) {
             </Link>
           </li>
         </ul>
-      </nav>
+      </nav> */}
 
       {/* --- JSON-LD (Breadcrumb + FAQ + Service) --- */}
       <Script id="ld-breadcrumb" type="application/ld+json" strategy="afterInteractive">

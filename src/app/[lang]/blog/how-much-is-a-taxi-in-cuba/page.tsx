@@ -18,6 +18,8 @@ export const metadata = {
     "Cuba private transfers",
     "Taxi guide Cuba"
   ],
+    icons:"icon.ico",
+
   openGraph: {
     title: "Taxi Prices in Cuba 2025 | Havana, Varadero, Viñales, Trinidad",
     description:

@@ -466,7 +466,7 @@ export const destinos ={
         "id": 11,
         "title": "Viñales",
         "alternative_name": "Destino Viñales",
-        "main_image": "/viñales.webp",
+        "main_image": "/vinales.webp",
         "images": [
           {
             "url": "destinos/viñales_1.webp",
@@ -978,7 +978,7 @@ export const destinos ={
         "id": 11,
         "title": "Viñales",
         "alternative_name": "/viñales Destination",
-        "main_image": "/viñales.webp",
+        "main_image": "/vinales.webp",
         "images": [
           {
             "url": "destinos/viñales_1.webp",

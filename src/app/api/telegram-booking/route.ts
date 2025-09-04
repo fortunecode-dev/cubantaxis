@@ -91,7 +91,8 @@ ${!!imageList.length ? "Imágenes a continuación..." : ""}`;
     // Enviar texto
     await axios.post(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
       chat_id: TELEGRAM_CHAT_ID,
-      text: fields.source ? `Mensaje directo a través de: ${fields.source}` : message,
+      text: fields.source ? `Mensaje directo a través de: ${fields.source}` : `${message}
+      ${(new Date()).toLocaleDateString("es-ES")}`,
     });
 
 

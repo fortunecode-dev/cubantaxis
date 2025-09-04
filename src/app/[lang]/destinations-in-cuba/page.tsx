@@ -84,7 +84,7 @@ const DESTINATIONS: Destination[] = [
   {
     slug: "vinales",
     title: "Viñales",
-    image: "/viñales.webp",
+    image: "/vinales.webp",
     alt: "Viñales Valley mogotes and tobacco fields",
     short: "Mogotes, tobacco farms, caves, and rural life.",
     long:
@@ -207,7 +207,7 @@ export default function DestinationsPage() {
         }}
       />
 
-      <main className="relative bg-white dark:bg-gray-950">
+      <main className="relative bg-white dark:bg-black">
         {/* Background accent */}
         <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-amber-50 via-white to-white dark:from-zinc-900 dark:via-zinc-900 dark:to-black" />
 

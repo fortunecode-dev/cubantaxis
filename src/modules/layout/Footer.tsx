@@ -43,7 +43,7 @@ export default async function Footer({ lang }: {  lang: string }) {
                 </Link>
               </li>
               <li>
-                <Link href="/taxi-in-cuba#frequently-asked-questions" className="hover:underline">
+                <Link href="/#frequently-asked-questions" className="hover:underline">
                 Frequently Asked Questions
                 </Link>
               </li>

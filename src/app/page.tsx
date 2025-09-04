@@ -6,7 +6,6 @@ import { LocaleParams } from "@/types/common";
 export default async function RootHome(
   { params }: { params: Promise<LocaleParams> }
 ) {
-  const { lang } = await params;
   return (
     <>
       <LanguageSuggestor />
@@ -18,7 +17,6 @@ export default async function RootHome(
   "name": "CubanTaxis",
   "url": "https://www.cubantaxis.com",
   "areaServed": "Cuba",
-  "telephone": "+53 5444 7931",
   "sameAs": [
     "https://www.facebook.com/CubanTaxis/",
     "https://www.instagram.com/cubantaxis/"
