@@ -1,27 +1,24 @@
-"use client"
-
-import { FaWhatsapp, FaTelegramPlane } from "react-icons/fa"
-import { useCallback } from "react"
-import toast, { Toaster } from "react-hot-toast"
+// app/components/FloatingContacts.tsx
+import { FaWhatsapp, FaTelegramPlane } from "react-icons/fa";
+import { redirect } from "next/navigation";
+import { headers } from "next/headers";              // ⬅️ nuevo
 import { getTranslation } from "@/app/[lang]/locales";
 
-export default function FloatingContacts({ lang }: { lang: any }) {
-    const idioma = getTranslation(lang)
-    //TODO: Poner multilingüe
-  const sendEmptyReservation = useCallback(
-    async (platform: "whatsapp" | "telegram") => {
-      const formData = {
-        phone: "",
-        from: "",
-        to: "",
-        date: "",
-        time: "",
-        vehicle: "",
-        passengers: "",
-        luggage: "",
-      }
+type Platform = "whatsapp" | "telegram";
 
-    const message = `🚕 Quick Booking Request:
+function buildMessage() {
+  const formData = {
+    phone: "",
+    from: "",
+    to: "",
+    date: "",
+    time: "",
+    vehicle: "",
+    passengers: "",
+    luggage: "",
+  };
+
+  return `🚕 Quick Booking Request:
 📞 Phone: ${formData.phone}
 📍 From: ${formData.from}
 🏁 To: ${formData.to}
@@ -30,61 +27,67 @@ export default function FloatingContacts({ lang }: { lang: any }) {
 🚗 Vehicle: ${formData.vehicle}
 👥 Passengers: ${formData.passengers}
 🎒 Luggage: ${formData.luggage}`;
-    await navigator.clipboard.writeText(message);
+}
 
-      const form = new FormData()
-      form.append("source", String("BotónFlotante " + platform))
+async function logSourceOnServer(source: string) {
+  "use server";                                      // ⬅️ opcional pero claro
+  const h = headers();
+  const host = (await h).get("x-forwarded-host") ?? (await h).get("host");
+  const proto = (await h).get("x-forwarded-proto") ?? "http";
+  if (!host) return;                                 // sin host, no hacemos fetch
 
-      await fetch("/api/telegram-booking", {
-        method: "POST",
-        body: form,
-      })
+  const baseUrl = `${proto}://${host}`;
 
-      try {
-        if (platform === "whatsapp") {
-          window.open(
-            `https://wa.me/${process.env.NEXT_PUBLIC_CONTACT_NUMBER}?text=${encodeURIComponent(
-              message
-            )}`,
-            "_blank"
-          )
-        } else if (platform === "telegram") {
-          toast.success(idioma.clipboardTemplate.copied, { duration: 3000 })
-          setTimeout(() => {
-            window.open(`https://t.me/${process.env.NEXT_PUBLIC_TELEGRAM_USER}`, "_blank")
-          }, 3000)
-        }
-      } catch (error) {
-        console.error("Error:", error)
-        toast.error(idioma.clipboardTemplate.error)
-      }
-    },
-    [idioma]
-  )
+  const form = new FormData();
+  form.append("source", source);
+
+  // OJO: ruta absoluta (con slash) y base absoluta
+  await fetch(`${baseUrl}/api/telegram-booking`, {
+    method: "POST",
+    body: form,
+  });
+}
+
+async function handleSubmit(platform: Platform) {
+  "use server";
+  const message = buildMessage();
+
+  await logSourceOnServer(`BotónFlotante ${platform}`);
+
+  if (platform === "whatsapp") {
+    const phone = process.env.NEXT_PUBLIC_CONTACT_NUMBER || "";
+    redirect(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`);
+  } else {
+    const user = process.env.NEXT_PUBLIC_TELEGRAM_USER || "";
+    redirect(`https://t.me/${user}`);
+  }
+}
+
+export default async function FloatingContacts({ lang }: { lang: string }) {
+  const idioma = getTranslation(lang);
+
+  const submitWhatsApp = handleSubmit.bind(null, "whatsapp" as const);
+  const submitTelegram = handleSubmit.bind(null, "telegram" as const);
 
   return (
-      <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-4">
-        <button
-          onClick={() => sendEmptyReservation("whatsapp")}
-          aria-label="WhatsApp"
-          className="relative flex items-center justify-center"
-        >
+    <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-4">
+      <form action={submitWhatsApp}>
+        <button type="submit" aria-label="WhatsApp" className="relative flex items-center justify-center">
           <span className="absolute w-16 h-16 rounded-full bg-green-400 opacity-75 animate-ping"></span>
           <div className="relative z-10 flex items-center justify-center w-14 h-14 bg-green-500 text-white rounded-full shadow-lg hover:scale-110 transition-transform">
             <FaWhatsapp size={28} />
           </div>
         </button>
+      </form>
 
-        <button
-          onClick={() => sendEmptyReservation("telegram")}
-          aria-label="Telegram"
-          className="relative flex items-center justify-center"
-        >
+      <form action={submitTelegram}>
+        <button type="submit" aria-label="Telegram" className="relative flex items-center justify-center">
           <span className="absolute w-16 h-16 rounded-full bg-blue-400 opacity-75 animate-ping"></span>
           <div className="relative z-10 flex items-center justify-center w-14 h-14 bg-blue-500 text-white rounded-full shadow-lg hover:scale-110 transition-transform">
             <FaTelegramPlane size={26} />
           </div>
         </button>
-      </div>
-  )
+      </form>
+    </div>
+  );
 }
