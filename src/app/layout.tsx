@@ -7,17 +7,8 @@ import Script from "next/script";
 import { LocaleParams } from "@/types/common";
 import { Toaster } from "react-hot-toast";
 export async function generateStaticParams() {
-  return [
-    {
-      lang:
-        ["en"
-          , "es"
-          , "fr"
-          , "de"
-          , "ru"
-          , "pt"]
-    },
-  ]
+  const languages = ["en", "es", "fr", "de", "ru", "pt"];
+  return languages.map((lang) => ({ lang }));
 }
 
 export default async function RootLayout({
