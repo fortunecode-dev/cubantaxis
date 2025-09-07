@@ -98,6 +98,27 @@ ${idioma.quickBookingForm.messageTitle}
         className="mx-auto max-w-3xl bg-white p-5 rounded-2xl grid grid-cols-1 md:grid-cols-2 gap-2 pb-0"
         onSubmit={(e) => e.preventDefault()}
       >
+        <Toaster
+          position="top-center"
+          reverseOrder={false}
+          toastOptions={{
+            // base para todos
+            className:
+              "rounded-xl shadow-lg text-xl  ring-1 ring-amber-300/70 bg-white/95 text-neutral-800 px-4 py-3 backdrop-blur-sm",
+            duration: 2600,
+            // variantes
+            success: {
+              iconTheme: { primary: "#16a34a", secondary: "#fff" }, // verde
+              className:
+                "rounded-xl shadow-lg ring-1 ring-green-300/70 bg-white/95 text-neutral-800",
+            },
+            error: {
+              iconTheme: { primary: "#dc2626", secondary: "#fff" }, // rojo
+              className:
+                "rounded-xl shadow-lg ring-1 ring-red-300/70 bg-white/95 text-neutral-800",
+            },
+          }}
+        />
         {/* Teléfono y pasajeros juntos */}
         <div className="flex gap-2 col-span-1 md:col-span-2">
           <div className="flex flex-col flex-1 min-w-0">

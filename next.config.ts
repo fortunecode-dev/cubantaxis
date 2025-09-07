@@ -11,6 +11,16 @@ export default withBundleAnalyzer({ enabled: process.env.ANALYZE === 'true' })({
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     // remotePatterns: [{ protocol: "https", hostname: "tudominio-o-cdn.com" }],
   },
+  async headers() {
+    return [
+      {
+        source: "/:all*(svg|jpg|jpeg|png|webp|avif|gif|ico|css|js)",
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
+        ],
+      },
+    ];
+  },
   // experimental: { optimizePackageImports: ['react-icons','react'] },
   // images: { deviceSizes:[320,480,640,768,1024,1280,1536,1920], imageSizes:[16,32,48,64,96,128,256,384] },
   // reactStrictMode: true,

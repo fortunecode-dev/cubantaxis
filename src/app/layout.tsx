@@ -36,65 +36,32 @@ export default async function RootLayout({
             />
           ))}
         <link rel="alternate" hrefLang="x-default" href="https://cubantaxis.com/" />
-        {/* Google Analytics Script */}
+        {/* preconnect para handshake más rápido */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="" />
+        <link rel="preconnect" href="https://www.google-analytics.com" crossOrigin="" />
+
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=G-HB26WDN91W`}
           strategy="lazyOnload"
         />
-        <Script id="google-analytics" strategy="lazyOnload">
+        <Script id="ga4-init" strategy="lazyOnload">
           {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.addEventListener('load', () => {
+        (window.requestIdleCallback || setTimeout)(() => {
           gtag('js', new Date());
-          gtag('config', 'G-HB26WDN91W', {
-            page_path: window.location.pathname,
-          });
-        `}
+          gtag('config', 'G-HB26WDN91W', { send_page_view: true });
+        }, 800);
+      });
+    `}
         </Script>
-        <link rel="canonical" href={`https://cubantaxis.com`} />
-        <Script id="ld-taxi" type="application/ld+json" strategy="afterInteractive">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "TaxiService",
-            "name": "CubanTaxis",
-            "url": "https://www.cubantaxis.com",
-            "areaServed": "Cuba",
-            "telephone": "+53 5444 7931",
-            "sameAs": [
-              "https://www.facebook.com/CubanTaxis/",
-              "https://www.instagram.com/cubantaxis/"
-            ]
-          })}
-        </Script>
-
       </head>
       <body className="antialiased">
-        <Toaster
-          position="top-center"
-          reverseOrder={false}
-          toastOptions={{
-            // base para todos
-            className:
-              "rounded-xl shadow-lg text-xl  ring-1 ring-amber-300/70 bg-white/95 text-neutral-800 px-4 py-3 backdrop-blur-sm",
-            duration: 2600,
-            // variantes
-            success: {
-              iconTheme: { primary: "#16a34a", secondary: "#fff" }, // verde
-              className:
-                "rounded-xl shadow-lg ring-1 ring-green-300/70 bg-white/95 text-neutral-800",
-            },
-            error: {
-              iconTheme: { primary: "#dc2626", secondary: "#fff" }, // rojo
-              className:
-                "rounded-xl shadow-lg ring-1 ring-red-300/70 bg-white/95 text-neutral-800",
-            },
-          }}
-        />
         <Header lang={lang} />
         {children}
         <FloatingContacts lang={lang} />
         <Footer lang={lang} />
-        {/* <LanguageSuggestor/> */}
       </body>
     </html>
   );

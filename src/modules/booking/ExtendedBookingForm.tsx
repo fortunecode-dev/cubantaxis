@@ -110,6 +110,27 @@ export default function ExtendedBookingForm({ idioma }: Props) {
       onSubmit={handleSubmit}
       className="mx-auto max-w-4xl rounded-3xl  bg-white/90 p-4 pb-0 pt-0 "
     >
+      <Toaster
+          position="top-center"
+          reverseOrder={false}
+          toastOptions={{
+            // base para todos
+            className:
+              "rounded-xl shadow-lg text-xl  ring-1 ring-amber-300/70 bg-white/95 text-neutral-800 px-4 py-3 backdrop-blur-sm",
+            duration: 2600,
+            // variantes
+            success: {
+              iconTheme: { primary: "#16a34a", secondary: "#fff" }, // verde
+              className:
+                "rounded-xl shadow-lg ring-1 ring-green-300/70 bg-white/95 text-neutral-800",
+            },
+            error: {
+              iconTheme: { primary: "#dc2626", secondary: "#fff" }, // rojo
+              className:
+                "rounded-xl shadow-lg ring-1 ring-red-300/70 bg-white/95 text-neutral-800",
+            },
+          }}
+        />
       {/* Header */}
       <div className="mb-4 md:mb-6">
         {/* <h3 className="text-xl md:text-2xl font-semibold text-neutral-800">

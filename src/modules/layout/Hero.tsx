@@ -21,9 +21,10 @@ export default function Hero({ idioma, lang }: { idioma: AppTexts; lang: Lang })
         alt="Classic taxi in Havana, Cuba"
         title="Cuba Taxi Transfers 2025"
         fill
+        fetchPriority="high"
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1200px"
         priority
         placeholder="blur"
-        sizes="100vw"
         className="absolute inset-0 z-[-20] object-cover object-center opacity-30"
       />
 
