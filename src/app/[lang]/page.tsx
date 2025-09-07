@@ -40,7 +40,7 @@ export default async function Home(
   return (
     <main id="main" className="font-sans">
       <Hero idioma={idioma} lang={lang} />
-      <UnderHeroLinks />
+      <UnderHeroLinks idioma={idioma} />
       <section className="mt-12 pt-3" id="frequently-asked-questions">
         <FaqSection
           faqs={idioma.FAQs.items}

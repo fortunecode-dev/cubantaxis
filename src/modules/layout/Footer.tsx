@@ -162,7 +162,6 @@ export default async function Footer({ lang }: {  lang: string }) {
             "serviceArea": "Cuba",
             "availableLanguage": ["es", "en", "fr", "de", "ru", "pt"],
             "priceRange": "$$",
-            "telephone": "+53 5543 2748",
             "sameAs": [
               "https://www.facebook.com/CubanTaxis/",
               "https://www.instagram.com/cubantaxis/",

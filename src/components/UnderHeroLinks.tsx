@@ -1,4 +1,5 @@
 // app/components/SeoLinks.tsx
+import { AppTexts } from "@/app/[lang]/locales/types";
 import Link from "next/link";
 
 type Page = { href: string; title: string; description: string };
@@ -44,17 +45,17 @@ const PAGES: ReadonlyArray<Page> = [
   },
 ] as const;
 
-export default function SeoLinks({ prefetch = false }: { prefetch?: boolean }) {
+export default function SeoLinks({ idioma,prefetch = false }: {idioma:AppTexts, prefetch?: boolean }) {
   return (
     <section
       className="mx-auto grid max-w-6xl grid-cols-1 gap-6 px-4 py-12 sm:grid-cols-2 lg:grid-cols-3"
       aria-labelledby="seo-links-heading"
     >
       <h2 id="seo-links-heading" className="sr-only">
-        Key pages about taxis in Cuba
+        {idioma.underHeroTitle}
       </h2>
 
-      {PAGES.map(({ href, title, description }) => (
+      {idioma.underHeroLinks.map(({ href, title, description }) => (
         <Link
           key={href}
           href={href}

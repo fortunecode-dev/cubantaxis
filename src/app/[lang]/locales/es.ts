@@ -1,23 +1,24 @@
-import { title } from "process";
 import { AppTexts } from "./types";
 
 export const es: AppTexts = {
+  taxiGuide: "Guía completa de taxis en Cuba",
+  exploreDestinations: "Explorar destinos →",
   header: {
     social: {
       facebook: "Síguenos en Facebook",
       instagram: "Síguenos en Instagram",
-      whatsapp: "Contáctanos en WhatsApp"
+      whatsapp: "Contáctanos por WhatsApp"
     }
   },
   hero: {
-    h1: "Reserva un Taxi en Cuba rápido, seguro y confiable",
+    h1: "Reserva un taxi en Cuba rápido, seguro y confiable",
     h2a: "La forma más rápida de conseguir un taxi para ",
     h2b: ": La Habana, Varadero, Trinidad, Viñales y más.",
-    transfer: "airport transfers",
-    shared: "taxis compartidos",
+    transfer: "traslados de aeropuerto",
+    shared: "viajes compartidos",
     and: " y ",
-    interCity: "taxis interprovinciales",
-    p: "Reserva tu taxi en Cuba sin complicaciones. Déjanos tus datos y tu viaje quedará confirmado en minutos. Así de fácil.",
+    interCity: "taxis interurbanos",
+    p: "Reserva tu taxi en Cuba sin complicaciones. Déjanos tus datos y confirmaremos tu viaje en minutos. Así de fácil.",
     buttons: {
       booking: "Reservar un taxi privado en Cuba",
       fastBooking: "Reserva rápida"
@@ -30,8 +31,8 @@ export const es: AppTexts = {
     services: [
       "Traslados privados en Cuba",
       "Taxi al aeropuerto de La Habana",
-      "Reserva de taxi exprés",
-      "City tours en La Habana",
+      "Reserva exprés de taxi",
+      "City tours por La Habana",
       "Excursiones desde Varadero",
       "Taxis compartidos en Cuba",
       "Viajes a las Playas del Este",
@@ -41,18 +42,18 @@ export const es: AppTexts = {
   destinationsCard: {
     title: "Destinos",
     subTitle: "Lugares para visitar en Cuba",
-    description: "Explora nuestras opciones de destinos más populares.",
+    description: "Explora nuestras opciones de destinos más populares."
   },
   excursionsCard: {
     title: "Excursiones",
-    places: "Lugares incluidos",
+    places: "Lugares incluidos"
   },
 
   seeMore: "Ver más",
   bookingForm: {
     page: {
       backToHome: "Volver al inicio",
-      description: "Reserva aquí tu viaje en detalle y nosotros nos encargamos de todo",
+      description: "Reserva tu viaje en detalle aquí y nosotros nos encargamos del resto",
       title: "Traslado personalizado"
     },
     fullName: "Nombre completo",
@@ -60,7 +61,7 @@ export const es: AppTexts = {
     phone: "Teléfono",
     vehicleType: "Tipo de vehículo",
     from: "Desde",
-    to: "Hasta",
+    to: "Hacia",
     date: "Fecha",
     time: "Hora",
     passengers: "Pasajeros",
@@ -70,7 +71,7 @@ export const es: AppTexts = {
     attachImages: "Adjuntar imágenes",
     reserveNow: "Reservar ahora",
     subtitle: "Cuéntanos los detalles para organizar tu viaje",
-    example: "Ejemplo: número de vuelo, asiento para niño, parada extra, etc.",
+    example: "Ejemplo: número de vuelo, silla para niño, parada extra, etc.",
     upload: "Subir imágenes",
     luggaageExample: "2 maletas + 1 mochila",
     title: "Detalles de la reserva"
@@ -84,61 +85,109 @@ export const es: AppTexts = {
     phone: "Teléfono",
     vehicleType: "Tipo de vehículo",
     from: "Desde",
-    to: "Hasta",
+    to: "Hacia",
     date: "Fecha",
     time: "Hora",
     passengers: "Pasajeros",
     luggage: "Descripción del equipaje",
     reserveNow: "Reservar ahora",
-    telegram: "Reservar vía Telegram",
-    whatsapp: "Reservar vía WhatsApp",
+    telegram: "Reservar por Telegram",
+    whatsapp: "Reservar por WhatsApp",
     messageTitle: "Detalles de la reserva"
   },
   footer: {
-    rights: "© 2025 Cubantaxis. Todos los derechos reservados.",
+    rights: "© 2025 Cubantaxis. Todos los derechos reservados."
   },
+  underHeroTitle: "Páginas clave sobre taxis en Cuba",
+  underHeroLinks: [
+    {
+      href: "/blog/how-much-is-a-taxi-in-cuba",
+      title: "¿Cuánto cuesta un taxi en Cuba?",
+      description:
+        "Conoce precios reales de taxis en Cuba, desde La Habana hasta Varadero, incluyendo traslados de aeropuerto y rutas largas."
+    },
+    {
+      href: "/destinations-in-cuba",
+      title: "Destinos populares en Cuba",
+      description:
+        "Explora información detallada sobre los principales destinos de Cuba como La Habana, Varadero, Viñales y Trinidad."
+    },
+    {
+      href: "/intresting-places-in-cuba",
+      title: "Atracciones y sitios de interés en Cuba",
+      description:
+        "Descubre las principales atracciones de Cuba: resorts de Varadero, lugares emblemáticos de La Habana, hoteles y actividades familiares con detalles completos."
+    },
+    {
+      href: "/cuba-taxi-booking",
+      title: "Reserva rápida de taxi",
+      description:
+        "Reserva un viaje en taxi por Cuba con pocos clics. Servicio rápido y confiable."
+    },
+    {
+      href: "/private-transfer-booking",
+      title: "Reserva detallada de traslado",
+      description:
+        "Planifica tu traslado con opciones detalladas de vehículos, rutas y horarios."
+    },
+    {
+      href: "/taxi-in-cuba",
+      title: "Taxi en Cuba – Guía y FAQs",
+      description:
+        "Guía informativa sobre tomar un taxi en Cuba, incluyendo preguntas frecuentes."
+    }
+  ],
   FAQs: {
     title: "¿Cuánto cuesta un taxi en Cuba, cómo conseguir uno y otras preguntas…?",
     items: [
       {
         question: "¿Cómo puedo reservar un taxi en Cuba con antelación?",
-        answer: "Puedes dejarnos tus datos en el formulario y recibirás confirmación inmediata. También puedes ver todas las rutas disponibles en la [página de traslados](/traslados)."
+        answer: "Puedes dejarnos tus datos en el formulario y recibirás confirmación al instante."
       },
       {
         question: "¿Ofrecen traslados privados desde el aeropuerto de La Habana?",
-        answer: "Sí, ofrecemos traslados privados desde el Aeropuerto Internacional José Martí a cualquier destino en Cuba, incluyendo Varadero, Viñales, Cayo Santa María y más."
+        answer:
+          "Sí, ofrecemos traslados privados desde el Aeropuerto Internacional José Martí a cualquier destino de Cuba, incluyendo Varadero, Viñales, Cayo Santa María y más."
       },
       {
-        question: "¿Cuánto cuesta un taxi desde el aeropuerto de Varadero a La Habana?",
-        answer: "El precio de un traslado privado desde el aeropuerto de Varadero a La Habana comienza en 100 USD por vehículo. Consulta la lista completa en nuestra [sección de precios](/traslados)."
+        question: "¿Cuánto cuesta un taxi del aeropuerto de Varadero a La Habana?",
+        answer:
+          "El precio de un traslado privado desde el aeropuerto de Varadero a La Habana comienza en 100 USD por vehículo. Consulta la lista completa en nuestro [blog](/blog/how-much-is-a-taxi-in-cuba)."
       },
       {
         question: "¿Los precios son por persona o por coche?",
-        answer: "Todos los precios mostrados en el sitio son por vehículo privado, independientemente de si viaja 1 o más pasajeros (hasta la capacidad máxima permitida)."
+        answer:
+          "Todos los precios mostrados en el sitio son por vehículo privado, independientemente de si viaja 1 o más pasajeros (hasta la capacidad máxima permitida)."
       },
       {
         question: "¿Puedo pagar el taxi en dólares, euros o moneda local (CUP)?",
-        answer: "Sí, aceptamos pagos en USD, EUR y CUP. Elige la opción más conveniente al confirmar tu traslado."
+        answer:
+          "Sí, aceptamos pagos en USD, EUR y CUP. Elige la opción más conveniente al confirmar tu traslado."
       },
       {
         question: "¿Qué pasa si mi vuelo se retrasa?",
-        answer: "Monitoreamos la llegada de tu vuelo. Si hay retrasos, tu chofer te esperará sin costo adicional, siempre que nos hayas proporcionado correctamente el número de vuelo."
+        answer:
+          "Monitoreamos la llegada de tu vuelo. Si hay retrasos, tu chofer te esperará sin costo adicional, siempre que nos hayas proporcionado correctamente tu número de vuelo."
       },
       {
-        question: "¿Ofrecen excursiones privadas además de traslados?",
-        answer: "Sí, puedes reservar excursiones privadas como tours a Viñales, Cienfuegos y Trinidad. Mira todas las opciones en la [página de excursiones](/excursiones)."
+        question: "¿Ofrecen excursiones privadas además de los traslados?",
+        answer:
+          "Sí, puedes reservar excursiones privadas como tours a Viñales, Cienfuegos y Trinidad."
       },
       {
         question: "¿Qué tipos de vehículos ofrecen para los traslados?",
-        answer: "Puedes elegir entre autos clásicos, convertibles, vehículos modernos o minivans según tus preferencias y el número de pasajeros."
+        answer:
+          "Puedes elegir entre autos clásicos, convertibles, vehículos modernos o minivanes según tus preferencias y el número de pasajeros."
       },
       {
         question: "¿Puedo solicitar un traslado nocturno?",
-        answer: "Sí, ofrecemos servicio de taxi 24/7. Ten en cuenta que los traslados nocturnos pueden tener un pequeño recargo adicional."
+        answer:
+          "Sí, ofrecemos servicio de taxi 24/7. Ten en cuenta que los traslados nocturnos pueden tener un pequeño recargo adicional."
       },
       {
         question: "¿Cómo sé si mi traslado está confirmado?",
-        answer: "Recibirás un mensaje de confirmación directa vía WhatsApp o correo electrónico con los detalles del viaje y el nombre del chofer asignado."
+        answer:
+          "Recibirás un mensaje de confirmación directo por WhatsApp o correo con los detalles del viaje y el nombre del chofer asignado."
       }
     ]
   },
@@ -155,10 +204,11 @@ export const es: AppTexts = {
     "Cayo Santa María",
     "Cayo Guillermo"
   ],
-  vehicles: ["Auto clásico", "Tour", "Van"],
+  vehicles: ["Auto clásico", "Tour", "Furgoneta"],
   clipboardTemplate: {
     copied: "✅ Plantilla copiada. Pégala en el chat de Telegram",
     error: "❌ Hubo un error al preparar la reserva"
   },
-  howMuchIsATaxi:"¿Cuanto cuesta un taxi en cuba?"
+  howMuchIsATaxi: "¿Cuánto cuesta un taxi en Cuba en 2025?"
 };
+

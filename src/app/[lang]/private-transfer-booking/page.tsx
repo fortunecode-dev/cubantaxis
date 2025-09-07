@@ -6,7 +6,16 @@ import ExtendedBookingForm from "@/modules/booking/ExtendedBookingForm";
 import type { Metadata } from "next";
 
 
-type Params = { params: Promise<{ lang: "en" | "es" }> };
+type Params = {
+  params: Promise<{
+    lang: "en" 
+    | "es"
+    | "fr"
+    | "de"
+    | "ru"
+    | "pt"
+  }>
+};
 
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const base = "https://cubantaxis.com";

@@ -8,7 +8,15 @@ import { LocaleParams } from "@/types/common";
 import { Toaster } from "react-hot-toast";
 export async function generateStaticParams() {
   return [
-    { lang: "en" },
+    {
+      lang:
+        ["en"
+          , "es"
+          , "fr"
+          , "de"
+          , "ru"
+          , "pt"]
+    },
   ]
 }
 
@@ -23,14 +31,19 @@ export default async function RootLayout({
   return (
     <html lang={lang ?? "en"}>
       <head>
-        {["en"].map((code) => (
-          <link
-            key={code}
-            rel="alternate"
-            hrefLang={code}
-            href={`https://cubantaxis.com/${code}`}
-          />
-        ))}
+        {["en"
+          , "es"
+          , "fr"
+          , "de"
+          , "ru"
+          , "pt"].map((code) => (
+            <link
+              key={code}
+              rel="alternate"
+              hrefLang={code}
+              href={`https://cubantaxis.com/${code}`}
+            />
+          ))}
         <link rel="alternate" hrefLang="x-default" href="https://cubantaxis.com/" />
         {/* Google Analytics Script */}
         <Script

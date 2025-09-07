@@ -54,7 +54,7 @@ export default function Hero({ idioma, lang }: { idioma: AppTexts; lang: Lang })
                 href="/taxi-in-cuba"
                 className="underline underline-offset-4 hover:text-amber-200"
               >
-                Complete Cuba taxi guide
+                {idioma.taxiGuide}
               </LocaleLink>
             </p>
 
@@ -102,7 +102,7 @@ export default function Hero({ idioma, lang }: { idioma: AppTexts; lang: Lang })
               className="m-5 text-yellow-400 font-medium underline underline-offset-4 hover:text-yellow-300 transition-colors"
               aria-label="Explore destinations in Cuba"
             >
-              Explore destinations →
+              {idioma.exploreDestinations}
             </LocaleLink>
           </div>
         </div>

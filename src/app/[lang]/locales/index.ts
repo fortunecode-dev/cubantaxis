@@ -1,20 +1,20 @@
 
 import { es } from "./es";
 import { en } from "./en";
-// import { de } from "./de";
-// import { fr } from "./fr";
-// import { pt } from "./pt";
-// import { ru } from "./ru";
+import { de } from "./de";
+import { fr } from "./fr";
+import { pt } from "./pt";
+import { ru } from "./ru";
 import { AppTexts } from "./types";
 
 // Objeto con todas las traducciones
 export const translations: Record<string, AppTexts> = {
   en,
   es,
-  // fr,
-  // de,
-  // ru,
-  // pt,
+   fr,
+   de,
+   ru,
+   pt,
 };
 
 // Tipo de idioma válido

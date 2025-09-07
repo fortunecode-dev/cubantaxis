@@ -5,13 +5,29 @@ import Link from "next/link";
 import PriceTable from "@/components/PriceTable";
 import TrustBlock from "@/components/TrustBlock";
 
-type Params = { params: Promise<{ lang: "en" | "es" }> };
+type Params = {
+  params: Promise<{
+    lang: "en" | "es"
+    | "fr"
+    | "de"
+    | "ru"
+    | "pt"
+  }>
+};
 
 // Helpers
-function t(lang: "en" | "es", en: string, es: string) {
+function t(lang: "en" | "es"
+  | "fr"
+  | "de"
+  | "ru"
+  | "pt", en: string, es: string) {
   return lang === "es" ? es : en;
 }
-function formatUpdatedDate(d = new Date(), lang: "en" | "es" = "en") {
+function formatUpdatedDate(d = new Date(), lang: "en" | "es"
+  | "fr"
+  | "de"
+  | "ru"
+  | "pt" = "en") {
   const locale = lang === "es" ? "es-ES" : "en-US";
   const opts: Intl.DateTimeFormatOptions = { year: "numeric", month: "long", day: "numeric" };
   return new Intl.DateTimeFormat(locale, opts).format(d);
@@ -40,7 +56,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   return {
     title,
     description,
-    icons:"icon.ico",
+    icons: "icon.ico",
     alternates: {
       canonical: url,
       languages: {
@@ -379,8 +395,11 @@ export default async function CubaTaxiPage({ params }: Params) {
           name: "CubanTaxis",
           areaServed: "Cuba",
           url: `https://www.cubantaxis.com/${lang}/taxi-in-cuba`,
-          telephone: "+53 5543 2748", // unifica con el resto del sitio
-          availableLanguage: ["en", "es"],
+          availableLanguage: ["en", "es"
+            , "fr"
+            , "de"
+            , "ru"
+            , "pt"],
           priceRange: "$$",
         })}
       </Script>

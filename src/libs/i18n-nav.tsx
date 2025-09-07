@@ -5,7 +5,11 @@ import { usePathname, useRouter } from "next/navigation";
 import Link, { LinkProps } from "next/link";
 import { ComponentProps, PropsWithChildren, useMemo } from "react";
 
-const locales = ["en", "es"] as const;
+const locales = ["en", "es"
+  , "fr"
+  , "de"
+  , "ru"
+  , "pt"] as const;
 type Locale = (typeof locales)[number];
 
 function extractLocale(pathname: string): Locale | null {

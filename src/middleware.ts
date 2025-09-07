@@ -4,10 +4,10 @@ import type { NextRequest } from "next/server";
 const locales = [
   "en",
   "es",
-  // "fr",
-  // "de",
-  // "ru",
-  // "pt"
+  "fr",
+  "de",
+  "ru",
+  "pt"
 ];
 const defaultLocale = "en";
 
@@ -17,7 +17,7 @@ function resolveLocale(req: NextRequest) {
   if (cookie && locales.includes(cookie as any)) return cookie;
 
   const accept = req.headers.get("accept-language") ?? "";
-  const found = accept.split(",").map(s => s.trim().slice(0,2)).find(c => locales.includes(c as any));
+  const found = accept.split(",").map(s => s.trim().slice(0, 2)).find(c => locales.includes(c as any));
   return found ?? defaultLocale;
 }
 
@@ -33,7 +33,7 @@ export function middleware(request: NextRequest) {
   if (locales.some(l => pathname === `/${l}` || pathname.startsWith(`/${l}/`))) {
     return NextResponse.next();
   }
-   // 3) Si es una llamada al api
+  // 3) Si es una llamada al api
   if (pathname.startsWith(`/api/`)) {
     return NextResponse.next();
   }
