@@ -6,20 +6,29 @@ import { getTranslation } from "../../locales";
 import { LocaleParams } from "@/types/common";
 import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "How much does a taxi cost in Cuba in 2025? Prices & Guides",
+export async function generateMetadata(
+  { params }: { params: Promise<{ lang: string }> }
+): Promise<Metadata> {
+  const base = "https://cubantaxis.com";
+  const { lang } = await params; // ya no rompe
+  const path = `/${lang}/blog/how-much-is-a-taxi-in-cuba`;
+  const url = `${base}${path}`;
+
+  return {
+    title:  "How much does a taxi cost in Cuba in 2025? Prices & Guides",
    alternates: {
+      canonical: url,
         languages: {
-        "x-default": `https://cubantaxis.com/blog/how-much-is-a-taxi-in-cuba`,
-        en: `https://cubantaxis.com/en/blog/how-much-is-a-taxi-in-cuba`,
-        es: `https://cubantaxis.com/es/blog/how-much-is-a-taxi-in-cuba`,
-        fr: `https://cubantaxis.com/fr/blog/how-much-is-a-taxi-in-cuba`,
-        de: `https://cubantaxis.com/de/blog/how-much-is-a-taxi-in-cuba`,
-        ru: `https://cubantaxis.com/ru/blog/how-much-is-a-taxi-in-cuba`,
-        pt: `https://cubantaxis.com/pt/blog/how-much-is-a-taxi-in-cuba`,
+        "x-default": `${base}/blog/how-much-is-a-taxi-in-cuba`,
+        en: `${base}/en/blog/how-much-is-a-taxi-in-cuba`,
+        es: `${base}/es/blog/how-much-is-a-taxi-in-cuba`,
+        fr: `${base}/fr/blog/how-much-is-a-taxi-in-cuba`,
+        de: `${base}/de/blog/how-much-is-a-taxi-in-cuba`,
+        ru: `${base}/ru/blog/how-much-is-a-taxi-in-cuba`,
+        pt: `${base}/pt/blog/how-much-is-a-taxi-in-cuba`,
       },
     },
-  robots: {
+       robots: {
     index: true,   // Permite indexar (por defecto ya es true)
     follow: true,  // Permite seguir enlaces (por defecto ya es true)
   },
@@ -40,7 +49,7 @@ export const metadata: Metadata = {
     title: "Taxi Prices in Cuba 2025 | Havana, Varadero, Viñales, Trinidad",
     description:
       "Full guide to taxi fares in Cuba 2025. Check updated costs for routes from Havana to Varadero, Viñales, Trinidad and more.",
-    url: "https://cubantaxis.com/blog/taxi-cuba-2025",
+    url: "https://cubantaxis.com/blog/how-much-is-a-taxi-in-cuba",
     siteName: "Taxi Cuba Blog",
     images: [
       {
@@ -60,7 +69,9 @@ export const metadata: Metadata = {
       "Full guide to taxi fares in Cuba 2025. Check updated costs for routes from Havana to Varadero, Viñales, Trinidad and more.",
     images: ["/cuba-cabs.jpg"],
   },
-};
+  };
+}
+
 
 function formatUpdatedDate(d = new Date()) {
   const opts: Intl.DateTimeFormatOptions = { year: "numeric", month: "long", day: "numeric" };
