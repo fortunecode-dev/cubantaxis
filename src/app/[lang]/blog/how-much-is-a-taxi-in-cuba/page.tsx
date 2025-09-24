@@ -8,7 +8,7 @@ import { LocaleParams } from "@/types/common";
 export const metadata = {
   title: "How much does a taxi cost in Cuba in 2025? 🚖 Prices & Travel Guide",
   description:
-    "Updated taxi prices in Cuba for 2025. Find out how much taxis cost from Havana Airport, Varadero, Viñales, Trinidad, and more. Safe and reliable transfer guide for tourists.",
+    "Updated taxi prices in Cuba for 2025. Find out how much taxis cost from Havana Airport, Varadero, Viñales, Trinidad, and more. Safe transfer guide for tourists.",
   keywords: [
     "Taxi Cuba 2025",
     "Cuba taxi prices",

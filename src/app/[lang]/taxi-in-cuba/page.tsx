@@ -349,8 +349,8 @@ export default async function CubaTaxiPage({ params }: Params) {
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
           itemListElement: [
-            { "@type": "ListItem", position: 1, name: t(lang, "Home", "Inicio"), item: `https://www.cubantaxis.com/${lang}/` },
-            { "@type": "ListItem", position: 2, name: t(lang, "Taxi in Cuba", "Taxi en Cuba"), item: `https://www.cubantaxis.com/${lang}/taxi-in-cuba` },
+            { "@type": "ListItem", position: 1, name: t(lang, "Home", "Inicio"), item: `https://cubantaxis.com/${lang}/` },
+            { "@type": "ListItem", position: 2, name: t(lang, "Taxi in Cuba", "Taxi en Cuba"), item: `https://cubantaxis.com/${lang}/taxi-in-cuba` },
           ],
         })}
       </Script>
@@ -394,7 +394,7 @@ export default async function CubaTaxiPage({ params }: Params) {
           "@type": "TaxiService",
           name: "CubanTaxis",
           areaServed: "Cuba",
-          url: `https://www.cubantaxis.com/${lang}/taxi-in-cuba`,
+          url: `https://cubantaxis.com/${lang}/taxi-in-cuba`,
           availableLanguage: ["en", "es"
             , "fr"
             , "de"

@@ -33,7 +33,7 @@ export default async function Footer({ lang }: {  lang: string }) {
             <h3 className="mb-3 text-base font-semibold">Contents</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/blog/how-much-is-a-taxi-in-cuba-in-cuba" className="hover:underline">
+                <Link href="/blog/how-much-is-a-taxi-in-cuba" className="hover:underline">
                 {idioma.howMuchIsATaxi}
                 </Link>
               </li>

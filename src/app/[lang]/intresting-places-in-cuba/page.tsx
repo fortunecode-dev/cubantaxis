@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   description:
     "Curated selection of hotels and points of interest in Havana and Varadero. Browse highlights and jump into detailed pages with services, contacts and how to get there.",
   alternates: {
-    canonical: "https://www.cubantaxis.com/en/places",
+    canonical: "https://cubantaxis.com/intresting-places-in-cuba",
   },
   openGraph: {
     title: "Places of Interest in Cuba | Cuban Taxis",
     description:
       "Explore top hotels and attractions in Havana and Varadero. Photos, descriptions, contacts and travel info.",
     type: "website",
-    url: "https://www.cubantaxis.com/en/places",
+    url: "https://cubantaxis.com/intresting-places-in-cuba",
     siteName: "Cuban Taxis",
   },
   twitter: {
@@ -82,7 +82,7 @@ function CollectionJsonLd() {
     itemListElement: PLACES.map((p, i) => ({
       "@type": "ListItem",
       position: i + 1,
-      url: `https://www.cubantaxis.com/en/places/${p.slug}`,
+      url: `https://cubantaxis.com/en/places/${p.slug}`,
       name: p.name,
       description: p.description,
     })),
@@ -94,7 +94,7 @@ function CollectionJsonLd() {
     name: "Places of Interest in Cuba",
     description:
       "Curated selection of hotels and points of interest in Havana and Varadero by Cuban Taxis.",
-    url: "https://www.cubantaxis.com/en/places",
+    url: "https://cubantaxis.com/en/intresting-places-in-cuba",
   };
 
   return (
@@ -137,7 +137,7 @@ export default function PlacesPage() {
         {PLACES.map((p) => (
           <Link
             key={p.slug}
-            href={`/en/intresting-places-in-cuba/${p.slug}`}
+            href={`/intresting-places-in-cuba/${p.slug}`}
             className={[
               // reference style: yellow/black, link-like cards
               "group relative overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm",

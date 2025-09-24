@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.cubantaxis.com/sitemap.xml
-Host: https://www.cubantaxis.com
+Sitemap: https://cubantaxis.com/sitemap.xml
+Host: https://cubantaxis.com

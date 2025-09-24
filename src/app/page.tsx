@@ -15,7 +15,7 @@ export default async function RootHome(
   "@context": "https://schema.org",
   "@type": "TaxiService",
   "name": "CubanTaxis",
-  "url": "https://www.cubantaxis.com",
+  "url": "https://cubantaxis.com",
   "areaServed": "Cuba",
   "sameAs": [
     "https://www.facebook.com/CubanTaxis/",
