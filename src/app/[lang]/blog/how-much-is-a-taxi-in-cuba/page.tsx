@@ -49,7 +49,7 @@ export async function generateMetadata(
     title: "Taxi Prices in Cuba 2025 | Havana, Varadero, Viñales, Trinidad",
     description:
       "Full guide to taxi fares in Cuba 2025. Check updated costs for routes from Havana to Varadero, Viñales, Trinidad and more.",
-    url: "https://cubantaxis.com/blog/how-much-is-a-taxi-in-cuba",
+    url,
     siteName: "Taxi Cuba Blog",
     images: [
       {

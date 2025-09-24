@@ -29,7 +29,7 @@ const path = `/${lang}/interesting-places-in-cuba/ocio-club`;
     index: true,   // Permite indexar (por defecto ya es true)
     follow: true,  // Permite seguir enlaces (por defecto ya es true)
   },
-    openGraph: { url: base, locale: "en" },
+    openGraph: { url },
   };
 }
 export default function Example() {

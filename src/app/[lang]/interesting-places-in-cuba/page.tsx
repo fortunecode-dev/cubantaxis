@@ -42,7 +42,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     description:
       "Explore top hotels and attractions in Havana and Varadero. Photos, descriptions, contacts and travel info.",
     type: "website",
-    url: "https://cubantaxis.com/interesting-places-in-cuba",
+    url,
     siteName: "Cuban Taxis",
   },
   twitter: {

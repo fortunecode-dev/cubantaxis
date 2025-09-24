@@ -30,7 +30,7 @@ export async function generateMetadata(
         pt: `${base}/pt/taxi-in-cuba`,
       },
     },
-    openGraph: { url: base, locale: "en" },
+    openGraph: { url },
   };
 }
 

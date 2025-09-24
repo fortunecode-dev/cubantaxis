@@ -50,7 +50,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     title: "Top Cuba Taxi Destinations | Photos, Details & Fast Booking",
     description:
       "See the best routes across Cuba with images and details. Private transfers from HAV & VRA to Varadero, Viñales, Trinidad, Cienfuegos, Santa Clara, and the keys.",
-    url: "https://cubantaxis.com/destinations-in-cuba",
+    url,
     siteName: "Cuban Taxis",
     images: [{ url: "/cuba-cabs.jpg", width: 1200, height: 630, alt: "Classic taxi in Havana, Cuba" }],
     locale: "en_US",
