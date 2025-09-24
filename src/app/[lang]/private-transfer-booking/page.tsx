@@ -36,6 +36,8 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const ogImage = `${base}/og/cubantaxis-1200x630.jpg`; // Asegúrate de que exista 1200×630
 
   return {
+    title,
+    description,
     alternates: {
       canonical: url,
         languages: {

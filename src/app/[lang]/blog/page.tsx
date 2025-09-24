@@ -3,12 +3,13 @@ import Link from "next/link";
 // Blog page: light, airy design with Tailwind only
 // One article: How much is a taxi in Cuba
 import { Metadata } from "next";
+import { LocaleLink } from "@/libs/i18n-nav";
 export async function generateMetadata(
   { params }: { params: Promise<{ lang: string }> }
 ): Promise<Metadata> {
   const base = "https://cubantaxis.com";
   const { lang } = await params; // ya no rompe
-  const path = `/${lang}/taxi-in-cuba`;
+  const path = `/${lang}/blog`;
   const url = `${base}${path}`;
   const pathByLang: Record<string, string> = { en: "/en/" };
 
@@ -19,13 +20,13 @@ export async function generateMetadata(
      alternates: {
       canonical: url,
         languages: {
-        "x-default": `${base}/taxi-in-cuba`,
-        en: `${base}/en/taxi-in-cuba`,
-        es: `${base}/es/taxi-in-cuba`,
-        fr: `${base}/fr/taxi-in-cuba`,
-        de: `${base}/de/taxi-in-cuba`,
-        ru: `${base}/ru/taxi-in-cuba`,
-        pt: `${base}/pt/taxi-in-cuba`,
+        "x-default": `${base}/blog`,
+        en: `${base}/en/blog`,
+        es: `${base}/es/blog`,
+        fr: `${base}/fr/blog`,
+        de: `${base}/de/blog`,
+        ru: `${base}/ru/blog`,
+        pt: `${base}/pt/blog`,
       },
     },
     openGraph: { url },
@@ -111,9 +112,9 @@ export default async function BlogPage() {
               </div>
               <div className="p-6">
                 <h2 className="text-xl font-bold text-gray-900">
-                  <Link href={`/blog/${p.slug}`} className="hover:underline">
+                  <LocaleLink href={`/blog/${p.slug}`} className="hover:underline">
                     {p.title}
-                  </Link>
+                  </LocaleLink>
                 </h2>
                 <p className="mt-2 text-sm text-gray-600">{p.excerpt}</p>
                 <div className="mt-3 flex flex-wrap items-center gap-3 text-xs text-gray-500">

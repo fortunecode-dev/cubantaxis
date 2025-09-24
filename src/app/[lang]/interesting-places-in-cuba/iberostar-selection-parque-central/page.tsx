@@ -10,7 +10,7 @@ const path = `/${lang}/interesting-places-in-cuba/iberostar-selection-parque-cen
   const pathByLang: Record<string, string> = { en: "/en/" };
 
   return {
-    title: "Interesting Place In Havana | Iberostar Selection Parque Central | Hotel",
+    title: "Interesting Site | Iberostar Selection Parque Central Havana",
     description:
       "Book a Cuba taxi for airport transfer or tour online with the fast booking form. Fixed prices, rides, English-speaking drivers in Havana and Varadero.",
      alternates: {

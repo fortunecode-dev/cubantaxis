@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { LocaleLink } from "@/libs/i18n-nav";
 type Params = {
   params: Promise<{
     lang: "en" 
@@ -181,7 +182,7 @@ export default function PlacesPage() {
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
       >
         {PLACES.map((p) => (
-          <Link
+          <LocaleLink
             key={p.slug}
             href={`/interesting-places-in-cuba/${p.slug}`}
             className={[
@@ -234,7 +235,7 @@ export default function PlacesPage() {
 
             {/* Animated yellow underline */}
             <span className="pointer-events-none absolute inset-x-0 bottom-0 h-1 bg-yellow-400 scale-x-0 group-hover:scale-x-100 origin-left transition-transform" />
-          </Link>
+          </LocaleLink>
         ))}
       </section>
     </main>
