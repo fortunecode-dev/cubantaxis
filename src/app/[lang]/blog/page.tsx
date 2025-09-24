@@ -51,11 +51,7 @@ function formatDate(iso: string) {
   }
 }
 
-export default async function BlogPage({
-  searchParams,
-}: {
-  searchParams?: { [key: string]: string | string[] | undefined };
-}) {
+export default async function BlogPage() {
   return (
     <main className="min-h-screen mt-3 bg-white text-gray-800">
       {/* Hero */}
