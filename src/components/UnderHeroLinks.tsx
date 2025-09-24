@@ -19,8 +19,8 @@ const PAGES: ReadonlyArray<Page> = [
       "Explore detailed information about the main destinations in Cuba such as Havana, Varadero, Viñales, and Trinidad.",
   },
   {
-    // ✅ corrige el typo: intresting → interesting
-    href: "/intresting-places-in-cuba",
+    // ✅ corrige el typo: interesting → interesting
+    href: "/interesting-places-in-cuba",
     title: "Attractions & Places of Interest in Cuba",
     description:
       "Discover top attractions in Cuba: Varadero resorts, Havana landmarks, hotels, and family activities with full details.",

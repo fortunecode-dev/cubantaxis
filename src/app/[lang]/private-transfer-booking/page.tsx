@@ -36,12 +36,22 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const ogImage = `${base}/og/cubantaxis-1200x630.jpg`; // Asegúrate de que exista 1200×630
 
   return {
-    title,
-    description,
     alternates: {
       canonical: url,
-
+        languages: {
+        "x-default": `${base}/private-transfer-booking`,
+        en: `${base}/en/private-transfer-booking`,
+        es: `${base}/es/private-transfer-booking`,
+        fr: `${base}/fr/private-transfer-booking`,
+        de: `${base}/de/private-transfer-booking`,
+        ru: `${base}/ru/private-transfer-booking`,
+        pt: `${base}/pt/private-transfer-booking`,
+      },
     },
+     robots: {
+    index: true,   // Permite indexar (por defecto ya es true)
+    follow: true,  // Permite seguir enlaces (por defecto ya es true)
+  },
     openGraph: {
       url,
       type: "article",
@@ -71,7 +81,6 @@ export default async function BookAReservationPage({
       <Head>
         <title>{idioma.bookingForm.page.title}</title>
         <meta name="description" content={idioma.bookingForm.page.description} />
-        <meta name="robots" content="noindex, follow" />
       </Head>
 
       <section className="min-h-screen px-2 py-13 md:py-24 m-auto bg-gradient-to-br from-amber-100 to-yellow-50">

@@ -4,9 +4,25 @@ import Script from "next/script";
 import { LocaleLink } from "@/libs/i18n-nav"; // si no lo usas, elimina esta import
 import { getTranslation } from "../../locales";
 import { LocaleParams } from "@/types/common";
+import { Metadata } from "next";
 
-export const metadata = {
-  title: "How much does a taxi cost in Cuba in 2025? 🚖 Prices & Travel Guide",
+export const metadata: Metadata = {
+  title: "How much does a taxi cost in Cuba in 2025? Prices & Guides",
+   alternates: {
+        languages: {
+        "x-default": `https://cubantaxis.com/blog/how-much-is-a-taxi-in-cuba`,
+        en: `https://cubantaxis.com/en/blog/how-much-is-a-taxi-in-cuba`,
+        es: `https://cubantaxis.com/es/blog/how-much-is-a-taxi-in-cuba`,
+        fr: `https://cubantaxis.com/fr/blog/how-much-is-a-taxi-in-cuba`,
+        de: `https://cubantaxis.com/de/blog/how-much-is-a-taxi-in-cuba`,
+        ru: `https://cubantaxis.com/ru/blog/how-much-is-a-taxi-in-cuba`,
+        pt: `https://cubantaxis.com/pt/blog/how-much-is-a-taxi-in-cuba`,
+      },
+    },
+  robots: {
+    index: true,   // Permite indexar (por defecto ya es true)
+    follow: true,  // Permite seguir enlaces (por defecto ya es true)
+  },
   description:
     "Updated taxi prices in Cuba for 2025. Find out how much taxis cost from Havana Airport, Varadero, Viñales, Trinidad, and more. Safe transfer guide for tourists.",
   keywords: [
@@ -18,7 +34,7 @@ export const metadata = {
     "Cuba private transfers",
     "Taxi guide Cuba"
   ],
-    icons:"icon.ico",
+  icons: "icon.ico",
 
   openGraph: {
     title: "Taxi Prices in Cuba 2025 | Havana, Varadero, Viñales, Trinidad",

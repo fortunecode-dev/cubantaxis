@@ -235,7 +235,6 @@ export default function PlaceSEOCard({
           <meta name="keywords" content={seo.keywords.join(", ")} />
         ) : null}
         {seo.robots && <meta name="robots" content={seo.robots} />}
-        {seo.canonical && <link rel="canonical" href={seo.canonical} />}
         {/* hreflang alternates */}
         {seo.hreflangAlternates &&
           Object.entries(seo.hreflangAlternates).map(([lang, href]) => (

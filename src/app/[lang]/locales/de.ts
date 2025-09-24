@@ -119,7 +119,7 @@ export const de: AppTexts = {
         "Detaillierte Infos zu den wichtigsten Zielen: Havanna, Varadero, Viñales und Trinidad.",
     },
     {
-      href: "/intresting-places-in-cuba",
+      href: "/interesting-places-in-cuba",
       title: "Attraktionen & Sehenswürdigkeiten in Kuba",
       description:
         "Entdecken Sie Top-Attraktionen: Varadero-Resorts, Wahrzeichen Havannas, Hotels und Familienaktivitäten.",

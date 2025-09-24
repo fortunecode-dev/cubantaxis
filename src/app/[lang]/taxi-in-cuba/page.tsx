@@ -43,8 +43,8 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
 
   const title =
     lang === "es"
-      ? "Taxi en Cuba 2025 | Precios, Reservas y Traslados de Aeropuerto (HAV & VRA)"
-      : "Taxi in Cuba 2025 | Prices, Booking & Airport Transfers (HAV & VRA)";
+      ? "Taxi en Cuba 2025 | Precio, Reservas, Transfer de Aeropuerto"
+      : "Taxi in Cuba 2025 | Prices, Booking & Transfers (HAV & VRA)";
 
   const description =
     lang === "es"
@@ -57,12 +57,17 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     title,
     description,
     icons: "icon.ico",
+  
     alternates: {
       canonical: url,
-      languages: {
-        "x-default": `${base}/en/taxi-in-cuba`,
+        languages: {
+        "x-default": `${base}/taxi-in-cuba`,
         en: `${base}/en/taxi-in-cuba`,
         es: `${base}/es/taxi-in-cuba`,
+        fr: `${base}/fr/taxi-in-cuba`,
+        de: `${base}/de/taxi-in-cuba`,
+        ru: `${base}/ru/taxi-in-cuba`,
+        pt: `${base}/pt/taxi-in-cuba`,
       },
     },
     openGraph: {

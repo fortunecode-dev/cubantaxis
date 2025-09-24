@@ -5,20 +5,30 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const base = "https://cubantaxis.com";
   const { lang } = await params; // ya no rompe
-
+const path = `/${lang}/interesting-places-in-cuba/melia-internacional-varadero`;
+  const url = `${base}${path}`;
   const pathByLang: Record<string, string> = { en: "/en/" };
 
   return {
-    title: "Interesting Place In Havana | Iberostar Selection Parque Central | Hotel",
+    title: "Interesting Place In Varadero | Meliá Internacional | Hotel",
     description:
       "Book a Cuba taxi for airport transfer or tour online with the fast booking form. Fixed prices, rides, English-speaking drivers in Havana and Varadero.",
-    alternates: {
-      canonical:base,
-      languages: {
-        "x-default": `${base}/en/`,
-        en: `${base}/en/`,
+     alternates: {
+      canonical: url,
+        languages: {
+        "x-default": `${base}/interesting-places-in-cuba/melia-internacional-varadero`,
+        en: `${base}/en/interesting-places-in-cuba/melia-internacional-varadero`,
+        es: `${base}/es/interesting-places-in-cuba/melia-internacional-varadero`,
+        fr: `${base}/fr/interesting-places-in-cuba/melia-internacional-varadero`,
+        de: `${base}/de/interesting-places-in-cuba/melia-internacional-varadero`,
+        ru: `${base}/ru/interesting-places-in-cuba/melia-internacional-varadero`,
+        pt: `${base}/pt/interesting-places-in-cuba/melia-internacional-varadero`,
       },
     },
+     robots: {
+    index: true,   // Permite indexar (por defecto ya es true)
+    follow: true,  // Permite seguir enlaces (por defecto ya es true)
+  },
     openGraph: { url: base, locale: "en" },
   };
 }
@@ -30,7 +40,7 @@ export default function Example() {
                 description:
                     "Private airport pickup at HAV with professional drivers. Fixed prices, flight tracking and 24/7 support.",
                 keywords: ["taxi cuba", "havana airport transfer", "cuban taxis"],
-                canonical: "https://cubantaxis.com/intresting-places-in-cuba/iberostar*selection-parque-central",
+                canonical: "https://cubantaxis.com/interesting-places-in-cuba/melia-internacional-varadero",
                 robots: "index,follow",
                 siteName: "Cuban Taxis",
                 locale: "en_US",
@@ -42,25 +52,26 @@ export default function Example() {
                 },
             }}
             place={{
-                name: "Iberostar Selection Parque Central",
-                alternateName: "Hotel 5 estrellas en el corazón de La Habana",
-                image: "/iberostar-selection-parque-central.jpg", // falta
-                description: "Hotel colonial y moderno en el centro de La Habana, con vistas al Capitolio. Rooftop con piscina, Capitol Level exclusivo y servicios de conferencias y eventos.",
+                name: "Meliá Internacional Varadero",
+                alternateName: "Resort 5 estrellas Varadero",
+                image: "/melia-internacional-varadero.webp", // falta
+                description: "Resort de lujo frente al mar con habitaciones modernas, gastronomía variada, YHI Spa y acceso a una de las playas más famosas del Caribe. Ideal para familias o adultos.",
                 address: {
-                    streetAddress: "Neptuno, entre Prado y Zulueta",
-                    addressLocality: "La Habana",
-                    postalCode: "10100",
+                    streetAddress: "Avenida Las Américas, Km 1",
+                    addressLocality: "Varadero",
+                    addressRegion: "Matanzas",
                     addressCountry: "CU",
                 },
-                phone: "+53 78 606627",
-                email: "reservations3@hotelparquecentral.tur.cu",
-                website: "https://www.iberostar.com",
+                phone: "+53 45 623100",
+                email: "melia.internacional@meliacuba.com",
+                website: "https://www.melia.com/en/hotels/cuba/varadero/melia-internacional-varadero",
             }}
             services={[
-                { class: "amenities", icon: "pool", name: "Piscina rooftop" },
-                { class: "business", icon: "map", name: "Salas de reuniones" },
-                { class: "amenities", icon: "wifi", name: "Wi-Fi gratis" },
-                { class: "entertainment", icon: "star", name: "Shows profesionales" },
+                { class: "general", icon: "star", name: "Todo incluido" },
+                { class: "amenities", icon: "wifi", name: "Internet" },
+                { class: "wellness", icon: "spa", name: "YHI Spa" },
+                { class: "family", icon: "car", name: "Actividades familiares" },
+                { class: "sports", icon: "beach", name: "Deportes acuáticos" },
             ]}
             links={[
                 { label: "See all destinations", href: "/destinations-in-cuba" },

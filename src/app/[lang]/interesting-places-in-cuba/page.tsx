@@ -2,21 +2,47 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
-
-// ───────── SEO: static metadata ─────────
-export const metadata: Metadata = {
-  title: "Places of Interest in Cuba | Cuban Taxis",
+type Params = {
+  params: Promise<{
+    lang: "en" 
+    | "es"
+    | "fr"
+    | "de"
+    | "ru"
+    | "pt"
+  }>
+};
+export async function generateMetadata({ params }: Params): Promise<Metadata> {
+  const base = "https://cubantaxis.com";
+  const { lang } = await params;
+  const path = `/${lang}/interesting-places-in-cuba`;
+  const url = `${base}${path}`;
+  return {
+    title: "Places of Interest in Cuba | Cuban Taxis",
   description:
     "Curated selection of hotels and points of interest in Havana and Varadero. Browse highlights and jump into detailed pages with services, contacts and how to get there.",
-  alternates: {
-    canonical: "https://cubantaxis.com/intresting-places-in-cuba",
+     alternates: {
+      canonical: url,
+        languages: {
+        "x-default": `${base}/interesting-places-in-cuba`,
+        en: `${base}/en/interesting-places-in-cuba`,
+        es: `${base}/es/interesting-places-in-cuba`,
+        fr: `${base}/fr/interesting-places-in-cuba`,
+        de: `${base}/de/interesting-places-in-cuba`,
+        ru: `${base}/ru/interesting-places-in-cuba`,
+        pt: `${base}/pt/interesting-places-in-cuba`,
+      },
+    },
+     robots: {
+    index: true,   // Permite indexar (por defecto ya es true)
+    follow: true,  // Permite seguir enlaces (por defecto ya es true)
   },
   openGraph: {
     title: "Places of Interest in Cuba | Cuban Taxis",
     description:
       "Explore top hotels and attractions in Havana and Varadero. Photos, descriptions, contacts and travel info.",
     type: "website",
-    url: "https://cubantaxis.com/intresting-places-in-cuba",
+    url: "https://cubantaxis.com/interesting-places-in-cuba",
     siteName: "Cuban Taxis",
   },
   twitter: {
@@ -24,9 +50,29 @@ export const metadata: Metadata = {
     title: "Places of Interest in Cuba | Cuban Taxis",
     description:
       "Top hotels and attractions in Havana and Varadero with quick links to details.",
-  },
-  robots: { index: true, follow: true },
-};
+  }
+  ,keywords: [
+    "taxis Cuba",
+    "cuban taxis",
+    "urban taxi in Cuba",
+    "cuba taxi",
+    "cuba cab",
+    "Havana International Airport",
+    "MUHA airport",
+    "José Martí International Airport",
+    "HAV airport",
+    "VRA airport",
+    "Varadero airport",
+    "Cuba excursions from Havana",
+    "taxi Havana Trinidad",
+    "Havana to Varadero taxi",
+    "Cuba private transfers",
+    "taxi Cuba prices",
+    "taxis en Cuba"
+  ],
+  };
+}
+
 
 // ───────── Data (images: replace with real files in /public/images/...) ─────────
 const PLACES = [
@@ -94,7 +140,7 @@ function CollectionJsonLd() {
     name: "Places of Interest in Cuba",
     description:
       "Curated selection of hotels and points of interest in Havana and Varadero by Cuban Taxis.",
-    url: "https://cubantaxis.com/en/intresting-places-in-cuba",
+    url: "https://cubantaxis.com/en/interesting-places-in-cuba",
   };
 
   return (
@@ -137,7 +183,7 @@ export default function PlacesPage() {
         {PLACES.map((p) => (
           <Link
             key={p.slug}
-            href={`/intresting-places-in-cuba/${p.slug}`}
+            href={`/interesting-places-in-cuba/${p.slug}`}
             className={[
               // reference style: yellow/black, link-like cards
               "group relative overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm",

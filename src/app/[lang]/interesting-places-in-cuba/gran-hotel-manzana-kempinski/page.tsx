@@ -5,7 +5,8 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const base = "https://cubantaxis.com";
   const { lang } = await params; // ya no rompe
-
+  const path = `/${lang}/interesting-places-in-cuba/gran-hotel-manzana-kempinski`;
+  const url = `${base}${path}`;
   const pathByLang: Record<string, string> = { en: "/en/" };
 
   return {
@@ -13,12 +14,21 @@ export async function generateMetadata(
     description:
       "Book a Cuba taxi for airport transfer or tour online with the fast booking form. Fixed prices, rides, English-speaking drivers in Havana and Varadero.",
     alternates: {
-      canonical:base,
-      languages: {
-        "x-default": `${base}/en/`,
-        en: `${base}/en/`,
+      canonical: url,
+        languages: {
+        "x-default": `${base}/interesting-places-in-cuba/gran-hotel-manzana-kempinski`,
+        en: `${base}/en/interesting-places-in-cuba/gran-hotel-manzana-kempinski`,
+        es: `${base}/es/interesting-places-in-cuba/gran-hotel-manzana-kempinski`,
+        fr: `${base}/fr/interesting-places-in-cuba/gran-hotel-manzana-kempinski`,
+        de: `${base}/de/interesting-places-in-cuba/gran-hotel-manzana-kempinski`,
+        ru: `${base}/ru/interesting-places-in-cuba/gran-hotel-manzana-kempinski`,
+        pt: `${base}/pt/interesting-places-in-cuba/gran-hotel-manzana-kempinski`,
       },
     },
+     robots: {
+    index: true,   // Permite indexar (por defecto ya es true)
+    follow: true,  // Permite seguir enlaces (por defecto ya es true)
+  },
     openGraph: { url: base, locale: "en" },
   };
 }
@@ -30,7 +40,7 @@ export default function Example() {
         description:
           "Private airport pickup at HAV with professional drivers. Fixed prices, flight tracking and 24/7 support.",
         keywords: ["taxi cuba", "havana airport transfer", "cuban taxis"],
-        canonical: "https://cubantaxis.com/intresting-places-in-cuba/gran-hotel-manzana-kempinski",
+        canonical: "https://cubantaxis.com/interesting-places-in-cuba/gran-hotel-manzana-kempinski",
         robots: "index,follow",
         siteName: "Cuban Taxis",
         locale: "en_US",

@@ -20,7 +20,7 @@ type Params = {
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const base = "https://cubantaxis.com";
   const { lang } = await params;
-  const path = `/${lang}/private-transfer-booking`;
+  const path = `/${lang}/cuba-taxi-booking`;
   const url = `${base}${path}`;
 
   const title =
@@ -38,9 +38,17 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   return {
     title,
     description,
-    alternates: {
+     alternates: {
       canonical: url,
-
+        languages: {
+        "x-default": `${base}/cuba-taxi-booking`,
+        en: `${base}/en/cuba-taxi-booking`,
+        es: `${base}/es/cuba-taxi-booking`,
+        fr: `${base}/fr/cuba-taxi-booking`,
+        de: `${base}/de/cuba-taxi-booking`,
+        ru: `${base}/ru/cuba-taxi-booking`,
+        pt: `${base}/pt/cuba-taxi-booking`,
+      },
     },
     openGraph: {
       url,

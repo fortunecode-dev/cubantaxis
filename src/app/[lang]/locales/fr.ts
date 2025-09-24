@@ -119,7 +119,7 @@ export const fr: AppTexts = {
         "Explorez les informations détaillées sur les principales destinations : La Havane, Varadero, Viñales et Trinidad.",
     },
     {
-      href: "/intresting-places-in-cuba",
+      href: "/interesting-places-in-cuba",
       title:
         "Attractions et lieux d’intérêt à Cuba",
       description:

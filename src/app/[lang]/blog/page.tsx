@@ -8,18 +8,24 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const base = "https://cubantaxis.com";
   const { lang } = await params; // ya no rompe
-
+  const path = `/${lang}/taxi-in-cuba`;
+  const url = `${base}${path}`;
   const pathByLang: Record<string, string> = { en: "/en/" };
 
   return {
     title: "Cuban Taxis Blog | Prices, Tips, Advices and Info",
     description:
       "Book a Cuba taxi for airport transfer or tour online with the fast booking form. Fixed prices, rides, English-speaking drivers in Havana and Varadero.",
-    alternates: {
-      canonical:base,
-      languages: {
-        "x-default": `${base}/en/`,
-        en: `${base}/en/`,
+     alternates: {
+      canonical: url,
+        languages: {
+        "x-default": `${base}/taxi-in-cuba`,
+        en: `${base}/en/taxi-in-cuba`,
+        es: `${base}/es/taxi-in-cuba`,
+        fr: `${base}/fr/taxi-in-cuba`,
+        de: `${base}/de/taxi-in-cuba`,
+        ru: `${base}/ru/taxi-in-cuba`,
+        pt: `${base}/pt/taxi-in-cuba`,
       },
     },
     openGraph: { url: base, locale: "en" },

@@ -35,7 +35,7 @@ export default async function RootLayout({
               href={`https://cubantaxis.com/${code}`}
             />
           ))}
-        <link rel="alternate" hrefLang="x-default" href="https://cubantaxis.com/" />
+        <link rel="alternate" hrefLang="x-default" href="https://cubantaxis.com" />
         {/* preconnect para handshake más rápido */}
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="" />
         <link rel="preconnect" href="https://www.google-analytics.com" crossOrigin="" />

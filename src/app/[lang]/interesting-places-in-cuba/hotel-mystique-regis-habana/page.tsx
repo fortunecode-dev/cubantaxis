@@ -5,20 +5,30 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const base = "https://cubantaxis.com";
   const { lang } = await params; // ya no rompe
-
+const path = `/${lang}/interesting-places-in-cuba/hotel-mystique-regis-habana`;
+  const url = `${base}${path}`;
   const pathByLang: Record<string, string> = { en: "/en/" };
 
   return {
-    title: "Interesting Place In Varadero | Ocio Club | Place For Childrens",
+    title: "Interesting Place In Havana | Hotel Mystique Regis | Hotel",
     description:
       "Book a Cuba taxi for airport transfer or tour online with the fast booking form. Fixed prices, rides, English-speaking drivers in Havana and Varadero.",
-    alternates: {
-      canonical:base,
-      languages: {
-        "x-default": `${base}/en/`,
-        en: `${base}/en/`,
+     alternates: {
+      canonical: url,
+        languages: {
+        "x-default": `${base}/interesting-places-in-cuba/hotel-mystique-regis-habana`,
+        en: `${base}/en/interesting-places-in-cuba/hotel-mystique-regis-habana`,
+        es: `${base}/es/interesting-places-in-cuba/hotel-mystique-regis-habana`,
+        fr: `${base}/fr/interesting-places-in-cuba/hotel-mystique-regis-habana`,
+        de: `${base}/de/interesting-places-in-cuba/hotel-mystique-regis-habana`,
+        ru: `${base}/ru/interesting-places-in-cuba/hotel-mystique-regis-habana`,
+        pt: `${base}/pt/interesting-places-in-cuba/hotel-mystique-regis-habana`,
       },
     },
+     robots: {
+    index: true,   // Permite indexar (por defecto ya es true)
+    follow: true,  // Permite seguir enlaces (por defecto ya es true)
+  },
     openGraph: { url: base, locale: "en" },
   };
 }
@@ -30,7 +40,7 @@ export default function Example() {
                 description:
                     "Private airport pickup at HAV with professional drivers. Fixed prices, flight tracking and 24/7 support.",
                 keywords: ["taxi cuba", "havana airport transfer", "cuban taxis"],
-                canonical: "https://cubantaxis.com/intresting-places-in-cuba/ocio-club",
+                canonical: "https://cubantaxis.com/interesting-places-in-cuba/hotel-mystique-regis-habana",
                 robots: "index,follow",
                 siteName: "Cuban Taxis",
                 locale: "en_US",
@@ -42,23 +52,21 @@ export default function Example() {
                 },
             }}
             place={{
-                name: "Ocio Club",
-                alternateName: "Centro recreativo familiar en Varadero",
-                image: "/ocio-club.webp", // falta imagen real
-                description: "Centro recreativo en Varadero con juegos electrónicos y mecánicos de última generación, realidad virtual y atracciones para todas las edades. Ideal para familias.",
+                name: "Mystique Regis Habana",
+                alternateName: "Hotel boutique en Habana Vieja",
+                image: "/hotel-mystique-regis-habana.webp", // falta
+                description: "Inspirado en el glamour de 1900, este hotel boutique combina elegancia histórica con comodidades modernas. Ubicado en Habana Vieja, cerca de sitios UNESCO.",
                 address: {
-                    streetAddress: "Avenida 1ra entre calle 44 y 46",
-                    addressLocality: "Varadero",
-                    addressRegion: "Matanzas",
+                    addressLocality: "La Habana",
+                    addressRegion: "La Habana Vieja",
                     addressCountry: "CU",
                 },
-                phone: "+53 45 667147",
-                website: "https://cubantaxis.com/intresting-places-in-cuba/ocio-club",
+                website: "https://www.royaltonresorts.com",
             }}
             services={[
-                { class: "amenities", icon: "map", name: "Juegos electrónicos" },
-                { class: "amenities", icon: "star", name: "Atracciones mecánicas" },
-                { class: "experiences", icon: "guide", name: "Realidad virtual" },
+                { class: "amenities", icon: "star", name: "Boutique exclusivo" },
+                { class: "amenities", icon: "wifi", name: "Internet" },
+                { class: "location", icon: "map", name: "Ubicación céntrica" },
             ]}
             links={[
                 { label: "See all destinations", href: "/destinations-in-cuba" },
