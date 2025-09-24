@@ -7,7 +7,13 @@
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
-
+<!-- Blog: How much is a taxi -->
+  <url>
+    <loc>https://cubantaxis.com/blog</loc>
+    <lastmod>2025-08-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
   <!-- Blog: How much is a taxi -->
   <url>
     <loc>https://cubantaxis.com/blog/how-much-is-a-taxi-in-cuba</loc>
