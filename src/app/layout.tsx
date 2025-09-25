@@ -5,7 +5,8 @@ import Footer from "@/modules/layout/Footer";
 import FloatingContacts from "@/modules/layout/FloatingContacts";
 import Script from "next/script";
 import { LocaleParams } from "@/types/common";
-import { Toaster } from "react-hot-toast";
+import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 export async function generateStaticParams() {
   const languages = ["en", "es", "fr", "de", "ru", "pt"];
   return languages.map((lang) => ({ lang }));
@@ -56,8 +57,11 @@ export default async function RootLayout({
       });
     `}
         </Script>
+        <SpeedInsights/>
+        <Analytics/>
       </head>
       <body className="antialiased">
+
         <Header lang={lang} />
         {children}
         <FloatingContacts lang={lang} />

@@ -20,6 +20,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const ogImage = `${base}/og/cubantaxis-1200x630.jpg`;
 
   return {
+    title,description,
     alternates: {
       canonical: canonicalNeutral, // canónica = neutra
       languages,                   // incluye en + x-default = neutra
@@ -46,12 +47,6 @@ export default async function FastBookingPage({ params }: { params: LocaleParams
   const idioma = getTranslation(lang)
   return (
     <>
-      <Head>
-        <title>{idioma.bookingForm.page.title}</title>
-        <meta name="description" content={idioma.bookingForm.page.description} />
-        <meta name="robots" content="noindex, follow" />
-      </Head>
-
       <section className="min-h-screen px-2 py-13 md:py-24 m-auto bg-gradient-to-br from-amber-100 to-yellow-50">
         <div className="max-w-2xl bg-white rounded-2xl shadow-xl m-auto">
           <h1 className="text-2xl md:text-3xl pt-5 font-bold text-center text-amber-600 mb-3">
