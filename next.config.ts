@@ -22,7 +22,7 @@ export default withBundleAnalyzer({ enabled: process.env.ANALYZE === 'true' })({
        {
         source: "/:all",
         headers: [
-          { key: "X-Robots-Tag", value: "noindex, nofollow" },
+          { key: "X-Robots-Tag", value: "index, follow" },
         ],
       },
     ];

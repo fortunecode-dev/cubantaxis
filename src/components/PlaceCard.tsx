@@ -254,7 +254,7 @@ export default function PlaceSEOCard({
         <meta name="twitter:description" content={seo.description} />
         {seo.ogImage && <meta name="twitter:image" content={seo.ogImage} />}
         {/* Noindex hard (seguridad) */}
-        {noindex && <meta name="googlebot" content="noindex,nofollow" />}
+        {noindex && <meta name="googlebot" content="index,follow" />}
         {/* JSON-LD */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(placeLd) }} />
         {bcLd && (

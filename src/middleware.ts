@@ -6,26 +6,35 @@ const SUPPORTED = ["en", "es", "fr", "de", "ru", "pt"] as const;
 type Lang = (typeof SUPPORTED)[number];
 
 export function middleware(req: NextRequest) {
-  const { pathname } = req.nextUrl;
+  const { pathname, search } = req.nextUrl;
 
-  // ¿La ruta ya trae prefijo /en|/es|... ?
+  // Detecta prefijo /en|/es|...
   const m = pathname.match(/^\/(en|es|fr|de|ru|pt)(?:\/|$)/);
-  if (m) {
-    const lang = m[1] as Lang;
-    const res = NextResponse.next();
-    res.headers.set("x-lang", lang);
+  const lang: Lang = (m?.[1] as Lang) || "en";
+
+  // Inyecta header en la **request**
+  const requestHeaders = new Headers(req.headers);
+  requestHeaders.set("x-lang", lang);
+
+  if (!m) {
+    // Sin prefijo => sirve /en/... (rewrite interno), manteniendo la URL
+    const url = req.nextUrl.clone();
+    url.pathname = `/en${pathname}`;
+    url.search = search;
+
+    const res = NextResponse.rewrite(url, { request: { headers: requestHeaders } });
+    // Muy importante para CDNs: que la caché varíe por idioma
+    res.headers.set("Vary", "x-lang, Accept-Language");
     return res;
   }
 
-  // Sin prefijo -> idioma por defecto EN, reescribe a /en + misma ruta
-  const url = req.nextUrl.clone();
-  url.pathname = `/en${pathname}`;
-  const res = NextResponse.rewrite(url);
-  res.headers.set("x-lang", "en");
+  const res = NextResponse.next({ request: { headers: requestHeaders } });
+  res.headers.set("Vary", "x-lang, Accept-Language");
   return res;
 }
 
 export const config = {
-  // Excluir assets, API y archivos estáticos
-  matcher: ["/((?!_next|api|.*\\.(?:png|jpg|jpeg|gif|svg|ico|webp|avif|css|js|map|txt|xml|json|webmanifest)).*)"],
+  matcher: [
+    "/((?!_next|api|.*\\.(?:png|jpg|jpeg|gif|svg|ico|webp|avif|css|js|map|txt|xml|json|webmanifest)).*)",
+  ],
 };

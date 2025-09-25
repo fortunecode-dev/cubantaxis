@@ -1,5 +1,6 @@
 // app/layout.tsx
 import "./[lang]/globals.css"
+// app/layout.tsx
 import type { ReactNode } from "react";
 import { headers } from "next/headers";
 import Header from "@/modules/layout/Header";
@@ -9,10 +10,14 @@ import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
+// 👇 fuerza ejecución en servidor (nada de HTML pre-generado ambiguo)
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 type Lang = "en" | "es" | "fr" | "de" | "ru" | "pt";
 
 export default async function RootLayout({ children }: { children: ReactNode }) {
-  const h = await headers();
+  const h =await headers();
   const lang = (h.get("x-lang") as Lang) || "en";
 
   return (
@@ -20,7 +25,6 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
       <head>
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.google-analytics.com" crossOrigin="anonymous" />
-        <Script src="https://analytics.ahrefs.com/analytics.js" data-key="2SbRzTgOCNAsv5VGplgR3w" async />
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-HB26WDN91W" strategy="lazyOnload" />
         <Script id="ga4-init" strategy="lazyOnload">
           {`
