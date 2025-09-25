@@ -20,7 +20,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
       <head>
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.google-analytics.com" crossOrigin="anonymous" />
-
+        <Script src="https://analytics.ahrefs.com/analytics.js" data-key="2SbRzTgOCNAsv5VGplgR3w" async />
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-HB26WDN91W" strategy="lazyOnload" />
         <Script id="ga4-init" strategy="lazyOnload">
           {`

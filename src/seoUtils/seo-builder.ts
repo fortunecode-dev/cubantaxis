@@ -52,17 +52,45 @@ export function buildMetaTags(metadata: Partial<SeoMetadata>) {
   }
 }
 
-export function buildAlternatesMetadata(slugNoLang: `/${string}` | "", lang: string) {
-  const languages: Record<string, string> = {
-    "en": `${urlBase}${slugNoLang}`,        // inglés = neutra
-    "x-default": `${urlBase}${slugNoLang}`, // x-default = neutra
-  };
-  for (const l of LOCALES) {
-    languages[l] = `${urlBase}/${l}${slugNoLang}`;
-  }
-  return {
-    canonical: `${urlBase}/${lang}${slugNoLang}`, // canónica otros idiomas
-    languages, // bloque hreflang completo y recíproco
-  };
+// seoUtils/seo-builder.ts (o donde tengas la función)
+import type { Metadata } from "next";
+
+type Lang = "en" | "es" | "fr" | "de" | "ru" | "pt";
+
+const BASE = "https://cubantaxis.com";
+const ALL: Lang[] = ["en", "es", "fr", "de", "ru", "pt"];
+
+/** Normaliza el path: "", "blog", "/blog" -> "/blog" ; root -> "" */
+function normPath(path?: string) {
+  const raw = (path || "").trim();
+  if (!raw || raw === "/") return ""; // raíz
+  return raw.startsWith("/") ? raw : `/${raw}`;
 }
 
+/**
+ * Regla:
+ * - en (default) -> sin prefijo siempre (canonical y hreflang.en)
+ * - otros idiomas -> con prefijo en canonical y hreflang.<lang>
+ * - x-default -> sin prefijo (neutral)
+ */
+export function buildAlternatesMetadata(
+  path: string,
+  currentLang: Lang
+): { canonical: string; languages: Record<string, string> } {
+  const p = normPath(path);
+
+  const canonical =
+    currentLang === "en" ? `${BASE}${p}` : `${BASE}/${currentLang}${p}`;
+
+  const languages: Record<string, string> = {
+    "x-default": `${BASE}${p}`,
+    en: `${BASE}${p}`,
+  };
+
+  for (const L of ALL) {
+    if (L === "en") continue;
+    languages[L] = `${BASE}/${L}${p}`;
+  }
+
+  return { canonical, languages };
+}
