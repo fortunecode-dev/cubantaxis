@@ -17,27 +17,8 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang={"en"}>
+    <html >
       <head>
-        {["en",
-          "es"
-          , "fr"
-          , "de"
-          , "ru"
-          , "pt"].map((code) => (
-            <link
-              key={code}
-              rel="alternate"
-              hrefLang={code}
-              href={`https://cubantaxis.com/${code}`}
-            />
-          ))}
-          <link
-              rel="alternate"
-              hrefLang={"en"}
-              href={`https://cubantaxis.com`}
-            />
-        <link rel="alternate" hrefLang="x-default" href="https://cubantaxis.com" />
         {/* preconnect para handshake más rápido */}
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="" />
         <link rel="preconnect" href="https://www.google-analytics.com" crossOrigin="" />
@@ -62,7 +43,6 @@ export default async function RootLayout({
         <Analytics/>
       </head>
       <body className="antialiased">
-
         <Header lang={"en"} />
         {children}
         <FloatingContacts lang={"en"} />
