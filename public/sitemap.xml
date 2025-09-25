@@ -14,7 +14,7 @@
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
 
-    <xhtml:link rel="alternate" hreflang="en" href="https://cubantaxis.com/en" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://cubantaxis.com" />
     <xhtml:link rel="alternate" hreflang="es" href="https://cubantaxis.com/es" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://cubantaxis.com/fr" />
     <xhtml:link rel="alternate" hreflang="de" href="https://cubantaxis.com/de" />
@@ -32,7 +32,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
 
-    <xhtml:link rel="alternate" hreflang="en" href="https://cubantaxis.com/en/blog" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://cubantaxis.com/blog" />
     <xhtml:link rel="alternate" hreflang="es" href="https://cubantaxis.com/es/blog" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://cubantaxis.com/fr/blog" />
     <xhtml:link rel="alternate" hreflang="de" href="https://cubantaxis.com/de/blog" />
@@ -50,7 +50,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
 
-    <xhtml:link rel="alternate" hreflang="en" href="https://cubantaxis.com/en/blog/how-much-is-a-taxi-in-cuba" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://cubantaxis.com/blog/how-much-is-a-taxi-in-cuba" />
     <xhtml:link rel="alternate" hreflang="es" href="https://cubantaxis.com/es/blog/how-much-is-a-taxi-in-cuba" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://cubantaxis.com/fr/blog/how-much-is-a-taxi-in-cuba" />
     <xhtml:link rel="alternate" hreflang="de" href="https://cubantaxis.com/de/blog/how-much-is-a-taxi-in-cuba" />
@@ -68,7 +68,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
 
-    <xhtml:link rel="alternate" hreflang="en" href="https://cubantaxis.com/en/destinations-in-cuba" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://cubantaxis.com/destinations-in-cuba" />
     <xhtml:link rel="alternate" hreflang="es" href="https://cubantaxis.com/es/destinations-in-cuba" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://cubantaxis.com/fr/destinations-in-cuba" />
     <xhtml:link rel="alternate" hreflang="de" href="https://cubantaxis.com/de/destinations-in-cuba" />
@@ -86,7 +86,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
 
-    <xhtml:link rel="alternate" hreflang="en" href="https://cubantaxis.com/en/taxi-in-cuba" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://cubantaxis.com/taxi-in-cuba" />
     <xhtml:link rel="alternate" hreflang="es" href="https://cubantaxis.com/es/taxi-in-cuba" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://cubantaxis.com/fr/taxi-in-cuba" />
     <xhtml:link rel="alternate" hreflang="de" href="https://cubantaxis.com/de/taxi-in-cuba" />
@@ -104,7 +104,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
 
-    <xhtml:link rel="alternate" hreflang="en" href="https://cubantaxis.com/en/private-transfer-booking" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://cubantaxis.com/private-transfer-booking" />
     <xhtml:link rel="alternate" hreflang="es" href="https://cubantaxis.com/es/private-transfer-booking" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://cubantaxis.com/fr/private-transfer-booking" />
     <xhtml:link rel="alternate" hreflang="de" href="https://cubantaxis.com/de/private-transfer-booking" />
@@ -113,8 +113,8 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cubantaxis.com/private-transfer-booking" />
   </url>
 
-   <!-- =========================================
-       BOOKING: Private transfer booking
+  <!-- =========================================
+       BOOKING: Fast Booking
   ========================================== -->
   <url>
     <loc>https://cubantaxis.com/cuba-taxi-booking</loc>
@@ -140,7 +140,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
 
-    <xhtml:link rel="alternate" hreflang="en" href="https://cubantaxis.com/en/interesting-places-in-cuba" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://cubantaxis.com/interesting-places-in-cuba" />
     <xhtml:link rel="alternate" hreflang="es" href="https://cubantaxis.com/es/interesting-places-in-cuba" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://cubantaxis.com/fr/interesting-places-in-cuba" />
     <xhtml:link rel="alternate" hreflang="de" href="https://cubantaxis.com/de/interesting-places-in-cuba" />
@@ -151,7 +151,6 @@
 
   <!-- =========================================
        INTERESTING PLACES – Detail pages
-       (mismo slug en todos los idiomas)
   ========================================== -->
 
   <!-- Ocio Club -->
@@ -161,7 +160,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
 
-    <xhtml:link rel="alternate" hreflang="en" href="https://cubantaxis.com/en/interesting-places-in-cuba/ocio-club" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://cubantaxis.com/interesting-places-in-cuba/ocio-club" />
     <xhtml:link rel="alternate" hreflang="es" href="https://cubantaxis.com/es/interesting-places-in-cuba/ocio-club" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://cubantaxis.com/fr/interesting-places-in-cuba/ocio-club" />
     <xhtml:link rel="alternate" hreflang="de" href="https://cubantaxis.com/de/interesting-places-in-cuba/ocio-club" />
@@ -177,7 +176,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
 
-    <xhtml:link rel="alternate" hreflang="en" href="https://cubantaxis.com/en/interesting-places-in-cuba/melia-internacional-varadero" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://cubantaxis.com/interesting-places-in-cuba/melia-internacional-varadero" />
     <xhtml:link rel="alternate" hreflang="es" href="https://cubantaxis.com/es/interesting-places-in-cuba/melia-internacional-varadero" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://cubantaxis.com/fr/interesting-places-in-cuba/melia-internacional-varadero" />
     <xhtml:link rel="alternate" hreflang="de" href="https://cubantaxis.com/de/interesting-places-in-cuba/melia-internacional-varadero" />
@@ -193,7 +192,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
 
-    <xhtml:link rel="alternate" hreflang="en" href="https://cubantaxis.com/en/interesting-places-in-cuba/melia-las-americas" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://cubantaxis.com/interesting-places-in-cuba/melia-las-americas" />
     <xhtml:link rel="alternate" hreflang="es" href="https://cubantaxis.com/es/interesting-places-in-cuba/melia-las-americas" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://cubantaxis.com/fr/interesting-places-in-cuba/melia-las-americas" />
     <xhtml:link rel="alternate" hreflang="de" href="https://cubantaxis.com/de/interesting-places-in-cuba/melia-las-americas" />
@@ -209,7 +208,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
 
-    <xhtml:link rel="alternate" hreflang="en" href="https://cubantaxis.com/en/interesting-places-in-cuba/iberostar-selection-parque-central" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://cubantaxis.com/interesting-places-in-cuba/iberostar-selection-parque-central" />
     <xhtml:link rel="alternate" hreflang="es" href="https://cubantaxis.com/es/interesting-places-in-cuba/iberostar-selection-parque-central" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://cubantaxis.com/fr/interesting-places-in-cuba/iberostar-selection-parque-central" />
     <xhtml:link rel="alternate" hreflang="de" href="https://cubantaxis.com/de/interesting-places-in-cuba/iberostar-selection-parque-central" />
@@ -225,7 +224,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
 
-    <xhtml:link rel="alternate" hreflang="en" href="https://cubantaxis.com/en/interesting-places-in-cuba/gran-hotel-manzana-kempinski" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://cubantaxis.com/interesting-places-in-cuba/gran-hotel-manzana-kempinski" />
     <xhtml:link rel="alternate" hreflang="es" href="https://cubantaxis.com/es/interesting-places-in-cuba/gran-hotel-manzana-kempinski" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://cubantaxis.com/fr/interesting-places-in-cuba/gran-hotel-manzana-kempinski" />
     <xhtml:link rel="alternate" hreflang="de" href="https://cubantaxis.com/de/interesting-places-in-cuba/gran-hotel-manzana-kempinski" />
@@ -241,7 +240,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
 
-    <xhtml:link rel="alternate" hreflang="en" href="https://cubantaxis.com/en/interesting-places-in-cuba/hotel-mystique-regis-habana" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://cubantaxis.com/interesting-places-in-cuba/hotel-mystique-regis-habana" />
     <xhtml:link rel="alternate" hreflang="es" href="https://cubantaxis.com/es/interesting-places-in-cuba/hotel-mystique-regis-habana" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://cubantaxis.com/fr/interesting-places-in-cuba/hotel-mystique-regis-habana" />
     <xhtml:link rel="alternate" hreflang="de" href="https://cubantaxis.com/de/interesting-places-in-cuba/hotel-mystique-regis-habana" />
