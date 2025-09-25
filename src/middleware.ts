@@ -7,15 +7,25 @@ type Lang = (typeof SUPPORTED)[number];
 
 export function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
-  const m = pathname.match(/^\/(en|es|fr|de|ru|pt)(?:\/|$)/);
-  const lang: Lang = (m?.[1] as Lang) || "en";
 
-  const res = NextResponse.next();
-  res.headers.set("x-lang", lang);
+  // ¿La ruta ya trae prefijo /en|/es|... ?
+  const m = pathname.match(/^\/(en|es|fr|de|ru|pt)(?:\/|$)/);
+  if (m) {
+    const lang = m[1] as Lang;
+    const res = NextResponse.next();
+    res.headers.set("x-lang", lang);
+    return res;
+  }
+
+  // Sin prefijo -> idioma por defecto EN, reescribe a /en + misma ruta
+  const url = req.nextUrl.clone();
+  url.pathname = `/en${pathname}`;
+  const res = NextResponse.rewrite(url);
+  res.headers.set("x-lang", "en");
   return res;
 }
 
 export const config = {
-  // Excluye assets estáticos y API
-  matcher: ["/((?!_next|.*\\..*|api).*)"],
+  // Excluir assets, API y archivos estáticos
+  matcher: ["/((?!_next|api|.*\\.(?:png|jpg|jpeg|gif|svg|ico|webp|avif|css|js|map|txt|xml|json|webmanifest)).*)"],
 };

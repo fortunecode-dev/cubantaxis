@@ -18,9 +18,8 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
   return (
     <html lang={lang}>
       <head>
-        {/* preconnects, scripts, etc. tal cual los tienes */}
-        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="" />
-        <link rel="preconnect" href="https://www.google-analytics.com" crossOrigin="" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.google-analytics.com" crossOrigin="anonymous" />
 
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-HB26WDN91W" strategy="lazyOnload" />
         <Script id="ga4-init" strategy="lazyOnload">
@@ -35,14 +34,14 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
             });
           `}
         </Script>
-        <SpeedInsights />
-        <Analytics />
       </head>
       <body className="antialiased">
         <Header lang={lang} />
         {children}
         <FloatingContacts lang={lang} />
         <Footer lang={lang} />
+        <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
