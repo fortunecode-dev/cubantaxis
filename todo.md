@@ -1,0 +1,1 @@
+Crear componente seo optimiez image que ademas de la imagen reciba su titulo y todo eso internacionalizado

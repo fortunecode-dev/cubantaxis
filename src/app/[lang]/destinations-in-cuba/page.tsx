@@ -1,6 +1,6 @@
 // app/destinations-in-cuba/page.tsx
 import { DestinationsGrid } from "@/components/DestinationGrid";
-import { buildAlternatesA } from "../../../utils/seo";
+import { buildAlternates, Locale } from "../../../seoUtils/seo-builder";
 import { Metadata } from "next";
 import Link from "next/link";
 import Script from "next/script";
@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const base = "https://cubantaxis.com";
   const { lang } = await params;
   const  slugNoLang =  `/destinations-in-cuba`;
-    const { canonicalNeutral, languages } = buildAlternatesA(slugNoLang);
+    const { canonicalNeutral, languages, canonicalFor } = buildAlternates(slugNoLang);
   
 
  const title= "Cuba Destinations 2025 | Havana, Varadero, Trinidad & More"
@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     title,
     description,
      alternates: {
-      canonical: canonicalNeutral, // canónica = neutra
+      canonical: canonicalFor(lang as Locale), // canónica = neutra
       languages,                   // incluye en + x-default = neutra
     },
      robots: {

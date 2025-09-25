@@ -4,7 +4,7 @@ import Script from "next/script";
 import Link from "next/link";
 import PriceTable from "@/components/PriceTable";
 import TrustBlock from "@/components/TrustBlock";
-import { buildAlternatesA } from "../../../utils/seo";
+import { buildAlternates, Locale } from "../../../seoUtils/seo-builder";
 
 type Params = {
   params: Promise<{
@@ -40,7 +40,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const base = "https://cubantaxis.com";
   const { lang } = await params;
   const  slugNoLang =  `/taxi-in-cuba`;
-  const { canonicalNeutral, languages } = buildAlternatesA(slugNoLang);
+  const { canonicalNeutral, languages, canonicalFor } = buildAlternates(slugNoLang);
 
   const title =
     lang === "es"
@@ -60,7 +60,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     icons: "icon.ico",
   
    alternates: {
-      canonical: canonicalNeutral, // canónica = neutra
+      canonical: canonicalFor(lang as Locale), // canónica = neutra
       languages,                   // incluye en + x-default = neutra
     },
     openGraph: {

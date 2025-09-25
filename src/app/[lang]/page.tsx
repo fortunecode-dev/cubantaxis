@@ -5,7 +5,7 @@ import UnderHeroLinks from "@/components/UnderHeroLinks";
 import FaqSection from "@/components/Faqs";
 import { getTranslation } from "./locales";
 import { LocaleParams } from "@/types/common";
-import { buildAlternatesA } from "../../utils/seo";
+import { buildAlternates, Locale } from "../../seoUtils/seo-builder";
 
 // ✅ Tipar params como Promise
 export async function generateMetadata(
@@ -14,13 +14,13 @@ export async function generateMetadata(
   const base = "https://cubantaxis.com";
   const { lang } = await params; // ya no rompe
   const  slugNoLang =  ``;
-  const { canonicalNeutral, languages } = buildAlternatesA(slugNoLang);
+  const { canonicalNeutral, languages, canonicalFor } = buildAlternates(slugNoLang);
   return {
-    title: "Cuba Taxi Booking Online  | Airport Transfers & Tours ",
+    title: "Cuba Taxi Booking Online  | Airport Transfers & Tours",
     description:
       "Book a Cuba taxi for airport transfer or tour online with the fast booking form. Fixed prices, rides, English-speaking drivers in Havana and Varadero.",
    alternates: {
-      canonical: canonicalNeutral, // canónica = neutra
+      canonical: canonicalFor(lang as Locale), // canónica = neutra
       languages,                   // incluye en + x-default = neutra
     },
     openGraph: { url:canonicalNeutral },

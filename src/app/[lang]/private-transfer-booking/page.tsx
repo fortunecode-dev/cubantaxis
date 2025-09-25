@@ -4,7 +4,7 @@ import { LocaleParams } from "@/types/common";
 import { LocaleLink } from "@/libs/i18n-nav";
 import ExtendedBookingForm from "@/modules/booking/ExtendedBookingForm";
 import type { Metadata } from "next";
-import { buildAlternatesA } from "../../../utils/seo";
+import { buildAlternates, Locale } from "../../../seoUtils/seo-builder";
 
 
 type Params = {
@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const base = "https://cubantaxis.com";
   const { lang } = await params;
   const  slugNoLang =  `/private-transfer-booking`;
-  const { canonicalNeutral, languages } = buildAlternatesA(slugNoLang);
+  const { canonicalNeutral, languages, canonicalFor } = buildAlternates(slugNoLang);
 
   const title =
     lang === "es"
@@ -40,7 +40,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     title,
     description,
    alternates: {
-      canonical: canonicalNeutral, // canónica = neutra
+      canonical: canonicalFor(lang as Locale), // canónica = neutra
       languages,                   // incluye en + x-default = neutra
     },
      robots: {

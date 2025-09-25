@@ -5,7 +5,7 @@ import { LocaleLink } from "@/libs/i18n-nav"; // si no lo usas, elimina esta imp
 import { getTranslation } from "../../locales";
 import { LocaleParams } from "@/types/common";
 import { Metadata } from "next";
-import { buildAlternatesA } from "../../../../utils/seo";
+import { buildAlternates, Locale } from "../../../../seoUtils/seo-builder";
 
 export async function generateMetadata(
   { params }: { params: Promise<{ lang: string }> }
@@ -13,11 +13,11 @@ export async function generateMetadata(
   const base = "https://cubantaxis.com";
   const { lang } = await params; // ya no rompe
   const  slugNoLang =  `/blog/how-much-is-a-taxi-in-cuba`;
-  const { canonicalNeutral, languages } = buildAlternatesA(slugNoLang);
+  const { canonicalNeutral, languages, canonicalFor } = buildAlternates(slugNoLang);
   return {
     title:  "How much does a taxi cost in Cuba in 2025? Prices & Guides",
    alternates: {
-      canonical: canonicalNeutral, // canónica = neutra
+      canonical: canonicalFor(lang as Locale), // canónica = neutra
       languages,                   // incluye en + x-default = neutra
     },
        robots: {

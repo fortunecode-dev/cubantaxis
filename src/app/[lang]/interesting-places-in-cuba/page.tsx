@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { LocaleLink } from "@/libs/i18n-nav";
-import { buildAlternatesA } from "../../../utils/seo";
+import { buildAlternates, Locale } from "../../../seoUtils/seo-builder";
 type Params = {
   params: Promise<{
     lang: "en" 
@@ -18,13 +18,13 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const base = "https://cubantaxis.com";
   const { lang } = await params;
   const  slugNoLang =  `/interesting-places-in-cuba`;
-  const { canonicalNeutral, languages } = buildAlternatesA(slugNoLang);
+  const { canonicalNeutral, languages, canonicalFor } = buildAlternates(slugNoLang);
   return {
     title: "Places of Interest in Cuba | Cuban Taxis",
   description:
     "Curated selection of hotels and points of interest in Havana and Varadero. Browse highlights and jump into detailed pages with services, contacts and how to get there.",
     alternates: {
-      canonical: canonicalNeutral, // canónica = neutra
+      canonical: canonicalFor(lang as Locale), // canónica = neutra
       languages,                   // incluye en + x-default = neutra
     },
      robots: {

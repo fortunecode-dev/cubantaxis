@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { buildAlternatesA } from "../../../utils/seo";
+import { buildAlternates, Locale } from "../../../seoUtils/seo-builder";
 import QuickBookingForm from "@/modules/booking/QuickBookingForm";
 import Head from "next/head";
 import { LocaleLink } from "@/libs/i18n-nav";
@@ -9,10 +9,13 @@ import { LocaleParams } from "@/types/common";
 
 export const dynamic = "force-static"; // o como prefieras
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata(
+  { params }: { params: Promise<{ lang: string }> }
+): Promise<Metadata> {
   const base = "https://cubantaxis.com";
+  const { lang } = await params; // ya no rompe
   const slugNoLang = "/cuba-taxi-booking";
-  const { canonicalNeutral, languages } = buildAlternatesA(slugNoLang);
+  const { canonicalNeutral, languages, canonicalFor } = buildAlternates(slugNoLang);
 
   const title = "Book A Taxi In Cuba | Fast Booking & Airport Transfers (HAV & VRA)";
   const description =
@@ -22,7 +25,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title,description,
     alternates: {
-      canonical: canonicalNeutral, // canónica = neutra
+      canonical: canonicalFor(lang as Locale), // canónica = neutra
       languages,                   // incluye en + x-default = neutra
     },
     openGraph: {

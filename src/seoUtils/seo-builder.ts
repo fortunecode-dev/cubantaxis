@@ -3,7 +3,7 @@ export type Locale = typeof LOCALES[number];
 export const urlBase = "https://cubantaxis.com";
 
 // Construye alternates para Estrategia A: EN = neutra
-export function buildAlternatesA( slugNoLang: `/${string}`|"") {
+export function buildAlternates( slugNoLang: `/${string}`|"") {
   const languages: Record<string, string> = {
     "en": `${urlBase}${slugNoLang}`,        // inglés = neutra
     "x-default": `${urlBase}${slugNoLang}`, // x-default = neutra
@@ -19,3 +19,19 @@ export function buildAlternatesA( slugNoLang: `/${string}`|"") {
     languages, // bloque hreflang completo y recíproco
   };
 }
+export function buildAlternatesMetadata( slugNoLang: `/${string}`|"",lang:string) {
+  const languages: Record<string, string> = {
+    "en": `${urlBase}${slugNoLang}`,        // inglés = neutra
+    "x-default": `${urlBase}${slugNoLang}`, // x-default = neutra
+  };
+
+  for (const l of LOCALES) {
+    languages[l] = `${urlBase}/${l}${slugNoLang}`;
+  }
+
+  return {
+    canonical:`${urlBase}/${lang}${slugNoLang}`, // canónica otros idiomas
+    languages, // bloque hreflang completo y recíproco
+  };
+}
+
