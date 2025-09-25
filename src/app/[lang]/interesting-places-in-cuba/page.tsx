@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   description:
     "Curated selection of hotels and points of interest in Havana and Varadero. Browse highlights and jump into detailed pages with services, contacts and how to get there.",
     alternates: {
-      canonical: canonicalFor(lang as Locale), // canónica = neutra
+      canonical: canonicalNeutral, // canónica = neutra
       languages,                   // incluye en + x-default = neutra
     },
      robots: {

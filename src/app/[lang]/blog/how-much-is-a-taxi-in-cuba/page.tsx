@@ -17,7 +17,7 @@ export async function generateMetadata(
   return {
     title:  "How much does a taxi cost in Cuba in 2025? Prices & Guides",
    alternates: {
-      canonical: canonicalFor(lang as Locale), // canónica = neutra
+      canonical: canonicalNeutral, // canónica = neutra
       languages,                   // incluye en + x-default = neutra
     },
        robots: {

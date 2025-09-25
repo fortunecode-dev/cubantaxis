@@ -15,7 +15,7 @@ export async function generateMetadata(
     description:
       "Book a Cuba taxi for airport transfer or tour online with the fast booking form. Fixed prices, rides, English-speaking drivers in Havana and Varadero.",
    alternates: {
-      canonical: canonicalFor(lang as Locale), // canónica = neutra
+      canonical: canonicalNeutral, // canónica = neutra
       languages,                   // incluye en + x-default = neutra
     },
      robots: {

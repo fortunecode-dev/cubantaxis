@@ -40,7 +40,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     title,
     description,
    alternates: {
-      canonical: canonicalFor(lang as Locale), // canónica = neutra
+      canonical: canonicalNeutral, // canónica = neutra
       languages,                   // incluye en + x-default = neutra
     },
      robots: {
