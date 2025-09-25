@@ -6,6 +6,7 @@ import FloatingContacts from "@/modules/layout/FloatingContacts";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { LocaleParams } from "@/types/common";
 export async function generateStaticParams() {
   const languages = ["en", "fr", "de", "ru", "pt"];
   return languages.map((lang) => ({ lang }));
@@ -13,11 +14,14 @@ export async function generateStaticParams() {
 
 export default async function RootLayout({
   children,
+  params
 }: Readonly<{
   children: React.ReactNode;
+  params: LocaleParams
 }>) {
+  const { lang } = await params;
   return (
-    <html >
+    <html lang={lang||"en"}>
       <head>
         {/* preconnect para handshake más rápido */}
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="" />
@@ -39,8 +43,8 @@ export default async function RootLayout({
       });
     `}
         </Script>
-        <SpeedInsights/>
-        <Analytics/>
+        <SpeedInsights />
+        <Analytics />
       </head>
       <body className="antialiased">
         <Header lang={"en"} />
