@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { buildAlternates, Locale } from "../../../seoUtils/seo-builder";
+import { buildAlternates, buildMetaTags, Locale } from "../../../seoUtils/seo-builder";
 import QuickBookingForm from "@/modules/booking/QuickBookingForm";
 import Head from "next/head";
 import { LocaleLink } from "@/libs/i18n-nav";
@@ -12,39 +12,12 @@ export const dynamic = "force-static"; // o como prefieras
 export async function generateMetadata(
   { params }: { params: Promise<{ lang: string }> }
 ): Promise<Metadata> {
-  const base = "https://cubantaxis.com";
-  const { lang } = await params; // ya no rompe
-  const slugNoLang = "/cuba-taxi-booking";
-  const { canonicalNeutral, languages, canonicalFor } = buildAlternates(slugNoLang);
-
-  const title = "Book A Taxi In Cuba | Fast Booking & Airport Transfers (HAV & VRA)";
-  const description =
-    "Best way to book a taxi in Cuba. Send your info and customize your trip. Choose your preferred car and destinations.";
-  const ogImage = `${base}/og/cubantaxis-1200x630.jpg`;
-
-  return {
-    title,description,
-    alternates: {
-      canonical: canonicalNeutral, // canónica = neutra
-      languages,                   // incluye en + x-default = neutra
-    },
-    openGraph: {
-      url: canonicalNeutral,
-      type: "website",
-      title,
-      description,
-      images: [{ url: ogImage, width: 1200, height: 630, alt: "Classic taxi in Havana, Cuba" }],
-      locale: "en_US",
-      siteName: "CubanTaxis",
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-      images: [ogImage],
-    },
-  };
+  const { lang } = await params;
+  const idioma = getTranslation(lang)
+  const metadata = buildMetaTags(idioma.metadata.fastBooking as any)
+  return metadata
 }
+
 export default async function FastBookingPage({ params }: { params: LocaleParams }) {
   const { lang } = await params;
   const idioma = getTranslation(lang)

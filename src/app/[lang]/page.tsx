@@ -5,26 +5,15 @@ import UnderHeroLinks from "@/components/UnderHeroLinks";
 import FaqSection from "@/components/Faqs";
 import { getTranslation } from "./locales";
 import { LocaleParams } from "@/types/common";
-import { buildAlternates, Locale } from "../../seoUtils/seo-builder";
-
+import { buildMetaTags } from "../../seoUtils/seo-builder";
 // ✅ Tipar params como Promise
 export async function generateMetadata(
   { params }: { params: Promise<{ lang: string }> }
 ): Promise<Metadata> {
-  const base = "https://cubantaxis.com";
-  const { lang } = await params; // ya no rompe
-  const  slugNoLang =  ``;
-  const { canonicalNeutral, languages, canonicalFor } = buildAlternates(slugNoLang);
-  return {
-    title: "Cuba Taxi Booking Online  | Airport Transfers & Tours",
-    description:
-      "Book a Cuba taxi for airport transfer or tour online with the fast booking form. Fixed prices, rides, English-speaking drivers in Havana and Varadero.",
-   alternates: {
-      canonical: canonicalNeutral, // canónica = neutra
-      languages,                   // incluye en + x-default = neutra
-    },
-    openGraph: { url:canonicalNeutral },
-  };
+  const { lang } = await params;
+  const idioma = getTranslation(lang)
+  const metadata = buildMetaTags(idioma.metadata.landingPage as any)
+  return metadata
 }
 
 // ✅ También aquí Promise<LocaleParams>

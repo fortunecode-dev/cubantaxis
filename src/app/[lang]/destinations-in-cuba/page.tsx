@@ -1,14 +1,15 @@
 // app/destinations-in-cuba/page.tsx
 import { DestinationsGrid } from "@/components/DestinationGrid";
-import { buildAlternates, Locale } from "../../../seoUtils/seo-builder";
+import { buildAlternates, buildMetaTags, Locale } from "../../../seoUtils/seo-builder";
 import { Metadata } from "next";
 import Link from "next/link";
 import Script from "next/script";
+import { getTranslation } from "../locales";
 
 // ---------- SEO ----------
 type Params = {
   params: Promise<{
-    lang: "en" 
+    lang: "en"
     | "es"
     | "fr"
     | "de"
@@ -16,66 +17,13 @@ type Params = {
     | "pt"
   }>
 };
-export async function generateMetadata({ params }: Params): Promise<Metadata> {
-  const base = "https://cubantaxis.com";
+export async function generateMetadata(
+  { params }: { params: Promise<{ lang: string }> }
+): Promise<Metadata> {
   const { lang } = await params;
-  const  slugNoLang =  `/destinations-in-cuba`;
-    const { canonicalNeutral, languages, canonicalFor } = buildAlternates(slugNoLang);
-  
-
- const title= "Cuba Destinations 2025 | Havana, Varadero, Trinidad & More"
-  const description=
-    "Explore the most popular taxi destinations in Cuba: Havana, Varadero, Trinidad, Cienfuegos, and the northern keys. See photos, route notes, and book fast."
-
-  const ogImage = `${base}/og/cubantaxis-1200x630.jpg`; // Asegúrate de que exista 1200×630
-
-  return {
-    title,
-    description,
-     alternates: {
-      canonical: canonicalNeutral, // canónica = neutra
-      languages,                   // incluye en + x-default = neutra
-    },
-     robots: {
-    index: true,   // Permite indexar (por defecto ya es true)
-    follow: true,  // Permite seguir enlaces (por defecto ya es true)
-  },
-  openGraph: {
-    title: "Top Cuba Taxi Destinations | Photos, Details & Fast Booking",
-    description:
-      "See the best routes across Cuba with images and details. Private transfers from HAV & VRA to Varadero, Viñales, Trinidad, Cienfuegos, Santa Clara, and the keys.",
-    url:canonicalNeutral,
-    siteName: "Cuban Taxis",
-    images: [{ url: "/cuba-cabs.jpg", width: 1200, height: 630, alt: "Classic taxi in Havana, Cuba" }],
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Cuba Taxi Destinations | Photos, Details & Fast Booking",
-    description:
-      "Browse the most requested taxi destinations in Cuba. English-speaking drivers, fixed prices, and quick booking.",
-    images: ["/cuba-cabs.jpg"],
-  },keywords: [
-    "taxis Cuba",
-    "cuban taxis",
-    "urban taxi in Cuba",
-    "cuba taxi",
-    "cuba cab",
-    "Havana International Airport",
-    "MUHA airport",
-    "José Martí International Airport",
-    "HAV airport",
-    "VRA airport",
-    "Varadero airport",
-    "Cuba excursions from Havana",
-    "taxi Havana Trinidad",
-    "Havana to Varadero taxi",
-    "Cuba private transfers",
-    "taxi Cuba prices",
-    "taxis en Cuba"
-  ],
-  };
+  const idioma = getTranslation(lang)
+  const metadata = buildMetaTags(idioma.metadata.destinationsInCuba as any)
+  return metadata
 }
 // ---------- Data ----------
 type Destination = {

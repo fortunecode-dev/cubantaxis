@@ -9,24 +9,24 @@ import { SeoMetadataSchema } from "./metadataValidation";
 export type SeoMetadata = z.infer<typeof SeoMetadataSchema>;
 
 export type customMetaData={
-    landingPage:SeoMetadata
+    landingPage:Partial<SeoMetadata>
     blog:{
-        self:SeoMetadata,
-        howMuchIsATaxiInCuba:SeoMetadata
+        self:Partial<SeoMetadata>,
+        howMuchIsATaxiInCuba:Partial<SeoMetadata>
     },
-    fastBooking:SeoMetadata,
-    customBooking:SeoMetadata,
-    destinationsInCuba:SeoMetadata,
+    fastBooking:Partial<SeoMetadata>,
+    customBooking:Partial<SeoMetadata>,
+    destinationsInCuba:Partial<SeoMetadata>,
     interestingPlaces:{
-        self:SeoMetadata
-        granHotelManzanaKempinski:SeoMetadata
-        hotelMystiqueRegisHavana:SeoMetadata
-        iberostarParqueCentral:SeoMetadata
-        meliaInternacionalVaradero:SeoMetadata
-        meliaLasAmericas:SeoMetadata
-        ocioClub:SeoMetadata
+        self:Partial<SeoMetadata>
+        granHotelManzanaKempinski:Partial<SeoMetadata>
+        hotelMystiqueRegisHavana:Partial<SeoMetadata>
+        iberostarParqueCentral:Partial<SeoMetadata>
+        meliaInternacionalVaradero:Partial<SeoMetadata>
+        meliaLasAmericas:Partial<SeoMetadata>
+        ocioClub:Partial<SeoMetadata>
     },
-    taxiInCuba:SeoMetadata
+    taxiInCuba:Partial<SeoMetadata>
 }
 
 // Estructura principal del contenido

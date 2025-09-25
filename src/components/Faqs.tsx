@@ -65,7 +65,7 @@ export default function FaqSection({
   prefetchInternalLinks = false,
 }: Props) {
   // Server Component: todo se calcula una vez por render, sin hooks.
-  const withIds = faqs.map((f) => ({ ...f, id: slugify(f.question) }));
+  const withIds = faqs.map((f,i) => ({ ...f, id: slugify(f.question)+i }));
 
   // Genera JSON-LD solo si se va a inyectar
   const jsonLd = structuredData

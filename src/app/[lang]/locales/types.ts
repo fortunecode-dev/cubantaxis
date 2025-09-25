@@ -1,4 +1,7 @@
+import { customMetaData } from "@/seoUtils/metadata";
+
 export interface AppTexts {
+  metadata:Partial<customMetaData>
   taxiGuide: string;
   exploreDestinations: string;
   header: {

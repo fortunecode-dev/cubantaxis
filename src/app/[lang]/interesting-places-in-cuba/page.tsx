@@ -1,72 +1,18 @@
 // app/en/places/page.tsx
 import Image from "next/image";
-import Link from "next/link";
 import type { Metadata } from "next";
 import { LocaleLink } from "@/libs/i18n-nav";
-import { buildAlternates, Locale } from "../../../seoUtils/seo-builder";
-type Params = {
-  params: Promise<{
-    lang: "en" 
-    | "es"
-    | "fr"
-    | "de"
-    | "ru"
-    | "pt"
-  }>
-};
-export async function generateMetadata({ params }: Params): Promise<Metadata> {
-  const base = "https://cubantaxis.com";
-  const { lang } = await params;
-  const  slugNoLang =  `/interesting-places-in-cuba`;
-  const { canonicalNeutral, languages, canonicalFor } = buildAlternates(slugNoLang);
-  return {
-    title: "Places of Interest in Cuba | Cuban Taxis",
-  description:
-    "Selection of hotels and points of interest in Havana and Varadero. Browse highlights and jump into detailed pages with services, contacts and how to get there.",
-    alternates: {
-      canonical: canonicalNeutral, // canónica = neutra
-      languages,                   // incluye en + x-default = neutra
-    },
-     robots: {
-    index: true,   // Permite indexar (por defecto ya es true)
-    follow: true,  // Permite seguir enlaces (por defecto ya es true)
-  },
-  openGraph: {
-    title: "Places of Interest in Cuba | Cuban Taxis",
-    description:
-      "Explore top hotels and attractions in Havana and Varadero. Photos, descriptions, contacts and travel info.",
-    type: "website",
-    url:canonicalNeutral,
-    siteName: "Cuban Taxis",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Places of Interest in Cuba | Cuban Taxis",
-    description:
-      "Top hotels and attractions in Havana and Varadero with quick links to details.",
-  }
-  ,keywords: [
-    "taxis Cuba",
-    "cuban taxis",
-    "urban taxi in Cuba",
-    "cuba taxi",
-    "cuba cab",
-    "Havana International Airport",
-    "MUHA airport",
-    "José Martí International Airport",
-    "HAV airport",
-    "VRA airport",
-    "Varadero airport",
-    "Cuba excursions from Havana",
-    "taxi Havana Trinidad",
-    "Havana to Varadero taxi",
-    "Cuba private transfers",
-    "taxi Cuba prices",
-    "taxis en Cuba"
-  ],
-  };
-}
+import { buildMetaTags } from "../../../seoUtils/seo-builder";
+import { getTranslation } from "../locales";
 
+export async function generateMetadata(
+  { params }: { params: Promise<{ lang: string }> }
+): Promise<Metadata> {
+  const { lang } = await params;
+  const idioma = getTranslation(lang)
+  const metadata = buildMetaTags(idioma.metadata.interestingPlaces?.self as any)
+  return metadata
+}
 
 // ───────── Data (images: replace with real files in /public/images/...) ─────────
 const PLACES = [

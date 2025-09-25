@@ -1,7 +1,8 @@
 // ru.ts
 import type { AppTexts } from "./types";
-
+import { metadata } from "./metadata/metadata.ru";
 export const ru: AppTexts = {
+  metadata,
   taxiGuide: "Полное руководство по такси на Кубе",
   exploreDestinations: "Исследовать направления →",
   header: {

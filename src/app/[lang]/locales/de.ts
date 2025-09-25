@@ -1,7 +1,8 @@
 // de.ts
 import type { AppTexts } from "./types";
-
+import { metadata } from "./metadata/metadata.de";
 export const de: AppTexts = {
+  metadata,
   taxiGuide: "Umfassender Kuba-Taxi-Leitfaden",
   exploreDestinations: "Ziele entdecken →",
   header: {

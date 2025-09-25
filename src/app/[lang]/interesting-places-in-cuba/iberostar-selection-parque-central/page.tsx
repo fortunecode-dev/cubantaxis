@@ -1,29 +1,15 @@
 import PlaceSEOCard from "@/components/PlaceCard";
-import { buildAlternates, Locale } from "../../../../seoUtils/seo-builder";
+import { buildMetaTags } from "../../../../seoUtils/seo-builder";
 import { Metadata } from "next";
+import { getTranslation } from "../../locales";
+
 export async function generateMetadata(
   { params }: { params: Promise<{ lang: string }> }
 ): Promise<Metadata> {
-  const base = "https://cubantaxis.com";
-  const { lang } = await params; // ya no rompe
-const  slugNoLang =  `/interesting-places-in-cuba/iberostar-selection-parque-central`;
-  const { canonicalNeutral, languages, canonicalFor } = buildAlternates(slugNoLang);
-  const pathByLang: Record<string, string> = { en: "/en/" };
-
-  return {
-    title: "Interesting Site | Iberostar Selection Parque Central Havana",
-    description:
-      "Book a Cuba taxi for airport transfer or tour online with the fast booking form. Fixed prices, rides, English-speaking drivers in Havana and Varadero.",
-     alternates: {
-      canonical: canonicalNeutral, // canónica = neutra
-      languages,                   // incluye en + x-default = neutra
-    },
-     robots: {
-    index: true,   // Permite indexar (por defecto ya es true)
-    follow: true,  // Permite seguir enlaces (por defecto ya es true)
-  },
-    openGraph: { url:canonicalNeutral },
-  };
+  const { lang } = await params;
+  const idioma = getTranslation(lang)
+  const metadata = buildMetaTags(idioma.metadata.interestingPlaces?.iberostarParqueCentral as any)
+  return metadata
 }
 export default function Example() {
     return (

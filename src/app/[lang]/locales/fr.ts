@@ -1,7 +1,8 @@
 // fr.ts
 import type { AppTexts } from "./types";
-
+import { metadata } from "./metadata/metadata.fr";
 export const fr: AppTexts = {
+  metadata,
   taxiGuide: "Guide complet des taxis à Cuba",
   exploreDestinations: "Explorer les destinations →",
   header: {

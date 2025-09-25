@@ -4,7 +4,7 @@ import { LocaleParams } from "@/types/common";
 import { LocaleLink } from "@/libs/i18n-nav";
 import ExtendedBookingForm from "@/modules/booking/ExtendedBookingForm";
 import type { Metadata } from "next";
-import { buildAlternates, Locale } from "../../../seoUtils/seo-builder";
+import { buildAlternates, buildMetaTags, Locale } from "../../../seoUtils/seo-builder";
 
 
 type Params = {
@@ -18,51 +18,13 @@ type Params = {
   }>
 };
 
-export async function generateMetadata({ params }: Params): Promise<Metadata> {
-  const base = "https://cubantaxis.com";
+export async function generateMetadata(
+  { params }: { params: Promise<{ lang: string }> }
+): Promise<Metadata> {
   const { lang } = await params;
-  const  slugNoLang =  `/private-transfer-booking`;
-  const { canonicalNeutral, languages, canonicalFor } = buildAlternates(slugNoLang);
-
-  const title =
-    lang === "es"
-      ? "Reserva Un Taxi En Cuba | Reservas Personalizadas, Transfers (HAV & VRA)"
-      : "Book A Taxi In Cuba | Custom Booking & Airport Transfers (HAV & VRA)";
-
-  const description =
-    lang === "es"
-      ? "Guía 2025 de taxis en Cuba: precios fijos, taxis privados/compartidos y traslados de aeropuerto desde La Habana (HAV) y Varadero (VRA). Reserva rápida."
-      : "Best way to book a taxi in cuba, send your info an customize your trip, chose your prefer car and destinations";
-
-  const ogImage = `${base}/og/cubantaxis-1200x630.jpg`; // Asegúrate de que exista 1200×630
-
-  return {
-    title,
-    description,
-   alternates: {
-      canonical: canonicalNeutral, // canónica = neutra
-      languages,                   // incluye en + x-default = neutra
-    },
-     robots: {
-    index: true,   // Permite indexar (por defecto ya es true)
-    follow: true,  // Permite seguir enlaces (por defecto ya es true)
-  },
-    openGraph: {
-      url:canonicalNeutral,
-      type: "article",
-      title,
-      description,
-      images: [{ url: ogImage, width: 1200, height: 630, alt: "Classic taxi in Havana, Cuba" }],
-      locale: lang === "es" ? "es_ES" : "en_US",
-      siteName: "CubanTaxis",
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-      images: [ogImage],
-    },
-  };
+  const idioma = getTranslation(lang)
+  const metadata = buildMetaTags(idioma.metadata.customBooking as any)
+  return metadata
 }
 export default async function BookAReservationPage({
   params,

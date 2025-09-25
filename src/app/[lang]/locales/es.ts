@@ -1,6 +1,7 @@
 import { AppTexts } from "./types";
-
+import { metadata } from "./metadata/metadata.es";
 export const es: AppTexts = {
+  metadata,
   taxiGuide: "Guía completa de taxis en Cuba",
   exploreDestinations: "Explorar destinos →",
   header: {

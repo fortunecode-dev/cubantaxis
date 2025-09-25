@@ -4,7 +4,8 @@ import Script from "next/script";
 import Link from "next/link";
 import PriceTable from "@/components/PriceTable";
 import TrustBlock from "@/components/TrustBlock";
-import { buildAlternates, Locale } from "../../../seoUtils/seo-builder";
+import { buildAlternates, buildMetaTags, Locale } from "../../../seoUtils/seo-builder";
+import { getTranslation } from "../locales";
 
 type Params = {
   params: Promise<{
@@ -34,51 +35,13 @@ function formatUpdatedDate(d = new Date(), lang: "en" | "es"
   return new Intl.DateTimeFormat(locale, opts).format(d);
 }
 
-// --- METADATA ---
-// Nota: usamos canonical autoconsistente y un único esquema de hreflang (genérico por idioma)
-export async function generateMetadata({ params }: Params): Promise<Metadata> {
-  const base = "https://cubantaxis.com";
+export async function generateMetadata(
+  { params }: { params: Promise<{ lang: string }> }
+): Promise<Metadata> {
   const { lang } = await params;
-  const  slugNoLang =  `/taxi-in-cuba`;
-  const { canonicalNeutral, languages, canonicalFor } = buildAlternates(slugNoLang);
-
-  const title =
-    lang === "es"
-      ? "Taxi en Cuba 2025 | Precio, Reservas, Transfer de Aeropuerto"
-      : "Taxi in Cuba 2025 | Prices, Booking & Transfers (HAV & VRA)";
-
-  const description =
-    lang === "es"
-      ? "Guía 2025 de taxis en Cuba: precios fijos, taxis privados/compartidos y traslados de aeropuerto desde La Habana (HAV) y Varadero (VRA). Reserva rápida."
-      : "2025 Cuba taxi guide: fixed prices, private/shared rides, and airport transfers from Havana (HAV) & Varadero (VRA). Fast booking.";
-
-  const ogImage = `${base}/og/cubantaxis-1200x630.jpg`; // Asegúrate de que exista 1200×630
-
-  return {
-    title,
-    description,
-    icons: "icon.ico",
-  
-   alternates: {
-      canonical: canonicalNeutral, // canónica = neutra
-      languages,                   // incluye en + x-default = neutra
-    },
-    openGraph: {
-      url:canonicalNeutral,
-      type: "article",
-      title,
-      description,
-      images: [{ url: ogImage, width: 1200, height: 630, alt: "Classic taxi in Havana, Cuba" }],
-      locale: lang === "es" ? "es_ES" : "en_US",
-      siteName: "CubanTaxis",
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-      images: [ogImage],
-    },
-  };
+  const idioma = getTranslation(lang)
+  const metadata = buildMetaTags(idioma.metadata.taxiInCuba as any)
+  return metadata
 }
 
 // --- PAGE ---

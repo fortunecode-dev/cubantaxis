@@ -1,6 +1,6 @@
 // scripts/validate-metadata.ts
 import { validateSeoMetadata } from "./metadataValidation";
-import { metadata as en } from "../app/[lang]/locales/metadata/en"; // tu objeto
+import { metadata as en } from "../app/[lang]/locales/metadata/metadata.en"; // tu objeto
 
 const res = validateSeoMetadata(en);
 if (!res.ok) {

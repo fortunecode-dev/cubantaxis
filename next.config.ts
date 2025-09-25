@@ -19,6 +19,12 @@ export default withBundleAnalyzer({ enabled: process.env.ANALYZE === 'true' })({
           { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
         ],
       },
+       {
+        source: "/:all",
+        headers: [
+          { key: "X-Robots-Tag", value: "noindex, nofollow" },
+        ],
+      },
     ];
   },
   // experimental: { optimizePackageImports: ['react-icons','react'] },
