@@ -4,24 +4,20 @@ import Header from "@/modules/layout/Header";
 import Footer from "@/modules/layout/Footer";
 import FloatingContacts from "@/modules/layout/FloatingContacts";
 import Script from "next/script";
-import { LocaleParams } from "@/types/common";
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 export async function generateStaticParams() {
-  const languages = ["en", "es", "fr", "de", "ru", "pt"];
+  const languages = ["en", "fr", "de", "ru", "pt"];
   return languages.map((lang) => ({ lang }));
 }
 
 export default async function RootLayout({
   children,
-  params
 }: Readonly<{
   children: React.ReactNode;
-  params: LocaleParams
 }>) {
-  const { lang } = await params;
   return (
-    <html lang={lang ?? "en"}>
+    <html lang={"en"}>
       <head>
         {["en",
           "es"
@@ -36,6 +32,11 @@ export default async function RootLayout({
               href={`https://cubantaxis.com/${code}`}
             />
           ))}
+          <link
+              rel="alternate"
+              hrefLang={"en"}
+              href={`https://cubantaxis.com`}
+            />
         <link rel="alternate" hrefLang="x-default" href="https://cubantaxis.com" />
         {/* preconnect para handshake más rápido */}
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="" />
@@ -62,10 +63,10 @@ export default async function RootLayout({
       </head>
       <body className="antialiased">
 
-        <Header lang={lang} />
+        <Header lang={"en"} />
         {children}
-        <FloatingContacts lang={lang} />
-        <Footer lang={lang} />
+        <FloatingContacts lang={"en"} />
+        <Footer lang={"en"} />
       </body>
     </html>
   );
