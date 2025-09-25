@@ -1,5 +1,6 @@
 // app/destinations-in-cuba/page.tsx
 import { DestinationsGrid } from "@/components/DestinationGrid";
+import { buildAlternatesA } from "../../../utils/seo";
 import { Metadata } from "next";
 import Link from "next/link";
 import Script from "next/script";
@@ -18,8 +19,9 @@ type Params = {
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const base = "https://cubantaxis.com";
   const { lang } = await params;
-  const path = `/${lang}/destinations-in-cuba`;
-  const url = `${base}${path}`;
+  const  slugNoLang =  `/destinations-in-cuba`;
+    const { canonicalNeutral, languages } = buildAlternatesA(slugNoLang);
+  
 
  const title= "Cuba Destinations 2025 | Havana, Varadero, Trinidad & More"
   const description=
@@ -31,16 +33,8 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     title,
     description,
      alternates: {
-      canonical: url,
-        languages: {
-        "x-default": `${base}/destinations-in-cuba`,
-        en: `${base}/en/destinations-in-cuba`,
-        es: `${base}/es/destinations-in-cuba`,
-        fr: `${base}/fr/destinations-in-cuba`,
-        de: `${base}/de/destinations-in-cuba`,
-        ru: `${base}/ru/destinations-in-cuba`,
-        pt: `${base}/pt/destinations-in-cuba`,
-      },
+      canonical: canonicalNeutral, // canónica = neutra
+      languages,                   // incluye en + x-default = neutra
     },
      robots: {
     index: true,   // Permite indexar (por defecto ya es true)
@@ -50,7 +44,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     title: "Top Cuba Taxi Destinations | Photos, Details & Fast Booking",
     description:
       "See the best routes across Cuba with images and details. Private transfers from HAV & VRA to Varadero, Viñales, Trinidad, Cienfuegos, Santa Clara, and the keys.",
-    url,
+    url:canonicalNeutral,
     siteName: "Cuban Taxis",
     images: [{ url: "/cuba-cabs.jpg", width: 1200, height: 630, alt: "Classic taxi in Havana, Cuba" }],
     locale: "en_US",

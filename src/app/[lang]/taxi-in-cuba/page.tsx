@@ -4,6 +4,7 @@ import Script from "next/script";
 import Link from "next/link";
 import PriceTable from "@/components/PriceTable";
 import TrustBlock from "@/components/TrustBlock";
+import { buildAlternatesA } from "../../../utils/seo";
 
 type Params = {
   params: Promise<{
@@ -38,8 +39,8 @@ function formatUpdatedDate(d = new Date(), lang: "en" | "es"
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const base = "https://cubantaxis.com";
   const { lang } = await params;
-  const path = `/${lang}/taxi-in-cuba`;
-  const url = `${base}${path}`;
+  const  slugNoLang =  `/taxi-in-cuba`;
+  const { canonicalNeutral, languages } = buildAlternatesA(slugNoLang);
 
   const title =
     lang === "es"
@@ -58,20 +59,12 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     description,
     icons: "icon.ico",
   
-    alternates: {
-      canonical: url,
-        languages: {
-        "x-default": `${base}/taxi-in-cuba`,
-        en: `${base}/en/taxi-in-cuba`,
-        es: `${base}/es/taxi-in-cuba`,
-        fr: `${base}/fr/taxi-in-cuba`,
-        de: `${base}/de/taxi-in-cuba`,
-        ru: `${base}/ru/taxi-in-cuba`,
-        pt: `${base}/pt/taxi-in-cuba`,
-      },
+   alternates: {
+      canonical: canonicalNeutral, // canónica = neutra
+      languages,                   // incluye en + x-default = neutra
     },
     openGraph: {
-      url,
+      url:canonicalNeutral,
       type: "article",
       title,
       description,

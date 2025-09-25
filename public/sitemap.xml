@@ -27,7 +27,7 @@
        BLOG INDEX
   ========================================== -->
   <url>
-    <loc>https://cubantaxis.com/en/blog</loc>
+    <loc>https://cubantaxis.com/blog</loc>
     <lastmod>2025-08-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -45,7 +45,7 @@
        BLOG POST: How much is a taxi in Cuba
   ========================================== -->
   <url>
-    <loc>https://cubantaxis.com/en/blog/how-much-is-a-taxi-in-cuba</loc>
+    <loc>https://cubantaxis.com/blog/how-much-is-a-taxi-in-cuba</loc>
     <lastmod>2025-08-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -63,7 +63,7 @@
        DESTINATIONS LIST
   ========================================== -->
   <url>
-    <loc>https://cubantaxis.com/en/destinations-in-cuba</loc>
+    <loc>https://cubantaxis.com/destinations-in-cuba</loc>
     <lastmod>2025-08-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -81,7 +81,7 @@
        GUIDE: Taxi in Cuba
   ========================================== -->
   <url>
-    <loc>https://cubantaxis.com/en/taxi-in-cuba</loc>
+    <loc>https://cubantaxis.com/taxi-in-cuba</loc>
     <lastmod>2025-08-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -99,7 +99,7 @@
        BOOKING: Private transfer booking
   ========================================== -->
   <url>
-    <loc>https://cubantaxis.com/en/private-transfer-booking</loc>
+    <loc>https://cubantaxis.com/private-transfer-booking</loc>
     <lastmod>2025-08-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -113,11 +113,29 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cubantaxis.com/private-transfer-booking" />
   </url>
 
+   <!-- =========================================
+       BOOKING: Private transfer booking
+  ========================================== -->
+  <url>
+    <loc>https://cubantaxis.com/cuba-taxi-booking</loc>
+    <lastmod>2025-08-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+
+    <xhtml:link rel="alternate" hreflang="en" href="https://cubantaxis.com/cuba-taxi-booking" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://cubantaxis.com/es/cuba-taxi-booking" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://cubantaxis.com/fr/cuba-taxi-booking" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://cubantaxis.com/de/cuba-taxi-booking" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://cubantaxis.com/ru/cuba-taxi-booking" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://cubantaxis.com/pt/cuba-taxi-booking" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cubantaxis.com/cuba-taxi-booking" />
+  </url>
+
   <!-- =========================================
        INTERESTING PLACES – Index
   ========================================== -->
   <url>
-    <loc>https://cubantaxis.com/en/interesting-places-in-cuba</loc>
+    <loc>https://cubantaxis.com/interesting-places-in-cuba</loc>
     <lastmod>2025-08-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -138,7 +156,7 @@
 
   <!-- Ocio Club -->
   <url>
-    <loc>https://cubantaxis.com/en/interesting-places-in-cuba/ocio-club</loc>
+    <loc>https://cubantaxis.com/interesting-places-in-cuba/ocio-club</loc>
     <lastmod>2025-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -154,7 +172,7 @@
 
   <!-- Meliá Internacional Varadero -->
   <url>
-    <loc>https://cubantaxis.com/en/interesting-places-in-cuba/melia-internacional-varadero</loc>
+    <loc>https://cubantaxis.com/interesting-places-in-cuba/melia-internacional-varadero</loc>
     <lastmod>2025-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -170,7 +188,7 @@
 
   <!-- Meliá Las Américas -->
   <url>
-    <loc>https://cubantaxis.com/en/interesting-places-in-cuba/melia-las-americas</loc>
+    <loc>https://cubantaxis.com/interesting-places-in-cuba/melia-las-americas</loc>
     <lastmod>2025-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -186,7 +204,7 @@
 
   <!-- Iberostar Selection Parque Central -->
   <url>
-    <loc>https://cubantaxis.com/en/interesting-places-in-cuba/iberostar-selection-parque-central</loc>
+    <loc>https://cubantaxis.com/interesting-places-in-cuba/iberostar-selection-parque-central</loc>
     <lastmod>2025-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -202,7 +220,7 @@
 
   <!-- Gran Hotel Manzana Kempinski -->
   <url>
-    <loc>https://cubantaxis.com/en/interesting-places-in-cuba/gran-hotel-manzana-kempinski</loc>
+    <loc>https://cubantaxis.com/interesting-places-in-cuba/gran-hotel-manzana-kempinski</loc>
     <lastmod>2025-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -218,7 +236,7 @@
 
   <!-- Hotel Mystique Regis Habana -->
   <url>
-    <loc>https://cubantaxis.com/en/interesting-places-in-cuba/hotel-mystique-regis-habana</loc>
+    <loc>https://cubantaxis.com/interesting-places-in-cuba/hotel-mystique-regis-habana</loc>
     <lastmod>2025-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

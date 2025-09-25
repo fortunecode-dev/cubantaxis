@@ -1,35 +1,28 @@
 import PlaceSEOCard from "@/components/PlaceCard";
+import { buildAlternatesA } from "../../../../utils/seo";
 import { Metadata } from "next";
 export async function generateMetadata(
   { params }: { params: Promise<{ lang: string }> }
 ): Promise<Metadata> {
   const base = "https://cubantaxis.com";
   const { lang } = await params; // ya no rompe
-  const path = `/${lang}/interesting-places-in-cuba/gran-hotel-manzana-kempinski`;
-  const url = `${base}${path}`;
+  const  slugNoLang =  `/interesting-places-in-cuba/gran-hotel-manzana-kempinski`;
+  const { canonicalNeutral, languages } = buildAlternatesA(slugNoLang);
   const pathByLang: Record<string, string> = { en: "/en/" };
 
   return {
     title: "Interesting Place In Havana | Gran Hotel Manzana Kempinski | Hotel",
     description:
       "Book a Cuba taxi for airport transfer or tour online with the fast booking form. Fixed prices, rides, English-speaking drivers in Havana and Varadero.",
-    alternates: {
-      canonical: url,
-        languages: {
-        "x-default": `${base}/interesting-places-in-cuba/gran-hotel-manzana-kempinski`,
-        en: `${base}/en/interesting-places-in-cuba/gran-hotel-manzana-kempinski`,
-        es: `${base}/es/interesting-places-in-cuba/gran-hotel-manzana-kempinski`,
-        fr: `${base}/fr/interesting-places-in-cuba/gran-hotel-manzana-kempinski`,
-        de: `${base}/de/interesting-places-in-cuba/gran-hotel-manzana-kempinski`,
-        ru: `${base}/ru/interesting-places-in-cuba/gran-hotel-manzana-kempinski`,
-        pt: `${base}/pt/interesting-places-in-cuba/gran-hotel-manzana-kempinski`,
-      },
+   alternates: {
+      canonical: canonicalNeutral, // canónica = neutra
+      languages,                   // incluye en + x-default = neutra
     },
      robots: {
     index: true,   // Permite indexar (por defecto ya es true)
     follow: true,  // Permite seguir enlaces (por defecto ya es true)
   },
-    openGraph: { url },
+    openGraph: { url:canonicalNeutral },
   };
 }
 export default function Example() {

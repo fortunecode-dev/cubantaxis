@@ -5,6 +5,7 @@ import UnderHeroLinks from "@/components/UnderHeroLinks";
 import FaqSection from "@/components/Faqs";
 import { getTranslation } from "./locales";
 import { LocaleParams } from "@/types/common";
+import { buildAlternatesA } from "../../utils/seo";
 
 // ✅ Tipar params como Promise
 export async function generateMetadata(
@@ -12,25 +13,17 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const base = "https://cubantaxis.com";
   const { lang } = await params; // ya no rompe
-  const path = `/${lang}`;
-  const url = `${base}${path}`;
+  const  slugNoLang =  ``;
+  const { canonicalNeutral, languages } = buildAlternatesA(slugNoLang);
   return {
     title: "Cuba Taxi Booking Online  | Airport Transfers & Tours ",
     description:
       "Book a Cuba taxi for airport transfer or tour online with the fast booking form. Fixed prices, rides, English-speaking drivers in Havana and Varadero.",
    alternates: {
-      canonical: url,
-        languages: {
-        "x-default": `${base}`,
-        en: `${base}/en`,
-        es: `${base}/es`,
-        fr: `${base}/fr`,
-        de: `${base}/de`,
-        ru: `${base}/ru`,
-        pt: `${base}/pt`,
-      },
+      canonical: canonicalNeutral, // canónica = neutra
+      languages,                   // incluye en + x-default = neutra
     },
-    openGraph: { url },
+    openGraph: { url:canonicalNeutral },
   };
 }
 

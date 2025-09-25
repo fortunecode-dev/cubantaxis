@@ -4,32 +4,26 @@ import Link from "next/link";
 // One article: How much is a taxi in Cuba
 import { Metadata } from "next";
 import { LocaleLink } from "@/libs/i18n-nav";
+import { buildAlternatesA } from "../../../utils/seo";
 export async function generateMetadata(
   { params }: { params: Promise<{ lang: string }> }
 ): Promise<Metadata> {
   const base = "https://cubantaxis.com";
   const { lang } = await params; // ya no rompe
-  const path = `/${lang}/blog`;
-  const url = `${base}${path}`;
+  const  slugNoLang =  `/blog`;
+    const { canonicalNeutral, languages } = buildAlternatesA(slugNoLang);
+  
   const pathByLang: Record<string, string> = { en: "/en/" };
 
   return {
     title: "Cuban Taxis Blog | Prices, Tips, Advices and Info",
     description:
       "Book a Cuba taxi for airport transfer or tour online with the fast booking form. Fixed prices, rides, English-speaking drivers in Havana and Varadero.",
-     alternates: {
-      canonical: url,
-        languages: {
-        "x-default": `${base}/blog`,
-        en: `${base}/en/blog`,
-        es: `${base}/es/blog`,
-        fr: `${base}/fr/blog`,
-        de: `${base}/de/blog`,
-        ru: `${base}/ru/blog`,
-        pt: `${base}/pt/blog`,
-      },
+    alternates: {
+      canonical: canonicalNeutral, // canónica = neutra
+      languages,                   // incluye en + x-default = neutra
     },
-    openGraph: { url },
+    openGraph: { url:canonicalNeutral },
   };
 }
 const POSTS = [

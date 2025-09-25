@@ -4,6 +4,7 @@ import { LocaleParams } from "@/types/common";
 import { LocaleLink } from "@/libs/i18n-nav";
 import ExtendedBookingForm from "@/modules/booking/ExtendedBookingForm";
 import type { Metadata } from "next";
+import { buildAlternatesA } from "../../../utils/seo";
 
 
 type Params = {
@@ -20,8 +21,8 @@ type Params = {
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const base = "https://cubantaxis.com";
   const { lang } = await params;
-  const path = `/${lang}/private-transfer-booking`;
-  const url = `${base}${path}`;
+  const  slugNoLang =  `/private-transfer-booking`;
+  const { canonicalNeutral, languages } = buildAlternatesA(slugNoLang);
 
   const title =
     lang === "es"
@@ -38,24 +39,16 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   return {
     title,
     description,
-    alternates: {
-      canonical: url,
-        languages: {
-        "x-default": `${base}/private-transfer-booking`,
-        en: `${base}/en/private-transfer-booking`,
-        es: `${base}/es/private-transfer-booking`,
-        fr: `${base}/fr/private-transfer-booking`,
-        de: `${base}/de/private-transfer-booking`,
-        ru: `${base}/ru/private-transfer-booking`,
-        pt: `${base}/pt/private-transfer-booking`,
-      },
+   alternates: {
+      canonical: canonicalNeutral, // canónica = neutra
+      languages,                   // incluye en + x-default = neutra
     },
      robots: {
     index: true,   // Permite indexar (por defecto ya es true)
     follow: true,  // Permite seguir enlaces (por defecto ya es true)
   },
     openGraph: {
-      url,
+      url:canonicalNeutral,
       type: "article",
       title,
       description,

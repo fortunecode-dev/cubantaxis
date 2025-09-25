@@ -22,8 +22,8 @@ export default async function RootLayout({
   return (
     <html lang={lang ?? "en"}>
       <head>
-        {["en"
-          , "es"
+        {["en",
+          "es"
           , "fr"
           , "de"
           , "ru"

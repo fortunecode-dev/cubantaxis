@@ -1,62 +1,36 @@
+import type { Metadata } from "next";
+import { buildAlternatesA } from "../../../utils/seo";
 import QuickBookingForm from "@/modules/booking/QuickBookingForm";
 import Head from "next/head";
+import { LocaleLink } from "@/libs/i18n-nav";
 import { getTranslation } from "../locales";
 import { LocaleParams } from "@/types/common";
-import { LocaleLink } from "@/libs/i18n-nav";
-import type { Metadata } from "next";
+// import QuickBookingForm from "@/modules/booking/QuickBookingForm";
 
+export const dynamic = "force-static"; // o como prefieras
 
-type Params = {
-  params: Promise<{
-    lang: "en" 
-    | "es"
-    | "fr"
-    | "de"
-    | "ru"
-    | "pt"
-  }>
-};
-
-export async function generateMetadata({ params }: Params): Promise<Metadata> {
+export async function generateMetadata(): Promise<Metadata> {
   const base = "https://cubantaxis.com";
-  const { lang } = await params;
-  const path = `/${lang}/cuba-taxi-booking`;
-  const url = `${base}${path}`;
+  const slugNoLang = "/cuba-taxi-booking";
+  const { canonicalNeutral, languages } = buildAlternatesA(slugNoLang);
 
-  const title =
-    lang === "es"
-      ? "Reserva Un Taxi En Cuba | Reservas Rápidas, Transfers (HAV & VRA)"
-      : "Book A Taxi In Cuba | Fast Booking & Airport Transfers (HAV & VRA)";
-
+  const title = "Book A Taxi In Cuba | Fast Booking & Airport Transfers (HAV & VRA)";
   const description =
-    lang === "es"
-      ? "Guía 2025 de taxis en Cuba: precios fijos, taxis privados/compartidos y traslados de aeropuerto desde La Habana (HAV) y Varadero (VRA). Reserva rápida."
-      : "Best way to book a taxi in cuba, send your info an customize your trip, chose your prefer car and destinations";
-
-  const ogImage = `${base}/og/cubantaxis-1200x630.jpg`; // Asegúrate de que exista 1200×630
+    "Best way to book a taxi in Cuba. Send your info and customize your trip. Choose your preferred car and destinations.";
+  const ogImage = `${base}/og/cubantaxis-1200x630.jpg`;
 
   return {
-    title,
-    description,
-     alternates: {
-      canonical: url,
-        languages: {
-        "x-default": `${base}/cuba-taxi-booking`,
-        en: `${base}/en/cuba-taxi-booking`,
-        es: `${base}/es/cuba-taxi-booking`,
-        fr: `${base}/fr/cuba-taxi-booking`,
-        de: `${base}/de/cuba-taxi-booking`,
-        ru: `${base}/ru/cuba-taxi-booking`,
-        pt: `${base}/pt/cuba-taxi-booking`,
-      },
+    alternates: {
+      canonical: canonicalNeutral, // canónica = neutra
+      languages,                   // incluye en + x-default = neutra
     },
     openGraph: {
-      url,
-      type: "article",
+      url: canonicalNeutral,
+      type: "website",
       title,
       description,
       images: [{ url: ogImage, width: 1200, height: 630, alt: "Classic taxi in Havana, Cuba" }],
-      locale: lang === "es" ? "es_ES" : "en_US",
+      locale: "en_US",
       siteName: "CubanTaxis",
     },
     twitter: {
