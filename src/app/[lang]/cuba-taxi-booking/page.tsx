@@ -7,8 +7,8 @@ import { getTranslation } from "../locales";
 import { LocaleParams } from "@/types/common";
 // import QuickBookingForm from "@/modules/booking/QuickBookingForm";
 
-export const dynamic = "force-static"; // o como prefieras
-
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 export async function generateMetadata(
   { params }: { params: Promise<{ lang: string }> }
 ): Promise<Metadata> {
