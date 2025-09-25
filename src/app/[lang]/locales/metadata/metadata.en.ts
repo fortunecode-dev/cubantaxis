@@ -85,7 +85,7 @@ export const metadata: Partial<customMetaData> = {
             description:
                 "Book CubanTaxis for your stay at Hotel Mystique Regis Havana. Reliable taxi transfers, tours and hotel booking available.",
             alternates: buildAlternatesMetadata(
-                "/interesting-places-in-cuba/hotel-mystique-regis-havana",
+                "/interesting-places-in-cuba/hotel-mystique-regis-habana",
                 "en"
             ),
         },
@@ -96,7 +96,7 @@ export const metadata: Partial<customMetaData> = {
             description:
                 "CubanTaxis connects you to Iberostar Parque Central. Book Havana taxi transfers, hotel stays and tours quickly and easily.",
             alternates: buildAlternatesMetadata(
-                "/interesting-places-in-cuba/iberostar-parque-central",
+                "/interesting-places-in-cuba/iberostar-selection-parque-central",
                 "en"
             ),
         },

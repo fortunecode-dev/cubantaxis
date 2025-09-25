@@ -74,14 +74,14 @@ export const metadata: Partial<customMetaData> = {
       title: "CubanTaxis | Hotel Mystique Regis La Habana: Traslados en Taxi y Tours",
       description:
         "Reserva con CubanTaxis tu estancia en Hotel Mystique Regis La Habana. Traslados en taxi confiables, tours y gestión de reserva.",
-      alternates: buildAlternatesMetadata("/interesting-places-in-cuba/hotel-mystique-regis-havana", "es"),
+      alternates: buildAlternatesMetadata("/interesting-places-in-cuba/hotel-mystique-regis-habana", "es"),
     },
 
     iberostarParqueCentral: {
       title: "CubanTaxis | Iberostar Parque Central La Habana: Traslados y Reserva",
       description:
         "CubanTaxis te acerca a Iberostar Parque Central. Reserva traslados en taxi en La Habana, estancias de hotel y tours de forma fácil.",
-      alternates: buildAlternatesMetadata("/interesting-places-in-cuba/iberostar-parque-central", "es"),
+      alternates: buildAlternatesMetadata("/interesting-places-in-cuba/iberostar-selection-parque-central", "es"),
     },
 
     meliaInternacionalVaradero: {

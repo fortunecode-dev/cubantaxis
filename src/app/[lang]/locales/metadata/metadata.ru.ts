@@ -74,14 +74,14 @@ export const metadata: Partial<customMetaData> = {
       title: "CubanTaxis | Hotel Mystique Regis Гавана: Такси-Трансферы и Туры",
       description:
         "Забронируйте с CubanTaxis проживание в Hotel Mystique Regis Гавана. Надежные такси-трансферы, туры и бронирование отеля.",
-      alternates: buildAlternatesMetadata("/interesting-places-in-cuba/hotel-mystique-regis-havana", "ru"),
+      alternates: buildAlternatesMetadata("/interesting-places-in-cuba/hotel-mystique-regis-habana", "ru"),
     },
 
     iberostarParqueCentral: {
       title: "CubanTaxis | Iberostar Parque Central Гавана: Трансферы и Бронирование",
       description:
         "CubanTaxis поможет добраться до Iberostar Parque Central. Быстрое бронирование такси в Гаване, отеля и туров.",
-      alternates: buildAlternatesMetadata("/interesting-places-in-cuba/iberostar-parque-central", "ru"),
+      alternates: buildAlternatesMetadata("/interesting-places-in-cuba/iberostar-selection-parque-central", "ru"),
     },
 
     meliaInternacionalVaradero: {
