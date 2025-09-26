@@ -17,7 +17,7 @@ export const revalidate = 0;
 type Lang = "en" | "es" | "fr" | "de" | "ru" | "pt";
 
 export default async function RootLayout({ children }: { children: ReactNode }) {
-  const h =await headers();
+  const h = await headers();
   const lang = (h.get("x-lang") as Lang) || "en";
 
   return (
@@ -37,6 +37,13 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
               }, 800);
             });
           `}
+        </Script>
+        <Script type="text/javascript">
+          {`(function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "tgx0dtlprl");`}
         </Script>
       </head>
       <body className="antialiased">
