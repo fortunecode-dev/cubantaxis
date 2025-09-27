@@ -1,16 +1,13 @@
 import { AppTexts } from "./types";
 import { metadata } from "./metadata/metadata.en";
+import { header } from "./header/en";
+import { content } from "./pageContent/en";
 export const en: AppTexts = {
   metadata,
+  header,
+  content,
   taxiGuide:"Complete Cuba taxi guide",
   exploreDestinations:"Explore destinations →",
-  header: {
-    social: {
-      facebook: "Follow us on Facebook",
-      instagram: "Follow us on Instagram",
-      whatsapp: "Contact us on WhatsApp"
-    }
-  },
   hero: {
     h1: "Book a Taxi in Cuba fast, safely and reliably",
     h2a: "The fastest way to get a cab for ",

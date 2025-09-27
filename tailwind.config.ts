@@ -7,6 +7,8 @@ export default {
   ],
   // evita safelists enormes innecesarias
   safelist: [],
-  theme: { extend: {} },
+  theme: { extend: { fontFamily: {
+      sans: ["var(--font-inter)", "sans-serif"],
+    },} },
   plugins: [],
 };

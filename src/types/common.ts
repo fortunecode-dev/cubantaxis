@@ -7,3 +7,12 @@ export type LocaleParams = Promise<{
     | "ru"
     | "pt"
 }> 
+export type HeaderItems=Array<{
+  key: string;
+  label: string;
+  items?: Item[];
+  href?: string;
+  allHref?: string;
+  allLabel?: string;
+}>
+type Item = { title: string; href: string };

@@ -1,20 +1,29 @@
-import Link from "next/link";
+// app/blog/page.tsx
+// Nuevo estilo + optimizada para velocidad
 
-// Blog page: light, airy design with Tailwind only
-// One article: How much is a taxi in Cuba
-import { Metadata } from "next";
+import Link from "next/link";
+import Image from "next/image";
+import type { Metadata } from "next";
 import { LocaleLink } from "@/libs/i18n-nav";
-import { buildMetaTags, } from "../../../seoUtils/seo-builder";
+import { buildMetaTags } from "../../../seoUtils/seo-builder";
 import { getTranslation } from "../locales";
+
+// ✅ Permite SSG/ISR (HTML cacheado en edge)
+export const dynamic = "force-static";
+export const revalidate = 3600; // 1h (ajusta según necesidad)
+
+// Blur minúsculo (evita CLS sin coste de red)
+const BLUR_1x1 =
+  "data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=";
 
 export async function generateMetadata(
   { params }: { params: Promise<{ lang: string }> }
 ): Promise<Metadata> {
   const { lang } = await params;
-  const idioma = getTranslation(lang)
-  const metadata = buildMetaTags(idioma.metadata.blog?.self as any)
-  return metadata
+  const idioma = getTranslation(lang);
+  return buildMetaTags(idioma.metadata.blog?.self as any);
 }
+
 const POSTS = [
   {
     slug: "how-much-is-a-taxi-in-cuba",
@@ -36,39 +45,45 @@ function formatDate(iso: string) {
       month: "short",
       day: "2-digit",
     });
-  } catch (e) {
+  } catch {
     return iso;
   }
 }
 
 export default async function BlogPage() {
+  // En desktop 3 columnas (~33vw por tarjeta), en tablet 2 cols (~50vw), en móvil 100vw
+  const cardSizes = "(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw";
+
   return (
-    <main className="min-h-screen mt-3 bg-white text-gray-800">
-      {/* Hero */}
-      <section className="bg-gradient-to-r from-yellow-100 to-yellow-50 border-b">
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+    <main className="min-h-screen bg-white">
+      {/* HERO */}
+      <section className="border-b border-primary/15 bg-white mt-5">
+        <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
+          <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
             <div>
-              <span className="inline-block rounded-full bg-yellow-200 px-3 py-1 text-xs font-semibold text-yellow-800">
+              <span className="inline-block rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-xs font-bold text-accent">
                 Blog CubanTaxis
               </span>
-              <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-gray-900">
+              <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-accent">
                 Taxi prices, transfers and travel tips in Cuba
               </h1>
-              <p className="mt-3 max-w-2xl text-base text-gray-600">
+              <p className="mt-3 max-w-2xl text-base leading-7 text-primary">
                 Practical content for travelers: real fares, airport transfers and local tips to move easily around Cuba.
               </p>
             </div>
             <div className="flex gap-3">
               <Link
                 href="/private-transfer-booking"
-                className="rounded-lg bg-yellow-500 px-5 py-2.5 text-sm font-semibold text-black shadow hover:brightness-95"
+                prefetch={false}
+                className="rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:opacity-95"
+                aria-label="Book a private transfer"
               >
                 Book a transfer
               </Link>
               <Link
                 href="#categories"
-                className="rounded-lg border border-gray-300 bg-white px-5 py-2.5 text-sm font-semibold text-gray-700 hover:bg-gray-50"
+                prefetch={false}
+                className="rounded-lg border border-primary/30 bg-white px-5 py-2.5 text-sm font-semibold text-primary transition hover:bg-primary/5"
               >
                 Browse categories
               </Link>
@@ -77,44 +92,57 @@ export default async function BlogPage() {
         </div>
       </section>
 
-      {/* Posts */}
-      <section id="categories" className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      {/* POSTS */}
+      <section id="categories" className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
+        <div className="mt-4 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {POSTS.map((p) => (
             <article
               key={p.slug}
-              className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm hover:shadow-md transition"
+              className="overflow-hidden rounded-2xl border border-primary/15 bg-white transition hover:shadow-sm"
             >
-              <div className="relative h-48 w-full overflow-hidden">
-                <img
+              <div className="relative h-48 w-full">
+                <Image
                   src={p.image}
                   alt={p.title}
-                  className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
+                  fill
+                  sizes={cardSizes}
+                  placeholder="blur"
+                  blurDataURL={BLUR_1x1}
+                  decoding="async"
+                  fetchPriority="low"
+                  className="object-cover"
                   loading="lazy"
                 />
               </div>
+
               <div className="p-6">
-                <h2 className="text-xl font-bold text-gray-900">
-                  <LocaleLink href={`/blog/${p.slug}`} className="hover:underline">
+                <h2 className="text-xl font-bold text-accent">
+                  <LocaleLink href={`/blog/${p.slug}`} prefetch={false} className="hover:underline">
                     {p.title}
                   </LocaleLink>
                 </h2>
-                <p className="mt-2 text-sm text-gray-600">{p.excerpt}</p>
-                <div className="mt-3 flex flex-wrap items-center gap-3 text-xs text-gray-500">
+
+                <p className="mt-2 text-sm text-primary">{p.excerpt}</p>
+
+                <div className="mt-3 flex flex-wrap items-center gap-3 text-xs text-primary/80">
                   <span>{formatDate(p.date)}</span>
                   <span>• {p.readMins} min</span>
                   {p.location && <span>• {p.location}</span>}
                 </div>
-                <div className="mt-5 flex justify-between items-center">
+
+                <div className="mt-5 flex items-center justify-between">
                   <Link
                     href={`/blog/${p.slug}`}
-                    className="rounded-lg border border-gray-300 px-3 py-1.5 text-sm font-medium text-gray-700 hover:bg-gray-50"
+                    prefetch={false}
+                    className="rounded-lg border border-primary/30 px-3 py-1.5 text-sm font-medium text-primary transition hover:bg-primary/5"
+                    aria-label={`Read: ${p.title}`}
                   >
                     Read article
                   </Link>
                   <Link
                     href="/cuba-taxi-booking"
-                    className="rounded-lg bg-yellow-500 px-3 py-1.5 text-sm font-semibold text-black hover:brightness-95"
+                    prefetch={false}
+                    className="rounded-lg bg-accent px-3 py-1.5 text-sm font-semibold text-white transition hover:opacity-95"
                   >
                     Book
                   </Link>
@@ -125,42 +153,7 @@ export default async function BlogPage() {
         </div>
       </section>
 
-      {/* Promo blocks
-      <section className="mx-auto max-w-6xl px-4 pb-16 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          <div className="rounded-2xl border border-gray-200 bg-yellow-50 p-6">
-            <h3 className="text-lg font-semibold text-gray-900">Transparent prices</h3>
-            <p className="mt-2 text-sm text-gray-700">Real routes and cars (classic, modern, minivan). Prices per car, not per person.</p>
-            <Link
-              href="/transfers"
-              className="mt-3 inline-block rounded-lg border border-yellow-400 bg-white px-3 py-1.5 text-sm font-medium text-yellow-700 hover:bg-yellow-100"
-            >
-              See transfers
-            </Link>
-          </div>
-          <div className="rounded-2xl border border-gray-200 bg-yellow-50 p-6">
-            <h3 className="text-lg font-semibold text-gray-900">City tours & excursions</h3>
-            <p className="mt-2 text-sm text-gray-700">Havana in 3h, Viñales in one day, Playas del Este. With or without guide.</p>
-            <Link
-              href="/tours"
-              className="mt-3 inline-block rounded-lg border border-yellow-400 bg-white px-3 py-1.5 text-sm font-medium text-yellow-700 hover:bg-yellow-100"
-            >
-              Explore tours
-            </Link>
-          </div>
-          <div className="rounded-2xl border border-gray-200 bg-yellow-50 p-6">
-            <h3 className="text-lg font-semibold text-gray-900">Fast WhatsApp support</h3>
-            <p className="mt-2 text-sm text-gray-700">We coordinate routes and handle flight changes or late arrivals.</p>
-            <Link
-              href="/contact"
-              className="mt-3 inline-block rounded-lg border border-yellow-400 bg-white px-3 py-1.5 text-sm font-medium text-yellow-700 hover:bg-yellow-100"
-            >
-              Contact us
-            </Link>
-          </div>
-        </div>
-      </section> */}
-
+      {/* JSON-LD minimal para el listado (sin hidración) */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

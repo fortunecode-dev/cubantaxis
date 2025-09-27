@@ -9,11 +9,11 @@ interface FaqItem {
 interface Props {
   title: string;
   faqs: FaqItem[];
-  structuredData?: boolean; // default: true
-  prefetchInternalLinks?: boolean; // default: false (evita descargar páginas innecesarias)
+  structuredData?: boolean;        // default: true
+  prefetchInternalLinks?: boolean; // default: false (ahorra ancho de banda)
 }
 
-// --- Utils (precompiladas para no recrearlas por render) ---
+// --- Utils ---
 const LINK_TOKEN_RE = /(\[.*?\]\(.*?\))/g;
 const LINK_FULL_RE = /^\[(.*?)\]\((.*?)\)$/;
 
@@ -35,13 +35,11 @@ function renderAnswer(text: string, prefetchInternalLinks: boolean) {
     const [, label, href] = match;
     const isInternal = href.startsWith("/");
 
+    const cls =
+      "font-bold underline text-primary hover:text-accent underline-offset-2 hover:no-underline";
+
     return isInternal ? (
-      <Link
-        key={i}
-        href={href}
-        prefetch={prefetchInternalLinks}
-        className="font-medium underline text-primary-600 hover:no-underline dark:text-primary-500"
-      >
+      <Link key={i} href={href} prefetch={prefetchInternalLinks} className={cls}>
         {label}
       </Link>
     ) : (
@@ -50,7 +48,7 @@ function renderAnswer(text: string, prefetchInternalLinks: boolean) {
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className="font-medium underline text-primary-600 hover:no-underline dark:text-primary-500"
+        className={cls}
       >
         {label}
       </a>
@@ -64,28 +62,29 @@ export default function FaqSection({
   structuredData = true,
   prefetchInternalLinks = false,
 }: Props) {
-  // Server Component: todo se calcula una vez por render, sin hooks.
-  const withIds = faqs.map((f,i) => ({ ...f, id: slugify(f.question)+i }));
+  // Server Component: cálculo en SSR
+  const withIds = faqs.map((f, i) => ({ ...f, id: slugify(f.question) + i }));
 
-  // Genera JSON-LD solo si se va a inyectar
-  const jsonLd = structuredData
-    ? {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        mainEntity: withIds.map((f) => ({
-          "@type": "Question",
-          name: f.question,
-          acceptedAnswer: { "@type": "Answer", text: f.answer },
-        })),
-      }
-    : null;
+  const jsonLd =
+    structuredData
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: withIds.map((f) => ({
+            "@type": "Question",
+            name: f.question,
+            acceptedAnswer: { "@type": "Answer", text: f.answer },
+          })),
+        }
+      : null;
 
   return (
-    <section className="bg-white dark:bg-black" aria-labelledby="faq-title">
-      <div className="mx-auto max-w-screen-xl px-4 py-6 sm:py-10 lg:px-6">
+    <section className="bg-white" aria-labelledby="faq-title">
+      <div className="mx-auto max-w-7xl px-4 py-8 sm:py-12">
+        {/* Título — rojo y negrita */}
         <h2
           id="faq-title"
-          className="mb-6 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white"
+          className="mb-6 text-3xl font-extrabold tracking-tight text-accent"
         >
           {title}
         </h2>
@@ -98,7 +97,7 @@ export default function FaqSection({
                 <li key={item.id}>
                   <a
                     href={`#${item.id}`}
-                    className="underline text-primary-600 hover:no-underline dark:text-primary-400"
+                    className="text-primary font-bold underline underline-offset-2 hover:text-accent hover:no-underline"
                   >
                     {item.question}
                   </a>
@@ -108,22 +107,23 @@ export default function FaqSection({
           </nav>
         )}
 
-        <div className="border-t border-gray-200 pt-6 dark:border-gray-700">
-          <div className="flex flex-wrap gap-6">
+        <div className="border-t border-primary/15 pt-6">
+          <div className="flex flex-wrap gap-8">
             {withIds.map((item) => (
               <article
                 key={item.id}
                 id={item.id}
-                className="mb-8 min-w-[280px] max-w-[580px] flex-1 scroll-mt-24"
+                className="mb-6 min-w-[280px] max-w-[580px] flex-1 scroll-mt-24"
                 itemScope
                 itemType="https://schema.org/Question"
               >
+                {/* Pregunta — rojo y negrita */}
                 <h3
-                  className="mb-3 flex items-center text-base font-medium text-gray-900 dark:text-white"
+                  className="mb-3 flex items-center text-base font-bold text-accent"
                   itemProp="name"
                 >
                   <svg
-                    className="mr-2 h-5 w-5 flex-shrink-0 text-gray-500 dark:text-gray-400"
+                    className="mr-2 h-5 w-5 flex-shrink-0 text-accent"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                     aria-hidden="true"
@@ -137,8 +137,9 @@ export default function FaqSection({
                   {item.question}
                 </h3>
 
+                {/* Respuesta — texto azul */}
                 <div
-                  className="text-sm text-gray-600 dark:text-gray-300"
+                  className="text-sm text-primary"
                   itemScope
                   itemProp="acceptedAnswer"
                   itemType="https://schema.org/Answer"
@@ -157,7 +158,7 @@ export default function FaqSection({
         <Script
           id="ld-faq"
           type="application/ld+json"
-          // JSON.stringify en servidor: nada de hooks, nada al bundle del cliente
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       )}

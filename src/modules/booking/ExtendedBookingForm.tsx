@@ -1,11 +1,11 @@
 "use client";
 
-import { AppTexts } from "@/app/[lang]/locales/types";
 import { useState } from "react";
 import { FaTelegramPlane, FaWhatsapp } from "react-icons/fa";
 import toast, { Toaster } from "react-hot-toast";
+import type { AppTexts } from "@/app/[lang]/locales/types";
 
-interface BookingData {
+type BookingData = {
   name: string;
   email: string;
   phone: string;
@@ -18,20 +18,18 @@ interface BookingData {
   luggage: string;
   details: string;
   images: File[];
-}
+};
 
-interface Props {
-  idioma: AppTexts;
-}
+type Props = { idioma: AppTexts };
 
 export default function ExtendedBookingForm({ idioma }: Props) {
   const [formData, setFormData] = useState<BookingData>({
     name: "",
     email: "",
     phone: "",
-    vehicle: "Sedan",
-    from: "Havana",
-    to: "Varadero",
+    vehicle: idioma.vehicles?.[0] || "Sedan",
+    from: idioma.locations?.[0] || "Havana",
+    to: idioma.locations?.[1] || "Varadero",
     date: "",
     time: "",
     passengers: "1",
@@ -42,14 +40,10 @@ export default function ExtendedBookingForm({ idioma }: Props) {
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  ) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files) {
-      setFormData({ ...formData, images: Array.from(e.target.files) });
-    }
+    if (e.target.files) setFormData({ ...formData, images: Array.from(e.target.files) });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -57,11 +51,8 @@ export default function ExtendedBookingForm({ idioma }: Props) {
     try {
       const form = new FormData();
       Object.entries(formData).forEach(([key, value]) => {
-        if (key === "images") {
-          (value as File[]).forEach((file) => form.append("images", file));
-        } else {
-          form.append(key, String(value));
-        }
+        if (key === "images") (value as File[]).forEach((f) => form.append("images", f));
+        else form.append(key, String(value));
       });
 
       await fetch("/api/telegram-booking?formSource=Traslado Personalizado", {
@@ -83,60 +74,53 @@ export default function ExtendedBookingForm({ idioma }: Props) {
 📝 ${idioma.bookingForm.details}: ${formData.details}`.trim();
 
       await navigator.clipboard.writeText(msg);
-
-      // Toast multilenguaje usando idioma.clipboardTemplate
-      toast.success(idioma.clipboardTemplate.copied, { duration: 3000 });
+      toast.success(idioma.clipboardTemplate.copied, { duration: 2200 });
 
       setTimeout(() => {
         const tgUser =
           (process.env.NEXT_PUBLIC_TELEGRAM_USER as string) ||
           (process.env.TELEGRAM_USER as string) ||
           "";
-        const url = `https://t.me/${tgUser}`;
-        window.open(url, "_blank");
-      }, 3000);
-    } catch (error) {
-      console.error("Error al enviar la reserva:", error);
+        window.open(`https://t.me/${tgUser}`, "_blank");
+      }, 2200);
+    } catch (err) {
+      console.error(err);
       toast.error(idioma.clipboardTemplate.error);
     }
   };
 
-  // estilos base para inputs
+  // Nuevo estilo helpers
+  const Label = (props: React.LabelHTMLAttributes<HTMLLabelElement>) => (
+    <label
+      {...props}
+      className={["mb-1 block text-sm font-bold text-accent", props.className || ""].join(" ")}
+    />
+  );
+
   const inputBase =
-    "rounded-xl border border-gray-200 bg-gray-50 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 transition";
+    "w-full rounded-lg border border-primary/20 bg-white px-3 py-2 text-sm text-primary placeholder:text-primary/50 focus:outline-none focus:ring-2 focus:ring-accent/40";
 
   return (
     <form
       onSubmit={handleSubmit}
-      className="mx-auto max-w-4xl rounded-3xl  bg-white/90 p-4 pb-0 pt-0 "
+      className="mx-auto max-w-4xl rounded-2xl border border-primary/15 bg-white p-4 pb-0 shadow-sm"
     >
       <Toaster
-          position="top-center"
-          reverseOrder={false}
-          toastOptions={{
-            // base para todos
-            className:
-              "rounded-xl shadow-lg text-xl  ring-1 ring-amber-300/70 bg-white/95 text-neutral-800 px-4 py-3 backdrop-blur-sm",
-            duration: 2600,
-            // variantes
-            success: {
-              iconTheme: { primary: "#16a34a", secondary: "#fff" }, // verde
-              className:
-                "rounded-xl shadow-lg ring-1 ring-green-300/70 bg-white/95 text-neutral-800",
-            },
-            error: {
-              iconTheme: { primary: "#dc2626", secondary: "#fff" }, // rojo
-              className:
-                "rounded-xl shadow-lg ring-1 ring-red-300/70 bg-white/95 text-neutral-800",
-            },
-          }}
-        />
+        position="top-center"
+        toastOptions={{
+          className:
+            "rounded-xl shadow-lg ring-1 ring-primary/20 bg-white text-primary px-4 py-3",
+          success: { className: "rounded-xl shadow-lg ring-1 ring-primary/30 bg-white text-primary" },
+          error: { className: "rounded-xl shadow-lg ring-1 ring-accent/30 bg-white text-primary" },
+        }}
+      />
+
       {/* Header */}
-      <div className="mb-4 md:mb-6">
-        {/* <h3 className="text-xl md:text-2xl font-semibold text-neutral-800">
+      <div className="mb-4 text-center">
+        <h3 className="text-xl font-extrabold text-accent">
           {idioma?.bookingForm?.title}
-        </h3> */}
-        <p className="text-sm text-neutral-500 text-center">
+        </h3>
+        <p className="mt-1 text-sm text-primary">
           {idioma?.bookingForm?.subtitle}
         </p>
       </div>
@@ -144,10 +128,8 @@ export default function ExtendedBookingForm({ idioma }: Props) {
       {/* GRID principal */}
       <div className="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-4">
         {/* Nombre */}
-        <div className="flex flex-col">
-          <label htmlFor="name" className="mb-1 text-sm font-semibold text-gray-800">
-            📛 {idioma.bookingForm.fullName}
-          </label>
+        <div>
+          <Label htmlFor="name">📛 {idioma.bookingForm.fullName}</Label>
           <input
             id="name"
             name="name"
@@ -161,10 +143,8 @@ export default function ExtendedBookingForm({ idioma }: Props) {
         </div>
 
         {/* Email */}
-        <div className="flex flex-col">
-          <label htmlFor="email" className="mb-1 text-sm font-semibold text-gray-800">
-            ✉️ {idioma.bookingForm.email}
-          </label>
+        <div>
+          <Label htmlFor="email">✉️ {idioma.bookingForm.email}</Label>
           <input
             id="email"
             name="email"
@@ -177,13 +157,11 @@ export default function ExtendedBookingForm({ idioma }: Props) {
           />
         </div>
 
-        {/* Teléfono + Pasajeros (fila) */}
+        {/* Teléfono + Pasajeros */}
         <div className="md:col-span-2">
           <div className="flex gap-2">
             <div className="flex min-w-0 flex-1 flex-col">
-              <label htmlFor="phone" className="mb-1 text-sm font-semibold text-gray-800">
-                📞 {idioma.bookingForm.phone}
-              </label>
+              <Label htmlFor="phone">📞 {idioma.bookingForm.phone}</Label>
               <input
                 id="phone"
                 name="phone"
@@ -199,9 +177,7 @@ export default function ExtendedBookingForm({ idioma }: Props) {
               />
             </div>
             <div className="flex min-w-0 flex-1 flex-col">
-              <label htmlFor="passengers" className="mb-1 text-sm font-semibold text-gray-800">
-                👥 {idioma.bookingForm.passengers}
-              </label>
+              <Label htmlFor="passengers">👥 {idioma.bookingForm.passengers}</Label>
               <input
                 id="passengers"
                 name="passengers"
@@ -219,13 +195,11 @@ export default function ExtendedBookingForm({ idioma }: Props) {
           </div>
         </div>
 
-        {/* Fecha + Hora (fila) */}
+        {/* Fecha + Hora */}
         <div className="md:col-span-2">
           <div className="flex gap-2">
             <div className="flex min-w-0 flex-1 flex-col">
-              <label htmlFor="date" className="mb-1 text-sm font-semibold text-gray-800">
-                📅 {idioma.bookingForm.date}
-              </label>
+              <Label htmlFor="date">📅 {idioma.bookingForm.date}</Label>
               <input
                 id="date"
                 name="date"
@@ -238,9 +212,7 @@ export default function ExtendedBookingForm({ idioma }: Props) {
               />
             </div>
             <div className="flex min-w-0 flex-1 flex-col">
-              <label htmlFor="time" className="mb-1 text-sm font-semibold text-gray-800">
-                🕒 {idioma.bookingForm.time}
-              </label>
+              <Label htmlFor="time">🕒 {idioma.bookingForm.time}</Label>
               <input
                 id="time"
                 name="time"
@@ -255,10 +227,8 @@ export default function ExtendedBookingForm({ idioma }: Props) {
         </div>
 
         {/* Vehicle */}
-        <div className="flex flex-col">
-          <label htmlFor="vehicle" className="mb-1 text-sm font-semibold text-gray-800">
-            🚗 {idioma.bookingForm.vehicleType}
-          </label>
+        <div>
+          <Label htmlFor="vehicle">🚗 {idioma.bookingForm.vehicleType}</Label>
           <select
             id="vehicle"
             name="vehicle"
@@ -275,10 +245,8 @@ export default function ExtendedBookingForm({ idioma }: Props) {
         </div>
 
         {/* From */}
-        <div className="flex flex-col">
-          <label htmlFor="from" className="mb-1 text-sm font-semibold text-gray-800">
-            📍 {idioma.bookingForm.from}
-          </label>
+        <div>
+          <Label htmlFor="from">📍 {idioma.bookingForm.from}</Label>
           <select
             id="from"
             name="from"
@@ -297,10 +265,8 @@ export default function ExtendedBookingForm({ idioma }: Props) {
         </div>
 
         {/* To */}
-        <div className="flex flex-col">
-          <label htmlFor="to" className="mb-1 text-sm font-semibold text-gray-800">
-            🏁 {idioma.bookingForm.to}
-          </label>
+        <div>
+          <Label htmlFor="to">🏁 {idioma.bookingForm.to}</Label>
           <select
             id="to"
             name="to"
@@ -319,47 +285,41 @@ export default function ExtendedBookingForm({ idioma }: Props) {
         </div>
 
         {/* Luggage */}
-        <div className="flex flex-col">
-          <label htmlFor="luggage" className="mb-1 text-sm font-semibold text-gray-800">
-            🎒 {idioma.bookingForm.luggage}
-          </label>
+        <div>
+          <Label htmlFor="luggage">🎒 {idioma.bookingForm.luggage}</Label>
           <input
             id="luggage"
             name="luggage"
             type="text"
-            placeholder={idioma.bookingForm.luggaageExample /* (sic) mantener la misma key que ya usas */}
+            placeholder={idioma.bookingForm.luggaageExample /* mantener key existente */}
             className={inputBase}
             value={formData.luggage}
             onChange={handleChange}
           />
         </div>
 
-        {/* Details (full width) */}
-        <div className="md:col-span-2 flex flex-col">
-          <label htmlFor="details" className="mb-1 text-sm font-semibold text-gray-800">
-            📝 {idioma.bookingForm.details}
-          </label>
+        {/* Details */}
+        <div className="md:col-span-2">
+          <Label htmlFor="details">📝 {idioma.bookingForm.details}</Label>
           <textarea
             id="details"
             name="details"
             placeholder={idioma.bookingForm.detailsExample}
-            className={`${inputBase} min-h-[100px]`}
+            className={`${inputBase} min-h-[110px]`}
             value={formData.details}
             onChange={handleChange}
           />
-          <span className="mt-1 text-xs text-neutral-400">
+          <span className="mt-1 block text-xs text-primary/70">
             {idioma.bookingForm.example}
           </span>
         </div>
 
         {/* Images */}
         <div className="md:col-span-2">
-          <label htmlFor="images" className="mb-1 block text-sm font-semibold text-gray-800">
-            📎 {idioma.bookingForm.attachImages}
-          </label>
+          <Label htmlFor="images">📎 {idioma.bookingForm.attachImages}</Label>
           <label
             htmlFor="images"
-            className="block cursor-pointer rounded-2xl border-2 border-dashed border-amber-200 bg-amber-50/40 p-4 text-center text-sm text-neutral-600 hover:bg-amber-50 transition"
+            className="block cursor-pointer rounded-2xl border-2 border-dashed border-primary/25 bg-primary/5 p-4 text-center text-sm text-primary hover:bg-primary/10 transition"
           >
             {idioma.bookingForm.upload}
             <input
@@ -373,24 +333,23 @@ export default function ExtendedBookingForm({ idioma }: Props) {
             />
           </label>
           {formData.images.length > 0 && (
-            <div className="mt-2 text-xs text-neutral-500">
+            <div className="mt-2 text-xs text-primary/80">
               {formData.images.length} file(s) selected
             </div>
           )}
         </div>
       </div>
 
-      {/* CTA */}
-      <div className="mt-6 flex flex-col gap-2 md:flex-row md:items-center">
+      {/* CTAs (nuevo estilo): principal = acento sólido; secundario = primario suave */}
+      <div className="mt-6 mb-4 flex flex-col gap-3 md:flex-row">
         <button
           type="submit"
-          className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-blue-500 px-4 py-3 font-semibold text-white shadow-md transition hover:bg-blue-600"
+          className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-accent px-5 py-3 text-sm font-semibold text-white transition hover:opacity-95"
         >
-          <FaTelegramPlane className="text-lg" />
+          <FaTelegramPlane className="text-lg" aria-hidden />
           {idioma.quickBookingForm.telegram}
         </button>
 
-        {/* Botón alternativo WhatsApp */}
         <button
           type="button"
           onClick={async () => {
@@ -409,11 +368,8 @@ Details: ${formData.details}`;
 
             const form = new FormData();
             Object.entries(formData).forEach(([key, value]) => {
-              if (key === "images") {
-                (value as File[]).forEach((file) => form.append("images", file));
-              } else {
-                form.append(key, String(value));
-              }
+              if (key === "images") (value as File[]).forEach((f) => form.append("images", f));
+              else form.append(key, String(value));
             });
 
             await fetch("/api/telegram-booking?formSource=Traslado Personalizado", {
@@ -425,15 +381,11 @@ Details: ${formData.details}`;
               (process.env.NEXT_PUBLIC_CONTACT_NUMBER as string) ||
               (process.env.CONTACT_NUMBER as string) ||
               "";
-
-            window.open(
-              `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(msg)}`,
-              "_blank"
-            );
+            window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(msg)}`, "_blank");
           }}
-          className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-green-500 px-4 py-3 font-semibold text-white shadow-md transition hover:bg-green-600"
+          className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary/5 px-5 py-3 text-sm font-semibold text-primary ring-1 ring-inset ring-primary/20 transition hover:bg-primary/10"
         >
-          <FaWhatsapp className="text-lg" />
+          <FaWhatsapp className="text-lg" aria-hidden />
           {idioma.quickBookingForm.whatsapp}
         </button>
       </div>

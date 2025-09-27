@@ -51,14 +51,11 @@ export default function Example() {
         { class: "amenities", icon: "star", name: "Habitaciones Deluxe" },
         { class: "food", icon: "map", name: "Restaurantes gourmet" },
       ]}
-      links={[
-        { label: "See all destinations", href: "/destinations-in-cuba" },
-        { label: "Contact on WhatsApp", href: "https://wa.me/5354447931", rel: "noopener", target: "_blank" },
-      ]}
+     
       breadcrumbs={[
         { name: "Home", item: "https://cubantaxis.com" },
         { name: "Transfers", item: "https://cubantaxis.com/transfers" },
-        { name: "HAV Airport", item: "https://cubantaxis.com/en/hav-airport-transfer" },
+        { name: "HAV Airport", item: "https://cubantaxis.com/hav-airport-transfer" },
       ]}
       schemaType="LocalBusiness"
       faq={[

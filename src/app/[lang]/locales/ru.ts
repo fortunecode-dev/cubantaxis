@@ -1,17 +1,14 @@
 // ru.ts
 import type { AppTexts } from "./types";
 import { metadata } from "./metadata/metadata.ru";
+import { header } from "./header/ru";
+import { content } from "./pageContent/ru";
 export const ru: AppTexts = {
   metadata,
+  header,
+  content,
   taxiGuide: "Полное руководство по такси на Кубе",
   exploreDestinations: "Исследовать направления →",
-  header: {
-    social: {
-      facebook: "Подписывайтесь на нас в Facebook",
-      instagram: "Подписывайтесь на нас в Instagram",
-      whatsapp: "Свяжитесь с нами в WhatsApp",
-    },
-  },
   hero: {
     h1: "Забронируйте такси на Кубе быстро, безопасно и надежно",
     h2a: "Самый быстрый способ заказать такси для ",

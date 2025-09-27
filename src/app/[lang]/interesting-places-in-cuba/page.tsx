@@ -1,4 +1,4 @@
-// app/en/places/page.tsx
+// app/places/page.tsx
 import Image from "next/image";
 import type { Metadata } from "next";
 import { LocaleLink } from "@/libs/i18n-nav";
@@ -68,7 +68,7 @@ function CollectionJsonLd() {
     itemListElement: PLACES.map((p, i) => ({
       "@type": "ListItem",
       position: i + 1,
-      url: `https://cubantaxis.com/en/places/${p.slug}`,
+      url: `https://cubantaxis.com/places/${p.slug}`,
       name: p.name,
       description: p.description,
     })),
@@ -80,7 +80,7 @@ function CollectionJsonLd() {
     name: "Places of Interest in Cuba",
     description:
       "Curated selection of hotels and points of interest in Havana and Varadero by Cuban Taxis.",
-    url: "https://cubantaxis.com/en/interesting-places-in-cuba",
+    url: "https://cubantaxis.com/interesting-places-in-cuba",
   };
 
   return (
@@ -124,11 +124,11 @@ export default function PlacesPage() {
           <LocaleLink
             key={p.slug}
             href={`/interesting-places-in-cuba/${p.slug}`}
+            prefetch={false}
             className={[
-              // reference style: yellow/black, link-like cards
-              "group relative overflow-hidden rounded-2xl border border-black/10 bg-white shadow-sm",
-              "hover:border-black hover:shadow-md transition",
-              "dark:bg-neutral-900 dark:border-white/10 dark:hover:border-yellow-400",
+              "group relative overflow-hidden rounded-2xl",
+              "border border-primary/15 bg-white shadow-sm transition",
+              "hover:border-primary/40 hover:shadow-md",
             ].join(" ")}
             aria-label={`Open details: ${p.name}`}
           >
@@ -140,42 +140,45 @@ export default function PlacesPage() {
                 fill
                 sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw"
                 className="object-cover"
-                priority={false}
+                loading="lazy"
+                decoding="async"
+                fetchPriority="low"
               />
               {/* Tag */}
               <div className="pointer-events-none absolute left-3 top-3">
-                <span className="inline-flex rounded-full bg-yellow-400 px-2 py-0.5 text-[11px] font-semibold text-black shadow">
+                <span className="inline-flex rounded-full bg-accent px-2 py-0.5 text-[11px] font-semibold text-white shadow-sm">
                   Featured
                 </span>
               </div>
               {/* Hover overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 transition group-hover:opacity-100" />
             </div>
 
             {/* Content */}
             <div className="p-4">
-              <h2 className="text-base sm:text-lg font-bold text-neutral-900 dark:text-white">
+              <h2 className="text-base sm:text-lg font-bold text-accent">
                 {p.name}
               </h2>
-              <p className="mt-1 line-clamp-3 text-sm text-neutral-700 dark:text-neutral-300">
+              <p className="mt-1 line-clamp-3 text-sm text-primary">
                 {p.description}
               </p>
 
-              {/* Minimal CTA */}
+              {/* Minimal CTA (nuevo estilo) */}
               <div className="mt-4 inline-flex items-center gap-2 text-sm">
-                <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-black text-yellow-300 text-[10px] group-hover:bg-yellow-400 group-hover:text-black transition">
+                <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-accent text-white text-[10px] transition group-hover:opacity-90">
                   ⇲
                 </span>
-                <span className="underline decoration-yellow-400 group-hover:decoration-black">
+                <span className="font-bold text-primary underline decoration-accent underline-offset-2 group-hover:text-accent">
                   View details
                 </span>
               </div>
             </div>
 
-            {/* Animated yellow underline */}
-            <span className="pointer-events-none absolute inset-x-0 bottom-0 h-1 bg-yellow-400 scale-x-0 group-hover:scale-x-100 origin-left transition-transform" />
+            {/* Animated underline (accent) */}
+            <span className="pointer-events-none absolute inset-x-0 bottom-0 h-1 origin-left scale-x-0 bg-accent transition-transform group-hover:scale-x-100" />
           </LocaleLink>
         ))}
+
       </section>
     </main>
   );

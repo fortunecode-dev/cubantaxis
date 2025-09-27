@@ -1,17 +1,14 @@
 // fr.ts
 import type { AppTexts } from "./types";
 import { metadata } from "./metadata/metadata.fr";
+import { header } from "./header/fr";
+import { content } from "./pageContent/fr";
 export const fr: AppTexts = {
   metadata,
+  header,
+  content,
   taxiGuide: "Guide complet des taxis à Cuba",
   exploreDestinations: "Explorer les destinations →",
-  header: {
-    social: {
-      facebook: "Suivez-nous sur Facebook",
-      instagram: "Suivez-nous sur Instagram",
-      whatsapp: "Contactez-nous sur WhatsApp",
-    },
-  },
   hero: {
     h1: "Réservez un taxi à Cuba rapidement, en toute sécurité et fiabilité",
     h2a: "La façon la plus rapide d’obtenir un taxi pour ",

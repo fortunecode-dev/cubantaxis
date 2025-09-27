@@ -2,15 +2,10 @@ import { customMetaData } from "@/seoUtils/metadata";
 
 export interface AppTexts {
   metadata:Partial<customMetaData>
+  header:any,
+  content:any,
   taxiGuide: string;
   exploreDestinations: string;
-  header: {
-    social: {
-      facebook: string;
-      instagram: string;
-      whatsapp: string;
-    };
-  };
   hero: {
     h1: string;
     h2a: string;

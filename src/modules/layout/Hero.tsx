@@ -1,110 +1,165 @@
-import { AppTexts } from "@/app/[lang]/locales/types";
+// app/components/HeroCubanTaxis.tsx
+import Link from "next/link";
 import Image from "next/image";
-import { LocaleLink } from "@/libs/i18n-nav";
-// Import estático → habilita blur automático y mejor LCP
-import heroImg from "./cuba-cabs.jpg";
+import type { ReactNode } from "react";
+import { getTranslation } from "@/app/[lang]/locales";
 
-type Lang = "en" | "es" | "fr" | "de" | "ru" | "pt";
+const BLUR =
+  "data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA="; // 1x1 transparente, evita CLS sin pesar
 
-export default function Hero({ idioma, lang }: { idioma: AppTexts; lang: Lang }) {
+
+
+type Lang = "en" | "es" | "fr" | "de" | "ru" | "pt" | (string & {});
+
+function emphasizeNodes(text: string, phrases?: string[] | string): ReactNode {
+  const terms = Array.isArray(phrases) ? phrases.filter(Boolean) : phrases ? [phrases] : [];
+  if (!terms.length) return text;
+  const escaped = terms.map((t) => t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+  const re = new RegExp(`(${escaped.join("|")})`, "gi");
+  const parts: ReactNode[] = [];
+  let last = 0;
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(text)) !== null) {
+    const i = m.index;
+    if (i > last) parts.push(text.slice(last, i));
+    parts.push(<span key={`emp-${i}`} className="text-accent">{m[0]}</span>);
+    last = re.lastIndex;
+  }
+  if (last < text.length) parts.push(text.slice(last));
+  return parts;
+}
+
+export default function HeroCubanTaxis({ lang = "en" }: { lang?: Lang }) {
+  const base =
+    ["en", "es", "fr", "de", "ru", "pt"].includes(lang as string) ? `/${lang}` : "/en";
+  const idioma = getTranslation(lang);
+
+  const bookingHref = `${base}/private-transfer-booking`;
+  const quickBookingHref = `${base}/cuba-taxi-booking`;
+
+  // Tamaños responsive:
+  // - En ≥1024px, el héroe es 2 columnas; el bloque derecho ocupa ~50vw, cada imagen ~25vw (2 columnas).
+  // - En <1024px, el grid ocupa todo el ancho; cada imagen ~50vw.
+  const gridSizes = "(min-width:1024px) 25vw, 50vw";
+
   return (
-    <section
-      aria-labelledby="hero-title"
-      className="
-        relative isolate overflow-hidden rounded-b-3xl bg-gray-900
-        before:absolute before:inset-0 before:bg-black/50
-      "
-    >
-      {/* Imagen de fondo (LCP optimizada) */}
-      <Image
-        src={heroImg}
-        alt="Classic taxi in Havana, Cuba"
-        title="Cuba Taxi Transfers 2025"
-        fill
-        fetchPriority="high"
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1200px"
-        priority
-        placeholder="blur"
-        className="absolute inset-0 z-[-20] object-cover object-center opacity-30"
-      />
+    <section className="bg-white">
+      {/* separador top para header fijo */}
+      <div className="h-16" />
 
-      <div className="relative z-0 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-32">
-        <div className="flex flex-col gap-12 lg:flex-row lg:items-center lg:justify-between">
-          {/* Texto principal */}
-          <header className="max-w-2xl flex-1 text-center lg:text-left">
-            <h1
-              id="hero-title"
-              className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight"
-            >
-              {idioma.hero.h1}
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 pb-14 pt-6 md:pt-10 lg:pt-14">
+        <div className="grid items-center gap-10 lg:grid-cols-2">
+          {/* Izquierda: copy SSR (0 JS en cliente) */}
+          <div>
+            <h1 className="text-4xl leading-tight font-bold tracking-tight text-primary sm:text-5xl lg:text-6xl">
+              {emphasizeNodes(idioma.content.hero.h1Title, idioma.content.hero.emphasis)}
             </h1>
 
-            <h2 className="mt-4 text-lg sm:text-xl lg:text-2xl text-amber-300 font-medium">
-              {idioma.hero.h2a}
-              {idioma.hero.transfer}
-              {", "}
-              {idioma.hero.shared}{" "}
-              {idioma.hero.and}{" "}
-              {idioma.hero.interCity}
-              {idioma.hero.h2b}
+            <h2 className="mt-4 text-lg sm:text-xl font-bold text-primary">
+              {idioma.content.hero.h2SubTitle}
             </h2>
 
-            <p className="mt-6 text-base sm:text-lg text-gray-200 leading-relaxed">
-              {idioma.hero.p}{" "}
-              <LocaleLink
-                href="/taxi-in-cuba"
-                className="underline underline-offset-4 hover:text-amber-200"
-              >
-                {idioma.taxiGuide}
-              </LocaleLink>
-            </p>
+            <p className="mt-5 max-w-xl text-gray-600">{idioma.content.hero.introParagraph}</p>
 
-            {/* Botones */}
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row justify-center lg:justify-start">
-              <LocaleLink
-                href="/private-transfer-booking"
-                className="
-                  w-full sm:w-auto rounded-xl px-6 py-3 text-center font-semibold transition
-                  border border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-black
-                "
-                aria-label="Book a private transfer in Cuba"
+            {/* CTAs — prefetch off para ahorrar ancho de banda si no están en viewport */}
+            <div className="mt-7 flex flex-wrap gap-3">
+               <Link
+                href={idioma.content.hero.link.href}
+                prefetch={false}
+                className="inline-flex items-center gap-2 rounded-lg underline px-5 py-3 text-sm font-semibold text-primary"
+                aria-label="More about taxis in cuba"
               >
-                {idioma.hero.buttons.booking}
-              </LocaleLink>
-
-              <LocaleLink
-                href="/cuba-taxi-booking"
-                className="
-                  w-full sm:w-auto inline-flex items-center justify-center rounded-xl px-6 py-3
-                  bg-amber-400 text-black font-semibold shadow-md
-                  hover:bg-amber-300 active:bg-amber-500
-                  focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2
-                  focus-visible:ring-amber-500 ring-offset-gray-900 transition
-                "
-                aria-label="Fast online taxi booking in Cuba"
+                {idioma.content.hero.link.label}
+              </Link>
+              <Link
+                href={bookingHref}
+                prefetch={false}
+                className="inline-flex items-center gap-2 rounded-lg bg-primary/5 px-5 py-3 text-sm font-semibold text-primary ring-1 ring-inset ring-primary/20 hover:bg-primary/10"
+                aria-label="Book your trip in advance"
               >
-                {idioma.hero.buttons.fastBooking}
-              </LocaleLink>
+                {idioma.content.hero.cta.customBooking}
+              </Link>
+              <Link
+                href={quickBookingHref}
+                prefetch={false}
+                className="inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-3 text-sm font-semibold text-white hover:opacity-95"
+                aria-label="Quick Booking"
+              >
+                {idioma.content.hero.cta.fastBooking}
+                <span className="-mr-1" aria-hidden>»</span>
+              </Link>
             </div>
-          </header>
 
-          {/* Lista de servicios */}
-          <div>
-            <ul className="list-disc pl-5 pb-4 flex flex-col gap-3 text-yellow-300 font-semibold text-lg lg:text-xl">
-              {idioma.hero.services.map((item, i) => (
-                <li key={`${i}-${item}`} className="leading-snug">
-                  {item}
-                </li>
-              ))}
-            </ul>
+            {/* Lista de servicios */}
+            <div className="mt-10">
+              <h3 id={idioma.content.hero.list.id} className="text-base font-semibold text-gray-900">
+                {idioma.content.hero.list.h2}
+              </h3>
+              <ul className="mt-3 grid list-disc gap-x-8 gap-y-2 pl-5 sm:grid-cols-2 text-gray-700">
+                {idioma.content.hero.list.items.map((item:any) => (
+                  <li key={item} className="marker:text-accent">{item}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
 
-            <LocaleLink
-              href="/destinations-in-cuba"
-              className="m-5 text-yellow-400 font-medium underline underline-offset-4 hover:text-yellow-300 transition-colors"
-              aria-label="Explore destinations in Cuba"
-            >
-              {idioma.exploreDestinations}
-            </LocaleLink>
+          {/* Derecha: grid 2x2 con next/image optimizado */}
+          <div className="relative">
+            <div className="grid grid-cols-2 grid-rows-2 gap-4">
+              {/* Imagen 1: arriba-izq — prioritaria para mejorar LCP si suele quedar visible */}
+              <div className="relative aspect-square w-full">
+                <Image
+                  src="/cuba-beaches.jpg"
+                  alt="Beaches near Havana"
+                  fill
+                  sizes={gridSizes}
+                  priority
+                  fetchPriority="high"
+                  placeholder="blur"
+                  blurDataURL={BLUR}
+                  className="rounded-2xl object-cover"
+                />
+              </div>
+
+              {/* Imagen 2 */}
+              <div className="relative aspect-square w-full">
+                <Image
+                  src="/havana-capitol.png"
+                  alt="Capitolio of Havana"
+                  fill
+                  sizes={gridSizes}
+                  placeholder="blur"
+                  blurDataURL={BLUR}
+                  className="rounded-2xl object-cover"
+                />
+              </div>
+
+              {/* Imagen 3 */}
+              <div className="relative aspect-square w-full">
+                <Image
+                  src="/cuba-coco-taxi.jpg"
+                  alt="Coco taxi in Havana"
+                  fill
+                  sizes={gridSizes}
+                  placeholder="blur"
+                  blurDataURL={BLUR}
+                  className="rounded-2xl object-cover"
+                />
+              </div>
+
+              {/* Imagen 4 */}
+              <div className="relative aspect-square w-full">
+                <Image
+                  src="/vinales.jpg"
+                  alt="Viñales valley tour"
+                  fill
+                  sizes={gridSizes}
+                  placeholder="blur"
+                  blurDataURL={BLUR}
+                  className="rounded-2xl object-cover"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -1,0 +1,16 @@
+/* app/globals.css (o src/app/globals.css) */
+@import "tailwindcss";
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+} 
+/* Declara tus tokens de color aquí */
+@theme {
+  --color-primary: #41517c; /* Cuba blue */
+  --color-accent:  #ed4341; /* taxi red */
+}
+
+/* opcional: ajustes globales */
+:root { color-scheme: light; }
+

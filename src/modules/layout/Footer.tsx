@@ -1,177 +1,101 @@
-
+// app/modules/layout/Footer.tsx
 import Link from "next/link";
-import Socials from "./Socials";
 import { getTranslation } from "@/app/[lang]/locales";
 
-export default async function Footer({ lang }: {  lang: string }) {
-  // TODO: Poner multilingüe
+export default async function Footer({ lang }: { lang: string }) {
   const year = new Date().getFullYear();
-   const idioma = getTranslation(lang)
+  const t = getTranslation(lang); // si es async, añade await
+
   return (
-
-    <footer className="mt-16 bg-amber-50/80 border-t border-amber-200/70 text-neutral-800 dark:bg-gray-900 dark:text-gray-200 dark:border-gray-800">
-      <div className="mx-auto max-w-screen-xl px-4 py-10">
-        {/* Top */}
-        <div className="grid gap-8 md:grid-cols-4">
-          {/* Brand */}
-          <div>
-            <Link href="/" className="inline-block">
-              <span className="text-2xl font-extrabold tracking-tight text-neutral-900 dark:text-white">
-                CubanTaxis
-              </span>
-            </Link>
-            <p className="mt-3 text-sm leading-relaxed text-neutral-700/90 dark:text-gray-300">
-              Taxi private transfers in Cuba: <span className="font-medium">Havana (HAV / José Martí)</span>,{" "}
-              <span className="font-medium">Varadero (VRA)</span>, <span className="font-medium">Vinales</span>,{" "}
-              <span className="font-medium">Trinidad</span> and more. Reliable service, fixed prices and 24/7 client support.
-            </p>
-
-            <Socials/>
-          </div>
-
-          <nav aria-label="Enlaces de navegación" className="text-sm">
-            <h3 className="mb-3 text-base font-semibold">Contents</h3>
+    <footer className="mt-16 border-t border-primary/15 bg-white text-primary ">
+      <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6">
+        {/* CONTENIDOS */}
+        <div className="grid gap-8 md:grid-cols-2">
+          <nav aria-label="Contents" className="text-sm">
+            <h3 className="mb-3 text-base font-bold text-accent">Contents</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/blog/how-much-is-a-taxi-in-cuba" className="hover:underline">
-                {idioma.howMuchIsATaxi}
-                </Link>
-              </li>
-               <li>
-                <Link href="/taxi-in-cuba" className="hover:underline">
-                All About Taxis In Cuba
+                <Link href="/taxi-in-cuba" prefetch={false} className="text-primary hover:text-accent hover:underline">
+                  All About Taxis In Cuba
                 </Link>
               </li>
               <li>
-                <Link href="/#frequently-asked-questions" className="hover:underline">
-                Frequently Asked Questions
-                </Link>
-              </li>
-             
-            </ul>
-          </nav>
-{/* 
-          Zonas populares (keywords)
-          <nav aria-label="Zonas populares" className="text-sm">
-            <h3 className="mb-3 text-base font-semibold">Zonas populares</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/transfers/havana-varadero" className="hover:underline">
-                  Taxi La Habana &larr;&rarr; Varadero
+                <Link href="/private-transfer-booking" prefetch={false} className="text-primary hover:text-accent hover:underline">
+                  Private Transfer Booking
                 </Link>
               </li>
               <li>
-                <Link href="/transfers/havana-vinales" className="hover:underline">
-                  Taxi La Habana &larr;&rarr; Viñales
+                <Link href="/cuba-taxi-booking" prefetch={false} className="text-primary hover:text-accent hover:underline">
+                  Quick Booking
                 </Link>
               </li>
               <li>
-                <Link href="/transfers/havana-trinidad" className="hover:underline">
-                  Taxi La Habana &larr;&rarr; Trinidad
+                <Link href="/blog" prefetch={false} className="text-primary hover:text-accent hover:underline">
+                  Blog
                 </Link>
               </li>
               <li>
-                <Link href="/transfers/varadero-airport" className="hover:underline">
-                  Aeropuerto de Varadero &larr;&rarr; Hoteles
+                <Link href="/blog/how-much-is-a-taxi-in-cuba" prefetch={false} className="text-primary hover:text-accent hover:underline">
+                  {t.howMuchIsATaxi}
                 </Link>
               </li>
               <li>
-                <Link href="/transfers/havana-airport" className="hover:underline">
-                  Aeropuerto de La Habana &rarr; Centro Habana / Vedado
+                <Link href="/interesting-places" prefetch={false} className="text-primary hover:text-accent hover:underline">
+                  Interesting Places in Cuba
+                </Link>
+              </li>
+              <li>
+                <Link href="/#frequently-asked-questions" prefetch={false} className="text-primary hover:text-accent hover:underline">
+                  Frequently Asked Questions
                 </Link>
               </li>
             </ul>
           </nav>
 
-          Contacto / CTA
+          {/* REDES SOCIALES */}
           <div className="text-sm">
-            <h3 className="mb-3 text-base font-semibold">Contacto inmediato</h3>
-            <p className="mb-3">
-              ¿Necesitas un taxi ahora? Escríbenos y te confirmamos en minutos.
-            </p>
-            <div className="flex flex-col gap-2">
-              <a
-                href="https://wa.me/${process.env.CONTACT_NUMBER}?text=Hola%20CubanTaxis%2C%20quiero%20reservar%20un%20traslado."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-xl border border-amber-300 bg-amber-400/90 px-4 py-2 font-semibold text-neutral-900 hover:bg-amber-400 transition-colors"
-              >
-                Reservar por WhatsApp
-              </a>
-              <a
-                href="https://t.me/TaxiCubaBot"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-xl border border-gray-300 bg-white/70 px-4 py-2 font-medium text-neutral-800 hover:bg-white transition-colors dark:bg-gray-800/70 dark:hover:bg-gray-800"
-              >
-                Hablar por Telegram
-              </a>
-            </div>
-            <p className="mt-4 text-xs text-neutral-600/90 dark:text-gray-400">
-              Atención 24/7 · Traslados privados · Conductores profesionales
-            </p>
-          </div>  */}
-
+            <h3 className="mb-3 text-base font-bold text-accent">Social</h3>
+            <ul className="space-y-2">
+              <li>
+                <a
+                  href="https://www.facebook.com/CubanTaxis/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 hover:opacity-90"
+                  aria-label="CubanTaxis on Facebook"
+                >
+                  {/* Facebook azul */}
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="#1877F2" aria-hidden>
+                    <path d="M22 12.06C22 6.48 17.52 2 11.94 2S2 6.48 2 12.06c0 5.02 3.68 9.18 8.49 9.94v-7.03H7.9v-2.9h2.59V9.96c0-2.56 1.52-3.98 3.85-3.98 1.12 0 2.3.2 2.3.2v2.53h-1.3c-1.28 0-1.68.8-1.68 1.62v1.94h2.85l-.46 2.9h-2.39V22c4.81-.76 8.49-4.92 8.49-9.94z"/>
+                  </svg>
+                  <span className="text-primary font-bold">Facebook</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.instagram.com/cubantaxis/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 hover:opacity-90"
+                  aria-label="CubanTaxis on Instagram"
+                >
+                  {/* Instagram rojo */}
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="#ED4341" aria-hidden>
+                    <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5A5.5 5.5 0 1 1 6.5 13 5.5 5.5 0 0 1 12 7.5zm0 2A3.5 3.5 0 1 0 15.5 13 3.5 3.5 0 0 0 12 9.5zM18 6.8a1 1 0 1 1-1 1 1 1 0 0 1 1-1z"/>
+                  </svg>
+                  <span className="text-primary font-bold">Instagram</span>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
 
-        {/* Bottom
-        <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-amber-200/70 pt-6 text-xs md:flex-row dark:border-gray-800">
-          <p>
-            © {year} CubanTaxis. Todos los derechos reservados.
-          </p>
-          <ul className="flex flex-wrap items-center gap-x-6 gap-y-2">
-            <li>
-              <Link href="/about" className="hover:underline">
-                Quiénes somos
-              </Link>
-            </li>
-            <li>
-              <Link href="/terms" className="hover:underline">
-                Términos y condiciones
-              </Link>
-            </li>
-            <li>
-              <Link href="/privacy" className="hover:underline">
-                Políticas de privacidad
-              </Link>
-            </li>
-            <li>
-              <Link href="/cookies" className="hover:underline">
-                Política de cookies
-              </Link>
-            </li>
-            <li>
-              <a href="#top" className="hover:underline">
-                Volver arriba
-              </a>
-            </li>
-          </ul>
-        </div> */}
+        {/* Bottom minimal */}
+        <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-primary/10 pt-6 text-xs md:flex-row">
+          <p className="text-primary">© {year} CubanTaxis.</p>
+          <a href="#top" className="text-primary hover:text-accent hover:underline">Back to top</a>
+        </div>
       </div>
-
-      {/* JSON-LD: SEO Local/Servicio */}
-      <script
-        type="application/ld+json"
-        // Nota: usa tu dominio real en "url" cuando lo tengas
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://cubantaxis.com",
-            "@type": "TaxiService",
-            "name": "CubanTaxis",
-            "areaServed": "Cuba",
-            "serviceArea": "Cuba",
-            "availableLanguage": ["es", "en", "fr", "de", "ru", "pt"],
-            "priceRange": "$$",
-            "sameAs": [
-              "https://www.facebook.com/CubanTaxis/",
-              "https://www.instagram.com/cubantaxis/",
-              "https://t.me/TaxiCubaBot",
-              `https://wa.me/${process.env.CONTACT_NUMBER}`
-            ],
-            "openingHours": "Mo-Su 00:00-23:59",
-          }),
-        }}
-      />
     </footer>
   );
 }

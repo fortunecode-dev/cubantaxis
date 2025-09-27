@@ -42,7 +42,7 @@ export default function Example() {
                 },
                 phone: "+53 45 623100",
                 email: "melia.internacional@meliacuba.com",
-                website: "https://www.melia.com/en/hotels/cuba/varadero/melia-internacional-varadero",
+                website: "https://www.melia.com/hotels/cuba/varadero/melia-internacional-varadero",
             }}
             services={[
                 { class: "general", icon: "star", name: "Todo incluido" },
@@ -51,14 +51,11 @@ export default function Example() {
                 { class: "family", icon: "car", name: "Actividades familiares" },
                 { class: "sports", icon: "beach", name: "Deportes acuáticos" },
             ]}
-            links={[
-                { label: "See all destinations", href: "/destinations-in-cuba" },
-                { label: "Contact on WhatsApp", href: "https://wa.me/5354447931", rel: "noopener", target: "_blank" },
-            ]}
+             
             breadcrumbs={[
                 { name: "Home", item: "https://cubantaxis.com" },
                 { name: "Transfers", item: "https://cubantaxis.com/transfers" },
-                { name: "HAV Airport", item: "https://cubantaxis.com/en/hav-airport-transfer" },
+                { name: "HAV Airport", item: "https://cubantaxis.com/hav-airport-transfer" },
             ]}
             schemaType="LocalBusiness"
             faq={[
