@@ -1,4 +1,4 @@
-import "./globals.css";
+import "./[lang]/globals.css"
 import type { ReactNode } from "react";
 import { headers } from "next/headers";
 import Script from "next/script";
