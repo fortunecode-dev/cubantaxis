@@ -37,9 +37,9 @@ export default async function BlogTaxiCuba({ params }: { params: LocaleParams })
       {/* migas */}
       <nav aria-label="Breadcrumb" className="mx-auto max-w-5xl px-4 pt-6">
         <ol className="flex items-center gap-1 text-xs">
-          <li><a href="/" className="text-primary hover:text-accent hover:underline" prefetch-data="false">Home</a></li>
+          <li><a href={lang=="en"?"/":`/${lang}`} className="text-primary hover:text-accent hover:underline" prefetch-data="false">Home</a></li>
           <li aria-hidden="true" className="text-primary">›</li>
-          <li><a href="/blog" className="text-primary hover:text-accent hover:underline" prefetch-data="false">Blog</a></li>
+          <li><a href={`${lang=="en"?"":`/${lang}`}/blog`} className="text-primary hover:text-accent hover:underline" prefetch-data="false">Blog</a></li>
           <li aria-hidden="true" className="text-primary">›</li>
           <li className="text-primary">Taxi prices in Cuba 2025</li>
         </ol>

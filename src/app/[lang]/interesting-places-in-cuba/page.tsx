@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { LocaleLink } from "@/libs/i18n-nav";
 import { buildMetaTags } from "../../../seoUtils/seo-builder";
 import { getTranslation } from "../locales";
+import { LocaleParams } from "@/types/common";
 
 export async function generateMetadata(
   { params }: { params: Promise<{ lang: string }> }
@@ -98,7 +99,8 @@ function CollectionJsonLd() {
 }
 
 // ───────── Page ─────────
-export default function PlacesPage() {
+export default async function PlacesPage({ params }: { params: LocaleParams }) {
+  const { lang } = await params;
   return (
     <main className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-8 pt-16">
       {/* JSON-LD for SEO */}
@@ -123,7 +125,7 @@ export default function PlacesPage() {
         {PLACES.map((p) => (
           <LocaleLink
             key={p.slug}
-            href={`/interesting-places-in-cuba/${p.slug}`}
+            href={`${lang=="en"?"":`/${lang}`}/interesting-places-in-cuba/${p.slug}`}
             prefetch={false}
             className={[
               "group relative overflow-hidden rounded-2xl",

@@ -101,13 +101,13 @@ export default async function CubaTaxiPage({ params }: Params) {
           {/* CTAs */}
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a
-              href="/#frequently-asked-questions"
+              href={`${lang=="en"?"":`/${lang}`}/#frequently-asked-questions`}
               className="inline-flex items-center justify-center rounded-lg bg-white px-5 py-3 text-sm font-light underline text-gray-800 transition hover:bg-gray-50 dark:border-white/10 dark:bg-zinc-900 dark:text-gray-100 dark:hover:bg-zinc-800"
             >
               {t(lang, "Frequently Asked Questions", "Preguntas frecuentes")}
             </a>
             <Link
-              href={`/${lang}/private-transfer-booking`}
+              href={`${lang=="en"?"":`/${lang}`}/private-transfer-booking`}
               className="inline-flex items-center justify-center rounded-lg bg-amber-500 px-5 py-3 text-sm font-semibold text-white shadow-sm ring-1 ring-amber-500/60 transition hover:bg-amber-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
             >
               {t(lang, "Book a private transfer", "Reservar traslado privado")}
@@ -215,7 +215,7 @@ export default async function CubaTaxiPage({ params }: Params) {
               )}
             </p>
             <Link
-              href={`/${lang}/cuba-taxi-booking`}
+              href={`${lang=="en"?"":`/${lang}`}/cuba-taxi-booking`}
               className="inline-flex items-center justify-center rounded-lg bg-gray-900 px-4 py-2 text-xs font-semibold text-white shadow-sm transition hover:bg-black dark:bg-white dark:text-black dark:hover:bg-white/90"
             >
               {t(lang, "Get a quote", "Solicitar precio")}

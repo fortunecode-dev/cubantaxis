@@ -26,7 +26,7 @@ export default function PriceTable({ lang }: Props) {
                             <td className="px-4 py-3">{lang === "es" ? r.routeEs : r.routeEn}</td>
                             <td className="px-4 py-3">{r.price}</td>
                             <td className="px-4 py-3">
-                                <a href="/cuba-taxi-booking" className="rounded-md px-3 py-2 bg-yellow-400 font-medium hover:brightness-95">
+                                <a href={`${lang=="en"?"":`/${lang}`}/cuba-taxi-booking`} className="rounded-md px-3 py-2 bg-yellow-400 font-medium hover:brightness-95">
                                     {lang === "es" ? "Reservar" : "Book"}
                                 </a>
                             </td>

@@ -7,6 +7,7 @@ import type { Metadata } from "next";
 import { LocaleLink } from "@/libs/i18n-nav";
 import { buildMetaTags } from "../../../seoUtils/seo-builder";
 import { getTranslation } from "../locales";
+import { LocaleParams } from "@/types/common";
 
 // ✅ Permite SSG/ISR (HTML cacheado en edge)
 export const dynamic = "force-static";
@@ -50,7 +51,8 @@ function formatDate(iso: string) {
   }
 }
 
-export default async function BlogPage() {
+export default async function BlogPage({ params }: { params: LocaleParams }) {
+  const { lang } = await params;
   // En desktop 3 columnas (~33vw por tarjeta), en tablet 2 cols (~50vw), en móvil 100vw
   const cardSizes = "(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw";
 
@@ -73,7 +75,7 @@ export default async function BlogPage() {
             </div>
             <div className="flex gap-3">
               <Link
-                href="/private-transfer-booking"
+                href={`${lang=="en"?"":`/${lang}`}/private-transfer-booking`}
                 prefetch={false}
                 className="rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:opacity-95"
                 aria-label="Book a private transfer"
@@ -117,7 +119,7 @@ export default async function BlogPage() {
 
               <div className="p-6">
                 <h2 className="text-xl font-bold text-accent">
-                  <LocaleLink href={`/blog/${p.slug}`} prefetch={false} className="hover:underline">
+                  <LocaleLink href={`${lang=="en"?"":`/${lang}`}/blog/${p.slug}`} prefetch={false} className="hover:underline">
                     {p.title}
                   </LocaleLink>
                 </h2>
@@ -132,7 +134,7 @@ export default async function BlogPage() {
 
                 <div className="mt-5 flex items-center justify-between">
                   <Link
-                    href={`/blog/${p.slug}`}
+                    href={`${lang=="en"?"":`/${lang}`}/blog/${p.slug}`}
                     prefetch={false}
                     className="rounded-lg border border-primary/30 px-3 py-1.5 text-sm font-medium text-primary transition hover:bg-primary/5"
                     aria-label={`Read: ${p.title}`}
@@ -140,7 +142,7 @@ export default async function BlogPage() {
                     Read article
                   </Link>
                   <Link
-                    href="/cuba-taxi-booking"
+                    href={`${lang=="en"?"":`/${lang}`}/cuba-taxi-booking`}
                     prefetch={false}
                     className="rounded-lg bg-accent px-3 py-1.5 text-sm font-semibold text-white transition hover:opacity-95"
                   >

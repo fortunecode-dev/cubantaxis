@@ -74,7 +74,7 @@ export default async function FastBookingPage({ params }: { params: LocaleParams
           {/* CTA secundaria / volver */}
           <div className="border-t border-primary/15 p-4 text-center">
             <LocaleLink
-              href={`/${lang}`}
+              href={`/`}
               prefetch={false}
               className="inline-flex items-center justify-center rounded-lg bg-accent px-5 py-3 text-sm font-semibold text-white transition hover:opacity-95"
             >

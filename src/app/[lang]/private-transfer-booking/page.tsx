@@ -73,7 +73,7 @@ export default async function BookAReservationPage({ params }: { params: LocaleP
           {/* CTA secundaria / volver al home */}
           <div className=" p-4 text-center">
             <LocaleLink
-              href={`/${lang}`}
+              href={`/`}
               prefetch={false}
               className="inline-flex items-center justify-center rounded-lg bg-accent px-5 py-3 text-sm font-semibold text-white transition hover:opacity-95"
             >
