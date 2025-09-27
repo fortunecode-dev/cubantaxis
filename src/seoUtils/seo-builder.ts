@@ -3,10 +3,7 @@ import { SeoMetadata } from "./metadataValidation";
 export const LOCALES = ["es", "fr", "de", "ru", "pt"] as const;
 export type Locale = typeof LOCALES[number];
 export const urlBase = "https://cubantaxis.com";
-import { cache } from "react";
-import { getTranslation } from "@/app/[lang]/locales";
 
-export const getI18n = cache((lang: string) => getTranslation(lang));
 // Construye alternates para Estrategia A: EN = neutra
 export function buildAlternates(slugNoLang: `/${string}` | "") {
   const languages: Record<string, string> = {

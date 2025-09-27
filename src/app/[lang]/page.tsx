@@ -4,13 +4,13 @@ import Hero from "@/modules/layout/Hero";
 import FaqSection from "@/components/Faqs";
 import { getTranslation } from "./locales";
 import { LocaleParams } from "@/types/common";
-import { buildMetaTags, getI18n } from "../../seoUtils/seo-builder";
-
+import { buildMetaTags } from "../../seoUtils/seo-builder";
+// ✅ Tipar params como Promise
 export async function generateMetadata(
   { params }: { params: Promise<{ lang: string }> }
 ): Promise<Metadata> {
   const { lang } = await params;
-  const idioma = getI18n(lang)
+  const idioma = getTranslation(lang)
   const metadata = buildMetaTags(idioma.metadata.landingPage as any)
   return metadata
 }
@@ -20,7 +20,7 @@ export default async function Home(
   { params }: { params: Promise<LocaleParams> }
 ) {
   const { lang } = await params;
-  const idioma = getI18n(lang);
+  const idioma = getTranslation(lang);
 
   return (
     <main id="main" className="font-sans">
