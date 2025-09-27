@@ -22,7 +22,7 @@ export default function Header({ lang }: { lang: any }) {
         <div className="flex h-16 items-center justify-between gap-4">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <Link href="/" className="flex items-center gap-2" aria-label="CubanTaxis Home">
+            <Link href={lang=="en"?"/":`/${lang}`} className="flex items-center gap-2" aria-label="CubanTaxis Home">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={LOGO || "/icon.png"} alt="CubanTaxis" className="h-14 w-auto" />
             </Link>
@@ -144,7 +144,7 @@ export default function Header({ lang }: { lang: any }) {
               {/* Top bar del overlay: logo izq + cerrar der */}
               <div className="h-16 px-4 flex items-center justify-between border-b border-primary/20 bg-white/95">
                 <div className="flex items-center gap-2">
-                  <Link href="/" className="flex items-center gap-2" aria-label="CubanTaxis Home">
+                  <Link href={lang=="en"?"/":`/${lang}`} className="flex items-center gap-2" aria-label="CubanTaxis Home">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={LOGO || "/icon.png"} alt="CubanTaxis" className="h-14 w-auto" />
                   </Link>

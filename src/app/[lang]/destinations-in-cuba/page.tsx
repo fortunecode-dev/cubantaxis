@@ -42,7 +42,8 @@ const DESTINATIONS: Destination[] = [
 ];
 
 // ---------- Page ----------
-export default function DestinationsPage() {
+export default async function DestinationsPage({params}:any) {
+  const { lang } = await params;
   const itemListElements = DESTINATIONS.map((d, i) => ({
     "@type": "ListItem",
     position: i + 1,
@@ -70,13 +71,13 @@ export default function DestinationsPage() {
         <nav aria-label="Breadcrumb" className="mx-auto max-w-6xl px-4 pt-6">
           <ol className="flex items-center gap-1 text-xs">
             <li>
-              <Link href="/" prefetch={false} className="text-primary hover:text-accent hover:underline">
+              <Link href={`${lang=="en"?"":`/${lang}`}/`} prefetch={false} className="text-primary hover:text-accent hover:underline">
                 Home
               </Link>
             </li>
             <li aria-hidden="true" className="text-primary">›</li>
             <li>
-              <Link href="/destinations-in-cuba" prefetch={false} className="text-primary hover:text-accent hover:underline">
+              <Link href={`${lang=="en"?"":`/${lang}`}/destinations-in-cuba`} prefetch={false} className="text-primary hover:text-accent hover:underline">
                 Destinations
               </Link>
             </li>
@@ -108,7 +109,7 @@ export default function DestinationsPage() {
             <strong className="text-accent font-bold">Varadero (VRA)</strong> to{" "}
             <strong className="text-accent font-bold">Viñales, Trinidad, Cienfuegos, Santa Clara</strong> and the northern cays.
             Photos, highlights, and a quick way to{" "}
-            <Link href="/cuba-taxi-booking" prefetch={false} className="font-bold text-accent underline underline-offset-2 hover:no-underline">
+            <Link href={`${lang=="en"?"":`/${lang}`}/cuba-taxi-booking`} prefetch={false} className="font-bold text-accent underline underline-offset-2 hover:no-underline">
               book your transfer
             </Link>.
           </p>
@@ -128,7 +129,7 @@ export default function DestinationsPage() {
           {/* CTAs */}
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
-              href="/cuba-taxi-booking"
+              href={`${lang=="en"?"":`/${lang}`}/cuba-taxi-booking`}
               prefetch={false}
               className="inline-flex items-center justify-center rounded-lg bg-accent px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:opacity-95"
             >
