@@ -1,7 +1,6 @@
 // page.tsx
 import { Metadata } from "next";
 import Hero from "@/modules/layout/Hero";
-import UnderHeroLinks from "@/components/UnderHeroLinks";
 import FaqSection from "@/components/Faqs";
 import { getTranslation } from "./locales";
 import { LocaleParams } from "@/types/common";
@@ -25,12 +24,11 @@ export default async function Home(
 
   return (
     <main id="main" className="font-sans">
-      <Hero lang={lang} />
-      {/* <UnderHeroLinks idioma={idioma} /> */}
+      <Hero lang={idioma.content.hero} />
       <section className="mt-12 pt-3" id="frequently-asked-questions">
         <FaqSection
           faqs={idioma.FAQs.items}
-          title="All About Taxis In Cuba, Pricing, Booking, Airport Transfers"
+          title={idioma.FAQs.title}
         />
       </section>
     </main>
