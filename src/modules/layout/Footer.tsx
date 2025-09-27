@@ -40,7 +40,7 @@ export default async function Footer({ lang }: { lang: string }) {
                 </Link>
               </li>
               <li>
-                <Link href="/interesting-places" prefetch={false} className="text-primary hover:text-accent hover:underline">
+                <Link href="/interesting-places-in-cuba" prefetch={false} className="text-primary hover:text-accent hover:underline">
                   Interesting Places in Cuba
                 </Link>
               </li>

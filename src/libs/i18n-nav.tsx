@@ -33,7 +33,6 @@ function stripLocalePrefix(path: string) {
 type UseLocaleHrefOptions = {
   /** Fuerza enlace nativo, sin prefijo /en, /es, etc. */
   native?: boolean;
-  /** Cualquier path que empiece por alguno de estos prefijos será nativo. Ej: ["/interesting-places"] */
   nativePaths?: string[];
 };
 
