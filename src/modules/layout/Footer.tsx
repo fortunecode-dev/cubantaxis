@@ -15,37 +15,37 @@ export default async function Footer({ lang }: { lang: string }) {
             <h3 className="mb-3 text-base font-bold text-accent">Contents</h3>
             <ul className="space-y-2">
               <li>
-                <Link href={`${lang}/taxi-in-cuba`} prefetch={false} className="text-primary hover:text-accent hover:underline">
+                <Link href={`${lang=="en"?"":`/${lang}`}/taxi-in-cuba`} prefetch={false} className="text-primary hover:text-accent hover:underline">
                   All About Taxis In Cuba
                 </Link>
               </li>
               <li>
-                <Link href={`${lang}/private-transfer-booking`} prefetch={false} className="text-primary hover:text-accent hover:underline">
+                <Link href={`${lang=="en"?"":`/${lang}`}/private-transfer-booking`} prefetch={false} className="text-primary hover:text-accent hover:underline">
                   Private Transfer Booking
                 </Link>
               </li>
               <li>
-                <Link href={`${lang}/cuba-taxi-booking`} prefetch={false} className="text-primary hover:text-accent hover:underline">
+                <Link href={`${lang=="en"?"":`/${lang}`}/cuba-taxi-booking`} prefetch={false} className="text-primary hover:text-accent hover:underline">
                   Quick Booking
                 </Link>
               </li>
               <li>
-                <Link href={`${lang}/blog`} prefetch={false} className="text-primary hover:text-accent hover:underline">
+                <Link href={`${lang=="en"?"":`/${lang}`}/blog`} prefetch={false} className="text-primary hover:text-accent hover:underline">
                   Blog
                 </Link>
               </li>
               <li>
-                <Link href={`${lang}/blog/how-much-is-a-taxi-in-cuba`} prefetch={false} className="text-primary hover:text-accent hover:underline">
+                <Link href={`${lang=="en"?"":`/${lang}`}/blog/how-much-is-a-taxi-in-cuba`} prefetch={false} className="text-primary hover:text-accent hover:underline">
                   {t.howMuchIsATaxi}
                 </Link>
               </li>
               <li>
-                <Link href={`${lang}/interesting-places-in-cuba`} prefetch={false} className="text-primary hover:text-accent hover:underline">
+                <Link href={`${lang=="en"?"":`/${lang}`}/interesting-places-in-cuba`} prefetch={false} className="text-primary hover:text-accent hover:underline">
                   Interesting Places in Cuba
                 </Link>
               </li>
               <li>
-                <Link href={`${lang}/#frequently-asked-questions`} prefetch={false} className="text-primary hover:text-accent hover:underline">
+                <Link href={`${lang=="en"?"":`/${lang}`}/#frequently-asked-questions`} prefetch={false} className="text-primary hover:text-accent hover:underline">
                   Frequently Asked Questions
                 </Link>
               </li>
