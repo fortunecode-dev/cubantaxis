@@ -59,9 +59,9 @@ export default async function BlogPage({ params }: { params: LocaleParams }) {
         <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
             <div>
-              <span className="inline-block rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-xs font-bold text-accent">
+              {/* <span className="inline-block rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-xs font-bold text-accent">
                 Blog CubanTaxis
-              </span>
+              </span> */}
               <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-accent">
                 Taxi prices, transfers and travel tips in Cuba
               </h1>
