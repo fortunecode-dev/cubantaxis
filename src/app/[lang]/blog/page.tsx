@@ -30,8 +30,8 @@ const POSTS = [
     date: "2025-09-01",
     readMins: 7,
     image: "/cuba-cabs.jpg",
-    tags: ["pricing", "transfers"],
     location: "Cuba",
+    tags: ["pricing", "transfers"],
   },
 ];
 

@@ -25,6 +25,26 @@ export function middleware(req: NextRequest) {
   const url = req.nextUrl;
   const { pathname, search } = url;
 
+  // 1) https forzado
+  if (url.protocol === "http:") {
+    url.protocol = "https:";
+    return NextResponse.redirect(url, { status: 301 });
+  }
+
+  // 2) quitar www
+  if (url.hostname.startsWith("www.")) {
+    url.hostname = url.hostname.replace(/^www\./, "");
+    return NextResponse.redirect(url, { status: 301 });
+  }
+
+  // 3) normalizar slash final:
+  // - Mantener slash SOLO en raíz "/"
+  // - Quitar slash al final del resto (excepto si es sólo "/")
+  if (pathname.length > 1 && pathname.endsWith("/")) {
+    url.pathname = pathname.replace(/\/+$/, "");
+    return NextResponse.redirect(url, { status: 301 });
+  }
+
   // 1) Canonicalizar host: www -> apex (301)
   if (url.hostname === "www.cubantaxis.com") {
     const to = url.clone();

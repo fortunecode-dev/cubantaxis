@@ -20,6 +20,6 @@ export const header: HeaderItems = [
     key: "destinations", label: "Destinos", href: `/es/destinations-in-cuba`
   },
   {
-    key: "faqs", label: "Preguntas frecuentes", href: `/#faq-title`
+    key: "faqs", label: "Preguntas frecuentes", href: `/es#faq-title`
   }
 ];

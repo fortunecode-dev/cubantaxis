@@ -27,5 +27,23 @@ export const content = {
             fastBookingHref: `/cuba-taxi-booking`,
         },
         emphasis: ["Taxi in Cuba"],
+    },
+    blog: {
+        h1: "",
+        h2: "",
+        cta: {
+            customBooking: "Book your trip in advance",
+            fastBooking: "Quick Booking",
+            customBookingHref: `/private-transfer-booking`,
+            fastBookingHref: `/cuba-taxi-booking`,
+        },
+        anchor: "",
+        listActions: [{ label: "", href: "" }],
+        list: [{
+            h3: "", p: "", date: "2025-09-01",
+            readMins: 7,
+            image: "/cuba-cabs.jpg",
+            location: "Cuba",
+        }]
     }
 }  
