@@ -103,7 +103,7 @@ export default function HeroCubanTaxis({ lang }: { lang?: any }) {
               {/* Imagen 1: arriba-izq — prioritaria para mejorar LCP si suele quedar visible */}
               <div className="relative aspect-square w-full">
                 <Image
-                  src="/cuba-beaches.jpg"
+                  src="/cuba-beaches.avif"
                   alt="Beaches near Havana"
                   fill
                   sizes={gridSizes}
@@ -118,7 +118,7 @@ export default function HeroCubanTaxis({ lang }: { lang?: any }) {
               {/* Imagen 2 */}
               <div className="relative aspect-square w-full">
                 <Image
-                  src="/havana-capitol.png"
+                  src="/havana-capitol.avif"
                   alt="Capitolio of Havana"
                   fill
                   sizes={gridSizes}
@@ -131,7 +131,7 @@ export default function HeroCubanTaxis({ lang }: { lang?: any }) {
               {/* Imagen 3 */}
               <div className="relative aspect-square w-full">
                 <Image
-                  src="/cuba-coco-taxi.jpg"
+                  src="/cuba-coco-taxi.avif"
                   alt="Coco taxi in Havana"
                   fill
                   sizes={gridSizes}
@@ -144,7 +144,7 @@ export default function HeroCubanTaxis({ lang }: { lang?: any }) {
               {/* Imagen 4 */}
               <div className="relative aspect-square w-full">
                 <Image
-                  src="/vinales.jpg"
+                  src="/vinales.avif"
                   alt="Viñales valley tour"
                   fill
                   sizes={gridSizes}
