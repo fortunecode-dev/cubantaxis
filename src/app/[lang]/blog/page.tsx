@@ -9,10 +9,6 @@ import { buildMetaTags } from "../../../seoUtils/seo-builder";
 import { getTranslation } from "../locales";
 import { LocaleParams } from "@/types/common";
 
-// ✅ Permite SSG/ISR (HTML cacheado en edge)
-export const dynamic = "force-static";
-export const revalidate = 3600; // 1h (ajusta según necesidad)
-
 // Blur minúsculo (evita CLS sin coste de red)
 const BLUR_1x1 =
   "data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=";

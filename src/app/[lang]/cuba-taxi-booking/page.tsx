@@ -9,10 +9,6 @@ import { LocaleLink } from "@/libs/i18n-nav";
 import { getTranslation } from "../locales";
 import { LocaleParams } from "@/types/common";
 
-// ✅ SSG/ISR para reducir TTFB (el form funciona igual al ser client)
-export const dynamic = "force-static";
-export const revalidate = 3600;
-
 export async function generateMetadata(
   { params }: { params: Promise<{ lang: string }> }
 ): Promise<Metadata> {

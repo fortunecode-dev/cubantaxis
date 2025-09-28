@@ -9,10 +9,6 @@ import { LocaleParams } from "@/types/common";
 import { LocaleLink } from "@/libs/i18n-nav";
 import ExtendedBookingForm from "@/modules/booking/ExtendedBookingForm";
 
-// ✅ SSG + revalidate para buen TTFB (el form es client y funciona igual)
-export const dynamic = "force-static";
-export const revalidate = 3600;
-
 export async function generateMetadata(
   { params }: { params: Promise<{ lang: string }> }
 ): Promise<Metadata> {
