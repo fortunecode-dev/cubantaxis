@@ -12,32 +12,32 @@ export const metadata: Partial<customMetaData> = {
 
   blog: {
     self: {
-      title: "Kuba-Taxi Blog | Transfers, Touren & Buchungs-Tipps | CubanTaxis",
+      title: "Kuba-Taxi Blog | Transfers, Touren & Buchungs-Tipps | CubanT",
       description: "Guides und Tipps zu Taxis in Kuba: Transfers, Touren und Buchung. So reisen Sie zwischen Havanna, Varadero und weiteren Zielen mit CubanTaxis.",
       alternates: buildAlternatesMetadata("/blog", "de"),
     },
     howMuchIsATaxiInCuba: {
       title:
-        "Kuba-Taxi Preise 2025 | Transfers & Tour-Buchung Havanna & Varadero | CubanTaxis",
+        "Kuba-Taxi Preise 2025 | Transfers & Tour-Buchung Havanna & V",
       description: "Aktuelle Kuba-Taxi Preise 2025. Vergleichen Sie Transfers, Touren und Buchungsoptionen zwischen Havanna, Varadero und mehr mit CubanTaxis.",
       alternates: buildAlternatesMetadata("/blog/how-much-is-a-taxi-in-cuba", "de"),
     },
   },
 
   customBooking: {
-    title: "Individuelle Kuba-Taxi Buchung | Private Transfers & Touren | CubanTaxis",
+    title: "Individuelle Kuba-Taxi Buchung | Private Transfers & Touren ",
     description: "Stellen Sie Ihre Kuba-Taxi Buchung zusammen: Transfers, Touren, Fahrzeuge und Ziele in Havanna & Varadero – mit CubanTaxis.",
     alternates: buildAlternatesMetadata("/private-transfer-booking", "de"),
   },
 
   fastBooking: {
-    title: "Schnelle Kuba-Taxi Buchung | Flughafen-Transfers & Touren | CubanTaxis",
+    title: "Schnelle Kuba-Taxi Buchung | Flughafen-Transfers & Touren | ",
     description: "Schnelle Taxi-Buchung für Flughafen-Transfers und Touren. Zuverlässige Fahrer, Festpreise, Routen Havanna & Varadero mit CubanTaxis.",
     alternates: buildAlternatesMetadata("/cuba-taxi-booking", "de"),
   },
 
   destinationsInCuba: {
-    title: "CubanTaxis Reiseziele in Kuba | Taxi-Transfers, Touren & Hotels",
+    title: "CubanTaxis Reiseziele in Kuba | Taxi-Transfers, Touren & Hot",
     description: "CubanTaxis verbindet Sie mit den Top-Reisezielen Kubas. Buchen Sie Taxi-Transfers, Touren und Hotelaufenthalte in Havanna, Varadero und darüber hinaus.",
     alternates: buildAlternatesMetadata("/destinations-in-cuba", "de"),
   },
@@ -56,25 +56,25 @@ export const metadata: Partial<customMetaData> = {
     },
 
     granHotelManzanaKempinski: {
-      title: "CubanTaxis | Gran Hotel Manzana Kempinski Havanna: Taxi-Transfers & Buchung",
+      title: "CubanTaxis | Gran Hotel Manzana Kempinski Havanna: Taxi-Tran",
       description: "Reisen Sie mit CubanTaxis zum Gran Hotel Manzana Kempinski in Havanna. Einfach Taxi-Transfers, Hotel & geführte Touren buchen.",
       alternates: buildAlternatesMetadata("/interesting-places-in-cuba/gran-hotel-manzana-kempinski", "de"),
     },
 
     hotelMystiqueRegisHavana: {
-      title: "CubanTaxis | Hotel Mystique Regis Havanna: Taxi-Transfers & Touren",
+      title: "CubanTaxis | Hotel Mystique Regis Havanna: Taxi-Transfers & ",
       description: "Buchen Sie mit CubanTaxis Ihren Aufenthalt im Hotel Mystique Regis Havanna. Zuverlässige Taxi-Transfers, Touren und Hotelbuchung.",
       alternates: buildAlternatesMetadata("/interesting-places-in-cuba/hotel-mystique-regis-habana", "de"),
     },
 
     iberostarParqueCentral: {
-      title: "CubanTaxis | Iberostar Parque Central Havanna: Transfers & Buchung",
+      title: "CubanTaxis | Iberostar Parque Central Havanna: Transfers & B",
       description: "CubanTaxis bringt Sie zum Iberostar Parque Central. Schnell Taxi-Transfers in Havanna, Hotelaufenthalte und Touren buchen.",
       alternates: buildAlternatesMetadata("/interesting-places-in-cuba/iberostar-selection-parque-central", "de"),
     },
 
     meliaInternacionalVaradero: {
-      title: "CubanTaxis | Meliá Internacional Varadero: Transfers, Touren & Buchung",
+      title: "CubanTaxis | Meliá Internacional Varadero: Transfers, Touren",
       description: "CubanTaxis organisiert Transfers und Touren zum Meliá Internacional Varadero. Buchen Sie Ihren Aufenthalt mit zuverlässigem Taxi-Service in Kuba.",
       alternates: buildAlternatesMetadata("/interesting-places-in-cuba/melia-internacional-varadero", "de"),
     },
@@ -86,7 +86,7 @@ export const metadata: Partial<customMetaData> = {
     },
 
     ocioClub: {
-      title: "CubanTaxis | Ocio Club Havanna: Transfers, Nightlife & Touren",
+      title: "CubanTaxis | Ocio Club Havanna: Transfers, Nightlife & Toure",
       description: "Genießen Sie das Nachtleben Havannas im Ocio Club mit CubanTaxis. Einfach Taxi-Transfers, Touren und Abendpläne in Kuba buchen.",
       alternates: buildAlternatesMetadata("/interesting-places-in-cuba/ocio-club", "de"),
     },

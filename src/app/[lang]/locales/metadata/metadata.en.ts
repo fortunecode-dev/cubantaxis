@@ -10,13 +10,13 @@ export const metadata: Partial<customMetaData> = {
 
     blog: {
         self: {
-            title: "Cuba Taxi Blog | Transfers, Tours & Booking Tips | CubanTaxis",
+            title: "Cuba Taxi Blog | Transfers, Tours & Booking Tips | CubanTaxi",
             description: "Guides and advice on Cuba taxi transfers, tours and booking. Learn how to move between Havana, Varadero and other destinations with CubanTaxis.",
             alternates: buildAlternatesMetadata("/blog", "en"),
         },
         howMuchIsATaxiInCuba: {
             title:
-                "Cuba Taxi Prices 2025 | Transfers & Tour Booking Havana & Varadero | CubanTaxis",
+                "Cuba Taxi Prices 2025 | Transfers & Tour Booking Havana & Va",
             description: "See 2025 Cuba taxi prices. Compare transfers, tours and booking options from Havana to Varadero and more with CubanTaxis.",
             alternates: buildAlternatesMetadata(
                 "/blog/how-much-is-a-taxi-in-cuba",
@@ -26,20 +26,20 @@ export const metadata: Partial<customMetaData> = {
     },
 
     customBooking: {
-        title: "Custom Cuba Taxi Booking | Private Transfers & Tours | CubanTaxis",
+        title: "Custom Cuba Taxi Booking | Private Transfers & Tours | Cuban",
         description: "Customize your Cuba taxi booking. Choose transfers, tours, cars and destinations across Havana and Varadero with CubanTaxis.",
         alternates: buildAlternatesMetadata("/private-transfer-booking", "en"),
     },
 
     fastBooking: {
-        title: "Fast Cuba Taxi Booking | Airport Transfers & Tours | CubanTaxis",
+        title: "Fast Cuba Taxi Booking | Airport Transfers & Tours | CubanTa",
         description: "Quick Cuba taxi booking for airport transfers and tours. Reliable drivers, fixed prices, Havana & Varadero routes with CubanTaxis.",
         alternates: buildAlternatesMetadata("/cuba-taxi-booking", "en"),
     },
 
     destinationsInCuba: {
         title:
-            "CubanTaxis Destinations in Cuba | Taxi Transfers, Tours & Hotels",
+            "CubanTaxis Destinations in Cuba | Taxi Transfers, Tours & Ho",
         description: "CubanTaxis connects you with the top destinations in Cuba. Book taxi transfers, tours and hotel trips in Havana, Varadero and beyond.",
         alternates: buildAlternatesMetadata("/destinations-in-cuba", "en"),
     },
@@ -62,7 +62,7 @@ export const metadata: Partial<customMetaData> = {
 
         granHotelManzanaKempinski: {
             title:
-                "CubanTaxis | Gran Hotel Manzana Kempinski Havana Taxi Transfers & Booking",
+                "CubanTaxis | Gran Hotel Manzana Kempinski Havana Taxi Transf",
             description: "Travel with CubanTaxis to Gran Hotel Manzana Kempinski in Havana. Book taxi transfers, hotel stays and guided tours with ease.",
             alternates: buildAlternatesMetadata(
                 "/interesting-places-in-cuba/gran-hotel-manzana-kempinski",
@@ -72,7 +72,7 @@ export const metadata: Partial<customMetaData> = {
 
         hotelMystiqueRegisHavana: {
             title:
-                "CubanTaxis | Hotel Mystique Regis Havana Taxi Transfers & Tours",
+                "CubanTaxis | Hotel Mystique Regis Havana Taxi Transfers & To",
             description: "Book CubanTaxis for your stay at Hotel Mystique Regis Havana. Reliable taxi transfers, tours and hotel booking available.",
             alternates: buildAlternatesMetadata(
                 "/interesting-places-in-cuba/hotel-mystique-regis-habana",
@@ -82,7 +82,7 @@ export const metadata: Partial<customMetaData> = {
 
         iberostarParqueCentral: {
             title:
-                "CubanTaxis | Iberostar Parque Central Havana Taxi Transfers & Booking",
+                "CubanTaxis | Iberostar Parque Central Havana Taxi Transfers ",
             description: "CubanTaxis connects you to Iberostar Parque Central. Book Havana taxi transfers, hotel stays and tours quickly and easily.",
             alternates: buildAlternatesMetadata(
                 "/interesting-places-in-cuba/iberostar-selection-parque-central",
@@ -92,7 +92,7 @@ export const metadata: Partial<customMetaData> = {
 
         meliaInternacionalVaradero: {
             title:
-                "CubanTaxis | Meliá Internacional Varadero Taxi Transfers, Tours & Booking",
+                "CubanTaxis | Meliá Internacional Varadero Taxi Transfers, To",
             description: "CubanTaxis offers transfers and tours to Meliá Internacional Varadero. Book your hotel stay with reliable taxi services in Cuba.",
             alternates: buildAlternatesMetadata(
                 "/interesting-places-in-cuba/melia-internacional-varadero",
@@ -102,7 +102,7 @@ export const metadata: Partial<customMetaData> = {
 
         meliaLasAmericas: {
             title:
-                "CubanTaxis | Meliá Las Américas Varadero Taxi Transfers & Tours",
+                "CubanTaxis | Meliá Las Américas Varadero Taxi Transfers & To",
             description: "Plan your trip with CubanTaxis to Meliá Las Américas Varadero. Taxi transfers, tours and hotel booking at your fingertips.",
             alternates: buildAlternatesMetadata(
                 "/interesting-places-in-cuba/melia-las-americas",
@@ -112,7 +112,7 @@ export const metadata: Partial<customMetaData> = {
 
         ocioClub: {
             title:
-                "CubanTaxis | Ocio Club Havana Taxi Transfers, Nightlife & Tours",
+                "CubanTaxis | Ocio Club Havana Taxi Transfers, Nightlife & To",
             description: "Enjoy Havana nightlife at Ocio Club with CubanTaxis. Book your taxi transfers, tours and evening plans in Cuba easily.",
             alternates: buildAlternatesMetadata(
                 "/interesting-places-in-cuba/ocio-club",

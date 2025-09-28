@@ -101,7 +101,7 @@ export default async function CubaTaxiPage({ params }: Params) {
           {/* CTAs */}
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a
-              href={`${lang=="en"?"":`/${lang}`}/#frequently-asked-questions`}
+              href={`${lang=="en"?"/":`/${lang}`}#frequently-asked-questions`}
               className="inline-flex items-center justify-center rounded-lg bg-white px-5 py-3 text-sm font-light underline text-gray-800 transition hover:bg-gray-50 dark:border-white/10 dark:bg-zinc-900 dark:text-gray-100 dark:hover:bg-zinc-800"
             >
               {t(lang, "Frequently Asked Questions", "Preguntas frecuentes")}
@@ -243,37 +243,7 @@ export default async function CubaTaxiPage({ params }: Params) {
         </div>
       </section>
 
-      {/* <section className="px-4">
-        <div className="mx-auto mt-12 max-w-5xl grid gap-6 md:grid-cols-2">
-          <div className="group rounded-2xl border border-black/10 p-5 hover:border-black/30 hover:shadow-[0_6px_0_0_#000] transition-all">
-            <h3 className="font-semibold text-lg">
-              HAV – {t(lang, "José Martí (Havana)", "José Martí (La Habana)")}
-            </h3>
-            <p className="text-sm opacity-80 mt-1">
-              {t(lang, "Direct pickups with meet & greet.", "Recogidas directas con meet & greet.")}
-            </p>
-            <Link
-              className="inline-flex items-center gap-1 mt-3 underline decoration-yellow-400/60 underline-offset-2 group-hover:translate-x-0.5 transition-transform"
-              href={`/${lang}/havana/airport-transfers`}
-            >
-              {t(lang, "See Havana transfers", "Ver traslados en La Habana")} →
-            </Link>
-          </div>
-
-          <div className="group rounded-2xl border border-black/10 p-5 hover:border-black/30 hover:shadow-[0_6px_0_0_#000] transition-all">
-            <h3 className="font-semibold text-lg">VRA – Varadero</h3>
-            <p className="text-sm opacity-80 mt-1">
-              {t(lang, "Reliable transfers to/from VRA.", "Traslados confiables desde/hacia VRA.")}
-            </p>
-            <Link
-              className="inline-flex items-center gap-1 mt-3 underline decoration-yellow-400/60 underline-offset-2 group-hover:translate-x-0.5 transition-transform"
-              href={`/${lang}/varadero/airport-transfers`}
-            >
-              {t(lang, "See Varadero transfers", "Ver traslados en Varadero")} →
-            </Link>
-          </div>
-        </div>
-      </section> */}
+     
 
       {/* TRUST / REVIEWS */}
       <section className="mt-12 px-4">
@@ -281,28 +251,6 @@ export default async function CubaTaxiPage({ params }: Params) {
           <TrustBlock lang={lang} />
         </div>
       </section>
-
-      {/* INTERNAL LINKS
-      <nav className="mt-10 px-4 text-sm">
-        <ul className="mx-auto max-w-5xl list-disc space-y-1 pl-6">
-          <li>
-            <Link
-              href={`/how-much-is-a-taxi-in-cuba`}
-              className="underline decoration-yellow-400/60 underline-offset-2 hover:decoration-yellow-400 transition-colors"
-            >
-              {t(lang, "Planning your trip? See our Cuba taxi guide.", "¿Planeas tu viaje? Mira nuestra guía de taxi en Cuba.")}
-            </Link>
-          </li>
-          <li>
-            <Link
-              href={`/${lang}/blog/taxi-cuba-2025`}
-              className="underline decoration-yellow-400/60 underline-offset-2 hover:decoration-yellow-400 transition-colors"
-            >
-              {t(lang, "Taxi prices in Cuba (2025)", "Precios de taxi en Cuba (2025)")}
-            </Link>
-          </li>
-        </ul>
-      </nav> */}
 
       {/* --- JSON-LD (Breadcrumb + FAQ + Service) --- */}
       <Script id="ld-breadcrumb" type="application/ld+json" strategy="afterInteractive">
