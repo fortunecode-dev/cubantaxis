@@ -2,7 +2,15 @@
 import Home from "./[lang]/page";
 import Script from "next/script";
 import { LocaleParams } from "@/types/common";
-
+import { Metadata } from "next";
+export const metadata: Metadata = {
+  icons: {
+    icon: [
+      { url: "/favicon.svg", sizes: "any" },
+    ],
+    apple: "/apple-icon.png",
+  },
+};
 export default async function RootHome(
   { params }: { params: Promise<LocaleParams> }
 ) {
