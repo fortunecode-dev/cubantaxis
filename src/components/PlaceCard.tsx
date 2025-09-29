@@ -1,4 +1,4 @@
-// components/PlaceSEOCard.tsx — Server Component (nuevo estilo)
+// components/PlaceSEOCard.tsx — Server Component
 // - Encabezados rojos (text-accent), textos azules (text-primary)
 // - Sin next/head, sin hooks, sin estado
 // - CTAs de booking
@@ -105,6 +105,9 @@ function EmojiIcon({ name }: { name: string }) {
 
 // ---- JSON-LD builders (sin hooks) ----
 function buildPlaceJsonLd(place: PlaceProps, schemaType: SchemaKind = "Place") {
+  if (!place.name?.trim()) {
+    throw new Error("PlaceSEOCard: place.name es obligatorio para schema.org");
+  }
   const base: any = {
     "@context": "https://schema.org",
     "@type": schemaType,
@@ -152,6 +155,8 @@ function buildFAQJsonLd(faq?: { question: string; answer: string }[]) {
   };
 }
 
+const BLUR_1x1 = "data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=";
+
 export default function PlaceSEOCard({
   seo,
   place,
@@ -166,8 +171,6 @@ export default function PlaceSEOCard({
     fastBooking: "Quick Booking",
   },
 }: Props) {
-  const grouped = groupByClass(services);
-
   // Rutas CTA (idénticas a tu Hero)
   const base = ["en", "es", "fr", "de", "ru", "pt"].includes(lang as string) ? `/${lang}` : "/en";
   const bookingHref = `${base}/private-transfer-booking`;
@@ -189,53 +192,37 @@ export default function PlaceSEOCard({
     ],
   };
 
-  const BLUR_1x1 = "data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=";
+  const grouped = groupByClass(services);
 
   return (
     <>
       {/* JSON-LD inline (Server Rendered) */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(placeLd) }}
-      />
-      {bcLd && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(bcLd) }}
-        />
-      )}
-      {faqLd && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
-        />
-      )}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(bookingLd) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(placeLd) }} />
+      {bcLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(bcLd) }} />}
+      {faqLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(bookingLd) }} />
 
-      {/* Título */}
-      <div className="mx-auto mt-18 max-w-5xl px-4 sm:px-6">
-        <h1 className="text-2xl font-extrabold tracking-tight text-accent sm:text-3xl">
-          <span itemProp="name">{place.name}</span>
-        </h1>
-        {place.alternateName && (
-          <p className="mt-1 text-sm text-primary/80" itemProp="alternateName">
-            {place.alternateName}
-          </p>
-        )}
-      </div>
-
-      {/* Contenido + Servicios */}
+      {/* CONTENEDOR PRINCIPAL CON ITEM SCOPE */}
       <article
         className={[
-          "mx-auto mt-4 max-w-5xl rounded-2xl border border-primary/15 bg-white shadow-sm",
+          "mx-auto mt-18 max-w-5xl rounded-2xl border border-primary/15 bg-white shadow-sm",
           className || "",
         ].join(" ")}
         itemScope
         itemType={`https://schema.org/${schemaType}`}
       >
+        {/* TÍTULO DENTRO DEL ITEM SCOPE */}
+        <header className="px-4 pb-0 pt-6 sm:px-6">
+          <h1 className="text-2xl font-extrabold tracking-tight text-accent sm:text-3xl">
+            <span itemProp="name">{place.name}</span>
+          </h1>
+          {place.alternateName && (
+            <p className="mt-1 text-sm text-primary/80" itemProp="alternateName">
+              {place.alternateName}
+            </p>
+          )}
+        </header>
+
         <div className="grid grid-cols-1 gap-0 md:grid-cols-12">
           {/* Columna izquierda */}
           <div className="md:col-span-8 p-5 sm:p-8">
@@ -251,6 +238,7 @@ export default function PlaceSEOCard({
                 blurDataURL={BLUR_1x1}
                 className="h-56 w-full object-cover"
                 priority
+                itemProp="image"
               />
             </div>
 
