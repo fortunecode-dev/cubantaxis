@@ -3,10 +3,12 @@ import type { AppTexts } from "./types";
 import { metadata } from "./metadata/metadata.de";
 import { header } from "./header/de";
 import { content } from "./pageContent/de";
+import { articles } from "./blog/de";
 export const de: AppTexts = {
   metadata,
   header,
   content,
+  articles,
   taxiGuide: "Umfassender Kuba-Taxi-Leitfaden",
   exploreDestinations: "Ziele entdecken →",
   hero: {

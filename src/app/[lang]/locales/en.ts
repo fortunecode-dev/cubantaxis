@@ -2,10 +2,12 @@ import { AppTexts } from "./types";
 import { metadata } from "./metadata/metadata.en";
 import { header } from "./header/en";
 import { content } from "./pageContent/en";
+import { articles } from "./blog/en";
 export const en: AppTexts = {
   metadata,
   header,
   content,
+  articles,
   taxiGuide:"Complete Cuba taxi guide",
   exploreDestinations:"Explore destinations →",
   hero: {

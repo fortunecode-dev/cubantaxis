@@ -3,10 +3,12 @@ import type { AppTexts } from "./types";
 import { metadata } from "./metadata/metadata.ru";
 import { header } from "./header/ru";
 import { content } from "./pageContent/ru";
+import { articles } from "./blog/ru";
 export const ru: AppTexts = {
   metadata,
   header,
   content,
+  articles,
   taxiGuide: "Полное руководство по такси на Кубе",
   exploreDestinations: "Исследовать направления →",
   hero: {

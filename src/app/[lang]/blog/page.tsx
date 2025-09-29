@@ -49,6 +49,7 @@ function formatDate(iso: string) {
 
 export default async function BlogPage({ params }: { params: LocaleParams }) {
   const { lang } = await params;
+  const {content:{blog}} = await getTranslation(lang)
   // En desktop 3 columnas (~33vw por tarjeta), en tablet 2 cols (~50vw), en móvil 100vw
   const cardSizes = "(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw";
 
@@ -63,11 +64,11 @@ export default async function BlogPage({ params }: { params: LocaleParams }) {
                 Blog CubanTaxis
               </span> */}
               <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-accent">
-                Taxi prices, transfers and travel tips in Cuba
+                {blog.h1}
               </h1>
-              <p className="mt-3 max-w-2xl text-base leading-7 text-primary">
-                Practical content for travelers: real fares, airport transfers and local tips to move easily around Cuba.
-              </p>
+              <h2 className="mt-3 max-w-2xl text-base leading-7 text-primary">
+                {blog.h2}
+              </h2>
             </div>
             <div className="flex gap-3">
               <Link
@@ -76,14 +77,14 @@ export default async function BlogPage({ params }: { params: LocaleParams }) {
                 className="rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:opacity-95"
                 aria-label="Book a private transfer"
               >
-                Book a transfer
+                {blog.cta.customBooking}
               </Link>
               <Link
                 href="#categories"
                 prefetch={false}
                 className="rounded-lg border border-primary/30 bg-white px-5 py-2.5 text-sm font-semibold text-primary transition hover:bg-primary/5"
               >
-                Browse categories
+                 {blog.anchor}
               </Link>
             </div>
           </div>
@@ -93,15 +94,15 @@ export default async function BlogPage({ params }: { params: LocaleParams }) {
       {/* POSTS */}
       <section id="categories" className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
         <div className="mt-4 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {POSTS.map((p) => (
+          {blog.list.map((p:any) => (
             <article
-              key={p.slug}
+              key={p.href}
               className="overflow-hidden rounded-2xl border border-primary/15 bg-white transition hover:shadow-sm"
             >
               <div className="relative h-48 w-full">
                 <Image
                   src={p.image}
-                  alt={p.title}
+                  alt={p.h3}
                   fill
                   sizes={cardSizes}
                   placeholder="blur"
@@ -114,13 +115,13 @@ export default async function BlogPage({ params }: { params: LocaleParams }) {
               </div>
 
               <div className="p-6">
-                <h2 className="text-xl font-bold text-accent">
-                  <LocaleLink href={`${lang=="en"?"":`/${lang}`}/blog/${p.slug}`} prefetch={false} className="hover:underline">
-                    {p.title}
+                <h3 className="text-xl font-bold text-accent">
+                  <LocaleLink href={p.href} prefetch={false} className="hover:underline">
+                    {p.h3}
                   </LocaleLink>
-                </h2>
+                </h3>
 
-                <p className="mt-2 text-sm text-primary">{p.excerpt}</p>
+                <p className="mt-2 text-sm text-primary">{p.p}</p>
 
                 <div className="mt-3 flex flex-wrap items-center gap-3 text-xs text-primary/80">
                   <span>{formatDate(p.date)}</span>
@@ -130,19 +131,19 @@ export default async function BlogPage({ params }: { params: LocaleParams }) {
 
                 <div className="mt-5 flex items-center justify-between">
                   <Link
-                    href={`${lang=="en"?"":`/${lang}`}/blog/${p.slug}`}
+                    href={p.href}
                     prefetch={false}
                     className="rounded-lg border border-primary/30 px-3 py-1.5 text-sm font-medium text-primary transition hover:bg-primary/5"
-                    aria-label={`Read: ${p.title}`}
+                    aria-label={`Read: ${p.h3}`}
                   >
-                    Read article
+                    {blog.readArticle}
                   </Link>
                   <Link
                     href={`${lang=="en"?"":`/${lang}`}/cuba-taxi-booking`}
                     prefetch={false}
                     className="rounded-lg bg-accent px-3 py-1.5 text-sm font-semibold text-white transition hover:opacity-95"
                   >
-                    Book
+                     {blog.cta.fastBooking}
                   </Link>
                 </div>
               </div>

@@ -1,9 +1,10 @@
-import { customMetaData } from "@/seoUtils/metadata";
+import {  BlogSection, customMetaData, OnPageContent } from "@/seoUtils/metadata";
 
 export interface AppTexts {
-  metadata:Partial<customMetaData>
-  header:any,
-  content:any,
+  metadata: Partial<customMetaData>
+  header: any,
+  content: { hero: HeroSection, blog: BlogSection },
+  articles:any,
   taxiGuide: string;
   exploreDestinations: string;
   hero: {
@@ -104,4 +105,31 @@ export interface AppTexts {
     error: string;
   };
   howMuchIsATaxi: string;
+}
+export interface HeroList {
+  id: string;
+  h2: string;
+  items: string[];
+}
+
+export interface HeroLink {
+  label: string;
+  href: string;
+}
+
+export interface HeroCTA {
+  customBooking: string;
+  fastBooking: string;
+  customBookingHref: string;
+  fastBookingHref: string;
+}
+
+export interface HeroSection {
+  h1Title: string;
+  h2SubTitle: string;
+  introParagraph: string;
+  list: HeroList;
+  link: HeroLink;
+  cta: HeroCTA;
+  emphasis: string[];  // frases que deben resaltarse en color
 }

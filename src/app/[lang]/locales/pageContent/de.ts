@@ -28,4 +28,28 @@ export const content = {
     },
     emphasis: ["Taxi auf Kuba"],
   },
+  blog: {
+    h1: "Taxipreise, Transfers und Reisetipps in Kuba",
+    h2: "Praktische Inhalte für Reisende: echte Preise, Flughafentransfers und lokale Tipps, um sich in Kuba leicht fortzubewegen.",
+    cta: {
+      customBooking: "Reise buchen",
+      fastBooking: "JETZT BUCHEN!",
+      customBookingHref: `/de/private-transfer-booking`,
+      fastBookingHref: `/de/cuba-taxi-booking`,
+    },
+    anchor: "Kategorien durchsuchen",
+    readArticle: "Artikel lesen",
+    listActions: [{ label: "Buchen", href: "/de/cuba-taxi-booking" }],
+    list: [
+      {
+        h3: "Wie viel kostet ein Taxi in Kuba 2025? Realistische Preise & Tipps",
+        p: "Durchschnittliche Taxipreise, Flughafentransfers, klassische vs moderne Autos und Tipps, wie man auf den Hauptstrecken nicht zu viel bezahlt.",
+        date: "2025-09-01",
+        readMins: 7,
+        href: "/de/blog/how-much-is-a-taxi-in-cuba",
+        image: "/cuba-cabs.jpg",
+        location: "Kuba",
+      },
+    ],
+  },
 };

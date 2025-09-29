@@ -14,76 +14,89 @@ export async function generateMetadata(
   // Si ya usas tu builder, mantenlo
   return (idioma.metadata.blog?.howMuchIsATaxiInCuba ?? {}) as Metadata;
 }
-
-// util: fecha visible
 function formatUpdatedDate(d = new Date()) {
   const opts: Intl.DateTimeFormatOptions = { year: "numeric", month: "long", day: "numeric" };
   return new Intl.DateTimeFormat("en-US", opts).format(d);
 }
-
 export default async function BlogTaxiCuba({ params }: { params: LocaleParams }) {
   const { lang } = await params;
-  const t = getTranslation(lang);
+  const {articles:{howMuchIsATaxiInCuba}} = getTranslation(lang);
   const updatedAt = formatUpdatedDate();
-
-  // Tamaños de la imagen destacada (optimiza bytes por viewport)
-  const heroSizes = "(min-width: 1024px) 900px, 100vw";
 
   return (
     <main className="relative">
       {/* fondo suave */}
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b " />
+      <div className={`pointer-events-none absolute inset-0 -z-10 ${howMuchIsATaxiInCuba.ui.bgGradientClass}`} />
 
       {/* migas */}
       <nav aria-label="Breadcrumb" className="mx-auto max-w-5xl px-4 pt-6">
         <ol className="flex items-center gap-1 text-xs">
-          <li><a href={lang=="en"?"/":`/${lang}`} className="text-primary hover:text-accent hover:underline" prefetch-data="false">Home</a></li>
+          <li>
+            <a
+              href={lang === "en" ? "/" : `/${lang}`}
+              className="text-primary hover:text-accent hover:underline"
+              prefetch-data="false"
+            >
+              {howMuchIsATaxiInCuba.breadcrumb.homeLabel}
+            </a>
+          </li>
           <li aria-hidden="true" className="text-primary">›</li>
-          <li><a href={`${lang=="en"?"":`/${lang}`}/blog`} className="text-primary hover:text-accent hover:underline" prefetch-data="false">Blog</a></li>
+          <li>
+            <a
+              href={`${lang === "en" ? "" : `/${lang}`}/blog`}
+              className="text-primary hover:text-accent hover:underline"
+              prefetch-data="false"
+            >
+              {howMuchIsATaxiInCuba.breadcrumb.blogLabel}
+            </a>
+          </li>
           <li aria-hidden="true" className="text-primary">›</li>
-          <li className="text-primary">Taxi prices in Cuba 2025</li>
+          <li className="text-primary">{howMuchIsATaxiInCuba.breadcrumb.current}</li>
         </ol>
       </nav>
 
       {/* HERO */}
       <header className="mx-auto max-w-5xl px-4 pb-4 pt-10 sm:pt-14">
         <div className="mb-4 flex flex-wrap items-center gap-2">
-          <span className="inline-flex items-center rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-xs font-semibold text-accent">
-            2025 Prices
-          </span>
-          <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
-            Private transfers
-          </span>
-          <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
-            English-speaking drivers
-          </span>
+          {howMuchIsATaxiInCuba.badges.map((b:any) => (
+            <span
+              key={b.label}
+              className={`inline-flex items-center rounded-full border px-3 py-1 text-xs font-semibold ${
+                b.tone === "accent"
+                  ? "border-accent/30 bg-accent/10 text-accent"
+                  : "border-primary/30 bg-primary/10 text-primary"
+              }`}
+            >
+              {b.label}
+            </span>
+          ))}
         </div>
 
         <h1 className="text-3xl font-extrabold tracking-tight text-accent sm:text-4xl">
-          How much does a taxi cost in Cuba in 2025?
+          {howMuchIsATaxiInCuba.hero.h1}
         </h1>
         <p className="mt-4 max-w-3xl text-base leading-7 text-primary">
-          Updated guide to <strong className="text-accent font-bold">Cuba taxi prices</strong> and airport transfers. See real costs
-          from <strong className="text-accent font-bold">Havana (HAV / José Martí)</strong> and <strong className="text-accent font-bold">Varadero (VRA)</strong> to
-          Varadero, Viñales, Trinidad, Cienfuegos and more. Fixed rates per car, not per person.
+          {howMuchIsATaxiInCuba.hero.introP1}
         </p>
 
         <div className="mt-6">
           <LocaleLink
-            href="/cuba-taxi-booking"
+            href={howMuchIsATaxiInCuba.hero.ctaPrimary.href}
             prefetch={false}
             className="inline-flex items-center justify-center rounded-lg bg-accent px-5 py-3 text-sm font-semibold text-white shadow-sm ring-1 ring-accent/50 transition hover:opacity-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/70"
           >
-            Book a private transfer
+            {howMuchIsATaxiInCuba.hero.ctaPrimary.label}
           </LocaleLink>
+
           <a
-            href="#prices"
+            href={howMuchIsATaxiInCuba.hero.ctaSecondary.href}
             className="ml-3 inline-flex items-center justify-center rounded-lg border border-primary/30 bg-white px-5 py-3 text-sm font-semibold text-primary shadow-sm transition hover:bg-primary/5"
           >
-            View price table
+            {howMuchIsATaxiInCuba.hero.ctaSecondary.label}
           </a>
+
           <p className="mt-2 text-xs text-primary/80">
-            Updated {updatedAt} · Prices per car (classic/modern or minivan)
+            {howMuchIsATaxiInCuba.hero.subNotePrefix} {updatedAt} {howMuchIsATaxiInCuba.hero.subNoteSuffix && ` ${howMuchIsATaxiInCuba.hero.subNoteSuffix}`}
           </p>
         </div>
       </header>
@@ -92,11 +105,11 @@ export default async function BlogTaxiCuba({ params }: { params: LocaleParams })
       <div className="mx-auto max-w-5xl px-4">
         <div className="overflow-hidden rounded-2xl border border-primary/15 shadow-sm">
           <Image
-            src="/cuba-cabs.jpg"
-            alt="Classic taxi in Havana, Cuba"
-            width={900}
-            height={630}
-            sizes={heroSizes}
+            src={howMuchIsATaxiInCuba.hero.heroImage.src}
+            alt={howMuchIsATaxiInCuba.hero.heroImage.alt}
+            width={howMuchIsATaxiInCuba.hero.heroImage.width}
+            height={howMuchIsATaxiInCuba.hero.heroImage.height}
+            sizes={howMuchIsATaxiInCuba.ui.heroSizes}
             priority
             fetchPriority="high"
             className="h-auto w-full object-cover"
@@ -107,20 +120,7 @@ export default async function BlogTaxiCuba({ params }: { params: LocaleParams })
       {/* VALOR */}
       <section className="mx-auto max-w-5xl px-4">
         <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
-          {[
-            {
-              title: "Transparent pricing",
-              desc: "Confirmed quotes for airports and intercity routes. No hidden fees.",
-            },
-            {
-              title: "Right vehicle for you",
-              desc: "Classic cars for city tours or comfortable minivans for families.",
-            },
-            {
-              title: "Pick-ups you can trust",
-              desc: "English-speaking drivers and flight monitoring for airport arrivals.",
-            },
-          ].map((c) => (
+          {howMuchIsATaxiInCuba.valueProps.map((c:any) => (
             <div
               key={c.title}
               className="rounded-2xl border border-primary/15 bg-white p-5 shadow-sm transition hover:shadow-md"
@@ -134,10 +134,9 @@ export default async function BlogTaxiCuba({ params }: { params: LocaleParams })
 
       {/* TABLA DE PRECIOS */}
       <section id="prices" className="mx-auto max-w-5xl px-4">
-        <h2 className="mt-12 text-xl font-bold text-accent">Taxi prices in Cuba by route (2025)</h2>
+        <h2 className="mt-12 text-xl font-bold text-accent">{howMuchIsATaxiInCuba.prices.title}</h2>
         <p className="mt-1 text-sm text-primary">
-          Prices are per car (private service). Final quote depends on car type (classic/modern or
-          minivan), pick-up point, night supplements and optional stops.
+          {howMuchIsATaxiInCuba.prices.intro}
         </p>
 
         <div className="mt-4 overflow-hidden rounded-xl border border-primary/15 bg-white shadow-sm">
@@ -145,27 +144,19 @@ export default async function BlogTaxiCuba({ params }: { params: LocaleParams })
             <table className="min-w-full border-separate border-spacing-y-0.5 text-sm">
               <thead>
                 <tr className="text-left text-primary">
-                  <th className="px-4 py-3 font-bold text-accent">Route</th>
-                  <th className="px-4 py-3 font-bold text-accent">Classic / Modern</th>
-                  <th className="px-4 py-3 font-bold text-accent">Minivan</th>
-                  <th className="px-4 py-3 font-bold text-accent">Notes</th>
+                  <th className="px-4 py-3 font-bold text-accent">{howMuchIsATaxiInCuba.prices.columns.route}</th>
+                  <th className="px-4 py-3 font-bold text-accent">{howMuchIsATaxiInCuba.prices.columns.classicModern}</th>
+                  <th className="px-4 py-3 font-bold text-accent">{howMuchIsATaxiInCuba.prices.columns.minivan}</th>
+                  <th className="px-4 py-3 font-bold text-accent">{howMuchIsATaxiInCuba.prices.columns.notes}</th>
                 </tr>
               </thead>
               <tbody>
-                {[
-                  { r: "Havana Airport (HAV) → Downtown", c: "$30",  m: "$55",  n: "Typical arrival transfer" },
-                  { r: "Havana → Varadero",                c: "$100", m: "$180", n: "Same-day return available" },
-                  { r: "Havana → Viñales",                 c: "$130", m: "$200", n: "Round-trip on request" },
-                  { r: "Havana → Trinidad",                c: "$250", m: "$320", n: "Via Cienfuegos optional" },
-                  { r: "Varadero → Cienfuegos",            c: "$120", m: "$205", n: "" },
-                  { r: "Varadero → Trinidad",              c: "$250", m: "$270", n: "" },
-                  { r: "Varadero Airport (VRA) → Hotels",  c: "$40",  m: "$60–70", n: "" },
-                ].map((row, i) => (
+                {howMuchIsATaxiInCuba.prices.rows.map((row:any, i:number) => (
                   <tr key={i} className="bg-white">
-                    <td className="px-4 py-3 font-medium text-primary">{row.r}</td>
-                    <td className="px-4 py-3 text-primary">{row.c}</td>
-                    <td className="px-4 py-3 text-primary">{row.m}</td>
-                    <td className="px-4 py-3 text-primary/80">{row.n}</td>
+                    <td className="px-4 py-3 font-medium text-primary">{row.route}</td>
+                    <td className="px-4 py-3 text-primary">{row.classicModern}</td>
+                    <td className="px-4 py-3 text-primary">{row.minivan}</td>
+                    <td className="px-4 py-3 text-primary/80">{row.notes ?? ""}</td>
                   </tr>
                 ))}
               </tbody>
@@ -173,20 +164,20 @@ export default async function BlogTaxiCuba({ params }: { params: LocaleParams })
           </div>
 
           <div className="border-t border-primary/10 px-4 py-3 text-xs text-primary/80">
-            Prices may vary for pick-ups far from Havana’s KM-0 (Capitolio) and for night hours.
+            {howMuchIsATaxiInCuba.prices.footnote}
           </div>
         </div>
 
         {/* CTA */}
         <div className="mt-6 flex flex-col items-start justify-between gap-3 rounded-2xl border border-primary/20 bg-primary/5 p-4 text-sm text-primary shadow-sm sm:flex-row sm:items-center">
-          <span>Need a different route or a classic convertible for a city tour?</span>
+          <span>{howMuchIsATaxiInCuba.ui.ctaAltQuestion}</span>
           <div className="flex gap-3">
             <LocaleLink
-              href="/cuba-taxi-booking"
+              href={howMuchIsATaxiInCuba.prices.cta.href}
               prefetch={false}
               className="inline-flex items-center justify-center rounded-lg bg-accent px-4 py-2 text-xs font-semibold text-white shadow-sm transition hover:opacity-95"
             >
-              Get a quote
+              {howMuchIsATaxiInCuba.prices.cta.label}
             </LocaleLink>
           </div>
         </div>
@@ -194,26 +185,28 @@ export default async function BlogTaxiCuba({ params }: { params: LocaleParams })
 
       {/* TIPS SEO */}
       <section className="mx-auto max-w-5xl px-4">
-        <h2 className="mt-12 text-lg font-bold text-accent">What affects the price?</h2>
+        <h2 className="mt-12 text-lg font-bold text-accent">{howMuchIsATaxiInCuba.tips.whatAffects.title}</h2>
         <ul className="mt-3 grid grid-cols-1 gap-2 text-sm text-primary sm:grid-cols-2">
-          <li>Distance and travel time between cities</li>
-          <li>Vehicle type: classic/modern car or minivan</li>
-          <li>Day vs. night pick-ups, airport parking and waiting time</li>
-          <li>Private vs. shared transfer and optional sightseeing stops</li>
+          {howMuchIsATaxiInCuba.tips.whatAffects.items.map((it:any) => (
+            <li key={it}>{it}</li>
+          ))}
         </ul>
 
-        <h2 className="mt-10 text-lg font-bold text-accent">Tips for tourists</h2>
+        <h2 className="mt-10 text-lg font-bold text-accent">{howMuchIsATaxiInCuba.tips.touristTips.title}</h2>
         <p className="mt-2 text-sm text-primary">
-          Book in advance to lock a fixed fare and share your flight number for airport pick-ups.
-          Private transfers are the most convenient and safe option. You can{" "}
-          <LocaleLink href="/private-transfer-booking" prefetch={false} className="font-bold text-accent underline-offset-2 hover:underline">
-            book your taxi online
+          {howMuchIsATaxiInCuba.tips.touristTips.paragraphPrefix}{" "}
+          <LocaleLink
+            href={howMuchIsATaxiInCuba.tips.touristTips.link.href}
+            prefetch={false}
+            className="font-bold text-accent underline-offset-2 hover:underline"
+          >
+            {howMuchIsATaxiInCuba.tips.touristTips.link.label}
           </LocaleLink>{" "}
-          and pay on arrival.
+          {howMuchIsATaxiInCuba.tips.touristTips.paragraphSuffix}
         </p>
       </section>
 
-      {/* JSON-LD Article */}
+      {/* JSON-LD Article (desde el objeto) */}
       <Script
         id="ld-json-article"
         type="application/ld+json"
@@ -222,17 +215,16 @@ export default async function BlogTaxiCuba({ params }: { params: LocaleParams })
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
-            headline: "Taxi prices in Cuba 2025",
-            description:
-              "Updated taxi fares and transfer guide for Cuba in 2025. Havana (HAV) and Varadero (VRA) airport transfers, plus intercity routes.",
-            author: { "@type": "Organization", name: "Cuban Taxis" },
+            headline: howMuchIsATaxiInCuba.seo.headline,
+            description: howMuchIsATaxiInCuba.seo.description,
+            author: { "@type": "Organization", name: howMuchIsATaxiInCuba.seo.authorName },
             publisher: {
               "@type": "Organization",
-              name: "Cuban Taxis",
-              logo: { "@type": "ImageObject", url: "https://cubantaxis.com/logo.png" },
+              name: howMuchIsATaxiInCuba.seo.publisherName,
+              logo: { "@type": "ImageObject", url: howMuchIsATaxiInCuba.seo.publisherLogo },
             },
-            image: "https://cubantaxis.com/cuba-cabs.jpg",
-            mainEntityOfPage: "https://cubantaxis.com/blog/taxi-cuba-2025",
+            image: howMuchIsATaxiInCuba.seo.image,
+            mainEntityOfPage: howMuchIsATaxiInCuba.seo.mainEntityOfPage,
           }),
         }}
       />

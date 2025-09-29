@@ -98,3 +98,29 @@ export interface OnPageContent {
     readingLevel?: "basic" | "intermediate" | "advanced";
   };
 }
+export interface BlogArticle {
+  h3: string;
+  p: string;
+  date: string;       // formato YYYY-MM-DD
+  readMins: number;   // minutos de lectura
+  href: string;
+  image: string;
+  location: string;
+}
+
+export interface BlogCTA {
+  customBooking: string;
+  fastBooking: string;
+  customBookingHref: string;
+  fastBookingHref: string;
+}
+
+export interface BlogSection {
+  h1: string;
+  h2: string;
+  cta: BlogCTA;
+  anchor: string;
+  readArticle: string;
+  listActions: { label: string; href: string }[];
+  list: BlogArticle[];
+}

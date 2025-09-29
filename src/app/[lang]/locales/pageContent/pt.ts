@@ -28,4 +28,28 @@ export const content = {
     },
     emphasis: ["Táxi em Cuba"],
   },
+  blog: {
+    h1: "Preços de táxi, transfers e dicas de viagem em Cuba",
+    h2: "Conteúdo prático para viajantes: tarifas reais, transfers de aeroporto e dicas locais para se locomover facilmente por Cuba.",
+    cta: {
+      customBooking: "Reserve sua viagem",
+      fastBooking: "RESERVE AGORA!",
+      customBookingHref: `/pt/private-transfer-booking`,
+      fastBookingHref: `/pt/cuba-taxi-booking`,
+    },
+    anchor: "Explorar categorias",
+    readArticle: "Ler artigo",
+    listActions: [{ label: "Reservar", href: "/pt/cuba-taxi-booking" }],
+    list: [
+      {
+        h3: "Quanto custa um táxi em Cuba em 2025? Preços realistas e dicas",
+        p: "Tarifas médias, transfers de aeroporto, carros clássicos vs modernos e como evitar pagar caro nas principais rotas.",
+        date: "2025-09-01",
+        readMins: 7,
+        href: "/pt/blog/how-much-is-a-taxi-in-cuba",
+        image: "/cuba-cabs.jpg",
+        location: "Cuba",
+      },
+    ],
+  },
 };
