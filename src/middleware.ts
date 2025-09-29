@@ -26,10 +26,10 @@ export function middleware(req: NextRequest) {
   const { pathname, search } = url;
 
   // 1) https forzado
-  if (url.protocol === "http:") {
-    url.protocol = "https:";
-    return NextResponse.redirect(url, { status: 301 });
-  }
+  // if (url.protocol === "http:") {
+  //   url.protocol = "https:";
+  //   return NextResponse.redirect(url, { status: 301 });
+  // }
 
   // 2) quitar www
   if (url.hostname.startsWith("www.")) {

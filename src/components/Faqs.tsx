@@ -1,6 +1,5 @@
 // components/FaqSection.tsx
 import Link from "next/link";
-import Script from "next/script";
 
 interface FaqItem {
   question: string;
@@ -19,6 +18,8 @@ const LINK_FULL_RE = /^\[(.*?)\]\((.*?)\)$/;
 
 function slugify(input: string) {
   return input
+    .normalize("NFD")                       // quita acentos
+    .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase()
     .replace(/[^a-z0-9\s-]/g, "")
     .trim()
@@ -63,8 +64,9 @@ export default function FaqSection({
   prefetchInternalLinks = false,
 }: Props) {
   // Server Component: cálculo en SSR
-  const withIds = faqs.map((f, i) => ({ ...f, id: slugify(f.question) + i }));
+  const withIds = faqs.map((f, i) => ({ ...f, id: `${slugify(f.question)}-${i}` }));
 
+  // JSON-LD (Server-rendered <script>, 0 JS en cliente)
   const jsonLd =
     structuredData
       ? {
@@ -79,7 +81,12 @@ export default function FaqSection({
       : null;
 
   return (
-    <section className="bg-white" aria-labelledby="faq-title">
+    <section
+      className="bg-white"
+      aria-labelledby="faq-title"
+      // 💡 Speed Insights: difiere trabajo hasta ser visible sin provocar CLS
+      style={{ contentVisibility: "auto", containIntrinsicSize: "900px" }}
+    >
       <div className="mx-auto max-w-7xl px-4 py-8 sm:py-12">
         {/* Título — rojo y negrita */}
         <h2
@@ -155,10 +162,11 @@ export default function FaqSection({
       </div>
 
       {structuredData && jsonLd && (
-        <Script
+        // ✅ Server-rendered JSON-LD sin next/script (0 JS cliente)
+        <script
           id="ld-faq"
           type="application/ld+json"
-          strategy="afterInteractive"
+          // Nota: No interpoles objetos, siempre serializa
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       )}
