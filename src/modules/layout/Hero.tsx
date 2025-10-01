@@ -65,7 +65,7 @@ export default function HeroCubanTaxis({ lang }: Props) {
                 {lang.link.label}
               </Link>
               <Link
-                href={lang.cta.fastBookingHref}
+                href={lang.cta.customBookingHref}
                 prefetch={false}
                 className="inline-flex items-center gap-2 rounded-lg bg-primary/5 px-5 py-3 text-sm font-semibold text-primary ring-1 ring-inset ring-primary/20 hover:bg-primary/10"
                 aria-label="Book your trip in advance"
@@ -73,7 +73,7 @@ export default function HeroCubanTaxis({ lang }: Props) {
                 {lang.cta.customBooking}
               </Link>
               <Link
-                href={lang.cta.customBookingHref}
+                href={lang.cta.fastBookingHref}
                 prefetch={false}
                 className="inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-3 text-sm font-semibold text-white hover:opacity-95"
                 aria-label="Quick Booking"
