@@ -5,7 +5,9 @@ export interface AppTexts {
   header: any,
   content: { hero: HeroSection, blog: BlogSection },
   articles:any,
+  booking:any,
   taxiGuide: string;
+  backToHome:string,
   exploreDestinations: string;
   hero: {
     h1: string;

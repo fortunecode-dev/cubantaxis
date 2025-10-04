@@ -3,11 +3,14 @@ import { metadata } from "./metadata/metadata.es";
 import { header } from "./header/es";
 import { content } from "./pageContent/es";
 import { articles } from "./blog/es";
+import { booking } from "./booking/es";
 export const es: AppTexts = {
   metadata,
   header,
   content,
   articles,
+  booking,
+  backToHome: "Volver al inicio",
   taxiGuide: "Guía completa de taxis en Cuba",
   exploreDestinations: "Explorar destinos →",
   hero: {

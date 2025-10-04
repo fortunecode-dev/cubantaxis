@@ -79,18 +79,13 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
         >
           Skip to content
         </a>
-
         {/* Ancla para “Back to top” del footer */}
         <div id="top" />
-
         <Header lang={lang} />
         <main id="main">{children}</main>
-
         {/* Cliente diferido, fuera del flujo crítico */}
         <FloatingContacts lang={lang} />
-
         <Footer lang={lang} />
-
         {/* Solo en producción: evita JS extra en dev */}
         {isProd && (
           <>

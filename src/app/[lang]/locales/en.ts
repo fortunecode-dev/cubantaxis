@@ -3,13 +3,16 @@ import { metadata } from "./metadata/metadata.en";
 import { header } from "./header/en";
 import { content } from "./pageContent/en";
 import { articles } from "./blog/en";
+import { booking } from "./booking/en"
 export const en: AppTexts = {
   metadata,
   header,
   content,
   articles,
-  taxiGuide:"Complete Cuba taxi guide",
-  exploreDestinations:"Explore destinations →",
+  booking,
+  backToHome: "Back to home",
+  taxiGuide: "Complete Cuba taxi guide",
+  exploreDestinations: "Explore destinations →",
   hero: {
     h1: "Book a Taxi in Cuba fast, safely and reliably",
     h2a: "The fastest way to get a cab for ",
@@ -98,46 +101,46 @@ export const en: AppTexts = {
   footer: {
     rights: "© 2025 Cubantaxis. All rights reserved.",
   },
-  underHeroTitle:"Key pages about taxis in Cuba",
-  underHeroLinks:[
-  {
-    href: "/blog/how-much-is-a-taxi-in-cuba",
-    title: "How Much is a Taxi in Cuba?",
-    description:
-      "Learn about real taxi prices in Cuba, from Havana to Varadero, including airport transfers and long-distance routes.",
-  },
-  {
-    href: "/destinations-in-cuba",
-    title: "Popular Destinations in Cuba",
-    description:
-      "Explore detailed information about the main destinations in Cuba such as Havana, Varadero, Viñales, and Trinidad.",
-  },
-  {
-    // ✅ corrige el typo: interesting → interesting
-    href: "/interesting-places-in-cuba",
-    title: "Attractions & Places of Interest in Cuba",
-    description:
-      "Discover top attractions in Cuba: Varadero resorts, Havana landmarks, hotels, and family activities with full details.",
-  },
-  {
-    href: "/cuba-taxi-booking",
-    title: "Quick Taxi Reservation",
-    description:
-      "Book a quick taxi ride across Cuba with just a few clicks. Fast and reliable service.",
-  },
-  {
-    href: "/private-transfer-booking",
-    title: "Detailed Transfer Booking",
-    description:
-      "Plan your transfer with detailed options for vehicles, routes, and schedules.",
-  },
-  {
-    href: "/taxi-in-cuba",
-    title: "Taxi in Cuba – Guide & FAQs",
-    description:
-      "Informative guide about taking a taxi in Cuba, including frequently asked questions.",
-  },
-],
+  underHeroTitle: "Key pages about taxis in Cuba",
+  underHeroLinks: [
+    {
+      href: "/blog/how-much-is-a-taxi-in-cuba",
+      title: "How Much is a Taxi in Cuba?",
+      description:
+        "Learn about real taxi prices in Cuba, from Havana to Varadero, including airport transfers and long-distance routes.",
+    },
+    {
+      href: "/destinations-in-cuba",
+      title: "Popular Destinations in Cuba",
+      description:
+        "Explore detailed information about the main destinations in Cuba such as Havana, Varadero, Viñales, and Trinidad.",
+    },
+    {
+      // ✅ corrige el typo: interesting → interesting
+      href: "/interesting-places-in-cuba",
+      title: "Attractions & Places of Interest in Cuba",
+      description:
+        "Discover top attractions in Cuba: Varadero resorts, Havana landmarks, hotels, and family activities with full details.",
+    },
+    {
+      href: "/cuba-taxi-booking",
+      title: "Quick Taxi Reservation",
+      description:
+        "Book a quick taxi ride across Cuba with just a few clicks. Fast and reliable service.",
+    },
+    {
+      href: "/private-transfer-booking",
+      title: "Detailed Transfer Booking",
+      description:
+        "Plan your transfer with detailed options for vehicles, routes, and schedules.",
+    },
+    {
+      href: "/taxi-in-cuba",
+      title: "Taxi in Cuba – Guide & FAQs",
+      description:
+        "Informative guide about taking a taxi in Cuba, including frequently asked questions.",
+    },
+  ],
   FAQs: {
     title: "How much is a taxi in Cuba, how to get one, and other questions...",
     items: [
@@ -199,5 +202,5 @@ export const en: AppTexts = {
   vehicles: ["Classic car", "Tour", "Van"], clipboardTemplate: {
     copied: "✅ Plantilla copiada. Pégala en el chat de Telegram",
     error: "❌ Hubo un error al preparar la reserva"
-  },howMuchIsATaxi:"How much does a taxi cost in Cuba in 2025?"
+  }, howMuchIsATaxi: "How much does a taxi cost in Cuba in 2025?"
 };
