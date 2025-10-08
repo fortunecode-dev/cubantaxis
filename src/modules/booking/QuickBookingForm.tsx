@@ -1,115 +1,97 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import { FaWhatsapp, FaTelegramPlane } from "react-icons/fa";
-import toast, { Toaster } from "react-hot-toast";
-import type { AppTexts } from "@/app/[lang]/locales/types";
 
 type BookingData = {
   phone: string;
-  from?: string;
-  to?: string;
+  from: string;
+  to: string;
   date: string;
   time: string;
-  vehicle?: string;
+  vehicle: string;
   passengers: string;
-  luggage: string;
+  luggage?: string; // opcional
 };
 
-type Props = { idioma: AppTexts };
+type Props = { idioma: any };
 
 export default function QuickBookingForm({ idioma }: Props) {
-  const [formData, setFormData] = useState<BookingData>({
+  const router = useRouter();
+
+  const initialData: BookingData = {
     phone: "",
-    from: idioma.locations?.[0],
-    to: idioma.locations?.[1],
+    from: idioma.locations?.[0] || "",
+    to: idioma.locations?.[1] || "",
     date: "",
     time: "",
-    vehicle: idioma.vehicles[0],
+    vehicle: idioma.vehicles?.[0] || "",
     passengers: "1",
     luggage: "",
-  });
+  };
+
+  const [formData, setFormData] = useState<BookingData>(initialData);
+
+  // Evitar hydration: min date solo en cliente
+  const [minDate, setMinDate] = useState("1970-01-01");
+  useEffect(() => {
+    setMinDate(new Date().toISOString().slice(0, 10));
+  }, []);
+
+  // Modal “Datos enviados”
+  const [modalOpen, setModalOpen] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+
+  // Ref al <form> para usar reportValidity()
+  const formRef = useRef<HTMLFormElement>(null);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
-  const message = `
-${idioma.quickBookingForm.messageTitle}
-📞 ${idioma.quickBookingForm.phone}: ${formData.phone}
-📍 ${idioma.quickBookingForm.from}: ${formData.from}
-🏁 ${idioma.quickBookingForm.to}: ${formData.to}
-📅 ${idioma.quickBookingForm.date}: ${formData.date}
-🕒 ${idioma.quickBookingForm.time}: ${formData.time}
-🚗 ${idioma.quickBookingForm.vehicleType}: ${formData.vehicle}
-👥 ${idioma.quickBookingForm.passengers}: ${formData.passengers}
-🎒 ${idioma.quickBookingForm.luggage}: ${formData.luggage}`.trim();
-
   const sendReservation = async (platform: "whatsapp" | "telegram") => {
+    // Valida nativo (sin alert)
+    const ok = formRef.current?.reportValidity();
+    if (!ok) return;
+
     try {
+      setSubmitting(true);
+      // Muestra el modal ya (UX simple)
+      setModalOpen(true);
+
       const form = new FormData();
       Object.entries(formData).forEach(([k, v]) => form.append(k, String(v)));
 
-      await fetch("/api/telegram-booking?formSource=Reserva rápida", {
-        method: "POST",
-        body: form,
-      });
+      await fetch(
+        `/api/telegram-booking?formSource=ReservaRápida&confirmation=${platform}`,
+        { method: "POST", body: form }
+      );
 
-      await navigator.clipboard.writeText(message);
-
-      if (platform === "whatsapp") {
-        const whatsappNumber =
-          (process.env.NEXT_PUBLIC_CONTACT_NUMBER as string) ||
-          (process.env.CONTACT_NUMBER as string) ||
-          "";
-        const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-          message
-        )}`;
-        window.open(url, "_blank");
-      } else {
-        toast.success(idioma.clipboardTemplate.copied, { duration: 2200 });
-        setTimeout(() => {
-          const tgUser =
-            (process.env.NEXT_PUBLIC_TELEGRAM_USER as string) ||
-            (process.env.TELEGRAM_USER as string) ||
-            "";
-          window.open(`https://t.me/${tgUser}`, "_blank");
-        }, 2200);
-      }
+      // Éxito: limpiar
+      setFormData(initialData);
     } catch (err) {
       console.error(err);
-      toast.error(idioma.clipboardTemplate.error);
+      // Mantenerlo simple: no mostramos error aquí por tu pedido
+    } finally {
+      setSubmitting(false);
     }
   };
 
   return (
     <form
-      className="mx-auto max-w-3xl rounded-2xl border border-primary/15 bg-white p-5 pb-0 shadow-sm"
+      ref={formRef}
+      className="mx-auto max-w-3xl rounded-2xl bg-white p-5 pb-0"
       onSubmit={(e) => e.preventDefault()}
     >
-      <Toaster
-        position="top-center"
-        toastOptions={{
-          className:
-            "rounded-xl shadow-lg ring-1 ring-primary/20 bg-white text-primary px-4 py-3",
-          success: {
-            className:
-              "rounded-xl shadow-lg ring-1 ring-primary/30 bg-white text-primary",
-          },
-          error: {
-            className:
-              "rounded-xl shadow-lg ring-1 ring-accent/30 bg-white text-primary",
-          },
-        }}
-      />
-
       {/* Teléfono + Pasajeros */}
-      <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
+      <div className="grid grid-cols-2 gap-3">
         <Field
           id="phone"
-          label={idioma.quickBookingForm.phone}
+          label={idioma.phone}
           type="tel"
           placeholder="+53 555 432 748"
+          required
           value={formData.phone}
           onChange={handleChange}
           inputProps={{
@@ -123,8 +105,9 @@ ${idioma.quickBookingForm.messageTitle}
 
         <Field
           id="passengers"
-          label={idioma.quickBookingForm.passengers}
+          label={idioma.passengers}
           type="number"
+          required
           value={formData.passengers}
           onChange={handleChange}
           inputProps={{
@@ -139,81 +122,48 @@ ${idioma.quickBookingForm.messageTitle}
       </div>
 
       {/* Fecha + Hora */}
-      <div className="mt-3 grid grid-cols-1 gap-3 md:grid-cols-2">
+      <div className="mt-3 grid grid-cols-2 gap-3">
         <Field
           id="date"
-          label={idioma.quickBookingForm.date}
+          label={idioma.date}
           type="date"
+          required
           value={formData.date}
           onChange={handleChange}
           inputProps={{
             name: "date",
-            min: new Date().toISOString().split("T")[0],
+            min: minDate,
             required: true,
+            suppressHydrationWarning: true as any,
           }}
         />
         <Field
           id="time"
-          label={idioma.quickBookingForm.time}
+          label={idioma.time}
           type="time"
+          required
           value={formData.time}
           onChange={handleChange}
           inputProps={{ name: "time", required: true }}
         />
       </div>
 
-      {/* Equipaje */}
-      <div className="mt-3">
-        <Field
-          id="luggage"
-          label={idioma.quickBookingForm.luggage}
-          type="text"
-          placeholder={idioma.quickBookingForm.luggage}
-          value={formData.luggage}
-          onChange={handleChange}
-          inputProps={{ name: "luggage" }}
-        />
-      </div>
-
-      {/* Vehículo */}
-      <div className="mt-3">
-        <Label htmlFor="vehicle">{`🚗 ${idioma.quickBookingForm.vehicleType}`}</Label>
-        <select
-          id="vehicle"
-          name="vehicle"
-          value={formData.vehicle}
-          onChange={handleChange}
-          aria-label={idioma.quickBookingForm.vehicleType}
-          className="w-full rounded-lg border border-primary/20 bg-white px-3 py-2 text-sm text-primary focus:outline-none focus:ring-2 focus:ring-accent/40"
-        >
-          {idioma.vehicles.map((v: string) => (
-            <option key={v} value={v}>
-              {v}
-            </option>
-          ))}
-        </select>
-      </div>
-
-      {/* From / To */}
-      <div className="mt-3 grid grid-cols-1 gap-3 md:grid-cols-2">
+      {/* From + To */}
+      <div className="mt-3 grid grid-cols-2 gap-3">
         {(["from", "to"] as const).map((key) => (
           <div key={key}>
-            <Label htmlFor={key}>
-              {key === "from"
-                ? `📍 ${idioma.quickBookingForm.from}`
-                : `🏁 ${idioma.quickBookingForm.to}`}
+            <Label htmlFor={key} required>
+              {key === "from" ? `📍 ${idioma.from}` : `🏁 ${idioma.to}`}
             </Label>
             <select
               id={key}
               name={key}
               value={formData[key]}
               onChange={handleChange}
-              aria-label={
-                key === "from"
-                  ? idioma.quickBookingForm.from
-                  : idioma.quickBookingForm.to
-              }
+              required
+              aria-label={key === "from" ? idioma.from : idioma.to}
               className="w-full rounded-lg border border-primary/20 bg-white px-3 py-2 text-sm text-primary focus:outline-none focus:ring-2 focus:ring-accent/40"
+              disabled={submitting}
             >
               {idioma.locations
                 .filter((l: string) => l !== (key === "from" ? formData.to : formData.from))
@@ -227,33 +177,100 @@ ${idioma.quickBookingForm.messageTitle}
         ))}
       </div>
 
-      {/* Botones (nuevo estilo: acento sólido + primario suave) */}
-      <div className="md:col-span-2 mt-5 flex flex-col gap-3">
+      {/* Vehicle + Luggage */}
+      <div className="mt-3 grid grid-cols-1 gap-3 md:grid-cols-2">
+        <div>
+          <Label htmlFor="vehicle" required>{`🚗 ${idioma.vehicleType}`}</Label>
+          <select
+            id="vehicle"
+            name="vehicle"
+            value={formData.vehicle}
+            onChange={handleChange}
+            required
+            aria-label={idioma.vehicleType}
+            className="w-full rounded-lg border border-primary/20 bg-white px-3 py-2 text-sm text-primary focus:outline-none focus:ring-2 focus:ring-accent/40"
+            disabled={submitting}
+          >
+            {idioma.vehicles.map((v: string) => (
+              <option key={v} value={v}>
+                {v}
+              </option>
+            ))}
+          </select>
+        </div>
+        <Field
+          id="luggage"
+          label={idioma.info}
+          type="text"
+          placeholder={idioma.infoPlaceHolder}
+          value={formData.luggage || ""}
+          onChange={handleChange}
+          inputProps={{ name: "luggage" }} // opcional
+        />
+      </div>
+
+      {/* Botones */}
+      <div className="mt-5 flex flex-col gap-3 md:col-span-2">
         <button
           type="button"
           onClick={() => sendReservation("whatsapp")}
-          className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-accent px-5 py-3 text-sm font-semibold text-white transition hover:opacity-95"
+          disabled={submitting}
+          className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-accent px-5 py-3 text-sm font-semibold text-white transition hover:opacity-95 disabled:opacity-60"
         >
           <FaWhatsapp className="text-lg" aria-hidden />
-          {idioma.quickBookingForm.whatsapp}
+          {idioma.confirmations.whatsapp}
         </button>
 
         <button
           type="button"
           onClick={() => sendReservation("telegram")}
-          className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary/5 px-5 py-3 text-sm font-semibold text-primary ring-1 ring-inset ring-primary/20 transition hover:bg-primary/10"
+          disabled={submitting}
+          className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary/5 px-5 py-3 text-sm font-semibold text-primary ring-1 ring-inset ring-primary/20 transition hover:bg-primary/10 disabled:opacity-60"
         >
           <FaTelegramPlane className="text-lg" aria-hidden />
-          {idioma.quickBookingForm.telegram}
+          {idioma.confirmations.telegram}
         </button>
       </div>
+
+      {/* Modal con fondo difuminado (mismo que el Extended) */}
+      {modalOpen && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm backdrop-saturate-150 p-4 transition-opacity duration-300"
+        >
+          <div className="w-full max-w-md rounded-2xl bg-white/95 shadow-2xl ring-1 ring-primary/10 backdrop-blur-[1px] p-6">
+            <h4 className="text-center text-lg font-bold text-accent">{idioma.confirmationTexts.title}</h4>
+            <p className="mt-2 text-center text-sm text-primary">
+              {idioma.confirmationTexts.message}
+            </p>
+            <div className="mt-4 flex justify-center">
+              <button
+                type="button"
+                onClick={() => {
+                  setModalOpen(false);
+                  setFormData(initialData);   // 👈 resetea el formulario
+                  router.push("/");           // 👈 navega al inicio
+                }}
+                className="inline-flex items-center justify-center rounded-lg bg-accent px-6 py-2 text-sm font-semibold text-white shadow-sm transition hover:opacity-90"
+              >
+                {idioma.confirmationTexts.button}
+              </button>
+
+            </div>
+          </div>
+        </div>
+      )}
     </form>
   );
 }
 
-/* ───────── helpers UI (nuevo estilo: headings rojos, textos azules) ───────── */
-
-function Label(props: React.LabelHTMLAttributes<HTMLLabelElement>) {
+/* ───────── helpers UI ───────── */
+function Label({
+  required,
+  children,
+  ...props
+}: React.LabelHTMLAttributes<HTMLLabelElement> & { required?: boolean }) {
   return (
     <label
       {...props}
@@ -261,7 +278,10 @@ function Label(props: React.LabelHTMLAttributes<HTMLLabelElement>) {
         "mb-1 block text-sm font-bold text-accent",
         props.className || "",
       ].join(" ")}
-    />
+    >
+      {children}
+      {required && <span className="ml-1 text-red-500">*</span>}
+    </label>
   );
 }
 
@@ -273,6 +293,7 @@ function Field({
   onChange,
   placeholder,
   inputProps,
+  required,
 }: {
   id: string;
   label: string;
@@ -281,10 +302,13 @@ function Field({
   onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void;
   placeholder?: string;
   inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
+  required?: boolean;
 }) {
   return (
     <div className="flex min-w-0 flex-col">
-      <Label htmlFor={id}>{label}</Label>
+      <Label htmlFor={id} required={required}>
+        {label}
+      </Label>
       <input
         id={id}
         type={type}
@@ -292,6 +316,7 @@ function Field({
         onChange={onChange}
         placeholder={placeholder}
         aria-label={label}
+        required={required}
         className="w-full rounded-lg border border-primary/20 bg-white px-3 py-2 text-sm text-primary placeholder:text-primary/50 focus:outline-none focus:ring-2 focus:ring-accent/40"
         {...inputProps}
       />

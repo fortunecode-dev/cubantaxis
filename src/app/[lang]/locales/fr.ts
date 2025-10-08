@@ -5,6 +5,7 @@ import { header } from "./header/fr";
 import { content } from "./pageContent/fr";
 import { articles } from "./blog/fr";
 import { booking } from "./booking/fr";
+import { confirmationTexts } from "./others/confirmation.locale";
 export const fr: AppTexts = {
   metadata,
   header,
@@ -233,4 +234,6 @@ export const fr: AppTexts = {
   },
   howMuchIsATaxi:
     "Combien coûte un taxi à Cuba en 2025 ?",
+      confirmationTexts:confirmationTexts.fr
+    
 };

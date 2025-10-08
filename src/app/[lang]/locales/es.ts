@@ -4,6 +4,7 @@ import { header } from "./header/es";
 import { content } from "./pageContent/es";
 import { articles } from "./blog/es";
 import { booking } from "./booking/es";
+import { confirmationTexts } from "./others/confirmation.locale";
 export const es: AppTexts = {
   metadata,
   header,
@@ -212,6 +213,7 @@ export const es: AppTexts = {
     copied: "✅ Plantilla copiada. Pégala en el chat de Telegram",
     error: "❌ Hubo un error al preparar la reserva"
   },
-  howMuchIsATaxi: "¿Cuánto cuesta un taxi en Cuba en 2025?"
+  howMuchIsATaxi: "¿Cuánto cuesta un taxi en Cuba en 2025?",  confirmationTexts:confirmationTexts.es
+  
 };
 

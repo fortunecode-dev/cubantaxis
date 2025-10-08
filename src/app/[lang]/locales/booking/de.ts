@@ -36,7 +36,7 @@ export const booking = {
   customBooking: {
     h1: "Taxi in Kuba buchen — Schnelle und zuverlässige Transfers",
     h2: "So reservieren Sie Ihre Fahrt",
-    p: "Füllen Sie das Formular mit Ihren Reisedaten aus, um sofort ein Taxi in Kuba zu buchen. Wählen Sie die Bestätigung per WhatsApp oder Telegram. Unser Team meldet sich mit Route, Preis und Optionen für Transfers vom Flughafen Havanna, Fahrten nach Varadero und private Intercity-Strecken. Nach Bestätigung erhalten Sie umgehend die Daten Ihres Fahrers für eine sichere, reibungslose Fahrt 🚖.",
+    p: "Tragen Sie Ihre Daten ein und wählen Sie die Bestätigungsmethode. Unser Agent meldet sich umgehend mit Reisedetails und Preis; nach Bestätigung erhalten Sie die Fahrerinformationen 🚖.",
     form: {
       fullName: "Vollständiger Name",
       phone: "Telefon",

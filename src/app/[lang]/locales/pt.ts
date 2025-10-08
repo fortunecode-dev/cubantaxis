@@ -5,6 +5,7 @@ import { header } from "./header/pt";
 import { content } from "./pageContent/pt";
 import { articles } from "./blog/pt";
 import { booking } from "./booking/pt";
+import { confirmationTexts } from "./others/confirmation.locale";
 export const pt: AppTexts = {
   metadata,
   header,
@@ -219,6 +220,7 @@ export const pt: AppTexts = {
     copied: "✅ Modelo copiado. Cole no chat do Telegram",
     error: "❌ Ocorreu um erro ao preparar a reserva",
   },
-  howMuchIsATaxi: "Quanto custa um táxi em Cuba em 2025?",
+  howMuchIsATaxi: "Quanto custa um táxi em Cuba em 2025?",  confirmationTexts:confirmationTexts.pt
+  
 };
 

@@ -4,6 +4,7 @@ import { header } from "./header/en";
 import { content } from "./pageContent/en";
 import { articles } from "./blog/en";
 import { booking } from "./booking/en"
+import { confirmationTexts } from "./others/confirmation.locale";
 export const en: AppTexts = {
   metadata,
   header,
@@ -202,5 +203,6 @@ export const en: AppTexts = {
   vehicles: ["Classic car", "Tour", "Van"], clipboardTemplate: {
     copied: "✅ Plantilla copiada. Pégala en el chat de Telegram",
     error: "❌ Hubo un error al preparar la reserva"
-  }, howMuchIsATaxi: "How much does a taxi cost in Cuba in 2025?"
+  }, howMuchIsATaxi: "How much does a taxi cost in Cuba in 2025?",
+  confirmationTexts:confirmationTexts.en
 };

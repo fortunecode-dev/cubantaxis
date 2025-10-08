@@ -21,7 +21,7 @@ export function browserInfoString(
       const u = new URL(referer);
       const seg = u.pathname.split("/").filter(Boolean)[0]?.toLowerCase() || "";
       if (SUPPORTED.has(seg)) langFromRef = seg; // dos letras
-    } catch { /* ref inválido, ignorar */ }
+    } catch { /${bold} ref inválido, ignorar ${bold}/ }
   }
 
   // Idioma efectivo: prioriza ref; si no hay, usa accept según formato deseado
@@ -114,7 +114,7 @@ export function detectEffectiveLang(
       const seg = u.pathname.split("/").filter(Boolean)[0]?.toLowerCase() || "";
       if (supported.includes(seg as any)) return seg as any;
       else return "en"
-    } catch {/* ignore */}
+    } catch {/${bold} ignore ${bold}/}
   }
 
   // 2) Accept-Language
@@ -134,6 +134,7 @@ type ContactFields = {
   time?: string;
   passengers?: string;
   vehicle?: string;
+  confirmation:string
 };
 
 function getCubaHourNum() {
@@ -153,7 +154,7 @@ function greetingByLang(lang: string, hourNum: number) {
 export function buildContactMessageByLang(
   lang: "en"|"es"|"fr"|"de"|"ru"|"pt",
   f: ContactFields,
-  tz = "America/Havana"
+  tz = "America/Havana",
 ): string {
   const nn = (s?: string) => (s ? String(s).trim() : "");
   const name = nn(f.name);
@@ -167,13 +168,13 @@ export function buildContactMessageByLang(
   const H = getCubaHourNum();
   const G = greetingByLang(lang, H);
   const namePart = name ? `, ${name}` : "";
-
+  const bold=f.confirmation==="whatsapp"?"*":"**"
   if (lang === "en") {
     return [
       `${G}${namePart}. This is the CubanTaxis team.`,
-      [from && to ? `Regarding your reservation *${from} → ${to}*` : "", date ? `for *${date}*` : "", time ? `at *${time}*` : ""].filter(Boolean).join(" "),
-      passengers ? `*Passengers:* ${passengers}` : "",
-      vehicle ? `*Vehicle:* ${vehicle}` : "",
+      [from && to ? `Regarding your reservation ${bold}${from} → ${to}${bold}` : "", date ? `for ${bold}${date}${bold}` : "", time ? `at ${bold}${time}${bold}` : ""].filter(Boolean).join(" "),
+      passengers ? `${bold}Passengers:${bold} ${passengers}` : "",
+      vehicle ? `${bold}Vehicle:${bold} ${vehicle}` : "",
       `The estimated price of your trip is ___ USD.`,
       `If you agree, please let us know the exact pickup point and your preferred payment method to complete your booking.`,
       `We remain at your disposal. Thank you very much.`,
@@ -184,9 +185,9 @@ export function buildContactMessageByLang(
   if (lang === "fr") {
     return [
       `${G}${namePart}. Ici l’équipe de CubanTaxis.`,
-      [from && to ? `Concernant votre réservation *${from} → ${to}*` : "", date ? `pour le *${date}*` : "", time ? `à *${time}*` : ""].filter(Boolean).join(" "),
-      passengers ? `*Passagers *: ${passengers}` : "",
-      vehicle ? `*Véhicule *: ${vehicle}` : "",
+      [from && to ? `Concernant votre réservation ${bold}${from} → ${to}${bold}` : "", date ? `pour le ${bold}${date}${bold}` : "", time ? `à ${bold}${time}${bold}` : ""].filter(Boolean).join(" "),
+      passengers ? `${bold}Passagers ${bold}: ${passengers}` : "",
+      vehicle ? `${bold}Véhicule ${bold}: ${vehicle}` : "",
       `Le prix estimé de votre trajet est de ___ USD.`,
       `Si vous êtes d’accord, veuillez nous indiquer le point précis de prise en charge et le mode de paiement pour finaliser votre réservation.`,
       `Nous restons à votre disposition. Merci beaucoup.`,
@@ -197,9 +198,9 @@ export function buildContactMessageByLang(
   if (lang === "de") {
     return [
       `${G}${namePart}. Hier schreibt Ihnen das Team von CubanTaxis.`,
-      [from && to ? `Bezüglich Ihrer Reservierung *${from} → ${to}*` : "", date ? `am *${date}*` : "", time ? `um *${time}*` : ""].filter(Boolean).join(" "),
-      passengers ? `*Fahrgäste:* ${passengers}` : "",
-      vehicle ? `*Fahrzeug:* ${vehicle}` : "",
+      [from && to ? `Bezüglich Ihrer Reservierung ${bold}${from} → ${to}${bold}` : "", date ? `am ${bold}${date}${bold}` : "", time ? `um ${bold}${time}${bold}` : ""].filter(Boolean).join(" "),
+      passengers ? `${bold}Fahrgäste:${bold} ${passengers}` : "",
+      vehicle ? `${bold}Fahrzeug:${bold} ${vehicle}` : "",
       `Der geschätzte Preis Ihrer Fahrt beträgt ___ USD.`,
       `Wenn Sie einverstanden sind, teilen Sie uns bitte den genauen Abholort und die bevorzugte Zahlungsmethode mit, um Ihre Buchung abzuschließen.`,
       `Wir stehen Ihnen gerne zur Verfügung. Vielen Dank.`,
@@ -210,9 +211,9 @@ export function buildContactMessageByLang(
   if (lang === "ru") {
     return [
       `${G}${namePart}. Пишет команда CubanTaxis.`,
-      [from && to ? `По поводу вашей брони *${from} → ${to}*` : "", date ? `на *${date}*` : "", time ? `в *${time}*` : ""].filter(Boolean).join(" "),
-      passengers ? `*Пассажиры:* ${passengers}` : "",
-      vehicle ? `*Авто:* ${vehicle}` : "",
+      [from && to ? `По поводу вашей брони ${bold}${from} → ${to}${bold}` : "", date ? `на ${bold}${date}${bold}` : "", time ? `в ${bold}${time}${bold}` : ""].filter(Boolean).join(" "),
+      passengers ? `${bold}Пассажиры:${bold} ${passengers}` : "",
+      vehicle ? `${bold}Авто:${bold} ${vehicle}` : "",
       `Предварительная стоимость вашей поездки — ___ USD.`,
       `Если всё подходит, пожалуйста, укажите точное место подачи и предпочтительный способ оплаты, чтобы завершить бронирование.`,
       `Мы на связи. Большое спасибо.`,
@@ -223,9 +224,9 @@ export function buildContactMessageByLang(
   if (lang === "pt") {
     return [
       `${G}${namePart}. Aqui é a equipe da CubanTaxis.`,
-      [from && to ? `Sobre a sua reserva *${from} → ${to}*` : "", date ? `para *${date}*` : "", time ? `às *${time}*` : ""].filter(Boolean).join(" "),
-      passengers ? `*Passageiros:* ${passengers}` : "",
-      vehicle ? `*Veículo:* ${vehicle}` : "",
+      [from && to ? `Sobre a sua reserva ${bold}${from} → ${to}${bold}` : "", date ? `para ${bold}${date}${bold}` : "", time ? `às ${bold}${time}${bold}` : ""].filter(Boolean).join(" "),
+      passengers ? `${bold}Passageiros:${bold} ${passengers}` : "",
+      vehicle ? `${bold}Veículo:${bold} ${vehicle}` : "",
       `O preço estimado da sua viagem é ___ USD.`,
       `Se estiver de acordo, por favor informe o ponto exato de recolha e o método de pagamento para concluir a sua reserva.`,
       `Continuamos à disposição. Muito obrigado.`,
@@ -236,9 +237,9 @@ export function buildContactMessageByLang(
   // default ES
   return [
     `${G}${namePart}. Le escribe el equipo de CubanTaxis.`,
-    [from && to ? `Con respecto a su reserva *${from} → ${to}*` : "", date ? `para el *${date}*` : "", time ? `a las *${time}*` : ""].filter(Boolean).join(" "),
-    passengers ? `*Pasajeros:* ${passengers}` : "",
-    vehicle ? `*Vehículo:* ${vehicle}` : "",
+    [from && to ? `Con respecto a su reserva ${bold}${from} → ${to}${bold}` : "", date ? `para el ${bold}${date}${bold}` : "", time ? `a las ${bold}${time}${bold}` : ""].filter(Boolean).join(" "),
+    passengers ? `${bold}Pasajeros:${bold} ${passengers}` : "",
+    vehicle ? `${bold}Vehículo:${bold} ${vehicle}` : "",
     `El precio estimado de su viaje es ___ USD.`,
     `Si está de acuerdo, por favor indíquenos el punto exacto de recogida y el método de pago para completar su reserva.`,
     `Quedamos atentos. Muchas gracias.`,

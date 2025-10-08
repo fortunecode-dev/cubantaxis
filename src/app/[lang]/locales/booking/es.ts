@@ -36,7 +36,7 @@ export const booking = {
   customBooking: {
     h1: "Reserva tu taxi en Cuba — Traslados rápidos y confiables",
     h2: "Cómo reservar tu viaje",
-    p: "Completa el formulario con tus datos de viaje para reservar tu taxi en Cuba al instante. Elige el método de confirmación (WhatsApp o Telegram) y nuestro equipo te contactará con la ruta exacta, el precio y opciones para traslados del aeropuerto de La Habana, viajes a Varadero y recorridos interurbanos privados. Una vez confirmado, recibirás inmediatamente la información de tu conductor para un viaje seguro y fluido 🚖.",
+    p: "Completa tus datos y elige el método de confirmación. Nuestro agente te contactará de inmediato con los detalles del viaje y el precio; una vez confirmado, recibirás la información de tu conductor 🚖.",
     form: {
       fullName: "Nombre completo",
       phone: "Teléfono",

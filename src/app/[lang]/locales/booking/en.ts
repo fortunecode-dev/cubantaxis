@@ -38,7 +38,7 @@ export const booking = {
     customBooking: {
         h1: "Book Your Taxi in Cuba — Fast and Reliable Transfers",
         h2: "How to Reserve Your Ride",
-        p: "Complete the form with your travel details to instantly book your taxi in Cuba. Select your confirmation method (WhatsApp or Telegram) and our team will contact you with the exact route, price, and options for Havana airport transfers, Varadero trips, and private intercity rides. Once confirmed, you’ll immediately receive your driver’s information for a safe and smooth journey 🚖.",
+         p: "Fill in your details and choose the confirmation method. Our agent will contact you immediately with the trip details and price; once confirmed, you will receive your driver’s information 🚖.", 
         form: {
             fullName: "Full Name",
             phone: "Phone",

@@ -4,6 +4,7 @@ import formidable, { File } from "formidable";
 import fs from "fs";
 import axios from "axios";
 import FormDataNode from "form-data";
+import { browserInfoString, buildContactMessageByLang, detectEffectiveLang } from "@/utils/metadata";
 
 // Desactiva el body parser
 export const config = {
@@ -13,7 +14,8 @@ export const config = {
 };
 
 // Transforma Request a objeto compatible con formidable
-async function parseFormData(request: Request): Promise<{ fields: any; files: any }> {
+export async function parseFormData(request: Request): Promise<{ fields: any; files: any }> {
+
   const form = formidable({ multiples: true, keepExtensions: true });
 
   const contentType = request.headers.get("content-type") || "";
@@ -47,13 +49,18 @@ async function parseFormData(request: Request): Promise<{ fields: any; files: an
 
 export async function POST(request: Request) {
   try {
+    const navInfo = browserInfoString(request); // por defecto multilínea
+
     const { fields, files } = await parseFormData(request);
     const { searchParams } = new URL(request.url);
 
-    const formSource = searchParams.get("formSource");
+    const formSource = (searchParams.get("formSource") || "").trim();
+    const confirmation = (searchParams.get("confirmation") || "").trim().toLowerCase(); // "whatsapp" | "telegram"
+
     const TELEGRAM_TOKEN = process.env.TELEGRAM_TOKEN!;
     const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID!;
-    console.log({ TELEGRAM_CHAT_ID, TELEGRAM_TOKEN })
+
+    // Campos del form (evitar undefined)
     const {
       name = "",
       email = "",
@@ -66,50 +73,130 @@ export async function POST(request: Request) {
       passengers = "",
       luggage = "",
       details = "",
-    } = fields;
-    // Enviar imágenes
-    const imageList = Array.isArray(files.images)
+    } = fields || {};
+
+    // Imágenes
+    const imageList = Array.isArray(files?.images)
       ? files.images
-      : files.images
+      : files?.images
         ? [files.images]
         : [];
 
-    const message = `${formSource}
-🚖 ${formSource != "Reserva rápida" ? `📛 Nombre: ${name}` : ""}
-✉️ Email: ${email}
-📞 Teléfono: ${phone}
-📍 Desde: ${from}
-🏁 Hasta: ${to}
-📅 Fecha: ${date}
-🕒 Hora: ${time}
-🚗 Vehículo: ${vehicle}
-👥 Pasajeros: ${passengers}
-🎒 Equipaje: ${luggage}
-${formSource != "Reserva rápida" ? `📝 Detalles: ${details}` : ""}
-${!!imageList.length ? "Imágenes a continuación..." : ""}`;
+    // === Helpers ===
+    const tz = "America/Havana";
+    const now = new Date();
+    const fechaCuba = new Intl.DateTimeFormat("es-ES", {
+      timeZone: tz,
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    }).format(now);
+    const horaCuba = new Intl.DateTimeFormat("es-ES", {
+      timeZone: tz,
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hour12: false,
+    }).format(now);
 
-    // Enviar texto
-    await axios.post(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
-      chat_id: TELEGRAM_CHAT_ID,
-      text: fields.source ? `Mensaje directo a través de: ${fields.source} ${(new Date()).toLocaleDateString("es-ES")} ${(new Date()).toLocaleTimeString("es-ES")}` : `${message}
-      ${(new Date()).toLocaleDateString("es-ES")}`,
+    // Saludo según la hora (en Cuba)
+    const horaNum = Number(
+      new Intl.DateTimeFormat("es-ES", { timeZone: tz, hour: "2-digit", hour12: false }).format(now)
+    );
+    const saludoDia = horaNum < 12 ? "Buenos días" : horaNum < 19 ? "Buenas tardes" : "Buenas noches";
+
+    const escapeHTML = (s = "") =>
+      s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+    const nonEmpty = (s?: string) => (s ? String(s).trim() : "");
+
+    const line = (emoji: string, label: string, value?: string) => {
+      const v = nonEmpty(value);
+      return v ? `${emoji} <b>${label}:</b> ${escapeHTML(v)}` : "";
+    };
+
+    // Normalizaciones para links
+    const onlyDigits = (s = "") => s.toString().replace(/[^\d]/g, "");
+    const waPhone = onlyDigits(phone);
+    const tgPhone = onlyDigits(phone);
+
+    // === 1) Mensaje-resumen de la reserva (HTML, sin campos vacíos) ===
+    const parts = [
+      formSource ? `🧾 <b>${escapeHTML(formSource)}</b>` : "",
+      line("📛", "Nombre", name),
+      line("✉️", "Email", email),
+      line("📞", "Teléfono", phone),
+      line("📍", "Desde", from),
+      line("🏁", "Hasta", to),
+      line("📅", "Fecha", date),
+      line("🕒", "Hora", time),
+      line("🚗", "Vehículo", vehicle),
+      line("👥", "Pasajeros", passengers),
+      line("🎒", "Equipaje", luggage),
+      line("📝", "Detalles", details),
+      imageList.length ? "🖼 <b>Imágenes adjuntas a continuación…</b>" : "",
+      // Al final: registro con fecha/hora (sin mencionar zona/país)
+      `🕘 <i>Registro realizado el ${fechaCuba} ${horaCuba}</i>`,
+    ].filter(Boolean);
+
+    const resumenHTML = parts.join("\n");
+    // 🔥 Idioma efectivo desde navegación
+    const effectiveLang = detectEffectiveLang(request);
+
+    // 🔥 Mensaje de contacto en ese idioma
+    const contactMsgPlain = buildContactMessageByLang(effectiveLang, {
+      name, from, to, date, time, passengers, vehicle, confirmation
     });
 
+    // === 3) Enviar el resumen principal a Telegram (HTML) con botón condicional ===
+    await axios.post(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
+      chat_id: TELEGRAM_CHAT_ID,
+      text: resumenHTML,
+      parse_mode: "HTML",
+      reply_markup: {
+        inline_keyboard: [
+          [
+            confirmation === "whatsapp"
+              ? {
+                text: "📱 Escribir por WhatsApp",
+                url: `https://wa.me/${waPhone}?text=${encodeURIComponent(contactMsgPlain)}`,
+              }
+              : {
+                text: "📩 Escribir por Telegram",
+                url: tgPhone ? `tg://resolve?phone=${tgPhone}` : `https://t.me/`,
+              },
+          ],
+        ],
+      },
+    });
 
+    // === 4) Si la vía de confirmación es Telegram, manda el mensaje de contacto como bloque Markdown para copiar ===
+    if (confirmation === "telegram") {
+      // Evitar que backticks rompan el bloque
+      const blockSafe = contactMsgPlain.replace(/`/g, "'");
+      const mdBlock = `"${blockSafe}"`;
+      await axios.post(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
+        chat_id: TELEGRAM_CHAT_ID,
+        text: contactMsgPlain,
+      });
+    }
+    // Evitar que backticks rompan el bloque
+    await axios.post(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
+      chat_id: TELEGRAM_CHAT_ID,
+      text: navInfo,
+    });
+
+    // === 5) Enviar imágenes (si existen) ===
     for (const file of imageList) {
       const formData = new FormDataNode();
       formData.append("chat_id", TELEGRAM_CHAT_ID);
-      formData.append("photo", fs.createReadStream((file as File).filepath));
-
+      formData.append("photo", fs.createReadStream((file as any).filepath));
       await axios.post(
         `https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendPhoto`,
         formData,
-        {
-          headers: formData.getHeaders(),
-        }
+        { headers: formData.getHeaders() }
       );
     }
-
     return NextResponse.json({ ok: true });
   } catch (error) {
     console.error("Error en /telegram-booking:", error);
