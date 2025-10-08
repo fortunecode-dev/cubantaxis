@@ -14,7 +14,7 @@ export const config = {
 };
 
 // Transforma Request a objeto compatible con formidable
-export async function parseFormData(request: Request): Promise<{ fields: any; files: any }> {
+async function parseFormData(request: Request): Promise<{ fields: any; files: any }> {
 
   const form = formidable({ multiples: true, keepExtensions: true });
 
