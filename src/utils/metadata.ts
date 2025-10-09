@@ -186,8 +186,8 @@ export function buildContactMessageByLang(
     return [
       `${G}${namePart}. Ici l’équipe de CubanTaxis.`,
       [from && to ? `Concernant votre réservation ${bold}${from} → ${to}${bold}` : "", date ? `pour le ${bold}${date}${bold}` : "", time ? `à ${bold}${time}${bold}` : ""].filter(Boolean).join(" "),
-      passengers ? `${bold}Passagers ${bold}: ${passengers}` : "",
-      vehicle ? `${bold}Véhicule ${bold}: ${vehicle}` : "",
+      passengers ? `${bold}Passagers${bold}: ${passengers}` : "",
+      vehicle ? `${bold}Véhicule${bold}: ${vehicle}` : "",
       `Le prix estimé de votre trajet est de ___ USD.`,
       `Si vous êtes d’accord, veuillez nous indiquer le point précis de prise en charge et le mode de paiement pour finaliser votre réservation.`,
       `Nous restons à votre disposition. Merci beaucoup.`,
