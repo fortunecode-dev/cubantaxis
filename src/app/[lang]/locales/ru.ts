@@ -6,6 +6,7 @@ import { content } from "./pageContent/ru";
 import { articles } from "./blog/ru";
 import { booking } from "./booking/ru";
 import { confirmationTexts } from "./others/confirmation.locale";
+import { mainSeo } from "./landing/content.locale";
 export const ru: AppTexts = {
   metadata,
   header,
@@ -219,6 +220,6 @@ export const ru: AppTexts = {
     error: "❌ Произошла ошибка при подготовке бронирования",
   },
   howMuchIsATaxi:
-    "Сколько стоит такси на Кубе в 2025 году?",  confirmationTexts:confirmationTexts.ru
+    "Сколько стоит такси на Кубе в 2025 году?",  mainSeo:mainSeo.ru ,confirmationTexts:confirmationTexts.ru
     
 };

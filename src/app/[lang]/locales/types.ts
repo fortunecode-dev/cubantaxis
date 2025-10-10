@@ -2,6 +2,7 @@ import {  BlogSection, customMetaData, OnPageContent } from "@/seoUtils/metadata
 
 export interface AppTexts {
   confirmationTexts:any,
+  mainSeo:any
   metadata: Partial<customMetaData>
   header: any,
   content: { hero: HeroSection, blog: BlogSection },

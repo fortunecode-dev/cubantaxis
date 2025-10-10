@@ -6,6 +6,7 @@ import { content } from "./pageContent/pt";
 import { articles } from "./blog/pt";
 import { booking } from "./booking/pt";
 import { confirmationTexts } from "./others/confirmation.locale";
+import { mainSeo } from "./landing/content.locale";
 export const pt: AppTexts = {
   metadata,
   header,
@@ -220,7 +221,7 @@ export const pt: AppTexts = {
     copied: "✅ Modelo copiado. Cole no chat do Telegram",
     error: "❌ Ocorreu um erro ao preparar a reserva",
   },
-  howMuchIsATaxi: "Quanto custa um táxi em Cuba em 2025?",  confirmationTexts:confirmationTexts.pt
+  howMuchIsATaxi: "Quanto custa um táxi em Cuba em 2025?",  mainSeo:mainSeo.pt ,confirmationTexts:confirmationTexts.pt
   
 };
 
