@@ -12,6 +12,23 @@ export default withBundleAnalyzer({ enabled: process.env.ANALYZE === 'true' })({
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     // remotePatterns: [{ protocol: "https", hostname: "tudominio-o-cdn.com" }],
   },
+  modularizeImports: {
+    "react-icons/?(((\\w*)?/?)*)": {
+      transform: "react-icons/{{ matches.[1] }}/{{ member }}",
+      skipDefaultConversion: true,
+    },
+    lodash: { transform: "lodash/{{ member }}" },
+    "date-fns": { transform: "date-fns/{{ member }}" },
+  },
+  experimental: {
+    optimizePackageImports: [
+      "lodash",
+      "date-fns",
+      "react-icons",
+      "zod",
+      "@supabase/supabase-js",
+    ],
+  },
   async redirects() {
     return [
       // ──────────────────────────────────────────────────────────────

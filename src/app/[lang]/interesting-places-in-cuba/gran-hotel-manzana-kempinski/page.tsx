@@ -1,6 +1,6 @@
 import PlaceSEOCard from "@/components/PlaceCard";
 import { buildMetaTags } from "../../../../seoUtils/seo-builder";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import { getTranslation } from "../../locales";
 
 export async function generateMetadata(

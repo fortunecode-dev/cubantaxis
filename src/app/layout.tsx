@@ -18,12 +18,6 @@ const inter = Inter({
 
 type Lang = "en" | "es" | "fr" | "de" | "ru" | "pt";
 
-export const metadata = {
-  title: "CubanTaxis | Book Taxi in Cuba — Fast, Safe, Reliable",
-  description:
-    "Upfront pricing, airport meet & greet, and WhatsApp/Telegram confirmations. Classic cars, sedans and minivans across Cuba.",
-};
-
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   // ✅ headers() es SÍNCRONA en Server Components
   const h = await headers();
@@ -92,6 +86,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             <Analytics />
           </>
         )}
+      <Footer lang={lang}/>
       </body>
     </html>
   );

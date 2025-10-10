@@ -4,7 +4,7 @@ import Script from "next/script";
 import { LocaleLink } from "@/libs/i18n-nav";
 import { getTranslation } from "../../locales";
 import { LocaleParams } from "@/types/common";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 
 export async function generateMetadata(
   { params }: { params: Promise<{ lang: string }> }
