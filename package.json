@@ -37,5 +37,21 @@
     "tsx": "^4.20.5",
     "typescript": "^5.9.2",
     "zod": "^4.1.11"
+  },
+  "browserslist": {
+    "production": [
+      ">=0.5%",
+      "last 2 chrome versions",
+      "last 2 firefox versions",
+      "last 2 safari versions",
+      "not dead",
+      "not ie <= 11",
+      "supports es6-module"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
