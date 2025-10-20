@@ -23,11 +23,11 @@ function buildRoutes(lang: string) {
   // Ajusta si usas un prefijo distinto o rutas diferentes
   return {
     home: `/${lang}`,
-    quick: `/${lang}/book/quick`,
-    custom: `/${lang}/book/custom-transfer`,
-    prices: `/${lang}/how-much-is-a-taxi-in-cuba`,
-    faqs: `/${lang}/faqs`, // si no tienes página /faqs, puedes usar ancla: `/${lang}#frequently-asked-questions`
-    search: `/${lang}/search`, // para Sitelinks SearchBox
+    quick: `/${lang}/cuba-taxi-booking`,
+    custom: `/${lang}/private-transfer-booking`,
+    prices: `/${lang}/blog/how-much-is-a-taxi-in-cuba`,
+    faqs: `/${lang}/#faqs`, // si no tienes página /faqs, puedes usar ancla: `/${lang}#frequently-asked-questions`
+    // search: `/${lang}/search`, // para Sitelinks SearchBox
   };
 }
 
@@ -48,7 +48,7 @@ function websiteJsonLd({
   siteUrl,
   lang,
   searchUrl,
-}: { siteUrl: string; lang: string; searchUrl: string }) {
+}: { siteUrl: string; lang: string; searchUrl?: string }) {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
@@ -56,7 +56,7 @@ function websiteJsonLd({
     "inLanguage": lang,
     "potentialAction": {
       "@type": "SearchAction",
-      "target": `${siteUrl}${searchUrl}?q={search_term_string}`,
+      // "target": `${siteUrl}${searchUrl}?q={search_term_string}`,
       "query-input": "required name=search_term_string"
     }
   };
@@ -139,7 +139,7 @@ export default async function Home(
   ];
 
   const jsonLd = [
-    websiteJsonLd({ siteUrl, lang, searchUrl: routes.search }),
+    websiteJsonLd({ siteUrl, lang }),
     siteNavElementJsonLd({ items: serpItems }),
     collectionPageJsonLd({ siteUrl, lang, items: serpItems }),
     breadcrumbsJsonLd({ siteUrl, homeUrl: routes.home, homeName: texts.breadcrumbsHome }),
@@ -170,7 +170,7 @@ export default async function Home(
       />
 
       {/* Nav primario (accesible) — ayuda a Google a entender jerarquía */}
-      <nav aria-label={texts.navLabel} className="mx-auto max-w-7xl px-4 pt-4">
+      <nav aria-label={texts.navLabel} className="mx-auto max-w-7xl px-4 pt-4 hidden" >
         <ul className="flex flex-wrap gap-3 text-sm md:text-base">
           <li><Link className="underline-offset-4 hover:underline" href={routes.home}>{texts.home}</Link></li>
           <li><Link className="underline-offset-4 hover:underline" href={routes.quick}>{texts.quick}</Link></li>
