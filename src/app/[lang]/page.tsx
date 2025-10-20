@@ -54,6 +54,7 @@ function websiteJsonLd({
     "@type": "WebSite",
     "url": siteUrl,
     "inLanguage": lang,
+    "name":"CubanTaxis",
     "potentialAction": {
       "@type": "SearchAction",
       // "target": `${siteUrl}${searchUrl}?q={search_term_string}`,
