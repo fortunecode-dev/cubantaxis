@@ -55,7 +55,7 @@ export const content = {
     date: "2025-09-01",
     readMins: 8,
     href: "/blog/private-taxi-or-car-rental",
-    image: "/private-taxi-vs-car-rental.jpg",
+    image: "/private-taxi-vs-car-rental.png",
     location: "Kuba",
 }
     ],

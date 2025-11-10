@@ -18,12 +18,11 @@ import { getTranslation } from "../../locales";
 export async function generateMetadata(
   { params }: { params: Promise<{ lang: string }> }
 ): Promise<Metadata> {
-     const { lang } = await params;
-      const idioma = getTranslation(lang);
-  // Usamos el objeto inline para generar metadata.
-  return (idioma.articles.privateTaxiOrCarRental.seo ?? {}) as Metadata;
+  const { lang } = await params;
+  const idioma = getTranslation(lang);
+  // Si ya usas tu builder, mantenlo
+  return (idioma.metadata.blog?.privateTaxiOrCarRental ?? {}) as Metadata;
 }
-
 function formatUpdatedDate(d = new Date()) {
   const opts: Intl.DateTimeFormatOptions = { year: "numeric", month: "long", day: "numeric" };
   return new Intl.DateTimeFormat("en-US", opts).format(d);
