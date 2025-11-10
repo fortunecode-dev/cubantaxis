@@ -2,16 +2,17 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
-import { FaTelegramPlane, FaWhatsapp } from "react-icons/fa";
 import type { AppTexts } from "@/app/[lang]/locales/types";
+import { cars, places } from "@/utils/constants";
+import { FaTelegramPlane, FaWhatsapp } from "react-icons/fa";
 
 type BookingData = {
   name: string;
   email: string;
   phone: string;
-  vehicle: string;
-  from: string;
-  to: string;
+  vehicle: string; // ahora guarda la key
+  from: string; // key
+  to: string; // key
   date: string;
   time: string;
   passengers: string;
@@ -30,9 +31,9 @@ export default function ExtendedBookingForm({ idioma }: Props) {
       name: "",
       email: "",
       phone: "",
-      vehicle: idioma?.vehicles?.[0] || "Sedan",
-      from: idioma?.locations?.[0] || "Havana",
-      to: idioma?.locations?.[1] || "Varadero",
+      vehicle: cars?.[0],
+      from: places?.[0],
+      to: places?.[1],
       date: "",
       time: "",
       passengers: "1",
@@ -186,10 +187,12 @@ export default function ExtendedBookingForm({ idioma }: Props) {
             onChange={handleChange}
             required
           >
-            {(idioma?.locations || [])
+            {places
               .filter((l: any) => l !== formData.to)
               .map((loc: any) => (
-                <option key={loc} value={loc}>{loc}</option>
+                <option key={loc} value={loc}>
+                  {idioma[loc]}
+                </option>
               ))}
           </select>
         </div>
@@ -203,10 +206,12 @@ export default function ExtendedBookingForm({ idioma }: Props) {
             onChange={handleChange}
             required
           >
-            {(idioma?.locations || [])
+            {places
               .filter((l: any) => l !== formData.from)
               .map((loc: any) => (
-                <option key={loc} value={loc}>{loc}</option>
+                <option key={loc} value={loc}>
+                  {idioma[loc]}
+                </option>
               ))}
           </select>
         </div>
@@ -224,8 +229,10 @@ export default function ExtendedBookingForm({ idioma }: Props) {
             onChange={handleChange}
             required
           >
-            {(idioma?.vehicles || []).map((v: any) => (
-              <option key={v} value={v}>{v}</option>
+            {cars.map((v: string) => (
+              <option key={v} value={v}>
+                {idioma[v]}
+              </option>
             ))}
           </select>
         </div>
@@ -315,7 +322,7 @@ export default function ExtendedBookingForm({ idioma }: Props) {
 
       {/* CTAs */}
       <div className="mb-4 mt-6 flex flex-col gap-3">
-         <button
+        <button
           type="submit"
           id="whatsapp"
           className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary/5 px-5 py-3 text-sm font-semibold text-primary ring-1 ring-inset ring-primary/20 transition hover:bg-primary/10"
@@ -334,7 +341,7 @@ export default function ExtendedBookingForm({ idioma }: Props) {
       </div>
 
       {/* Modal simple con fondo difuminado (igual al de referencia) */}
-       {modalOpen && (
+      {modalOpen && (
         <div
           role="dialog"
           aria-modal="true"

@@ -19,7 +19,7 @@ export async function generateMetadata(
 
 export default async function FastBookingPage({ params }: { params: LocaleParams }) {
   const { lang } = await params;
-  const { booking: { fastBooking: { h1, h2, p, form } } ,backToHome,confirmationTexts} = getTranslation(lang);
+  const { booking: { fastBooking: { h1, h2, p, form } }, backToHome, confirmationTexts } = getTranslation(lang);
 
   // JSON-LD mínimo para WebPage + acción de reserva (ayuda SEO)
   const base =
@@ -66,7 +66,7 @@ export default async function FastBookingPage({ params }: { params: LocaleParams
       {/* FORM CARD */}
       <section className="mx-auto max-w-3xl m-2">
         <div className="rounded-2xl border border-primary/15 bg-white shadow-sm">
-          <QuickBookingForm idioma={{...form,confirmationTexts}} />
+          <QuickBookingForm idioma={{ ...form, confirmationTexts }} />
           {/* CTA secundaria / volver */}
           <div className="p-4 text-center">
             <LocaleLink

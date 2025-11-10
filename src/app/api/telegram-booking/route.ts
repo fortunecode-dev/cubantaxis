@@ -5,7 +5,7 @@ import fs from "fs";
 import axios from "axios";
 import FormDataNode from "form-data";
 import { browserInfoString, buildContactMessageByLang, detectEffectiveLang } from "@/utils/metadata";
-
+import { booking } from "@/app/[lang]/locales/booking/es";
 // Desactiva el body parser
 export const config = {
   api: {
@@ -99,12 +99,6 @@ export async function POST(request: Request) {
       hour12: false,
     }).format(now);
 
-    // Saludo según la hora (en Cuba)
-    const horaNum = Number(
-      new Intl.DateTimeFormat("es-ES", { timeZone: tz, hour: "2-digit", hour12: false }).format(now)
-    );
-    const saludoDia = horaNum < 12 ? "Buenos días" : horaNum < 19 ? "Buenas tardes" : "Buenas noches";
-
     const escapeHTML = (s = "") =>
       s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
@@ -126,11 +120,11 @@ export async function POST(request: Request) {
       line("📛", "Nombre", name),
       line("✉️", "Email", email),
       line("📞", "Teléfono", phone),
-      line("📍", "Desde", from),
-      line("🏁", "Hasta", to),
+      line("📍", "Desde", (booking.fastBooking.form as any)[from]),
+      line("🏁", "Hasta", (booking.fastBooking.form as any)[to]),
       line("📅", "Fecha", date),
       line("🕒", "Hora", time),
-      line("🚗", "Vehículo", vehicle),
+      line("🚗", "Vehículo", (booking.fastBooking.form as any)[vehicle]),
       line("👥", "Pasajeros", passengers),
       line("🎒", "Equipaje", luggage),
       line("📝", "Detalles", details),

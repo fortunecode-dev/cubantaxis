@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
+import { cars, places } from "@/utils/constants";
 import { FaWhatsapp, FaTelegramPlane } from "react-icons/fa";
 
 type BookingData = {
@@ -22,8 +23,8 @@ export default function QuickBookingForm({ idioma }: Props) {
 
   const initialData: BookingData = {
     phone: "",
-    from: idioma.locations?.[0] || "",
-    to: idioma.locations?.[1] || "",
+    from: places?.[0] || "",
+    to: places?.[1] || "",
     date: "",
     time: "",
     vehicle: idioma.vehicles?.[0] || "",
@@ -165,11 +166,11 @@ export default function QuickBookingForm({ idioma }: Props) {
               className="w-full rounded-lg border border-primary/20 bg-white px-3 py-2 text-sm text-primary focus:outline-none focus:ring-2 focus:ring-accent/40"
               disabled={submitting}
             >
-              {idioma.locations
+              {places
                 .filter((l: string) => l !== (key === "from" ? formData.to : formData.from))
                 .map((loc: string) => (
                   <option key={loc} value={loc}>
-                    {loc}
+                    {idioma[loc]}
                   </option>
                 ))}
             </select>
@@ -191,9 +192,9 @@ export default function QuickBookingForm({ idioma }: Props) {
             className="w-full rounded-lg border border-primary/20 bg-white px-3 py-2 text-sm text-primary focus:outline-none focus:ring-2 focus:ring-accent/40"
             disabled={submitting}
           >
-            {idioma.vehicles.map((v: string) => (
+            {cars.map((v: string) => (
               <option key={v} value={v}>
-                {v}
+                {idioma[v]}
               </option>
             ))}
           </select>
