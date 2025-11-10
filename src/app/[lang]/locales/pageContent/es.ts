@@ -49,7 +49,16 @@ export const content = {
         href: "/es/blog/how-much-is-a-taxi-in-cuba",
         image: "/cuba-cabs.jpg",
         location: "Cuba",
-      },
+      },{
+    h3: "Taxi Privado o Alquiler de Coche en Cuba 2025 — ¿Cuál es mejor?",
+    p: "Compara taxis privados y coches de alquiler en Cuba. Descubre qué opción se adapta mejor a tu estilo de viaje, presupuesto y comodidad para rutas desde La Habana, Varadero, Trinidad o Viñales.",
+    date: "2025-09-01",
+    readMins: 8,
+    href: "/blog/private-taxi-or-car-rental",
+    image: "/private-taxi-vs-car-rental.jpg",
+    location: "Cuba",
+}
+
     ],
   },
 };

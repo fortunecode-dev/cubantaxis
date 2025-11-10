@@ -49,7 +49,16 @@ export const content = {
         href: "/ru/blog/how-much-is-a-taxi-in-cuba",
         image: "/cuba-cabs.jpg",
         location: "Куба",
-      },
+      },{
+    h3: "Частное такси или аренда автомобиля на Кубе 2025 — что лучше?",
+    p: "Сравните частные такси и аренду автомобилей на Кубе. Узнайте, какой вариант подходит вашему стилю путешествия, бюджету и комфорту для маршрутов из Гаваны, Варадеро, Тринидада или Виньялес.",
+    date: "2025-09-01",
+    readMins: 8,
+    href: "/blog/private-taxi-or-car-rental",
+    image: "/private-taxi-vs-car-rental.jpg",
+    location: "Куба",
+}
+
     ],
   },
 };

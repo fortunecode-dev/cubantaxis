@@ -3,7 +3,10 @@ import { HeaderItems } from "@/types/common";
 export const header: HeaderItems = [
   {
     key: "blog", label: "Blog", items: [
-      { title: "How much is a taxi in Cuba?", href: `/blog/how-much-is-a-taxi-in-cuba` },
+      { title: "How much is a taxi in Cuba?", href: `/blog/how-much-is-a-taxi-in-cuba` },{ 
+    title: "Private Taxi or Car Rental in Cuba", 
+    href: `/blog/private-taxi-or-car-rental` 
+},
     ], allHref: `/blog`, allLabel: "All articles"
   },
   {

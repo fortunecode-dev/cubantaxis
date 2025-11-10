@@ -3,7 +3,10 @@ import { HeaderItems } from "@/types/common";
 export const header: HeaderItems = [
   {
     key: "blog", label: "Blog", items: [
-      { title: "¿Cuánto cuesta un taxi en Cuba?", href: `/es/blog/how-much-is-a-taxi-in-cuba` },
+      { title: "¿Cuánto cuesta un taxi en Cuba?", href: `/es/blog/how-much-is-a-taxi-in-cuba` },{ 
+    title: "Taxi Privado o Alquiler de Coche en Cuba", 
+    href: `/blog/private-taxi-or-car-rental` 
+},
     ], allHref: `/es/blog`, allLabel: "Todos los artículos"
   },
   {

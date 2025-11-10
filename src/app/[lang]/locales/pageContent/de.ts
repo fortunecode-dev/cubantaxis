@@ -49,7 +49,15 @@ export const content = {
         href: "/de/blog/how-much-is-a-taxi-in-cuba",
         image: "/cuba-cabs.jpg",
         location: "Kuba",
-      },
+      },{
+    h3: "Privates Taxi oder Mietwagen in Kuba 2025 — Was ist besser?",
+    p: "Vergleichen Sie private Taxis und Mietwagen in Kuba. Finden Sie heraus, welche Option am besten zu Ihrem Reisestil, Budget und Komfort für Strecken wie Havanna, Varadero, Trinidad oder Viñales passt.",
+    date: "2025-09-01",
+    readMins: 8,
+    href: "/blog/private-taxi-or-car-rental",
+    image: "/private-taxi-vs-car-rental.jpg",
+    location: "Kuba",
+}
     ],
   },
 };
