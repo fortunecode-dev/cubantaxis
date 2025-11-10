@@ -21,7 +21,15 @@ export const metadata: Partial<customMetaData> = {
                 "Prix Taxi à Cuba 2025 | Transferts & Réservation d’Excursion",
             description: "Découvrez les prix du taxi à Cuba 2025. Comparez transferts, excursions et options de réservation entre La Havane, Varadero et au-delà avec CubanTaxis.",
             alternates: buildAlternatesMetadata("/blog/how-much-is-a-taxi-in-cuba", "fr"),
-        },
+        }, privateTaxiOrCarRental: {
+            title: "Taxi Privé ou Location de Voiture à Cuba 2025 | Comparaison, Tarifs & Conseils",
+            description:
+                "Découvrez si un taxi privé ou une location de voiture est meilleur pour votre voyage à Cuba. Comparez confort, coût et flexibilité pour des trajets comme La Havane, Varadero, Trinidad ou Viñales.",
+            alternates: buildAlternatesMetadata(
+                "/blog/private-taxi-or-car-rental",
+                "fr"
+            ),
+        }
     },
 
     customBooking: {

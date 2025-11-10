@@ -22,6 +22,7 @@ export const metadata: Partial<customMetaData> = {
       description: "Aktuelle Kuba-Taxi Preise 2025. Vergleichen Sie Transfers, Touren und Buchungsoptionen zwischen Havanna, Varadero und mehr mit CubanTaxis.",
       alternates: buildAlternatesMetadata("/blog/how-much-is-a-taxi-in-cuba", "de"),
     },
+    privateTaxiOrCarRental:{ title: "Privates Taxi oder Mietwagen in Kuba 2025 | Vergleich, Preise & Tipps", description: "Erfahren Sie, ob ein privates Taxi oder ein Mietwagen besser für Ihre Reise in Kuba ist. Vergleichen Sie Komfort, Kosten und Flexibilität für Strecken wie Havanna, Varadero, Trinidad oder Viñales.", alternates: buildAlternatesMetadata( "/blog/private-taxi-or-car-rental", "de" ), }
   },
 
   customBooking: {

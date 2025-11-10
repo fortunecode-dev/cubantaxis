@@ -15,7 +15,15 @@ export const metadata: Partial<customMetaData> = {
       title: "Blog de Taxi en Cuba | Traslados, Tours y Consejos de Reserv",
       description: "Guías y consejos sobre taxis en Cuba: traslados, tours y reserva. Aprende a moverte entre La Habana, Varadero y otros destinos con CubanTaxis.",
       alternates: buildAlternatesMetadata("/blog", "es"),
-    },
+    },privateTaxiOrCarRental:{
+    title: "Taxi Privado o Alquiler de Coche en Cuba 2025 | Comparativa, Precios & Consejos",
+    description:
+        "Descubre si un taxi privado o un coche de alquiler es mejor para tu viaje en Cuba. Compara comodidad, coste y flexibilidad para rutas como La Habana, Varadero, Trinidad o Viñales.",
+    alternates: buildAlternatesMetadata(
+        "/blog/private-taxi-or-car-rental",
+        "es"
+    ),
+},
     howMuchIsATaxiInCuba: {
       title:
         "Precios de Taxi en Cuba 2025 | Traslados y Reserva de Tours ",

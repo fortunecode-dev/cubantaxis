@@ -23,6 +23,15 @@ export const metadata: Partial<customMetaData> = {
                 "en"
             ),
         },
+        privateTaxiOrCarRental: {
+            title: "Private Taxi or Car Rental in Cuba 2025 | Comparison, Prices & Tips",
+            description:
+                "Find out whether a private taxi or a car rental is better for your trip in Cuba. Compare comfort, cost, and flexibility for routes like Havana, Varadero, Trinidad, or Viñales.",
+            alternates: buildAlternatesMetadata(
+                "/blog/private-taxi-or-car-rental",
+                "en"
+            ),
+        },
     },
 
     customBooking: {

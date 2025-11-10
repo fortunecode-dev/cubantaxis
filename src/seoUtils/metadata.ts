@@ -13,6 +13,7 @@ export type customMetaData={
     blog:{
         self:Partial<SeoMetadata>,
         howMuchIsATaxiInCuba:Partial<SeoMetadata>
+        privateTaxiOrCarRental:Partial<SeoMetadata>
     },
     fastBooking:Partial<SeoMetadata>,
     customBooking:Partial<SeoMetadata>,
