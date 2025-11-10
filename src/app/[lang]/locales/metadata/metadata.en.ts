@@ -15,14 +15,13 @@ export const metadata: Partial<customMetaData> = {
             alternates: buildAlternatesMetadata("/blog", "en"),
         },
         howMuchIsATaxiInCuba: {
-            title:
-                "Cuba Taxi Prices 2025 | Transfers & Tour Booking Havana & Va",
-            description: "See 2025 Cuba taxi prices. Compare transfers, tours and booking options from Havana to Varadero and more with CubanTaxis.",
-            alternates: buildAlternatesMetadata(
-                "/blog/how-much-is-a-taxi-in-cuba",
-                "en"
-            ),
-        },
+  title: "Cuba Taxi Prices 2025 | Havana & Varadero Trips",
+  description: "2025 taxi fares in Cuba. Compare routes, transfers, and tours from Havana, Varadero, and other cities with CubanTaxis.",
+  alternates: buildAlternatesMetadata(
+    "/blog/how-much-is-a-taxi-in-cuba",
+    "en"
+  ),
+},
         privateTaxiOrCarRental: {
             title: "Private Taxi or Car Rental in Cuba 2025 | Comparison, Prices & Tips",
             description:

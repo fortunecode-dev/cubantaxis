@@ -22,10 +22,9 @@ export const metadata: Partial<customMetaData> = {
       description: "Актуальные цены на такси на Кубе в 2025. Сравните трансферы, туры и варианты бронирования между Гаваной, Варадеро и другими городами с CubanTaxis.",
       alternates: buildAlternatesMetadata("/blog/how-much-is-a-taxi-in-cuba", "ru"),
     },privateTaxiOrCarRental:{
-    title: "Частное такси или аренда автомобиля на Кубе 2025 | Сравнение, Цены и Советы",
-    description:
-        "Узнайте, что лучше для вашей поездки на Кубу: частное такси или аренда автомобиля. Сравните комфорт, стоимость и гибкость маршрутов, таких как Гавана, Варадеро, Тринидад или Виньялес.",
-    alternates: buildAlternatesMetadata(
+  title: "Цены на такси на Кубе 2025 | Трансферы и туры",
+  description: "Узнайте цены на такси 2025 года. Сравните маршруты, трансферы и экскурсии из Гаваны, Варадеро и других городов с CubanTaxis.",
+ alternates: buildAlternatesMetadata(
         "/blog/private-taxi-or-car-rental",
         "ru"
     ),
