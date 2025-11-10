@@ -210,7 +210,7 @@ export const articles = {
                 "City Tour Havana (3h): a partir de $75–$120 por carro",
                 "Tour Vale de Viñales (10h): a partir de $280–$360 por carro",
             ],
-            cta: { label: "Ver todos os passeios", href: "/private-tours-cuba" },
+            cta: { label: "Ver todos os passeios", href: "/destinations-in-cuba" },
         },
         conclusion: {
             title: "Conclusão — Qual Escolher?",
@@ -268,7 +268,7 @@ export const articles = {
     ctaFooter: {
         text: "Pronto para planejar sua próxima rota em Cuba?",
         primary: { label: "Reservar traslado", href: "/cuba-taxi-booking" },
-        secondary: { label: "Explorar passeios privados", href: "/private-tours-cuba" },
+        secondary: { label: "Explorar passeios privados", href: "/destinations-in-cuba" },
     },
 }
 }

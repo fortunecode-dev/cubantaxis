@@ -194,7 +194,7 @@ export const articles = {
           "Tour por La Habana (3h): desde $75–$120 por coche",
           "Valle de Viñales (10h): desde $280–$360 por coche"
         ],
-        "cta": { "label": "Ver todos los tours", "href": "/private-tours-cuba" }
+        "cta": { "label": "Ver todos los tours", "href": "/destinations-in-cuba" }
       },
       "conclusion": {
         "title": "Reflexión final — ¿Cuál elegir?",
@@ -242,7 +242,7 @@ export const articles = {
     "ctaFooter": {
       "text": "¿Listo para planear tu próxima ruta en Cuba?",
       "primary": { "label": "Reservar un traslado", "href": "/cuba-taxi-booking" },
-      "secondary": { "label": "Explorar tours privados", "href": "/private-tours-cuba" }
+      "secondary": { "label": "Explorar tours privados", "href": "/destinations-in-cuba" }
     }
   }
 }

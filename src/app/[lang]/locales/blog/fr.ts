@@ -179,7 +179,7 @@ export const articles = {
           "Tour de La Havane (3h) : à partir de $75–$120 par voiture",
           "Vallée de Viñales (10h) : à partir de $280–$360 par voiture"
         ],
-        "cta": { "label": "Voir tous les tours", "href": "/private-tours-cuba" }
+        "cta": { "label": "Voir tous les tours", "href": "/destinations-in-cuba" }
       },
       "conclusion": {
         "title": "Conclusion — Lequel choisir ?",
@@ -227,7 +227,7 @@ export const articles = {
     "ctaFooter": {
       "text": "Prêt à planifier votre prochaine route à Cuba ?",
       "primary": { "label": "Réserver un transfert", "href": "/cuba-taxi-booking" },
-      "secondary": { "label": "Explorer les tours privés", "href": "/private-tours-cuba" }
+      "secondary": { "label": "Explorer les tours privés", "href": "/destinations-in-cuba" }
     }
   }
 }

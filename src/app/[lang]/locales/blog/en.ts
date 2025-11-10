@@ -226,7 +226,7 @@ export const articles = {
                     "Havana City Tour (3h): from $75–$120 per car",
                     "Viñales Valley Tour (10h): from $280–$360 per car",
                 ],
-                cta: { label: "See all tours", href: "/private-tours-cuba" },
+                cta: { label: "See all tours", href: "/destinations-in-cuba" },
             },
             conclusion: {
                 title: "Final Thoughts — Which One Should You Choose?",
@@ -284,7 +284,7 @@ export const articles = {
         ctaFooter: {
             text: "Ready to plan your next route in Cuba?",
             primary: { label: "Book a transfer", href: "/cuba-taxi-booking" },
-            secondary: { label: "Explore private tours", href: "/private-tours-cuba" },
+            secondary: { label: "Explore private tours", href: "/destinations-in-cuba" },
         },
     }
 }

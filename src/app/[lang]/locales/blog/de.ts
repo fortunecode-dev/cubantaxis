@@ -210,7 +210,7 @@ export const articles = {
           "Havanna Stadtrundfahrt (3h): ab $75–$120 pro Auto",
           "Viñales Tal Tour (10h): ab $280–$360 pro Auto",
         ],
-        cta: { label: "Alle Touren ansehen", href: "/private-tours-cuba" },
+        cta: { label: "Alle Touren ansehen", href: "/destinations-in-cuba" },
       },
       conclusion: {
         title: "Fazit — Welche Option sollten Sie wählen?",
@@ -268,7 +268,7 @@ export const articles = {
     ctaFooter: {
       text: "Bereit, Ihre nächste Route in Kuba zu planen?",
       primary: { label: "Transfer buchen", href: "/cuba-taxi-booking" },
-      secondary: { label: "Private Touren entdecken", href: "/private-tours-cuba" },
+      secondary: { label: "Private Touren entdecken", href: "/destinations-in-cuba" },
     },
   }
 

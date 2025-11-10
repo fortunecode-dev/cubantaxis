@@ -210,7 +210,7 @@ export const articles = {
                 "Тур по Гаване (3ч): от $75–$120 за авто",
                 "Тур по долине Виньялес (10ч): от $280–$360 за авто",
             ],
-            cta: { label: "Посмотреть все туры", href: "/private-tours-cuba" },
+            cta: { label: "Посмотреть все туры", href: "/destinations-in-cuba" },
         },
         conclusion: {
             title: "Итог — что выбрать?",
@@ -268,7 +268,7 @@ export const articles = {
     ctaFooter: {
         text: "Готовы спланировать следующий маршрут по Кубе?",
         primary: { label: "Забронировать трансфер", href: "/cuba-taxi-booking" },
-        secondary: { label: "Посмотреть частные туры", href: "/private-tours-cuba" },
+        secondary: { label: "Посмотреть частные туры", href: "/destinations-in-cuba" },
     },
 }
 }
