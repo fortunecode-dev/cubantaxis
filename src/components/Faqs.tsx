@@ -8,7 +8,7 @@ interface FaqItem {
 interface Props {
   title: string;
   faqs: FaqItem[];
-  structuredData?: boolean;        // default: true
+  structuredData?: boolean; // default: true
   prefetchInternalLinks?: boolean; // default: false (ahorra ancho de banda)
 }
 
@@ -18,7 +18,7 @@ const LINK_FULL_RE = /^\[(.*?)\]\((.*?)\)$/;
 
 function slugify(input: string) {
   return input
-    .normalize("NFD")                       // quita acentos
+    .normalize("NFD") // quita acentos
     .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase()
     .replace(/[^a-z0-9\s-]/g, "")
@@ -40,7 +40,12 @@ function renderAnswer(text: string, prefetchInternalLinks: boolean) {
       "font-bold underline text-primary hover:text-accent underline-offset-2 hover:no-underline";
 
     return isInternal ? (
-      <Link key={i} href={href} prefetch={prefetchInternalLinks} className={cls}>
+      <Link
+        key={i}
+        href={href}
+        prefetch={prefetchInternalLinks}
+        className={cls}
+      >
         {label}
       </Link>
     ) : (
@@ -64,21 +69,10 @@ export default function FaqSection({
   prefetchInternalLinks = false,
 }: Props) {
   // Server Component: cálculo en SSR
-  const withIds = faqs.map((f, i) => ({ ...f, id: `${slugify(f.question)}-${i}` }));
-
-  // JSON-LD (Server-rendered <script>, 0 JS en cliente)
-  const jsonLd =
-    structuredData
-      ? {
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          mainEntity: withIds.map((f) => ({
-            "@type": "Question",
-            name: f.question,
-            acceptedAnswer: { "@type": "Answer", text: f.answer },
-          })),
-        }
-      : null;
+  const withIds = faqs.map((f, i) => ({
+    ...f,
+    id: `${slugify(f.question)}-${i}`,
+  }));
 
   return (
     <section
@@ -161,7 +155,7 @@ export default function FaqSection({
         </div>
       </div>
 
-      {structuredData && jsonLd && (
+      {/* {structuredData && jsonLd && (
         // ✅ Server-rendered JSON-LD sin next/script (0 JS cliente)
         <script
           id="ld-faq"
@@ -169,7 +163,7 @@ export default function FaqSection({
           // Nota: No interpoles objetos, siempre serializa
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-      )}
+      )} */}
     </section>
   );
 }
