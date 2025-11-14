@@ -7,6 +7,7 @@ import { articles } from "./blog/fr";
 import { booking } from "./booking/fr";
 import { confirmationTexts } from "./others/confirmation.locale";
 import { mainSeo } from "./landing/content.locale";
+import { navLocales } from "./others/nav.locale";
 export const fr: AppTexts = {
   metadata,
   header,
@@ -16,6 +17,8 @@ export const fr: AppTexts = {
   backToHome: "Retour à l'accueil",
   taxiGuide: "Guide complet des taxis à Cuba",
   exploreDestinations: "Explorer les destinations →",
+  nav: navLocales.fr,
+
   hero: {
     h1: "Réservez un taxi à Cuba rapidement, en toute sécurité et fiabilité",
     h2a: "La façon la plus rapide d’obtenir un taxi pour ",
@@ -48,8 +51,7 @@ export const fr: AppTexts = {
   destinationsCard: {
     title: "Destinations",
     subTitle: "Lieux à visiter à Cuba",
-    description:
-      "Découvrez nos options de destinations les plus populaires.",
+    description: "Découvrez nos options de destinations les plus populaires.",
   },
   excursionsCard: {
     title: "Excursions",
@@ -78,10 +80,8 @@ export const fr: AppTexts = {
       "Toute information spécifique sur le trajet ou les passagers",
     attachImages: "Joindre des images",
     reserveNow: "Réserver maintenant",
-    subtitle:
-      "Indiquez-nous les détails pour organiser votre trajet",
-    example:
-      "Ex. : numéro de vol, siège enfant, arrêt supplémentaire, etc.",
+    subtitle: "Indiquez-nous les détails pour organiser votre trajet",
+    example: "Ex. : numéro de vol, siège enfant, arrêt supplémentaire, etc.",
     upload: "Téléverser des images",
     luggaageExample: "2 valises + 1 sac à dos",
     title: "Détails de la réservation",
@@ -108,8 +108,7 @@ export const fr: AppTexts = {
   footer: {
     rights: "© 2025 Cubantaxis. Tous droits réservés.",
   },
-  underHeroTitle:
-    "Pages clés sur les taxis à Cuba",
+  underHeroTitle: "Pages clés sur les taxis à Cuba",
   underHeroLinks: [
     {
       href: "/blog/how-much-is-a-taxi-in-cuba",
@@ -125,8 +124,7 @@ export const fr: AppTexts = {
     },
     {
       href: "/interesting-places-in-cuba",
-      title:
-        "Attractions et lieux d’intérêt à Cuba",
+      title: "Attractions et lieux d’intérêt à Cuba",
       description:
         "Découvrez les meilleures attractions de Cuba : resorts de Varadero, monuments de La Havane, hôtels et activités familiales.",
     },
@@ -154,8 +152,7 @@ export const fr: AppTexts = {
       "Combien coûte un taxi à Cuba, comment en obtenir un, et autres questions…",
     items: [
       {
-        question:
-          "Comment réserver un taxi à Cuba à l’avance ?",
+        question: "Comment réserver un taxi à Cuba à l’avance ?",
         answer:
           "Laissez-nous vos coordonnées via le formulaire et vous recevrez une confirmation instantanée.",
       },
@@ -200,14 +197,12 @@ export const fr: AppTexts = {
           "Vous pouvez choisir des voitures classiques, des cabriolets, des véhicules modernes ou des minivans selon vos préférences et le nombre de passagers.",
       },
       {
-        question:
-          "Puis-je demander un transfert de nuit ?",
+        question: "Puis-je demander un transfert de nuit ?",
         answer:
           "Oui, service taxi 24/7. Les transferts de nuit peuvent inclure un léger supplément.",
       },
       {
-        question:
-          "Comment savoir si mon transfert est confirmé ?",
+        question: "Comment savoir si mon transfert est confirmé ?",
         answer:
           "Vous recevrez une confirmation via WhatsApp ou email avec les détails du trajet et le nom du chauffeur.",
       },
@@ -228,13 +223,11 @@ export const fr: AppTexts = {
   ],
   vehicles: ["Voiture classique", "Tour", "Van"],
   clipboardTemplate: {
-    copied:
-      "✅ Modèle copié. Collez-le dans le chat Telegram",
+    copied: "✅ Modèle copié. Collez-le dans le chat Telegram",
     error:
       "❌ Une erreur est survenue lors de la préparation de la réservation",
   },
-  howMuchIsATaxi:
-    "Combien coûte un taxi à Cuba en 2025 ?",
-      mainSeo:mainSeo.fr ,confirmationTexts:confirmationTexts.fr
-    
+  howMuchIsATaxi: "Combien coûte un taxi à Cuba en 2025 ?",
+  mainSeo: mainSeo.fr,
+  confirmationTexts: confirmationTexts.fr,
 };

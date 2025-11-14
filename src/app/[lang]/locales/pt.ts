@@ -7,6 +7,7 @@ import { articles } from "./blog/pt";
 import { booking } from "./booking/pt";
 import { confirmationTexts } from "./others/confirmation.locale";
 import { mainSeo } from "./landing/content.locale";
+import { navLocales } from "./others/nav.locale";
 export const pt: AppTexts = {
   metadata,
   header,
@@ -16,6 +17,7 @@ export const pt: AppTexts = {
   backToHome: "Voltar ao início",
   taxiGuide: "Guia completo de táxis em Cuba",
   exploreDestinations: "Explorar destinos →",
+  nav: navLocales.pt,
 
   hero: {
     h1: "Reserve um táxi em Cuba com rapidez, segurança e confiabilidade",
@@ -74,7 +76,8 @@ export const pt: AppTexts = {
     passengers: "Passageiros",
     luggage: "Bagagem",
     details: "Detalhes adicionais",
-    detailsExample: "Qualquer informação específica sobre a viagem ou passageiros",
+    detailsExample:
+      "Qualquer informação específica sobre a viagem ou passageiros",
     attachImages: "Anexar imagens",
     reserveNow: "Reservar agora",
     subtitle: "Conte os detalhes para organizarmos sua viagem",
@@ -159,8 +162,7 @@ export const pt: AppTexts = {
           "Sim. Atendemos transfers privados do Aeroporto José Martí para qualquer destino em Cuba, incluindo Varadero, Viñales, Cayo Santa María e mais.",
       },
       {
-        question:
-          "Quanto custa um táxi do aeroporto de Varadero para Havana?",
+        question: "Quanto custa um táxi do aeroporto de Varadero para Havana?",
         answer:
           "O preço do transfer privado começa em 100 USD por veículo. Veja a lista completa no nosso [blog](/blog/how-much-is-a-taxi-in-cuba).",
       },
@@ -170,8 +172,7 @@ export const pt: AppTexts = {
           "Todos os preços no site são por veículo privado, independentemente do número de passageiros (até o limite de capacidade).",
       },
       {
-        question:
-          "Posso pagar em dólares, euros ou moeda local (CUP)?",
+        question: "Posso pagar em dólares, euros ou moeda local (CUP)?",
         answer:
           "Sim, aceitamos USD, EUR e CUP. Escolha a opção mais conveniente ao confirmar.",
       },
@@ -181,8 +182,7 @@ export const pt: AppTexts = {
           "Monitoramos a chegada do seu voo. Em caso de atraso, o motorista aguardará sem custo extra, desde que o número do voo esteja correto.",
       },
       {
-        question:
-          "Além de transfers, vocês oferecem excursões privadas?",
+        question: "Além de transfers, vocês oferecem excursões privadas?",
         answer:
           "Sim, você pode reservar excursões privadas como passeios a Viñales, Cienfuegos e Trinidad.",
       },
@@ -221,7 +221,7 @@ export const pt: AppTexts = {
     copied: "✅ Modelo copiado. Cole no chat do Telegram",
     error: "❌ Ocorreu um erro ao preparar a reserva",
   },
-  howMuchIsATaxi: "Quanto custa um táxi em Cuba em 2025?",  mainSeo:mainSeo.pt ,confirmationTexts:confirmationTexts.pt
-  
+  howMuchIsATaxi: "Quanto custa um táxi em Cuba em 2025?",
+  mainSeo: mainSeo.pt,
+  confirmationTexts: confirmationTexts.pt,
 };
-

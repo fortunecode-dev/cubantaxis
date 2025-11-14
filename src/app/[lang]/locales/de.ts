@@ -7,6 +7,7 @@ import { articles } from "./blog/de";
 import { booking } from "./booking/de";
 import { confirmationTexts } from "./others/confirmation.locale";
 import { mainSeo } from "./landing/content.locale";
+import { navLocales } from "./others/nav.locale";
 export const de: AppTexts = {
   metadata,
   header,
@@ -16,6 +17,8 @@ export const de: AppTexts = {
   backToHome: "Zurück zur Startseite",
   taxiGuide: "Umfassender Kuba-Taxi-Leitfaden",
   exploreDestinations: "Ziele entdecken →",
+  nav: navLocales.de,
+
   hero: {
     h1: "Buchen Sie ein Taxi in Kuba – schnell, sicher und zuverlässig",
     h2a: "Der schnellste Weg zu einem Taxi für ",
@@ -48,8 +51,7 @@ export const de: AppTexts = {
   destinationsCard: {
     title: "Reiseziele",
     subTitle: "Sehenswerte Orte in Kuba",
-    description:
-      "Entdecken Sie unsere beliebtesten Zieloptionen.",
+    description: "Entdecken Sie unsere beliebtesten Zieloptionen.",
   },
   excursionsCard: {
     title: "Ausflüge",
@@ -80,8 +82,7 @@ export const de: AppTexts = {
     reserveNow: "Jetzt buchen",
     subtitle:
       "Teilen Sie uns die Details mit, damit wir Ihre Reise organisieren",
-    example:
-      "Beispiel: Flugnummer, Kindersitz, zusätzlicher Stopp usw.",
+    example: "Beispiel: Flugnummer, Kindersitz, zusätzlicher Stopp usw.",
     upload: "Bilder hochladen",
     luggaageExample: "2 Koffer + 1 Rucksack",
     title: "Buchungsdetails",
@@ -108,8 +109,7 @@ export const de: AppTexts = {
   footer: {
     rights: "© 2025 Cubantaxis. Alle Rechte vorbehalten.",
   },
-  underHeroTitle:
-    "Wichtige Seiten über Taxis in Kuba",
+  underHeroTitle: "Wichtige Seiten über Taxis in Kuba",
   underHeroLinks: [
     {
       href: "/blog/how-much-is-a-taxi-in-cuba",
@@ -149,18 +149,15 @@ export const de: AppTexts = {
     },
   ],
   FAQs: {
-    title:
-      "Wie viel kostet ein Taxi in Kuba, wie buche ich es und mehr …",
+    title: "Wie viel kostet ein Taxi in Kuba, wie buche ich es und mehr …",
     items: [
       {
-        question:
-          "Wie kann ich ein Taxi in Kuba im Voraus buchen?",
+        question: "Wie kann ich ein Taxi in Kuba im Voraus buchen?",
         answer:
           "Hinterlassen Sie uns Ihre Daten im Formular – Sie erhalten sofort eine Bestätigung.",
       },
       {
-        question:
-          "Bieten Sie private Transfers vom Flughafen Havanna an?",
+        question: "Bieten Sie private Transfers vom Flughafen Havanna an?",
         answer:
           "Ja. Wir bieten private Transfers vom Flughafen José Martí zu jedem Ziel in Kuba, u. a. Varadero, Viñales, Cayo Santa María.",
       },
@@ -171,44 +168,36 @@ export const de: AppTexts = {
           "Der Preis für einen privaten Transfer beginnt ab 100 USD pro Fahrzeug. Die vollständige Liste finden Sie in unserem [Blog](/blog/how-much-is-a-taxi-in-cuba).",
       },
       {
-        question:
-          "Sind die Preise pro Person oder pro Fahrzeug?",
+        question: "Sind die Preise pro Person oder pro Fahrzeug?",
         answer:
           "Alle Preise auf der Website gelten pro Privatfahrzeug – unabhängig von der Personenzahl (bis zur max. Kapazität).",
       },
       {
-        question:
-          "Kann ich in USD, EUR oder in CUP (Landeswährung) bezahlen?",
+        question: "Kann ich in USD, EUR oder in CUP (Landeswährung) bezahlen?",
         answer:
           "Ja, wir akzeptieren USD, EUR und CUP. Wählen Sie die passende Option bei der Bestätigung.",
       },
       {
-        question:
-          "Was passiert, wenn mein Flug verspätet ist?",
+        question: "Was passiert, wenn mein Flug verspätet ist?",
         answer:
           "Wir verfolgen Ihre Flugankunft. Bei Verspätungen wartet der Fahrer ohne Aufpreis, sofern die Flugnummer korrekt angegeben wurde.",
       },
       {
-        question:
-          "Bieten Sie neben Transfers auch private Ausflüge an?",
-        answer:
-          "Ja, z. B. Touren nach Viñales, Cienfuegos und Trinidad.",
+        question: "Bieten Sie neben Transfers auch private Ausflüge an?",
+        answer: "Ja, z. B. Touren nach Viñales, Cienfuegos und Trinidad.",
       },
       {
-        question:
-          "Welche Fahrzeugtypen stehen zur Auswahl?",
+        question: "Welche Fahrzeugtypen stehen zur Auswahl?",
         answer:
           "Sie können zwischen Oldtimern, Cabrios, modernen Fahrzeugen oder Minivans wählen – je nach Vorlieben und Personenzahl.",
       },
       {
-        question:
-          "Kann ich einen Nachttransfer anfragen?",
+        question: "Kann ich einen Nachttransfer anfragen?",
         answer:
           "Ja, 24/7-Service. Nachtransfers können einen kleinen Zuschlag haben.",
       },
       {
-        question:
-          "Woran erkenne ich, dass mein Transfer bestätigt ist?",
+        question: "Woran erkenne ich, dass mein Transfer bestätigt ist?",
         answer:
           "Sie erhalten eine Bestätigung per WhatsApp oder E-Mail mit Reisedetails und Fahrername.",
       },
@@ -229,13 +218,10 @@ export const de: AppTexts = {
   ],
   vehicles: ["Klassischer Wagen", "Tour", "Van"],
   clipboardTemplate: {
-    copied:
-      "✅ Vorlage kopiert. Fügen Sie sie im Telegram-Chat ein",
-    error:
-      "❌ Beim Vorbereiten der Buchung ist ein Fehler aufgetreten",
+    copied: "✅ Vorlage kopiert. Fügen Sie sie im Telegram-Chat ein",
+    error: "❌ Beim Vorbereiten der Buchung ist ein Fehler aufgetreten",
   },
-  howMuchIsATaxi:
-    "Wie viel kostet ein Taxi in Kuba im Jahr 2025?",
-      mainSeo:mainSeo.de ,confirmationTexts:confirmationTexts.de
-    
+  howMuchIsATaxi: "Wie viel kostet ein Taxi in Kuba im Jahr 2025?",
+  mainSeo: mainSeo.de,
+  confirmationTexts: confirmationTexts.de,
 };

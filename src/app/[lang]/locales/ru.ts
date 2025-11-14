@@ -7,6 +7,7 @@ import { articles } from "./blog/ru";
 import { booking } from "./booking/ru";
 import { confirmationTexts } from "./others/confirmation.locale";
 import { mainSeo } from "./landing/content.locale";
+import { navLocales } from "./others/nav.locale";
 export const ru: AppTexts = {
   metadata,
   header,
@@ -16,6 +17,8 @@ export const ru: AppTexts = {
   backToHome: "Вернуться на главную",
   taxiGuide: "Полное руководство по такси на Кубе",
   exploreDestinations: "Исследовать направления →",
+  nav: navLocales.ru,
+
   hero: {
     h1: "Забронируйте такси на Кубе быстро, безопасно и надежно",
     h2a: "Самый быстрый способ заказать такси для ",
@@ -58,7 +61,8 @@ export const ru: AppTexts = {
   bookingForm: {
     page: {
       backToHome: "Назад на главную",
-      description: "Забронируйте вашу поездку в деталях — мы обо всем позаботимся",
+      description:
+        "Забронируйте вашу поездку в деталях — мы обо всем позаботимся",
       title: "Индивидуальный трансфер",
     },
     fullName: "Полное имя",
@@ -76,7 +80,8 @@ export const ru: AppTexts = {
     attachImages: "Прикрепить изображения",
     reserveNow: "Забронировать",
     subtitle: "Сообщите детали — мы организуем поездку",
-    example: "Пример: номер рейса, детское кресло, дополнительная остановка и т. д.",
+    example:
+      "Пример: номер рейса, детское кресло, дополнительная остановка и т. д.",
     upload: "Загрузить изображения",
     luggaageExample: "2 чемодана + 1 рюкзак",
     title: "Детали бронирования",
@@ -132,8 +137,7 @@ export const ru: AppTexts = {
     {
       href: "/private-transfer-booking",
       title: "Детальное бронирование трансфера",
-      description:
-        "Спланируйте трансфер, выберите авто, маршрут и расписание.",
+      description: "Спланируйте трансфер, выберите авто, маршрут и расписание.",
     },
     {
       href: "/taxi-in-cuba",
@@ -143,8 +147,7 @@ export const ru: AppTexts = {
     },
   ],
   FAQs: {
-    title:
-      "Сколько стоит такси на Кубе, как его заказать и другие вопросы...",
+    title: "Сколько стоит такси на Кубе, как его заказать и другие вопросы...",
     items: [
       {
         question: "Как заранее забронировать такси на Кубе?",
@@ -157,8 +160,7 @@ export const ru: AppTexts = {
           "Да. Мы выполняем частные трансферы из аэропорта имени Хосе Марти в любую точку Кубы, включая Варадеро, Виньалес, Кайо Санта Мария и др.",
       },
       {
-        question:
-          "Сколько стоит такси из аэропорта Варадеро до Гаваны?",
+        question: "Сколько стоит такси из аэропорта Варадеро до Гаваны?",
         answer:
           "Цена частного трансфера из аэропорта Варадеро до Гаваны начинается от 100 USD за машину. Полный список смотрите в нашем [блоге](/blog/how-much-is-a-taxi-in-cuba).",
       },
@@ -179,8 +181,7 @@ export const ru: AppTexts = {
           "Мы отслеживаем прибытие рейса. В случае задержки водитель подождёт без доплаты, если указан верный номер рейса.",
       },
       {
-        question:
-          "Предлагаете ли вы частные экскурсии помимо трансферов?",
+        question: "Предлагаете ли вы частные экскурсии помимо трансферов?",
         answer:
           "Да, доступны частные экскурсии, например в Виньалес, Сьенфуэгос и Тринидад.",
       },
@@ -219,7 +220,7 @@ export const ru: AppTexts = {
     copied: "✅ Шаблон скопирован. Вставьте его в чат Telegram",
     error: "❌ Произошла ошибка при подготовке бронирования",
   },
-  howMuchIsATaxi:
-    "Сколько стоит такси на Кубе в 2025 году?",  mainSeo:mainSeo.ru ,confirmationTexts:confirmationTexts.ru
-    
+  howMuchIsATaxi: "Сколько стоит такси на Кубе в 2025 году?",
+  mainSeo: mainSeo.ru,
+  confirmationTexts: confirmationTexts.ru,
 };

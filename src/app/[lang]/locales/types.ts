@@ -1,16 +1,17 @@
-import {  BlogSection, customMetaData, OnPageContent } from "@/seoUtils/metadata";
+import { BlogSection, customMetaData } from "@/seoUtils/metadata";
 
 export interface AppTexts {
-  confirmationTexts:any,
-  mainSeo:any
-  metadata: Partial<customMetaData>
-  header: any,
-  content: { hero: HeroSection, blog: BlogSection },
-  articles:any,
-  booking:any,
+  confirmationTexts: any;
+  mainSeo: any;
+  metadata: Partial<customMetaData>;
+  header: any;
+  content: { hero: HeroSection; blog: BlogSection };
+  articles: any;
+  booking: any;
   taxiGuide: string;
-  backToHome:string,
+  backToHome: string;
   exploreDestinations: string;
+  nav: Record<string, string>;
   hero: {
     h1: string;
     h2a: string;
@@ -135,5 +136,5 @@ export interface HeroSection {
   list: HeroList;
   link: HeroLink;
   cta: HeroCTA;
-  emphasis: string[];  // frases que deben resaltarse en color
+  emphasis: string[]; // frases que deben resaltarse en color
 }
