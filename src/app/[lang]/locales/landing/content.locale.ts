@@ -1,301 +1,337 @@
 export const mainSeo = {
-    en: {
-        container: "mx-auto max-w-7xl px-4 py-10 md:py-14",
-        sections: [
-            {
-                id: "online-taxi",
-                headingLevel: "h2",
-                title: "Book Taxi Online in Cuba: Fast, Safe, Transparent",
-                text: `Booking a taxi in Cuba used to be complicated—until now. With CubanTaxis you see the price before you ride, get confirmations via WhatsApp/Telegram, and choose modern sedans, classic cars, or minivans. English-speaking support makes planning easy.`,
-                bullets: [
-                    "Upfront pricing, no surprises.",
-                    "Door-to-door pickups and airport meet & greet.",
-                    "Pay online or upon pickup—your choice.",
-                ],
-                // TODO placeholders for links you will add later
-                todos: [
-                    { label: "TODO: Online taxi service link", href: "/en/blog/online-taxi-service-cuba" },
-                    { label: "TODO: Car rental vs taxi link", href: "/en/blog/car-rental-vs-taxi-cuba" },
-                ],
-                media: { src: "/online-taxi-havana-classic.jpg", alt: "Online taxi booking in Cuba with a classic car ready in Old Havana" },
-                reverse: false as const,
-            },
-            {
-                id: "car-rental-vs-taxi",
-                headingLevel: "h3",
-                title: "Private Taxi or Car Rental—What’s Better?",
-                text: `For most trips, private taxis win on convenience and price: no deposit, fuel lines, or hidden costs. For long multi-day driving, a rental can make sense—but for airport transfers and intercity rides, taxis are simpler and often cheaper. Get a professional driver who knows the best way to travel in Cuba. Come to enjoy, not to drive.`,
-                table: {
-                    headers: ["Route", "Car Rental (avg)", "CubanTaxis"],
-                    rows: [
-                        ["Havana → Varadero", "$110/day", "$80 one-way"],
-                        ["Havana → Cayo Coco", "$280/day", "$250 one-way"],
-                    ],
-                    note: "Example estimates (per car). Actual price varies by vehicle and schedule.",
-                },
-                todos: [{ label: "TODO: Full comparison link", href: "/en/blog/car-rental-vs-taxi-cuba" }],
-                media: { src: "/car-rental-vs-taxi.jpg", alt: "Comparing private taxi vs car rental in Cuba" },
-                reverse: true as const,
-            },
-            {
-                id: "landmarks",
-                headingLevel: "h2",
-                title: "Top Landmarks to Visit by Taxi",
-                text: `Cuba is more than beaches—it’s music, colonial architecture, and sweeping valleys. Taxis let you stitch must-see spots into a single day without juggling public transport or tours with fixed schedules.`,
-                bulletsGrid: [
-                    "Old Havana (Habana Vieja)",
-                    "Viñales Valley",
-                    "Varadero Beach",
-                    "Trinidad",
-                    "Cienfuegos",
-                    "El Capitolio, Havana",
-                ],
-                todos: [{ label: "TODO: Landmark guide link", href: "/en/blog/top-landmarks-in-cuba" }],
-                media: { src: "/landmarks-vinales-trinidad.webp", alt: "Viñales Valley and Trinidad colonial streets, landmark taxi day trip" },
-                reverse: false as const,
-            },
-            {
-                id: "cities",
-                headingLevel: "h3",
-                title: "Major Cities & Easiest Ways to Travel",
-                text: `From cosmopolitan Havana to calm Cienfuegos, intercity taxis are the easiest way to hop between Cuba’s big cities—on your schedule, with luggage help, and fewer transfers.`,
-                ordered: [
-                    "Havana – Capital & cultural hub",
-                    "Santiago de Cuba – Music & history",
-                    "Holguín – Eastern tourism center",
-                    "Santa Clara – Historic heartland",
-                    "Cienfuegos – Elegant southern city",
-                ],
-                todos: [{ label: "TODO: Big cities guide link", href: "/en/blog/big-cities-in-cuba" }],
-                media: { src: "/cities-havana-cienfuegos.webp", alt: "Havana and Cienfuegos cityscapes connected by private taxi" },
-                reverse: true as const,
-            },
-            {
-                id: "airports",
-                headingLevel: "h2",
-                title: "From the Airport to Your Hotel—Made Easy",
-                text: `New visitors often ask how to get from the airport to the hotel. Our drivers wait at arrivals, help with luggage, and drive you straight to your door. You’ll see the price before you ride.`,
-                list: [
-                    "Havana (HAV) → Old Havana, Vedado, Miramar",
-                    "Varadero (VRA) → Resorts and Airbnb stays",
-                    "Santa Clara (SNU) → Gateway to Cayo Santa María",
-                    "Cayo Coco (CYO) → All-inclusive resorts",
-                ],
-                table: {
-                    headers: ["Route", "From (USD)", "Duration"],
-                    rows: [
-                        ["HAV → Old Havana", "$30", "~30 min"],
-                        ["HAV → Varadero", "$80", "~2–2.5 h"],
-                        ["VRA → Varadero hotels", "$40–70", "~30–45 min"],
-                        ["CYO → Trinidad", "$180", "~3 h 30 m"],
-                    ],
-                    note: "Per-car estimates; exact prices depend on vehicle and schedule.",
-                },
-                todos: [
-                    { label: "TODO: HAV page", href: "/en/transfers/havana-airport-hav" },
-                    { label: "TODO: VRA page", href: "/en/transfers/varadero-airport-vra" },
-                    { label: "TODO: SNU page", href: "/en/transfers/santa-clara-airport-snu" },
-                    { label: "TODO: CYO page", href: "/en/transfers/cayo-coco-airport-cyo" },
-                ],
-                media: { src: "/airport-arrivals-cuba.jpg", alt: "Driver meeting passengers at airport arrivals in Cuba" },
-                reverse: false as const,
-            },
-            {
-                id: "best-time",
-                headingLevel: "h2",
-                title: "Best Time to Visit Cuba",
-                text: `Cuba shines all year. High season (Nov–Apr) brings perfect beach weather and higher demand; low season (May–Oct) has occasional rain but better prices and fewer crowds. Book taxis early for smooth travel.`,
-                todos: [{ label: "TODO: Best time article", href: "/en/blog/best-time-to-visit-cuba" }],
-                media: { src: "/best-time-to-visit.jpg", alt: "Sunny season in Cuba great for beaches and sightseeing" },
-                reverse: true as const,
-            },
-            {
-                id: "tours",
-                headingLevel: "h2",
-                title: "Private Taxi Tours: Landmarks at Your Pace",
-                text: `Make the most of one day with flexible stops and local insight. Popular choices: Viñales (tobacco farms, horseback riding), East-Beaches loop from Havana, and landmark-rich Trinidad & Cienfuegos.`,
-                bullets: [
-                    "Viñales Valley full-day (approx. 10–11 h; optional horseback riding, museum stops).",
-                    "Havana → Playas del Este → Havana (approx. 5–6 h; flexible beach choice).",
-                    "Trinidad & Cienfuegos photo tour (colonial plazas, seaside boulevards).",
-                ],
-                smallNote: "Tours are priced per car; guide available on request.",
-                todos: [{ label: "TODO: Taxi tours article", href: "/en/blog/taxi-tours-cuba" }],
-                media: { src: "/taxi-tours-vinales.jpg", alt: "Private taxi tour through Viñales Valley tobacco farms" },
-                reverse: false as const,
-            },
+  en: {
+    container: "mx-auto max-w-7xl px-4 py-10 md:py-14",
+    sections: [
+      {
+        id: "online-taxi",
+        headingLevel: "h2",
+        title: "Book Taxi Online in Cuba: Fast, Safe, Transparent",
+        text: `Booking a taxi in Cuba used to be complicated—until now. With CubanTaxis you see the price before you ride, get confirmations via WhatsApp/Telegram, and choose modern sedans, classic cars, or minivans. English-speaking support makes planning easy.`,
+        bullets: [
+          "Upfront pricing, no surprises.",
+          "Door-to-door pickups and airport meet & greet.",
+          "Pay online or upon pickup—your choice.",
         ],
-        priceSnapshot: {
-            title: "Popular Private Transfer Estimates (per car)",
-            headers: ["From", "To", "Modern / Classic", "Minivan", "Approx. Time"],
-            rows: [
-                ["Havana Airport", "Old Havana", "$30–55", "—", "~30 min"],
-                ["Havana Airport", "Varadero", "$80–100", "$170–180", "~2–2.5 h"],
-                ["Varadero Airport", "Varadero Hotels", "$40", "$75", "~30–45 min"],
-                ["Havana", "Cienfuegos / Trinidad", "$155–250", "$220–325", "~3–4.5 h"],
-            ],
-            note: "Exact price depends on schedule and vehicle. Ask for a fixed quote before booking.",
+
+        // TODO placeholders for links you will add later
+        media: {
+          src: "/online-taxi-havana-classic.jpg",
+          alt: "Online taxi booking in Cuba with a classic car ready in Old Havana",
         },
-    }, es: {
-        container: "mx-auto max-w-7xl px-4 py-10 md:py-14",
-        sections: [
-            {
-                id: "online-taxi",
-                headingLevel: "h2",
-                title: "Reserva taxi online en Cuba: rápido, seguro y transparente",
-                text: `Reservar un taxi en Cuba solía ser complicado… hasta ahora. Con CubanTaxis ves el precio antes de viajar, recibes confirmaciones por WhatsApp o Telegram y eliges entre autos modernos, clásicos o minivanes. Soporte en inglés y español que facilita la planificación.`,
-                bullets: [
-                    "Precios claros, sin sorpresas.",
-                    "Recogida puerta a puerta y bienvenida en el aeropuerto.",
-                    "Paga online o al recoger el taxi: tú eliges.",
-                ],
-                todos: [
-                    { label: "TODO: Enlace servicio taxi online", href: "/es/blog/servicio-taxi-online-cuba" },
-                    { label: "TODO: Enlace alquiler vs taxi", href: "/es/blog/alquiler-de-autos-vs-taxi-cuba" },
-                ],
-                media: {
-                    src: "/online-taxi-havana-classic.jpg",
-                    alt: "Reserva de taxi online en Cuba con auto clásico en La Habana Vieja",
-                },
-                reverse: false as const,
-            },
-            {
-                id: "car-rental-vs-taxi",
-                headingLevel: "h3",
-                title: "Taxi privado o coche de alquiler: ¿qué conviene más?",
-                text: `Para la mayoría de los viajes, los taxis privados ganan por comodidad y precio: sin depósitos, sin colas de combustible ni costos ocultos. Para recorridos largos de varios días, puede convenir un alquiler, pero para traslados de aeropuerto y viajes entre ciudades, el taxi es más simple y económico. Obtén un chofer profesional que conoce las mejores rutas de Cuba. Ven a disfrutar, no a manejar.`,
-                table: {
-                    headers: ["Ruta", "Alquiler (prom.)", "CubanTaxis"],
-                    rows: [
-                        ["La Habana → Varadero", "$110/día", "$80 ida"],
-                        ["La Habana → Cayo Coco", "$280/día", "$250 ida"],
-                    ],
-                    note: "Precios de ejemplo (por coche). El costo real varía según vehículo y horario.",
-                },
-                todos: [
-                    { label: "TODO: Enlace comparación completa", href: "/es/blog/alquiler-de-autos-vs-taxi-cuba" },
-                ],
-                media: {
-                    src: "/car-rental-vs-taxi.jpg",
-                    alt: "Comparación entre taxi privado y coche de alquiler en Cuba",
-                },
-                reverse: true as const,
-            },
-            {
-                id: "landmarks",
-                headingLevel: "h2",
-                title: "Lugares imprescindibles para visitar en taxi",
-                text: `Cuba es mucho más que playas: es música, arquitectura colonial y valles espectaculares. Los taxis te permiten unir varios destinos icónicos en un solo día sin depender del transporte público o tours con horarios fijos.`,
-                bulletsGrid: [
-                    "La Habana Vieja",
-                    "Valle de Viñales",
-                    "Playa de Varadero",
-                    "Trinidad",
-                    "Cienfuegos",
-                    "El Capitolio, La Habana",
-                ],
-                todos: [{ label: "TODO: Enlace guía de lugares", href: "/es/blog/lugares-turisticos-de-cuba" }],
-                media: {
-                    src: "/landmarks-vinales-trinidad.webp",
-                    alt: "Valle de Viñales y calles coloniales de Trinidad, recorrido en taxi",
-                },
-                reverse: false as const,
-            },
-            {
-                id: "cities",
-                headingLevel: "h3",
-                title: "Principales ciudades y cómo viajar entre ellas",
-                text: `Desde la cosmopolita La Habana hasta la tranquila Cienfuegos, los taxis interprovinciales son la forma más cómoda de moverse entre las grandes ciudades de Cuba: con tu propio horario, ayuda con el equipaje y sin transbordos.`,
-                ordered: [
-                    "La Habana – Capital y centro cultural",
-                    "Santiago de Cuba – Música e historia",
-                    "Holguín – Centro turístico del oriente",
-                    "Santa Clara – Corazón histórico",
-                    "Cienfuegos – Ciudad elegante del sur",
-                ],
-                todos: [{ label: "TODO: Guía de ciudades principales", href: "/es/blog/ciudades-importantes-de-cuba" }],
-                media: {
-                    src: "/cities-havana-cienfuegos.webp",
-                    alt: "Paisajes urbanos de La Habana y Cienfuegos conectadas por taxi privado",
-                },
-                reverse: true as const,
-            },
-            {
-                id: "airports",
-                headingLevel: "h2",
-                title: "Del aeropuerto al hotel — fácil y directo",
-                text: `Muchos visitantes se preguntan cómo llegar del aeropuerto al alojamiento. Nuestros choferes te esperan en llegadas, ayudan con el equipaje y te llevan directo a tu destino. Siempre verás el precio antes de subir.`,
-                list: [
-                    "La Habana (HAV) → Habana Vieja, Vedado, Miramar",
-                    "Varadero (VRA) → Resorts y casas particulares",
-                    "Santa Clara (SNU) → Acceso a Cayo Santa María",
-                    "Cayo Coco (CYO) → Resorts todo incluido",
-                ],
-                table: {
-                    headers: ["Ruta", "Desde (USD)", "Duración"],
-                    rows: [
-                        ["HAV → Habana Vieja", "$30", "~30 min"],
-                        ["HAV → Varadero", "$80", "~2–2.5 h"],
-                        ["VRA → Hoteles Varadero", "$40–70", "~30–45 min"],
-                        ["CYO → Trinidad", "$180", "~3 h 30 min"],
-                    ],
-                    note: "Precios por coche; dependen del vehículo y el horario.",
-                },
-                todos: [
-                    { label: "TODO: Página HAV", href: "/es/transfers/aeropuerto-habana-hav" },
-                    { label: "TODO: Página VRA", href: "/es/transfers/aeropuerto-varadero-vra" },
-                    { label: "TODO: Página SNU", href: "/es/transfers/aeropuerto-santa-clara-snu" },
-                    { label: "TODO: Página CYO", href: "/es/transfers/aeropuerto-cayo-coco-cyo" },
-                ],
-                media: {
-                    src: "/airport-arrivals-cuba.jpg",
-                    alt: "Chofer esperando pasajeros en el aeropuerto de Cuba",
-                },
-                reverse: false as const,
-            },
-            {
-                id: "best-time",
-                headingLevel: "h2",
-                title: "Mejor época para visitar Cuba",
-                text: `Cuba brilla todo el año. La temporada alta (nov–abr) ofrece clima perfecto de playa y más demanda; la baja (may–oct) tiene lluvias ocasionales pero mejores precios y menos turistas. Reserva tu taxi con antelación para viajar sin contratiempos.`,
-                todos: [{ label: "TODO: Artículo sobre mejor época", href: "/es/blog/mejor-epoca-para-visitar-cuba" }],
-                media: {
-                    src: "/best-time-to-visit.jpg",
-                    alt: "Temporada soleada ideal para playas y excursiones en Cuba",
-                },
-                reverse: true as const,
-            },
-            {
-                id: "tours",
-                headingLevel: "h2",
-                title: "Tours privados en taxi: conoce Cuba a tu ritmo",
-                text: `Aprovecha el día al máximo con paradas flexibles y guía local. Los más populares: Viñales (fincas de tabaco y paseo a caballo), circuito Playas del Este desde La Habana y recorrido fotográfico por Trinidad y Cienfuegos.`,
-                bullets: [
-                    "Excursión completa a Viñales (10–11 h; paseo a caballo opcional, paradas en museos).",
-                    "La Habana → Playas del Este → La Habana (5–6 h; playa a elección).",
-                    "Tour fotográfico Trinidad & Cienfuegos (plazas coloniales, paseos marítimos).",
-                ],
-                smallNote: "Los tours se cotizan por coche; guía disponible bajo solicitud.",
-                todos: [{ label: "TODO: Artículo sobre tours", href: "/es/blog/tours-en-taxi-por-cuba" }],
-                media: {
-                    src: "/taxi-tours-vinales.jpg",
-                    alt: "Tour privado en taxi por el Valle de Viñales y sus plantaciones de tabaco",
-                },
-                reverse: false as const,
-            },
+        reverse: false as const,
+      },
+      {
+        id: "car-rental-vs-taxi",
+        headingLevel: "h3",
+        title: "Private Taxi or Car Rental—What’s Better?",
+        text: `For most trips, private taxis win on convenience and price: no deposit, fuel lines, or hidden costs. For long multi-day driving, a rental can make sense—but for airport transfers and intercity rides, taxis are simpler and often cheaper. Get a professional driver who knows the best way to travel in Cuba. Come to enjoy, not to drive.`,
+        table: {
+          headers: ["Route", "Car Rental (avg)", "CubanTaxis"],
+          rows: [
+            ["Havana → Varadero", "$110/day", "$80 one-way"],
+            ["Havana → Cayo Coco", "$280/day", "$250 one-way"],
+          ],
+          note: "Example estimates (per car). Actual price varies by vehicle and schedule.",
+        },
+        todos: [
+          {
+            label: "Car rental vs taxi",
+            href: "/en/blog/private-taxi-or-car-rental",
+          },
         ],
-        priceSnapshot: {
-            title: "Precios estimados de traslados privados (por coche)",
-            headers: ["Desde", "Hasta", "Moderno / Clásico", "Minivan", "Tiempo aprox."],
-            rows: [
-                ["Aeropuerto de La Habana", "Habana Vieja", "$30–55", "—", "~30 min"],
-                ["Aeropuerto de La Habana", "Varadero", "$80–100", "$170–180", "~2–2.5 h"],
-                ["Aeropuerto de Varadero", "Hoteles Varadero", "$40", "$75", "~30–45 min"],
-                ["La Habana", "Cienfuegos / Trinidad", "$155–250", "$220–325", "~3–4.5 h"],
-            ],
-            note: "El precio exacto depende del horario y del vehículo. Solicita una cotización fija antes de reservar.",
+
+        media: {
+          src: "/car-rental-vs-taxi.jpg",
+          alt: "Comparing private taxi vs car rental in Cuba",
         },
-    },  fr: {
+        reverse: true as const,
+      },
+      {
+        id: "landmarks",
+        headingLevel: "h2",
+        title: "Top Landmarks to Visit by Taxi",
+        text: `Cuba is more than beaches—it’s music, colonial architecture, and sweeping valleys. Taxis let you stitch must-see spots into a single day without juggling public transport or tours with fixed schedules.`,
+        bulletsGrid: [
+          "Old Havana (Habana Vieja)",
+          "Viñales Valley",
+          "Varadero Beach",
+          "Trinidad",
+          "Cienfuegos",
+          "El Capitolio, Havana",
+        ],
+        media: {
+          src: "/landmarks-vinales-trinidad.webp",
+          alt: "Viñales Valley and Trinidad colonial streets, landmark taxi day trip",
+        },
+        reverse: false as const,
+      },
+      {
+        id: "cities",
+        headingLevel: "h3",
+        title: "Major Cities & Easiest Ways to Travel",
+        text: `From cosmopolitan Havana to calm Cienfuegos, intercity taxis are the easiest way to hop between Cuba’s big cities—on your schedule, with luggage help, and fewer transfers.`,
+        ordered: [
+          "Havana – Capital & cultural hub",
+          "Santiago de Cuba – Music & history",
+          "Holguín – Eastern tourism center",
+          "Santa Clara – Historic heartland",
+          "Cienfuegos – Elegant southern city",
+        ],
+        media: {
+          src: "/cities-havana-cienfuegos.webp",
+          alt: "Havana and Cienfuegos cityscapes connected by private taxi",
+        },
+        reverse: true as const,
+      },
+      {
+        id: "airports",
+        headingLevel: "h2",
+        title: "From the Airport to Your Hotel—Made Easy",
+        text: `New visitors often ask how to get from the airport to the hotel. Our drivers wait at arrivals, help with luggage, and drive you straight to your door. You’ll see the price before you ride.`,
+        list: [
+          "Havana (HAV) → Old Havana, Vedado, Miramar",
+          "Varadero (VRA) → Resorts and Airbnb stays",
+          "Santa Clara (SNU) → Gateway to Cayo Santa María",
+          "Cayo Coco (CYO) → All-inclusive resorts",
+        ],
+        table: {
+          headers: ["Route", "From (USD)", "Duration"],
+          rows: [
+            ["HAV → Old Havana", "$30", "~30 min"],
+            ["HAV → Varadero", "$80", "~2–2.5 h"],
+            ["VRA → Varadero hotels", "$40–70", "~30–45 min"],
+            ["CYO → Trinidad", "$180", "~3 h 30 m"],
+          ],
+          note: "Per-car estimates; exact prices depend on vehicle and schedule.",
+        },
+        media: {
+          src: "/airport-arrivals-cuba.jpg",
+          alt: "Driver meeting passengers at airport arrivals in Cuba",
+        },
+        reverse: false as const,
+      },
+      {
+        id: "best-time",
+        headingLevel: "h2",
+        title: "Best Time to Visit Cuba",
+        text: `Cuba shines all year. High season (Nov–Apr) brings perfect beach weather and higher demand; low season (May–Oct) has occasional rain but better prices and fewer crowds. Book taxis early for smooth travel.`,
+        media: {
+          src: "/best-time-to-visit.jpg",
+          alt: "Sunny season in Cuba great for beaches and sightseeing",
+        },
+        reverse: true as const,
+      },
+      {
+        id: "tours",
+        headingLevel: "h2",
+        title: "Private Taxi Tours: Landmarks at Your Pace",
+        text: `Make the most of one day with flexible stops and local insight. Popular choices: Viñales (tobacco farms, horseback riding), East-Beaches loop from Havana, and landmark-rich Trinidad & Cienfuegos.`,
+        bullets: [
+          "Viñales Valley full-day (approx. 10–11 h; optional horseback riding, museum stops).",
+          "Havana → Playas del Este → Havana (approx. 5–6 h; flexible beach choice).",
+          "Trinidad & Cienfuegos photo tour (colonial plazas, seaside boulevards).",
+        ],
+        smallNote: "Tours are priced per car; guide available on request.",
+        media: {
+          src: "/taxi-tours-vinales.jpg",
+          alt: "Private taxi tour through Viñales Valley tobacco farms",
+        },
+        reverse: false as const,
+      },
+    ],
+    priceSnapshot: {
+      title: "Popular Private Transfer Estimates (per car)",
+      headers: ["From", "To", "Modern / Classic", "Minivan", "Approx. Time"],
+      rows: [
+        ["Havana Airport", "Old Havana", "$30–55", "—", "~30 min"],
+        ["Havana Airport", "Varadero", "$80–100", "$170–180", "~2–2.5 h"],
+        ["Varadero Airport", "Varadero Hotels", "$40", "$75", "~30–45 min"],
+        ["Havana", "Cienfuegos / Trinidad", "$155–250", "$220–325", "~3–4.5 h"],
+      ],
+      note: "Exact price depends on schedule and vehicle. Ask for a fixed quote before booking.",
+    },
+  },
+  es: {
+    container: "mx-auto max-w-7xl px-4 py-10 md:py-14",
+    sections: [
+      {
+        id: "online-taxi",
+        headingLevel: "h2",
+        title: "Reserva taxi online en Cuba: rápido, seguro y transparente",
+        text: `Reservar un taxi en Cuba solía ser complicado… hasta ahora. Con CubanTaxis ves el precio antes de viajar, recibes confirmaciones por WhatsApp o Telegram y eliges entre autos modernos, clásicos o minivanes. Soporte en inglés y español que facilita la planificación.`,
+        bullets: [
+          "Precios claros, sin sorpresas.",
+          "Recogida puerta a puerta y bienvenida en el aeropuerto.",
+          "Paga online o al recoger el taxi: tú eliges.",
+        ],
+
+        media: {
+          src: "/online-taxi-havana-classic.jpg",
+          alt: "Reserva de taxi online en Cuba con auto clásico en La Habana Vieja",
+        },
+        reverse: false as const,
+      },
+      {
+        id: "car-rental-vs-taxi",
+        headingLevel: "h3",
+        title: "Taxi privado o coche de alquiler: ¿qué conviene más?",
+        text: `Para la mayoría de los viajes, los taxis privados ganan por comodidad y precio: sin depósitos, sin colas de combustible ni costos ocultos. Para recorridos largos de varios días, puede convenir un alquiler, pero para traslados de aeropuerto y viajes entre ciudades, el taxi es más simple y económico. Obtén un chofer profesional que conoce las mejores rutas de Cuba. Ven a disfrutar, no a manejar.`,
+        table: {
+          headers: ["Ruta", "Alquiler (prom.)", "CubanTaxis"],
+          rows: [
+            ["La Habana → Varadero", "$110/día", "$80 ida"],
+            ["La Habana → Cayo Coco", "$280/día", "$250 ida"],
+          ],
+          note: "Precios de ejemplo (por coche). El costo real varía según vehículo y horario.",
+        },
+        todo: [
+          {
+            label: "Alquiler de coche vs taxi",
+            href: "/es/blog/private-taxi-or-car-rental",
+          },
+        ],
+        media: {
+          src: "/car-rental-vs-taxi.jpg",
+          alt: "Comparación entre taxi privado y coche de alquiler en Cuba",
+        },
+        reverse: true as const,
+      },
+      {
+        id: "landmarks",
+        headingLevel: "h2",
+        title: "Lugares imprescindibles para visitar en taxi",
+        text: `Cuba es mucho más que playas: es música, arquitectura colonial y valles espectaculares. Los taxis te permiten unir varios destinos icónicos en un solo día sin depender del transporte público o tours con horarios fijos.`,
+        bulletsGrid: [
+          "La Habana Vieja",
+          "Valle de Viñales",
+          "Playa de Varadero",
+          "Trinidad",
+          "Cienfuegos",
+          "El Capitolio, La Habana",
+        ],
+
+        media: {
+          src: "/landmarks-vinales-trinidad.webp",
+          alt: "Valle de Viñales y calles coloniales de Trinidad, recorrido en taxi",
+        },
+        reverse: false as const,
+      },
+      {
+        id: "cities",
+        headingLevel: "h3",
+        title: "Principales ciudades y cómo viajar entre ellas",
+        text: `Desde la cosmopolita La Habana hasta la tranquila Cienfuegos, los taxis interprovinciales son la forma más cómoda de moverse entre las grandes ciudades de Cuba: con tu propio horario, ayuda con el equipaje y sin transbordos.`,
+        ordered: [
+          "La Habana – Capital y centro cultural",
+          "Santiago de Cuba – Música e historia",
+          "Holguín – Centro turístico del oriente",
+          "Santa Clara – Corazón histórico",
+          "Cienfuegos – Ciudad elegante del sur",
+        ],
+
+        media: {
+          src: "/cities-havana-cienfuegos.webp",
+          alt: "Paisajes urbanos de La Habana y Cienfuegos conectadas por taxi privado",
+        },
+        reverse: true as const,
+      },
+      {
+        id: "airports",
+        headingLevel: "h2",
+        title: "Del aeropuerto al hotel — fácil y directo",
+        text: `Muchos visitantes se preguntan cómo llegar del aeropuerto al alojamiento. Nuestros choferes te esperan en llegadas, ayudan con el equipaje y te llevan directo a tu destino. Siempre verás el precio antes de subir.`,
+        list: [
+          "La Habana (HAV) → Habana Vieja, Vedado, Miramar",
+          "Varadero (VRA) → Resorts y casas particulares",
+          "Santa Clara (SNU) → Acceso a Cayo Santa María",
+          "Cayo Coco (CYO) → Resorts todo incluido",
+        ],
+        table: {
+          headers: ["Ruta", "Desde (USD)", "Duración"],
+          rows: [
+            ["HAV → Habana Vieja", "$30", "~30 min"],
+            ["HAV → Varadero", "$80", "~2–2.5 h"],
+            ["VRA → Hoteles Varadero", "$40–70", "~30–45 min"],
+            ["CYO → Trinidad", "$180", "~3 h 30 min"],
+          ],
+          note: "Precios por coche; dependen del vehículo y el horario.",
+        },
+
+        media: {
+          src: "/airport-arrivals-cuba.jpg",
+          alt: "Chofer esperando pasajeros en el aeropuerto de Cuba",
+        },
+        reverse: false as const,
+      },
+      {
+        id: "best-time",
+        headingLevel: "h2",
+        title: "Mejor época para visitar Cuba",
+        text: `Cuba brilla todo el año. La temporada alta (nov–abr) ofrece clima perfecto de playa y más demanda; la baja (may–oct) tiene lluvias ocasionales pero mejores precios y menos turistas. Reserva tu taxi con antelación para viajar sin contratiempos.`,
+
+        media: {
+          src: "/best-time-to-visit.jpg",
+          alt: "Temporada soleada ideal para playas y excursiones en Cuba",
+        },
+        reverse: true as const,
+      },
+      {
+        id: "tours",
+        headingLevel: "h2",
+        title: "Tours privados en taxi: conoce Cuba a tu ritmo",
+        text: `Aprovecha el día al máximo con paradas flexibles y guía local. Los más populares: Viñales (fincas de tabaco y paseo a caballo), circuito Playas del Este desde La Habana y recorrido fotográfico por Trinidad y Cienfuegos.`,
+        bullets: [
+          "Excursión completa a Viñales (10–11 h; paseo a caballo opcional, paradas en museos).",
+          "La Habana → Playas del Este → La Habana (5–6 h; playa a elección).",
+          "Tour fotográfico Trinidad & Cienfuegos (plazas coloniales, paseos marítimos).",
+        ],
+        smallNote:
+          "Los tours se cotizan por coche; guía disponible bajo solicitud.",
+
+        media: {
+          src: "/taxi-tours-vinales.jpg",
+          alt: "Tour privado en taxi por el Valle de Viñales y sus plantaciones de tabaco",
+        },
+        reverse: false as const,
+      },
+    ],
+    priceSnapshot: {
+      title: "Precios estimados de traslados privados (por coche)",
+      headers: [
+        "Desde",
+        "Hasta",
+        "Moderno / Clásico",
+        "Minivan",
+        "Tiempo aprox.",
+      ],
+      rows: [
+        ["Aeropuerto de La Habana", "Habana Vieja", "$30–55", "—", "~30 min"],
+        [
+          "Aeropuerto de La Habana",
+          "Varadero",
+          "$80–100",
+          "$170–180",
+          "~2–2.5 h",
+        ],
+        [
+          "Aeropuerto de Varadero",
+          "Hoteles Varadero",
+          "$40",
+          "$75",
+          "~30–45 min",
+        ],
+        [
+          "La Habana",
+          "Cienfuegos / Trinidad",
+          "$155–250",
+          "$220–325",
+          "~3–4.5 h",
+        ],
+      ],
+      note: "El precio exacto depende del horario y del vehículo. Solicita una cotización fija antes de reservar.",
+    },
+  },
+  fr: {
     container: "mx-auto max-w-7xl px-4 py-10 md:py-14",
     sections: [
       {
@@ -308,11 +344,11 @@ export const mainSeo = {
           "Prise en charge porte à porte et accueil à l’aéroport.",
           "Payez en ligne ou à la prise en charge — à votre convenance.",
         ],
-        todos: [
-          { label: "TODO : Lien service de taxi en ligne", href: "/fr/blog/service-taxi-en-ligne-cuba" },
-          { label: "TODO : Lien location de voiture vs taxi", href: "/fr/blog/location-voiture-vs-taxi-cuba" },
-        ],
-        media: { src: "/online-taxi-havana-classic.jpg", alt: "Réservation de taxi en ligne à Cuba avec voiture classique à La Havane" },
+
+        media: {
+          src: "/online-taxi-havana-classic.jpg",
+          alt: "Réservation de taxi en ligne à Cuba avec voiture classique à La Havane",
+        },
         reverse: false as const,
       },
       {
@@ -328,8 +364,16 @@ export const mainSeo = {
           ],
           note: "Estimations par voiture. Les prix réels varient selon le véhicule et l’horaire.",
         },
-        todos: [{ label: "TODO : Lien comparaison complète", href: "/fr/blog/location-voiture-vs-taxi-cuba" }],
-        media: { src: "/car-rental-vs-taxi.jpg", alt: "Comparaison taxi privé vs voiture de location à Cuba" },
+        todo: [
+          {
+            label: "Location de voiture vs taxi",
+            href: "/fr/blog/private-taxi-or-car-rental",
+          },
+        ],
+        media: {
+          src: "/car-rental-vs-taxi.jpg",
+          alt: "Comparaison taxi privé vs voiture de location à Cuba",
+        },
         reverse: true as const,
       },
       {
@@ -345,8 +389,11 @@ export const mainSeo = {
           "Cienfuegos",
           "Le Capitole, La Havane",
         ],
-        todos: [{ label: "TODO : Lien guide des lieux", href: "/fr/blog/sites-touristiques-cuba" }],
-        media: { src: "/landmarks-vinales-trinidad.webp", alt: "Vallée de Viñales et rues coloniales de Trinidad" },
+
+        media: {
+          src: "/landmarks-vinales-trinidad.webp",
+          alt: "Vallée de Viñales et rues coloniales de Trinidad",
+        },
         reverse: false as const,
       },
       {
@@ -361,8 +408,11 @@ export const mainSeo = {
           "Santa Clara – Cœur historique",
           "Cienfuegos – Élégante ville du sud",
         ],
-        todos: [{ label: "TODO : Lien grandes villes", href: "/fr/blog/grandes-villes-de-cuba" }],
-        media: { src: "/cities-havana-cienfuegos.webp", alt: "Vues urbaines de La Havane et Cienfuegos reliées par taxi privé" },
+
+        media: {
+          src: "/cities-havana-cienfuegos.webp",
+          alt: "Vues urbaines de La Havane et Cienfuegos reliées par taxi privé",
+        },
         reverse: true as const,
       },
       {
@@ -386,13 +436,11 @@ export const mainSeo = {
           ],
           note: "Prix estimés par voiture ; varient selon le véhicule et l’horaire.",
         },
-        todos: [
-          { label: "TODO : Page HAV", href: "/fr/transferts/aeroport-la-havane-hav" },
-          { label: "TODO : Page VRA", href: "/fr/transferts/aeroport-varadero-vra" },
-          { label: "TODO : Page SNU", href: "/fr/transferts/aeroport-santa-clara-snu" },
-          { label: "TODO : Page CYO", href: "/fr/transferts/aeroport-cayo-coco-cyo" },
-        ],
-        media: { src: "/airport-arrivals-cuba.jpg", alt: "Chauffeur accueillant des voyageurs à l’aéroport de Cuba" },
+
+        media: {
+          src: "/airport-arrivals-cuba.jpg",
+          alt: "Chauffeur accueillant des voyageurs à l’aéroport de Cuba",
+        },
         reverse: false as const,
       },
       {
@@ -400,8 +448,11 @@ export const mainSeo = {
         headingLevel: "h2",
         title: "Meilleure période pour visiter Cuba",
         text: `Cuba est agréable toute l’année. La haute saison (nov–avr) offre un temps parfait et plus d’affluence ; la basse saison (mai–oct) apporte quelques pluies, mais aussi des prix plus bas et moins de touristes. Réservez tôt vos taxis pour voyager sereinement.`,
-        todos: [{ label: "TODO : Article sur la meilleure période", href: "/fr/blog/meilleure-periode-visiter-cuba" }],
-        media: { src: "/best-time-to-visit.jpg", alt: "Saison ensoleillée idéale pour les plages et les visites à Cuba" },
+
+        media: {
+          src: "/best-time-to-visit.jpg",
+          alt: "Saison ensoleillée idéale pour les plages et les visites à Cuba",
+        },
         reverse: true as const,
       },
       {
@@ -415,8 +466,11 @@ export const mainSeo = {
           "Tour photo Trinidad & Cienfuegos (places coloniales, front de mer).",
         ],
         smallNote: "Tarifs par voiture ; guide disponible sur demande.",
-        todos: [{ label: "TODO : Article sur les circuits", href: "/fr/blog/visites-en-taxi-cuba" }],
-        media: { src: "/taxi-tours-vinales.jpg", alt: "Excursion en taxi à travers la vallée de Viñales" },
+
+        media: {
+          src: "/taxi-tours-vinales.jpg",
+          alt: "Excursion en taxi à travers la vallée de Viñales",
+        },
         reverse: false as const,
       },
     ],
@@ -427,12 +481,18 @@ export const mainSeo = {
         ["Aéroport La Havane", "Vieille Havane", "$30–55", "—", "~30 min"],
         ["Aéroport La Havane", "Varadero", "$80–100", "$170–180", "~2–2.5 h"],
         ["Aéroport Varadero", "Hôtels Varadero", "$40", "$75", "~30–45 min"],
-        ["La Havane", "Cienfuegos / Trinidad", "$155–250", "$220–325", "~3–4.5 h"],
+        [
+          "La Havane",
+          "Cienfuegos / Trinidad",
+          "$155–250",
+          "$220–325",
+          "~3–4.5 h",
+        ],
       ],
       note: "Prix exact selon horaire et véhicule. Demandez un devis avant la réservation.",
     },
   },
- de: {
+  de: {
     container: "mx-auto max-w-7xl px-4 py-10 md:py-14",
     sections: [
       {
@@ -445,10 +505,7 @@ export const mainSeo = {
           "Abholung von Tür zu Tür und Begrüßung am Flughafen.",
           "Bezahlen online oder bei Abholung – du entscheidest.",
         ],
-        todos: [
-          { label: "TODO: Link Online-Taxi-Service", href: "/de/blog/online-taxi-service-kuba" },
-          { label: "TODO: Link Mietwagen vs. Taxi", href: "/de/blog/mietwagen-oder-taxi-kuba" },
-        ],
+
         media: {
           src: "/online-taxi-havana-classic.jpg",
           alt: "Online-Taxibuchung in Kuba mit Oldtimer in Alt-Havanna",
@@ -468,8 +525,16 @@ export const mainSeo = {
           ],
           note: "Beispielwerte (pro Auto). Der tatsächliche Preis hängt von Fahrzeug und Uhrzeit ab.",
         },
-        todos: [{ label: "TODO: Vollständiger Vergleich", href: "/de/blog/mietwagen-oder-taxi-kuba" }],
-        media: { src: "/car-rental-vs-taxi.jpg", alt: "Vergleich Privattaxi vs. Mietwagen in Kuba" },
+        todo: [
+          {
+            label: "Autovermietung vs Taxi",
+            href: "/de/blog/private-taxi-or-car-rental",
+          },
+        ],
+        media: {
+          src: "/car-rental-vs-taxi.jpg",
+          alt: "Vergleich Privattaxi vs. Mietwagen in Kuba",
+        },
         reverse: true as const,
       },
       {
@@ -485,8 +550,11 @@ export const mainSeo = {
           "Cienfuegos",
           "El Capitolio, Havanna",
         ],
-        todos: [{ label: "TODO: Guide zu Sehenswürdigkeiten", href: "/de/blog/sehenswuerdigkeiten-kuba" }],
-        media: { src: "/landmarks-vinales-trinidad.webp", alt: "Viñales-Tal und koloniale Straßen in Trinidad" },
+
+        media: {
+          src: "/landmarks-vinales-trinidad.webp",
+          alt: "Viñales-Tal und koloniale Straßen in Trinidad",
+        },
         reverse: false as const,
       },
       {
@@ -501,8 +569,11 @@ export const mainSeo = {
           "Santa Clara – Historisches Herz",
           "Cienfuegos – Elegante Stadt im Süden",
         ],
-        todos: [{ label: "TODO: Städte-Guide", href: "/de/blog/grosse-staedte-kuba" }],
-        media: { src: "/cities-havana-cienfuegos.webp", alt: "Skyline von Havanna und Cienfuegos, verbunden per Privattaxi" },
+
+        media: {
+          src: "/cities-havana-cienfuegos.webp",
+          alt: "Skyline von Havanna und Cienfuegos, verbunden per Privattaxi",
+        },
         reverse: true as const,
       },
       {
@@ -526,13 +597,11 @@ export const mainSeo = {
           ],
           note: "Schätzungen pro Auto; abhängig von Fahrzeug und Uhrzeit.",
         },
-        todos: [
-          { label: "TODO: HAV-Seite", href: "/de/transfers/flughafen-havanna-hav" },
-          { label: "TODO: VRA-Seite", href: "/de/transfers/flughafen-varadero-vra" },
-          { label: "TODO: SNU-Seite", href: "/de/transfers/flughafen-santa-clara-snu" },
-          { label: "TODO: CYO-Seite", href: "/de/transfers/flughafen-cayo-coco-cyo" },
-        ],
-        media: { src: "/airport-arrivals-cuba.jpg", alt: "Fahrer begrüßt Reisende in einem kubanischen Flughafen" },
+
+        media: {
+          src: "/airport-arrivals-cuba.jpg",
+          alt: "Fahrer begrüßt Reisende in einem kubanischen Flughafen",
+        },
         reverse: false as const,
       },
       {
@@ -540,8 +609,11 @@ export const mainSeo = {
         headingLevel: "h2",
         title: "Beste Reisezeit für Kuba",
         text: `Kuba ist das ganze Jahr über reizvoll. Hochsaison (Nov–Apr): perfektes Strandwetter, höhere Nachfrage. Nebensaison (Mai–Okt): gelegentliche Schauer, dafür bessere Preise und weniger Menschen. Taxis früh buchen für reibungslose Trips.`,
-        todos: [{ label: "TODO: Artikel beste Reisezeit", href: "/de/blog/beste-reisezeit-kuba" }],
-        media: { src: "/best-time-to-visit.jpg", alt: "Sonnige Saison in Kuba, ideal zum Baden und Sightseeing" },
+
+        media: {
+          src: "/best-time-to-visit.jpg",
+          alt: "Sonnige Saison in Kuba, ideal zum Baden und Sightseeing",
+        },
         reverse: true as const,
       },
       {
@@ -555,8 +627,11 @@ export const mainSeo = {
           "Foto-Tour Trinidad & Cienfuegos (Kolonialplätze, Uferpromenaden).",
         ],
         smallNote: "Preise pro Auto; Guide auf Anfrage.",
-        todos: [{ label: "TODO: Artikel Taxi-Touren", href: "/de/blog/taxi-touren-kuba" }],
-        media: { src: "/taxi-tours-vinales.jpg", alt: "Private Taxi-Tour durch das Viñales-Tal" },
+
+        media: {
+          src: "/taxi-tours-vinales.jpg",
+          alt: "Private Taxi-Tour durch das Viñales-Tal",
+        },
         reverse: false as const,
       },
     ],
@@ -567,11 +642,18 @@ export const mainSeo = {
         ["Flughafen Havanna", "Alt-Havanna", "$30–55", "—", "~30 Min"],
         ["Flughafen Havanna", "Varadero", "$80–100", "$170–180", "~2–2,5 Std"],
         ["Flughafen Varadero", "Hotels Varadero", "$40", "$75", "~30–45 Min"],
-        ["Havanna", "Cienfuegos / Trinidad", "$155–250", "$220–325", "~3–4,5 Std"],
+        [
+          "Havanna",
+          "Cienfuegos / Trinidad",
+          "$155–250",
+          "$220–325",
+          "~3–4,5 Std",
+        ],
       ],
       note: "Exakter Preis abhängig von Uhrzeit und Fahrzeug. Vor Buchung Festpreis anfragen.",
     },
-  }, ru: {
+  },
+  ru: {
     container: "mx-auto max-w-7xl px-4 py-10 md:py-14",
     sections: [
       {
@@ -584,10 +666,7 @@ export const mainSeo = {
           "Встреча в аэропорту и трансфер «от двери до двери».",
           "Оплата онлайн или при посадке — на ваш выбор.",
         ],
-        todos: [
-          { label: "TODO: Ссылка на онлайн-сервис такси", href: "/ru/blog/onlajn-taksi-na-kube" },
-          { label: "TODO: Ссылка прокат авто vs такси", href: "/ru/blog/arenda-avto-ili-taksi-na-kube" },
-        ],
+
         media: {
           src: "/online-taxi-havana-classic.jpg",
           alt: "Онлайн-заказ такси на Кубе, ретро-авто в Старой Гаване",
@@ -607,8 +686,16 @@ export const mainSeo = {
           ],
           note: "Примеры (за машину). Фактическая стоимость зависит от авто и времени.",
         },
-        todos: [{ label: "TODO: Полное сравнение", href: "/ru/blog/arenda-avto-ili-taksi-na-kube" }],
-        media: { src: "/car-rental-vs-taxi.jpg", alt: "Сравнение частного такси и проката авто на Кубе" },
+        todo: [
+          {
+            label: "Аренда автомобиля vs такси",
+            href: "/ru/blog/private-taxi-or-car-rental",
+          },
+        ],
+        media: {
+          src: "/car-rental-vs-taxi.jpg",
+          alt: "Сравнение частного такси и проката авто на Кубе",
+        },
         reverse: true as const,
       },
       {
@@ -624,8 +711,11 @@ export const mainSeo = {
           "Сьенфуэгос",
           "Капитолий, Гавана",
         ],
-        todos: [{ label: "TODO: Гид по достопримечательностям", href: "/ru/blog/dostoprimechatelnosti-kuby" }],
-        media: { src: "/landmarks-vinales-trinidad.webp", alt: "Долина Виньялес и колониальные улицы Тринидада" },
+
+        media: {
+          src: "/landmarks-vinales-trinidad.webp",
+          alt: "Долина Виньялес и колониальные улицы Тринидада",
+        },
         reverse: false as const,
       },
       {
@@ -640,8 +730,11 @@ export const mainSeo = {
           "Санта-Клара — историческое сердце",
           "Сьенфуэгос — элегантный город на юге",
         ],
-        todos: [{ label: "TODO: Гид по крупным городам", href: "/ru/blog/krupnye-goroda-kuby" }],
-        media: { src: "/cities-havana-cienfuegos.webp", alt: "Гавана и Сьенфуэгос, соединённые частным такси" },
+
+        media: {
+          src: "/cities-havana-cienfuegos.webp",
+          alt: "Гавана и Сьенфуэгос, соединённые частным такси",
+        },
         reverse: true as const,
       },
       {
@@ -665,13 +758,11 @@ export const mainSeo = {
           ],
           note: "Оценка на машину; зависит от авто и времени.",
         },
-        todos: [
-          { label: "TODO: Страница HAV", href: "/ru/transfers/aeroport-gavana-hav" },
-          { label: "TODO: Страница VRA", href: "/ru/transfers/aeroport-varadero-vra" },
-          { label: "TODO: Страница SNU", href: "/ru/transfers/aeroport-santa-klara-snu" },
-          { label: "TODO: Страница CYO", href: "/ru/transfers/aeroport-kajo-koko-cyo" },
-        ],
-        media: { src: "/airport-arrivals-cuba.jpg", alt: "Водитель встречает пассажиров в аэропорту на Кубе" },
+
+        media: {
+          src: "/airport-arrivals-cuba.jpg",
+          alt: "Водитель встречает пассажиров в аэропорту на Кубе",
+        },
         reverse: false as const,
       },
       {
@@ -679,8 +770,11 @@ export const mainSeo = {
         headingLevel: "h2",
         title: "Лучшее время для поездки на Кубу",
         text: `Куба хороша круглый год. Высокий сезон (ноя–апр) — идеальная погода для пляжа и больший спрос; низкий сезон (май–окт) — иногда дожди, зато ниже цены и меньше людей. Бронируйте такси заранее для спокойного путешествия.`,
-        todos: [{ label: "TODO: Статья о сезонах", href: "/ru/blog/luchshee-vremya-dlya-poezdki-na-kubu" }],
-        media: { src: "/best-time-to-visit.jpg", alt: "Солнечный сезон на Кубе для пляжей и экскурсий" },
+
+        media: {
+          src: "/best-time-to-visit.jpg",
+          alt: "Солнечный сезон на Кубе для пляжей и экскурсий",
+        },
         reverse: true as const,
       },
       {
@@ -694,8 +788,11 @@ export const mainSeo = {
           "Фототур Тринидад и Сьенфуэгос (колониальные площади, набережные).",
         ],
         smallNote: "Цена за машину; гид по запросу.",
-        todos: [{ label: "TODO: Статья о турах на такси", href: "/ru/blog/taksi-tury-po-kube" }],
-        media: { src: "/taxi-tours-vinales.jpg", alt: "Частный тур на такси по долине Виньялес" },
+
+        media: {
+          src: "/taxi-tours-vinales.jpg",
+          alt: "Частный тур на такси по долине Виньялес",
+        },
         reverse: false as const,
       },
     ],
@@ -710,7 +807,7 @@ export const mainSeo = {
       ],
       note: "Точная цена зависит от времени и типа авто. Запросите фиксированную смету перед бронированием.",
     },
-  },   // =============== 🇵🇹 Português ===============
+  }, // =============== 🇵🇹 Português ===============
   pt: {
     container: "mx-auto max-w-7xl px-4 py-10 md:py-14",
     sections: [
@@ -724,10 +821,7 @@ export const mainSeo = {
           "Transporte porta a porta e recepção no aeroporto.",
           "Pague online ou na retirada — você decide.",
         ],
-        todos: [
-          { label: "TODO: Link serviço de táxi online", href: "/pt/blog/servico-de-taxi-online-cuba" },
-          { label: "TODO: Link aluguel de carro vs táxi", href: "/pt/blog/aluguel-de-carro-ou-taxi-cuba" },
-        ],
+
         media: {
           src: "/online-taxi-havana-classic.jpg",
           alt: "Reserva de táxi online em Cuba com carro clássico em Habana Vieja",
@@ -747,8 +841,16 @@ export const mainSeo = {
           ],
           note: "Estimativas por carro. O preço real varia conforme o veículo e o horário.",
         },
-        todos: [{ label: "TODO: Comparativo completo", href: "/pt/blog/aluguel-de-carro-ou-taxi-cuba" }],
-        media: { src: "/car-rental-vs-taxi.jpg", alt: "Comparação táxi privado vs aluguel de carro em Cuba" },
+        todo: [
+          {
+            label: "Aluguel de carro vs táxi",
+            href: "/pt/blog/private-taxi-or-car-rental",
+          },
+        ],
+        media: {
+          src: "/car-rental-vs-taxi.jpg",
+          alt: "Comparação táxi privado vs aluguel de carro em Cuba",
+        },
         reverse: true as const,
       },
       {
@@ -764,8 +866,11 @@ export const mainSeo = {
           "Cienfuegos",
           "El Capitolio, Havana",
         ],
-        todos: [{ label: "TODO: Guia de pontos turísticos", href: "/pt/blog/pontos-turisticos-de-cuba" }],
-        media: { src: "/landmarks-vinales-trinidad.webp", alt: "Vale de Viñales e ruas coloniais de Trinidad" },
+
+        media: {
+          src: "/landmarks-vinales-trinidad.webp",
+          alt: "Vale de Viñales e ruas coloniais de Trinidad",
+        },
         reverse: false as const,
       },
       {
@@ -780,8 +885,11 @@ export const mainSeo = {
           "Santa Clara — Coração histórico",
           "Cienfuegos — Elegante cidade do sul",
         ],
-        todos: [{ label: "TODO: Guia de grandes cidades", href: "/pt/blog/grandes-cidades-de-cuba" }],
-        media: { src: "/cities-havana-cienfuegos.webp", alt: "Havana e Cienfuegos conectadas por táxi privado" },
+
+        media: {
+          src: "/cities-havana-cienfuegos.webp",
+          alt: "Havana e Cienfuegos conectadas por táxi privado",
+        },
         reverse: true as const,
       },
       {
@@ -805,13 +913,11 @@ export const mainSeo = {
           ],
           note: "Estimativas por carro; variam conforme veículo e horário.",
         },
-        todos: [
-          { label: "TODO: Página HAV", href: "/pt/transfers/aeroporto-de-havana-hav" },
-          { label: "TODO: Página VRA", href: "/pt/transfers/aeroporto-de-varadero-vra" },
-          { label: "TODO: Página SNU", href: "/pt/transfers/aeroporto-de-santa-clara-snu" },
-          { label: "TODO: Página CYO", href: "/pt/transfers/aeroporto-de-cayo-coco-cyo" },
-        ],
-        media: { src: "/airport-arrivals-cuba.jpg", alt: "Motorista recepcionando passageiros no aeroporto em Cuba" },
+
+        media: {
+          src: "/airport-arrivals-cuba.jpg",
+          alt: "Motorista recepcionando passageiros no aeroporto em Cuba",
+        },
         reverse: false as const,
       },
       {
@@ -819,8 +925,11 @@ export const mainSeo = {
         headingLevel: "h2",
         title: "Melhor época para visitar Cuba",
         text: `Cuba brilha o ano inteiro. Alta temporada (nov–abr) traz clima de praia perfeito e alta demanda; baixa temporada (mai–out) tem chuvas ocasionais, mas melhores preços e menos turistas. Reserve seu táxi com antecedência para uma viagem tranquila.`,
-        todos: [{ label: "TODO: Artigo melhor época", href: "/pt/blog/melhor-epoca-para-visitar-cuba" }],
-        media: { src: "/best-time-to-visit.jpg", alt: "Estação ensolarada em Cuba ideal para praias e passeios" },
+
+        media: {
+          src: "/best-time-to-visit.jpg",
+          alt: "Estação ensolarada em Cuba ideal para praias e passeios",
+        },
         reverse: true as const,
       },
       {
@@ -834,8 +943,11 @@ export const mainSeo = {
           "Tour fotográfico Trinidad & Cienfuegos (praças coloniais, orlas).",
         ],
         smallNote: "Valores por carro; guia disponível sob solicitação.",
-        todos: [{ label: "TODO: Artigo passeios de táxi", href: "/pt/blog/passeios-de-taxi-em-cuba" }],
-        media: { src: "/taxi-tours-vinales.jpg", alt: "Passeio privado de táxi pelo Vale de Viñales" },
+
+        media: {
+          src: "/taxi-tours-vinales.jpg",
+          alt: "Passeio privado de táxi pelo Vale de Viñales",
+        },
         reverse: false as const,
       },
     ],
@@ -845,11 +957,16 @@ export const mainSeo = {
       rows: [
         ["Aeroporto de Havana", "Habana Vieja", "$30–55", "—", "~30 min"],
         ["Aeroporto de Havana", "Varadero", "$80–100", "$170–180", "~2–2,5 h"],
-        ["Aeroporto de Varadero", "Hotéis Varadero", "$40", "$75", "~30–45 min"],
+        [
+          "Aeroporto de Varadero",
+          "Hotéis Varadero",
+          "$40",
+          "$75",
+          "~30–45 min",
+        ],
         ["Havana", "Cienfuegos / Trinidad", "$155–250", "$220–325", "~3–4,5 h"],
       ],
       note: "O preço final depende do horário e do veículo. Solicite um valor fixo antes de reservar.",
     },
   },
-
 };
