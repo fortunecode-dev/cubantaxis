@@ -6,6 +6,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import BackToHome from "./BackToHome";
 
 type HreflangMap = Record<string, string>;
 
@@ -72,7 +73,7 @@ type Props = {
   lang?: "en" | "es" | "fr" | "de" | "ru" | "pt" | (string & {});
   ctaText?: {
     customBooking?: string; // "Book your trip in advance"
-    fastBooking?: string;   // "Quick Booking"
+    fastBooking?: string; // "Quick Booking"
   };
 };
 
@@ -117,13 +118,23 @@ function buildPlaceJsonLd(place: PlaceProps, schemaType: SchemaKind = "Place") {
   };
   if (place.alternateName) base.alternateName = place.alternateName;
   if (place.website) base.url = place.website;
-  if (place.address) base.address = { "@type": "PostalAddress", ...place.address };
+  if (place.address)
+    base.address = { "@type": "PostalAddress", ...place.address };
   if (place.phone) base.telephone = place.phone;
   if (place.email) base.email = place.email;
-  if (place.geo) base.geo = { "@type": "GeoCoordinates", latitude: place.geo.latitude, longitude: place.geo.longitude };
+  if (place.geo)
+    base.geo = {
+      "@type": "GeoCoordinates",
+      latitude: place.geo.latitude,
+      longitude: place.geo.longitude,
+    };
   if (place.openingHours?.length) base.openingHours = place.openingHours;
   if (place.ratingValue && place.reviewCount) {
-    base.aggregateRating = { "@type": "AggregateRating", ratingValue: place.ratingValue, reviewCount: place.reviewCount };
+    base.aggregateRating = {
+      "@type": "AggregateRating",
+      ratingValue: place.ratingValue,
+      reviewCount: place.reviewCount,
+    };
   }
   return base;
 }
@@ -172,7 +183,9 @@ export default function PlaceSEOCard({
   },
 }: Props) {
   // Rutas CTA (idénticas a tu Hero)
-  const base = ["en", "es", "fr", "de", "ru", "pt"].includes(lang as string) ? `/${lang}` : "/en";
+  const base = ["en", "es", "fr", "de", "ru", "pt"].includes(lang as string)
+    ? `/${lang}`
+    : "/en";
   const bookingHref = `${base}/private-transfer-booking`;
   const quickBookingHref = `${base}/cuba-taxi-booking`;
 
@@ -187,8 +200,16 @@ export default function PlaceSEOCard({
     areaServed: "Cuba",
     availableLanguage: ["es", "en", "fr", "de", "ru", "pt"],
     potentialAction: [
-      { "@type": "ReserveAction", name: ctaText.customBooking, target: bookingHref },
-      { "@type": "ReserveAction", name: ctaText.fastBooking, target: quickBookingHref },
+      {
+        "@type": "ReserveAction",
+        name: ctaText.customBooking,
+        target: bookingHref,
+      },
+      {
+        "@type": "ReserveAction",
+        name: ctaText.fastBooking,
+        target: quickBookingHref,
+      },
     ],
   };
 
@@ -197,10 +218,26 @@ export default function PlaceSEOCard({
   return (
     <>
       {/* JSON-LD inline (Server Rendered) */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(placeLd) }} />
-      {bcLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(bcLd) }} />}
-      {faqLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(bookingLd) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(placeLd) }}
+      />
+      {bcLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(bcLd) }}
+        />
+      )}
+      {faqLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+        />
+      )}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(bookingLd) }}
+      />
 
       {/* CONTENEDOR PRINCIPAL CON ITEM SCOPE */}
       <article
@@ -217,7 +254,10 @@ export default function PlaceSEOCard({
             <span itemProp="name">{place.name}</span>
           </h1>
           {place.alternateName && (
-            <p className="mt-1 text-sm text-primary/80" itemProp="alternateName">
+            <p
+              className="mt-1 text-sm text-primary/80"
+              itemProp="alternateName"
+            >
               {place.alternateName}
             </p>
           )}
@@ -246,25 +286,41 @@ export default function PlaceSEOCard({
             <div className="mt-5 grid gap-4 sm:grid-cols-2">
               <address className="not-italic text-sm">
                 <div className="mb-1 font-semibold text-accent">Address</div>
-                <div itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
+                <div
+                  itemProp="address"
+                  itemScope
+                  itemType="https://schema.org/PostalAddress"
+                >
                   {place.address?.streetAddress && (
                     <div className="text-primary">
-                      <span itemProp="streetAddress">{place.address.streetAddress}</span>
+                      <span itemProp="streetAddress">
+                        {place.address.streetAddress}
+                      </span>
                     </div>
                   )}
                   <div className="text-primary/80">
                     {place.address?.addressLocality && (
-                      <span itemProp="addressLocality">{place.address.addressLocality}</span>
+                      <span itemProp="addressLocality">
+                        {place.address.addressLocality}
+                      </span>
                     )}
                     {place.address?.addressRegion && (
                       <span>
-                        , <span itemProp="addressRegion">{place.address.addressRegion}</span>
+                        ,{" "}
+                        <span itemProp="addressRegion">
+                          {place.address.addressRegion}
+                        </span>
                       </span>
                     )}
-                    {place.address?.postalCode && <> {place.address.postalCode}</>}
+                    {place.address?.postalCode && (
+                      <> {place.address.postalCode}</>
+                    )}
                     {place.address?.addressCountry && (
                       <span>
-                        , <span itemProp="addressCountry">{place.address.addressCountry}</span>
+                        ,{" "}
+                        <span itemProp="addressCountry">
+                          {place.address.addressCountry}
+                        </span>
                       </span>
                     )}
                   </div>
@@ -276,7 +332,11 @@ export default function PlaceSEOCard({
                   <li>
                     <span className="inline-flex items-center gap-2 text-primary">
                       <EmojiIcon name="phone" />
-                      <a className="font-bold underline hover:no-underline" href={`tel:${place.phone}`} itemProp="telephone">
+                      <a
+                        className="font-bold underline hover:no-underline"
+                        href={`tel:${place.phone}`}
+                        itemProp="telephone"
+                      >
                         {place.phone}
                       </a>
                     </span>
@@ -286,7 +346,11 @@ export default function PlaceSEOCard({
                   <li>
                     <span className="inline-flex items-center gap-2 text-primary">
                       <EmojiIcon name="mail" />
-                      <a className="font-bold underline hover:no-underline" href={`mailto:${place.email}`} itemProp="email">
+                      <a
+                        className="font-bold underline hover:no-underline"
+                        href={`mailto:${place.email}`}
+                        itemProp="email"
+                      >
                         {place.email}
                       </a>
                     </span>
@@ -303,7 +367,7 @@ export default function PlaceSEOCard({
                         rel="noopener"
                         target="_blank"
                       >
-                        {place.website}
+                        Official Website
                       </a>
                     </span>
                   </li>
@@ -312,11 +376,17 @@ export default function PlaceSEOCard({
                   <li className="mt-1">
                     <span className="inline-flex items-center gap-2 text-primary">
                       <EmojiIcon name="star" />
-                      <span itemProp="aggregateRating" itemScope itemType="https://schema.org/AggregateRating">
+                      <span
+                        itemProp="aggregateRating"
+                        itemScope
+                        itemType="https://schema.org/AggregateRating"
+                      >
                         <span itemProp="ratingValue" className="font-semibold">
                           {place.ratingValue}
                         </span>
-                        /5 · <span itemProp="reviewCount">{place.reviewCount}</span> reviews
+                        /5 ·{" "}
+                        <span itemProp="reviewCount">{place.reviewCount}</span>{" "}
+                        reviews
                       </span>
                     </span>
                   </li>
@@ -325,7 +395,10 @@ export default function PlaceSEOCard({
             </div>
 
             {/* Descripción */}
-            <p className="mt-5 text-base leading-relaxed text-primary" itemProp="description">
+            <p
+              className="mt-5 text-base leading-relaxed text-primary"
+              itemProp="description"
+            >
               {place.description}
             </p>
 
@@ -376,7 +449,9 @@ export default function PlaceSEOCard({
                                 <EmojiIcon name={srv.icon} />
                               </span>
                               <div className="min-w-0">
-                                <div className="truncate text-sm font-semibold text-primary">{srv.name}</div>
+                                <div className="truncate text-sm font-semibold text-primary">
+                                  {srv.name}
+                                </div>
                                 {srv.description && (
                                   <p className="mt-0.5 line-clamp-3 text-xs text-primary/80">
                                     {srv.description}
@@ -391,12 +466,15 @@ export default function PlaceSEOCard({
                   ))}
                 </div>
               ) : (
-                <p className="mt-2 text-sm text-primary/70">No services listed.</p>
+                <p className="mt-2 text-sm text-primary/70">
+                  No services listed.
+                </p>
               )}
             </div>
           </aside>
         </div>
       </article>
+      <BackToHome lang={lang} />
     </>
   );
 }

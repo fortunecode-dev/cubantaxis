@@ -28,36 +28,43 @@ export const content = {
     },
     emphasis: ["Taxi à Cuba"],
   },
-  blog: {
-    h1: "Prix des taxis, transferts et conseils de voyage à Cuba",
-    h2: "Contenu pratique pour les voyageurs : tarifs réels, transferts aéroport et astuces locales pour se déplacer facilement à Cuba.",
-    cta: {
-      customBooking: "Réservez votre trajet",
-      fastBooking: "RÉSERVEZ MAINTENANT !",
-      customBookingHref: `/fr/private-transfer-booking`,
-      fastBookingHref: `/fr/cuba-taxi-booking`,
-    },
-    anchor: "Parcourir les catégories",
-    readArticle: "Lire l'article",
-    listActions: [{ label: "Réserver", href: "/fr/cuba-taxi-booking" }],
-    list: [
-      {
-        h3: "Combien coûte un taxi à Cuba en 2025 ? Prix réalistes et conseils",
-        p: "Tarifs moyens, transferts aéroport, voitures classiques vs modernes et astuces pour éviter de payer trop cher sur les principales routes.",
-        date: "2025-09-01",
-        readMins: 7,
-        href: "/fr/blog/how-much-is-a-taxi-in-cuba",
-        image: "/cuba-cabs.jpg",
-        location: "Cuba",
-      },{
-    h3: "Taxi Privé ou Location de Voiture à Cuba 2025 — Quel est le meilleur ?",
-    p: "Comparez les taxis privés et les locations de voitures à Cuba. Découvrez quelle option convient le mieux à votre style de voyage, budget et confort pour des trajets depuis La Havane, Varadero, Trinidad ou Viñales.",
-    date: "2025-09-01",
-    readMins: 8,
-    href: "/blog/private-taxi-or-car-rental",
-    image: "/private-taxi-vs-car-rental.png",
-    location: "Cuba",
-}
-    ],
+ blog: {
+  h1: "Prix des taxis, transferts privés et conseils essentiels pour voyager à Cuba",
+  h2: "Guides mis à jour : tarifs réels, transferts sûrs depuis les aéroports et conseils pratiques pour vous déplacer facilement à Cuba.",
+  longIntro:
+    "Bienvenue sur le blog CubanTaxis — une ressource conçue pour aider les voyageurs à comprendre le système de transport à Cuba. Vous trouverez ici des tarifs réels, des guides détaillés de transferts entre La Havane, Varadero, Trinidad, Viñales et les principaux aéroports, ainsi que des conseils pour choisir entre voitures classiques, taxis modernes, minivans ou chauffeurs privés.",
+  cta: {
+    customBooking: "Réserver votre trajet",
+    fastBooking: "RÉSERVER MAINTENANT",
+    customBookingHref: `/private-transfer-booking`,
+    fastBookingHref: `/cuba-taxi-booking`,
   },
+  anchor: "Parcourir les catégories",
+  readArticle: "Lire l’article",
+  listActions: [{ label: "Réserver", href: "/cuba-taxi-booking" }],
+  aboutTitle: "À propos du blog CubanTaxis",
+  aboutText:
+    "Ce blog rassemble des guides pratiques basés sur une expérience réelle dans l’organisation de transferts à Cuba. Nous analysons les prix, comparons les véhicules, partageons des conseils et expliquons des détails souvent méconnus comme les surtaxes nocturnes, la disponibilité saisonnière ou les distances entre provinces.",
+  list: [
+    {
+      h3: "Combien coûte un taxi à Cuba en 2025 ? Prix réels, transferts et conseils essentiels",
+      p: "Un guide complet et à jour sur les tarifs de taxi, les transferts depuis les aéroports et les différences entre voitures classiques et modernes.",
+      date: "2025-09-01",
+      readMins: 7,
+      href: "/blog/how-much-is-a-taxi-in-cuba",
+      image: "/cuba-cabs.jpg",
+      location: "Cuba"
+    },
+    {
+      h3: "Taxi privé ou location de voiture à Cuba en 2025 — Prix, avantages et inconvénients",
+      p: "Comparatif pratique entre taxis privés et location de voiture à Cuba, incluant prix, assurances, disponibilité et recommandations.",
+      date: "2025-09-01",
+      readMins: 8,
+      href: "/blog/private-taxi-or-car-rental",
+      image: "/private-taxi-vs-car-rental.png",
+      location: "Cuba"
+    }
+  ]
+}
+
 };

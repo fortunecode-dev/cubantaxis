@@ -124,4 +124,7 @@ export interface BlogSection {
   readArticle: string;
   listActions: { label: string; href: string }[];
   list: BlogArticle[];
+  longIntro:string
+  aboutTitle:string
+  aboutText:string
 }

@@ -29,36 +29,42 @@ export const content = {
     emphasis: ["Taxi en Cuba"],
   },
   blog: {
-    h1: "Precios de taxis, traslados y consejos de viaje en Cuba",
-    h2: "Contenido práctico para viajeros: tarifas reales, traslados desde aeropuertos y consejos locales para moverse fácilmente por Cuba.",
-    cta: {
-      customBooking: "Reserva tu viaje",
-      fastBooking: "¡RESERVA AHORA!",
-      customBookingHref: `/es/private-transfer-booking`,
-      fastBookingHref: `/es/cuba-taxi-booking`,
+  h1: "Precios de taxis, traslados privados y consejos esenciales para viajar por Cuba",
+  h2: "Guías actualizadas con tarifas reales, traslados seguros desde los aeropuertos y recomendaciones prácticas para moverte por Cuba sin complicaciones.",
+  longIntro:
+    "Bienvenido al blog de CubanTaxis — un espacio creado para ayudarte a entender cómo funciona el transporte en Cuba. Aquí encontrarás tarifas reales de taxis, guías detalladas de traslados entre La Habana, Varadero, Trinidad, Viñales y los principales aeropuertos, además de recomendaciones para elegir entre autos clásicos, taxis modernos, minivanes o conductores privados. Nuestro objetivo es darte información honesta y actualizada para que puedas planificar tu viaje, evitar sobreprecios y moverte por la isla de forma segura y eficiente.",
+  cta: {
+    customBooking: "Reservar traslado",
+    fastBooking: "¡RESERVAR YA!",
+    customBookingHref: `/private-transfer-booking`,
+    fastBookingHref: `/cuba-taxi-booking`,
+  },
+  anchor: "Explorar categorías",
+  readArticle: "Leer artículo",
+  listActions: [{ label: "Reservar", href: "/cuba-taxi-booking" }],
+  aboutTitle: "Sobre el blog de CubanTaxis",
+  aboutText:
+    "Este blog reúne guías prácticas basadas en experiencia real organizando traslados por toda Cuba. Analizamos precios, comparamos tipos de autos, compartimos consejos útiles y explicamos detalles que los viajeros suelen desconocer — como recargos nocturnos, disponibilidad por temporada, rutas recomendadas y distancias entre provincias.",
+  list: [
+    {
+      h3: "¿Cuánto cuesta un taxi en Cuba en 2025? Precios reales, traslados y consejos esenciales",
+      p: "Guía completa y actualizada con tarifas reales, precios por rutas, traslados desde aeropuertos, diferencias entre autos clásicos y modernos, y cómo evitar pagar de más.",
+      date: "2025-09-01",
+      readMins: 7,
+      href: "/blog/how-much-is-a-taxi-in-cuba",
+      image: "/cuba-cabs.jpg",
+      location: "Cuba"
     },
-    anchor: "Explorar categorías",
-    readArticle: "Leer artículo",
-    listActions: [{ label: "Reservar", href: "/es/cuba-taxi-booking" }],
-    list: [
-      {
-        h3: "¿Cuánto cuesta un taxi en Cuba en 2025? Precios reales y consejos",
-        p: "Precios promedio, traslados desde aeropuertos, autos clásicos vs modernos y cómo evitar pagar de más en las principales rutas.",
-        date: "2025-09-01",
-        readMins: 7,
-        href: "/es/blog/how-much-is-a-taxi-in-cuba",
-        image: "/cuba-cabs.jpg",
-        location: "Cuba",
-      },{
-    h3: "Taxi Privado o Alquiler de Coche en Cuba 2025 — ¿Cuál es mejor?",
-    p: "Compara taxis privados y coches de alquiler en Cuba. Descubre qué opción se adapta mejor a tu estilo de viaje, presupuesto y comodidad para rutas desde La Habana, Varadero, Trinidad o Viñales.",
-    date: "2025-09-01",
-    readMins: 8,
-    href: "/blog/private-taxi-or-car-rental",
-    image: "/private-taxi-vs-car-rental.png",
-    location: "Cuba",
+    {
+      h3: "Taxi privado o renta de autos en Cuba 2025 — Precios, ventajas y desventajas",
+      p: "Comparativa práctica entre taxis privados y renta de autos en Cuba: precios reales, rutas, combustible, seguros y recomendaciones para viajar desde La Habana, Varadero, Trinidad o Viñales.",
+      date: "2025-09-01",
+      readMins: 8,
+      href: "/blog/private-taxi-or-car-rental",
+      image: "/private-taxi-vs-car-rental.png",
+      location: "Cuba"
+    }
+  ]
 }
 
-    ],
-  },
 };
