@@ -53,53 +53,10 @@ export default async function DestinationsPage({params}:any) {
 
   return (
     <>
-      {/* JSON-LD: ItemList of destinations */}
-      <Script
-        id="ld-json-destinations"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "ItemList",
-            itemListElement: itemListElements,
-          }),
-        }}
-      />
-
+     
       <main className="relative bg-white">
-        {/* Breadcrumbs — textos azules */}
-        <nav aria-label="Breadcrumb" className="mx-auto max-w-6xl px-4 pt-6">
-          <ol className="flex items-center gap-1 text-xs">
-            <li>
-              <Link href={`${lang=="en"?"":`/${lang}`}/`} prefetch={false} className="text-primary hover:text-accent hover:underline">
-                Home
-              </Link>
-            </li>
-            <li aria-hidden="true" className="text-primary">›</li>
-            <li>
-              <Link href={`${lang=="en"?"":`/${lang}`}/destinations-in-cuba`} prefetch={false} className="text-primary hover:text-accent hover:underline">
-                Destinations
-              </Link>
-            </li>
-            <li aria-hidden="true" className="text-primary">›</li>
-            <li className="text-primary">Cuba 2025</li>
-          </ol>
-        </nav>
-
         {/* HERO — encabezados rojos, textos azules */}
-        <header className="mx-auto max-w-6xl px-4 pb-4 pt-10 sm:pt-14">
-          <div className="mb-4 flex flex-wrap items-center gap-2">
-            <span className="inline-flex items-center rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-xs font-semibold text-accent">
-              2025 Guide
-            </span>
-            <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
-              Private transfers
-            </span>
-            <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
-              English-speaking drivers
-            </span>
-          </div>
-
+        <header className="mx-auto max-w-6xl px-4 pb-4 pt-3">
           <h1 className="text-3xl font-extrabold tracking-tight text-accent sm:text-4xl">
             Popular Taxi Destinations in Cuba (2025)
           </h1>

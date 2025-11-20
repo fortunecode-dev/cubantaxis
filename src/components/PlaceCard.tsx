@@ -242,7 +242,7 @@ export default function PlaceSEOCard({
       {/* CONTENEDOR PRINCIPAL CON ITEM SCOPE */}
       <article
         className={[
-          "mx-auto mt-18 max-w-5xl rounded-2xl border border-primary/15 bg-white shadow-sm",
+          "mx-auto mt-18 max-w-6xl rounded-2xl border border-primary/15 bg-white shadow-sm",
           className || "",
         ].join(" ")}
         itemScope

@@ -38,43 +38,8 @@ export default async function BlogPrivateTaxiOrCarRental({ params }: { params: L
     <main className="relative">
       <div className={`pointer-events-none absolute inset-0 -z-10`} />
 
-      <nav aria-label="Breadcrumb" className="mx-auto max-w-5xl px-4 pt-6">
-        <ol className="flex items-center gap-1 text-xs">
-          <li>
-            <a href={lang === "en" ? "/" : `/${lang}`} className="text-primary hover:text-accent hover:underline" prefetch-data="false">
-              {privateTaxiOrCarRental.breadcrumb.homeLabel}
-            </a>
-          </li>
-          <li aria-hidden="true" className="text-primary">›</li>
-          <li>
-            <a href={`${lang === "en" ? "" : `/${lang}`}/blog`} className="text-primary hover:text-accent hover:underline" prefetch-data="false">
-              {privateTaxiOrCarRental.breadcrumb.blogLabel}
-            </a>
-          </li>
-          <li aria-hidden="true" className="text-primary">›</li>
-          <li className="text-primary">{privateTaxiOrCarRental.breadcrumb.current}</li>
-        </ol>
-      </nav>
-
       {/* HERO */}
-      <header className="mx-auto max-w-5xl px-4 pb-4 pt-10 sm:pt-14">
-        <div className="mb-4 flex flex-wrap items-center gap-2">
-          {privateTaxiOrCarRental.badges.map((b: any) => (
-            <span
-              key={b.label}
-              className={`inline-flex items-center rounded-full border px-3 py-1 text-xs font-semibold ${
-                b.tone === "accent"
-                  ? "border-accent/30 bg-accent/10 text-accent"
-                  : b.tone === "primary"
-                  ? "border-primary/30 bg-primary/10 text-primary"
-                  : "border-neutral/30 bg-neutral/10 text-primary"
-              }`}
-            >
-              {b.label}
-            </span>
-          ))}
-        </div>
-
+      <header className="mx-auto max-w-6xl px-4 pb-4 pt-7 sm:pt-10">
         <h1 className="text-3xl font-extrabold tracking-tight text-accent sm:text-4xl">{privateTaxiOrCarRental.hero.h1}</h1>
         <p className="mt-4 max-w-3xl text-base leading-7 text-primary">{privateTaxiOrCarRental.hero.introP1}</p>
 
@@ -94,7 +59,7 @@ export default async function BlogPrivateTaxiOrCarRental({ params }: { params: L
       </header>
 
       {/* imagen destacada */}
-      <div className="mx-auto max-w-5xl px-4">
+      <div className="mx-auto max-w-6xl px-4">
         <div className="overflow-hidden rounded-2xl border border-primary/15 shadow-sm">
           <Image
             src={privateTaxiOrCarRental.hero.heroImage.src}
@@ -110,7 +75,7 @@ export default async function BlogPrivateTaxiOrCarRental({ params }: { params: L
       </div>
 
       {/* VALUE PROPS */}
-      <section className="mx-auto max-w-5xl px-4">
+      <section className="mx-auto max-w-6xl px-4">
         <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
           {privateTaxiOrCarRental.valueProps.map((c: any) => (
             <div key={c.title} className="rounded-2xl border border-primary/15 bg-white p-5 shadow-sm transition hover:shadow-md">
@@ -122,7 +87,7 @@ export default async function BlogPrivateTaxiOrCarRental({ params }: { params: L
       </section>
 
       {/* SECTIONS: privateTaxi & carRental (exposición adicional) */}
-      <section className="mx-auto max-w-5xl px-4">
+      <section className="mx-auto max-w-6xl px-4">
         <div className="mt-12 grid gap-6 md:grid-cols-2">
           <article className="rounded-2xl border border-primary/15 bg-white p-6 shadow-sm">
             <h3 className="text-lg font-bold text-accent">{privateTaxiOrCarRental.sections.privateTaxi.title}</h3>
@@ -163,7 +128,7 @@ export default async function BlogPrivateTaxiOrCarRental({ params }: { params: L
       </section>
 
       {/* COMPARISON */}
-      <section id="comparison" className="mx-auto max-w-5xl px-4">
+      <section id="comparison" className="mx-auto max-w-6xl px-4">
         <h2 className="mt-12 text-xl font-bold text-accent">{privateTaxiOrCarRental.sections.comparison.title}</h2>
         <div className="mt-4 overflow-hidden rounded-xl border border-primary/15 bg-white shadow-sm p-4">
           <div className="overflow-x-auto">
@@ -194,7 +159,7 @@ export default async function BlogPrivateTaxiOrCarRental({ params }: { params: L
       </section>
 
       {/* HYBRID / TOURS */}
-      <section className="mx-auto max-w-5xl px-4">
+      <section className="mx-auto max-w-6xl px-4">
         <h2 className="mt-12 text-lg font-bold text-accent">{privateTaxiOrCarRental.sections.hybridOption.title}</h2>
         <p className="mt-2 text-sm text-primary">{privateTaxiOrCarRental.sections.hybridOption.paragraph}</p>
         <ul className="mt-3 list-disc pl-5 text-sm text-primary">
@@ -208,7 +173,7 @@ export default async function BlogPrivateTaxiOrCarRental({ params }: { params: L
       </section>
 
       {/* PRICES TABLE */}
-      <section id="prices" className="mx-auto max-w-5xl px-4">
+      <section id="prices" className="mx-auto max-w-6xl px-4">
         <h2 className="mt-12 text-xl font-bold text-accent">{privateTaxiOrCarRental.prices.title}</h2>
         <p className="mt-1 text-sm text-primary">{privateTaxiOrCarRental.prices.intro}</p>
 
@@ -252,7 +217,7 @@ export default async function BlogPrivateTaxiOrCarRental({ params }: { params: L
       </section>
 
       {/* TIPS */}
-      <section className="mx-auto max-w-5xl px-4">
+      <section className="mx-auto max-w-6xl px-4">
         <h2 className="mt-12 text-lg font-bold text-accent">{privateTaxiOrCarRental.tips.whatAffects.title}</h2>
         <ul className="mt-3 grid grid-cols-1 gap-2 text-sm text-primary sm:grid-cols-2">
           {privateTaxiOrCarRental.tips.whatAffects.items.map((it: string) => <li key={it}>{it}</li>)}
@@ -269,7 +234,7 @@ export default async function BlogPrivateTaxiOrCarRental({ params }: { params: L
       </section>
 
       {/* CONCLUSION */}
-      <section className="mx-auto max-w-5xl px-4 pb-20">
+      <section className="mx-auto max-w-6xl px-4 pb-20">
         <h2 className="mt-12 text-lg font-bold text-accent">{privateTaxiOrCarRental.sections.conclusion.title}</h2>
         <p className="mt-2 text-sm text-primary">{privateTaxiOrCarRental.sections.conclusion.paragraph1}</p>
         <ul className="mt-3 list-disc pl-5 text-sm text-primary">

@@ -42,8 +42,8 @@ export default async function BlogPage({ params }: { params: LocaleParams }) {
   return (
     <main className="min-h-screen bg-white">
       {/* HERO */}
-      <section className="border-b border-primary/15 bg-white mt-5">
-        <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
+      <section className="border-b border-primary/15 bg-white ">
+        <div className="mx-auto max-w-6xl px-3 py-3">
           <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
             <div>
               <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-accent">

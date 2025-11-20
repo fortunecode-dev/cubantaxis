@@ -38,7 +38,6 @@ export default function HeroCubanTaxis({ lang }: Props) {
   return (
     <section className="bg-white">
       {/* Si tienes header fijo, este spacer evita CLS al entrar */}
-      <div className="h-16" />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 pb-14 pt-6 md:pt-10 lg:pt-14">
         <div className="grid items-center gap-10 lg:grid-cols-2">

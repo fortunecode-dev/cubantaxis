@@ -26,52 +26,9 @@ export default async function BlogTaxiCuba({ params }: { params: LocaleParams })
   return (
     <main className="relative">
       {/* fondo suave */}
-      <div className={`pointer-events-none absolute inset-0 -z-10 ${howMuchIsATaxiInCuba.ui.bgGradientClass}`} />
-
-      {/* migas */}
-      <nav aria-label="Breadcrumb" className="mx-auto max-w-5xl px-4 pt-6">
-        <ol className="flex items-center gap-1 text-xs">
-          <li>
-            <a
-              href={lang === "en" ? "/" : `/${lang}`}
-              className="text-primary hover:text-accent hover:underline"
-              prefetch-data="false"
-            >
-              {howMuchIsATaxiInCuba.breadcrumb.homeLabel}
-            </a>
-          </li>
-          <li aria-hidden="true" className="text-primary">›</li>
-          <li>
-            <a
-              href={`${lang === "en" ? "" : `/${lang}`}/blog`}
-              className="text-primary hover:text-accent hover:underline"
-              prefetch-data="false"
-            >
-              {howMuchIsATaxiInCuba.breadcrumb.blogLabel}
-            </a>
-          </li>
-          <li aria-hidden="true" className="text-primary">›</li>
-          <li className="text-primary">{howMuchIsATaxiInCuba.breadcrumb.current}</li>
-        </ol>
-      </nav>
 
       {/* HERO */}
-      <header className="mx-auto max-w-5xl px-4 pb-4 pt-10 sm:pt-14">
-        <div className="mb-4 flex flex-wrap items-center gap-2">
-          {howMuchIsATaxiInCuba.badges.map((b:any) => (
-            <span
-              key={b.label}
-              className={`inline-flex items-center rounded-full border px-3 py-1 text-xs font-semibold ${
-                b.tone === "accent"
-                  ? "border-accent/30 bg-accent/10 text-accent"
-                  : "border-primary/30 bg-primary/10 text-primary"
-              }`}
-            >
-              {b.label}
-            </span>
-          ))}
-        </div>
-
+      <header className="mx-auto max-w-6xl px-4 pb-4 pt-5 sm:pt-10">
         <h1 className="text-3xl font-extrabold tracking-tight text-accent sm:text-4xl">
           {howMuchIsATaxiInCuba.hero.h1}
         </h1>
@@ -102,7 +59,7 @@ export default async function BlogTaxiCuba({ params }: { params: LocaleParams })
       </header>
 
       {/* imagen destacada */}
-      <div className="mx-auto max-w-5xl px-4">
+      <div className="mx-auto max-w-6xl px-4">
         <div className="overflow-hidden rounded-2xl border border-primary/15 shadow-sm">
           <Image
             src={howMuchIsATaxiInCuba.hero.heroImage.src}
@@ -118,7 +75,7 @@ export default async function BlogTaxiCuba({ params }: { params: LocaleParams })
       </div>
 
       {/* VALOR */}
-      <section className="mx-auto max-w-5xl px-4">
+      <section className="mx-auto max-w-6xl px-4">
         <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
           {howMuchIsATaxiInCuba.valueProps.map((c:any) => (
             <div
@@ -133,7 +90,7 @@ export default async function BlogTaxiCuba({ params }: { params: LocaleParams })
       </section>
 
       {/* TABLA DE PRECIOS */}
-      <section id="prices" className="mx-auto max-w-5xl px-4">
+      <section id="prices" className="mx-auto max-w-6xl px-4">
         <h2 className="mt-12 text-xl font-bold text-accent">{howMuchIsATaxiInCuba.prices.title}</h2>
         <p className="mt-1 text-sm text-primary">
           {howMuchIsATaxiInCuba.prices.intro}
@@ -184,7 +141,7 @@ export default async function BlogTaxiCuba({ params }: { params: LocaleParams })
       </section>
 
       {/* TIPS SEO */}
-      <section className="mx-auto max-w-5xl px-4">
+      <section className="mx-auto max-w-6xl px-4">
         <h2 className="mt-12 text-lg font-bold text-accent">{howMuchIsATaxiInCuba.tips.whatAffects.title}</h2>
         <ul className="mt-3 grid grid-cols-1 gap-2 text-sm text-primary sm:grid-cols-2">
           {howMuchIsATaxiInCuba.tips.whatAffects.items.map((it:any) => (

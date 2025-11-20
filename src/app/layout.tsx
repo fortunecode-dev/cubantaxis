@@ -9,6 +9,7 @@ import FloatingContacts from "@/modules/layout/FloatingContacts";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { getTranslation } from "./[lang]/locales";
+import NextBreadcrumb from "@/components/BreadCumbs";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -16,23 +17,7 @@ const inter = Inter({
   variable: "--font-inter",
   display: "swap",
 });
-function buildRoutes(lang: string) {
-  return {
-    quick: `/${lang}/cuba-taxi-booking`,
-    custom: `/${lang}/private-transfer-booking`,
-    blog: `/${lang}/blog`,
-    faqs: `/${lang}/#faqs`, // si no tienes página /faqs, puedes usar ancla: `/${lang}#frequently-asked-questions`
-  };
-}
 
-function getSerpTexts(idioma: any) {
-  return {
-    quick: idioma?.nav?.quick ?? "Quick booking",
-    custom: idioma?.nav?.custom ?? "Custom transfer",
-    blog: idioma?.nav?.blog ?? "How much is a taxi in Cuba",
-    faqs: idioma?.nav?.faqs ?? "FAQs",
-  };
-}
 type Lang = "en" | "es" | "fr" | "de" | "ru" | "pt";
 
 export default async function RootLayout({
@@ -44,10 +29,8 @@ export default async function RootLayout({
   const h = await headers();
   const lang = (h.get("x-lang") as Lang) || "en";
   const isProd = process.env.NODE_ENV === "production";
-  const routes = buildRoutes(lang);
   const idioma = getTranslation(lang);
 
-  const texts = getSerpTexts(idioma);
   const heroSrc = "/hero/online-taxi-havana-classic.webp";
 
   return (
@@ -98,45 +81,21 @@ export default async function RootLayout({
                 })();
               `}
             </Script>
-            <Script type="application/ld+json">
-              {JSON.stringify({
-                "@context": "https://schema.org/",
-                "@type": "BreadcrumbList",
-                itemListElement: [
-                  {
-                    "@type": "ListItem",
-                    position: 1,
-                    name: texts.quick,
-                    item: `https://cubantaxis.com/${routes.quick}`,
-                  },
-                  {
-                    "@type": "ListItem",
-                    position: 2,
-                    name: texts.custom,
-                    item: `https://cubantaxis.com/${routes.custom}`,
-                  },
-                  {
-                    "@type": "ListItem",
-                    position: 3,
-                    name: texts.blog,
-                    item: `https://cubantaxis.com/${routes.blog}`,
-                  },
-                  {
-                    "@type": "ListItem",
-                    position: 4,
-                    name: texts.faqs,
-                    item: `https://cubantaxis.com/${routes.faqs}`,
-                  },
-                ],
-              })}
-            </Script>
+
           </>
         )}
       </head>
       <body className="font-sans antialiased min-h-screen scroll-smooth">
         <div id="top" />
-        <Header lang={lang} />
-        <main id="main">{children}</main>
+        <main id="main">
+          <Header lang={lang} />
+           <NextBreadcrumb
+            homeElement={'Home'}
+            capitalizeLinks
+          />
+
+          {children}
+        </main>
         <FloatingContacts lang={lang} />
         {isProd && (
           <>
