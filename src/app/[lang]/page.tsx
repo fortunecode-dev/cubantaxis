@@ -52,7 +52,7 @@ export default async function Home({
       <section className="mt-12 pt-3" id="frequently-asked-questions">
         <FaqSection faqs={idioma.FAQs.items} title={idioma.FAQs.title} />
       </section>
-       <Script type="application/ld+json" id="schema">
+       <Script type="application/ld+json" id="schema"  strategy="lazyOnload">
               {JSON.stringify({
                 "@context": "https://schema.org/",
                 "@type": "BreadcrumbList",

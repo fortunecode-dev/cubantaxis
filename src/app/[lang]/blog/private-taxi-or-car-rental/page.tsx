@@ -247,7 +247,7 @@ export default async function BlogPrivateTaxiOrCarRental({ params }: { params: L
       <Script
         id="ld-json-article"
         type="application/ld+json"
-        strategy="afterInteractive"
+        strategy="lazyOnload"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",

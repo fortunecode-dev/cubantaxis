@@ -84,6 +84,7 @@ export default async function BlogTaxiCuba({ params }: { params: LocaleParams })
       <header className="mx-auto max-w-6xl px-4 pb-4 pt-5 sm:pt-10">
         {jsonLdObjects.map((item, index) => <Script
           key={index}
+          strategy="lazyOnload"
           id={index.toString()}
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -228,7 +229,7 @@ export default async function BlogTaxiCuba({ params }: { params: LocaleParams })
       <Script
         id="ld-json-article"
         type="application/ld+json"
-        strategy="afterInteractive"
+        strategy="lazyOnload"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
