@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import type { AppTexts } from "@/app/[lang]/locales/types";
 import { cars, places } from "@/utils/constants";
-import { FaTelegramPlane, FaWhatsapp } from "react-icons/fa";
+import { FaTelegram, FaWhatsapp } from "react-icons/fa6";
 
 type BookingData = {
   name: string;
@@ -324,7 +324,7 @@ export default function ExtendedBookingForm({ idioma }: Props) {
           id="telegram"
           className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-accent px-5 py-3 text-sm font-semibold text-white transition hover:opacity-95"
         >
-          <FaTelegramPlane className="text-lg" aria-hidden />
+          <FaTelegram className="text-lg" aria-hidden />
           {idioma?.confirmations?.telegram}
         </button>
       </div>

@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { cars, places } from "@/utils/constants";
 
-import { FaWhatsapp, FaTelegramPlane } from "react-icons/fa";
+import { FaWhatsapp, FaTelegram } from "react-icons/fa6";
 
 type BookingData = {
   phone: string;
@@ -229,7 +229,7 @@ export default function QuickBookingForm({ idioma }: Props) {
           disabled={submitting}
           className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary/5 px-5 py-3 text-sm font-semibold text-primary ring-1 ring-inset ring-primary/20 transition hover:bg-primary/10 disabled:opacity-60"
         >
-          <FaTelegramPlane className="text-lg" aria-hidden />
+          <FaTelegram className="text-lg" aria-hidden />
           {idioma.confirmations.telegram}
         </button>
       </div>
