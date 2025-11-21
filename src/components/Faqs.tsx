@@ -76,7 +76,8 @@ export default function FaqSection({
 
   return (
     <section
-      className="bg-white"
+      className="bg-white mt-12 pt-3"
+      id="frequently-asked-questions"
       aria-labelledby="faq-title"
       // 💡 Speed Insights: difiere trabajo hasta ser visible sin provocar CLS
       style={{ contentVisibility: "auto", containIntrinsicSize: "900px" }}

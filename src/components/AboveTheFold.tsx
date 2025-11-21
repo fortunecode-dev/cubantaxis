@@ -1,5 +1,7 @@
+import { ResponsiveTable, TableSpec } from "@/utils/fragments";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
+import Link from "next/link";
 import {
   Key,
   ReactElement,
@@ -8,82 +10,7 @@ import {
   ReactPortal,
 } from "react";
 
-// import Link from "next/link"; // links se agregan luego
-
-// --------------------------------------
-// Responsive Table: cards (<md) / table (md+)
-// --------------------------------------
-type TableSpec = {
-  headers: string[];
-  rows: (string | number)[][];
-  note?: string;
-};
-
-function ResponsiveTable({ spec }: { spec: TableSpec }) {
-  return (
-    <>
-      {/* Mobile: cards */}
-      <div className="space-y-3 md:hidden">
-        {spec.rows.map((row, idx) => (
-          <div
-            key={idx}
-            className="rounded-xl border border-gray-200 bg-white p-3 shadow-sm"
-          >
-            {row.map((cell, i) => (
-              <div
-                key={i}
-                className="grid grid-cols-[130px_1fr] gap-2 py-1 text-sm"
-              >
-                <div className="font-medium text-gray-900">
-                  {spec.headers[i]}
-                </div>
-                <div className="text-gray-700 break-words whitespace-normal">
-                  {cell}
-                </div>
-              </div>
-            ))}
-          </div>
-        ))}
-      </div>
-
-      {/* Desktop: true table without forced min-width or overflow */}
-      <div className="hidden md:block">
-        <table className="w-full table-auto text-left text-sm text-gray-700">
-          <thead>
-            <tr className="border-b">
-              {spec.headers.map((h) => (
-                <th key={h} className="py-2 pr-4 font-semibold text-gray-900">
-                  {h}
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {spec.rows.map((row, rIdx) => (
-              <tr key={rIdx} className="border-b align-top">
-                {row.map((cell, cIdx) => (
-                  <td
-                    key={cIdx}
-                    className="py-2 pr-4 break-words whitespace-normal"
-                  >
-                    {cell}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-
-      {spec.note && <p className="mt-2 text-xs text-gray-500">{spec.note}</p>}
-    </>
-  );
-}
-
-// ========================
-// Component (server-ready)
-// ========================
-export default function CubanTaxisLandingContent({ idioma }: any) {
+export default function AboveTheFold({ idioma }: any) {
   return (
     <section className={idioma.container}>
       {idioma.sections.map(
@@ -317,14 +244,14 @@ export default function CubanTaxisLandingContent({ idioma }: any) {
               {s.todos?.length ? (
                 <div className="mt-4 flex flex-wrap gap-2">
                   {s.todos.map((t) => (
-                    <a
+                    <Link
                       key={t.href}
                       title={t.label}
                       href={`https://cubantaxis.com${t.href}`}
                       className="rounded-full border border-dashed border-gray-400 px-3 py-1 text-xs font-semibold text-gray-700"
                     >
                       {t.label}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               ) : null}
@@ -332,7 +259,7 @@ export default function CubanTaxisLandingContent({ idioma }: any) {
             </div>
 
             {/* Media column */}
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+            <div className="relative aspect-4/3 overflow-hidden rounded-2xl">
               <Image
                 src={s.media.src}
                 alt={s.media.alt}
