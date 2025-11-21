@@ -6,8 +6,8 @@ export const articles = {
         "Guide mis à jour des tarifs de taxi et des transferts à Cuba en 2025. Transferts aéroports La Havane (HAV) et Varadero (VRA) et liaisons interurbaines.",
       image: "https://cubantaxis.com/cuba-cabs.jpg",
       mainEntityOfPage: "https://cubantaxis.com/blog/taxi-cuba-2025",
-      authorName: "Cuban Taxis",
-      publisherName: "Cuban Taxis",
+      authorName: "CubanTaxis",
+      publisherName: "CubanTaxis",
       publisherLogo: "https://cubantaxis.com/logo.png",
     },
     ui: {

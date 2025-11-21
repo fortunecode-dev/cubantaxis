@@ -6,8 +6,8 @@ export const articles = {
         "Обновлённый гид по тарифам такси и трансферам на Кубе в 2025 году. Трансферы из аэропортов Гаваны (HAV) и Варадеро (VRA), а также межгородские маршруты.",
       image: "https://cubantaxis.com/cuba-cabs.jpg",
       mainEntityOfPage: "https://cubantaxis.com/blog/taxi-cuba-2025",
-      authorName: "Cuban Taxis",
-      publisherName: "Cuban Taxis",
+      authorName: "CubanTaxis",
+      publisherName: "CubanTaxis",
       publisherLogo: "https://cubantaxis.com/logo.png",
     },
     ui: {
@@ -91,8 +91,8 @@ export const articles = {
             "Сравните частные такси и аренду автомобилей на Кубе. Узнайте, какой вариант лучше подходит вашему стилю путешествий, бюджету и уровню комфорта для поездок из Гаваны, Варадеро, Тринидада или Виньялес.",
         image: "https://cubantaxis.com/blog/private-taxi-vs-car-rental.png",
         mainEntityOfPage: "https://cubantaxis.com/blog/private-taxi-vs-car-rental-cuba",
-        authorName: "Cuban Taxis",
-        publisherName: "Cuban Taxis",
+        authorName: "CubanTaxis",
+        publisherName: "CubanTaxis",
         publisherLogo: "https://cubantaxis.com/logo.png",
     },
     ui: {

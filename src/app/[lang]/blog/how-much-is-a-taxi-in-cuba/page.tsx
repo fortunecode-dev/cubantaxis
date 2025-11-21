@@ -5,14 +5,21 @@ import { LocaleLink } from "@/libs/i18n-nav";
 import { getTranslation } from "../../locales";
 import { LocaleParams } from "@/types/common";
 import type { Metadata } from "next";
+import { Product, WithContext } from 'schema-dts'
 
 export async function generateMetadata(
   { params }: { params: Promise<{ lang: string }> }
 ): Promise<Metadata> {
   const { lang } = await params;
   const idioma = getTranslation(lang);
+  const publishedAt = "2025-11-10";
+  const updatedAt = "2025-11-20";
   // Si ya usas tu builder, mantenlo
-  return (idioma.metadata.blog?.howMuchIsATaxiInCuba ?? {}) as Metadata;
+  return {...(idioma.metadata.blog?.howMuchIsATaxiInCuba ?? {}),openGraph: {
+      type: "article",
+      publishedTime: publishedAt,
+      modifiedTime: updatedAt,
+    },} as Metadata;
 }
 function formatUpdatedDate(d = new Date()) {
   const opts: Intl.DateTimeFormatOptions = { year: "numeric", month: "long", day: "numeric" };
@@ -20,15 +27,69 @@ function formatUpdatedDate(d = new Date()) {
 }
 export default async function BlogTaxiCuba({ params }: { params: LocaleParams }) {
   const { lang } = await params;
-  const {articles:{howMuchIsATaxiInCuba}} = getTranslation(lang);
+  const { articles: { howMuchIsATaxiInCuba } } = getTranslation(lang);
   const updatedAt = formatUpdatedDate();
+  const jsonLd = ({ route, classicModern, minivan, columns }: any) => {
+    const [from, to] = route.split("→")
+    return {
+      name: howMuchIsATaxiInCuba.prices.title,
+      description: route,
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "category": "Taxi Service",
+      "brand": {
+        "@type": "Brand",
+        "name": "CubanTaxis"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": from.trim()
+        },
+        {
+          "@type": "City",
+          "name": to.trim()
+        }
+      ],
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "USD",
+        "lowPrice": classicModern.slice(1),
+        "highPrice": minivan.slice(1),
+        "offerCount": "2",
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": columns.classicModern,
+            "price": classicModern.slice(1),
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          },
+          {
+            "@type": "Offer",
+            "name": columns.minivan,
+            "price": minivan.slice(1),
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          }
+        ]
+
+      }
+    }
+  }
+  const jsonLdObjects: WithContext<Product>[] = howMuchIsATaxiInCuba.prices.rows.map((row: any, i: number) => (jsonLd({ ...row, columns: howMuchIsATaxiInCuba.prices.columns })))
 
   return (
     <main className="relative">
-      {/* fondo suave */}
-
-      {/* HERO */}
       <header className="mx-auto max-w-6xl px-4 pb-4 pt-5 sm:pt-10">
+        {jsonLdObjects.map((item, index) => <Script
+          key={index}
+          id={index.toString()}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(item).replace(/</g, '\\u003c'),
+          }}
+        />)}
         <h1 className="text-3xl font-extrabold tracking-tight text-accent sm:text-4xl">
           {howMuchIsATaxiInCuba.hero.h1}
         </h1>
@@ -77,7 +138,7 @@ export default async function BlogTaxiCuba({ params }: { params: LocaleParams })
       {/* VALOR */}
       <section className="mx-auto max-w-6xl px-4">
         <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
-          {howMuchIsATaxiInCuba.valueProps.map((c:any) => (
+          {howMuchIsATaxiInCuba.valueProps.map((c: any) => (
             <div
               key={c.title}
               className="rounded-2xl border border-primary/15 bg-white p-5 shadow-sm transition hover:shadow-md"
@@ -108,7 +169,7 @@ export default async function BlogTaxiCuba({ params }: { params: LocaleParams })
                 </tr>
               </thead>
               <tbody>
-                {howMuchIsATaxiInCuba.prices.rows.map((row:any, i:number) => (
+                {howMuchIsATaxiInCuba.prices.rows.map((row: any, i: number) => (
                   <tr key={i} className="bg-white">
                     <td className="px-4 py-3 font-medium text-primary">{row.route}</td>
                     <td className="px-4 py-3 text-primary">{row.classicModern}</td>
@@ -144,7 +205,7 @@ export default async function BlogTaxiCuba({ params }: { params: LocaleParams })
       <section className="mx-auto max-w-6xl px-4">
         <h2 className="mt-12 text-lg font-bold text-accent">{howMuchIsATaxiInCuba.tips.whatAffects.title}</h2>
         <ul className="mt-3 grid grid-cols-1 gap-2 text-sm text-primary sm:grid-cols-2">
-          {howMuchIsATaxiInCuba.tips.whatAffects.items.map((it:any) => (
+          {howMuchIsATaxiInCuba.tips.whatAffects.items.map((it: any) => (
             <li key={it}>{it}</li>
           ))}
         </ul>

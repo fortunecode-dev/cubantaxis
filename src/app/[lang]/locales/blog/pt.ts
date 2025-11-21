@@ -6,8 +6,8 @@ export const articles = {
         "Guia atualizado de tarifas de táxi e transfers em Cuba em 2025. Transfers dos aeroportos de Havana (HAV) e Varadero (VRA) e rotas entre cidades.",
       image: "https://cubantaxis.com/cuba-cabs.jpg",
       mainEntityOfPage: "https://cubantaxis.com/blog/taxi-cuba-2025",
-      authorName: "Cuban Taxis",
-      publisherName: "Cuban Taxis",
+      authorName: "CubanTaxis",
+      publisherName: "CubanTaxis",
       publisherLogo: "https://cubantaxis.com/logo.png",
     },
     ui: {
@@ -91,8 +91,8 @@ export const articles = {
             "Compare táxis privados vs. aluguel de carros em Cuba. Descubra qual opção combina com seu estilo de viagem, orçamento e conforto para trajetos desde Havana, Varadero, Trinidad ou Viñales.",
         image: "https://cubantaxis.com/blog/private-taxi-vs-car-rental.png",
         mainEntityOfPage: "https://cubantaxis.com/blog/private-taxi-vs-car-rental-cuba",
-        authorName: "Cuban Taxis",
-        publisherName: "Cuban Taxis",
+        authorName: "CubanTaxis",
+        publisherName: "CubanTaxis",
         publisherLogo: "https://cubantaxis.com/logo.png",
     },
     ui: {
