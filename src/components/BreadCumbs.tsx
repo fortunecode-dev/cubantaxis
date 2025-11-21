@@ -17,7 +17,11 @@ export default function NextBreadcrumb({
 }: TBreadCrumbProps) {
 
   const pathname = usePathname()
-  const segments = pathname.split('/').filter(Boolean)
+  const segmentsRaw = pathname.split('/').filter(Boolean)
+
+  // Si el primer segmento es el idioma y es igual a lang, ignorarlo como segmento
+  const segments = segmentsRaw.filter((seg, i) => !(i === 0 && LANGS.includes(seg)))
+
   const prefix = lang === "en" ? "" : `/${lang}`
 
   const format = (str: string) =>
@@ -25,9 +29,12 @@ export default function NextBreadcrumb({
       ? str.replace(/-/g, " ").replace(/^\w/, c => c.toUpperCase())
       : str.replace(/-/g, " ")
 
+  // No mostrar breadcrumbs en home
+  if (pathname === "/" || pathname === `/${lang}`) return null
+
   return (
     <nav aria-label="Breadcrumb" className="mx-auto max-w-6xl px-4 pt-18">
-     { segments.length > 0 &&<ol className="flex items-center flex-wrap gap-1 text-xs font-medium tracking-tight">
+      {segments.length > 0 && <ol className="flex items-center flex-wrap gap-1 text-xs font-medium tracking-tight">
 
         {/* HOME chip */}
         <li>
@@ -50,7 +57,7 @@ export default function NextBreadcrumb({
 
         {/* Dynamic chips */}
         {segments.map((seg, i) => {
-          const href = `${prefix}/${segments.slice(0, i + 1).join('/')}`
+          const href = `${prefix}/${segmentsRaw.slice(0, i + 1 + (segmentsRaw.length - segments.length)).join('/')}`
           const isLast = i === segments.length - 1
           const label = format(seg)
 
@@ -94,3 +101,6 @@ export default function NextBreadcrumb({
     </nav>
   )
 }
+
+// Lista de idiomas soportados
+const LANGS = ["en", "es", "pt", "fr", "ru", "de"]

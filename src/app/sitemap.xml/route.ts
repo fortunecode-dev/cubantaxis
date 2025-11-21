@@ -38,23 +38,22 @@ function generateSitemapWithHreflangs(routes: string[]) {
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   ${routes
-    .map((route) => {
-      const depth = route.split("/").filter(Boolean).length;
-      let priority = 0.7;
-      if (depth === 0) priority = 1.0;
-      else if (depth === 1) priority = 0.9;
-      else if (depth === 2) priority = 0.8;
+      .map((route) => {
+        const depth = route.split("/").filter(Boolean).length;
+        let priority = 0.7;
+        if (depth === 0) priority = 1.0;
+        else if (depth === 1) priority = 0.9;
+        else if (depth === 2) priority = 0.8;
 
-      const links = LANGS.map(
-        (lang) =>
-          `<xhtml:link rel="alternate" hreflang="${
-            lang === "" ? "en" : lang
-          }" href="${BASE_URL}${lang ? "/" + lang : ""}${route}" />`
-      ).join("\n    ");
+        const links = LANGS.map(
+          (lang) =>
+            `<xhtml:link rel="alternate" hreflang="${lang === "" ? "en" : lang
+            }" href="${BASE_URL}${lang ? "/" + lang : ""}${route}" />`
+        ).join("\n    ");
 
-      const xDefault = `<xhtml:link rel="alternate" hreflang="x-default" href="${BASE_URL}${route}" />`;
+        const xDefault = `<xhtml:link rel="alternate" hreflang="x-default" href="${BASE_URL}${route}" />`;
 
-      return `<url>
+        return `<url>
   <loc>${BASE_URL}${route}</loc>
   <lastmod>${lastmod}</lastmod>
   ${links}
@@ -62,8 +61,8 @@ function generateSitemapWithHreflangs(routes: string[]) {
   <changefreq>weekly</changefreq>
   <priority>${priority}</priority>
 </url>`;
-    })
-    .join("\n")}
+      })
+      .join("\n")}
 </urlset>`;
 }
 
