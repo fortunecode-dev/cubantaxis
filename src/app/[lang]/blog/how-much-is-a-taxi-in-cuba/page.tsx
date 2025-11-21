@@ -15,11 +15,17 @@ export async function generateMetadata(
   const publishedAt = "2025-11-10";
   const updatedAt = "2025-11-20";
   // Si ya usas tu builder, mantenlo
-  return {...(idioma.metadata.blog?.howMuchIsATaxiInCuba ?? {}),openGraph: {
+  return {
+    ...(idioma.metadata.blog?.howMuchIsATaxiInCuba ?? {}), openGraph: {
       type: "article",
       publishedTime: publishedAt,
       modifiedTime: updatedAt,
-    },} as Metadata;
+      images: idioma.articles.howMuchIsATaxiInCuba.hero.heroImage.src,
+      url: `https://cubantaxis.com${lang == "en" ? "" : "/" + lang}/blog/how-much-is-a-taxi-in-cuba`,
+      title: idioma.metadata.blog?.howMuchIsATaxiInCuba.title,
+      description: idioma.metadata.blog?.howMuchIsATaxiInCuba.description,
+    }, twitter: { site: `https://cubantaxis.com${lang == "en" ? "" : "/" + lang}/blog/how-much-is-a-taxi-in-cuba`, }
+  } as Metadata;
 }
 function formatUpdatedDate(d = new Date()) {
   const opts: Intl.DateTimeFormatOptions = { year: "numeric", month: "long", day: "numeric" };
