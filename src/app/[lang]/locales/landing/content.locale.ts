@@ -219,11 +219,11 @@ export const mainSeo = {
         id: "landmarks", todos: [
           {
             label: "Destinos en Cuba",
-            href: "/es/destinos-en-cuba"
+            href: "/es/destinations-in-cuba"
           },
           {
             label: "Lugares interesantes en Cuba",
-            href: "/es/lugares-interesantes-en-cuba"
+            href: "/es/interesting-places-in-cuba"
           }
         ],
         headingLevel: "h2",
@@ -413,11 +413,11 @@ export const mainSeo = {
         todos: [
           {
             label: "Destinations à Cuba",
-            href: "/fr/destinations-a-cuba"
+            href: "/fr/destinations-in-cuba"
           },
           {
             label: "Lieux intéressants à Cuba",
-            href: "/fr/lieux-interessants-a-cuba"
+            href: "/fr/interesting-places-in-cuba"
           }
         ],
         headingLevel: "h2",
@@ -587,11 +587,11 @@ export const mainSeo = {
         id: "landmarks", todos: [
           {
             label: "Reiseziele in Kuba",
-            href: "/de/reiseziele-in-kuba"
+            href: "/de/destinations-in-cuba"
           },
           {
             label: "Interessante Orte in Kuba",
-            href: "/de/interessante-orte-in-kuba"
+            href: "/de/interesting-places-in-cuba"
           }
         ],
         headingLevel: "h2",
@@ -762,11 +762,11 @@ export const mainSeo = {
         todos: [
           {
             label: "Направления на Кубе",
-            href: "/ru/napravleniya-na-kube"
+            href: "/ru/destinations-in-cuba"
           },
           {
             label: "Интересные места на Кубе",
-            href: "/ru/interesnye-mesta-na-kube"
+            href: "/ru/interesting-places-in-cuba"
           }
         ],
         headingLevel: "h2",
@@ -932,11 +932,11 @@ export const mainSeo = {
         todos: [
           {
             label: "Destinos em Cuba",
-            href: "/pt/destinos-em-cuba"
+            href: "/pt/destinations-in-cuba"
           },
           {
             label: "Lugares interessantes em Cuba",
-            href: "/pt/lugares-interessantes-em-cuba"
+            href: "/pt/interesting-places-in-cuba"
           }
         ],
         headingLevel: "h2",
