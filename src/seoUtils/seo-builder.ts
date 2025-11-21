@@ -1,8 +1,8 @@
 import { SeoMetadata } from "./metadataValidation";
 
-export const LOCALES = ["es", "fr", "de", "ru", "pt"] as const;
+const LOCALES = ["es", "fr", "de", "ru", "pt"] as const;
 export type Locale = typeof LOCALES[number];
-export const urlBase = "https://cubantaxis.com";
+const urlBase = "https://cubantaxis.com";
 
 // Construye alternates para Estrategia A: EN = neutra
 export function buildAlternates(slugNoLang: `/${string}` | "") {

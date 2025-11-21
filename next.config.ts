@@ -21,13 +21,6 @@ export default withBundleAnalyzer({ enabled: process.env.ANALYZE === 'true' })({
     "date-fns": { transform: "date-fns/{{ member }}" },
   },
   experimental: {
-    optimizePackageImports: [
-      "lodash",
-      "date-fns",
-      "react-icons",
-      "zod",
-      "@supabase/supabase-js",
-    ],
   },
   async redirects() {
     return [

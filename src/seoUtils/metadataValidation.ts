@@ -243,29 +243,3 @@ export const SeoMetadataSchema = z
   });
 
 export type SeoMetadata = z.infer<typeof SeoMetadataSchema>;
-
-/* ---------- Helper de validación con reporte ---------- */
-export function validateSeoMetadata(meta: unknown) {
-  const result = SeoMetadataSchema.safeParse(meta);
-  if (result.success) {
-    const tLen = charCount(result.data.title);
-    const dLen = charCount(result.data.description);
-    return {
-      ok: true as const,
-      report: {
-        titleChars: tLen,
-        descriptionChars: dLen,
-        canonical: result.data.alternates.canonical,
-        hreflangs: Object.keys(result.data.alternates.languages),
-      },
-      data: result.data,
-    };
-  }
-  return {
-    ok: false as const,
-    errors: result.error.issues.map((i) => ({
-      path: i.path.join("."),
-      message: i.message,
-    })),
-  };
-}

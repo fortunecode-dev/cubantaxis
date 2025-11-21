@@ -17,7 +17,7 @@ export const places = [
     "guillermo-key"
 ]
 
-export const transfers = {
+const transfers = {
   "hav-airport": {
     "hav":    { distance: 23,  duration: "0:30", convertible: 50,  van: 55,  "modern-car": 30 },
     "var":    { distance: 170, duration: "2:30", convertible: 160, van: 180, "modern-car": 80 },

@@ -1,5 +1,5 @@
 // tailwind.config.ts
-export default {
+const config = {
   content: [
     "./src/app/**/*.{ts,tsx,mdx}",
     "./src/modules/**/*.{ts,tsx}",
@@ -15,3 +15,4 @@ export default {
   },
   plugins: [],
 };
+export default config

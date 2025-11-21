@@ -41,16 +41,15 @@ export default function ExtendedBookingForm({ idioma }: Props) {
       details: "",
       images: [],
     }),
-    [idioma]
+    []
   );
 
   const [formData, setFormData] = useState<BookingData>(initialData);
 
   // Evitar difs de hidratación para min en <input type="date">
-  const [minDate, setMinDate] = useState("1970-01-01");
-  useEffect(() => {
-    setMinDate(new Date().toISOString().slice(0, 10));
-  }, []);
+  const [minDate, setMinDate] = useState(() => new Date().toISOString().slice(0, 10));
+
+
 
   // Modal simple de confirmación
   const [modalOpen, setModalOpen] = useState(false);
@@ -91,16 +90,6 @@ export default function ExtendedBookingForm({ idioma }: Props) {
     }
   };
 
-  const Label = ({
-    required,
-    children,
-    ...props
-  }: React.LabelHTMLAttributes<HTMLLabelElement> & { required?: boolean }) => (
-    <label {...props} className="mb-1 block text-sm font-bold text-accent">
-      {children}
-      {required && <span className="ml-1 text-red-500">*</span>}
-    </label>
-  );
 
   const inputBase =
     "w-full rounded-lg border border-primary/20 bg-white px-3 py-2 text-sm text-primary placeholder:text-primary/50 focus:outline-none focus:ring-2 focus:ring-accent/40";
@@ -370,3 +359,13 @@ export default function ExtendedBookingForm({ idioma }: Props) {
     </form>
   );
 }
+  const Label = ({
+    required,
+    children,
+    ...props
+  }: React.LabelHTMLAttributes<HTMLLabelElement> & { required?: boolean }) => (
+    <label {...props} className="mb-1 block text-sm font-bold text-accent">
+      {children}
+      {required && <span className="ml-1 text-red-500">*</span>}
+    </label>
+  );

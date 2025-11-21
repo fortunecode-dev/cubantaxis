@@ -45,7 +45,7 @@ type UseLocaleHrefOptions = {
  * - Si la URL actual tiene locale -> lo antepone al href.
  * - Si no hay locale actual -> deja el href "normal" (sin prefijo).
  */
-export function useLocaleHref(rawHref: string, options: UseLocaleHrefOptions = {}) {
+function useLocaleHref(rawHref: string, options: UseLocaleHrefOptions = {}) {
   const pathname = usePathname();
   const currentLocale = extractLocale(pathname);
   const href = ensureLeadingSlash(rawHref);
@@ -96,24 +96,4 @@ export function LocaleLink(
       {children}
     </Link>
   );
-}
-
-/** Router que preserva automáticamente el locale en push/replace/prefetch, con opción nativa */
-export function useLocaleRouter() {
-  const router = useRouter();
-
-  const computeHref = useCallback(
-    (href: string, options?: UseLocaleHrefOptions) => useLocaleHref(href, options),
-    []
-  );
-
-  return {
-    push: (href: string, options?: UseLocaleHrefOptions) => router.push(computeHref(href, options)),
-    replace: (href: string, options?: UseLocaleHrefOptions) =>
-      router.replace(computeHref(href, options)),
-    prefetch: (href: string, options?: UseLocaleHrefOptions) =>
-      router.prefetch(computeHref(href, options)),
-    // Router original por si necesitas otras APIs
-    router,
-  };
 }

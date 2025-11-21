@@ -8,7 +8,7 @@ import { ru } from "./ru";
 import { AppTexts } from "./types";
 
 // Objeto con todas las traducciones
-export const translations: Record<string, AppTexts> = {
+const translations: Record<string, AppTexts> = {
   en,
   es,
    fr,
