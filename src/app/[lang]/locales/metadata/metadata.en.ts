@@ -29,7 +29,7 @@ export const metadata: Partial<customMetaData> = {
       title:
         "Private Taxi or Car Rental in Cuba 2025 | Comparison, Prices & Tips",
       description:
-        "Find out whether a private taxi or a car rental is better for your trip in Cuba. Compare comfort, cost, and flexibility for routes like Havana, Varadero or Trinidad.",
+        "Compare private taxis vs car rentals in Cuba. Evaluate comfort, cost & flexibility for trips to Havana, Varadero, Trinidad.",
       alternates: buildAlternatesMetadata(
         "/blog/private-taxi-or-car-rental",
         "en"

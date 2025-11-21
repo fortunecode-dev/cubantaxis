@@ -31,7 +31,7 @@ export const metadata: Partial<customMetaData> = {
       title:
         "Privates Taxi oder Mietwagen in Kuba 2025 | Vergleich, Preise & Tipps",
       description:
-        "Erfahren Sie, ob ein privates Taxi oder ein Mietwagen besser für Ihre Reise in Kuba ist. Vergleichen Sie Komfort, Kosten und Flexibilität für Strecken wie Havanna, Varadero oder Trinidad.",
+        "Vergleichen Sie privates Taxi und Mietwagen in Kuba: Komfort, Kosten & Flexibilität für Reisen nach Havanna, Varadero oder Trinidad.",
       alternates: buildAlternatesMetadata(
         "/blog/private-taxi-or-car-rental",
         "de"
