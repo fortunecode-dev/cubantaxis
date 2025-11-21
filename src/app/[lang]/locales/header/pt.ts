@@ -5,7 +5,7 @@ export const header: HeaderItems = [
         key: "blog", label: "Blog", items: [
             { title: "Quanto custa um táxi em Cuba?", href: `/pt/blog/how-much-is-a-taxi-in-cuba` },{ 
     title: "Táxi Privado ou Aluguel de Carro em Cuba", 
-    href: `/blog/private-taxi-or-car-rental` 
+    href: `/pt/blog/private-taxi-or-car-rental` 
 },
         ], allHref: `/pt/blog`, allLabel: "Todos os artigos"
     },

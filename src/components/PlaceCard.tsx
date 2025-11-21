@@ -191,27 +191,6 @@ export default function PlaceSEOCard({
 
   // JSON-LD
   const placeLd = buildPlaceJsonLd(place, schemaType);
-  const bcLd = buildBreadcrumbsJsonLd(breadcrumbs);
-  const faqLd = buildFAQJsonLd(faq);
-  const bookingLd = {
-    "@context": "https://schema.org",
-    "@type": "TaxiService",
-    name: "CubanTaxis — Private transfers in Cuba",
-    areaServed: "Cuba",
-    availableLanguage: ["es", "en", "fr", "de", "ru", "pt"],
-    potentialAction: [
-      {
-        "@type": "ReserveAction",
-        name: ctaText.customBooking,
-        target: bookingHref,
-      },
-      {
-        "@type": "ReserveAction",
-        name: ctaText.fastBooking,
-        target: quickBookingHref,
-      },
-    ],
-  };
 
   const grouped = groupByClass(services);
 
@@ -221,22 +200,6 @@ export default function PlaceSEOCard({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(placeLd) }}
-      />
-      {bcLd && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(bcLd) }}
-        />
-      )}
-      {faqLd && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
-        />
-      )}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(bookingLd) }}
       />
 
       {/* CONTENEDOR PRINCIPAL CON ITEM SCOPE */}
@@ -474,7 +437,6 @@ export default function PlaceSEOCard({
           </aside>
         </div>
       </article>
-      <BackToHome lang={lang} />
     </>
   );
 }

@@ -36,7 +36,7 @@ export const mainSeo = {
         todos: [
           {
             label: "Car rental vs taxi",
-            href: "/en/blog/private-taxi-or-car-rental",
+            href: "/blog/private-taxi-or-car-rental",
           },
         ],
 
@@ -184,7 +184,7 @@ export const mainSeo = {
           ],
           note: "Precios de ejemplo (por coche). El costo real varía según vehículo y horario.",
         },
-        todo: [
+        todos: [
           {
             label: "Alquiler de coche vs taxi",
             href: "/es/blog/private-taxi-or-car-rental",
@@ -364,7 +364,7 @@ export const mainSeo = {
           ],
           note: "Estimations par voiture. Les prix réels varient selon le véhicule et l’horaire.",
         },
-        todo: [
+        todos: [
           {
             label: "Location de voiture vs taxi",
             href: "/fr/blog/private-taxi-or-car-rental",
@@ -525,7 +525,7 @@ export const mainSeo = {
           ],
           note: "Beispielwerte (pro Auto). Der tatsächliche Preis hängt von Fahrzeug und Uhrzeit ab.",
         },
-        todo: [
+        todos: [
           {
             label: "Autovermietung vs Taxi",
             href: "/de/blog/private-taxi-or-car-rental",
@@ -686,7 +686,7 @@ export const mainSeo = {
           ],
           note: "Примеры (за машину). Фактическая стоимость зависит от авто и времени.",
         },
-        todo: [
+        todos: [
           {
             label: "Аренда автомобиля vs такси",
             href: "/ru/blog/private-taxi-or-car-rental",
@@ -841,7 +841,7 @@ export const mainSeo = {
           ],
           note: "Estimativas por carro. O preço real varia conforme o veículo e o horário.",
         },
-        todo: [
+        todos: [
           {
             label: "Aluguel de carro vs táxi",
             href: "/pt/blog/private-taxi-or-car-rental",

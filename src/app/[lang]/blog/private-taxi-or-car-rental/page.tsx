@@ -21,7 +21,17 @@ export async function generateMetadata(
   const { lang } = await params;
   const idioma = getTranslation(lang);
   // Si ya usas tu builder, mantenlo
-  return (idioma.metadata.blog?.privateTaxiOrCarRental ?? {}) as Metadata;
+    const publishedAt = "2025-11-10";
+  const updatedAt = "2025-11-20";
+  return{...(idioma.metadata.blog?.privateTaxiOrCarRental ?? {}), openGraph: {
+      type: "article",
+      publishedTime: publishedAt,
+      modifiedTime: updatedAt,
+      images: idioma.articles.privateTaxiOrCarRental.hero.heroImage.src,
+      url: `https://cubantaxis.com${lang == "en" ? "" : "/" + lang}/blog/private-taxi-or-car-rental`,
+      title: idioma.articles?.privateTaxiOrCarRental.hero.h1,
+      description: idioma.articles.privateTaxiOrCarRental.hero.introP1,
+    }, twitter: { site: `https://cubantaxis.com${lang == "en" ? "" : "/" + lang}/blog/private-taxi-or-car-rental`, }} as Metadata;
 }
 function formatUpdatedDate(d = new Date()) {
   const opts: Intl.DateTimeFormatOptions = { year: "numeric", month: "long", day: "numeric" };
