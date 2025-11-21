@@ -37,6 +37,10 @@ export const mainSeo = {
           {
             label: "Car rental vs taxi",
             href: "/blog/private-taxi-or-car-rental",
+          }, {
+            label: "How much is a taxi in Cuba",
+            href: "/blog/how-much-is-a-taxi-in-cuba",
+            lang: "en",
           },
         ],
 
@@ -64,6 +68,16 @@ export const mainSeo = {
           alt: "Viñales Valley and Trinidad colonial streets, landmark taxi day trip",
         },
         reverse: false as const,
+        todos: [
+          {
+            label: "Destinations in Cuba",
+            href: "/destinations-in-cuba"
+          },
+          {
+            label: "Interesting places in Cuba",
+            href: "/interesting-places-in-cuba"
+          }
+        ],
       },
       {
         id: "cities",
@@ -188,7 +202,12 @@ export const mainSeo = {
           {
             label: "Alquiler de coche vs taxi",
             href: "/es/blog/private-taxi-or-car-rental",
+          }, {
+            label: "¿Cuánto cuesta un taxi en Cuba?",
+            href: "/es/blog/how-much-is-a-taxi-in-cuba",
+            lang: "es",
           },
+
         ],
         media: {
           src: "/car-rental-vs-taxi.jpg",
@@ -197,7 +216,16 @@ export const mainSeo = {
         reverse: true as const,
       },
       {
-        id: "landmarks",
+        id: "landmarks", todos: [
+          {
+            label: "Destinos en Cuba",
+            href: "/es/destinos-en-cuba"
+          },
+          {
+            label: "Lugares interesantes en Cuba",
+            href: "/es/lugares-interesantes-en-cuba"
+          }
+        ],
         headingLevel: "h2",
         title: "Lugares imprescindibles para visitar en taxi",
         text: `Cuba es mucho más que playas: es música, arquitectura colonial y valles espectaculares. Los taxis te permiten unir varios destinos icónicos en un solo día sin depender del transporte público o tours con horarios fijos.`,
@@ -368,6 +396,10 @@ export const mainSeo = {
           {
             label: "Location de voiture vs taxi",
             href: "/fr/blog/private-taxi-or-car-rental",
+          }, {
+            label: "Combien coûte un taxi à Cuba ?",
+            href: "/fr/blog/how-much-is-a-taxi-in-cuba",
+            lang: "fr",
           },
         ],
         media: {
@@ -378,6 +410,16 @@ export const mainSeo = {
       },
       {
         id: "landmarks",
+        todos: [
+          {
+            label: "Destinations à Cuba",
+            href: "/fr/destinations-a-cuba"
+          },
+          {
+            label: "Lieux intéressants à Cuba",
+            href: "/fr/lieux-interessants-a-cuba"
+          }
+        ],
         headingLevel: "h2",
         title: "Lieux incontournables à visiter en taxi",
         text: `Cuba, ce n’est pas seulement les plages : c’est aussi la musique, l’architecture coloniale et les vallées spectaculaires. En taxi, vous pouvez combiner plusieurs sites emblématiques en une seule journée, sans contraintes de transports ni d’horaires fixes.`,
@@ -529,6 +571,10 @@ export const mainSeo = {
           {
             label: "Autovermietung vs Taxi",
             href: "/de/blog/private-taxi-or-car-rental",
+          }, {
+            label: "Wie viel kostet ein Taxi in Kuba?",
+            href: "/de/blog/how-much-is-a-taxi-in-cuba",
+            lang: "de",
           },
         ],
         media: {
@@ -538,7 +584,16 @@ export const mainSeo = {
         reverse: true as const,
       },
       {
-        id: "landmarks",
+        id: "landmarks", todos: [
+          {
+            label: "Reiseziele in Kuba",
+            href: "/de/reiseziele-in-kuba"
+          },
+          {
+            label: "Interessante Orte in Kuba",
+            href: "/de/interessante-orte-in-kuba"
+          }
+        ],
         headingLevel: "h2",
         title: "Top-Sehenswürdigkeiten per Taxi",
         text: `Kuba ist mehr als Strände – es ist Musik, Kolonialarchitektur und weite Täler. Mit dem Taxi kombinierst du Must-see-Spots an einem Tag, ganz ohne ÖPNV-Stress oder starre Tourzeiten.`,
@@ -690,6 +745,10 @@ export const mainSeo = {
           {
             label: "Аренда автомобиля vs такси",
             href: "/ru/blog/private-taxi-or-car-rental",
+          }, {
+            label: "Сколько стоит такси на Кубе",
+            href: "/ru/blog/how-much-is-a-taxi-in-cuba",
+            lang: "ru",
           },
         ],
         media: {
@@ -700,6 +759,16 @@ export const mainSeo = {
       },
       {
         id: "landmarks",
+        todos: [
+          {
+            label: "Направления на Кубе",
+            href: "/ru/napravleniya-na-kube"
+          },
+          {
+            label: "Интересные места на Кубе",
+            href: "/ru/interesnye-mesta-na-kube"
+          }
+        ],
         headingLevel: "h2",
         title: "Главные достопримечательности на такси",
         text: `Куба — это не только пляжи, но и музыка, колониальная архитектура и живописные долины. Такси позволяет объединить «маст-си» места в один день, без привязки к общественному транспорту и жёстким экскурсионным графикам.`,
@@ -845,7 +914,12 @@ export const mainSeo = {
           {
             label: "Aluguel de carro vs táxi",
             href: "/pt/blog/private-taxi-or-car-rental",
+          }, {
+            label: "Quanto custa um táxi em Cuba?",
+            href: "/pt/blog/how-much-is-a-taxi-in-cuba",
+            lang: "pt",
           },
+
         ],
         media: {
           src: "/car-rental-vs-taxi.jpg",
@@ -855,6 +929,16 @@ export const mainSeo = {
       },
       {
         id: "landmarks",
+        todos: [
+          {
+            label: "Destinos em Cuba",
+            href: "/pt/destinos-em-cuba"
+          },
+          {
+            label: "Lugares interessantes em Cuba",
+            href: "/pt/lugares-interessantes-em-cuba"
+          }
+        ],
         headingLevel: "h2",
         title: "Principais pontos turísticos para visitar de táxi",
         text: `Cuba é mais do que praias — é música, arquitetura colonial e vales exuberantes. De táxi, você pode conhecer vários pontos imperdíveis em um único dia, sem depender de transporte público ou excursões com horários fixos.`,
