@@ -6,12 +6,6 @@ import axios from "axios";
 import FormDataNode from "form-data";
 import { browserInfoString, buildContactMessageByLang, detectEffectiveLang } from "@/utils/metadata";
 import { booking } from "@/app/[lang]/locales/booking/es";
-// Desactiva el body parser
-export const config = {
-  api: {
-    bodyParser: false,
-  },
-};
 
 // Transforma Request a objeto compatible con formidable
 async function parseFormData(request: Request): Promise<{ fields: any; files: any }> {

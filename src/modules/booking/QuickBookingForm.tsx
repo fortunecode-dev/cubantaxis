@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { cars, places } from "@/utils/constants";
+
 import { FaWhatsapp, FaTelegramPlane } from "react-icons/fa";
 
 type BookingData = {

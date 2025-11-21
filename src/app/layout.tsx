@@ -10,6 +10,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { getTranslation } from "./[lang]/locales";
 import NextBreadcrumb from "@/components/BreadCumbs";
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 const inter = Inter({
   subsets: ["latin"],
@@ -50,38 +51,7 @@ export default async function RootLayout({
               href="https://www.google-analytics.com"
               crossOrigin="anonymous"
             />
-            <Script id="deferred-3p" strategy="afterInteractive">
-              {`
-                (function(){
-                  var loaded=false;
-                  function load3p(){
-                    if(loaded) return; loaded=true;
-                    var s=document.createElement('script');
-                    s.src='https://www.googletagmanager.com/gtag/js?id=G-HB26WDN91W';
-                    s.async=true; document.head.appendChild(s);
-                    window.dataLayer=window.dataLayer||[];
-                    function gtag(){dataLayer.push(arguments);}
-                    (window.requestIdleCallback||function(cb){setTimeout(cb,500)})(function(){
-                      gtag('js', new Date());
-                      gtag('config','G-HB26WDN91W',{send_page_view:true});
-                    });
-                    (window.requestIdleCallback||function(cb){setTimeout(cb,900)})(function(){
-                      (function(c,l,a,r,i,t,y){
-                        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-                        t=l.createElement(r);t.defer=1;t.src="https://www.clarity.ms/tag/"+i;
-                        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-                      })(window,document,"clarity","script","tgx0dtlprl");
-                    });
-                  }
-                  var opts={once:true,passive:true,capture:true};
-                  window.addEventListener('pointerdown',load3p,opts);
-                  window.addEventListener('keydown',load3p,opts);
-                  window.addEventListener('scroll',load3p,opts);
-                  window.addEventListener('touchstart',load3p,opts);
-                })();
-              `}
-            </Script>
-
+             <GoogleAnalytics gaId="G-HB26WDN91W" />
           </>
         )}
       </head>
