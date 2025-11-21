@@ -60,7 +60,7 @@ export const articles = {
         { route: "Havanna → Trinidad", classicModern: "$250", minivan: "$320", notes: "Optional via Cienfuegos" },
         { route: "Varadero → Cienfuegos", classicModern: "$120", minivan: "$205" },
         { route: "Varadero → Trinidad", classicModern: "$250", minivan: "$270" },
-        { route: "Flughafen Varadero (VRA) → Hotels", classicModern: "$40", minivan: "$60–70" },
+        { route: "Flughafen Varadero (VRA) → Hotels", classicModern: "$40", minivan: "$70" },
       ],
       footnote:
         "Preise können abweichen bei Abholungen weit vom KM-0 Havannas (Capitol) und in Nachtstunden.",
@@ -241,7 +241,7 @@ export const articles = {
         { route: "Havanna → Trinidad", classicModern: "$250", minivan: "$320", notes: "Optional über Cienfuegos" },
         { route: "Varadero → Cienfuegos", classicModern: "$120", minivan: "$205" },
         { route: "Varadero → Trinidad", classicModern: "$250", minivan: "$270" },
-        { route: "Varadero Flughafen (VRA) → Hotels", classicModern: "$40", minivan: "$60–70" },
+        { route: "Varadero Flughafen (VRA) → Hotels", classicModern: "$40", minivan: "$70" },
       ],
       footnote:
         "Preise können für Abholungen weit außerhalb von Havannas Zentrum sowie für Nachtzeiten variieren.",

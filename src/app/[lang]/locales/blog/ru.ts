@@ -60,7 +60,7 @@ export const articles = {
         { route: "Гавана → Тринидад", classicModern: "$250", minivan: "$320", notes: "Вариант через Сьенфуэгос" },
         { route: "Варадеро → Сьенфуэгос", classicModern: "$120", minivan: "$205" },
         { route: "Варадеро → Тринидад", classicModern: "$250", minivan: "$270" },
-        { route: "Аэропорт Варадеро (VRA) → Отели", classicModern: "$40", minivan: "$60–70" },
+        { route: "Аэропорт Варадеро (VRA) → Отели", classicModern: "$40", minivan: "$70" },
       ],
       footnote:
         "Цены могут меняться для подач далеко от KM-0 Гаваны (Капитолий) и в ночные часы.",
@@ -241,7 +241,7 @@ export const articles = {
             { route: "Гавана → Тринидад", classicModern: "$250", minivan: "$320", notes: "Вариант через Сьенфуэгос" },
             { route: "Варадеро → Сьенфуэгос", classicModern: "$120", minivan: "$205" },
             { route: "Варадеро → Тринидад", classicModern: "$250", minivan: "$270" },
-            { route: "Аэропорт Варадеро (VRA) → Отели", classicModern: "$40", minivan: "$60–70" },
+            { route: "Аэропорт Варадеро (VRA) → Отели", classicModern: "$40", minivan: "$70" },
         ],
         footnote:
             "Цены могут варьироваться для удаленных точек подачи и ночных поездок.",

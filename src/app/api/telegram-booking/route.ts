@@ -133,7 +133,7 @@ export async function POST(request: Request) {
 
     // 🔥 Mensaje de contacto en ese idioma
     const contactMsgPlain = buildContactMessageByLang(effectiveLang, {
-      name, from, to, date, time, passengers, vehicle, confirmation
+      name, from: (booking.fastBooking.form as any)[from], to:(booking.fastBooking.form as any)[to], date, time, passengers, vehicle:(booking.fastBooking.form as any)[vehicle], confirmation
     });
 
     // === 3) Enviar el resumen principal a Telegram (HTML) con botón condicional ===

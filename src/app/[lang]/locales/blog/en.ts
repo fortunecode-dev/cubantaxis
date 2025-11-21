@@ -74,7 +74,7 @@ export const articles = {
                 { route: "Havana → Trinidad", classicModern: "$250", minivan: "$320", notes: "Via Cienfuegos optional" },
                 { route: "Varadero → Cienfuegos", classicModern: "$120", minivan: "$205" },
                 { route: "Varadero → Trinidad", classicModern: "$250", minivan: "$270" },
-                { route: "Varadero Airport (VRA) → Hotels", classicModern: "$40", minivan: "$60–70" },
+                { route: "Varadero Airport (VRA) → Hotels", classicModern: "$40", minivan: "$70" },
             ],
             footnote:
                 "Prices may vary for pick-ups far from Havana’s KM-0 (Capitolio) and for night hours.",
@@ -257,7 +257,7 @@ export const articles = {
                 { route: "Havana → Trinidad", classicModern: "$250", minivan: "$320", notes: "Via Cienfuegos optional" },
                 { route: "Varadero → Cienfuegos", classicModern: "$120", minivan: "$205" },
                 { route: "Varadero → Trinidad", classicModern: "$250", minivan: "$270" },
-                { route: "Varadero Airport (VRA) → Hotels", classicModern: "$40", minivan: "$60–70" },
+                { route: "Varadero Airport (VRA) → Hotels", classicModern: "$40", minivan: "$70" },
             ],
             footnote:
                 "Prices may vary for pick-ups far from Havana’s KM-0 (Capitolio) and for night hours.",

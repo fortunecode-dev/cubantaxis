@@ -60,7 +60,7 @@ export const articles = {
         { route: "La Havane → Trinidad", classicModern: "$250", minivan: "$320", notes: "Option via Cienfuegos" },
         { route: "Varadero → Cienfuegos", classicModern: "$120", minivan: "$205" },
         { route: "Varadero → Trinidad", classicModern: "$250", minivan: "$270" },
-        { route: "Aéroport Varadero (VRA) → Hôtels", classicModern: "$40", minivan: "$60–70" },
+        { route: "Aéroport Varadero (VRA) → Hôtels", classicModern: "$40", minivan: "$70" },
       ],
       footnote:
         "Les prix peuvent varier pour les prises en charge éloignées du KM-0 de La Havane (Capitole) et en horaires de nuit.",
@@ -202,7 +202,7 @@ export const articles = {
         { "route": "La Havane → Trinidad", "classicModern": "$250", "minivan": "$320", "notes": "Via Cienfuegos optionnel" },
         { "route": "Varadero → Cienfuegos", "classicModern": "$120", "minivan": "$205", "notes": "" },
         { "route": "Varadero → Trinidad", "classicModern": "$250", "minivan": "$270", "notes": "" },
-        { "route": "Aéroport de Varadero (VRA) → Hôtels", "classicModern": "$40", "minivan": "$60–70", "notes": "" }
+        { "route": "Aéroport de Varadero (VRA) → Hôtels", "classicModern": "$40", "minivan": "$70", "notes": "" }
       ],
       "footnote": "Les prix peuvent varier pour les prises en charge loin du KM-0 de La Havane (Capitolio) et pour les heures nocturnes.",
       "cta": { "label": "Obtenir un devis", "href": "/cuba-taxi-booking" }
