@@ -4,7 +4,8 @@ import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import type { AppTexts } from "@/app/[lang]/locales/types";
 import { cars, places } from "@/utils/constants";
-import { FaTelegram, FaWhatsapp } from "react-icons/fa6";
+// @ts-ignore
+// import { FaTelegram, FaWhatsapp } from "react-icons/fa6";
 
 type BookingData = {
   name: string;
@@ -316,7 +317,7 @@ export default function ExtendedBookingForm({ idioma }: Props) {
           id="whatsapp"
           className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary/5 px-5 py-3 text-sm font-semibold text-primary ring-1 ring-inset ring-primary/20 transition hover:bg-primary/10"
         >
-          <FaWhatsapp className="text-lg" aria-hidden />
+          {/* <FaWhatsapp className="text-lg" aria-hidden /> */}
           {idioma?.confirmations?.whatsapp}
         </button>
         <button
@@ -324,7 +325,7 @@ export default function ExtendedBookingForm({ idioma }: Props) {
           id="telegram"
           className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-accent px-5 py-3 text-sm font-semibold text-white transition hover:opacity-95"
         >
-          <FaTelegram className="text-lg" aria-hidden />
+          {/* <FaTelegram className="text-lg" aria-hidden /> */}
           {idioma?.confirmations?.telegram}
         </button>
       </div>
