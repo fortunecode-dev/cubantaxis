@@ -16,10 +16,7 @@ export async function generateMetadata({
   const idioma = getTranslation(lang);
   const metadata = buildMetaTags(idioma.metadata.landingPage as any);
   const updated = new Date().toISOString();
-  return {...metadata,other: {
-    "article:published_time": updated,
-    "article:modified_time": updated,
-  },};
+  return {...metadata,};
 }
 
 export default async function Home({
@@ -31,6 +28,8 @@ export default async function Home({
   const idioma = getTranslation(lang);
   return (
     <main id="main" className="font-sans">
+      <meta property="article:published_time" content="2025-11-21T06:17:30-05:00"></meta>
+      <meta property="article:modified_time" content="2025-11-21T06:17:30-05:00"></meta>
       <Hero lang={idioma.content.hero} />
       <AboveTheFold idioma={idioma.mainSeo} />
       <FaqSection faqs={idioma.FAQs.items} title={idioma.FAQs.title} />
