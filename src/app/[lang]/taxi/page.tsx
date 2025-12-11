@@ -52,6 +52,10 @@ export async function generateMetadata({
     title = `Taxi from ${fromText} | Private Transfers`;
     description = `Book a private taxi departing from ${fromText}. Safe, fast and reliable.`;
   }
+  let partialMetadata = { ...metadata.fastBooking, title, description };
+  if (partialMetadata.alternates) {
+    partialMetadata.alternates.canonical = canonical;
+  }
 
   return {
     ...buildMetaTags({ ...metadata.fastBooking, title, description }),
