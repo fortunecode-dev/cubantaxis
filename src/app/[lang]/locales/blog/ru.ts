@@ -1,3 +1,6 @@
+import { prices } from "@/utils/constants";
+import { buildRows } from "@/utils/metadata";
+
 export const articles = {
   howMuchIsATaxiInCuba: {
     seo: {
@@ -53,15 +56,7 @@ export const articles = {
       intro:
         "Стоимость указана за машину (частный сервис). Итог зависит от типа авто, места подачи, ночных надбавок и доп. остановок.",
       columns: { route: "Маршрут", classicModern: "Классика / Современное", minivan: "Минивэн", notes: "Примечания" },
-      rows: [
-        { route: "Аэропорт Гаваны (HAV) → Центр", classicModern: "$30", minivan: "$55", notes: "Типичный трансфер по прилёту" },
-        { route: "Гавана → Варадеро", classicModern: "$100", minivan: "$180", notes: "Возможна поездка туда-обратно в один день" },
-        { route: "Гавана → Виньялес", classicModern: "$130", minivan: "$200", notes: "Обратный путь по запросу" },
-        { route: "Гавана → Тринидад", classicModern: "$250", minivan: "$320", notes: "Вариант через Сьенфуэгос" },
-        { route: "Варадеро → Сьенфуэгос", classicModern: "$120", minivan: "$205" },
-        { route: "Варадеро → Тринидад", classicModern: "$250", minivan: "$270" },
-        { route: "Аэропорт Варадеро (VRA) → Отели", classicModern: "$40", minivan: "$70" },
-      ],
+      rows: buildRows("en", prices),
       footnote:
         "Цены могут меняться для подач далеко от KM-0 Гаваны (Капитолий) и в ночные часы.",
       cta: { label: "Получить предложение", href: "/cuba-taxi-booking" },
@@ -234,15 +229,7 @@ export const articles = {
             minivan: "Минивэн",
             notes: "Примечания",
         },
-        rows: [
-            { route: "Аэропорт Гаваны (HAV) → Центр", classicModern: "$30", minivan: "$55", notes: "Стандартный трансфер" },
-            { route: "Гавана → Варадеро", classicModern: "$100", minivan: "$180", notes: "Возможен возврат в тот же день" },
-            { route: "Гавана → Виньялес", classicModern: "$130", minivan: "$200", notes: "Обратный маршрут по запросу" },
-            { route: "Гавана → Тринидад", classicModern: "$250", minivan: "$320", notes: "Вариант через Сьенфуэгос" },
-            { route: "Варадеро → Сьенфуэгос", classicModern: "$120", minivan: "$205" },
-            { route: "Варадеро → Тринидад", classicModern: "$250", minivan: "$270" },
-            { route: "Аэропорт Варадеро (VRA) → Отели", classicModern: "$40", minivan: "$70" },
-        ],
+        rows:buildRows("ru", prices),
         footnote:
             "Цены могут варьироваться для удаленных точек подачи и ночных поездок.",
         cta: { label: "Получить предложение", href: "/cuba-taxi-booking" },

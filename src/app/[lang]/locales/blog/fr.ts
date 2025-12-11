@@ -1,3 +1,6 @@
+import { prices } from "@/utils/constants";
+import { buildRows } from "@/utils/metadata";
+
 export const articles = {
   howMuchIsATaxiInCuba: {
     seo: {
@@ -53,15 +56,7 @@ export const articles = {
       intro:
         "Les prix sont par voiture (service privé). Le tarif final dépend du type de véhicule, du point de prise en charge, des suppléments de nuit et des arrêts optionnels.",
       columns: { route: "Trajet", classicModern: "Classique / Moderne", minivan: "Minivan", notes: "Notes" },
-      rows: [
-        { route: "Aéroport La Havane (HAV) → Centre-ville", classicModern: "$30", minivan: "$55", notes: "Transfert d’arrivée typique" },
-        { route: "La Havane → Varadero", classicModern: "$100", minivan: "$180", notes: "Aller-retour le jour même possible" },
-        { route: "La Havane → Viñales", classicModern: "$130", minivan: "$200", notes: "Aller-retour sur demande" },
-        { route: "La Havane → Trinidad", classicModern: "$250", minivan: "$320", notes: "Option via Cienfuegos" },
-        { route: "Varadero → Cienfuegos", classicModern: "$120", minivan: "$205" },
-        { route: "Varadero → Trinidad", classicModern: "$250", minivan: "$270" },
-        { route: "Aéroport Varadero (VRA) → Hôtels", classicModern: "$40", minivan: "$70" },
-      ],
+      rows: buildRows("fr", prices),
       footnote:
         "Les prix peuvent varier pour les prises en charge éloignées du KM-0 de La Havane (Capitole) et en horaires de nuit.",
       cta: { label: "Demander un devis", href: "/cuba-taxi-booking" },

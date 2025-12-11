@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { cars, places } from "@/utils/constants";
 // @ts-ignore
 // import { FaWhatsapp, FaTelegram } from "react-icons/fa6";
@@ -21,11 +21,14 @@ type Props = { idioma: any };
 
 export default function QuickBookingForm({ idioma }: Props) {
   const router = useRouter();
-
+  const searchParams = useSearchParams()
+  const from = searchParams.get("from")
+  const to = searchParams.get("to")
+  console.log({ searchParams });
   const initialData: BookingData = {
     phone: "",
-    from: places?.[0] || "",
-    to: places?.[1] || "",
+    from: from ? places.includes(from) ? from : places?.[0] : "",
+    to: to ? places.includes(to) ? to : places?.[1] : "",
     date: "",
     time: "",
     vehicle: idioma.vehicles?.[0] || "",

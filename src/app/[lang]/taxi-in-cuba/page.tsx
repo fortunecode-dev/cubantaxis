@@ -141,7 +141,7 @@ export default async function Page({ params }: Params) {
               key={item.title}
               className="rounded-2xl border border-primary/10 bg-white p-5 shadow-sm hover:shadow-md transition"
             >
-              <h3 className="text-base font-bold text-accent">{item.title}</h3>
+              <h2 className="text-base font-bold text-accent">{item.title}</h2>
               <p className="mt-1 text-sm text-primary/80">{item.desc}</p>
             </div>
           ))}

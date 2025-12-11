@@ -21,9 +21,10 @@ export async function generateMetadata(
   const { lang } = await params;
   const idioma = getTranslation(lang);
   // Si ya usas tu builder, mantenlo
-    const publishedAt = "2025-11-10";
-  const updatedAt = "2025-11-20";
-  return{...(idioma.metadata.blog?.privateTaxiOrCarRental ?? {}), openGraph: {
+  const publishedAt = new Date().toISOString();
+  const updatedAt =  new Date().toISOString();
+  return {
+    ...(idioma.metadata.blog?.privateTaxiOrCarRental ?? {}), openGraph: {
       type: "article",
       publishedTime: publishedAt,
       modifiedTime: updatedAt,
@@ -31,7 +32,8 @@ export async function generateMetadata(
       url: `https://cubantaxis.com${lang == "en" ? "" : "/" + lang}/blog/private-taxi-or-car-rental`,
       title: idioma.articles?.privateTaxiOrCarRental.hero.h1,
       description: idioma.articles.privateTaxiOrCarRental.hero.introP1,
-    }, twitter: { site: `https://cubantaxis.com${lang == "en" ? "" : "/" + lang}/blog/private-taxi-or-car-rental`, }} as Metadata;
+    }, twitter: { site: `https://cubantaxis.com${lang == "en" ? "" : "/" + lang}/blog/private-taxi-or-car-rental`, }
+  } as Metadata;
 }
 function formatUpdatedDate(d = new Date()) {
   const opts: Intl.DateTimeFormatOptions = { year: "numeric", month: "long", day: "numeric" };
@@ -40,14 +42,13 @@ function formatUpdatedDate(d = new Date()) {
 
 export default async function BlogPrivateTaxiOrCarRental({ params }: { params: LocaleParams }) {
   // aunque recibimos params, usamos el objeto inline (contenido consistente garantizado)
-  const { lang } =await  params as any;
-  const {articles:{privateTaxiOrCarRental}} = getTranslation(lang);
+  const { lang } = await params as any;
+  const { articles: { privateTaxiOrCarRental } } = getTranslation(lang);
   const updatedAt = formatUpdatedDate();
 
   return (
     <main className="relative">
       <div className={`pointer-events-none absolute inset-0 -z-10`} />
-
       {/* HERO */}
       <header className="mx-auto max-w-6xl px-4 pb-4 pt-7 sm:pt-10">
         <h1 className="text-3xl font-extrabold tracking-tight text-accent sm:text-4xl">{privateTaxiOrCarRental.hero.h1}</h1>
@@ -89,7 +90,7 @@ export default async function BlogPrivateTaxiOrCarRental({ params }: { params: L
         <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
           {privateTaxiOrCarRental.valueProps.map((c: any) => (
             <div key={c.title} className="rounded-2xl border border-primary/15 bg-white p-5 shadow-sm transition hover:shadow-md">
-              <h3 className="text-base font-semibold text-accent">{c.title}</h3>
+              <h2 className="text-base font-semibold text-accent">{c.title}</h2>
               <p className="mt-1 text-sm text-primary">{c.desc}</p>
             </div>
           ))}

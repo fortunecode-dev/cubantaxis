@@ -1,3 +1,6 @@
+import { prices } from "@/utils/constants";
+import { buildRows } from "@/utils/metadata";
+
 export const articles = {
   howMuchIsATaxiInCuba: {
     seo: {
@@ -67,15 +70,7 @@ export const articles = {
         minivan: "Minivan",
         notes: "Notas",
       },
-      rows: [
-        { route: "Aeropuerto de La Habana (HAV) → Centro", classicModern: "$30", minivan: "$55", notes: "Transfer típico de llegada" },
-        { route: "La Habana → Varadero", classicModern: "$100", minivan: "$180", notes: "Disponible ida y vuelta en el día" },
-        { route: "La Habana → Viñales", classicModern: "$130", minivan: "$200", notes: "Ida y vuelta a solicitud" },
-        { route: "La Habana → Trinidad", classicModern: "$250", minivan: "$320", notes: "Opción vía Cienfuegos" },
-        { route: "Varadero → Cienfuegos", classicModern: "$120", minivan: "$205" },
-        { route: "Varadero → Trinidad", classicModern: "$250", minivan: "$270" },
-        { route: "Aeropuerto de Varadero (VRA) → Hoteles", classicModern: "$40", minivan: "$70" },
-      ],
+      rows: buildRows("es", prices),
       footnote:
         "Los precios pueden variar para recogidas lejos del KM-0 de La Habana (Capitolio) y en horario nocturno.",
       cta: { label: "Solicitar cotización", href: "/cuba-taxi-booking" },

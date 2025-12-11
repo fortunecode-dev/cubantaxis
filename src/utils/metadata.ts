@@ -1,3 +1,5 @@
+import { LABELS } from "./constants";
+
 // utils/browserInfo.ts
 export function browserInfoString(
   req: Request,
@@ -245,4 +247,15 @@ export function buildContactMessageByLang(
     `Quedamos atentos. Muchas gracias.`,
     `— CubanTaxis`,
   ].filter(Boolean).join("\n");
+}
+
+export function buildRows(lang:any, data:any) {
+  const labels = (LABELS as any)[lang];
+
+  return data.map(({ from, to, classicModern, minivan }:any) => ({
+    route: `${labels[from]} → ${labels[to]}`,
+    classicModern: `$${classicModern}`,
+    minivan: `$${minivan}`,
+    notes: "",
+  }));
 }

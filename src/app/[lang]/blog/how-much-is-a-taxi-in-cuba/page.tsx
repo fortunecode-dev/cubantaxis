@@ -1,4 +1,6 @@
 // app/blog/taxi-cuba-2025/page.tsx
+export const dynamic = "force-static";
+
 import Image from "next/image";
 import Script from "next/script";
 import { LocaleLink } from "@/libs/i18n-nav";
@@ -6,14 +8,15 @@ import { getTranslation } from "../../locales";
 import { LocaleParams } from "@/types/common";
 import type { Metadata } from "next";
 import { Product, WithContext } from 'schema-dts'
+import { prices } from "@/utils/constants";
 
 export async function generateMetadata(
   { params }: { params: Promise<{ lang: string }> }
 ): Promise<Metadata> {
   const { lang } = await params;
   const idioma = getTranslation(lang);
-  const publishedAt = "2025-11-10";
-  const updatedAt = "2025-11-20";
+  const publishedAt = new Date().toISOString();
+  const updatedAt = new Date().toISOString();
   // Si ya usas tu builder, mantenlo
   return {
     ...(idioma.metadata.blog?.howMuchIsATaxiInCuba ?? {}), openGraph: {
@@ -33,7 +36,7 @@ function formatUpdatedDate(d = new Date()) {
 }
 export default async function BlogTaxiCuba({ params }: { params: LocaleParams }) {
   const { lang } = await params;
-  const { articles: { howMuchIsATaxiInCuba } } = getTranslation(lang);
+  const { articles: { howMuchIsATaxiInCuba }, booking: { fastBooking: { form } } } = getTranslation(lang);
   const updatedAt = formatUpdatedDate();
   const jsonLd = ({ route, classicModern, minivan, columns }: any) => {
     const [from, to] = route.split("→")
@@ -88,19 +91,19 @@ export default async function BlogTaxiCuba({ params }: { params: LocaleParams })
   return (
     <main className="relative">
       <header className="mx-auto max-w-6xl px-4 pb-4 pt-5 sm:pt-10">
-        {jsonLdObjects.map((item, index) => <Script
-          key={index}
-          strategy="lazyOnload"
-          id={index.toString()}
+        <Script
+          id="taxi-jsonld"
           type="application/ld+json"
+          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(item).replace(/</g, '\\u003c'),
+            __html: JSON.stringify(jsonLdObjects),
           }}
-        />)}
+        />
+
         <h1 className="text-3xl font-extrabold tracking-tight text-accent sm:text-4xl">
           {howMuchIsATaxiInCuba.hero.h1}
         </h1>
-        <p className="mt-4 max-w-3xl text-base leading-7 text-primary">
+        <p className="mt-4 max-w-3xl text-base leading-7 text-primary/90">
           {howMuchIsATaxiInCuba.hero.introP1}
         </p>
 
@@ -115,12 +118,12 @@ export default async function BlogTaxiCuba({ params }: { params: LocaleParams })
 
           <a
             href={howMuchIsATaxiInCuba.hero.ctaSecondary.href}
-            className="ml-3 inline-flex items-center justify-center rounded-lg border border-primary/30 bg-white px-5 py-3 text-sm font-semibold text-primary shadow-sm transition hover:bg-primary/5"
+            className="ml-3 inline-flex items-center justify-center rounded-lg border border-primary/30 bg-white px-5 py-3 text-sm font-semibold text-primary/90 shadow-sm transition hover:bg-primary/5"
           >
             {howMuchIsATaxiInCuba.hero.ctaSecondary.label}
           </a>
 
-          <p className="mt-2 text-xs text-primary/80">
+          <p className="mt-2 text-xs text-primary/90/80">
             {howMuchIsATaxiInCuba.hero.subNotePrefix} {updatedAt} {howMuchIsATaxiInCuba.hero.subNoteSuffix && ` ${howMuchIsATaxiInCuba.hero.subNoteSuffix}`}
           </p>
         </div>
@@ -137,7 +140,7 @@ export default async function BlogTaxiCuba({ params }: { params: LocaleParams })
             sizes={howMuchIsATaxiInCuba.ui.heroSizes}
             priority
             fetchPriority="high"
-            className="h-auto w-full object-cover"
+            className="w-full h-auto object-cover aspect-video"
           />
         </div>
       </div>
@@ -150,8 +153,8 @@ export default async function BlogTaxiCuba({ params }: { params: LocaleParams })
               key={c.title}
               className="rounded-2xl border border-primary/15 bg-white p-5 shadow-sm transition hover:shadow-md"
             >
-              <h3 className="text-base font-semibold text-accent">{c.title}</h3>
-              <p className="mt-1 text-sm text-primary">{c.desc}</p>
+              <h2 className="text-base font-semibold text-accent">{c.title}</h2>
+              <p className="mt-1 text-sm text-primary/90">{c.desc}</p>
             </div>
           ))}
         </div>
@@ -160,41 +163,47 @@ export default async function BlogTaxiCuba({ params }: { params: LocaleParams })
       {/* TABLA DE PRECIOS */}
       <section id="prices" className="mx-auto max-w-6xl px-4">
         <h2 className="mt-12 text-xl font-bold text-accent">{howMuchIsATaxiInCuba.prices.title}</h2>
-        <p className="mt-1 text-sm text-primary">
+        <p className="mt-1 text-sm text-primary/90">
           {howMuchIsATaxiInCuba.prices.intro}
         </p>
 
         <div className="mt-4 overflow-hidden rounded-xl border border-primary/15 bg-white shadow-sm">
           <div className="overflow-x-auto">
-            <table className="min-w-full border-separate border-spacing-y-0.5 text-sm">
+            <table className="min-w-full border-separate text-sm">
               <thead>
-                <tr className="text-left text-primary">
+                <tr className="text-left text-primary/90">
                   <th className="px-4 py-3 font-bold text-accent">{howMuchIsATaxiInCuba.prices.columns.route}</th>
                   <th className="px-4 py-3 font-bold text-accent">{howMuchIsATaxiInCuba.prices.columns.classicModern}</th>
                   <th className="px-4 py-3 font-bold text-accent">{howMuchIsATaxiInCuba.prices.columns.minivan}</th>
-                  <th className="px-4 py-3 font-bold text-accent">{howMuchIsATaxiInCuba.prices.columns.notes}</th>
+                  <th className="px-4 py-3 font-bold text-accent"></th>
                 </tr>
               </thead>
               <tbody>
-                {howMuchIsATaxiInCuba.prices.rows.map((row: any, i: number) => (
+                {prices.map((row: any, i: number) => (
                   <tr key={i} className="bg-white">
-                    <td className="px-4 py-3 font-medium text-primary">{row.route}</td>
-                    <td className="px-4 py-3 text-primary">{row.classicModern}</td>
-                    <td className="px-4 py-3 text-primary">{row.minivan}</td>
-                    <td className="px-4 py-3 text-primary/80">{row.notes ?? ""}</td>
+                    <td className="px-4 py-3 font-medium text-primary/90">{form[row.from]} → {form[row.to]}</td>
+                    <td className="px-4 py-3 text-primary/90">${row.classicModern}</td>
+                    <td className="px-4 py-3 text-primary/90">${row.minivan}</td>
+                    <td className="px-4 py-3 text-primary/90"><LocaleLink
+                      href={`${howMuchIsATaxiInCuba.prices.cta.href}?from=${row.from}&to=${row.to}`}
+                      prefetch={false}
+                      className="inline-flex items-center justify-center rounded-lg bg-accent px-4 py-2 text-xs font-semibold text-white shadow-sm transition hover:opacity-95"
+                    >
+                      {howMuchIsATaxiInCuba.prices.cta.label}
+                    </LocaleLink></td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
 
-          <div className="border-t border-primary/10 px-4 py-3 text-xs text-primary/80">
+          <div className="border-t border-primary/10 px-4 py-3 text-xs text-primary/90/80">
             {howMuchIsATaxiInCuba.prices.footnote}
           </div>
         </div>
 
         {/* CTA */}
-        <div className="mt-6 flex flex-col items-start justify-between gap-3 rounded-2xl border border-primary/20 bg-primary/5 p-4 text-sm text-primary shadow-sm sm:flex-row sm:items-center">
+        <div className="mt-6 flex flex-col items-start justify-between gap-3 rounded-2xl border border-primary/20 bg-primary/5 p-4 text-sm text-primary/90 shadow-sm sm:flex-row sm:items-center">
           <span>{howMuchIsATaxiInCuba.ui.ctaAltQuestion}</span>
           <div className="flex gap-3">
             <LocaleLink
@@ -211,14 +220,14 @@ export default async function BlogTaxiCuba({ params }: { params: LocaleParams })
       {/* TIPS SEO */}
       <section className="mx-auto max-w-6xl px-4">
         <h2 className="mt-12 text-lg font-bold text-accent">{howMuchIsATaxiInCuba.tips.whatAffects.title}</h2>
-        <ul className="mt-3 grid grid-cols-1 gap-2 text-sm text-primary sm:grid-cols-2">
+        <ul className="mt-3 grid grid-cols-1 gap-2 text-sm text-primary/90 sm:grid-cols-2">
           {howMuchIsATaxiInCuba.tips.whatAffects.items.map((it: any) => (
             <li key={it}>{it}</li>
           ))}
         </ul>
 
         <h2 className="mt-10 text-lg font-bold text-accent">{howMuchIsATaxiInCuba.tips.touristTips.title}</h2>
-        <p className="mt-2 text-sm text-primary">
+        <p className="mt-2 text-sm text-primary/90">
           {howMuchIsATaxiInCuba.tips.touristTips.paragraphPrefix}{" "}
           <LocaleLink
             href={howMuchIsATaxiInCuba.tips.touristTips.link.href}

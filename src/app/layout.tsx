@@ -40,26 +40,34 @@ export default async function RootLayout({
         {isProd && (
           <>
             <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-            <link rel="dns-prefetch" href="https://www.google-analytics.com" />
-            <link
-              rel="preconnect"
-              href="https://www.googletagmanager.com"
-              crossOrigin="anonymous"
-            />
-            <link
-              rel="preconnect"
-              href="https://www.google-analytics.com"
-              crossOrigin="anonymous"
-            />
-             <GoogleAnalytics gaId="G-HB26WDN91W" />
+            <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
+
+            <Script id="ga-loader" strategy="lazyOnload">
+              {`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        function loadGA() {
+          const s = document.createElement("script");
+          s.src = "https://www.googletagmanager.com/gtag/js?id=G-HB26WDN91W";
+          s.async = true;
+          document.head.appendChild(s);
+
+          gtag('js', new Date());
+          gtag('config', 'G-HB26WDN91W');
+        }
+
+        window.addEventListener("scroll", loadGA, { once: true });
+      `}
+            </Script>
           </>
         )}
+
       </head>
       <body className="font-sans antialiased min-h-screen scroll-smooth">
         <div id="top" />
         <main id="main">
           <Header lang={lang} />
-           <NextBreadcrumb
+          <NextBreadcrumb
             homeElement={'Home'}
             capitalizeLinks
           />

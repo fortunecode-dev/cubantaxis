@@ -1,3 +1,6 @@
+import { prices } from "@/utils/constants";
+import { buildRows } from "@/utils/metadata";
+
 export const articles = {
   howMuchIsATaxiInCuba: {
     seo: {
@@ -53,15 +56,7 @@ export const articles = {
       intro:
         "Os preços são por carro (serviço privado). O valor final depende do tipo de veículo, ponto de pick-up, adicionais noturnos e paradas opcionais.",
       columns: { route: "Rota", classicModern: "Clássico / Moderno", minivan: "Minivan", notes: "Observações" },
-      rows: [
-        { route: "Aeroporto de Havana (HAV) → Centro", classicModern: "$30", minivan: "$55", notes: "Transfer típico de chegada" },
-        { route: "Havana → Varadero", classicModern: "$100", minivan: "$180", notes: "Ida e volta no mesmo dia disponível" },
-        { route: "Havana → Viñales", classicModern: "$130", minivan: "$200", notes: "Ida e volta sob consulta" },
-        { route: "Havana → Trinidad", classicModern: "$250", minivan: "$320", notes: "Opção via Cienfuegos" },
-        { route: "Varadero → Cienfuegos", classicModern: "$120", minivan: "$205" },
-        { route: "Varadero → Trinidad", classicModern: "$250", minivan: "$270" },
-        { route: "Aeroporto de Varadero (VRA) → Hotéis", classicModern: "$40", minivan: "$70" },
-      ],
+      rows: buildRows("pt", prices),
       footnote:
         "Os preços podem variar para pick-ups longe do KM-0 de Havana (Capitólio) e em horário noturno.",
       cta: { label: "Pedir cotação", href: "/cuba-taxi-booking" },
@@ -234,15 +229,7 @@ export const articles = {
             minivan: "Minivan",
             notes: "Notas",
         },
-        rows: [
-            { route: "Aeroporto de Havana (HAV) → Centro", classicModern: "$30", minivan: "$55", notes: "Traslado típico de chegada" },
-            { route: "Havana → Varadero", classicModern: "$100", minivan: "$180", notes: "Ida e volta no mesmo dia disponível" },
-            { route: "Havana → Viñales", classicModern: "$130", minivan: "$200", notes: "Ida e volta sob consulta" },
-            { route: "Havana → Trinidad", classicModern: "$250", minivan: "$320", notes: "Via Cienfuegos opcional" },
-            { route: "Varadero → Cienfuegos", classicModern: "$120", minivan: "$205" },
-            { route: "Varadero → Trinidad", classicModern: "$250", minivan: "$270" },
-            { route: "Aeroporto de Varadero (VRA) → Hotéis", classicModern: "$40", minivan: "$70" },
-        ],
+        rows:buildRows("pt", prices),
         footnote:
             "Os preços podem variar para pick-ups distantes do KM-0 (Capitólio) em Havana e para horários noturnos.",
         cta: { label: "Solicitar cotação", href: "/cuba-taxi-booking" },

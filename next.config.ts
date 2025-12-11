@@ -21,6 +21,7 @@ export default withBundleAnalyzer({ enabled: process.env.ANALYZE === 'true' })({
     "date-fns": { transform: "date-fns/{{ member }}" },
   },
   experimental: {
+    optimizeCss: true,
   },
   async redirects() {
     return [
