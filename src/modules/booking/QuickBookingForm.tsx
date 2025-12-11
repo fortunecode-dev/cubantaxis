@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { cars, places } from "@/utils/constants";
 // @ts-ignore
 // import { FaWhatsapp, FaTelegram } from "react-icons/fa6";
@@ -17,18 +17,18 @@ type BookingData = {
   luggage?: string; // opcional
 };
 
-type Props = { idioma: any };
+type Props = { idioma: any; fromPlace?: string; toPlace?: string };
 
-export default function QuickBookingForm({ idioma }: Props) {
+export default function QuickBookingForm({
+  idioma,
+  fromPlace: from,
+  toPlace: to,
+}: Props) {
   const router = useRouter();
-  const searchParams = useSearchParams()
-  const from = searchParams.get("from")
-  const to = searchParams.get("to")
-  console.log({ searchParams });
   const initialData: BookingData = {
     phone: "",
-    from: from ? places.includes(from) ? from : places?.[0] : "",
-    to: to ? places.includes(to) ? to : places?.[1] : "",
+    from: from ? (places.includes(from) ? from : places?.[0]) : "",
+    to: to ? (places.includes(to) ? to : places?.[1]) : "",
     date: "",
     time: "",
     vehicle: idioma.vehicles?.[0] || "",
@@ -171,7 +171,10 @@ export default function QuickBookingForm({ idioma }: Props) {
               disabled={submitting}
             >
               {places
-                .filter((l: string) => l !== (key === "from" ? formData.to : formData.from))
+                .filter(
+                  (l: string) =>
+                    l !== (key === "from" ? formData.to : formData.from)
+                )
                 .map((loc: string) => (
                   <option key={loc} value={loc}>
                     {idioma[loc]}
@@ -245,7 +248,9 @@ export default function QuickBookingForm({ idioma }: Props) {
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm backdrop-saturate-150 p-4 transition-opacity duration-300"
         >
           <div className="w-full max-w-md rounded-2xl bg-white/95 shadow-2xl ring-1 ring-primary/10 backdrop-blur-[1px] p-6">
-            <h4 className="text-center text-lg font-bold text-accent">{idioma.confirmationTexts.title}</h4>
+            <h4 className="text-center text-lg font-bold text-accent">
+              {idioma.confirmationTexts.title}
+            </h4>
             <p className="mt-2 text-center text-sm text-primary">
               {idioma.confirmationTexts.message}
             </p>
@@ -254,14 +259,13 @@ export default function QuickBookingForm({ idioma }: Props) {
                 type="button"
                 onClick={() => {
                   setModalOpen(false);
-                  setFormData(initialData);   // 👈 resetea el formulario
-                  router.push("/");           // 👈 navega al inicio
+                  setFormData(initialData); // 👈 resetea el formulario
+                  router.push("/"); // 👈 navega al inicio
                 }}
                 className="inline-flex items-center justify-center rounded-lg bg-accent px-6 py-2 text-sm font-semibold text-white shadow-sm transition hover:opacity-90"
               >
                 {idioma.confirmationTexts.button}
               </button>
-
             </div>
           </div>
         </div>
@@ -304,7 +308,9 @@ function Field({
   label: string;
   type: React.HTMLInputTypeAttribute;
   value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void;
+  onChange: (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => void;
   placeholder?: string;
   inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
   required?: boolean;
