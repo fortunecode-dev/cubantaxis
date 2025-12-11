@@ -16,7 +16,7 @@ type PageProps = {
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
-  const { lang, fromSlug, toSlug } = params;
+  const { lang, fromSlug, toSlug } = await params;
 
   const {
     metadata,
@@ -62,7 +62,7 @@ export async function generateMetadata({
 }
 
 export default async function TaxiPage({ params }: PageProps) {
-  const { lang, fromSlug, toSlug } = params;
+  const { lang, fromSlug, toSlug } = await params;
 
   const {
     booking: {
