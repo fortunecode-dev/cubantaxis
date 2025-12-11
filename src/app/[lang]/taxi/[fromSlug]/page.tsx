@@ -16,7 +16,8 @@ type PageProps = {
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
-  const { lang, fromSlug, toSlug } = await params;
+  const { lang, fromSlug, toSlug } = params;
+
   const {
     metadata,
     booking: {
@@ -24,22 +25,43 @@ export async function generateMetadata({
     },
   } = getTranslation(lang);
 
-  // base metadata (title, og, description, etc.)
-  let meta = metadata.fastBooking;
+  // idioma en URL
+  const langPrefix = lang === "en" ? "" : `/${lang}`;
 
-  // if dynamic route → adjust SEO title
+  // --- CANONICAL DINÁMICO ---
+  let canonical = `https://cubantaxis.com${langPrefix}/taxi`;
+
+  if (fromSlug) canonical += `/${fromSlug}`;
+  if (toSlug) canonical += `/${toSlug}`;
+
+  // --- TITLE + DESCRIPTION DINÁMICOS ---
+  let title = metadata.fastBooking?.title || "Taxi Booking in Cuba";
+  let description =
+    metadata.fastBooking?.description || "Private taxi service in Cuba";
+
   if (fromSlug && toSlug) {
-    meta = {
-      ...meta,
-      title: `${metadata.fastBooking?.title} | ${fromSlug} → ${toSlug}`,
-      description: `Private taxi from ${form[fromSlug]} to ${form[toSlug]}. Book now.`,
-    };
+    const fromText = form[fromSlug] || fromSlug;
+    const toText = form[toSlug] || toSlug;
+
+    title = `${fromText} → ${toText} | Private Taxi Transfer`;
+    description = `Private taxi from ${fromText} to ${toText}. Fixed price and 24/7 assistance.`;
   }
 
-  return buildMetaTags(meta as any);
+  if (fromSlug && !toSlug) {
+    const fromText = form[fromSlug] || fromSlug;
+    title = `Taxi from ${fromText} | Private Transfers`;
+    description = `Book a private taxi departing from ${fromText}. Safe, fast and reliable.`;
+  }
+
+  return {
+    ...buildMetaTags({ ...metadata.fastBooking, title, description }),
+    alternates: {
+      canonical,
+    },
+  };
 }
 
-export default function TaxiPage({ params }: PageProps) {
+export default async function TaxiPage({ params }: PageProps) {
   const { lang, fromSlug, toSlug } = params;
 
   const {
@@ -50,9 +72,10 @@ export default function TaxiPage({ params }: PageProps) {
     confirmationTexts,
   } = getTranslation(lang);
 
-  const baseUrl = `https://cubantaxis.com/${lang}/taxi`;
+  const langPrefix = lang === "en" ? "" : `/${lang}`;
+  const baseUrl = `https://cubantaxis.com${langPrefix}/taxi`;
 
-  // ---------- JSON-LD BASE ----------
+  // --- JSON-LD BASE ---
   const baseJsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -64,8 +87,9 @@ export default function TaxiPage({ params }: PageProps) {
     },
   };
 
-  // ---------- JSON-LD DINÁMICO SI EXISTEN SLUGS ----------
+  // --- JSON-LD DINÁMICO ---
   let routeJsonLd = null;
+
   if (fromSlug && toSlug) {
     routeJsonLd = buildTaxiBookingJsonLd({
       from: fromSlug,
@@ -84,7 +108,7 @@ export default function TaxiPage({ params }: PageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(baseJsonLd) }}
       />
 
-      {/* JSON-LD DINÁMICO SOLO SI HAY RUTA COMPLETA */}
+      {/* JSON-LD RUTA COMPLETA */}
       {routeJsonLd && (
         <script
           type="application/ld+json"
