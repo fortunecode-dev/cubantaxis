@@ -23,7 +23,7 @@ export default function Footer({ lang }: { lang: string }) {
   //   url: [
   //     `${prefix}/taxi-in-cuba`,
   //     `${prefix}/private-transfer-booking`,
-  //     `${prefix}/cuba-taxi-booking`,
+  //     `${prefix}/taxi`,
   //     `${prefix}/blog`,
   //     `${prefix}/blog/how-much-is-a-taxi-in-cuba`,
   //     `${prefix}/interesting-places-in-cuba`,
@@ -37,7 +37,7 @@ export default function Footer({ lang }: { lang: string }) {
       href: `${prefix}/private-transfer-booking`,
       label: "Private Transfer Booking",
     },
-    { href: `${prefix}/cuba-taxi-booking`, label: "Quick Booking" },
+    { href: `${prefix}/taxi`, label: "Quick Booking" },
     { href: `${prefix}/blog`, label: "Blog" },
     {
       href: `${prefix}/blog/how-much-is-a-taxi-in-cuba`,

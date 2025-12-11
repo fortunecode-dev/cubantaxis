@@ -48,7 +48,7 @@ export const metadata: Partial<customMetaData> = {
     title: "Fast Cuba Taxi Booking | Airport Transfers & Tours | CubanTa",
     description:
       "Quick Cuba taxi booking for airport transfers and tours. Reliable drivers, fixed prices, Havana & Varadero routes with CubanTaxis.",
-    alternates: buildAlternatesMetadata("/cuba-taxi-booking", "en"),
+    alternates: buildAlternatesMetadata("/taxi", "en"),
   },
 
   destinationsInCuba: {

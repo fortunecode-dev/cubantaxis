@@ -130,7 +130,7 @@ export const de: AppTexts = {
         "Entdecken Sie Top-Attraktionen: Varadero-Resorts, Wahrzeichen Havannas, Hotels und Familienaktivitäten.",
     },
     {
-      href: "/cuba-taxi-booking",
+      href: "/taxi",
       title: "Schnelle Taxireservierung",
       description:
         "Buchen Sie eine Taxifahrt in Kuba mit wenigen Klicks. Schnell und zuverlässig.",

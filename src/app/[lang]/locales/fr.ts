@@ -129,7 +129,7 @@ export const fr: AppTexts = {
         "Découvrez les meilleures attractions de Cuba : resorts de Varadero, monuments de La Havane, hôtels et activités familiales.",
     },
     {
-      href: "/cuba-taxi-booking",
+      href: "/taxi",
       title: "Réservation rapide de taxi",
       description:
         "Réservez un trajet à Cuba en quelques clics. Service rapide et fiable.",

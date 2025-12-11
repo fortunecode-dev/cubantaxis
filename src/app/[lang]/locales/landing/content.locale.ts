@@ -37,7 +37,8 @@ export const mainSeo = {
           {
             label: "Car rental vs taxi",
             href: "/blog/private-taxi-or-car-rental",
-          }, {
+          },
+          {
             label: "How much is a taxi in Cuba",
             href: "/blog/how-much-is-a-taxi-in-cuba",
             lang: "en",
@@ -71,12 +72,12 @@ export const mainSeo = {
         todos: [
           {
             label: "Destinations in Cuba",
-            href: "/destinations-in-cuba"
+            href: "/destinations-in-cuba",
           },
           {
             label: "Interesting places in Cuba",
-            href: "/interesting-places-in-cuba"
-          }
+            href: "/interesting-places-in-cuba",
+          },
         ],
       },
       {
@@ -202,12 +203,12 @@ export const mainSeo = {
           {
             label: "Alquiler de coche vs taxi",
             href: "/es/blog/private-taxi-or-car-rental",
-          }, {
+          },
+          {
             label: "¿Cuánto cuesta un taxi en Cuba?",
             href: "/es/blog/how-much-is-a-taxi-in-cuba",
             lang: "es",
           },
-
         ],
         media: {
           src: "/car-rental-vs-taxi.jpg",
@@ -216,15 +217,16 @@ export const mainSeo = {
         reverse: true as const,
       },
       {
-        id: "landmarks", todos: [
+        id: "landmarks",
+        todos: [
           {
             label: "Destinos en Cuba",
-            href: "/es/destinations-in-cuba"
+            href: "/es/destinations-in-cuba",
           },
           {
             label: "Lugares interesantes en Cuba",
-            href: "/es/interesting-places-in-cuba"
-          }
+            href: "/es/interesting-places-in-cuba",
+          },
         ],
         headingLevel: "h2",
         title: "Lugares imprescindibles para visitar en taxi",
@@ -396,7 +398,8 @@ export const mainSeo = {
           {
             label: "Location de voiture vs taxi",
             href: "/fr/blog/private-taxi-or-car-rental",
-          }, {
+          },
+          {
             label: "Combien coûte un taxi à Cuba ?",
             href: "/fr/blog/how-much-is-a-taxi-in-cuba",
             lang: "fr",
@@ -413,12 +416,12 @@ export const mainSeo = {
         todos: [
           {
             label: "Destinations à Cuba",
-            href: "/fr/destinations-in-cuba"
+            href: "/fr/destinations-in-cuba",
           },
           {
             label: "Lieux intéressants à Cuba",
-            href: "/fr/interesting-places-in-cuba"
-          }
+            href: "/fr/interesting-places-in-cuba",
+          },
         ],
         headingLevel: "h2",
         title: "Lieux incontournables à visiter en taxi",
@@ -571,7 +574,8 @@ export const mainSeo = {
           {
             label: "Autovermietung vs Taxi",
             href: "/de/blog/private-taxi-or-car-rental",
-          }, {
+          },
+          {
             label: "Wie viel kostet ein Taxi in Kuba?",
             href: "/de/blog/how-much-is-a-taxi-in-cuba",
             lang: "de",
@@ -584,15 +588,16 @@ export const mainSeo = {
         reverse: true as const,
       },
       {
-        id: "landmarks", todos: [
+        id: "landmarks",
+        todos: [
           {
             label: "Reiseziele in Kuba",
-            href: "/de/destinations-in-cuba"
+            href: "/de/destinations-in-cuba",
           },
           {
             label: "Interessante Orte in Kuba",
-            href: "/de/interesting-places-in-cuba"
-          }
+            href: "/de/interesting-places-in-cuba",
+          },
         ],
         headingLevel: "h2",
         title: "Top-Sehenswürdigkeiten per Taxi",
@@ -745,7 +750,8 @@ export const mainSeo = {
           {
             label: "Аренда автомобиля vs такси",
             href: "/ru/blog/private-taxi-or-car-rental",
-          }, {
+          },
+          {
             label: "Сколько стоит такси на Кубе",
             href: "/ru/blog/how-much-is-a-taxi-in-cuba",
             lang: "ru",
@@ -762,12 +768,12 @@ export const mainSeo = {
         todos: [
           {
             label: "Направления на Кубе",
-            href: "/ru/destinations-in-cuba"
+            href: "/ru/destinations-in-cuba",
           },
           {
             label: "Интересные места на Кубе",
-            href: "/ru/interesting-places-in-cuba"
-          }
+            href: "/ru/interesting-places-in-cuba",
+          },
         ],
         headingLevel: "h2",
         title: "Главные достопримечательности на такси",
@@ -914,12 +920,12 @@ export const mainSeo = {
           {
             label: "Aluguel de carro vs táxi",
             href: "/pt/blog/private-taxi-or-car-rental",
-          }, {
+          },
+          {
             label: "Quanto custa um táxi em Cuba?",
             href: "/pt/blog/how-much-is-a-taxi-in-cuba",
             lang: "pt",
           },
-
         ],
         media: {
           src: "/car-rental-vs-taxi.jpg",
@@ -932,12 +938,12 @@ export const mainSeo = {
         todos: [
           {
             label: "Destinos em Cuba",
-            href: "/pt/destinations-in-cuba"
+            href: "/pt/destinations-in-cuba",
           },
           {
             label: "Lugares interessantes em Cuba",
-            href: "/pt/interesting-places-in-cuba"
-          }
+            href: "/pt/interesting-places-in-cuba",
+          },
         ],
         headingLevel: "h2",
         title: "Principais pontos turísticos para visitar de táxi",

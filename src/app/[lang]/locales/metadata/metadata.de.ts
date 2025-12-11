@@ -50,7 +50,7 @@ export const metadata: Partial<customMetaData> = {
     title: "Schnelle Kuba-Taxi Buchung | Flughafen-Transfers & Touren | ",
     description:
       "Schnelle Taxi-Buchung für Flughafen-Transfers und Touren. Zuverlässige Fahrer, Festpreise, Routen Havanna & Varadero mit CubanTaxis.",
-    alternates: buildAlternatesMetadata("/cuba-taxi-booking", "de"),
+    alternates: buildAlternatesMetadata("/taxi", "de"),
   },
 
   destinationsInCuba: {

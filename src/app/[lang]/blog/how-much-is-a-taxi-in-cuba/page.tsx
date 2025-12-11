@@ -7,86 +7,111 @@ import { LocaleLink } from "@/libs/i18n-nav";
 import { getTranslation } from "../../locales";
 import { LocaleParams } from "@/types/common";
 import type { Metadata } from "next";
-import { Product, WithContext } from 'schema-dts'
+import { Product, WithContext } from "schema-dts";
 import { prices } from "@/utils/constants";
 
-export async function generateMetadata(
-  { params }: { params: Promise<{ lang: string }> }
-): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
   const { lang } = await params;
   const idioma = getTranslation(lang);
   const publishedAt = new Date().toISOString();
   const updatedAt = new Date().toISOString();
   // Si ya usas tu builder, mantenlo
   return {
-    ...(idioma.metadata.blog?.howMuchIsATaxiInCuba ?? {}), openGraph: {
+    ...(idioma.metadata.blog?.howMuchIsATaxiInCuba ?? {}),
+    openGraph: {
       type: "article",
       publishedTime: publishedAt,
       modifiedTime: updatedAt,
       images: idioma.articles.howMuchIsATaxiInCuba.hero.heroImage.src,
-      url: `https://cubantaxis.com${lang == "en" ? "" : "/" + lang}/blog/how-much-is-a-taxi-in-cuba`,
+      url: `https://cubantaxis.com${
+        lang == "en" ? "" : "/" + lang
+      }/blog/how-much-is-a-taxi-in-cuba`,
       title: idioma.metadata.blog?.howMuchIsATaxiInCuba.title,
       description: idioma.metadata.blog?.howMuchIsATaxiInCuba.description,
-    }, twitter: { site: `https://cubantaxis.com${lang == "en" ? "" : "/" + lang}/blog/how-much-is-a-taxi-in-cuba`, }
+    },
+    twitter: {
+      site: `https://cubantaxis.com${
+        lang == "en" ? "" : "/" + lang
+      }/blog/how-much-is-a-taxi-in-cuba`,
+    },
   } as Metadata;
 }
 function formatUpdatedDate(d = new Date()) {
-  const opts: Intl.DateTimeFormatOptions = { year: "numeric", month: "long", day: "numeric" };
+  const opts: Intl.DateTimeFormatOptions = {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
   return new Intl.DateTimeFormat("en-US", opts).format(d);
 }
-export default async function BlogTaxiCuba({ params }: { params: LocaleParams }) {
+export default async function BlogTaxiCuba({
+  params,
+}: {
+  params: LocaleParams;
+}) {
   const { lang } = await params;
-  const { articles: { howMuchIsATaxiInCuba }, booking: { fastBooking: { form } } } = getTranslation(lang);
+  const {
+    articles: { howMuchIsATaxiInCuba },
+    booking: {
+      fastBooking: { form },
+    },
+  } = getTranslation(lang);
   const updatedAt = formatUpdatedDate();
   const jsonLd = ({ route, classicModern, minivan, columns }: any) => {
-    const [from, to] = route.split("→")
+    const [from, to] = route.split("→");
     return {
       name: howMuchIsATaxiInCuba.prices.title,
       description: route,
       "@context": "https://schema.org",
       "@type": "Product",
-      "category": "Taxi Service",
-      "brand": {
+      category: "Taxi Service",
+      brand: {
         "@type": "Brand",
-        "name": "CubanTaxis"
+        name: "CubanTaxis",
       },
-      "areaServed": [
+      areaServed: [
         {
           "@type": "City",
-          "name": from.trim()
+          name: from.trim(),
         },
         {
           "@type": "City",
-          "name": to.trim()
-        }
+          name: to.trim(),
+        },
       ],
-      "offers": {
+      offers: {
         "@type": "AggregateOffer",
-        "priceCurrency": "USD",
-        "lowPrice": classicModern.slice(1),
-        "highPrice": minivan.slice(1),
-        "offerCount": "2",
-        "offers": [
+        priceCurrency: "USD",
+        lowPrice: classicModern.slice(1),
+        highPrice: minivan.slice(1),
+        offerCount: "2",
+        offers: [
           {
             "@type": "Offer",
-            "name": columns.classicModern,
-            "price": classicModern.slice(1),
-            "priceCurrency": "USD",
-            "availability": "https://schema.org/InStock"
+            name: columns.classicModern,
+            price: classicModern.slice(1),
+            priceCurrency: "USD",
+            availability: "https://schema.org/InStock",
           },
           {
             "@type": "Offer",
-            "name": columns.minivan,
-            "price": minivan.slice(1),
-            "priceCurrency": "USD",
-            "availability": "https://schema.org/InStock"
-          }
-        ]
-
-      }
-    }
-  }
-  const jsonLdObjects: WithContext<Product>[] = howMuchIsATaxiInCuba.prices.rows.map((row: any, i: number) => (jsonLd({ ...row, columns: howMuchIsATaxiInCuba.prices.columns })))
+            name: columns.minivan,
+            price: minivan.slice(1),
+            priceCurrency: "USD",
+            availability: "https://schema.org/InStock",
+          },
+        ],
+      },
+    };
+  };
+  const jsonLdObjects: WithContext<Product>[] =
+    howMuchIsATaxiInCuba.prices.rows.map((row: any, i: number) =>
+      jsonLd({ ...row, columns: howMuchIsATaxiInCuba.prices.columns })
+    );
 
   return (
     <main className="relative">
@@ -124,7 +149,9 @@ export default async function BlogTaxiCuba({ params }: { params: LocaleParams })
           </a>
 
           <p className="mt-2 text-xs text-primary/90/80">
-            {howMuchIsATaxiInCuba.hero.subNotePrefix} {updatedAt} {howMuchIsATaxiInCuba.hero.subNoteSuffix && ` ${howMuchIsATaxiInCuba.hero.subNoteSuffix}`}
+            {howMuchIsATaxiInCuba.hero.subNotePrefix} {updatedAt}{" "}
+            {howMuchIsATaxiInCuba.hero.subNoteSuffix &&
+              ` ${howMuchIsATaxiInCuba.hero.subNoteSuffix}`}
           </p>
         </div>
       </header>
@@ -162,7 +189,9 @@ export default async function BlogTaxiCuba({ params }: { params: LocaleParams })
 
       {/* TABLA DE PRECIOS */}
       <section id="prices" className="mx-auto max-w-6xl px-4">
-        <h2 className="mt-12 text-xl font-bold text-accent">{howMuchIsATaxiInCuba.prices.title}</h2>
+        <h2 className="mt-12 text-xl font-bold text-accent">
+          {howMuchIsATaxiInCuba.prices.title}
+        </h2>
         <p className="mt-1 text-sm text-primary/90">
           {howMuchIsATaxiInCuba.prices.intro}
         </p>
@@ -172,25 +201,41 @@ export default async function BlogTaxiCuba({ params }: { params: LocaleParams })
             <table className="min-w-full border-separate text-sm">
               <thead>
                 <tr className="text-left text-primary/90">
-                  <th className="px-4 py-3 font-bold text-accent">{howMuchIsATaxiInCuba.prices.columns.route}</th>
-                  <th className="px-4 py-3 font-bold text-accent">{howMuchIsATaxiInCuba.prices.columns.classicModern}</th>
-                  <th className="px-4 py-3 font-bold text-accent">{howMuchIsATaxiInCuba.prices.columns.minivan}</th>
+                  <th className="px-4 py-3 font-bold text-accent">
+                    {howMuchIsATaxiInCuba.prices.columns.route}
+                  </th>
+                  <th className="px-4 py-3 font-bold text-accent">
+                    {howMuchIsATaxiInCuba.prices.columns.classicModern}
+                  </th>
+                  <th className="px-4 py-3 font-bold text-accent">
+                    {howMuchIsATaxiInCuba.prices.columns.minivan}
+                  </th>
                   <th className="px-4 py-3 font-bold text-accent"></th>
                 </tr>
               </thead>
               <tbody>
                 {prices.map((row: any, i: number) => (
                   <tr key={i} className="bg-white">
-                    <td className="px-4 py-3 font-medium text-primary/90">{form[row.from]} → {form[row.to]}</td>
-                    <td className="px-4 py-3 text-primary/90">${row.classicModern}</td>
-                    <td className="px-4 py-3 text-primary/90">${row.minivan}</td>
-                    <td className="px-4 py-3 text-primary/90"><LocaleLink
-                      href={`${howMuchIsATaxiInCuba.prices.cta.href}?from=${row.from}&to=${row.to}`}
-                      prefetch={false}
-                      className="inline-flex items-center justify-center rounded-lg bg-accent px-4 py-2 text-xs font-semibold text-white shadow-sm transition hover:opacity-95"
-                    >
-                      {howMuchIsATaxiInCuba.prices.cta.label}
-                    </LocaleLink></td>
+                    <td className="px-4 py-3 font-medium text-primary/90">
+                      {form[row.from]} → {form[row.to]}
+                    </td>
+                    <td className="px-4 py-3 text-primary/90">
+                      ${row.classicModern}
+                    </td>
+                    <td className="px-4 py-3 text-primary/90">
+                      ${row.minivan}
+                    </td>
+                    <td className="px-4 py-3 text-primary/90">
+                      <LocaleLink
+                        href={`${howMuchIsATaxiInCuba.prices.cta.href}${
+                          lang == "en" ? "" : `/${lang}`
+                        }/${row.from}/${row.to}`}
+                        prefetch={false}
+                        className="inline-flex items-center justify-center rounded-lg bg-accent px-4 py-2 text-xs font-semibold text-white shadow-sm transition hover:opacity-95"
+                      >
+                        {howMuchIsATaxiInCuba.prices.cta.label}
+                      </LocaleLink>
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -219,14 +264,18 @@ export default async function BlogTaxiCuba({ params }: { params: LocaleParams })
 
       {/* TIPS SEO */}
       <section className="mx-auto max-w-6xl px-4">
-        <h2 className="mt-12 text-lg font-bold text-accent">{howMuchIsATaxiInCuba.tips.whatAffects.title}</h2>
+        <h2 className="mt-12 text-lg font-bold text-accent">
+          {howMuchIsATaxiInCuba.tips.whatAffects.title}
+        </h2>
         <ul className="mt-3 grid grid-cols-1 gap-2 text-sm text-primary/90 sm:grid-cols-2">
           {howMuchIsATaxiInCuba.tips.whatAffects.items.map((it: any) => (
             <li key={it}>{it}</li>
           ))}
         </ul>
 
-        <h2 className="mt-10 text-lg font-bold text-accent">{howMuchIsATaxiInCuba.tips.touristTips.title}</h2>
+        <h2 className="mt-10 text-lg font-bold text-accent">
+          {howMuchIsATaxiInCuba.tips.touristTips.title}
+        </h2>
         <p className="mt-2 text-sm text-primary/90">
           {howMuchIsATaxiInCuba.tips.touristTips.paragraphPrefix}{" "}
           <LocaleLink
@@ -251,11 +300,17 @@ export default async function BlogTaxiCuba({ params }: { params: LocaleParams })
             "@type": "Article",
             headline: howMuchIsATaxiInCuba.seo.headline,
             description: howMuchIsATaxiInCuba.seo.description,
-            author: { "@type": "Organization", name: howMuchIsATaxiInCuba.seo.authorName },
+            author: {
+              "@type": "Organization",
+              name: howMuchIsATaxiInCuba.seo.authorName,
+            },
             publisher: {
               "@type": "Organization",
               name: howMuchIsATaxiInCuba.seo.publisherName,
-              logo: { "@type": "ImageObject", url: howMuchIsATaxiInCuba.seo.publisherLogo },
+              logo: {
+                "@type": "ImageObject",
+                url: howMuchIsATaxiInCuba.seo.publisherLogo,
+              },
             },
             image: howMuchIsATaxiInCuba.seo.image,
             mainEntityOfPage: howMuchIsATaxiInCuba.seo.mainEntityOfPage,

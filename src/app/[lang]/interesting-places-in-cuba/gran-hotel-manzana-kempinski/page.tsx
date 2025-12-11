@@ -3,39 +3,46 @@ import { buildMetaTags } from "../../../../seoUtils/seo-builder";
 import type { Metadata } from "next";
 import { getTranslation } from "../../locales";
 
-export async function generateMetadata(
-  { params }: { params: Promise<{ lang: string }> }
-): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
   const { lang } = await params;
-  const idioma = getTranslation(lang)
-  const metadata = buildMetaTags(idioma.metadata.interestingPlaces?.granHotelManzanaKempinski as any)
-  return metadata
+  const idioma = getTranslation(lang);
+  const metadata = buildMetaTags(
+    idioma.metadata.interestingPlaces?.granHotelManzanaKempinski as any
+  );
+  return metadata;
 }
 
 export default function Example() {
   return (
     <PlaceSEOCard
       seo={{
-        title: "Taxi Pickup at José Martí International Airport (HAV) | Cuban Taxis",
+        title:
+          "Taxi Pickup at José Martí International Airport (HAV) | Cuban Taxis",
         description:
           "Private airport pickup at HAV with professional drivers. Fixed prices, flight tracking and 24/7 support.",
         keywords: ["taxi cuba", "havana airport transfer", "cuban taxis"],
-        canonical: "https://cubantaxis.com/interesting-places-in-cuba/gran-hotel-manzana-kempinski",
+        canonical:
+          "https://cubantaxis.com/interesting-places-in-cuba/gran-hotel-manzana-kempinski",
         robots: "index,follow",
         siteName: "Cuban Taxis",
         locale: "en_US",
-        ogImage: "https://cubantaxis.com/og/hav-transfer.jpg",
+        ogImage: "https://cubantaxis.com/og/havana-transfer.jpg",
         ogType: "place",
         twitterCard: "summary_large_image",
         hreflangAlternates: {
-          en: "https://cubantaxis.com/hav-airport-transfer",
+          en: "https://cubantaxis.com/havana-airport-transfer",
         },
       }}
       place={{
         name: "Gran Hotel Manzana Kempinski",
         alternateName: "Primer hotel de lujo en La Habana",
         image: "/gran-hotel-manzana-kempinski.jpg", // falta
-        description: "Hotel de lujo en el corazón de La Habana Vieja, rodeado de sitios Patrimonio de la Humanidad. Habitaciones con vistas a la ciudad y spa exclusivo.",
+        description:
+          "Hotel de lujo en el corazón de La Habana Vieja, rodeado de sitios Patrimonio de la Humanidad. Habitaciones con vistas a la ciudad y spa exclusivo.",
         address: {
           streetAddress: "Calle San Rafael",
           addressLocality: "La Habana",
@@ -51,16 +58,24 @@ export default function Example() {
         { class: "amenities", icon: "star", name: "Habitaciones Deluxe" },
         { class: "food", icon: "map", name: "Restaurantes gourmet" },
       ]}
-     
       breadcrumbs={[
         { name: "Home", item: "https://cubantaxis.com" },
         { name: "Transfers", item: "https://cubantaxis.com/transfers" },
-        { name: "HAV Airport", item: "https://cubantaxis.com/hav-airport-transfer" },
+        {
+          name: "HAV Airport",
+          item: "https://cubantaxis.com/havana-airport-transfer",
+        },
       ]}
       schemaType="LocalBusiness"
       faq={[
-        { question: "¿El precio es por coche o por persona?", answer: "Siempre por coche (servicio privado)." },
-        { question: "¿Monitorean vuelos?", answer: "Sí, ajustamos la recogida a retrasos del vuelo sin costo." },
+        {
+          question: "¿El precio es por coche o por persona?",
+          answer: "Siempre por coche (servicio privado).",
+        },
+        {
+          question: "¿Monitorean vuelos?",
+          answer: "Sí, ajustamos la recogida a retrasos del vuelo sin costo.",
+        },
       ]}
       className="mt-6"
     />

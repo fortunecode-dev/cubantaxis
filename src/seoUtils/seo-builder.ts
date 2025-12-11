@@ -5,22 +5,6 @@ const LOCALES = ["es", "fr", "de", "ru", "pt"] as const;
 export type Locale = (typeof LOCALES)[number];
 const urlBase = "https://cubantaxis.com";
 
-// Construye alternates para Estrategia A: EN = neutra
-export function buildAlternates(slugNoLang: `/${string}` | "") {
-  const languages: Record<string, string> = {
-    en: `${urlBase}${slugNoLang}`, // inglés = neutra
-    "x-default": `${urlBase}${slugNoLang}`, // x-default = neutra
-  };
-  for (const l of LOCALES) {
-    languages[l] = `${urlBase}/${l}${slugNoLang}`;
-  }
-  return {
-    canonicalNeutral: `${urlBase}${slugNoLang}`, // canónica para inglés
-    canonicalFor: (lang: Locale) => `${urlBase}/${lang}${slugNoLang}`, // canónica otros idiomas
-    languages, // bloque hreflang completo y recíproco
-  };
-}
-
 export function buildMetaTags(metadata: Partial<SeoMetadata>) {
   const { title, description, alternates, openGraph, twitter } = metadata;
   return {
@@ -122,7 +106,7 @@ export function buildTaxiBookingJsonLd({
       ? `Reserva un taxi privado desde ${fromName} hasta ${toName}. Conductores confiables, pago seguro y asistencia 24/7.`
       : `Book your private taxi from ${fromName} to ${toName}. Reliable drivers, fixed price and 24/7 assistance.`;
 
-  const bookingUrl = `${baseUrl}/cuba-taxi-booking?from=${from}&to=${to}`;
+  const bookingUrl = `${baseUrl}/taxi?from=${from}&to=${to}`;
 
   // 📸 Imágenes recomendadas por Google (mínimo 1200 px)
   const image = `${baseUrl}/cuba-cabs.jpg`;
@@ -147,7 +131,7 @@ export function buildTaxiBookingJsonLd({
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `${baseUrl}/cuba-taxi-booking?from=${from}&to=${to}`,
+      "@id": `${baseUrl}/taxi?from=${from}&to=${to}`,
     },
 
     // ⭐ PRICE (Offer)

@@ -6,7 +6,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import BackToHome from "./BackToHome";
 
 type HreflangMap = Record<string, string>;
 
@@ -187,7 +186,7 @@ export default function PlaceSEOCard({
     ? `/${lang}`
     : "/en";
   const bookingHref = `${base}/private-transfer-booking`;
-  const quickBookingHref = `${base}/cuba-taxi-booking`;
+  const quickBookingHref = `${base}/taxi`;
 
   // JSON-LD
   const placeLd = buildPlaceJsonLd(place, schemaType);

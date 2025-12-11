@@ -1,10 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { cars, places } from "@/utils/constants";
-// @ts-ignore
-// import { FaWhatsapp, FaTelegram } from "react-icons/fa6";
 
 type BookingData = {
   phone: string;
@@ -14,20 +12,21 @@ type BookingData = {
   time: string;
   vehicle: string;
   passengers: string;
-  luggage?: string; // opcional
+  luggage?: string;
 };
 
-type Props = { idioma: any };
+type Props = {
+  idioma: any;
+  fromSlug?: string; // opcional
+  toSlug?: string; // opcional
+};
 
-export default function QuickBookingForm({ idioma }: Props) {
+export default function QuickBookingForm({ idioma, fromSlug, toSlug }: Props) {
   const router = useRouter();
-  const searchParams = useSearchParams();
-  const from = searchParams.get("from");
-  const to = searchParams.get("to");
   const initialData: BookingData = {
     phone: "",
-    from: from ? (places.includes(from) ? from : places?.[0]) : "",
-    to: to ? (places.includes(to) ? to : places?.[1]) : "",
+    from: fromSlug && places.includes(fromSlug) ? fromSlug : "",
+    to: toSlug && places.includes(toSlug) ? toSlug : "",
     date: "",
     time: "",
     vehicle: idioma.vehicles?.[0] || "",
@@ -35,19 +34,18 @@ export default function QuickBookingForm({ idioma }: Props) {
     luggage: "",
   };
 
+  console.log({ fromSlug, toSlug, initialData });
+
   const [formData, setFormData] = useState<BookingData>(initialData);
 
-  // Evitar hydration: min date solo en cliente
-  const [minDate, setMinDate] = useState("1970-01-01");
+  const [minDate, setMinDate] = useState("");
   useEffect(() => {
     setMinDate(new Date().toISOString().slice(0, 10));
   }, []);
 
-  // Modal “Datos enviados”
   const [modalOpen, setModalOpen] = useState(false);
   const [submitting, setSubmitting] = useState(false);
 
-  // Ref al <form> para usar reportValidity()
   const formRef = useRef<HTMLFormElement>(null);
 
   const handleChange = (
@@ -55,13 +53,11 @@ export default function QuickBookingForm({ idioma }: Props) {
   ) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const sendReservation = async (platform: "whatsapp" | "telegram") => {
-    // Valida nativo (sin alert)
     const ok = formRef.current?.reportValidity();
     if (!ok) return;
 
     try {
       setSubmitting(true);
-      // Muestra el modal ya (UX simple)
       setModalOpen(true);
 
       const form = new FormData();
@@ -72,11 +68,9 @@ export default function QuickBookingForm({ idioma }: Props) {
         { method: "POST", body: form }
       );
 
-      // Éxito: limpiar
       setFormData(initialData);
     } catch (err) {
       console.error(err);
-      // Mantenerlo simple: no mostramos error aquí por tu pedido
     } finally {
       setSubmitting(false);
     }
@@ -90,13 +84,12 @@ export default function QuickBookingForm({ idioma }: Props) {
           id="phone"
           label={idioma.phone}
           type="tel"
-          placeholder="+53 555 432 748"
           required
+          placeholder="+53 555 432 748"
           value={formData.phone}
           onChange={handleChange}
           inputProps={{
             name: "phone",
-            inputMode: "tel",
             autoComplete: "tel",
             pattern: "^[+0-9\\s()-]{6,}$",
             required: true,
@@ -115,7 +108,6 @@ export default function QuickBookingForm({ idioma }: Props) {
             min: 1,
             max: 10,
             step: 1,
-            inputMode: "numeric",
             required: true,
           }}
         />
@@ -130,13 +122,9 @@ export default function QuickBookingForm({ idioma }: Props) {
           required
           value={formData.date}
           onChange={handleChange}
-          inputProps={{
-            name: "date",
-            min: minDate,
-            required: true,
-            suppressHydrationWarning: true as any,
-          }}
+          inputProps={{ name: "date", min: minDate, required: true }}
         />
+
         <Field
           id="time"
           label={idioma.time}
@@ -155,22 +143,21 @@ export default function QuickBookingForm({ idioma }: Props) {
             <Label htmlFor={key} required>
               {key === "from" ? `📍 ${idioma.from}` : `🏁 ${idioma.to}`}
             </Label>
+
             <select
               id={key}
               name={key}
               value={formData[key]}
               onChange={handleChange}
               required
-              aria-label={key === "from" ? idioma.from : idioma.to}
-              className="w-full rounded-lg border border-primary/20 bg-white px-3 py-2 text-sm text-primary focus:outline-none focus:ring-2 focus:ring-accent/40"
               disabled={submitting}
+              className="w-full rounded-lg border border-primary/20 bg-white px-3 py-2 text-sm text-primary"
             >
               {places
                 .filter(
-                  (l: string) =>
-                    l !== (key === "from" ? formData.to : formData.from)
+                  (p) => p !== (key === "from" ? formData.to : formData.from)
                 )
-                .map((loc: string) => (
+                .map((loc) => (
                   <option key={loc} value={loc}>
                     {idioma[loc]}
                   </option>
@@ -180,7 +167,7 @@ export default function QuickBookingForm({ idioma }: Props) {
         ))}
       </div>
 
-      {/* Vehicle + Luggage */}
+      {/* Vehículo + Equipaje */}
       <div className="mt-3 grid grid-cols-1 gap-3 md:grid-cols-2">
         <div>
           <Label htmlFor="vehicle" required>{`🚗 ${idioma.vehicleType}`}</Label>
@@ -190,17 +177,17 @@ export default function QuickBookingForm({ idioma }: Props) {
             value={formData.vehicle}
             onChange={handleChange}
             required
-            aria-label={idioma.vehicleType}
-            className="w-full rounded-lg border border-primary/20 bg-white px-3 py-2 text-sm text-primary focus:outline-none focus:ring-2 focus:ring-accent/40"
             disabled={submitting}
+            className="w-full rounded-lg border border-primary/20 bg-white px-3 py-2 text-sm text-primary"
           >
-            {cars.map((v: string) => (
+            {cars.map((v) => (
               <option key={v} value={v}>
                 {idioma[v]}
               </option>
             ))}
           </select>
         </div>
+
         <Field
           id="luggage"
           label={idioma.info}
@@ -208,19 +195,18 @@ export default function QuickBookingForm({ idioma }: Props) {
           placeholder={idioma.infoPlaceHolder}
           value={formData.luggage || ""}
           onChange={handleChange}
-          inputProps={{ name: "luggage" }} // opcional
+          inputProps={{ name: "luggage" }}
         />
       </div>
 
       {/* Botones */}
-      <div className="mt-5 flex flex-col gap-3 md:col-span-2">
+      <div className="mt-5 flex flex-col gap-3">
         <button
           type="button"
           onClick={() => sendReservation("whatsapp")}
           disabled={submitting}
-          className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-accent px-5 py-3 text-sm font-semibold text-white transition hover:opacity-95 disabled:opacity-60"
+          className="rounded-lg bg-accent px-5 py-3 text-sm font-semibold text-white"
         >
-          {/* <FaWhatsapp className="text-lg" aria-hidden /> */}
           {idioma.confirmations.whatsapp}
         </button>
 
@@ -228,21 +214,16 @@ export default function QuickBookingForm({ idioma }: Props) {
           type="button"
           onClick={() => sendReservation("telegram")}
           disabled={submitting}
-          className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary/5 px-5 py-3 text-sm font-semibold text-primary ring-1 ring-inset ring-primary/20 transition hover:bg-primary/10 disabled:opacity-60"
+          className="rounded-lg bg-primary/5 px-5 py-3 text-sm font-semibold text-primary ring-1 ring-primary/20"
         >
-          {/* <FaTelegram className="text-lg" aria-hidden /> */}
           {idioma.confirmations.telegram}
         </button>
       </div>
 
-      {/* Modal con fondo difuminado (mismo que el Extended) */}
+      {/* Modal */}
       {modalOpen && (
-        <div
-          role="dialog"
-          aria-modal="true"
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm backdrop-saturate-150 p-4 transition-opacity duration-300"
-        >
-          <div className="w-full max-w-md rounded-2xl bg-white/95 shadow-2xl ring-1 ring-primary/10 backdrop-blur-[1px] p-6">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4">
+          <div className="w-full max-w-md rounded-2xl bg-white/95 p-6 shadow-2xl">
             <h4 className="text-center text-lg font-bold text-accent">
               {idioma.confirmationTexts.title}
             </h4>
@@ -254,10 +235,10 @@ export default function QuickBookingForm({ idioma }: Props) {
                 type="button"
                 onClick={() => {
                   setModalOpen(false);
-                  setFormData(initialData); // 👈 resetea el formulario
-                  router.push("/"); // 👈 navega al inicio
+                  setFormData(initialData);
+                  router.push("/");
                 }}
-                className="inline-flex items-center justify-center rounded-lg bg-accent px-6 py-2 text-sm font-semibold text-white shadow-sm transition hover:opacity-90"
+                className="rounded-lg bg-accent px-6 py-2 text-sm font-semibold text-white"
               >
                 {idioma.confirmationTexts.button}
               </button>
@@ -269,20 +250,10 @@ export default function QuickBookingForm({ idioma }: Props) {
   );
 }
 
-/* ───────── helpers UI ───────── */
-function Label({
-  required,
-  children,
-  ...props
-}: React.LabelHTMLAttributes<HTMLLabelElement> & { required?: boolean }) {
+/* UI Helpers */
+function Label({ required, children, ...props }: any) {
   return (
-    <label
-      {...props}
-      className={[
-        "mb-1 block text-sm font-bold text-accent",
-        props.className || "",
-      ].join(" ")}
-    >
+    <label {...props} className="mb-1 block text-sm font-bold text-accent">
       {children}
       {required && <span className="ml-1 text-red-500">*</span>}
     </label>
@@ -298,18 +269,7 @@ function Field({
   placeholder,
   inputProps,
   required,
-}: {
-  id: string;
-  label: string;
-  type: React.HTMLInputTypeAttribute;
-  value: string;
-  onChange: (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
-  ) => void;
-  placeholder?: string;
-  inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
-  required?: boolean;
-}) {
+}: any) {
   return (
     <div className="flex min-w-0 flex-col">
       <Label htmlFor={id} required={required}>
@@ -321,10 +281,9 @@ function Field({
         value={value}
         onChange={onChange}
         placeholder={placeholder}
-        aria-label={label}
         required={required}
-        className="w-full rounded-lg border border-primary/20 bg-white px-3 py-2 text-sm text-primary placeholder:text-primary/50 focus:outline-none focus:ring-2 focus:ring-accent/40"
         {...inputProps}
+        className="w-full rounded-lg border border-primary/20 bg-white px-3 py-2 text-sm text-primary"
       />
     </div>
   );

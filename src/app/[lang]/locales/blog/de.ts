@@ -35,7 +35,7 @@ export const articles = {
       h1: "Wie viel kostet ein Taxi in Kuba 2025?",
       introP1:
         "Aktualisierter Leitfaden zu Taxipreisen und Transfers in Kuba. Reale Tarife ab Havanna (HAV / José Martí) und Varadero (VRA) nach Varadero, Viñales, Trinidad, Cienfuegos u. a. Feste Preise pro Auto, nicht pro Person.",
-      ctaPrimary: { label: "Privattransfer buchen", href: "/cuba-taxi-booking" },
+      ctaPrimary: { label: "Privattransfer buchen", href: "/taxi" },
       ctaSecondary: { label: "Preistabelle ansehen", href: "#prices" },
       subNotePrefix: "Aktualisiert",
       subNoteSuffix: "· Preise pro Auto (klassisch/modern oder Minivan)",
@@ -47,19 +47,33 @@ export const articles = {
       },
     },
     valueProps: [
-      { title: "Transparente Preise", desc: "Bestätigte Angebote für Flughäfen und Stadt-zu-Stadt-Routen. Keine versteckten Gebühren." },
-      { title: "Das passende Fahrzeug", desc: "Klassische Wagen für Stadttouren oder komfortable Minivans für Familien." },
-      { title: "Zuverlässige Abholungen", desc: "Englischsprachige Fahrer und Flugüberwachung bei Ankünften." },
+      {
+        title: "Transparente Preise",
+        desc: "Bestätigte Angebote für Flughäfen und Stadt-zu-Stadt-Routen. Keine versteckten Gebühren.",
+      },
+      {
+        title: "Das passende Fahrzeug",
+        desc: "Klassische Wagen für Stadttouren oder komfortable Minivans für Familien.",
+      },
+      {
+        title: "Zuverlässige Abholungen",
+        desc: "Englischsprachige Fahrer und Flugüberwachung bei Ankünften.",
+      },
     ],
     prices: {
       title: "Taxipreise in Kuba nach Strecke (2025)",
       intro:
         "Preise pro Auto (Privatservice). Endpreis je nach Fahrzeugtyp, Abholpunkt, Nachtzuschlägen und optionalen Stopps.",
-      columns: { route: "Strecke", classicModern: "Klassisch / Modern", minivan: "Minivan", notes: "Hinweise" },
+      columns: {
+        route: "Strecke",
+        classicModern: "Klassisch / Modern",
+        minivan: "Minivan",
+        notes: "Hinweise",
+      },
       rows: buildRows("de", prices),
       footnote:
         "Preise können abweichen bei Abholungen weit vom KM-0 Havannas (Capitol) und in Nachtstunden.",
-      cta: { label: "Angebot anfordern", href: "/cuba-taxi-booking" },
+      cta: { label: "Angebot anfordern", href: "/taxi" },
     },
     tips: {
       whatAffects: {
@@ -75,17 +89,23 @@ export const articles = {
         title: "Tipps für Reisende",
         paragraphPrefix:
           "Im Voraus buchen, um einen Festpreis zu sichern, und die Flugnummer für Flughafenabholungen mitteilen. Private Transfers sind die bequemste und sicherste Option. Sie können",
-        link: { label: "Ihren Taxi-Transfer online buchen", href: "/private-transfer-booking" },
+        link: {
+          label: "Ihren Taxi-Transfer online buchen",
+          href: "/private-transfer-booking",
+        },
         paragraphSuffix: "und bei Ankunft bezahlen.",
       },
     },
-  }, privateTaxiOrCarRental: {
+  },
+  privateTaxiOrCarRental: {
     seo: {
-      headline: "Privates Taxi oder Mietwagen — Was ist besser für Reisen in Kuba?",
+      headline:
+        "Privates Taxi oder Mietwagen — Was ist besser für Reisen in Kuba?",
       description:
         "Vergleichen Sie private Taxis und Mietwagen in Kuba. Finden Sie heraus, welche Option besser zu Ihrem Reisestil, Budget und Komfort für Strecken wie Havanna, Varadero, Trinidad oder Viñales passt.",
       image: "https://cubantaxis.com/blog/private-taxi-vs-car-rental.png",
-      mainEntityOfPage: "https://cubantaxis.com/blog/private-taxi-vs-car-rental-cuba",
+      mainEntityOfPage:
+        "https://cubantaxis.com/blog/private-taxi-vs-car-rental-cuba",
       authorName: "CubanTaxis",
       publisherName: "CubanTaxis",
       publisherLogo: "https://cubantaxis.com/logo.png",
@@ -111,7 +131,7 @@ export const articles = {
       h1: "Privates Taxi oder Mietwagen — Was ist besser für Reisen in Kuba?",
       introP1:
         "Sie fragen sich, ob Sie ein privates Taxi buchen oder ein Auto in Kuba mieten sollten? Hier ist ein ausführlicher Vergleich von Komfort, Kosten, Flexibilität und Bequemlichkeit für Strecken wie Havanna–Varadero, Viñales und Trinidad.",
-      ctaPrimary: { label: "Privates Taxi buchen", href: "/cuba-taxi-booking" },
+      ctaPrimary: { label: "Privates Taxi buchen", href: "/taxi" },
       ctaSecondary: { label: "Routenpreise ansehen", href: "#comparison" },
       subNotePrefix: "Aktualisiert 2025",
       subNoteSuffix: "· Preise pro Fahrzeug (klassisch/modern oder Minivan)",
@@ -148,7 +168,10 @@ export const articles = {
           "Zweisprachige Fahrer, die die besten Orte Kubas kennen.",
         ],
         samplePrices: [
-          { route: "Havanna → Varadero", price: "ab $100 (modernes Auto) / $180 (Minivan)" },
+          {
+            route: "Havanna → Varadero",
+            price: "ab $100 (modernes Auto) / $180 (Minivan)",
+          },
           { route: "Havanna → Viñales", price: "$180–$200" },
           { route: "Havanna → Cayo Santa María", price: "$350 (Privatauto)" },
         ],
@@ -176,7 +199,13 @@ export const articles = {
       comparison: {
         title: "Kosten- & Komfortvergleich — Havanna ↔ Varadero Rundreise",
         table: {
-          columns: ["Option", "Gesamtpreis", "Komfort", "Flexibilität", "Aufwand"],
+          columns: [
+            "Option",
+            "Gesamtpreis",
+            "Komfort",
+            "Flexibilität",
+            "Aufwand",
+          ],
           rows: [
             {
               option: "Privates Taxi",
@@ -232,7 +261,7 @@ export const articles = {
       rows: buildRows("de", prices),
       footnote:
         "Preise können für Abholungen weit außerhalb von Havannas Zentrum sowie für Nachtzeiten variieren.",
-      cta: { label: "Preis anfragen", href: "/cuba-taxi-booking" },
+      cta: { label: "Preis anfragen", href: "/taxi" },
     },
     tips: {
       whatAffects: {
@@ -248,15 +277,20 @@ export const articles = {
         title: "Tipps für Reisende",
         paragraphPrefix:
           "Buchen Sie im Voraus, um einen Festpreis zu sichern, und teilen Sie Ihre Flugnummer für Flughafenabholungen mit. Private Transfers sind die bequemste und sicherste Option. Sie können",
-        link: { label: "Ihr Taxi online buchen", href: "/private-transfer-booking" },
+        link: {
+          label: "Ihr Taxi online buchen",
+          href: "/private-transfer-booking",
+        },
         paragraphSuffix: "und bei der Ankunft bezahlen.",
       },
     },
     ctaFooter: {
       text: "Bereit, Ihre nächste Route in Kuba zu planen?",
-      primary: { label: "Transfer buchen", href: "/cuba-taxi-booking" },
-      secondary: { label: "Private Touren entdecken", href: "/destinations-in-cuba" },
+      primary: { label: "Transfer buchen", href: "/taxi" },
+      secondary: {
+        label: "Private Touren entdecken",
+        href: "/destinations-in-cuba",
+      },
     },
-  }
-
-}
+  },
+};

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import Link from "next/link";
 import PriceTable from "@/components/PriceTable";
 import TrustBlock from "@/components/TrustBlock";
@@ -23,13 +22,15 @@ function formatUpdatedDate(d = new Date(), lang: Lang = "en") {
   }).format(d);
 }
 
-export async function generateMetadata(
-  { params }: { params: Promise<{ lang: string }> }
-): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
   const { lang } = await params;
-  const idioma = getTranslation(lang)
-  const metadata = buildMetaTags(idioma.metadata.taxiInCuba as any)
-  return metadata
+  const idioma = getTranslation(lang);
+  const metadata = buildMetaTags(idioma.metadata.taxiInCuba as any);
+  return metadata;
 }
 
 // --------------------------------------------------------------
@@ -44,14 +45,17 @@ export default async function Page({ params }: Params) {
     <main className="relative bg-white">
       {/* HERO */}
       <header className="mx-auto max-w-6xl px-4 pb-4 pt-10 sm:pt-14">
-
         {/* CHIPS */}
         <div className="mb-4 flex flex-wrap items-center gap-2">
           <span className="inline-flex items-center rounded-full bg-accent/10 text-accent font-semibold px-3 py-1 text-xs">
             {t(lang, "2025 Guide", "Guía 2025")}
           </span>
           <span className="inline-flex items-center rounded-full bg-primary/10 text-primary font-medium px-3 py-1 text-xs">
-            {t(lang, "English-speaking drivers", "Conductores que hablan inglés")}
+            {t(
+              lang,
+              "English-speaking drivers",
+              "Conductores que hablan inglés"
+            )}
           </span>
           <span className="inline-flex items-center rounded-full bg-primary/10 text-primary font-medium px-3 py-1 text-xs">
             {t(lang, "Classic cars & minivans", "Autos clásicos y minivanes")}
@@ -77,14 +81,16 @@ export default async function Page({ params }: Params) {
 
         {/* AIRPORT CHIPS */}
         <div className="mt-5 flex flex-wrap gap-2">
-          {["HAV", "MUHA", "VRA", t(lang, "Old Havana", "La Habana Vieja")].map((chip) => (
-            <span
-              key={chip}
-              className="inline-flex items-center rounded-md bg-primary/10 text-primary px-2.5 py-1 text-xs font-medium"
-            >
-              {chip}
-            </span>
-          ))}
+          {["HAV", "MUHA", "VRA", t(lang, "Old Havana", "La Habana Vieja")].map(
+            (chip) => (
+              <span
+                key={chip}
+                className="inline-flex items-center rounded-md bg-primary/10 text-primary px-2.5 py-1 text-xs font-medium"
+              >
+                {chip}
+              </span>
+            )
+          )}
         </div>
 
         {/* CTA */}
@@ -107,7 +113,8 @@ export default async function Page({ params }: Params) {
 
         {/* META LINE */}
         <p className="mt-4 text-xs text-primary/60">
-          {t(lang, "Updated", "Actualizado")} {updated} • {t(lang, "Reading time", "Tiempo de lectura")}: 5–7 min
+          {t(lang, "Updated", "Actualizado")} {updated} •{" "}
+          {t(lang, "Reading time", "Tiempo de lectura")}: 5–7 min
         </p>
       </header>
 
@@ -116,26 +123,41 @@ export default async function Page({ params }: Params) {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {[
             {
-              title: t(lang, "Fixed, transparent pricing", "Precios fijos y transparentes"),
-              desc: t(lang,
+              title: t(
+                lang,
+                "Fixed, transparent pricing",
+                "Precios fijos y transparentes"
+              ),
+              desc: t(
+                lang,
                 "No hidden fees. Confirmed prices for airport pick-ups and intercity routes.",
                 "Sin tarifas ocultas. Precios confirmados para aeropuertos y rutas interurbanas."
-              )
+              ),
             },
             {
-              title: t(lang, "English-speaking drivers", "Conductores que hablan inglés"),
-              desc: t(lang,
+              title: t(
+                lang,
+                "English-speaking drivers",
+                "Conductores que hablan inglés"
+              ),
+              desc: t(
+                lang,
                 "Professional drivers who know the best routes and must-see stops.",
                 "Conductores profesionales que conocen las mejores rutas y paradas clave."
-              )
+              ),
             },
             {
-              title: t(lang, "Classic cars & minivans", "Autos clásicos y minivanes"),
-              desc: t(lang,
+              title: t(
+                lang,
+                "Classic cars & minivans",
+                "Autos clásicos y minivanes"
+              ),
+              desc: t(
+                lang,
                 "Vintage city tours or comfy minivans for families and groups.",
                 "City tours en autos clásicos o minivanes cómodas para familias y grupos."
-              )
-            }
+              ),
+            },
           ].map((item) => (
             <div
               key={item.title}
@@ -165,12 +187,32 @@ export default async function Page({ params }: Params) {
 
           <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-3">
             {[
-              t(lang, "Havana Airport → Varadero (hotel zones)", "Aeropuerto La Habana → Varadero (zonas hoteleras)"),
-              t(lang, "Havana → Viñales (round-trip available)", "La Habana → Viñales (ida y vuelta disponible)"),
-              t(lang, "Havana → Trinidad (via Cienfuegos optional)", "La Habana → Trinidad (opción vía Cienfuegos)"),
-              t(lang, "Varadero → Havana (same-day return)", "Varadero → La Habana (regreso el mismo día)"),
+              t(
+                lang,
+                "Havana Airport → Varadero (hotel zones)",
+                "Aeropuerto La Habana → Varadero (zonas hoteleras)"
+              ),
+              t(
+                lang,
+                "Havana → Viñales (round-trip available)",
+                "La Habana → Viñales (ida y vuelta disponible)"
+              ),
+              t(
+                lang,
+                "Havana → Trinidad (via Cienfuegos optional)",
+                "La Habana → Trinidad (opción vía Cienfuegos)"
+              ),
+              t(
+                lang,
+                "Varadero → Havana (same-day return)",
+                "Varadero → La Habana (regreso el mismo día)"
+              ),
               t(lang, "Varadero → Trinidad", "Varadero → Trinidad"),
-              t(lang, "Havana City Tour in classic car", "City Tour en La Habana en auto clásico"),
+              t(
+                lang,
+                "Havana City Tour in classic car",
+                "City Tour en La Habana en auto clásico"
+              ),
             ].map((route) => (
               <div
                 key={route}
@@ -194,7 +236,7 @@ export default async function Page({ params }: Params) {
             </p>
 
             <Link
-              href={`${prefix}/cuba-taxi-booking`}
+              href={`${prefix}/taxi`}
               className="inline-flex items-center rounded-lg bg-accent px-4 py-2 text-xs font-semibold text-white hover:opacity-95"
             >
               {t(lang, "Get a quote", "Solicitar precio")}

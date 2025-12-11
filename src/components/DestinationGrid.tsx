@@ -1,7 +1,6 @@
 // components/DestinationGrid.tsx
 import Image from "next/image";
 import Link from "next/link";
-import { LocaleLink } from "@/libs/i18n-nav";
 
 type Destination = {
   slug: string;
@@ -24,10 +23,11 @@ export function DestinationsGrid({
   const BLUR_1x1 = "data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=";
 
   // rutas de booking (como en Hero)
-  const base =
-    ["en", "es", "fr", "de", "ru", "pt"].includes(lang as string) ? `/${lang}` : "/en";
+  const base = ["en", "es", "fr", "de", "ru", "pt"].includes(lang as string)
+    ? `/${lang}`
+    : "/en";
   const bookingHref = `${base}/private-transfer-booking`;
-  const quickBookingHref = `${base}/cuba-taxi-booking`;
+  const quickBookingHref = `${base}/taxi`;
 
   const cta = {
     customBooking: "Book your trip in advance",

@@ -1,68 +1,84 @@
 import PlaceSEOCard from "@/components/PlaceCard";
-import { buildAlternates, buildMetaTags, Locale } from "../../../../seoUtils/seo-builder";
+import { buildMetaTags } from "../../../../seoUtils/seo-builder";
 import type { Metadata } from "next";
 import { getTranslation } from "../../locales";
-export async function generateMetadata(
-  { params }: { params: Promise<{ lang: string }> }
-): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
   const { lang } = await params;
-  const idioma = getTranslation(lang)
-  const metadata = buildMetaTags(idioma.metadata.interestingPlaces?.meliaInternacionalVaradero as any)
-  return metadata
+  const idioma = getTranslation(lang);
+  const metadata = buildMetaTags(
+    idioma.metadata.interestingPlaces?.meliaInternacionalVaradero as any
+  );
+  return metadata;
 }
 export default function Example() {
-    return (
-        <PlaceSEOCard
-            seo={{
-                title: "Taxi Pickup at José Martí International Airport (HAV) | Cuban Taxis",
-                description:
-                    "Private airport pickup at HAV with professional drivers. Fixed prices, flight tracking and 24/7 support.",
-                keywords: ["taxi cuba", "havana airport transfer", "cuban taxis"],
-                canonical: "https://cubantaxis.com/interesting-places-in-cuba/melia-internacional-varadero",
-                robots: "index,follow",
-                siteName: "Cuban Taxis",
-                locale: "en_US",
-                ogImage: "https://cubantaxis.com/og/hav-transfer.jpg",
-                ogType: "place",
-                twitterCard: "summary_large_image",
-                hreflangAlternates: {
-                    en: "https://cubantaxis.com/hav-airport-transfer",
-                },
-            }}
-            place={{
-                name: "Meliá Internacional Varadero",
-                alternateName: "Resort 5 estrellas Varadero",
-                image: "/melia-internacional-varadero.webp", // falta
-                description: "Resort de lujo frente al mar con habitaciones modernas, gastronomía variada, YHI Spa y acceso a una de las playas más famosas del Caribe. Ideal para familias o adultos.",
-                address: {
-                    streetAddress: "Avenida Las Américas, Km 1",
-                    addressLocality: "Varadero",
-                    addressRegion: "Matanzas",
-                    addressCountry: "CU",
-                },
-                phone: "+53 45 623100",
-                email: "melia.internacional@meliacuba.com",
-                website: "https://www.melia.com/hotels/cuba/varadero/melia-internacional-varadero",
-            }}
-            services={[
-                { class: "general", icon: "star", name: "Todo incluido" },
-                { class: "amenities", icon: "wifi", name: "Internet" },
-                { class: "wellness", icon: "spa", name: "YHI Spa" },
-                { class: "family", icon: "car", name: "Actividades familiares" },
-                { class: "sports", icon: "beach", name: "Deportes acuáticos" },
-            ]}
-             
-            breadcrumbs={[
-                { name: "Home", item: "https://cubantaxis.com" },
-                { name: "Transfers", item: "https://cubantaxis.com/transfers" },
-                { name: "HAV Airport", item: "https://cubantaxis.com/hav-airport-transfer" },
-            ]}
-            schemaType="LocalBusiness"
-            faq={[
-                { question: "¿El precio es por coche o por persona?", answer: "Siempre por coche (servicio privado)." },
-                { question: "¿Monitorean vuelos?", answer: "Sí, ajustamos la recogida a retrasos del vuelo sin costo." },
-            ]}
-            className="mt-6"
-        />
-    );
+  return (
+    <PlaceSEOCard
+      seo={{
+        title:
+          "Taxi Pickup at José Martí International Airport (HAV) | Cuban Taxis",
+        description:
+          "Private airport pickup at HAV with professional drivers. Fixed prices, flight tracking and 24/7 support.",
+        keywords: ["taxi cuba", "havana airport transfer", "cuban taxis"],
+        canonical:
+          "https://cubantaxis.com/interesting-places-in-cuba/melia-internacional-varadero",
+        robots: "index,follow",
+        siteName: "Cuban Taxis",
+        locale: "en_US",
+        ogImage: "https://cubantaxis.com/og/havana-transfer.jpg",
+        ogType: "place",
+        twitterCard: "summary_large_image",
+        hreflangAlternates: {
+          en: "https://cubantaxis.com/havana-airport-transfer",
+        },
+      }}
+      place={{
+        name: "Meliá Internacional Varadero",
+        alternateName: "Resort 5 estrellas Varadero",
+        image: "/melia-internacional-varadero.webp", // falta
+        description:
+          "Resort de lujo frente al mar con habitaciones modernas, gastronomía variada, YHI Spa y acceso a una de las playas más famosas del Caribe. Ideal para familias o adultos.",
+        address: {
+          streetAddress: "Avenida Las Américas, Km 1",
+          addressLocality: "Varadero",
+          addressRegion: "Matanzas",
+          addressCountry: "CU",
+        },
+        phone: "+53 45 623100",
+        email: "melia.internacional@meliacuba.com",
+        website:
+          "https://www.melia.com/hotels/cuba/varadero/melia-internacional-varadero",
+      }}
+      services={[
+        { class: "general", icon: "star", name: "Todo incluido" },
+        { class: "amenities", icon: "wifi", name: "Internet" },
+        { class: "wellness", icon: "spa", name: "YHI Spa" },
+        { class: "family", icon: "car", name: "Actividades familiares" },
+        { class: "sports", icon: "beach", name: "Deportes acuáticos" },
+      ]}
+      breadcrumbs={[
+        { name: "Home", item: "https://cubantaxis.com" },
+        { name: "Transfers", item: "https://cubantaxis.com/transfers" },
+        {
+          name: "HAV Airport",
+          item: "https://cubantaxis.com/havana-airport-transfer",
+        },
+      ]}
+      schemaType="LocalBusiness"
+      faq={[
+        {
+          question: "¿El precio es por coche o por persona?",
+          answer: "Siempre por coche (servicio privado).",
+        },
+        {
+          question: "¿Monitorean vuelos?",
+          answer: "Sí, ajustamos la recogida a retrasos del vuelo sin costo.",
+        },
+      ]}
+      className="mt-6"
+    />
+  );
 }
