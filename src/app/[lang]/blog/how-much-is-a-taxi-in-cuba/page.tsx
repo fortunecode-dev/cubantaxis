@@ -1,5 +1,5 @@
 // app/blog/taxi-cuba-2025/page.tsx
-export const dynamic = "force-static";
+// export const dynamic = "force-static";
 
 import Image from "next/image";
 import Script from "next/script";
