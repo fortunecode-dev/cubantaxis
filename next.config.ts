@@ -71,23 +71,13 @@ export default withBundleAnalyzer({ enabled: process.env.ANALYZE === "true" })({
       },
       {
         source: "/:lang(en|es|fr|de|ru|pt)/transfer-booking",
-        destination: "/:lang/taxi",
-        permanent: true,
-      },
-      {
-        source: "/:lang(en|es|fr|de|ru|pt)/private-transfer-booking",
-        destination: "/:lang/taxi",
+        destination: "/:lang/private-transfer-booking",
         permanent: true,
       },
 
       // ──────────────────────────────────────────────────────────────
       // Short alias -> guía
       // ──────────────────────────────────────────────────────────────
-      {
-        source: "/:lang(en|es|fr|de|ru|pt)/taxi",
-        destination: "/:lang/taxi-in-cuba",
-        permanent: true,
-      },
 
       // ──────────────────────────────────────────────────────────────
       // Blog post legacy -> índice del blog (mejor que 410 para equity)
