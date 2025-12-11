@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { cars, places } from "@/utils/constants";
 // @ts-ignore
 // import { FaWhatsapp, FaTelegram } from "react-icons/fa6";
@@ -17,14 +17,13 @@ type BookingData = {
   luggage?: string; // opcional
 };
 
-type Props = { idioma: any; fromPlace?: string; toPlace?: string };
+type Props = { idioma: any };
 
-export default function QuickBookingForm({
-  idioma,
-  fromPlace: from,
-  toPlace: to,
-}: Props) {
+export default function QuickBookingForm({ idioma }: Props) {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const from = searchParams.get("from");
+  const to = searchParams.get("to");
   const initialData: BookingData = {
     phone: "",
     from: from ? (places.includes(from) ? from : places?.[0]) : "",
@@ -84,11 +83,7 @@ export default function QuickBookingForm({
   };
 
   return (
-    <form
-      ref={formRef}
-      className="mx-auto max-w-3xl rounded-2xl bg-white p-5 pb-0"
-      onSubmit={(e) => e.preventDefault()}
-    >
+    <form ref={formRef} onSubmit={(e) => e.preventDefault()}>
       {/* Teléfono + Pasajeros */}
       <div className="grid grid-cols-2 gap-3">
         <Field
