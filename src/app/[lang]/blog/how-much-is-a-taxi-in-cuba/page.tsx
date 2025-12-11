@@ -227,9 +227,7 @@ export default async function BlogTaxiCuba({
                     </td>
                     <td className="px-4 py-3 text-primary/90">
                       <LocaleLink
-                        href={`${howMuchIsATaxiInCuba.prices.cta.href}${
-                          lang == "en" ? "" : `/${lang}`
-                        }/${row.from}/${row.to}`}
+                        href={`${howMuchIsATaxiInCuba.prices.cta.href}/${row.from}/${row.to}`}
                         prefetch={false}
                         className="inline-flex items-center justify-center rounded-lg bg-accent px-4 py-2 text-xs font-semibold text-white shadow-sm transition hover:opacity-95"
                       >
