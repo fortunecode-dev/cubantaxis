@@ -105,9 +105,10 @@ export default async function TaxiPage({ params }: PageProps) {
       translations: form,
     });
   }
-  const routeExists = prices.some(
-    (p) => p.from === fromSlug && p.to === toSlug
-  );
+  const routeExists =
+    fromSlug && toSlug
+      ? prices.some((p) => p.from === fromSlug && p.to === toSlug)
+      : true;
 
   if (!routeExists) {
     return notFound();
