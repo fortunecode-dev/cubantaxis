@@ -57,6 +57,7 @@ function getTaxiRoutes() {
 
   prices.forEach((p: any) => {
     dynamic.push(`/taxi/${p.from}/${p.to}`);
+    if (!dynamic.includes(`/taxi/${p.from}`)) dynamic.push(`/taxi/${p.from}`);
   });
 
   return [...new Set(dynamic)];
@@ -138,7 +139,7 @@ export async function GET(req: NextRequest) {
   const taxiRoutes = getTaxiRoutes();
 
   // NO indexar rutas /taxi/[from] (solo origen)
-  const cleanTaxiRoutes = taxiRoutes.filter((r) => r.split("/").length === 4);
+
   const cleanStaticRoutes = staticRoutes
     .filter((r) => {
       return !r.includes("fromSlug");
@@ -146,8 +147,9 @@ export async function GET(req: NextRequest) {
     .filter((r) => {
       return !r.includes("toSlug");
     });
+  console.log({ taxiRoutes });
 
-  const finalRoutes = [...new Set([...cleanStaticRoutes, ...cleanTaxiRoutes])];
+  const finalRoutes = [...new Set([...cleanStaticRoutes, ...taxiRoutes])];
 
   const xml = buildSitemapXML(finalRoutes);
   const gzipped = gzipSync(xml);

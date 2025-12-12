@@ -66,7 +66,7 @@ export default withBundleAnalyzer({ enabled: process.env.ANALYZE === "true" })({
       // ──────────────────────────────────────────────────────────────
       {
         source: "/transfer-booking",
-        destination: "/taxi",
+        destination: "/private-transfer-booking",
         permanent: true,
       },
       {
