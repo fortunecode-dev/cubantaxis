@@ -139,8 +139,15 @@ export async function GET(req: NextRequest) {
 
   // NO indexar rutas /taxi/[from] (solo origen)
   const cleanTaxiRoutes = taxiRoutes.filter((r) => r.split("/").length === 4);
+  const cleanStaticRoutes = staticRoutes
+    .filter((r) => {
+      return !r.includes("fromSlug");
+    })
+    .filter((r) => {
+      return !r.includes("toSlug");
+    });
 
-  const finalRoutes = [...new Set([...staticRoutes, ...cleanTaxiRoutes])];
+  const finalRoutes = [...new Set([...cleanStaticRoutes, ...cleanTaxiRoutes])];
 
   const xml = buildSitemapXML(finalRoutes);
   const gzipped = gzipSync(xml);

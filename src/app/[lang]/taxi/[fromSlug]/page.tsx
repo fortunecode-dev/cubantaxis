@@ -4,6 +4,8 @@ import { buildMetaTags, buildTaxiBookingJsonLd } from "@/seoUtils/seo-builder";
 import QuickBookingForm from "@/modules/booking/QuickBookingForm";
 import { LocaleLink } from "@/libs/i18n-nav";
 import { getTranslation } from "../../locales";
+import { notFound } from "next/navigation";
+import { prices } from "@/utils/constants";
 
 type PageProps = {
   params: {
@@ -44,7 +46,7 @@ export async function generateMetadata({
     const toText = form[toSlug] || toSlug;
 
     title = `${fromText} → ${toText} | Private Taxi Transfer`;
-    description = `Private taxi from ${fromText} to ${toText}. Fixed price and 24/7 assistance.`;
+    description = `Private taxi from ${fromText} to ${toText}. Fast taxi booking. Fixed price and 24/7 assistance.`;
   }
 
   if (fromSlug && !toSlug) {
@@ -103,7 +105,13 @@ export default async function TaxiPage({ params }: PageProps) {
       translations: form,
     });
   }
+  const routeExists = prices.some(
+    (p) => p.from === fromSlug && p.to === toSlug
+  );
 
+  if (!routeExists) {
+    return notFound();
+  }
   return (
     <main className="min-h-screen bg-white p-2 mt-16">
       {/* JSON-LD BASE */}
