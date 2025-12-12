@@ -182,9 +182,9 @@ export default function PlaceSEOCard({
   },
 }: Props) {
   // Rutas CTA (idénticas a tu Hero)
-  const base = ["en", "es", "fr", "de", "ru", "pt"].includes(lang as string)
+  const base = ["es", "fr", "de", "ru", "pt"].includes(lang as string)
     ? `/${lang}`
-    : "/en";
+    : "";
   const bookingHref = `${base}/private-transfer-booking`;
   const quickBookingHref = `${base}/taxi`;
 

@@ -1,8 +1,8 @@
 export const booking = {
   fastBooking: {
     h1: "Reserva un taxi en Cuba al instante",
-    h2: "Instrucciones de reserva",
-    p: "Completa tus datos y elige el método de confirmación. Nuestro agente te contactará de inmediato con los detalles del viaje y el precio; una vez confirmado, recibirás la información de tu conductor 🚖.",
+    h2: "Cómo reservar un taxi en Cuba?",
+    p: "Completa los datos de tu reserva y elige el método de confirmación que prefieras. Un agente de Cuban Taxis se pondrá en contacto contigo de inmediato con los detalles del traslado y el precio fijo. Una vez confirmado, recibirás la información de tu conductor.",
     form: {
       phone: "Teléfono",
       vehicleType: "Tipo de vehículo",
@@ -50,7 +50,7 @@ export const booking = {
   customBooking: {
     h1: "Reserva tu taxi en Cuba — Traslados rápidos y confiables",
     h2: "Cómo reservar tu viaje",
-    p: "Completa tus datos y elige el método de confirmación. Nuestro agente te contactará de inmediato con los detalles del viaje y el precio; una vez confirmado, recibirás la información de tu conductor 🚖.",
+    p: "Completa los datos de tu reserva y elige el método de confirmación que prefieras. Un agente de Cuban Taxis se pondrá en contacto contigo de inmediato con los detalles del traslado y el precio fijo. Una vez confirmado, recibirás la información de tu conductor.",
     form: {
       "classic-car": "Auto clásico",
       "modern-car": "Auto moderno",

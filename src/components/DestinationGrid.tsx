@@ -23,9 +23,9 @@ export function DestinationsGrid({
   const BLUR_1x1 = "data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=";
 
   // rutas de booking (como en Hero)
-  const base = ["en", "es", "fr", "de", "ru", "pt"].includes(lang as string)
+  const base = ["es", "fr", "de", "ru", "pt"].includes(lang as string)
     ? `/${lang}`
-    : "/en";
+    : "";
   const bookingHref = `${base}/private-transfer-booking`;
   const quickBookingHref = `${base}/taxi`;
 

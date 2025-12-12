@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
-import { buildMetaTags, buildTaxiBookingJsonLd } from "@/seoUtils/seo-builder";
+import {
+  buildMetaTags,
+  buildTaxiBookingJsonLd,
+  buildTaxiProductJsonLd,
+  textToHowToSteps,
+} from "@/seoUtils/seo-builder";
 
 import QuickBookingForm from "@/modules/booking/QuickBookingForm";
 import { LocaleLink } from "@/libs/i18n-nav";
@@ -80,18 +85,50 @@ export default async function TaxiPage({ params }: PageProps) {
 
   const langPrefix = lang === "en" ? "" : `/${lang}`;
   const baseUrl = `https://cubantaxis.com${langPrefix}/taxi`;
-
+  const bookingUrl = `${baseUrl}/${fromSlug}/${toSlug}`;
+  const productJsonLd =
+    fromSlug && toSlug
+      ? buildTaxiProductJsonLd({
+          from: fromSlug,
+          to: toSlug,
+          lang,
+          translations: form,
+        })
+      : null;
   // --- JSON-LD BASE ---
-  const baseJsonLd = {
+  const howToJsonLd = {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    name: h1,
-    url: baseUrl,
-    potentialAction: {
-      "@type": "ReserveAction",
-      target: baseUrl,
-    },
+    "@type": "HowTo",
+    name: lang === "es" ? "Cómo reservar un taxi" : "How to book a taxi",
+    description: h2,
+    step: textToHowToSteps(p),
   };
+
+  const actionJsonLd =
+    fromSlug && toSlug
+      ? {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          name: h1,
+          url: bookingUrl, // https://cubantaxis.com/taxi/havana/varadero
+          potentialAction: {
+            "@type": "ReserveAction",
+            name: "Book this Taxi",
+            target: {
+              "@type": "EntryPoint",
+              urlTemplate: bookingUrl,
+              actionPlatform: [
+                "https://schema.org/DesktopWebPlatform",
+                "https://schema.org/MobileWebPlatform",
+              ],
+            },
+            result: {
+              "@type": "TaxiReservation",
+              name: `Taxi Booking: ${form[fromSlug]} → ${form[toSlug]}`,
+            },
+          },
+        }
+      : null;
 
   // --- JSON-LD DINÁMICO ---
   let routeJsonLd = null;
@@ -114,13 +151,26 @@ export default async function TaxiPage({ params }: PageProps) {
     return notFound();
   }
   return (
-    <main className="min-h-screen bg-white p-2 mt-16">
+    <main className="min-h-screen bg-white p-2 mt-5">
       {/* JSON-LD BASE */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(baseJsonLd) }}
-      />
-
+      {actionJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(actionJsonLd) }}
+        />
+      )}
+      {howToJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }}
+        />
+      )}
+      {productJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+        />
+      )}
       {/* JSON-LD RUTA COMPLETA */}
       {routeJsonLd && (
         <script
@@ -130,20 +180,33 @@ export default async function TaxiPage({ params }: PageProps) {
       )}
 
       {/* HERO */}
-      <section className="mx-auto max-w-3xl mb-6">
+      <section
+        className="mx-auto max-w-3xl mb-6"
+        itemScope
+        itemType="https://schema.org/HowTo"
+      >
+        {/* Título principal de la página */}
         <h1 className="text-center text-3xl sm:text-4xl font-extrabold text-accent">
           {h1}
         </h1>
 
+        {/* BLOQUE HOW TO */}
         <div className="mt-4 rounded-lg border border-primary/20 bg-primary/5 p-4 text-sm text-primary">
-          <h2 className="font-semibold">{h2}</h2>
-          <p className="mt-1">{p}</p>
+          {/* Título del HowTo */}
+          <h2 className="font-semibold" itemProp="name">
+            {h2}
+          </h2>
+
+          {/* Descripción general del proceso */}
+          <p className="mt-1" itemProp="description">
+            {p}
+          </p>
         </div>
       </section>
 
       {/* FORM */}
       <section className="mx-auto max-w-3xl">
-        <div className="rounded-2xl border border-primary/15 bg-white shadow-sm p-5">
+        <div className="rounded-2xl border border-primary/15 bg-white shadow-sm p-3">
           <QuickBookingForm
             idioma={{ ...form, h1, h2, confirmationTexts }}
             fromSlug={fromSlug}

@@ -89,10 +89,13 @@ export function buildTaxiBookingJsonLd({
   translations: Record<string, string>;
 }) {
   const baseUrl = "https://cubantaxis.com";
+
   const price = prices.find(
-    (item) => item.from == from && item.to == to
+    (item) => item.from === from && item.to === to
   )?.classicModern;
-  // 📌 Traducciones
+
+  if (!price) return null;
+
   const fromName = translations[from] || from;
   const toName = translations[to] || to;
 
@@ -103,14 +106,12 @@ export function buildTaxiBookingJsonLd({
 
   const description =
     lang === "es"
-      ? `Reserva un taxi privado desde ${fromName} hasta ${toName}. Conductores confiables, pago seguro y asistencia 24/7.`
-      : `Book your private taxi from ${fromName} to ${toName}. Reliable drivers, fixed price and 24/7 assistance.`;
+      ? `Reserva un taxi privado desde ${fromName} hasta ${toName}. Precio fijo, conductores confiables y asistencia 24/7.`
+      : `Book your private taxi from ${fromName} to ${toName}. Fixed price, reliable drivers and 24/7 assistance.`;
 
-  const bookingUrl = `${baseUrl}/taxi?from=${from}&to=${to}`;
-
-  // 📸 Imágenes recomendadas por Google (mínimo 1200 px)
+  const bookingUrl = `${baseUrl}/taxi/${from}/${to}`;
   const image = `${baseUrl}/cuba-cabs.jpg`;
-  if (!price) return null;
+
   return {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -118,6 +119,14 @@ export function buildTaxiBookingJsonLd({
     description,
     image,
     serviceType: "Taxi Booking",
+
+    // Página canónica del servicio
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": bookingUrl,
+    },
+
+    // Proveedor (sin reviews → SAFE)
     provider: {
       "@type": "LocalBusiness",
       name: "CubanTaxis",
@@ -128,13 +137,15 @@ export function buildTaxiBookingJsonLd({
         "https://instagram.com/cubantaxis",
         "https://t.me/cubantaxis",
       ],
-    },
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": `${baseUrl}/taxi?from=${from}&to=${to}`,
+      address: {
+        "@type": "PostalAddress",
+        addressCountry: "CU",
+        addressLocality: "Havana",
+        addressRegion: "Havana",
+      },
     },
 
-    // ⭐ PRICE (Offer)
+    // Oferta clara (precio fijo)
     offers: {
       "@type": "Offer",
       url: bookingUrl,
@@ -142,55 +153,105 @@ export function buildTaxiBookingJsonLd({
       priceCurrency,
       availability: "https://schema.org/InStock",
       validFrom: new Date().toISOString(),
-      description:
-        lang === "es"
-          ? `Precio fijo por traslado privado ${fromName} → ${toName}.`
-          : `Fixed price for private transfer ${fromName} → ${toName}.`,
     },
 
-    // ⭐ AREA SERVED
+    // Área de servicio
     areaServed: [
       { "@type": "City", name: fromName },
       { "@type": "City", name: toName },
       { "@type": "Country", name: "Cuba" },
     ],
 
-    // ⭐ SOCIAL PROOF — REVIEWS
-    review: [
-      {
-        "@type": "Review",
-        reviewRating: {
-          "@type": "Rating",
-          ratingValue: "5",
-        },
-        author: "John Peterson",
-        reviewBody:
-          lang === "es"
-            ? "Excelente servicio de taxi desde el aeropuerto. Muy puntual."
-            : "Excellent airport taxi service. Very punctual and reliable.",
-      },
-      {
-        "@type": "Review",
-        reviewRating: {
-          "@type": "Rating",
-          ratingValue: "5",
-        },
-        author: "Emily Carter",
-        reviewBody:
-          lang === "es"
-            ? "Taxi muy cómodo y conductor amable. Repetiré."
-            : "Very comfortable taxi and friendly driver. Will book again.",
-      },
-    ],
-
-    // ⭐ RESERVE ACTION — CTA para Google
+    // CTA compatible con Google
     potentialAction: {
       "@type": "ReserveAction",
-      target: bookingUrl,
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: bookingUrl,
+        actionPlatform: [
+          "https://schema.org/DesktopWebPlatform",
+          "https://schema.org/MobileWebPlatform",
+        ],
+      },
       result: {
         "@type": "TaxiReservation",
-        name: `Taxi Booking: ${fromName} → ${toName}`,
+        name:
+          lang === "es"
+            ? `Reserva Taxi: ${fromName} → ${toName}`
+            : `Taxi Booking: ${fromName} → ${toName}`,
       },
     },
   };
+}
+
+export function buildTaxiProductJsonLd({
+  from,
+  to,
+  lang,
+  priceCurrency = "USD",
+  translations,
+}: {
+  from: string;
+  to: string;
+  lang: string;
+  priceCurrency?: string;
+  translations: Record<string, string>;
+}) {
+  const baseUrl = "https://cubantaxis.com";
+
+  const price = prices.find(
+    (item) => item.from === from && item.to === to
+  )?.classicModern;
+
+  if (!price) return null;
+
+  const fromName = translations[from] || from;
+  const toName = translations[to] || to;
+
+  const productName =
+    lang === "es"
+      ? `Taxi privado ${fromName} → ${toName}`
+      : `Private Taxi ${fromName} to ${toName}`;
+
+  const description =
+    lang === "es"
+      ? `Traslado en taxi privado desde ${fromName} hasta ${toName}. Precio fijo, conductores confiables y asistencia 24/7.`
+      : `Private taxi transfer from ${fromName} to ${toName}. Fixed price, reliable drivers and 24/7 assistance.`;
+
+  const productUrl = `${baseUrl}/taxi/${from}/${to}`;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: productName,
+    description,
+    image: `${baseUrl}/cuba-cabs.jpg`,
+    brand: {
+      "@type": "Brand",
+      name: "CubanTaxis",
+    },
+
+    // Página canónica del producto
+    url: productUrl,
+
+    offers: {
+      "@type": "Offer",
+      url: productUrl,
+      price: price.toString(),
+      priceCurrency,
+      availability: "https://schema.org/InStock",
+      priceValidUntil: "2030-12-31", // evita warnings
+    },
+  };
+}
+export function textToHowToSteps(text: string) {
+  return text
+    .split(".")
+    .map((s) => s.trim())
+    .filter(Boolean)
+    .map((step, index) => ({
+      "@type": "HowToStep",
+      position: index + 1,
+      text: step,
+    }));
 }
