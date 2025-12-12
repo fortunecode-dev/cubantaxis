@@ -9,6 +9,8 @@ import { confirmationTexts } from "./others/confirmation.locale";
 import { mainSeo } from "./landing/content.locale";
 import { navLocales } from "./others/nav.locale";
 export const de: AppTexts = {
+  priceFaq:
+    "Wie viel kostet ein Taxi von | nach | ?|Ein privates klassisches Auto kostet | ein privater Minivan kostet | , und die Preise gelten pro Fahrzeug, nicht pro Person.",
   metadata,
   header,
   content,
@@ -165,7 +167,7 @@ export const de: AppTexts = {
         question:
           "Wie viel kostet ein Taxi vom Flughafen Varadero nach Havanna?",
         answer:
-          "Der Preis für einen privaten Transfer beginnt ab 100 USD pro Fahrzeug. Die vollständige Liste finden Sie in unserem [Blog](/blog/how-much-is-a-taxi-in-cuba).",
+          "Der Preis für einen privaten Transfer beginnt ab 80 USD pro Fahrzeug. Die vollständige Liste finden Sie in unserem [Blog](/blog/how-much-is-a-taxi-in-cuba).",
       },
       {
         question: "Sind die Preise pro Person oder pro Fahrzeug?",

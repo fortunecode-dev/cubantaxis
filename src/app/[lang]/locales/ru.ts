@@ -9,6 +9,8 @@ import { confirmationTexts } from "./others/confirmation.locale";
 import { mainSeo } from "./landing/content.locale";
 import { navLocales } from "./others/nav.locale";
 export const ru: AppTexts = {
+  priceFaq:
+    "Сколько стоит такси из | в | ?|Частный классический автомобиль стоит | частный минивэн стоит | , при этом цена указана за автомобиль, а не за человека.",
   metadata,
   header,
   content,
@@ -162,7 +164,7 @@ export const ru: AppTexts = {
       {
         question: "Сколько стоит такси из аэропорта Варадеро до Гаваны?",
         answer:
-          "Цена частного трансфера из аэропорта Варадеро до Гаваны начинается от 100 USD за машину. Полный список смотрите в нашем [блоге](/blog/how-much-is-a-taxi-in-cuba).",
+          "Цена частного трансфера из аэропорта Варадеро до Гаваны начинается от 80 USD за машину. Полный список смотрите в нашем [блоге](/blog/how-much-is-a-taxi-in-cuba).",
       },
       {
         question: "Цена указывается за человека или за машину?",

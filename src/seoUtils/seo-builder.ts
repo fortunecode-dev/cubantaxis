@@ -255,3 +255,42 @@ export function textToHowToSteps(text: string) {
       text: step,
     }));
 }
+interface BuildTaxiFaqParams {
+  idioma: any;
+}
+
+interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+export function buildTaxiFaqFromKey(idioma: any): FaqItem[] {
+  console.log(idioma);
+  const [
+    qPrefix, // How much is a taxi from
+    qMid, // to
+    qSuffix, // ?
+    aClassic, // A private classic car costs
+    aMinivan, // a private minivan costs
+    aSuffix, // , while prices are fixed per car, not per person.
+  ] = idioma.priceFaq.split("|");
+
+  return prices.map((item) => {
+    const question = `${qPrefix} ${idioma[item.from]} ${qMid} ${
+      idioma[item.to]
+    }${qSuffix}`;
+    const parts: string[] = [];
+    if (item.classicModern) {
+      parts.push(`${aClassic} $${item.classicModern} USD`);
+    }
+
+    if (item.to) {
+      parts.push(`${aMinivan} $${item.minivan} USD`);
+    }
+    const answer = `${parts.join(", ")}${aSuffix}`;
+    return {
+      question: question.trim(),
+      answer: answer.trim(),
+    };
+  });
+}

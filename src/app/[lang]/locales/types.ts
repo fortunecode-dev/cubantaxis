@@ -1,6 +1,7 @@
 import { BlogSection, customMetaData } from "@/seoUtils/metadata";
 
 export interface AppTexts {
+  priceFaq: string;
   confirmationTexts: any;
   mainSeo: any;
   metadata: Partial<customMetaData>;

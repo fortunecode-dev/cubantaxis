@@ -8,6 +8,8 @@ import { confirmationTexts } from "./others/confirmation.locale";
 import { mainSeo } from "./landing/content.locale";
 import { navLocales } from "./others/nav.locale";
 export const es: AppTexts = {
+  priceFaq:
+    "¿Cuánto cuesta un taxi desde | hasta | ?|Un coche clásico privado cuesta | una minivan privada cuesta | , y los precios son por coche, no por persona.",
   metadata,
   header,
   content,
@@ -166,7 +168,7 @@ export const es: AppTexts = {
         question:
           "¿Cuánto cuesta un taxi del aeropuerto de Varadero a La Habana?",
         answer:
-          "El precio de un traslado privado desde el aeropuerto de Varadero a La Habana comienza en 100 USD por vehículo. Consulta la lista completa en nuestro [blog](/blog/how-much-is-a-taxi-in-cuba).",
+          "El precio de un traslado privado desde el aeropuerto de Varadero a La Habana comienza en 80 USD por vehículo. Consulta la lista completa en nuestro [blog](/blog/how-much-is-a-taxi-in-cuba).",
       },
       {
         question: "¿Los precios son por persona o por coche?",

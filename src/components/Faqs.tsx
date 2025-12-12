@@ -1,15 +1,19 @@
 // components/FaqSection.tsx
+import { buildTaxiFaqFromKey } from "@/seoUtils/seo-builder";
 import Link from "next/link";
 
 interface FaqItem {
   question: string;
-  answer: string; // admite [label](/ruta) o [label](https://externo)
+  answer: string;
 }
+
 interface Props {
   title: string;
   faqs: FaqItem[];
-  structuredData?: boolean; // default: true
-  prefetchInternalLinks?: boolean; // default: false (ahorra ancho de banda)
+  structuredData?: boolean;
+  prefetchInternalLinks?: boolean;
+  seeMore?: null | string;
+  idioma?: any;
 }
 
 // --- Utils ---
@@ -18,13 +22,35 @@ const LINK_FULL_RE = /^\[(.*?)\]\((.*?)\)$/;
 
 function slugify(input: string) {
   return input
-    .normalize("NFD") // quita acentos
+    .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase()
     .replace(/[^a-z0-9\s-]/g, "")
     .trim()
     .replace(/\s+/g, "-")
     .slice(0, 80);
+}
+
+function stripLinks(text: string) {
+  return text.replace(LINK_TOKEN_RE, (token) => {
+    const match = token.match(LINK_FULL_RE);
+    return match ? match[1] : token;
+  });
+}
+
+function buildFaqJsonLd(faqs: FaqItem[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: stripLinks(f.answer),
+      },
+    })),
+  };
 }
 
 function renderAnswer(text: string, prefetchInternalLinks: boolean) {
@@ -67,23 +93,30 @@ export default function FaqSection({
   faqs,
   structuredData = true,
   prefetchInternalLinks = false,
+  seeMore = null,
+  idioma,
 }: Props) {
-  // Server Component: cálculo en SSR
+  const priceFaqs = seeMore ? [] : buildTaxiFaqFromKey(idioma);
   const withIds = faqs.map((f, i) => ({
     ...f,
     id: `${slugify(f.question)}-${i}`,
   }));
+  const priceWithIds = priceFaqs.map((f, i) => ({
+    ...f,
+    id: `${slugify(f.question)}-${i}`,
+  }));
+  const allFaqs = [...withIds, ...priceWithIds];
+
+  const jsonLd = structuredData ? buildFaqJsonLd(allFaqs) : null;
 
   return (
     <section
       className="bg-white mt-12 pt-3"
       id="frequently-asked-questions"
       aria-labelledby="faq-title"
-      // 💡 Speed Insights: difiere trabajo hasta ser visible sin provocar CLS
       style={{ contentVisibility: "auto", containIntrinsicSize: "900px" }}
     >
       <div className="mx-auto max-w-7xl px-4 py-8 sm:py-12">
-        {/* Título — rojo y negrita */}
         <h2
           id="faq-title"
           className="mb-6 text-3xl font-extrabold tracking-tight text-accent"
@@ -91,7 +124,6 @@ export default function FaqSection({
           {title}
         </h2>
 
-        {/* Índice interno si hay suficientes preguntas */}
         {withIds.length > 3 && (
           <nav aria-label="FAQ quick links" className="mb-6">
             <ul className="flex flex-wrap gap-3 text-sm">
@@ -111,7 +143,7 @@ export default function FaqSection({
 
         <div className="border-t border-primary/15 pt-6">
           <div className="flex flex-wrap gap-8">
-            {withIds.map((item) => (
+            {allFaqs.map((item) => (
               <article
                 key={item.id}
                 id={item.id}
@@ -119,27 +151,13 @@ export default function FaqSection({
                 itemScope
                 itemType="https://schema.org/Question"
               >
-                {/* Pregunta — rojo y negrita */}
                 <h3
                   className="mb-3 flex items-center text-base font-bold text-accent"
                   itemProp="name"
                 >
-                  <svg
-                    className="mr-2 h-5 w-5 flex-shrink-0 text-accent"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    aria-hidden="true"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
                   {item.question}
                 </h3>
 
-                {/* Respuesta — texto azul */}
                 <div
                   className="text-sm text-primary"
                   itemScope
@@ -154,17 +172,27 @@ export default function FaqSection({
             ))}
           </div>
         </div>
+
+        {seeMore && (
+          <div className="mt-10 text-center">
+            <Link
+              href="/faqs"
+              className="inline-flex items-center gap-2 rounded-xl border border-accent px-6 py-3 text-sm font-bold text-accent hover:bg-accent hover:text-white transition-colors"
+            >
+              {seeMore}
+              <span aria-hidden>→</span>
+            </Link>
+          </div>
+        )}
       </div>
 
-      {/* {structuredData && jsonLd && (
-        // ✅ Server-rendered JSON-LD sin next/script (0 JS cliente)
+      {/* ✅ JSON-LD FAQPage (SSR, 0 JS cliente) */}
+      {jsonLd && (
         <script
-          id="ld-faq"
           type="application/ld+json"
-          // Nota: No interpoles objetos, siempre serializa
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-      )} */}
+      )}
     </section>
   );
 }

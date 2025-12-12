@@ -9,6 +9,8 @@ import { confirmationTexts } from "./others/confirmation.locale";
 import { mainSeo } from "./landing/content.locale";
 import { navLocales } from "./others/nav.locale";
 export const pt: AppTexts = {
+  priceFaq:
+    "Quanto custa um táxi de | até | ?|Um carro clássico privado custa | uma minivan privada custa | , e os preços são por veículo, não por pessoa.",
   metadata,
   header,
   content,
@@ -164,7 +166,7 @@ export const pt: AppTexts = {
       {
         question: "Quanto custa um táxi do aeroporto de Varadero para Havana?",
         answer:
-          "O preço do transfer privado começa em 100 USD por veículo. Veja a lista completa no nosso [blog](/blog/how-much-is-a-taxi-in-cuba).",
+          "O preço do transfer privado começa em 80 USD por veículo. Veja a lista completa no nosso [blog](/blog/how-much-is-a-taxi-in-cuba).",
       },
       {
         question: "Os preços são por pessoa ou por carro?",
