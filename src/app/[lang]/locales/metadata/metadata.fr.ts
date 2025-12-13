@@ -10,6 +10,12 @@ export const metadata: Partial<customMetaData> = {
       "Réservez vos taxis à Cuba pour transferts, excursions en ligne. Tarifs fixes, réservation rapide, chauffeurs anglophones à La Havane & Varadero avec CubanTaxis.",
     alternates: buildAlternatesMetadata("", "fr"),
   },
+  faqs: {
+    title: "FAQ Taxi à Cuba 2025 | Prix, Réservation & Conseils",
+    description:
+      "Trouvez les réponses aux questions fréquentes sur les taxis à Cuba. Prix, réservation, aéroports, itinéraires et conseils avec CubanTaxis.",
+    alternates: buildAlternatesMetadata("/faqs", "fr"),
+  },
 
   blog: {
     self: {

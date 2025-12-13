@@ -10,6 +10,12 @@ export const metadata: Partial<customMetaData> = {
       "Buchen Sie Taxi-Transfers und Touren in Kuba online. Festpreise, schnelle Buchung, englischsprachige Fahrer in Havanna & Varadero mit CubanTaxis.",
     alternates: buildAlternatesMetadata("", "de"),
   },
+  faqs: {
+    title: "Taxi in Kuba – FAQ 2025 | Preise & Buchung",
+    description:
+      "Antworten auf häufige Fragen zu Taxis in Kuba. Preise, Buchung, Flughäfen, Routen und Reisetipps mit CubanTaxis.",
+    alternates: buildAlternatesMetadata("/faqs", "de"),
+  },
 
   blog: {
     self: {

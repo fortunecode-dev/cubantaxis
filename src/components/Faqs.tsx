@@ -117,13 +117,21 @@ export default function FaqSection({
       style={{ contentVisibility: "auto", containIntrinsicSize: "900px" }}
     >
       <div className="mx-auto max-w-7xl px-4 py-8 sm:py-12">
-        <h2
-          id="faq-title"
-          className="mb-6 text-3xl font-extrabold tracking-tight text-accent"
-        >
-          {title}
-        </h2>
-
+        {seeMore ? (
+          <h2
+            id="faq-title"
+            className="mb-6 text-3xl font-extrabold tracking-tight text-accent"
+          >
+            {title}
+          </h2>
+        ) : (
+          <h1
+            id="faq-title"
+            className="mb-6 text-3xl font-extrabold tracking-tight text-accent"
+          >
+            {title}
+          </h1>
+        )}
         {withIds.length > 3 && (
           <nav aria-label="FAQ quick links" className="mb-6">
             <ul className="flex flex-wrap gap-3 text-sm">
@@ -151,12 +159,21 @@ export default function FaqSection({
                 itemScope
                 itemType="https://schema.org/Question"
               >
-                <h3
-                  className="mb-3 flex items-center text-base font-bold text-accent"
-                  itemProp="name"
-                >
-                  {item.question}
-                </h3>
+                {seeMore ? (
+                  <h3
+                    className="mb-3 flex items-center text-base font-bold text-accent"
+                    itemProp="name"
+                  >
+                    {item.question}
+                  </h3>
+                ) : (
+                  <h2
+                    className="mb-3 flex items-center text-base font-bold text-accent"
+                    itemProp="name"
+                  >
+                    {item.question}
+                  </h2>
+                )}
 
                 <div
                   className="text-sm text-primary"

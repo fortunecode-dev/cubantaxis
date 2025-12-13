@@ -99,8 +99,7 @@ export default async function TaxiPage({ params }: PageProps) {
   const howToJsonLd = {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    name: lang === "es" ? "Cómo reservar un taxi" : "How to book a taxi",
-    description: h2,
+    name: h2,
     step: textToHowToSteps(p),
   };
 
@@ -198,9 +197,17 @@ export default async function TaxiPage({ params }: PageProps) {
           </h2>
 
           {/* Descripción general del proceso */}
-          <p className="mt-1" itemProp="description">
-            {p}
-          </p>
+          <div className="mt-1">
+            {p
+              .split(".")
+              .map((s: string) => s.trim())
+              .filter(Boolean)
+              .map((step: string, index: number) => (
+                <p key={index + 1} itemProp="step">
+                  {step}.
+                </p>
+              ))}
+          </div>
         </div>
       </section>
 

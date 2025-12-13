@@ -10,6 +10,12 @@ export const metadata: Partial<customMetaData> = {
       "Reserve táxis em Cuba para transfers e passeios online. Preços fixos, reserva rápida e motoristas que falam inglês em Havana e Varadero com a CubanTaxis.",
     alternates: buildAlternatesMetadata("", "pt"),
   },
+  faqs: {
+    title: "Perguntas Frequentes sobre Táxi em Cuba | CubanTaxis",
+    description:
+      "Respostas às dúvidas mais comuns sobre táxis em Cuba. Preços, reservas, aeroportos, rotas e dicas de viagem com CubanTaxis.",
+    alternates: buildAlternatesMetadata("/faqs", "pt"),
+  },
 
   blog: {
     self: {

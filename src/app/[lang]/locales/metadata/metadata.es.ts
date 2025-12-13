@@ -10,6 +10,12 @@ export const metadata: Partial<customMetaData> = {
       "Reserva taxis en Cuba para traslados y tours online. Precios fijos, reserva rápida y conductores que hablan inglés en La Habana y Varadero con CubanTaxis.",
     alternates: buildAlternatesMetadata("", "es"),
   },
+  faqs: {
+    title: "Preguntas Frecuentes sobre Taxis en Cuba | CubanTaxis",
+    description:
+      "Respuestas a las preguntas más comunes sobre taxis en Cuba. Precios, reservas, aeropuertos, rutas y consejos para viajar con CubanTaxis.",
+    alternates: buildAlternatesMetadata("/faqs", "es"),
+  },
 
   blog: {
     self: {

@@ -64,6 +64,12 @@ export const metadata: Partial<customMetaData> = {
       "Discover Cuba in 2025 with CubanTaxis. Your trusted partner for taxi transfers, tours and booking in Havana, Varadero and across the island.",
     alternates: buildAlternatesMetadata("/taxi-in-cuba", "en"),
   },
+  faqs: {
+    title: "Cuba Taxi FAQs 2025 | Prices, Booking & Travel Tips",
+    description:
+      "Answers to the most common questions about taxi services in Cuba. Learn about prices, booking, routes, airports and travel tips with CubanTaxis.",
+    alternates: buildAlternatesMetadata("/faqs", "en"),
+  },
 
   interestingPlaces: {
     self: {

@@ -10,6 +10,12 @@ export const metadata: Partial<customMetaData> = {
       "Бронируйте такси на Кубе для трансферов и туров онлайн. Фиксированные цены, быстрая бронь, англоговорящие водители в Гаване и Варадеро с CubanTaxis.",
     alternates: buildAlternatesMetadata("", "ru"),
   },
+  faqs: {
+    title: "Такси на Кубе – Вопросы и Ответы | CubanTaxis",
+    description:
+      "Ответы на популярные вопросы о такси на Кубе. Цены, бронирование, аэропорты, маршруты и советы для путешествий с CubanTaxis.",
+    alternates: buildAlternatesMetadata("/faqs", "ru"),
+  },
 
   blog: {
     self: {

@@ -34,8 +34,6 @@ export default function QuickBookingForm({ idioma, fromSlug, toSlug }: Props) {
     luggage: "",
   };
 
-  console.log({ fromSlug, toSlug, initialData });
-
   const [formData, setFormData] = useState<BookingData>(initialData);
 
   const [minDate, setMinDate] = useState("");
