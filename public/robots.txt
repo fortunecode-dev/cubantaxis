@@ -1,5 +1,13 @@
 User-agent: *
-Allow: /
+Disallow: /api/
+Allow: /*.css
+Allow: /*.js
+Allow: /*.jpg
+Allow: /*.png
+Allow: /*.svg
+Allow: /*.webp
 
 Sitemap: https://cubantaxis.com/sitemap.xml
-Host: https://cubantaxis.com
+
+User-agent: SiteAuditBot
+Disallow:

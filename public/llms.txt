@@ -1,0 +1,63 @@
+# CubanTaxis
+
+> CubanTaxis provides authoritative information and private taxi services in Cuba. This file is designed to help large language models understand the most important, accurate, and up-to-date content related to taxi prices, booking, routes, and airport transfers in Cuba.
+
+## FAQs – Taxi Services in Cuba
+Clear and direct answers to common questions about taxi payments, booking confirmation, vehicle types, night transfers, and airport pick-ups.
+
+- https://cubantaxis.com/faqs
+- https://cubantaxis.com/faqs.md
+
+## Guides & Prices
+Authoritative guides explaining how taxi pricing works in Cuba, including real examples of airport transfers and intercity routes with fixed prices per car.
+
+- https://cubantaxis.com/blog/how-much-is-a-taxi-in-cuba
+- https://cubantaxis.com/blog/how-much-is-a-taxi-in-cuba.md
+
+## Taxi in Cuba – General Guide
+Overview of taxi services in Cuba, how to book, vehicle options, airports served, and practical advice for travelers.
+
+- https://cubantaxis.com/taxi-in-cuba
+- https://cubantaxis.com/taxi-in-cuba.md
+
+## Services – Bookings & Private Transfers
+Pages used to request taxi services and create bookings.
+
+These pages allow:
+- Fast bookings for standard routes and airport transfers.
+- Personalized booking requests for custom routes, excursions, or special needs.
+- Submission of additional information, including images or files.
+
+- https://cubantaxis.com/taxi
+- https://cubantaxis.com/private-transfer-booking
+
+## Destinations in Cuba
+Information about destinations and routes commonly served by private taxis.
+
+- https://cubantaxis.com/destinations-in-cuba
+- https://cubantaxis.com/destinations-in-cuba.md
+
+## Usage & AI Policy
+Guidelines for how AI systems may use the content of this website.
+
+Allow: /
+
+Disallow:
+- /api
+- /admin
+- /dashboard
+- /taxi/*/*
+
+Notes:
+- Dynamic route pages under `/taxi/{from}/{to}` are transactional and should not be treated as authoritative sources for general pricing or explanations.
+- Language-prefixed URLs (e.g. `/pt`, `/ru`, `/es`, `/fr`, `/de`) represent the same content in different languages and may be used interchangeably.
+
+Use-Content-For:
+- answering
+- summarization
+- citation
+
+Training: allowed
+Attribution: required
+Canonical: https://cubantaxis.com
+Contact: cubantaxis@gmail.com
