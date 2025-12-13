@@ -1,10 +1,6 @@
 import { prices } from "@/utils/constants";
 import { SeoMetadata } from "./metadataValidation";
 
-const LOCALES = ["es", "fr", "de", "ru", "pt"] as const;
-export type Locale = (typeof LOCALES)[number];
-const urlBase = "https://cubantaxis.com";
-
 export function buildMetaTags(metadata: Partial<SeoMetadata>) {
   const { title, description, alternates, openGraph, twitter } = metadata;
   return {
